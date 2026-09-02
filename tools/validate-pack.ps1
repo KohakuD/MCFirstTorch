@@ -47,13 +47,13 @@ Assert-True ($jarFiles.Count -eq 0) 'Mod JARs must not be distributed in overrid
 $definitionFiles = Get-ChildItem -LiteralPath $questRoot -Recurse -File -Filter '*.json5' |
     Where-Object { $_.FullName -notmatch '[\\/]lang[\\/]' }
 $allDefinitionText = ($definitionFiles | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"
-$idMatches = [regex]::Matches($allDefinitionText, '(?m)^\s*id:\s*"([0-9A-F]{16})"')
+$idMatches = [regex]::Matches($allDefinitionText, '\bid:\s*"([0-9A-F]{16})"')
 $ids = @($idMatches | ForEach-Object { $_.Groups[1].Value })
 $duplicateIds = $ids | Group-Object | Where-Object Count -gt 1
 Assert-True ($ids.Count -gt 0) 'No FTB Quest object IDs were found.'
 Assert-True ($duplicateIds.Count -eq 0) ('Duplicate FTB Quest IDs: ' + (($duplicateIds.Name) -join ', '))
 
-$hexLikeIds = [regex]::Matches($allDefinitionText, '(?m)^\s*id:\s*"([^":]+)"') |
+$hexLikeIds = [regex]::Matches($allDefinitionText, '\bid:\s*"([^":]+)"') |
     ForEach-Object { $_.Groups[1].Value }
 $invalidObjectIds = @($hexLikeIds | Where-Object { $_ -notmatch '^[0-9A-F]{16}$' })
 Assert-True ($invalidObjectIds.Count -eq 0) ('Invalid FTB Quest object IDs: ' + ($invalidObjectIds -join ', '))
@@ -73,4 +73,3 @@ foreach ($relativePath in @('chapter.json5', 'chapters/first_steps.json5')) {
 }
 
 Write-Host "First Torch validation passed: $($ids.Count) stable quest object IDs and $($manifest.files.Count) pinned dependencies."
-
