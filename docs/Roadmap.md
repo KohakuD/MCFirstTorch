@@ -27,6 +27,7 @@ The active milestone is **0.1.0 — First Safe Night**. Scope stays intentionall
 - [x] Diagnose unnamed chapters and generic checkmark titles from screenshots
 - [x] Move IDs outside the signed Java `long` range into FTB Quests' supported range
 - [x] Reject out-of-range IDs during validation
+- [x] Add a backed-up in-place updater for development profiles
 - [ ] Confirm all chapter, quest, and task titles in a fresh 0.1.2 profile
 
 ## 0.2.0 — Becoming Independent

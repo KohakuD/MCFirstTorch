@@ -40,6 +40,26 @@ pwsh ./tools/build-pack.ps1
 
 The build creates `build/First-Torch-<version>.zip`. Import the archive into a compatible launcher; the launcher downloads the pinned mods.
 
+## Update a development instance in place
+
+For quest and configuration iterations, close Minecraft and run:
+
+```powershell
+pwsh ./tools/update-instance.ps1 -InstancePath "D:\Minecraft\curseforge\minecraft\Instances\First Torch"
+```
+
+The updater has an explicit managed-path allowlist. It backs up the current managed files under `<instance>/.first-torch/backups/<timestamp>/`, replaces only those paths from `overrides/`, verifies every copied file by SHA-256, and records the installed pack version in `<instance>/.first-torch/state.json`.
+
+The following stay outside updater ownership:
+
+- `saves/`
+- `options.txt` and key bindings
+- `screenshots/`
+- `resourcepacks/`
+- logs, caches, and unrelated mod configuration
+
+The updater does not install or remove mod JARs. If `manifest.json` changes its dependency list, update through CurseForge or perform a fresh profile import before applying overrides.
+
 ## In-game acceptance test
 
 Use a fresh launcher profile and a new survival world.

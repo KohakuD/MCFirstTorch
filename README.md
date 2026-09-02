@@ -28,6 +28,16 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 
 The archive contains no redistributed mod JARs. The launcher downloads dependencies from their official CurseForge entries.
 
+## Update an existing development profile
+
+Close Minecraft, then update only the files owned by First Torch:
+
+```powershell
+pwsh ./tools/update-instance.ps1 -InstancePath "D:\Minecraft\curseforge\minecraft\Instances\First Torch"
+```
+
+The updater creates a timestamped backup inside `.first-torch/backups/` in the instance before replacing quest definitions. It does not touch worlds, `options.txt`, key bindings, screenshots, resource packs, or other personal files. Mod dependency changes still require a CurseForge profile update or a fresh import; the development updater is intentionally limited to pack-owned override files.
+
 ## Project status
 
 The repository scaffold and the first playable learning path are ready for an in-game acceptance test. The detailed scope and test gates live in [docs/Roadmap.md](docs/Roadmap.md).

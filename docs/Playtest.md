@@ -12,4 +12,12 @@
 
 Status: startup and world creation passed; 0.1.2 translation retest pending.
 
+### 2026-09-02 — In-place update to 0.1.2
+
+- Updated the existing CurseForge profile with `tools/update-instance.ps1`.
+- Backed up the previous quest definitions before replacement.
+- Verified all copied quest files by SHA-256.
+- Confirmed the updater did not target the existing world, `options.txt`, screenshots, or resource packs.
+- In-game chapter and title verification remains pending.
+
 Record each test with date, Minecraft/NeoForge versions, language, fresh or existing world, confusing moments, technical errors, and the resulting change.

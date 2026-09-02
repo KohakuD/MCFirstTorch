@@ -41,6 +41,7 @@ The active milestone in `docs/Roadmap.md` controls scope and versioning.
 - Use stable 16-character uppercase hexadecimal IDs for FTB quest objects. The first character must be `0` through `7` so the value fits FTB Quests' positive signed Java `long`; never regenerate an existing ID casually.
 - Run `pwsh ./tools/validate-pack.ps1` after pack metadata or quest changes.
 - Run `pwsh ./tools/build-pack.ps1` before handing off an installable build.
+- Use `tools/update-instance.ps1` for an authorised development-profile update. Keep its managed-path allowlist narrow, create a backup before replacement, and never add saves or player settings to that allowlist.
 - For quest changes, perform a fresh-profile in-game test when possible: load a new world, open the quest book, verify both languages, complete the affected path, and restart once.
 - Treat the learner's confusion as a product bug: improve the explanation or sequencing rather than assuming prior knowledge.
 
