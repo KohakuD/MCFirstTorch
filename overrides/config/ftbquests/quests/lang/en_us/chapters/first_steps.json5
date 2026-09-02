@@ -44,9 +44,9 @@
     "",
     "{image:firsttorch:textures/questpics/log_to_planks.png width:320 height:180 align:center}",
     "",
-    "Mark the quest once all four planks are in your inventory.",
+    "The quest completes automatically when four planks of any wood type are in your inventory. Mixed wood types count together too.",
   ],
-  "task.45B9134C7FDA6802.title": "I made wooden planks",
+  "task.45B9134C7FDA6802.title": "Hold 4 Wooden Planks of any wood type",
 
   "quest.56CA245D80EB7913.title": "A Proper Workbench",
   "quest.56CA245D80EB7913.quest_subtitle": "Unlock the full 3 × 3 crafting grid",
@@ -172,7 +172,7 @@
   "quest.54A8023B6EC957F1.quest_desc": [
     "You now know the first survival loop: collect wood, craft basic tools, gather stone, make a furnace and torches, then secure a shelter.",
     "",
-    "Before leaving in the morning, take food, spare blocks, tools, and torches. Remember where your shelter is. Avoid fighting groups of monsters that are still burning outside.",
+    "Stay near your shelter at first in the morning. Take spare blocks, tools, and torches, and remember where your shelter is. Food is taught in the next chapter; do not begin a long journey without it.",
     "",
     "Mark this quest after you have reached a safe morning. The next chapter will teach food, health, mining, and the equipment that makes you more independent.",
   ],

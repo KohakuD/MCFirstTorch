@@ -40,7 +40,18 @@
       min_width: 360,
       icon: { id: "minecraft:oak_log", count: 1 },
       tasks: [
-        { id: "45B9134C7FDA6802", type: "checkmark" },
+        {
+          id: "45B9134C7FDA6802",
+          type: "item",
+          count: 4,
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:planks)",
+            },
+          },
+        },
       ],
     },
     {

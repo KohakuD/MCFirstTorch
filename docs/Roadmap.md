@@ -1,6 +1,6 @@
 # Roadmap
 
-The active milestone is **0.1.0 — First Safe Night**. Scope stays intentionally small until the complete path has passed an in-game beginner test.
+The active milestone is **0.1.x — First Safe Night**. The current development build is **0.1.5**. Scope stays intentionally small until the complete path has passed an in-game beginner test.
 
 ## 0.1.0 — First Safe Night
 
@@ -48,6 +48,15 @@ The active milestone is **0.1.0 — First Safe Night**. Scope stays intentionall
 - [x] Explain stone collection explicitly as the same interaction loop as collecting wood, with the pickaxe as the key difference
 - [ ] Confirm all six illustrations render in the existing profile
 
+### 0.1.5 flexible beginner objectives
+
+- [x] Accept four planks of any vanilla wood type, including mixed stacks
+- [x] Pin FTB Filter System and FTB XMod Compat for item-tag objectives
+- [x] Remove the premature instruction to bring food before food has been taught
+- [x] Document why native CurseForge pack-version display requires a published CurseForge project
+- [ ] Confirm the filter modules reach the title screen in the existing profile
+- [ ] Confirm the plank task stays incomplete at 1–3 and completes at 4 with mixed wood types
+
 ## 0.2.0 — Becoming Independent
 
 - [ ] Hunger, food sources, and safe cooking
@@ -62,5 +71,6 @@ The active milestone is **0.1.0 — First Safe Night**. Scope stays intentionall
 - `0.3.0`: farms, animals, storage, and sustainable resources
 - `0.4.0`: caves, diamonds, enchanting, and preparation
 - `0.5.0`: Nether preparation and first Nether trip
+- CurseForge publication: native pack-version display and launcher-managed updates
 
 No Nether content is required for the first 48-hour playable build.

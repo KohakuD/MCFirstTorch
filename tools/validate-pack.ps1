@@ -26,6 +26,8 @@ $expectedFiles = @{
     '289412' = 8730542
     '404465' = 8574542
     '404468' = 8074003
+    '943925' = 8300191
+    '889915' = 8678090
 }
 Assert-True ($manifest.files.Count -eq $expectedFiles.Count) 'The pinned dependency count changed unexpectedly.'
 foreach ($file in $manifest.files) {
@@ -60,6 +62,7 @@ $ignoredItemStackCounts = [regex]::Matches($allDefinitionText, 'item:\s*\{[^}]*\
 Assert-True ($ignoredItemStackCounts.Count -eq 0) 'Item task quantities above one must use the task-level count field; a count inside item is ignored by FTB Quests.'
 
 $expectedTaskCounts = @{
+    '45B9134C7FDA6802' = 4
     '4B1F79A2D530CE68' = 8
     '0F53BDE6197402AC' = 8
 }
@@ -68,6 +71,9 @@ foreach ($taskId in $expectedTaskCounts.Keys) {
     $taskPattern = 'id:\s*"' + $taskId + '"[\s\S]{0,180}?type:\s*"item"[\s\S]{0,180}?count:\s*' + $expectedCount + '\s*,[\s\S]{0,180}?item:'
     Assert-True ([regex]::IsMatch($allDefinitionText, $taskPattern)) "Task $taskId must require $expectedCount items with a task-level count field."
 }
+
+$plankFilterPattern = 'id:\s*"45B9134C7FDA6802"[\s\S]{0,500}?"ftbfiltersystem:filter":\s*"ftbfiltersystem:item_tag\(minecraft:planks\)"'
+Assert-True ([regex]::IsMatch($allDefinitionText, $plankFilterPattern)) 'The first wood task must accept the minecraft:planks item tag through FTB Filter System.'
 
 $packMetadataPath = Join-Path $guidePackRoot 'pack.mcmeta'
 Assert-True (Test-Path -LiteralPath $packMetadataPath -PathType Leaf) 'First Torch guide resource pack metadata is missing.'

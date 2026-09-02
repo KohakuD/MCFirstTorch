@@ -4,7 +4,7 @@
 
 First Torch targets Minecraft 26.1.2 on NeoForge 26.1.2.84. Dependency versions and CurseForge file IDs are pinned in `manifest.json`.
 
-The 0.1.x line deliberately uses only FTB Quests, FTB Library, and FTB Teams. KubeJS was removed after its required Better Advanced Tooltips dependency caused a startup Mixin failure. Add scripting only when the curriculum requires it and the full dependency chain has passed a clean-profile startup test.
+The 0.1.x line deliberately uses the FTB quest stack plus FTB Filter System and FTB XMod Compat for vanilla item-tag objectives. KubeJS was removed after its required Better Advanced Tooltips dependency caused a startup Mixin failure. Add scripting only when the curriculum requires it and the full dependency chain has passed a clean-profile startup test.
 
 FTB Quests 26.1+ stores quest definitions and translations as JSON5. Legacy `.snbt` examples are not valid guidance for this project.
 
@@ -64,7 +64,7 @@ The updater does not install or remove mod JARs. If `manifest.json` changes its 
 
 Use a fresh launcher profile and a new survival world.
 
-1. Confirm Minecraft and NeoForge start with all three dependencies.
+1. Confirm Minecraft and NeoForge start with all five dependencies.
 2. Open the quest book and confirm the `First Steps` chapter appears.
 3. Complete the path once in English and inspect it once in German.
 4. Verify automatic item tasks complete with the listed vanilla items.

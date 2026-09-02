@@ -44,9 +44,9 @@
     "",
     "{image:firsttorch:textures/questpics/log_to_planks.png width:320 height:180 align:center}",
     "",
-    "Setze das Häkchen, sobald die vier Bretter in deinem Inventar liegen.",
+    "Die Quest wird automatisch abgeschlossen, sobald vier Bretter einer beliebigen Holzart in deinem Inventar liegen. Auch gemischte Holzarten zählen zusammen.",
   ],
-  "task.45B9134C7FDA6802.title": "Ich habe Holzbretter hergestellt",
+  "task.45B9134C7FDA6802.title": "Besitze 4 Holzbretter einer beliebigen Holzart",
 
   "quest.56CA245D80EB7913.title": "Eine richtige Werkbank",
   "quest.56CA245D80EB7913.quest_subtitle": "Schalte das vollständige 3 × 3-Raster frei",
@@ -172,7 +172,7 @@
   "quest.54A8023B6EC957F1.quest_desc": [
     "Du kennst nun den ersten Überlebensablauf: Holz sammeln, einfache Werkzeuge herstellen, Stein beschaffen, einen Ofen und Fackeln bauen und danach einen Unterschlupf sichern.",
     "",
-    "Nimm am Morgen Nahrung, Ersatzblöcke, Werkzeuge und Fackeln mit. Merke dir, wo dein Unterschlupf steht. Vermeide Kämpfe gegen Gruppen von Monstern, die draussen noch verbrennen.",
+    "Bleibe am Morgen zuerst in der Nähe deines Unterschlupfs. Nimm Ersatzblöcke, Werkzeuge und Fackeln mit und merke dir, wo dein Unterschlupf steht. Nahrung lernst du im nächsten Kapitel; ohne Nahrung solltest du noch keine lange Reise beginnen.",
     "",
     "Setze das Häkchen, wenn du einen sicheren Morgen erreicht hast. Das nächste Kapitel erklärt Nahrung, Gesundheit, Bergbau und die Ausrüstung, mit der du selbstständiger wirst.",
   ],

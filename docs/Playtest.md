@@ -34,4 +34,11 @@ Status: startup and world creation passed; 0.1.2 translation retest pending.
 - The installed client's `version.json` reports resource format 84.0. Modern packs require `min_format` and `max_format` version pairs; the guide pack incorrectly used only the legacy `pack_format` field.
 - Updated the metadata to `[84, 0]`, added a regression check, and expanded the illustrated sequence through Crafting Table placement, Wooden Pickaxe, Furnace, and Charcoal.
 
+### 2026-09-02 — Flexible planks and CurseForge version diagnosis for 0.1.5
+
+- The first wood objective accepted only Oak Planks. It now requires four items matching `#minecraft:planks`, so all vanilla plank types and mixed stacks count.
+- Added the official FTB Filter System and FTB XMod Compat dependencies required by the tag filter.
+- Removed the final quest's premature suggestion to carry food; the text now warns against a long trip and previews food as the next chapter.
+- Techopolis 3 displays its pack release because its instance is linked to a published CurseForge project through `installedModpack.installedFile`. First Torch is currently a local manifest import, so CurseForge leaves `installedModpack` empty and falls back to showing the Minecraft version. Native pack-version display therefore belongs to the CurseForge publication step rather than local profile metadata.
+
 Record each test with date, Minecraft/NeoForge versions, language, fresh or existing world, confusing moments, technical errors, and the resulting change.
