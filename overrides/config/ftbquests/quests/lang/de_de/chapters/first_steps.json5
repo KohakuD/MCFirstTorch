@@ -6,6 +6,8 @@
     "",
     "Jede Quest erklärt das Ziel, warum es wichtig ist und die genauen Schritte. Manche Aufgaben werden automatisch abgeschlossen, sobald der Gegenstand in deinem Inventar liegt. Bei einem Häkchen entscheidest du selbst, wann du den Schritt ausprobiert oder verstanden hast.",
     "",
+    "Manche abgeschlossenen Quests schenken dir eine kleine Belohnung. Klicke im Questfenster auf das Belohnungssymbol, um sie abzuholen. Der Gegenstand landet danach in deinem Inventar.",
+    "",
     "Du kannst alles in deinem Tempo erkunden. Wenn du etwas bereits kennst, lies kurz den Sicherheitshinweis und gehe weiter.",
   ],
   "task.23F7912A5DBE4680.title": "Ich bin bereit anzufangen",
@@ -24,6 +26,8 @@
     "{image:firsttorch:textures/questpics/attack_and_break.png width:320 height:180 align:center}",
     "",
     "Bist du Linkshänder, kannst du die Haupthand in den Einstellungen ändern. Die Tasten lassen sich unter Optionen → Steuerung anpassen.",
+    "",
+    "Belohnung: Zwei Äpfel geben dir etwas Zeit, bevor du im nächsten Kapitel lernst, wie du zuverlässig Nahrung beschaffst.",
   ],
   "task.6A72C4E819B305FD.title": "Ich kenne Angriffs- und Benutzen-Taste",
 
@@ -140,6 +144,8 @@
     "Lege danach an der Werkbank die Holzkohle über einen Stock. Wiederhole das Rezept zweimal, damit du acht Fackeln erhältst.",
     "",
     "Platziere Fackeln in deinem Unterschlupf, um den Eingang herum und entlang von Wegen, die du wiederfinden möchtest.",
+    "",
+    "Belohnung: Zwei weitere Äpfel als kleine Reserve für deine erste Nacht.",
   ],
   "task.0F53BDE6197402AC.title": "Halte 8 Fackeln im Inventar",
 
@@ -175,6 +181,8 @@
     "Bleibe am Morgen zuerst in der Nähe deines Unterschlupfs. Nimm Ersatzblöcke, Werkzeuge und Fackeln mit und merke dir, wo dein Unterschlupf steht. Nahrung lernst du im nächsten Kapitel; ohne Nahrung solltest du noch keine lange Reise beginnen.",
     "",
     "Setze das Häkchen, wenn du einen sicheren Morgen erreicht hast. Das nächste Kapitel erklärt Nahrung, Gesundheit, Bergbau und die Ausrüstung, mit der du selbstständiger wirst.",
+    "",
+    "Belohnung: Drei Brote helfen dir beim Start in das Nahrungskapitel. Die Laterne ist deine First-Torch-Trophäe – platziere sie an deinem Zuhause, wenn du möchtest.",
   ],
   "task.65B9134C7FDA6803.title": "Ich habe einen sicheren Morgen erreicht",
 }

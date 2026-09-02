@@ -6,6 +6,8 @@
     "",
     "Each quest explains the goal, why it matters, and the exact steps. Some tasks complete automatically when the item is in your inventory. A checkmark means that you decide when you have tried or understood the step.",
     "",
+    "Some completed quests give you a small reward. Click the reward icon in the quest window to claim it. The item will then appear in your inventory.",
+    "",
     "You can explore at your own pace. If you already know something, read the safety note and continue.",
   ],
   "task.23F7912A5DBE4680.title": "I am ready to begin",
@@ -24,6 +26,8 @@
     "{image:firsttorch:textures/questpics/attack_and_break.png width:320 height:180 align:center}",
     "",
     "If you are left-handed, you can change the main hand in the settings. Key bindings can be changed under Options → Controls.",
+    "",
+    "Reward: Two Apples give you a little time before the next chapter teaches you how to find food reliably.",
   ],
   "task.6A72C4E819B305FD.title": "I know the attack and use buttons",
 
@@ -140,6 +144,8 @@
     "At the Crafting Table, put the Charcoal above one stick. Repeat the recipe twice to make eight Torches.",
     "",
     "Place torches inside your shelter, around the entrance, and along paths you want to find again.",
+    "",
+    "Reward: Two more Apples as a small reserve for your first night.",
   ],
   "task.0F53BDE6197402AC.title": "Hold 8 Torches",
 
@@ -175,6 +181,8 @@
     "Stay near your shelter at first in the morning. Take spare blocks, tools, and torches, and remember where your shelter is. Food is taught in the next chapter; do not begin a long journey without it.",
     "",
     "Mark this quest after you have reached a safe morning. The next chapter will teach food, health, mining, and the equipment that makes you more independent.",
+    "",
+    "Reward: Three Bread help you begin the food chapter. The Lantern is your First Torch trophy—place it at your home if you like.",
   ],
   "task.65B9134C7FDA6803.title": "I reached a safe morning",
 }

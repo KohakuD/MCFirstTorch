@@ -31,6 +31,13 @@
       tasks: [
         { id: "6A72C4E819B305FD", type: "checkmark" },
       ],
+      rewards: [
+        {
+          id: "2C8E51A70D4B639F",
+          type: "item",
+          item: { id: "minecraft:apple", count: 2 },
+        },
+      ],
     },
     {
       id: "7B83D5F920C4160E",
@@ -131,6 +138,13 @@
           item: { id: "minecraft:torch", count: 1 },
         },
       ],
+      rewards: [
+        {
+          id: "61D304B8A7CE295F",
+          type: "item",
+          item: { id: "minecraft:apple", count: 2 },
+        },
+      ],
     },
     {
       id: "1064CEF72A8513BD",
@@ -165,6 +179,18 @@
       icon: { id: "minecraft:sunflower", count: 1 },
       tasks: [
         { id: "65B9134C7FDA6803", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "37AF205CE961B4D8",
+          type: "item",
+          item: { id: "minecraft:bread", count: 3 },
+        },
+        {
+          id: "5E18C7D042AB936F",
+          type: "item",
+          item: { id: "minecraft:lantern", count: 1 },
+        },
       ],
     },
   ],

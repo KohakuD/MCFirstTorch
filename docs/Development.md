@@ -31,6 +31,10 @@ Each player-facing change must update both:
 
 Run the validator to catch missing keys.
 
+## Reward design
+
+Beginner rewards are fixed, small, and explained before the first claim. They may provide a safety buffer or celebrate a milestone, but must not complete or bypass a later lesson. Avoid random loot, powerful equipment, and unexplained currencies. Manual claiming remains enabled so the quest book can teach the reward interaction explicitly.
+
 ## Build and validate
 
 ```powershell

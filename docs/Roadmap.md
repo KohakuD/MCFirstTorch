@@ -1,6 +1,6 @@
 # Roadmap
 
-The active milestone is **0.1.x — First Safe Night**. The current development build is **0.1.5**. Scope stays intentionally small until the complete path has passed an in-game beginner test.
+The active milestone is **0.1.x — First Safe Night**. The current development build is **0.1.6**. Scope stays intentionally small until the complete path has passed an in-game beginner test.
 
 ## 0.1.0 — First Safe Night
 
@@ -56,6 +56,15 @@ The active milestone is **0.1.x — First Safe Night**. The current development 
 - [x] Document why native CurseForge pack-version display requires a published CurseForge project
 - [ ] Confirm the filter modules reach the title screen in the existing profile
 - [ ] Confirm the plank task stays incomplete at 1–3 and completes at 4 with mixed wood types
+
+### 0.1.6 gentle rewards
+
+- [x] Explain how to claim rewards before the first reward appears
+- [x] Give two Apples after the controls lesson and two after making Torches
+- [x] Give three Bread as a bridge into the food chapter
+- [x] Give one Lantern as the First Torch completion trophy
+- [x] Validate exact reward items, quantities, and stable reward IDs
+- [ ] Confirm all four rewards display and can be claimed exactly once in game
 
 ## 0.2.0 — Becoming Independent
 

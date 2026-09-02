@@ -41,4 +41,11 @@ Status: startup and world creation passed; 0.1.2 translation retest pending.
 - Removed the final quest's premature suggestion to carry food; the text now warns against a long trip and previews food as the next chapter.
 - Techopolis 3 displays its pack release because its instance is linked to a published CurseForge project through `installedModpack.installedFile`. First Torch is currently a local manifest import, so CurseForge leaves `installedModpack` empty and falls back to showing the Minecraft version. Native pack-version display therefore belongs to the CurseForge publication step rather than local profile metadata.
 
+### 2026-09-02 — Gentle rewards for 0.1.6
+
+- Added a reward-claim explanation to the welcome quest.
+- Added two Apples after learning the controls and two after crafting eight Torches. These are small hunger buffers and do not replace a taught recipe.
+- Added three Bread after the safe morning as a bridge into the food chapter and one Lantern as a visible chapter trophy.
+- Kept manual reward claiming enabled so the interaction is learned explicitly. In-game display and single-claim behaviour remain to be tested.
+
 Record each test with date, Minecraft/NeoForge versions, language, fresh or existing world, confusing moments, technical errors, and the resulting change.

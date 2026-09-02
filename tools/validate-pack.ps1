@@ -58,7 +58,8 @@ $hexLikeIds = [regex]::Matches($allDefinitionText, '\bid:\s*"([^":]+)"') |
 $invalidObjectIds = @($hexLikeIds | Where-Object { $_ -notmatch '^[0-7][0-9A-F]{15}$' })
 Assert-True ($invalidObjectIds.Count -eq 0) ('Invalid FTB Quest object IDs; IDs must fit a positive signed Java long: ' + ($invalidObjectIds -join ', '))
 
-$ignoredItemStackCounts = [regex]::Matches($allDefinitionText, 'item:\s*\{[^}]*\bcount:\s*([2-9][0-9]*)', [System.Text.RegularExpressions.RegexOptions]::Singleline)
+$taskArrayText = ([regex]::Matches($allDefinitionText, 'tasks:\s*\[(?<body>[\s\S]*?)\]\s*,') | ForEach-Object { $_.Groups['body'].Value }) -join "`n"
+$ignoredItemStackCounts = [regex]::Matches($taskArrayText, 'item:\s*\{[^}]*\bcount:\s*([2-9][0-9]*)', [System.Text.RegularExpressions.RegexOptions]::Singleline)
 Assert-True ($ignoredItemStackCounts.Count -eq 0) 'Item task quantities above one must use the task-level count field; a count inside item is ignored by FTB Quests.'
 
 $expectedTaskCounts = @{
@@ -74,6 +75,18 @@ foreach ($taskId in $expectedTaskCounts.Keys) {
 
 $plankFilterPattern = 'id:\s*"45B9134C7FDA6802"[\s\S]{0,500}?"ftbfiltersystem:filter":\s*"ftbfiltersystem:item_tag\(minecraft:planks\)"'
 Assert-True ([regex]::IsMatch($allDefinitionText, $plankFilterPattern)) 'The first wood task must accept the minecraft:planks item tag through FTB Filter System.'
+
+$expectedItemRewards = @{
+    '2C8E51A70D4B639F' = @{ Item = 'minecraft:apple'; Count = 2 }
+    '61D304B8A7CE295F' = @{ Item = 'minecraft:apple'; Count = 2 }
+    '37AF205CE961B4D8' = @{ Item = 'minecraft:bread'; Count = 3 }
+    '5E18C7D042AB936F' = @{ Item = 'minecraft:lantern'; Count = 1 }
+}
+foreach ($rewardId in $expectedItemRewards.Keys) {
+    $reward = $expectedItemRewards[$rewardId]
+    $rewardPattern = 'id:\s*"' + $rewardId + '"[\s\S]{0,180}?type:\s*"item"[\s\S]{0,180}?item:\s*\{\s*id:\s*"' + [regex]::Escape($reward.Item) + '"\s*,\s*count:\s*' + $reward.Count + '\s*\}'
+    Assert-True ([regex]::IsMatch($allDefinitionText, $rewardPattern)) "Reward $rewardId must grant $($reward.Count) $($reward.Item)."
+}
 
 $packMetadataPath = Join-Path $guidePackRoot 'pack.mcmeta'
 Assert-True (Test-Path -LiteralPath $packMetadataPath -PathType Leaf) 'First Torch guide resource pack metadata is missing.'
