@@ -38,7 +38,7 @@ The active milestone in `docs/Roadmap.md` controls scope and versioning.
 ## Workflow and verification
 
 - Keep changes focused on the requested milestone.
-- Use stable 16-character uppercase hexadecimal IDs for FTB quest objects; never regenerate an existing ID casually.
+- Use stable 16-character uppercase hexadecimal IDs for FTB quest objects. The first character must be `0` through `7` so the value fits FTB Quests' positive signed Java `long`; never regenerate an existing ID casually.
 - Run `pwsh ./tools/validate-pack.ps1` after pack metadata or quest changes.
 - Run `pwsh ./tools/build-pack.ps1` before handing off an installable build.
 - For quest changes, perform a fresh-profile in-game test when possible: load a new world, open the quest book, verify both languages, complete the affected path, and restart once.

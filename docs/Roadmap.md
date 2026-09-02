@@ -21,6 +21,14 @@ The active milestone is **0.1.0 — First Safe Night**. Scope stays intentionall
 - [x] Rebuild the minimal pack with only the required FTB quest stack
 - [ ] Confirm a clean CurseForge profile reaches the Minecraft title screen
 
+### 0.1.2 quest ID fix
+
+- [x] Confirm a clean CurseForge profile reaches the title screen and creates a world
+- [x] Diagnose unnamed chapters and generic checkmark titles from screenshots
+- [x] Move IDs outside the signed Java `long` range into FTB Quests' supported range
+- [x] Reject out-of-range IDs during validation
+- [ ] Confirm all chapter, quest, and task titles in a fresh 0.1.2 profile
+
 ## 0.2.0 — Becoming Independent
 
 - [ ] Hunger, food sources, and safe cooking

@@ -22,7 +22,7 @@ Player progress belongs to a world or server instance and must never be copied i
 
 Prefer FTB Quests' in-game editor when discovering a new property or task type. Save the book, copy only the resulting definitions back into `overrides/config/ftbquests/quests/`, and review the diff. Hand-editing is appropriate for translation text, coordinates, dependencies, and already-understood structures.
 
-Object IDs are stable public identifiers. Use exactly 16 uppercase hexadecimal characters and do not change existing IDs merely to reorder content.
+Object IDs are stable public identifiers. Use exactly 16 uppercase hexadecimal characters with a first character from `0` through `7`; FTB Quests parses them as positive signed Java `long` values. Do not change existing IDs merely to reorder content.
 
 Each player-facing change must update both:
 

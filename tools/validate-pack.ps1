@@ -44,7 +44,7 @@ Assert-True ($jarFiles.Count -eq 0) 'Mod JARs must not be distributed in overrid
 $definitionFiles = Get-ChildItem -LiteralPath $questRoot -Recurse -File -Filter '*.json5' |
     Where-Object { $_.FullName -notmatch '[\\/]lang[\\/]' }
 $allDefinitionText = ($definitionFiles | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"
-$idMatches = [regex]::Matches($allDefinitionText, '\bid:\s*"([0-9A-F]{16})"')
+$idMatches = [regex]::Matches($allDefinitionText, '\bid:\s*"([0-7][0-9A-F]{15})"')
 $ids = @($idMatches | ForEach-Object { $_.Groups[1].Value })
 $duplicateIds = $ids | Group-Object | Where-Object Count -gt 1
 Assert-True ($ids.Count -gt 0) 'No FTB Quest object IDs were found.'
@@ -52,8 +52,8 @@ Assert-True ($duplicateIds.Count -eq 0) ('Duplicate FTB Quest IDs: ' + (($duplic
 
 $hexLikeIds = [regex]::Matches($allDefinitionText, '\bid:\s*"([^":]+)"') |
     ForEach-Object { $_.Groups[1].Value }
-$invalidObjectIds = @($hexLikeIds | Where-Object { $_ -notmatch '^[0-9A-F]{16}$' })
-Assert-True ($invalidObjectIds.Count -eq 0) ('Invalid FTB Quest object IDs: ' + ($invalidObjectIds -join ', '))
+$invalidObjectIds = @($hexLikeIds | Where-Object { $_ -notmatch '^[0-7][0-9A-F]{15}$' })
+Assert-True ($invalidObjectIds.Count -eq 0) ('Invalid FTB Quest object IDs; IDs must fit a positive signed Java long: ' + ($invalidObjectIds -join ', '))
 
 $localeRoot = Join-Path $questRoot 'lang'
 foreach ($relativePath in @('chapter.json5', 'chapters/first_steps.json5')) {
