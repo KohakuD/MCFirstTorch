@@ -20,6 +20,13 @@
       tasks: [
         { id: "23F7912A5DBE4680", type: "checkmark" },
       ],
+      rewards: [
+        {
+          id: "4BD9A6E31F028C75",
+          type: "xp",
+          xp: 5,
+        },
+      ],
     },
     {
       id: "34A8023B6ECF5791",
@@ -109,8 +116,8 @@
     },
     {
       id: "5C208AB3E641DF79",
-      x: 15.0,
-      y: 0.0,
+      x: 12.5,
+      y: 5.0,
       dependencies: ["3A0E6891C42FBD57"],
       min_width: 360,
       icon: { id: "minecraft:furnace", count: 1 },
@@ -123,10 +130,33 @@
       ],
     },
     {
-      id: "7E42ACD50863F19B",
-      x: 17.5,
-      y: 0.0,
+      id: "6A24D8F30C715BE9",
+      x: 10.0,
+      y: 5.0,
       dependencies: ["5C208AB3E641DF79"],
+      min_width: 360,
+      icon: { id: "minecraft:chest", count: 1 },
+      tasks: [
+        {
+          id: "1B35E9042D826CF0",
+          type: "item",
+          item: { id: "minecraft:chest", count: 1 },
+        },
+        { id: "2C46FA153E937D01", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "3D570B264FA48E12",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+    {
+      id: "7E42ACD50863F19B",
+      x: 7.5,
+      y: 5.0,
+      dependencies: ["6A24D8F30C715BE9"],
       shape: "hexagon",
       size: 1.5,
       min_width: 360,
@@ -150,28 +180,37 @@
     },
     {
       id: "1064CEF72A8513BD",
-      x: 20.0,
-      y: -1.25,
+      x: 5.0,
+      y: 3.75,
       dependencies: ["7E42ACD50863F19B"],
       icon: { id: "minecraft:oak_door", count: 1 },
       tasks: [
         { id: "2175DF083B9624CE", type: "checkmark" },
       ],
+      rewards: [
+        {
+          id: "2F517B3E160C248D",
+          type: "item",
+          count: 3,
+          item: { id: "minecraft:white_wool", count: 1 },
+        },
+      ],
     },
     {
       id: "3286E0194CA735DF",
-      x: 20.0,
-      y: 1.25,
-      dependencies: ["7E42ACD50863F19B"],
-      icon: { id: "minecraft:red_bed", count: 1 },
+      x: 5.0,
+      y: 6.25,
+      dependencies: ["1064CEF72A8513BD"],
+      min_width: 360,
+      icon: { id: "minecraft:white_bed", count: 1 },
       tasks: [
         { id: "4397F12A5DB846E0", type: "checkmark" },
       ],
     },
     {
       id: "54A8023B6EC957F1",
-      x: 22.5,
-      y: 0.0,
+      x: 2.5,
+      y: 5.0,
       dependencies: [
         "1064CEF72A8513BD",
         "3286E0194CA735DF",

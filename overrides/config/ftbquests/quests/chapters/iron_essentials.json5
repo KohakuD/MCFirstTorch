@@ -1,0 +1,100 @@
+{
+  id: "4C86EA031D9F5B72",
+  group: "",
+  order_index: 2,
+  icon: {
+    id: "minecraft:water_bucket",
+    count: 1,
+  },
+  filename: "iron_essentials",
+  default_quest_shape: "circle",
+  default_hide_dependency_lines: false,
+  quests: [
+    {
+      id: "27A9D4E60B835CF1",
+      x: 0.0,
+      y: 0.0,
+      dependencies: ["3C16B9E50A724DF8"],
+      min_width: 360,
+      icon: { id: "minecraft:iron_ingot", count: 6 },
+      tasks: [
+        {
+          id: "38BAE5F71C946D02",
+          type: "item",
+          count: 6,
+          item: { id: "minecraft:iron_ingot", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "49CBF6082DA57E13",
+      x: 2.5,
+      y: -1.25,
+      dependencies: ["27A9D4E60B835CF1"],
+      min_width: 360,
+      icon: { id: "minecraft:iron_pickaxe", count: 1 },
+      tasks: [
+        {
+          id: "5ADC07193EB68F24",
+          type: "item",
+          item: { id: "minecraft:iron_pickaxe", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "6BED182A4FC79035",
+      x: 2.5,
+      y: 1.25,
+      dependencies: ["27A9D4E60B835CF1"],
+      min_width: 360,
+      icon: { id: "minecraft:bucket", count: 1 },
+      tasks: [
+        {
+          id: "7CFE293B50D8A146",
+          type: "item",
+          item: { id: "minecraft:bucket", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "1D0F3A4C61E9B257",
+      x: 5.0,
+      y: 1.25,
+      dependencies: ["6BED182A4FC79035"],
+      min_width: 360,
+      icon: { id: "minecraft:water_bucket", count: 1 },
+      tasks: [
+        {
+          id: "2E104B5D72FAC368",
+          type: "item",
+          item: { id: "minecraft:water_bucket", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "3F215C6E03ABD479",
+      x: 7.5,
+      y: 0.0,
+      dependencies: [
+        "49CBF6082DA57E13",
+        "1D0F3A4C61E9B257",
+      ],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:iron_pickaxe", count: 1 },
+      tasks: [
+        { id: "40326D7F14BCE58A", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "51337E8025CDF69B",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+  ],
+  quest_links: [],
+  images: [],
+}

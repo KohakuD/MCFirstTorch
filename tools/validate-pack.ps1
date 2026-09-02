@@ -66,6 +66,11 @@ $expectedTaskCounts = @{
     '45B9134C7FDA6802' = 4
     '4B1F79A2D530CE68' = 8
     '0F53BDE6197402AC' = 8
+    '3D85F1C70A624BE9' = 4
+    '2B73E9F40D856AC1' = 2
+    '3C84FA150E967BD2' = 16
+    '4D950B261FA78CE3' = 4
+    '38BAE5F71C946D02' = 6
 }
 foreach ($taskId in $expectedTaskCounts.Keys) {
     $expectedCount = $expectedTaskCounts[$taskId]
@@ -73,14 +78,92 @@ foreach ($taskId in $expectedTaskCounts.Keys) {
     Assert-True ([regex]::IsMatch($allDefinitionText, $taskPattern)) "Task $taskId must require $expectedCount items with a task-level count field."
 }
 
-$plankFilterPattern = 'id:\s*"45B9134C7FDA6802"[\s\S]{0,500}?"ftbfiltersystem:filter":\s*"ftbfiltersystem:item_tag\(minecraft:planks\)"'
-Assert-True ([regex]::IsMatch($allDefinitionText, $plankFilterPattern)) 'The first wood task must accept the minecraft:planks item tag through FTB Filter System.'
+$expectedSmartFilters = @{
+    '45B9134C7FDA6802' = 'ftbfiltersystem:item_tag(minecraft:planks)'
+    '09E4A72D5C813BF6' = 'or(item(minecraft:beef)item(minecraft:porkchop)item(minecraft:chicken)item(minecraft:mutton)item(minecraft:rabbit)item(minecraft:cod)item(minecraft:salmon)item(minecraft:potato)item(minecraft:kelp))'
+    '2E73C5A09D164BF8' = 'or(item(minecraft:cooked_beef)item(minecraft:cooked_porkchop)item(minecraft:cooked_chicken)item(minecraft:cooked_mutton)item(minecraft:cooked_rabbit)item(minecraft:cooked_cod)item(minecraft:cooked_salmon)item(minecraft:baked_potato)item(minecraft:dried_kelp))'
+    '3D85F1C70A624BE9' = 'or(item(minecraft:cooked_beef)item(minecraft:cooked_porkchop)item(minecraft:cooked_chicken)item(minecraft:cooked_mutton)item(minecraft:cooked_rabbit)item(minecraft:cooked_cod)item(minecraft:cooked_salmon)item(minecraft:baked_potato)item(minecraft:dried_kelp))'
+    '2B73E9F40D856AC1' = 'or(item(minecraft:stone_pickaxe)item(minecraft:copper_pickaxe)item(minecraft:iron_pickaxe)item(minecraft:diamond_pickaxe)item(minecraft:netherite_pickaxe))'
+    '4D950B261FA78CE3' = 'or(item(minecraft:cooked_beef)item(minecraft:cooked_porkchop)item(minecraft:cooked_chicken)item(minecraft:cooked_mutton)item(minecraft:cooked_rabbit)item(minecraft:cooked_cod)item(minecraft:cooked_salmon)item(minecraft:baked_potato)item(minecraft:dried_kelp))'
+}
+foreach ($taskId in $expectedSmartFilters.Keys) {
+    $filterPattern = 'id:\s*"' + $taskId + '"[\s\S]{0,700}?"ftbfiltersystem:filter":\s*"' + [regex]::Escape($expectedSmartFilters[$taskId]) + '"'
+    Assert-True ([regex]::IsMatch($allDefinitionText, $filterPattern)) "Task $taskId does not contain its expected FTB smart filter."
+}
+
+$firstEatingPattern = 'id:\s*"6F20B4D98C315EA7"[\s\S]{0,250}?type:\s*"advancement"[\s\S]{0,250}?advancement:\s*"minecraft:husbandry/root"[\s\S]{0,150}?criterion:\s*"consumed_item"'
+Assert-True ([regex]::IsMatch($allDefinitionText, $firstEatingPattern)) 'The first eating task must automatically detect the vanilla Husbandry root advancement.'
+$foodSourceQuestPattern = 'id:\s*"35B7E10C9A624DF8"[\s\S]{0,180}?dependencies:\s*\["54A8023B6EC957F1"\]'
+Assert-True ([regex]::IsMatch($allDefinitionText, $foodSourceQuestPattern)) 'The food-source path must unlock from the safe morning without depending on the optional eating quest.'
+
+$expectedSingleItemTasks = @{
+    '1B35E9042D826CF0' = 'minecraft:chest'
+    '57A0D4C91E326BF8' = 'minecraft:stone_pickaxe'
+    '0D39A7E25C614BF8' = 'minecraft:raw_iron'
+    '61E4A8C20D935BF7' = 'minecraft:iron_ingot'
+    '12A6E3D80C754BF9' = 'minecraft:shield'
+    '5B39D7F20E846AC1' = 'minecraft:raw_copper'
+    '7D5BF9042EA68C31' = 'minecraft:copper_ingot'
+    '5ADC07193EB68F24' = 'minecraft:iron_pickaxe'
+    '7CFE293B50D8A146' = 'minecraft:bucket'
+    '2E104B5D72FAC368' = 'minecraft:water_bucket'
+}
+foreach ($taskId in $expectedSingleItemTasks.Keys) {
+    $itemId = $expectedSingleItemTasks[$taskId]
+    $taskPattern = 'id:\s*"' + $taskId + '"[\s\S]{0,180}?type:\s*"item"[\s\S]{0,180}?item:\s*\{\s*id:\s*"' + [regex]::Escape($itemId) + '"\s*,\s*count:\s*1\s*\}'
+    Assert-True ([regex]::IsMatch($allDefinitionText, $taskPattern)) "Task $taskId must require one $itemId."
+}
+
+$protectionFinalPattern = 'id:\s*"07B5E9C31D864AF2"[\s\S]{0,220}?dependencies:\s*\[[\s\S]{0,100}?"5E27A4D90B836CF1"[\s\S]{0,100}?"6F40D8A21C953BE7"'
+Assert-True ([regex]::IsMatch($allDefinitionText, $protectionFinalPattern)) 'The protection recap must depend on both the armour-slot and shield-use lessons.'
+$ironOreIconPattern = 'id:\s*"2B84F1C60D735AE9"[\s\S]{0,180}?icon:\s*\{\s*id:\s*"minecraft:iron_ore"'
+Assert-True ([regex]::IsMatch($allDefinitionText, $ironOreIconPattern)) 'The Raw Iron lesson must use the live Iron Ore item model as its icon.'
+$armourSlotDependencyPattern = 'id:\s*"5E27A4D90B836CF1"[\s\S]{0,180}?dependencies:\s*\["18A6D3F90C754BE2"\]'
+Assert-True ([regex]::IsMatch($allDefinitionText, $armourSlotDependencyPattern)) 'The armour-slot lesson must follow the armour-crafting explanation.'
+$armourUnlockPattern = 'id:\s*"18A6D3F90C754BE2"[\s\S]{0,220}?dependencies:\s*\[[\s\S]{0,80}?"3C16B9E50A724DF8"[\s\S]{0,80}?"6C4AE8F31D957B20"[\s\S]{0,80}?\][\s\S]{0,80}?dependency_requirement:\s*"one_completed"'
+Assert-True ([regex]::IsMatch($allDefinitionText, $armourUnlockPattern)) 'The armour-crafting lesson must unlock after either the Iron Ingot or Copper Ingot branch.'
+$shieldDependencyPattern = 'id:\s*"4D92C7A10E638BF5"[\s\S]{0,180}?dependencies:\s*\["3C16B9E50A724DF8"\]'
+Assert-True ([regex]::IsMatch($allDefinitionText, $shieldDependencyPattern)) 'The Shield lesson must remain exclusive to the Iron branch.'
+$chestDependencyPattern = 'id:\s*"6A24D8F30C715BE9"[\s\S]{0,180}?dependencies:\s*\["5C208AB3E641DF79"\]'
+Assert-True ([regex]::IsMatch($allDefinitionText, $chestDependencyPattern)) 'The Chest lesson must follow the Furnace lesson.'
+$torchDependencyPattern = 'id:\s*"7E42ACD50863F19B"[\s\S]{0,180}?dependencies:\s*\["6A24D8F30C715BE9"\]'
+Assert-True ([regex]::IsMatch($allDefinitionText, $torchDependencyPattern)) 'The Torch lesson must follow the Chest lesson.'
+$bedDependencyPattern = 'id:\s*"3286E0194CA735DF"[\s\S]{0,180}?dependencies:\s*\["1064CEF72A8513BD"\]'
+Assert-True ([regex]::IsMatch($allDefinitionText, $bedDependencyPattern)) 'The Bed lesson must follow the shelter that grants its Wool.'
+$findingHomeDependencyPattern = 'id:\s*"16C8E2A50D739BF4"[\s\S]{0,180}?dependencies:\s*\["36CF412575EB038D"\]'
+Assert-True ([regex]::IsMatch($allDefinitionText, $findingHomeDependencyPattern)) 'The Finding Home chapter must unlock after the safe-return lesson.'
+$compassLessonPattern = 'id:\s*"2F6A91C4D8E307B5"[\s\S]{0,180}?dependencies:\s*\["7C2E480B63D9F15A"\][\s\S]{0,180}?icon:\s*\{\s*id:\s*"minecraft:compass"'
+Assert-True ([regex]::IsMatch($allDefinitionText, $compassLessonPattern)) 'The Compass explanation must follow the tested route home.'
+$lodestonePathPattern = 'id:\s*"15E7C9A42B806DF3"[\s\S]{0,180}?dependencies:\s*\["2F6A91C4D8E307B5"\][\s\S]*?id:\s*"37A9EBC64D028F15"[\s\S]{0,180}?dependencies:\s*\["15E7C9A42B806DF3"\][\s\S]*?id:\s*"59CBED086F24A137"[\s\S]{0,180}?dependencies:\s*\["37A9EBC64D028F15"\][\s\S]*?id:\s*"0BED012A8146C359"[\s\S]{0,180}?dependencies:\s*\["59CBED086F24A137"\]'
+Assert-True ([regex]::IsMatch($allDefinitionText, $lodestonePathPattern)) 'The Lodestone path must follow the Compass explanation in the intended order.'
+$chiseledStoneCountPattern = 'id:\s*"48BADCF75E139026"[\s\S]{0,180}?type:\s*"item"[\s\S]{0,180}?item:\s*\{\s*id:\s*"minecraft:chiseled_stone_bricks"[\s\S]{0,100}?count:\s*8\s*,'
+Assert-True ([regex]::IsMatch($allDefinitionText, $chiseledStoneCountPattern)) 'The Lodestone path must require eight Chiseled Stone Bricks.'
+$useLodestoneAdvancementPattern = 'id:\s*"3E1045DAB479F68C"[\s\S]{0,180}?type:\s*"advancement"[\s\S]{0,120}?advancement:\s*"minecraft:adventure/use_lodestone"[\s\S]{0,120}?criterion:\s*"use_lodestone"'
+Assert-True ([regex]::IsMatch($allDefinitionText, $useLodestoneAdvancementPattern)) 'Binding the Compass to the Lodestone must be detected automatically.'
+$ironEssentialsDependencyPattern = 'id:\s*"27A9D4E60B835CF1"[\s\S]{0,180}?dependencies:\s*\["3C16B9E50A724DF8"\]'
+Assert-True ([regex]::IsMatch($allDefinitionText, $ironEssentialsDependencyPattern)) 'The Iron Essentials chapter must unlock after the first Iron Ingot.'
+$ironEssentialsLinkPattern = 'id:\s*"62448F9136DEA7C0"[\s\S]{0,180}?linked_quest:\s*"27A9D4E60B835CF1"[\s\S]{0,180}?shape:\s*"diamond"'
+Assert-True ([regex]::IsMatch($allDefinitionText, $ironEssentialsLinkPattern)) 'The first Iron Ingot path must show a diamond-shaped in-map link to Iron Essentials.'
+$ironEssentialsFinalPattern = 'id:\s*"3F215C6E03ABD479"[\s\S]{0,220}?dependencies:\s*\[[\s\S]{0,100}?"49CBF6082DA57E13"[\s\S]{0,100}?"1D0F3A4C61E9B257"'
+Assert-True ([regex]::IsMatch($allDefinitionText, $ironEssentialsFinalPattern)) 'The Iron Essentials recap must depend on both the Iron Pickaxe and Water Bucket paths.'
+
+$becomingChapterText = Get-Content -LiteralPath (Join-Path $questRoot 'chapters/becoming_independent.json5') -Raw
+$becomingXValues = @([regex]::Matches($becomingChapterText, '(?m)^\s+x:\s*(-?[0-9]+(?:\.[0-9]+)?)\s*,') | ForEach-Object { [double]$_.Groups[1].Value })
+Assert-True ($becomingXValues.Count -gt 0) 'The Becoming Independent chapter has no quest coordinates.'
+$becomingXExtent = (($becomingXValues | Measure-Object -Maximum).Maximum - ($becomingXValues | Measure-Object -Minimum).Minimum)
+Assert-True ($becomingXExtent -le 15.0) 'The Becoming Independent layout must remain compact enough for smaller displays.'
 
 $expectedItemRewards = @{
     '2C8E51A70D4B639F' = @{ Item = 'minecraft:apple'; Count = 2 }
     '61D304B8A7CE295F' = @{ Item = 'minecraft:apple'; Count = 2 }
+    '2F517B3E160C248D' = @{ Item = 'minecraft:white_wool'; Count = 3 }
     '37AF205CE961B4D8' = @{ Item = 'minecraft:bread'; Count = 3 }
     '5E18C7D042AB936F' = @{ Item = 'minecraft:lantern'; Count = 1 }
+    '0C71E4A95B263DF8' = @{ Item = 'minecraft:apple'; Count = 1 }
+    '14B8D2F60A975CE3' = @{ Item = 'minecraft:charcoal'; Count = 1 }
+    '72E5A1C83D609BF4' = @{ Item = 'minecraft:cookie'; Count = 1 }
+    '56E8B2C10D734AF9' = @{ Item = 'minecraft:iron_ingot'; Count = 1 }
+    '6D3A80F152C7BE49' = @{ Item = 'minecraft:compass'; Count = 1 }
 }
 foreach ($rewardId in $expectedItemRewards.Keys) {
     $reward = $expectedItemRewards[$rewardId]
@@ -92,7 +175,22 @@ foreach ($rewardId in $expectedItemRewards.Keys) {
     Assert-True ([regex]::IsMatch($allDefinitionText, $rewardPattern)) "Reward $rewardId must grant $($reward.Count) $($reward.Item)."
 }
 
+$expectedXpRewards = @{
+    '4BD9A6E31F028C75' = 5
+    '3D570B264FA48E12' = 5
+    '3AC8F5D20E917B64' = 5
+    '58E16347970D25AF' = 10
+    '1E406A2D05FB137C' = 5
+    '51337E8025CDF69B' = 5
+    '2D0F234CA368E57B' = 5
+}
+foreach ($rewardId in $expectedXpRewards.Keys) {
+    $xp = $expectedXpRewards[$rewardId]
+    $rewardPattern = 'id:\s*"' + $rewardId + '"[\s\S]{0,120}?type:\s*"xp"[\s\S]{0,120}?xp:\s*' + $xp + '\s*,'
+    Assert-True ([regex]::IsMatch($allDefinitionText, $rewardPattern)) "Reward $rewardId must grant $xp experience points."
+}
 $rewardArrayText = ([regex]::Matches($allDefinitionText, 'rewards:\s*\[(?<body>[\s\S]*?)\]\s*,') | ForEach-Object { $_.Groups['body'].Value }) -join "`n"
+Assert-True (-not [regex]::IsMatch($rewardArrayText, 'type:\s*"xp_levels"')) 'Beginner rewards must use precise XP points rather than whole XP levels.'
 $ignoredRewardStackCounts = [regex]::Matches($rewardArrayText, 'item:\s*\{[^}]*\bcount:\s*([2-9][0-9]*)', [System.Text.RegularExpressions.RegexOptions]::Singleline)
 Assert-True ($ignoredRewardStackCounts.Count -eq 0) 'Item reward quantities above one must use the reward-level count field; a count inside item is ignored by FTB Quests.'
 
@@ -101,14 +199,28 @@ Assert-True (Test-Path -LiteralPath $packMetadataPath -PathType Leaf) 'First Tor
 $packMetadata = Get-Content -LiteralPath $packMetadataPath -Raw | ConvertFrom-Json
 Assert-True ($packMetadata.pack.min_format[0] -eq 84 -and $packMetadata.pack.min_format[1] -eq 0) 'Guide resource pack min_format must be [84, 0] for Minecraft 26.1.2.'
 Assert-True ($packMetadata.pack.max_format[0] -eq 84 -and $packMetadata.pack.max_format[1] -eq 0) 'Guide resource pack max_format must be [84, 0] for Minecraft 26.1.2.'
-foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png', 'place_crafting_table.png', 'wooden_pickaxe.png', 'furnace.png', 'charcoal.png')) {
+foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png', 'place_crafting_table.png', 'wooden_pickaxe.png', 'furnace.png', 'chest.png', 'charcoal.png', 'bed.png', 'hunger_and_eating.png', 'cooking_food.png', 'stone_pickaxe.png', 'shield.png', 'armour_recipes.png', 'safe_staircase.png', 'torch_route.png', 'iron_pickaxe.png', 'bucket.png', 'stonecutter.png', 'lodestone.png')) {
     $imagePath = Join-Path $guidePackRoot (Join-Path 'assets/firsttorch/textures/questpics' $imageName)
     Assert-True (Test-Path -LiteralPath $imagePath -PathType Leaf) "Missing quest guide image: $imageName"
     Assert-True ((Get-Item -LiteralPath $imagePath).Length -gt 0) "Quest guide image is empty: $imageName"
 }
+$armourImageReferences = [regex]::Matches($allDefinitionText + "`n" + ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"), 'firsttorch:textures/questpics/armour_recipes\.png')
+Assert-True ($armourImageReferences.Count -eq 2) 'The compact Armour recipe overview must be referenced once in each language.'
+$chestImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"), 'firsttorch:textures/questpics/chest\.png')
+Assert-True ($chestImageReferences.Count -eq 2) 'The Chest recipe guide must be referenced once in each language.'
+$bedImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"), 'firsttorch:textures/questpics/bed\.png')
+Assert-True ($bedImageReferences.Count -eq 2) 'The Bed recipe guide must be referenced once in each language.'
+$ironPickaxeImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"), 'firsttorch:textures/questpics/iron_pickaxe\.png')
+Assert-True ($ironPickaxeImageReferences.Count -eq 2) 'The Iron Pickaxe recipe guide must be referenced once in each language.'
+$bucketImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"), 'firsttorch:textures/questpics/bucket\.png')
+Assert-True ($bucketImageReferences.Count -eq 2) 'The Bucket recipe guide must be referenced once in each language.'
+$stonecutterImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"), 'firsttorch:textures/questpics/stonecutter\.png')
+Assert-True ($stonecutterImageReferences.Count -eq 2) 'The Stonecutter recipe guide must be referenced once in each language.'
+$lodestoneImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"), 'firsttorch:textures/questpics/lodestone\.png')
+Assert-True ($lodestoneImageReferences.Count -eq 2) 'The Lodestone recipe guide must be referenced once in each language.'
 
 $localeRoot = Join-Path $questRoot 'lang'
-foreach ($relativePath in @('chapter.json5', 'chapters/first_steps.json5')) {
+foreach ($relativePath in @('chapter.json5', 'chapters/first_steps.json5', 'chapters/becoming_independent.json5', 'chapters/iron_essentials.json5', 'chapters/finding_home.json5')) {
     $enPath = Join-Path (Join-Path $localeRoot 'en_us') $relativePath
     $dePath = Join-Path (Join-Path $localeRoot 'de_de') $relativePath
     Assert-True (Test-Path -LiteralPath $enPath -PathType Leaf) "Missing English translation file: $relativePath"

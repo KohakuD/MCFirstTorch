@@ -8,22 +8,22 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 
 ## Current target
 
-- Pack version: `0.1.7`
+- Pack version: `0.2.0`
 - Minecraft: `26.1.2`
 - NeoForge: `26.1.2.84`
 - Languages: English (`en_us`) and German (`de_de`)
-- First milestone: a guided path from spawning to a safe first night
+- Current milestone: food, health, protection, and safe early exploration
 
 ## Included foundation
 
 - FTB Quests, FTB Library, FTB Teams, and the official FTB item-tag filter modules
-- A bilingual starter chapter with eleven small, ordered lessons and gentle fixed rewards
+- Four bilingual chapters covering the first safe night, independent food/protection/mining routines, essential Iron equipment, and finding the way home
 - Reproducible CurseForge manifest with pinned dependency file IDs
 
 ## Install a development build
 
 1. Run `pwsh ./tools/build-pack.ps1`.
-2. Import `build/First-Torch-0.1.7.zip` into CurseForge, Prism Launcher, or another launcher that supports CurseForge modpack manifests.
+2. Import `build/First-Torch-0.2.0.zip` into CurseForge, Prism Launcher, or another launcher that supports CurseForge modpack manifests.
 3. Create a new world and open FTB Quests from its key binding.
 
 The archive contains no redistributed mod JARs. The launcher downloads dependencies from their official CurseForge entries.
@@ -40,7 +40,7 @@ The updater creates a timestamped backup inside `.first-torch/backups/` before r
 
 ## Project status
 
-The repository scaffold and the first playable learning path are ready for an in-game acceptance test. The detailed scope and test gates live in [docs/Roadmap.md](docs/Roadmap.md).
+Version 0.2.0 has passed its iterative in-game beginner review. The detailed scope, acceptance record, and next milestones live in [docs/Roadmap.md](docs/Roadmap.md).
 
 ## Licence and trademarks
 

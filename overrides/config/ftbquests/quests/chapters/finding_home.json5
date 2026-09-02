@@ -1,0 +1,157 @@
+{
+  id: "3B75D9F20C8E4A61",
+  group: "",
+  order_index: 3,
+  icon: {
+    id: "minecraft:compass",
+    count: 1,
+  },
+  filename: "finding_home",
+  default_quest_shape: "circle",
+  default_hide_dependency_lines: false,
+  quests: [
+    {
+      id: "16C8E2A50D739BF4",
+      x: 0.0,
+      y: 0.0,
+      dependencies: ["36CF412575EB038D"],
+      min_width: 360,
+      icon: { id: "minecraft:lantern", count: 1 },
+      tasks: [
+        { id: "27D9F3B61E84AC05", type: "checkmark" },
+      ],
+    },
+    {
+      id: "38EA04C72F95BD16",
+      x: 2.5,
+      y: 0.0,
+      dependencies: ["16C8E2A50D739BF4"],
+      min_width: 360,
+      icon: { id: "minecraft:filled_map", count: 1 },
+      tasks: [
+        { id: "49FB15D830A6CE27", type: "checkmark" },
+      ],
+    },
+    {
+      id: "5A0C26E941B7DF38",
+      x: 5.0,
+      y: 0.0,
+      dependencies: ["38EA04C72F95BD16"],
+      min_width: 360,
+      icon: { id: "minecraft:paper", count: 1 },
+      tasks: [
+        { id: "6B1D37FA52C8E049", type: "checkmark" },
+      ],
+    },
+    {
+      id: "7C2E480B63D9F15A",
+      x: 7.5,
+      y: 0.0,
+      dependencies: ["5A0C26E941B7DF38"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:oak_door", count: 1 },
+      tasks: [
+        { id: "0D3F591C74EA026B", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "1E406A2D05FB137C",
+          type: "xp",
+          xp: 5,
+        },
+        {
+          id: "6D3A80F152C7BE49",
+          type: "item",
+          item: { id: "minecraft:compass", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "2F6A91C4D8E307B5",
+      x: 10.0,
+      y: 0.0,
+      dependencies: ["7C2E480B63D9F15A"],
+      min_width: 360,
+      icon: { id: "minecraft:compass", count: 1 },
+      tasks: [
+        { id: "40B7E2D96A1C58F3", type: "checkmark" },
+      ],
+    },
+    {
+      id: "15E7C9A42B806DF3",
+      x: 10.0,
+      y: 2.5,
+      dependencies: ["2F6A91C4D8E307B5"],
+      min_width: 360,
+      icon: { id: "minecraft:stonecutter", count: 1 },
+      tasks: [
+        {
+          id: "26F8DAB53C917E04",
+          type: "item",
+          item: { id: "minecraft:stonecutter", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "37A9EBC64D028F15",
+      x: 7.5,
+      y: 2.5,
+      dependencies: ["15E7C9A42B806DF3"],
+      min_width: 360,
+      icon: { id: "minecraft:chiseled_stone_bricks", count: 1 },
+      tasks: [
+        {
+          id: "48BADCF75E139026",
+          type: "item",
+          item: { id: "minecraft:chiseled_stone_bricks", count: 1 },
+          count: 8,
+        },
+      ],
+    },
+    {
+      id: "59CBED086F24A137",
+      x: 5.0,
+      y: 2.5,
+      dependencies: ["37A9EBC64D028F15"],
+      min_width: 360,
+      icon: { id: "minecraft:lodestone", count: 1 },
+      tasks: [
+        {
+          id: "6ADCF0197035B248",
+          type: "item",
+          item: { id: "minecraft:lodestone", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "0BED012A8146C359",
+      x: 2.5,
+      y: 2.5,
+      dependencies: ["59CBED086F24A137"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:compass", count: 1 },
+      tasks: [
+        {
+          id: "3E1045DAB479F68C",
+          type: "advancement",
+          advancement: "minecraft:adventure/use_lodestone",
+          criterion: "use_lodestone",
+        },
+        { id: "1CFE123B9257D46A", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "2D0F234CA368E57B",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+  ],
+  quest_links: [],
+  images: [],
+}

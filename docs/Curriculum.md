@@ -19,8 +19,8 @@ First Torch teaches decisions, not only recipes. Every lesson should answer five
 - Never punish a learner for already knowing a step. A completed item in the inventory should satisfy the task immediately.
 - Avoid valuable rewards that replace the skill being taught.
 - Keep danger warnings specific and actionable.
+- Keep chapter maps readable on smaller displays: wrap long paths into clear thematic rows before horizontal scrolling becomes necessary.
 
 ## Definition of done for a lesson
 
 A lesson is done only when a beginner can follow it without verbal help, the completion condition is reliable, and both language versions fit comfortably in the quest window.
-

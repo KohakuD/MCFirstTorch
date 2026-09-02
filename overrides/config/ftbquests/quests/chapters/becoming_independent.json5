@@ -1,0 +1,423 @@
+{
+  id: "2A64C8E10B7D395F",
+  group: "",
+  order_index: 1,
+  icon: {
+    id: "minecraft:bread",
+    count: 1,
+  },
+  filename: "becoming_independent",
+  default_quest_shape: "circle",
+  default_hide_dependency_lines: false,
+  quests: [
+    {
+      id: "1D4A83C6E2057B9F",
+      x: 0.0,
+      y: -7.0,
+      dependencies: ["54A8023B6EC957F1"],
+      shape: "gear",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:bread", count: 1 },
+      tasks: [
+        {
+          id: "6F20B4D98C315EA7",
+          type: "advancement",
+          advancement: "minecraft:husbandry/root",
+          criterion: "consumed_item",
+        },
+      ],
+      rewards: [
+        {
+          id: "0C71E4A95B263DF8",
+          type: "item",
+          item: { id: "minecraft:apple", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "35B7E10C9A624DF8",
+      x: 2.5,
+      y: -7.0,
+      dependencies: ["54A8023B6EC957F1"],
+      min_width: 360,
+      icon: { id: "minecraft:beef", count: 1 },
+      tasks: [
+        {
+          id: "09E4A72D5C813BF6",
+          type: "item",
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "or(item(minecraft:beef)item(minecraft:porkchop)item(minecraft:chicken)item(minecraft:mutton)item(minecraft:rabbit)item(minecraft:cod)item(minecraft:salmon)item(minecraft:potato)item(minecraft:kelp))",
+            },
+          },
+        },
+      ],
+    },
+    {
+      id: "4A91D6F30C7E285B",
+      x: 5.0,
+      y: -7.0,
+      dependencies: ["35B7E10C9A624DF8"],
+      min_width: 360,
+      icon: { id: "minecraft:cooked_beef", count: 1 },
+      tasks: [
+        {
+          id: "2E73C5A09D164BF8",
+          type: "item",
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "or(item(minecraft:cooked_beef)item(minecraft:cooked_porkchop)item(minecraft:cooked_chicken)item(minecraft:cooked_mutton)item(minecraft:cooked_rabbit)item(minecraft:cooked_cod)item(minecraft:cooked_salmon)item(minecraft:baked_potato)item(minecraft:dried_kelp))",
+            },
+          },
+        },
+      ],
+      rewards: [
+        {
+          id: "14B8D2F60A975CE3",
+          type: "item",
+          item: { id: "minecraft:charcoal", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "5B28E7A14D906CF3",
+      x: 7.5,
+      y: -7.0,
+      dependencies: ["4A91D6F30C7E285B"],
+      min_width: 360,
+      icon: { id: "minecraft:red_dye", count: 1 },
+      tasks: [
+        { id: "18C6F2A75D409BE3", type: "checkmark" },
+      ],
+    },
+    {
+      id: "274B9E60A3D85FC1",
+      x: 10.0,
+      y: -7.0,
+      dependencies: ["5B28E7A14D906CF3"],
+      min_width: 360,
+      icon: { id: "minecraft:spider_eye", count: 1 },
+      tasks: [
+        { id: "43D1A8F70C625BE9", type: "checkmark" },
+      ],
+    },
+    {
+      id: "6C03B5E98A417DF2",
+      x: 12.5,
+      y: -7.0,
+      dependencies: ["274B9E60A3D85FC1"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:cooked_chicken", count: 4 },
+      tasks: [
+        {
+          id: "3D85F1C70A624BE9",
+          type: "item",
+          count: 4,
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "or(item(minecraft:cooked_beef)item(minecraft:cooked_porkchop)item(minecraft:cooked_chicken)item(minecraft:cooked_mutton)item(minecraft:cooked_rabbit)item(minecraft:cooked_cod)item(minecraft:cooked_salmon)item(minecraft:baked_potato)item(minecraft:dried_kelp))",
+            },
+          },
+        },
+      ],
+      rewards: [
+        {
+          id: "72E5A1C83D609BF4",
+          type: "item",
+          item: { id: "minecraft:cookie", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "0A73D9E14C628BF5",
+      x: 12.5,
+      y: 0.0,
+      dependencies: ["6C03B5E98A417DF2"],
+      min_width: 360,
+      icon: { id: "minecraft:feather", count: 1 },
+      tasks: [
+        { id: "4E16B8C30D795AF2", type: "checkmark" },
+      ],
+    },
+    {
+      id: "19C5E2A70B864DF3",
+      x: 10.0,
+      y: 0.0,
+      dependencies: ["0A73D9E14C628BF5"],
+      min_width: 360,
+      icon: { id: "minecraft:stone_pickaxe", count: 1 },
+      tasks: [
+        {
+          id: "57A0D4C91E326BF8",
+          type: "item",
+          item: { id: "minecraft:stone_pickaxe", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "2B84F1C60D735AE9",
+      x: 7.5,
+      y: -0.75,
+      dependencies: ["19C5E2A70B864DF3"],
+      min_width: 360,
+      icon: { id: "minecraft:iron_ore", count: 1 },
+      tasks: [
+        {
+          id: "0D39A7E25C614BF8",
+          type: "item",
+          item: { id: "minecraft:raw_iron", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "3C16B9E50A724DF8",
+      x: 5.0,
+      y: -0.75,
+      dependencies: ["2B84F1C60D735AE9"],
+      min_width: 360,
+      icon: { id: "minecraft:iron_ingot", count: 1 },
+      tasks: [
+        {
+          id: "61E4A8C20D935BF7",
+          type: "item",
+          item: { id: "minecraft:iron_ingot", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "4A28C6E10D735BF9",
+      x: 7.5,
+      y: 1.75,
+      dependencies: ["19C5E2A70B864DF3"],
+      min_width: 360,
+      icon: { id: "minecraft:copper_ore", count: 1 },
+      tasks: [
+        {
+          id: "5B39D7F20E846AC1",
+          type: "item",
+          item: { id: "minecraft:raw_copper", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "6C4AE8F31D957B20",
+      x: 5.0,
+      y: 1.75,
+      dependencies: ["4A28C6E10D735BF9"],
+      min_width: 360,
+      icon: { id: "minecraft:copper_ingot", count: 1 },
+      tasks: [
+        {
+          id: "7D5BF9042EA68C31",
+          type: "item",
+          item: { id: "minecraft:copper_ingot", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "4D92C7A10E638BF5",
+      x: 2.5,
+      y: -1.25,
+      dependencies: ["3C16B9E50A724DF8"],
+      min_width: 360,
+      icon: { id: "minecraft:shield", count: 1 },
+      tasks: [
+        {
+          id: "12A6E3D80C754BF9",
+          type: "item",
+          item: { id: "minecraft:shield", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "18A6D3F90C754BE2",
+      x: 2.5,
+      y: 1.25,
+      dependencies: [
+        "3C16B9E50A724DF8",
+        "6C4AE8F31D957B20",
+      ],
+      dependency_requirement: "one_completed",
+      min_width: 360,
+      icon: { id: "minecraft:copper_chestplate", count: 1 },
+      tasks: [
+        { id: "29B7E4C10D836AF5", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "3AC8F5D20E917B64",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+    {
+      id: "5E27A4D90B836CF1",
+      x: 0.0,
+      y: 1.25,
+      dependencies: ["18A6D3F90C754BE2"],
+      min_width: 360,
+      icon: { id: "minecraft:iron_chestplate", count: 1 },
+      tasks: [
+        { id: "23B9F1C60D745AE8", type: "checkmark" },
+      ],
+    },
+    {
+      id: "6F40D8A21C953BE7",
+      x: 0.0,
+      y: -1.25,
+      dependencies: ["4D92C7A10E638BF5"],
+      min_width: 360,
+      icon: { id: "minecraft:shield", count: 1 },
+      tasks: [
+        { id: "34C7E2A90D615BF8", type: "checkmark" },
+      ],
+    },
+    {
+      id: "07B5E9C31D864AF2",
+      x: -2.5,
+      y: 0.0,
+      dependencies: [
+        "5E27A4D90B836CF1",
+        "6F40D8A21C953BE7",
+      ],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:oak_door", count: 1 },
+      tasks: [
+        { id: "45D1A7E80C936BF2", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "56E8B2C10D734AF9",
+          type: "item",
+          item: { id: "minecraft:iron_ingot", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "1A62D8E30C745BF9",
+      x: -2.5,
+      y: 7.0,
+      dependencies: ["07B5E9C31D864AF2"],
+      min_width: 360,
+      icon: { id: "minecraft:bundle", count: 1 },
+      tasks: [
+        {
+          id: "2B73E9F40D856AC1",
+          type: "item",
+          count: 2,
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "or(item(minecraft:stone_pickaxe)item(minecraft:copper_pickaxe)item(minecraft:iron_pickaxe)item(minecraft:diamond_pickaxe)item(minecraft:netherite_pickaxe))",
+            },
+          },
+        },
+        {
+          id: "3C84FA150E967BD2",
+          type: "item",
+          count: 16,
+          item: { id: "minecraft:torch", count: 1 },
+        },
+        {
+          id: "4D950B261FA78CE3",
+          type: "item",
+          count: 4,
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "or(item(minecraft:cooked_beef)item(minecraft:cooked_porkchop)item(minecraft:cooked_chicken)item(minecraft:cooked_mutton)item(minecraft:cooked_rabbit)item(minecraft:cooked_cod)item(minecraft:cooked_salmon)item(minecraft:baked_potato)item(minecraft:dried_kelp))",
+            },
+          },
+        },
+      ],
+    },
+    {
+      id: "2E17C9A40D638BF5",
+      x: 0.0,
+      y: 7.0,
+      dependencies: ["1A62D8E30C745BF9"],
+      min_width: 360,
+      icon: { id: "minecraft:stone_stairs", count: 1 },
+      tasks: [
+        { id: "3F28DAB50E749C16", type: "checkmark" },
+      ],
+    },
+    {
+      id: "4059EBC61F85AD27",
+      x: 2.5,
+      y: 7.0,
+      dependencies: ["2E17C9A40D638BF5"],
+      min_width: 360,
+      icon: { id: "minecraft:torch", count: 1 },
+      tasks: [
+        { id: "516AFC702096BE38", type: "checkmark" },
+      ],
+    },
+    {
+      id: "627B0D8131A7CF49",
+      x: 5.0,
+      y: 7.0,
+      dependencies: ["4059EBC61F85AD27"],
+      min_width: 360,
+      icon: { id: "minecraft:gravel", count: 1 },
+      tasks: [
+        { id: "738C1E9242B8D05A", type: "checkmark" },
+      ],
+    },
+    {
+      id: "14AD2F0353C9E16B",
+      x: 7.5,
+      y: 7.0,
+      dependencies: ["627B0D8131A7CF49"],
+      min_width: 360,
+      icon: { id: "minecraft:water_bucket", count: 1 },
+      tasks: [
+        { id: "25BE301464DAF27C", type: "checkmark" },
+      ],
+    },
+    {
+      id: "36CF412575EB038D",
+      x: 10.0,
+      y: 7.0,
+      dependencies: ["14AD2F0353C9E16B"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:compass", count: 1 },
+      tasks: [
+        { id: "47D0523686FC149E", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "58E16347970D25AF",
+          type: "xp",
+          xp: 10,
+        },
+      ],
+    },
+  ],
+  quest_links: [
+    {
+      id: "62448F9136DEA7C0",
+      linked_quest: "27A9D4E60B835CF1",
+      x: 5.0,
+      y: -3.25,
+      shape: "diamond",
+    },
+  ],
+  images: [],
+}
