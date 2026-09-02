@@ -18,6 +18,13 @@ Status: startup and world creation passed; 0.1.2 translation retest pending.
 - Backed up the previous quest definitions before replacement.
 - Verified all copied quest files by SHA-256.
 - Confirmed the updater did not target the existing world, `options.txt`, screenshots, or resource packs.
-- In-game chapter and title verification remains pending.
+- In-game screenshots confirm that the chapter, quest, and task titles now resolve correctly.
+
+### 2026-09-02 — Beginner feedback for 0.1.3
+
+- The overall quest path is understandable, but the first interaction and crafting steps still required spoken help.
+- Added an explicit controls lesson and illustrated instructions for the default right hand, left-click breaking, automatic pickup, log placement in the 2 × 2 grid, and moving the result into the inventory.
+- A task labelled for eight Cobblestone completed with one item. The root cause is an item-stack `count` value that FTB Quests ignores for task completion; 0.1.3 moves quantities to the task-level field for Cobblestone and Torches and adds regression validation.
+- In-game image rendering and the corrected 1–7/8 Cobblestone threshold remain to be tested.
 
 Record each test with date, Minecraft/NeoForge versions, language, fresh or existing world, confusing moments, technical errors, and the resulting change.

@@ -5,6 +5,7 @@ $ErrorActionPreference = 'Stop'
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $manifestPath = Join-Path $repoRoot 'manifest.json'
 $questRoot = Join-Path $repoRoot 'overrides/config/ftbquests/quests'
+$guidePackRoot = Join-Path $repoRoot 'overrides/resourcepacks/first_torch_guides'
 
 function Assert-True {
     param([bool]$Condition, [string]$Message)
@@ -54,6 +55,26 @@ $hexLikeIds = [regex]::Matches($allDefinitionText, '\bid:\s*"([^":]+)"') |
     ForEach-Object { $_.Groups[1].Value }
 $invalidObjectIds = @($hexLikeIds | Where-Object { $_ -notmatch '^[0-7][0-9A-F]{15}$' })
 Assert-True ($invalidObjectIds.Count -eq 0) ('Invalid FTB Quest object IDs; IDs must fit a positive signed Java long: ' + ($invalidObjectIds -join ', '))
+
+$ignoredItemStackCounts = [regex]::Matches($allDefinitionText, 'item:\s*\{[^}]*\bcount:\s*([2-9][0-9]*)', [System.Text.RegularExpressions.RegexOptions]::Singleline)
+Assert-True ($ignoredItemStackCounts.Count -eq 0) 'Item task quantities above one must use the task-level count field; a count inside item is ignored by FTB Quests.'
+
+$expectedTaskCounts = @{
+    '4B1F79A2D530CE68' = 8
+    '0F53BDE6197402AC' = 8
+}
+foreach ($taskId in $expectedTaskCounts.Keys) {
+    $expectedCount = $expectedTaskCounts[$taskId]
+    $taskPattern = 'id:\s*"' + $taskId + '"[\s\S]{0,180}?type:\s*"item"[\s\S]{0,180}?count:\s*' + $expectedCount + '\s*,[\s\S]{0,180}?item:'
+    Assert-True ([regex]::IsMatch($allDefinitionText, $taskPattern)) "Task $taskId must require $expectedCount items with a task-level count field."
+}
+
+Assert-True (Test-Path -LiteralPath (Join-Path $guidePackRoot 'pack.mcmeta') -PathType Leaf) 'First Torch guide resource pack metadata is missing.'
+foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png')) {
+    $imagePath = Join-Path $guidePackRoot (Join-Path 'assets/firsttorch/textures/questpics' $imageName)
+    Assert-True (Test-Path -LiteralPath $imagePath -PathType Leaf) "Missing quest guide image: $imageName"
+    Assert-True ((Get-Item -LiteralPath $imagePath).Length -gt 0) "Quest guide image is empty: $imageName"
+}
 
 $localeRoot = Join-Path $questRoot 'lang'
 foreach ($relativePath in @('chapter.json5', 'chapters/first_steps.json5')) {

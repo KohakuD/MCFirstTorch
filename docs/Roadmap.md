@@ -28,7 +28,17 @@ The active milestone is **0.1.0 — First Safe Night**. Scope stays intentionall
 - [x] Move IDs outside the signed Java `long` range into FTB Quests' supported range
 - [x] Reject out-of-range IDs during validation
 - [x] Add a backed-up in-place updater for development profiles
-- [ ] Confirm all chapter, quest, and task titles in a fresh 0.1.2 profile
+- [x] Confirm chapter, quest, and task titles in the updated 0.1.2 profile
+
+### 0.1.3 beginner controls and reliable quantities
+
+- [x] Explain right-hand default, attack, use, breaking, pickup, and inventory movement explicitly
+- [x] Add illustrated guides for breaking a log and crafting planks
+- [x] Require eight Cobblestone and eight Torches with FTB Quests' task-level count field
+- [x] Reject ignored item-stack quantities during validation
+- [x] Extend the safe updater to install and enable only the pack-owned guide images
+- [ ] Confirm both illustrations render in the existing profile
+- [ ] Confirm the Cobblestone task stays incomplete at 1–7 and completes at 8
 
 ## 0.2.0 — Becoming Independent
 

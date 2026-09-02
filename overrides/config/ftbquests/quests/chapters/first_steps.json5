@@ -26,6 +26,18 @@
       x: 2.5,
       y: 0.0,
       dependencies: ["12E6801F4CAD3579"],
+      min_width: 360,
+      icon: { id: "minecraft:wooden_sword", count: 1 },
+      tasks: [
+        { id: "6A72C4E819B305FD", type: "checkmark" },
+      ],
+    },
+    {
+      id: "7B83D5F920C4160E",
+      x: 5.0,
+      y: 0.0,
+      dependencies: ["34A8023B6ECF5791"],
+      min_width: 360,
       icon: { id: "minecraft:oak_log", count: 1 },
       tasks: [
         { id: "45B9134C7FDA6802", type: "checkmark" },
@@ -33,9 +45,9 @@
     },
     {
       id: "56CA245D80EB7913",
-      x: 5.0,
+      x: 7.5,
       y: 0.0,
-      dependencies: ["34A8023B6ECF5791"],
+      dependencies: ["7B83D5F920C4160E"],
       icon: { id: "minecraft:crafting_table", count: 1 },
       tasks: [
         {
@@ -47,7 +59,7 @@
     },
     {
       id: "18EC467FA20D9B35",
-      x: 7.5,
+      x: 10.0,
       y: 0.0,
       dependencies: ["56CA245D80EB7913"],
       icon: { id: "minecraft:wooden_pickaxe", count: 1 },
@@ -61,7 +73,7 @@
     },
     {
       id: "3A0E6891C42FBD57",
-      x: 10.0,
+      x: 12.5,
       y: 0.0,
       dependencies: ["18EC467FA20D9B35"],
       icon: { id: "minecraft:cobblestone", count: 8 },
@@ -69,13 +81,14 @@
         {
           id: "4B1F79A2D530CE68",
           type: "item",
-          item: { id: "minecraft:cobblestone", count: 8 },
+          count: 8,
+          item: { id: "minecraft:cobblestone", count: 1 },
         },
       ],
     },
     {
       id: "5C208AB3E641DF79",
-      x: 12.5,
+      x: 15.0,
       y: 0.0,
       dependencies: ["3A0E6891C42FBD57"],
       icon: { id: "minecraft:furnace", count: 1 },
@@ -89,7 +102,7 @@
     },
     {
       id: "7E42ACD50863F19B",
-      x: 15.0,
+      x: 17.5,
       y: 0.0,
       dependencies: ["5C208AB3E641DF79"],
       shape: "hexagon",
@@ -99,13 +112,14 @@
         {
           id: "0F53BDE6197402AC",
           type: "item",
-          item: { id: "minecraft:torch", count: 8 },
+          count: 8,
+          item: { id: "minecraft:torch", count: 1 },
         },
       ],
     },
     {
       id: "1064CEF72A8513BD",
-      x: 17.5,
+      x: 20.0,
       y: -1.25,
       dependencies: ["7E42ACD50863F19B"],
       icon: { id: "minecraft:oak_door", count: 1 },
@@ -115,7 +129,7 @@
     },
     {
       id: "3286E0194CA735DF",
-      x: 17.5,
+      x: 20.0,
       y: 1.25,
       dependencies: ["7E42ACD50863F19B"],
       icon: { id: "minecraft:red_bed", count: 1 },
@@ -125,7 +139,7 @@
     },
     {
       id: "54A8023B6EC957F1",
-      x: 20.0,
+      x: 22.5,
       y: 0.0,
       dependencies: [
         "1064CEF72A8513BD",

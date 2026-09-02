@@ -1,0 +1,2 @@
+resourcePacks:["file/first_torch_guides"]
+incompatibleResourcePacks:[]

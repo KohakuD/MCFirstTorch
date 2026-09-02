@@ -48,14 +48,14 @@ For quest and configuration iterations, close Minecraft and run:
 pwsh ./tools/update-instance.ps1 -InstancePath "D:\Minecraft\curseforge\minecraft\Instances\First Torch"
 ```
 
-The updater has an explicit managed-path allowlist. It backs up the current managed files under `<instance>/.first-torch/backups/<timestamp>/`, replaces only those paths from `overrides/`, verifies every copied file by SHA-256, and records the installed pack version in `<instance>/.first-torch/state.json`.
+The updater has an explicit managed-path allowlist. It backs up the current managed files under `<instance>/.first-torch/backups/<timestamp>/`, replaces only the quest book and the First Torch guide resource pack from `overrides/`, verifies copied trees by SHA-256, and records the installed pack version in `<instance>/.first-torch/state.json`. It adds `file/first_torch_guides` to the existing `resourcePacks` option without removing other packs or changing unrelated settings.
 
 The following stay outside updater ownership:
 
 - `saves/`
-- `options.txt` and key bindings
+- all `options.txt` values except adding the First Torch guide pack to `resourcePacks`
 - `screenshots/`
-- `resourcepacks/`
+- all resource packs except `resourcepacks/first_torch_guides/`
 - logs, caches, and unrelated mod configuration
 
 The updater does not install or remove mod JARs. If `manifest.json` changes its dependency list, update through CurseForge or perform a fresh profile import before applying overrides.

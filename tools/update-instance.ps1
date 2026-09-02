@@ -67,7 +67,8 @@ if ($instanceRoot -eq [System.IO.Path]::GetPathRoot($instanceRoot).TrimEnd('\', 
 
 $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
 $managedPaths = @(
-    'config/ftbquests/quests'
+    'config/ftbquests/quests',
+    'resourcepacks/first_torch_guides'
 )
 $timestamp = Get-Date -Format 'yyyyMMdd-HHmmss'
 $stateRoot = Join-Path $instanceRoot '.first-torch'
@@ -104,6 +105,33 @@ foreach ($relativePath in $managedPaths) {
 }
 
 if ($updatedPaths.Count -gt 0) {
+    $optionsPath = Join-Path $instanceRoot 'options.txt'
+    $resourcePackName = 'file/first_torch_guides'
+    if (Test-Path -LiteralPath $optionsPath -PathType Leaf) {
+        $optionsBackupPath = Join-Path $backupRoot 'options.txt'
+        New-Item -ItemType Directory -Path (Split-Path -Parent $optionsBackupPath) -Force | Out-Null
+        Copy-Item -LiteralPath $optionsPath -Destination $optionsBackupPath -Force
+
+        $optionLines = @(Get-Content -LiteralPath $optionsPath)
+        $resourcePackLine = $optionLines | Where-Object { $_ -match '^resourcePacks:' } | Select-Object -First 1
+        $resourcePacks = @()
+        if ($resourcePackLine) {
+            $resourcePacks = @($resourcePackLine.Substring('resourcePacks:'.Length) | ConvertFrom-Json)
+        }
+        if ($resourcePacks -notcontains $resourcePackName) {
+            $resourcePacks += $resourcePackName
+            $newResourcePackLine = 'resourcePacks:' + (ConvertTo-Json -InputObject ([object[]]$resourcePacks) -Compress)
+            if ($resourcePackLine) {
+                $optionLines = @($optionLines | ForEach-Object {
+                    if ($_ -match '^resourcePacks:') { $newResourcePackLine } else { $_ }
+                })
+            } else {
+                $optionLines += $newResourcePackLine
+            }
+            Set-Content -LiteralPath $optionsPath -Value $optionLines -Encoding utf8
+        }
+    }
+
     New-Item -ItemType Directory -Path $stateRoot -Force | Out-Null
     $state = [ordered]@{
         name = $manifest.name
@@ -122,5 +150,5 @@ if ($updatedPaths.Count -gt 0) {
     Write-Host "Updated First Torch to $($manifest.version) in $instanceRoot"
     Write-Host "Verified $($updatedPaths.Count) managed path(s) by SHA-256."
     Write-Host "Backup: $backupRoot"
-    Write-Host 'Worlds and player settings were not touched.'
+    Write-Host 'Worlds and player settings were preserved; only the First Torch guide resource pack was enabled in options.txt.'
 }

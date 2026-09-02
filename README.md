@@ -8,7 +8,7 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 
 ## Current target
 
-- Pack version: `0.1.2`
+- Pack version: `0.1.3`
 - Minecraft: `26.1.2`
 - NeoForge: `26.1.2.84`
 - Languages: English (`en_us`) and German (`de_de`)
@@ -23,7 +23,7 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 ## Install a development build
 
 1. Run `pwsh ./tools/build-pack.ps1`.
-2. Import `build/First-Torch-0.1.2.zip` into CurseForge, Prism Launcher, or another launcher that supports CurseForge modpack manifests.
+2. Import `build/First-Torch-0.1.3.zip` into CurseForge, Prism Launcher, or another launcher that supports CurseForge modpack manifests.
 3. Create a new world and open FTB Quests from its key binding.
 
 The archive contains no redistributed mod JARs. The launcher downloads dependencies from their official CurseForge entries.
@@ -36,7 +36,7 @@ Close Minecraft, then update only the files owned by First Torch:
 pwsh ./tools/update-instance.ps1 -InstancePath "D:\Minecraft\curseforge\minecraft\Instances\First Torch"
 ```
 
-The updater creates a timestamped backup inside `.first-torch/backups/` in the instance before replacing quest definitions. It does not touch worlds, `options.txt`, key bindings, screenshots, resource packs, or other personal files. Mod dependency changes still require a CurseForge profile update or a fresh import; the development updater is intentionally limited to pack-owned override files.
+The updater creates a timestamped backup inside `.first-torch/backups/` before replacing quest definitions and the pack-owned guide images. Worlds, key bindings, screenshots, and unrelated resource packs remain untouched. It only adds the First Torch guide pack to the existing `resourcePacks` option and preserves all other player settings. Mod dependency changes still require a CurseForge profile update or a fresh import.
 
 ## Project status
 
