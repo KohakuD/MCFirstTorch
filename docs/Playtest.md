@@ -131,3 +131,51 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 
 - The user confirmed that each development increment had been tested in game and that the final quest text, layouts, images, quantities, rewards, navigation, and interactions behaved correctly.
 - The complete 0.2.0 content scope is accepted. Automatic validation and the final release archive build remain mandatory before the release commit.
+
+## 0.3.0
+
+### 2026-09-02 — First Wheat farm implementation
+
+- Added a compact six-quest chapter after the cooked-food reserve: collect three Wheat Seeds, craft a Stone Hoe, prepare watered Farmland, plant Wheat, wait for three mature harvests, and craft Bread.
+- Planting uses the Vanilla `minecraft:husbandry/plant_seed` advancement's `wheat` criterion. Field preparation remains a manual observation because Vanilla exposes no equally precise learner-safe criterion for the intended small watered layout.
+- Two compact recipe images cover the Stone Hoe and Bread. The path explicitly distinguishes short grass from the ground block, warns that Seed drops are random, explains mature golden Wheat, and establishes replanting plus spare-Seed storage as the core renewable-resource habit.
+- Added a 9 × 9 hydration diagram rendered with the original Minecraft 26.1.2 moist-Farmland and tinted Water textures: one central Water source reaches four blocks in each horizontal direction, including diagonals, and can support up to 80 Farmland blocks. The lesson still asks for only three adjacent blocks initially.
+
+### 2026-09-02 — Basic animal care implementation
+
+- Added a six-quest continuation after the first home-grown Bread: craft pen parts, verify a closed pen, choose matching animals and food, lure a pair home, breed it, and protect the renewable breeding pair.
+- The path accepts common wooden Fence and Fence Gate variants and supports Wheat, Wheat Seeds, Carrots, Potatoes, or Beetroot so the learner can use Cows, Sheep, Chickens, or Pigs found nearby.
+- Successful breeding uses the Vanilla `minecraft:husbandry/breed_an_animal` advancement's `bred` criterion. Pen safety, animal placement, and the long-term care routine remain manual observations because they depend on the learner's actual build and choices.
+- The final lesson establishes three non-destructive habits: keep two adults alive, store matching food, and expand the pen before it becomes crowded.
+- Kept the established 1672 × 941 guide style for the Stone Hoe, Bread, Fence, and Fence Gate recipes. Minecraft content uses the targeted game's textures and models; only neutral instructional frames, arrows, counts, and measurements are constructed by First Torch.
+
+### 2026-09-02 — Simple home storage implementation
+
+- Added a five-quest continuation after animal care: prepare three Chests, build distinct storage areas, craft three Signs, label and sort each category, and practise a return-home routine.
+- The categories remain deliberately broad—building materials, food and farming supplies, and equipment—so a beginner can remember them without maintaining a complex item taxonomy.
+- Sign tasks accept every Vanilla wooden Sign through the `minecraft:signs` item tag. Physical placement and sorting remain manual observations because they depend on the learner's home layout.
+- Reuses the already-taught Chest recipe and inventory controls, so no new guide image is needed.
+
+### 2026-09-02 — Sustainable-supplies reward pass
+
+- Removed the unescaped ampersand from the suggested German and English storage labels after it produced an FTB Quests formatting error.
+- Added small, practical milestone rewards across the chapter: three Bone Meal, four Torches, one Lead, three Item Frames, and one Bundle.
+- Kept the existing 5-XP rewards at the Wheat, animal-care, and storage milestones.
+- Added an explicit bilingual Bone Meal usage lesson: right-click young Wheat, recognise the green particles, and expect a random rather than guaranteed full growth increase.
+- Extended the lesson with the one-Bone-to-three-Bone-Meal inventory recipe, a Composter alternative, and a preview of the optional safe mob-drop path planned for 0.4.0.
+
+### 2026-09-02 — Optional Composter sidequest implementation
+
+- Added a three-quest branch from the first planted Wheat: collect seven wooden Slabs, craft a Composter, then fill and empty it successfully.
+- The branch remains optional and does not gate the continuing Wheat, animal-care, or storage lessons.
+- The wooden-Slab task accepts the shared Vanilla item tag. The Composter lesson supplies 32 Wheat Seeds for a robust first experiment and ends with 5 XP.
+- Kept the recipes text-based for now; all visible quest icons use the live target-version Minecraft item models.
+
+## 0.4.0
+
+### 2026-09-02 — First deep Diamond expedition implementation
+
+- Added the bilingual `Mining Deeper` chapter, gated by both the Iron-essentials recap and the sustainable-storage endpoint.
+- The six-quest path covers an expanded supply check, reading and recording coordinates, reaching Deepslate, preparing a lit search tunnel near Y −53, collecting three Diamonds safely, and crafting a Diamond Pickaxe.
+- Added a diamond-shaped navigation link from the sustainable-supplies map. The chapter grants four Bread, eight replacement Torches, 10 total XP, and one Golden Apple without replacing the mining task itself.
+- Recipe guidance remains textual where an exact target-version recipe image has not yet been prepared; all chapter icons use live Minecraft item models.

@@ -1,6 +1,6 @@
 # Roadmap
 
-The completed milestone is **0.2.0 — Becoming Independent**. The current release build is **0.2.0**. Its lessons were reviewed iteratively in game before closure.
+The active milestone is **0.4.0 — Caves, Diamonds, and Enchanting**. Version **0.2.0** is the latest completed and tested release. The 0.3.0 content remains under in-game review, and the current development build is **0.4.0**.
 
 ## 0.1.0 — First Safe Night
 
@@ -176,10 +176,96 @@ The completed milestone is **0.2.0 — Becoming Independent**. The current relea
 - [x] Confirm the three-Wool reward quantity and Bed guide image in game
 - [x] Sleep once and confirm the Bed becomes the player's respawn point
 
+## 0.3.0 — Sustainable Supplies
+
+- [ ] Renewable crops and a dependable food routine
+- [ ] Basic animal care and breeding
+- [ ] Better storage and simple organisation
+- [ ] Renewable materials near home
+
+### First Wheat farm
+
+- [x] Collect three Wheat Seeds from short grass without implying every tuft drops one
+- [x] Craft a Stone Hoe with an exact compact recipe guide
+- [x] Prepare a small watered field beside home and warn against trampling Farmland
+- [x] Illustrate that one central Water block hydrates a 9 × 9 area with up to 80 Farmland blocks
+- [x] Detect planting Wheat automatically through the Vanilla Husbandry advancement
+- [x] Explain growth stages and require three Wheat from mature crops
+- [x] Craft the first home-grown Bread with an exact compact recipe guide
+- [x] Reinforce replanting and keeping spare Seeds as the renewable-resource habit
+- [ ] Confirm the chapter unlocks after the cooked-food reserve
+- [ ] Confirm the three-Seed and three-Wheat quantities in survival mode
+- [ ] Confirm planting completes automatically only after Wheat Seeds are planted
+- [ ] Confirm both recipe images render correctly
+- [ ] Complete the first farm path once in German and inspect it once in English
+
+### Basic animal care
+
+- [x] Require a closed starter pen before any animal is lured home
+- [x] Teach the exact wooden Fence and Fence Gate recipes together
+- [x] Explain matching food for Cows, Sheep, Chickens, and Pigs
+- [x] Allow several common farm-animal choices without requiring a biome-specific species
+- [x] Teach slow, reliable luring and closing the Gate after each animal
+- [x] Detect the first successful breeding automatically through the Vanilla Husbandry advancement
+- [x] Protect the renewable breeding pair and establish a stored-food routine
+- [ ] Confirm mixed wooden Fence types satisfy the 15-Fence task
+- [ ] Confirm a wooden Fence Gate satisfies the Gate task
+- [ ] Confirm the food task accepts each documented food and rejects unrelated items
+- [ ] Confirm breeding completes automatically only after a baby is produced
+- [x] Confirm the combined Fence and Fence Gate recipe image renders correctly
+- [ ] Complete the animal-care path once in German and inspect it once in English
+
+### Simple home storage
+
+- [x] Expand the known Chest recipe into three dedicated storage areas
+- [x] Explain separate Chests and optional Large Chests without forcing one layout
+- [x] Craft three matching Signs and label the storage categories clearly
+- [x] Sort building materials, food and farming supplies, and equipment separately
+- [x] Establish a repeatable unload, refill, and free-inventory-space routine
+- [ ] Confirm the three-Chest quantity in survival mode
+- [ ] Confirm all Vanilla wooden Sign variants satisfy the three-Sign task
+- [ ] Confirm every placed Chest opens with its intended layout
+- [ ] Complete the storage path once in German and inspect it once in English
+
+### Optional Composter sidequest
+
+- [x] Branch from the first planted Wheat without blocking the main farm path
+- [x] Teach crafting seven wooden Slabs and one Composter
+- [x] Accept all Vanilla wooden Slab variants through the shared item tag
+- [x] Provide 32 Wheat Seeds for a robust first composting test without harvesting the young field
+- [x] Explain successful fill feedback, failed fill attempts, maturity, collection, and reuse
+- [x] Reward the completed peaceful Bone Meal loop with 5 XP
+- [ ] Confirm mixed wooden Slabs satisfy the seven-Slab task
+- [ ] Confirm 32 Wheat Seeds plus the learner's ordinary plant leftovers are sufficient in survival play
+- [ ] Complete the sidequest once in German and inspect it once in English
+
+## 0.4.0 — Caves, Diamonds, and Enchanting
+
+### First deep Diamond expedition
+
+- [x] Unlock only after both the Iron essentials and sustainable-storage milestones
+- [x] Require two Iron-or-better Pickaxes, a Water Bucket, a Shield, 32 Torches, and eight cooked foods
+- [x] Teach reading X Y Z coordinates and recording the safe return entrance
+- [x] Reach the Deepslate layer and collect 16 Cobbled Deepslate
+- [x] Explain a practical search depth near Y −53 without promising an immediate find
+- [x] Teach a lit branch tunnel, the existing right-wall Torch rule, and cautious Lava checks
+- [x] Require three Diamonds before crafting the first Diamond Pickaxe
+- [x] Add small supply rewards, 10 total XP, and one Golden Apple for emergencies
+- [x] Add a diamond-shaped chapter link from the sustainable-storage endpoint
+- [ ] Confirm the complete preparation checklist in survival mode
+- [ ] Confirm the chapter remains locked until both prerequisite paths are complete
+- [ ] Confirm Cobbled Deepslate and Diamond quantities complete automatically
+- [ ] Inspect the suggested Y level and safety wording against Minecraft 26.1.2 world generation
+- [ ] Complete the path once in German and inspect it once in English
+
+### Planned 0.4.0 continuations
+
+- [ ] Continue from the Diamond Pickaxe through Obsidian, Books, Lapis Lazuli, and the Enchanting Table
+- [ ] Add an optional safe mob-drop branch covering common hostile-mob drops, including Bones and their Bone Meal use
+- [ ] Connect the hostile-mob branch back to the existing peaceful Composter route
+
 ## Later milestones
 
-- `0.3.0`: farms, animals, storage, and sustainable resources
-- `0.4.0`: caves, diamonds, enchanting, and preparation
 - `0.5.0`: Nether preparation and first Nether trip
 - CurseForge publication: native pack-version display and launcher-managed updates
 

@@ -1,0 +1,172 @@
+{
+  id: "6B3D9F215E8C4A70",
+  group: "",
+  order_index: 5,
+  icon: { id: "minecraft:diamond_pickaxe", count: 1 },
+  filename: "deep_mining",
+  default_quest_shape: "circle",
+  default_hide_dependency_lines: false,
+  quests: [
+    {
+      id: "1C4EA0627FB38D59",
+      x: 0.0,
+      y: 0.0,
+      dependencies: [
+        "6D91380C6EA4B2F5",
+        "3F215C6E03ABD479",
+      ],
+      min_width: 360,
+      icon: { id: "minecraft:iron_pickaxe", count: 1 },
+      tasks: [
+        {
+          id: "2D5FB17380C49E6A",
+          type: "item",
+          count: 2,
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "or(item(minecraft:iron_pickaxe)item(minecraft:diamond_pickaxe)item(minecraft:netherite_pickaxe))",
+            },
+          },
+        },
+        {
+          id: "3E60C28491D5AF7B",
+          type: "item",
+          item: { id: "minecraft:water_bucket", count: 1 },
+        },
+        {
+          id: "4F71D395A2E6B08C",
+          type: "item",
+          item: { id: "minecraft:shield", count: 1 },
+        },
+        {
+          id: "5082E4A6B3F7C19D",
+          type: "item",
+          count: 32,
+          item: { id: "minecraft:torch", count: 1 },
+        },
+        {
+          id: "6193F5B7C408D2AE",
+          type: "item",
+          count: 8,
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "or(item(minecraft:cooked_beef)item(minecraft:cooked_porkchop)item(minecraft:cooked_chicken)item(minecraft:cooked_mutton)item(minecraft:cooked_rabbit)item(minecraft:cooked_cod)item(minecraft:cooked_salmon)item(minecraft:baked_potato)item(minecraft:dried_kelp))",
+            },
+          },
+        },
+      ],
+      rewards: [
+        {
+          id: "4A8C26E0D3F715B9",
+          type: "item",
+          count: 4,
+          item: { id: "minecraft:bread", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "72A406C8D519E3BF",
+      x: 2.5,
+      y: 0.0,
+      dependencies: ["1C4EA0627FB38D59"],
+      min_width: 360,
+      icon: { id: "minecraft:compass", count: 1 },
+      tasks: [
+        { id: "03B517D9E62AF4C0", type: "checkmark" },
+      ],
+    },
+    {
+      id: "14C628EAF73B05D1",
+      x: 5.0,
+      y: 0.0,
+      dependencies: ["72A406C8D519E3BF"],
+      min_width: 360,
+      icon: { id: "minecraft:cobbled_deepslate", count: 1 },
+      tasks: [
+        {
+          id: "25D739FB084C16E2",
+          type: "item",
+          count: 16,
+          item: { id: "minecraft:cobbled_deepslate", count: 1 },
+        },
+      ],
+      rewards: [
+        {
+          id: "5B9D37F1E40826CA",
+          type: "item",
+          count: 8,
+          item: { id: "minecraft:torch", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "36E840AC195D27F3",
+      x: 7.5,
+      y: 0.0,
+      dependencies: ["14C628EAF73B05D1"],
+      min_width: 360,
+      icon: { id: "minecraft:deepslate_diamond_ore", count: 1 },
+      tasks: [
+        { id: "47F951BD2A6E3804", type: "checkmark" },
+      ],
+    },
+    {
+      id: "580A62CE3B7F4915",
+      x: 7.5,
+      y: 2.5,
+      dependencies: ["36E840AC195D27F3"],
+      min_width: 360,
+      icon: { id: "minecraft:diamond", count: 1 },
+      tasks: [
+        {
+          id: "691B73DF4C805A26",
+          type: "item",
+          count: 3,
+          item: { id: "minecraft:diamond", count: 1 },
+        },
+      ],
+      rewards: [
+        {
+          id: "6CAE4802F51937DB",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+    {
+      id: "7A2C84E05D916B37",
+      x: 5.0,
+      y: 2.5,
+      dependencies: ["580A62CE3B7F4915"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:diamond_pickaxe", count: 1 },
+      tasks: [
+        {
+          id: "0B3D95F16EA27C48",
+          type: "item",
+          item: { id: "minecraft:diamond_pickaxe", count: 1 },
+        },
+      ],
+      rewards: [
+        {
+          id: "7DBF5913062A48EC",
+          type: "item",
+          item: { id: "minecraft:golden_apple", count: 1 },
+        },
+        {
+          id: "0EC06A24173B59FD",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+  ],
+  quest_links: [],
+  images: [],
+}

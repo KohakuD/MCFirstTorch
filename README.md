@@ -8,22 +8,22 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 
 ## Current target
 
-- Pack version: `0.2.0`
+- Pack version: `0.4.0`
 - Minecraft: `26.1.2`
 - NeoForge: `26.1.2.84`
 - Languages: English (`en_us`) and German (`de_de`)
-- Current milestone: food, health, protection, and safe early exploration
+- Current milestone: deeper caves, Diamonds, and preparation for enchanting
 
 ## Included foundation
 
 - FTB Quests, FTB Library, FTB Teams, and the official FTB item-tag filter modules
-- Four bilingual chapters covering the first safe night, independent food/protection/mining routines, essential Iron equipment, and finding the way home
+- Six bilingual chapters covering the first safe night, independent survival routines, essential Iron equipment, finding the way home, sustainable supplies, and the first deep Diamond expedition
 - Reproducible CurseForge manifest with pinned dependency file IDs
 
 ## Install a development build
 
 1. Run `pwsh ./tools/build-pack.ps1`.
-2. Import `build/First-Torch-0.2.0.zip` into CurseForge, Prism Launcher, or another launcher that supports CurseForge modpack manifests.
+2. Import `build/First-Torch-0.4.0.zip` into CurseForge, Prism Launcher, or another launcher that supports CurseForge modpack manifests.
 3. Create a new world and open FTB Quests from its key binding.
 
 The archive contains no redistributed mod JARs. The launcher downloads dependencies from their official CurseForge entries.
@@ -40,7 +40,7 @@ The updater creates a timestamped backup inside `.first-torch/backups/` before r
 
 ## Project status
 
-Version 0.2.0 has passed its iterative in-game beginner review. The detailed scope, acceptance record, and next milestones live in [docs/Roadmap.md](docs/Roadmap.md).
+Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 sustainable-supplies content has been implemented and remains under in-game review; development of 0.4.0 has begun with the first deep Diamond expedition. The detailed scope and acceptance record live in [docs/Roadmap.md](docs/Roadmap.md).
 
 ## Licence and trademarks
 

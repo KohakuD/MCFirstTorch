@@ -1,0 +1,411 @@
+{
+  id: "5D91A7C30E624BF8",
+  group: "",
+  order_index: 4,
+  icon: { id: "minecraft:wheat", count: 1 },
+  filename: "sustainable_supplies",
+  default_quest_shape: "circle",
+  default_hide_dependency_lines: false,
+  quests: [
+    {
+      id: "0C42E8A51D739BF6",
+      x: 0.0,
+      y: 0.0,
+      dependencies: ["6C03B5E98A417DF2"],
+      min_width: 360,
+      icon: { id: "minecraft:wheat_seeds", count: 1 },
+      tasks: [
+        {
+          id: "1D53F9B62E84AC07",
+          type: "item",
+          count: 3,
+          item: { id: "minecraft:wheat_seeds", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "2E640AC73F95BD18",
+      x: 2.5,
+      y: 0.0,
+      dependencies: ["0C42E8A51D739BF6"],
+      min_width: 360,
+      icon: { id: "minecraft:stone_hoe", count: 1 },
+      tasks: [
+        {
+          id: "3F751BD840A6CE29",
+          type: "item",
+          item: { id: "minecraft:stone_hoe", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "40862CE951B7DF3A",
+      x: 5.0,
+      y: 0.0,
+      dependencies: ["2E640AC73F95BD18"],
+      min_width: 360,
+      icon: { id: "minecraft:farmland", count: 1 },
+      tasks: [
+        { id: "51973DFA62C8E04B", type: "checkmark" },
+      ],
+    },
+    {
+      id: "62A84E0B73D9F15C",
+      x: 7.5,
+      y: 0.0,
+      dependencies: ["40862CE951B7DF3A"],
+      min_width: 360,
+      icon: { id: "minecraft:wheat_seeds", count: 1 },
+      tasks: [
+        {
+          id: "73B95F1C84EA026D",
+          type: "advancement",
+          advancement: "minecraft:husbandry/plant_seed",
+          criterion: "wheat",
+        },
+      ],
+      rewards: [
+        {
+          id: "16AB73C90D4E258F",
+          type: "item",
+          count: 3,
+          item: { id: "minecraft:bone_meal", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "04CA602D95FB137E",
+      x: 7.5,
+      y: 2.5,
+      dependencies: ["62A84E0B73D9F15C"],
+      min_width: 360,
+      icon: { id: "minecraft:wheat", count: 1 },
+      tasks: [
+        {
+          id: "15DB713EA60C248F",
+          type: "item",
+          count: 3,
+          item: { id: "minecraft:wheat", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "1AC06B2E9537D4F8",
+      x: 10.0,
+      y: 0.0,
+      dependencies: ["62A84E0B73D9F15C"],
+      min_width: 360,
+      icon: { id: "minecraft:oak_slab", count: 1 },
+      tasks: [
+        {
+          id: "2BD17C3FA648E509",
+          type: "item",
+          count: 7,
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:wooden_slabs)",
+            },
+          },
+        },
+      ],
+    },
+    {
+      id: "3CE28D40B759F61A",
+      x: 12.5,
+      y: 0.0,
+      dependencies: ["1AC06B2E9537D4F8"],
+      min_width: 360,
+      icon: { id: "minecraft:composter", count: 1 },
+      tasks: [
+        {
+          id: "4DF39E51C86A072B",
+          type: "item",
+          item: { id: "minecraft:composter", count: 1 },
+        },
+      ],
+      rewards: [
+        {
+          id: "0137D2950CAE4B6F",
+          type: "item",
+          count: 32,
+          item: { id: "minecraft:wheat_seeds", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "5E04AF62D97B183C",
+      x: 12.5,
+      y: 2.5,
+      dependencies: ["3CE28D40B759F61A"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:bone_meal", count: 1 },
+      tasks: [
+        { id: "6F15B073EA8C294D", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "7026C184FB9D3A5E",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+    {
+      id: "26EC824FB71D3590",
+      x: 5.0,
+      y: 2.5,
+      dependencies: ["04CA602D95FB137E"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:bread", count: 1 },
+      tasks: [
+        {
+          id: "37FD9350C82E46A1",
+          type: "item",
+          item: { id: "minecraft:bread", count: 1 },
+        },
+      ],
+      rewards: [
+        {
+          id: "480EA461D93F57B2",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+    {
+      id: "174BD2A608E35C91",
+      x: 2.5,
+      y: 2.5,
+      dependencies: ["26EC824FB71D3590"],
+      min_width: 360,
+      icon: { id: "minecraft:oak_fence", count: 1 },
+      tasks: [
+        {
+          id: "285CE3B719F46DA2",
+          type: "item",
+          count: 15,
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:wooden_fences)",
+            },
+          },
+        },
+        {
+          id: "396DF4C82A057EB3",
+          type: "item",
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:fence_gates)",
+            },
+          },
+        },
+      ],
+    },
+    {
+      id: "4A7E05D93B168FC4",
+      x: 0.0,
+      y: 2.5,
+      dependencies: ["174BD2A608E35C91"],
+      min_width: 360,
+      icon: { id: "minecraft:oak_fence_gate", count: 1 },
+      tasks: [
+        { id: "5B8F16EA4C2790D5", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "27BC84DA1E5F3690",
+          type: "item",
+          count: 4,
+          item: { id: "minecraft:torch", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "6C9027FB5D38A1E6",
+      x: 0.0,
+      y: 5.0,
+      dependencies: ["4A7E05D93B168FC4"],
+      min_width: 360,
+      icon: { id: "minecraft:wheat", count: 1 },
+      tasks: [
+        {
+          id: "7DA1380C6E49B2F7",
+          type: "item",
+          count: 2,
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "or(item(minecraft:wheat)item(minecraft:wheat_seeds)item(minecraft:carrot)item(minecraft:potato)item(minecraft:beetroot))",
+            },
+          },
+        },
+      ],
+    },
+    {
+      id: "0EB2491D7F5AC308",
+      x: 2.5,
+      y: 5.0,
+      dependencies: ["6C9027FB5D38A1E6"],
+      min_width: 360,
+      icon: { id: "minecraft:cow_spawn_egg", count: 1 },
+      tasks: [
+        { id: "1FC35A2E806BD419", type: "checkmark" },
+      ],
+    },
+    {
+      id: "20D46B3F917CE52A",
+      x: 5.0,
+      y: 5.0,
+      dependencies: ["0EB2491D7F5AC308"],
+      min_width: 360,
+      icon: { id: "minecraft:wheat", count: 1 },
+      tasks: [
+        {
+          id: "31E57C40A28DF63B",
+          type: "advancement",
+          advancement: "minecraft:husbandry/breed_an_animal",
+          criterion: "bred",
+        },
+      ],
+    },
+    {
+      id: "42F68D51B39E074C",
+      x: 7.5,
+      y: 5.0,
+      dependencies: ["20D46B3F917CE52A"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:hay_block", count: 1 },
+      tasks: [
+        { id: "53079E62C4AF185D", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "38CD95EB2F6047A1",
+          type: "item",
+          item: { id: "minecraft:lead", count: 1 },
+        },
+        {
+          id: "6418AF73D5B0296E",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+    {
+      id: "6519B084E62C3A7D",
+      x: 7.5,
+      y: 7.5,
+      dependencies: ["42F68D51B39E074C"],
+      min_width: 360,
+      icon: { id: "minecraft:chest", count: 1 },
+      tasks: [
+        {
+          id: "762AC195F73D4B8E",
+          type: "item",
+          count: 3,
+          item: { id: "minecraft:chest", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "073BD2A6084E5C9F",
+      x: 5.0,
+      y: 7.5,
+      dependencies: ["6519B084E62C3A7D"],
+      min_width: 360,
+      icon: { id: "minecraft:chest", count: 1 },
+      tasks: [
+        { id: "184CE3B7195F6DA0", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "49DEA6FC307158B2",
+          type: "item",
+          count: 3,
+          item: { id: "minecraft:item_frame", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "295DF4C82A607EB1",
+      x: 2.5,
+      y: 7.5,
+      dependencies: ["073BD2A6084E5C9F"],
+      min_width: 360,
+      icon: { id: "minecraft:oak_sign", count: 1 },
+      tasks: [
+        {
+          id: "3A6E05D93B718FC2",
+          type: "item",
+          count: 3,
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "ftbfiltersystem:item_tag(minecraft:signs)",
+            },
+          },
+        },
+      ],
+    },
+    {
+      id: "4B7F16EA4C8290D3",
+      x: 0.0,
+      y: 7.5,
+      dependencies: ["295DF4C82A607EB1"],
+      min_width: 360,
+      icon: { id: "minecraft:oak_sign", count: 1 },
+      tasks: [
+        { id: "5C8027FB5D93A1E4", type: "checkmark" },
+      ],
+    },
+    {
+      id: "6D91380C6EA4B2F5",
+      x: 0.0,
+      y: 10.0,
+      dependencies: ["4B7F16EA4C8290D3"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:bundle", count: 1 },
+      tasks: [
+        { id: "7EA2491D7FB5C306", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "5AEFB70D418269C3",
+          type: "item",
+          item: { id: "minecraft:bundle", count: 1 },
+        },
+        {
+          id: "0FB35A2E806CD417",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+  ],
+  quest_links: [
+    {
+      id: "3F7B15D9C2E604A8",
+      linked_quest: "1C4EA0627FB38D59",
+      x: 2.5,
+      y: 10.0,
+      shape: "diamond",
+    },
+  ],
+  images: [],
+}

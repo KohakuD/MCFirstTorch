@@ -31,6 +31,10 @@ Each player-facing change must update both:
 
 Run the validator to catch missing keys.
 
+## Guide artwork
+
+When a guide image depicts a Minecraft item, block, entity, or interface, render it from the exact textures and models shipped with the targeted Minecraft version. Do not approximate or generatively redraw game content. Constructed frames, arrows, measurements, and other explanatory overlays are allowed around those original assets.
+
 ## Reward design
 
 Beginner rewards are fixed, small, and explained before the first claim. They may provide a safety buffer or celebrate a milestone, but must not complete or bypass a later lesson. Prefer small amounts of exact XP points when an item reward would be too powerful; do not grant whole XP levels for routine lessons. Avoid random loot, powerful equipment, and unexplained currencies. Manual claiming remains enabled so the quest book can teach the reward interaction explicitly.
