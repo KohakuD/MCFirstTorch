@@ -84,9 +84,17 @@ $expectedItemRewards = @{
 }
 foreach ($rewardId in $expectedItemRewards.Keys) {
     $reward = $expectedItemRewards[$rewardId]
-    $rewardPattern = 'id:\s*"' + $rewardId + '"[\s\S]{0,180}?type:\s*"item"[\s\S]{0,180}?item:\s*\{\s*id:\s*"' + [regex]::Escape($reward.Item) + '"\s*,\s*count:\s*' + $reward.Count + '\s*\}'
+    $rewardPattern = 'id:\s*"' + $rewardId + '"[\s\S]{0,180}?type:\s*"item"'
+    if ($reward.Count -gt 1) {
+        $rewardPattern += '[\s\S]{0,100}?count:\s*' + $reward.Count + '\s*,'
+    }
+    $rewardPattern += '[\s\S]{0,180}?item:\s*\{\s*id:\s*"' + [regex]::Escape($reward.Item) + '"\s*,\s*count:\s*1\s*\}'
     Assert-True ([regex]::IsMatch($allDefinitionText, $rewardPattern)) "Reward $rewardId must grant $($reward.Count) $($reward.Item)."
 }
+
+$rewardArrayText = ([regex]::Matches($allDefinitionText, 'rewards:\s*\[(?<body>[\s\S]*?)\]\s*,') | ForEach-Object { $_.Groups['body'].Value }) -join "`n"
+$ignoredRewardStackCounts = [regex]::Matches($rewardArrayText, 'item:\s*\{[^}]*\bcount:\s*([2-9][0-9]*)', [System.Text.RegularExpressions.RegexOptions]::Singleline)
+Assert-True ($ignoredRewardStackCounts.Count -eq 0) 'Item reward quantities above one must use the reward-level count field; a count inside item is ignored by FTB Quests.'
 
 $packMetadataPath = Join-Path $guidePackRoot 'pack.mcmeta'
 Assert-True (Test-Path -LiteralPath $packMetadataPath -PathType Leaf) 'First Torch guide resource pack metadata is missing.'

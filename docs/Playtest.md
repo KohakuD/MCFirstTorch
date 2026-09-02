@@ -48,4 +48,11 @@ Status: startup and world creation passed; 0.1.2 translation retest pending.
 - Added three Bread after the safe morning as a bridge into the food chapter and one Lantern as a visible chapter trophy.
 - Kept manual reward claiming enabled so the interaction is learned explicitly. In-game display and single-claim behaviour remain to be tested.
 
+### 2026-09-02 — Reward quantity diagnosis for 0.1.7
+
+- In-game claims granted one Apple and one Bread despite larger configured item stacks.
+- Inspection of FTB Quests 26.1.2.7's `ItemReward` implementation confirmed that reward quantity is read from the reward-level `count` field. The item stack itself is normalised to one.
+- Moved all multi-item quantities to the supported field and added a regression check for the ignored form.
+- Existing claimed-reward state is intentionally preserved; the corrected quantities require an unclaimed reward or a fresh test world for verification.
+
 Record each test with date, Minecraft/NeoForge versions, language, fresh or existing world, confusing moments, technical errors, and the resulting change.

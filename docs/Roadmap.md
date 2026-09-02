@@ -1,6 +1,6 @@
 # Roadmap
 
-The active milestone is **0.1.x — First Safe Night**. The current development build is **0.1.6**. Scope stays intentionally small until the complete path has passed an in-game beginner test.
+The active milestone is **0.1.x — First Safe Night**. The current development build is **0.1.7**. Scope stays intentionally small until the complete path has passed an in-game beginner test.
 
 ## 0.1.0 — First Safe Night
 
@@ -65,6 +65,13 @@ The active milestone is **0.1.x — First Safe Night**. The current development 
 - [x] Give one Lantern as the First Torch completion trophy
 - [x] Validate exact reward items, quantities, and stable reward IDs
 - [ ] Confirm all four rewards display and can be claimed exactly once in game
+
+### 0.1.7 reward quantity fix
+
+- [x] Move Apple and Bread quantities to FTB Quests' reward-level `count` field
+- [x] Keep the displayed item stack at one, as required by the 26.1 item reward format
+- [x] Reject ignored quantities inside reward item stacks during validation
+- [ ] Confirm a fresh claim grants 2 Apples, 2 Apples, 3 Bread, and 1 Lantern
 
 ## 0.2.0 — Becoming Independent
 
