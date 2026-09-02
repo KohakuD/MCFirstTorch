@@ -48,6 +48,7 @@
       x: 7.5,
       y: 0.0,
       dependencies: ["7B83D5F920C4160E"],
+      min_width: 360,
       icon: { id: "minecraft:crafting_table", count: 1 },
       tasks: [
         {
@@ -62,6 +63,7 @@
       x: 10.0,
       y: 0.0,
       dependencies: ["56CA245D80EB7913"],
+      min_width: 360,
       icon: { id: "minecraft:wooden_pickaxe", count: 1 },
       tasks: [
         {
@@ -91,6 +93,7 @@
       x: 15.0,
       y: 0.0,
       dependencies: ["3A0E6891C42FBD57"],
+      min_width: 360,
       icon: { id: "minecraft:furnace", count: 1 },
       tasks: [
         {
@@ -107,6 +110,7 @@
       dependencies: ["5C208AB3E641DF79"],
       shape: "hexagon",
       size: 1.5,
+      min_width: 360,
       icon: { id: "minecraft:torch", count: 8 },
       tasks: [
         {

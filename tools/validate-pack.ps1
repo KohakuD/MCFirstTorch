@@ -69,8 +69,12 @@ foreach ($taskId in $expectedTaskCounts.Keys) {
     Assert-True ([regex]::IsMatch($allDefinitionText, $taskPattern)) "Task $taskId must require $expectedCount items with a task-level count field."
 }
 
-Assert-True (Test-Path -LiteralPath (Join-Path $guidePackRoot 'pack.mcmeta') -PathType Leaf) 'First Torch guide resource pack metadata is missing.'
-foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png')) {
+$packMetadataPath = Join-Path $guidePackRoot 'pack.mcmeta'
+Assert-True (Test-Path -LiteralPath $packMetadataPath -PathType Leaf) 'First Torch guide resource pack metadata is missing.'
+$packMetadata = Get-Content -LiteralPath $packMetadataPath -Raw | ConvertFrom-Json
+Assert-True ($packMetadata.pack.min_format[0] -eq 84 -and $packMetadata.pack.min_format[1] -eq 0) 'Guide resource pack min_format must be [84, 0] for Minecraft 26.1.2.'
+Assert-True ($packMetadata.pack.max_format[0] -eq 84 -and $packMetadata.pack.max_format[1] -eq 0) 'Guide resource pack max_format must be [84, 0] for Minecraft 26.1.2.'
+foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png', 'place_crafting_table.png', 'wooden_pickaxe.png', 'furnace.png', 'charcoal.png')) {
     $imagePath = Join-Path $guidePackRoot (Join-Path 'assets/firsttorch/textures/questpics' $imageName)
     Assert-True (Test-Path -LiteralPath $imagePath -PathType Leaf) "Missing quest guide image: $imageName"
     Assert-True ((Get-Item -LiteralPath $imagePath).Length -gt 0) "Quest guide image is empty: $imageName"

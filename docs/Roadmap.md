@@ -40,6 +40,14 @@ The active milestone is **0.1.0 — First Safe Night**. Scope stays intentionall
 - [ ] Confirm both illustrations render in the existing profile
 - [ ] Confirm the Cobblestone task stays incomplete at 1–7 and completes at 8
 
+### 0.1.4 illustrated crafting sequence
+
+- [x] Fix the guide resource-pack metadata for Minecraft 26.1.2's version-pair format
+- [x] Add illustrations for placing the Crafting Table, crafting a Wooden Pickaxe, crafting a Furnace, and making Charcoal
+- [x] Show the stick recipe in the Crafting Table's 3 × 3 grid
+- [x] Explain stone collection explicitly as the same interaction loop as collecting wood, with the pickaxe as the key difference
+- [ ] Confirm all six illustrations render in the existing profile
+
 ## 0.2.0 — Becoming Independent
 
 - [ ] Hunger, food sources, and safe cooking

@@ -27,4 +27,11 @@ Status: startup and world creation passed; 0.1.2 translation retest pending.
 - A task labelled for eight Cobblestone completed with one item. The root cause is an item-stack `count` value that FTB Quests ignores for task completion; 0.1.3 moves quantities to the task-level field for Cobblestone and Torches and adds regression validation.
 - In-game image rendering and the corrected 1–7/8 Cobblestone threshold remain to be tested.
 
+### 2026-09-02 — Image loading diagnosis for 0.1.4
+
+- Both guide images rendered as the pink-and-black missing-texture pattern.
+- `latest.log` confirmed that Minecraft removed `file/first_torch_guides` as incompatible before resource loading.
+- The installed client's `version.json` reports resource format 84.0. Modern packs require `min_format` and `max_format` version pairs; the guide pack incorrectly used only the legacy `pack_format` field.
+- Updated the metadata to `[84, 0]`, added a regression check, and expanded the illustrated sequence through Crafting Table placement, Wooden Pickaxe, Furnace, and Charcoal.
+
 Record each test with date, Minecraft/NeoForge versions, language, fresh or existing world, confusing moments, technical errors, and the resulting change.
