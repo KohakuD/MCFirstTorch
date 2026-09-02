@@ -9,11 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
       - name: Validate First Torch
         shell: pwsh
         run: ./tools/validate-pack.ps1
       - name: Build import archive
         shell: pwsh
         run: ./tools/build-pack.ps1
-
