@@ -1,0 +1,145 @@
+{
+  id: "A1F57C0E3B9D2468",
+  group: "",
+  order_index: 0,
+  icon: {
+    id: "minecraft:torch",
+    count: 1,
+  },
+  filename: "first_steps",
+  default_quest_shape: "circle",
+  default_hide_dependency_lines: false,
+  quests: [
+    {
+      id: "B2E6801F4CAD3579",
+      x: 0.0,
+      y: 0.0,
+      shape: "gear",
+      size: 1.5,
+      icon: { id: "ftbquests:book", count: 1 },
+      tasks: [
+        { id: "C3F7912A5DBE4680", type: "checkmark" },
+      ],
+    },
+    {
+      id: "D4A8023B6ECF5791",
+      x: 2.5,
+      y: 0.0,
+      dependencies: ["B2E6801F4CAD3579"],
+      icon: { id: "minecraft:oak_log", count: 1 },
+      tasks: [
+        { id: "E5B9134C7FDA6802", type: "checkmark" },
+      ],
+    },
+    {
+      id: "F6CA245D80EB7913",
+      x: 5.0,
+      y: 0.0,
+      dependencies: ["D4A8023B6ECF5791"],
+      icon: { id: "minecraft:crafting_table", count: 1 },
+      tasks: [
+        {
+          id: "07DB356E91FC8A24",
+          type: "item",
+          item: { id: "minecraft:crafting_table", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "18EC467FA20D9B35",
+      x: 7.5,
+      y: 0.0,
+      dependencies: ["F6CA245D80EB7913"],
+      icon: { id: "minecraft:wooden_pickaxe", count: 1 },
+      tasks: [
+        {
+          id: "29FD5780B31EAC46",
+          type: "item",
+          item: { id: "minecraft:wooden_pickaxe", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "3A0E6891C42FBD57",
+      x: 10.0,
+      y: 0.0,
+      dependencies: ["18EC467FA20D9B35"],
+      icon: { id: "minecraft:cobblestone", count: 8 },
+      tasks: [
+        {
+          id: "4B1F79A2D530CE68",
+          type: "item",
+          item: { id: "minecraft:cobblestone", count: 8 },
+        },
+      ],
+    },
+    {
+      id: "5C208AB3E641DF79",
+      x: 12.5,
+      y: 0.0,
+      dependencies: ["3A0E6891C42FBD57"],
+      icon: { id: "minecraft:furnace", count: 1 },
+      tasks: [
+        {
+          id: "6D319BC4F752E08A",
+          type: "item",
+          item: { id: "minecraft:furnace", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "7E42ACD50863F19B",
+      x: 15.0,
+      y: 0.0,
+      dependencies: ["5C208AB3E641DF79"],
+      shape: "hexagon",
+      size: 1.5,
+      icon: { id: "minecraft:torch", count: 8 },
+      tasks: [
+        {
+          id: "8F53BDE6197402AC",
+          type: "item",
+          item: { id: "minecraft:torch", count: 8 },
+        },
+      ],
+    },
+    {
+      id: "9064CEF72A8513BD",
+      x: 17.5,
+      y: -1.25,
+      dependencies: ["7E42ACD50863F19B"],
+      icon: { id: "minecraft:oak_door", count: 1 },
+      tasks: [
+        { id: "A175DF083B9624CE", type: "checkmark" },
+      ],
+    },
+    {
+      id: "B286E0194CA735DF",
+      x: 17.5,
+      y: 1.25,
+      dependencies: ["7E42ACD50863F19B"],
+      icon: { id: "minecraft:red_bed", count: 1 },
+      tasks: [
+        { id: "C397F12A5DB846E0", type: "checkmark" },
+      ],
+    },
+    {
+      id: "D4A8023B6EC957F1",
+      x: 20.0,
+      y: 0.0,
+      dependencies: [
+        "9064CEF72A8513BD",
+        "B286E0194CA735DF",
+      ],
+      shape: "hexagon",
+      size: 1.5,
+      icon: { id: "minecraft:sunflower", count: 1 },
+      tasks: [
+        { id: "E5B9134C7FDA6803", type: "checkmark" },
+      ],
+    },
+  ],
+  quest_links: [],
+  images: [],
+}
+

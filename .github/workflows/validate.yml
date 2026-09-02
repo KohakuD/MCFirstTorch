@@ -1,0 +1,19 @@
+name: Validate pack
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Validate First Torch
+        shell: pwsh
+        run: ./tools/validate-pack.ps1
+      - name: Build import archive
+        shell: pwsh
+        run: ./tools/build-pack.ps1
+

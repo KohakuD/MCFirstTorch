@@ -1,0 +1,118 @@
+{
+  "quest.B2E6801F4CAD3579.title": "Willkommen bei First Torch",
+  "quest.B2E6801F4CAD3579.quest_subtitle": "Deine ruhige Begleitung durch Minecraft",
+  "quest.B2E6801F4CAD3579.quest_desc": [
+    "Willkommen! Dieses Questbuch erklärt Minecraft in kleinen Schritten. Du musst dir nicht alles auf einmal merken.",
+    "",
+    "Jede Quest erklärt das Ziel, warum es wichtig ist und die genauen Schritte. Manche Aufgaben werden automatisch abgeschlossen, sobald der Gegenstand in deinem Inventar liegt. Bei einem Häkchen entscheidest du selbst, wann du den Schritt ausprobiert oder verstanden hast.",
+    "",
+    "Du kannst alles in deinem Tempo erkunden. Wenn du etwas bereits kennst, lies kurz den Sicherheitshinweis und gehe weiter.",
+  ],
+  "task.C3F7912A5DBE4680.title": "Ich bin bereit anzufangen",
+
+  "quest.D4A8023B6ECF5791.title": "Finde einen Baum",
+  "quest.D4A8023B6ECF5791.quest_subtitle": "Holz beginnt fast jedes frühe Rezept",
+  "quest.D4A8023B6ECF5791.quest_desc": [
+    "Ziel: Sammle mindestens einen Stamm von einem beliebigen Baum.",
+    "",
+    "Gehe zu einem Baum, ziele auf den Stamm und halte die Angriffstaste gedrückt, bis der Block zerbricht. Gehe nahe an den heruntergefallenen Stamm, um ihn aufzuheben.",
+    "",
+    "Öffne dein Inventar und verarbeite den Stamm zu Brettern. Ein Stamm ergibt vier Bretter.",
+    "",
+    "Häufiges Problem: Ein kurzer Klick beschädigt den Block nur. Halte die Taste gedrückt, bis er zerbricht. Setze das Häkchen, sobald du Bretter hergestellt hast.",
+  ],
+  "task.E5B9134C7FDA6802.title": "Ich habe Holzbretter hergestellt",
+
+  "quest.F6CA245D80EB7913.title": "Eine richtige Werkbank",
+  "quest.F6CA245D80EB7913.quest_subtitle": "Schalte das vollständige 3 × 3-Raster frei",
+  "quest.F6CA245D80EB7913.quest_desc": [
+    "Ziel: Stelle eine Werkbank her.",
+    "",
+    "Öffne dein Inventar. Lege in jedes der vier Felder des kleinen 2 × 2-Herstellungsrasters ein Holzbrett. Nimm die Werkbank aus dem Ergebnisfeld.",
+    "",
+    "Platziere sie mit der Benutzen-Taste auf dem Boden und benutze sie, um ein 3 × 3-Raster zu öffnen. Bewahre eine Werkbank in oder bei deinem Unterschlupf auf.",
+  ],
+  "task.07DB356E91FC8A24.title": "Besitze eine Werkbank",
+
+  "quest.18EC467FA20D9B35.title": "Deine erste Spitzhacke",
+  "quest.18EC467FA20D9B35.quest_subtitle": "Das richtige Werkzeug für Stein",
+  "quest.18EC467FA20D9B35.quest_desc": [
+    "Ziel: Stelle eine Holzspitzhacke her.",
+    "",
+    "Stelle zuerst Stöcke her: Lege zwei Bretter senkrecht übereinander. Lege an der Werkbank drei Bretter in die oberste Reihe und je einen Stock in die Mitte der beiden Reihen darunter.",
+    "",
+    "Eine Spitzhacke baut Stein und Erz ab. Mit dem falschen Werkzeug dauert es sehr lange und der Block lässt möglicherweise nichts fallen.",
+  ],
+  "task.29FD5780B31EAC46.title": "Besitze eine Holzspitzhacke",
+
+  "quest.3A0E6891C42FBD57.title": "Steinzeit",
+  "quest.3A0E6891C42FBD57.quest_subtitle": "Sammle acht Bruchstein",
+  "quest.3A0E6891C42FBD57.quest_desc": [
+    "Ziel: Baue mit deiner Holzspitzhacke mindestens acht Bruchstein ab.",
+    "",
+    "Suche an einem Hang nach offenem grauem Stein oder grabe eine kurze Treppe nach unten. Grabe niemals gerade unter dir: Du könntest in eine Höhle, Lava oder ein tiefes Loch fallen.",
+    "",
+    "Behalte einen freien Weg zurück zum Tageslicht. Acht Bruchstein reichen für den nächsten wichtigen Block.",
+  ],
+  "task.4B1F79A2D530CE68.title": "Halte 8 Bruchstein im Inventar",
+
+  "quest.5C208AB3E641DF79.title": "Baue einen Ofen",
+  "quest.5C208AB3E641DF79.quest_subtitle": "Koche Nahrung und verarbeite Erz",
+  "quest.5C208AB3E641DF79.quest_desc": [
+    "Ziel: Stelle einen Ofen her.",
+    "",
+    "Lege an der Werkbank Bruchstein in alle acht äusseren Felder und lasse die Mitte frei.",
+    "",
+    "In das obere Feld des Ofens kommt, was du kochen oder schmelzen möchtest. In das untere Feld kommt Brennstoff. Bretter und Stämme funktionieren, Kohle und Holzkohle halten aber länger.",
+  ],
+  "task.6D319BC4F752E08A.title": "Besitze einen Ofen",
+
+  "quest.7E42ACD50863F19B.title": "First Torch",
+  "quest.7E42ACD50863F19B.quest_subtitle": "Licht macht einen Ort sicherer und leichter auffindbar",
+  "quest.7E42ACD50863F19B.quest_desc": [
+    "Ziel: Stelle mindestens acht Fackeln her.",
+    "",
+    "Eine Fackel wird aus einer Kohle oder Holzkohle über einem Stock hergestellt. Jedes Paar ergibt vier Fackeln.",
+    "",
+    "Noch keine Kohle? Lege einen Stamm in das obere Feld eines Ofens und benutze Bretter oder einen weiteren Stamm als Brennstoff im unteren Feld. Das Ergebnis ist Holzkohle.",
+    "",
+    "Platziere Fackeln in deinem Unterschlupf, um den Eingang herum und entlang von Wegen, die du wiederfinden möchtest.",
+  ],
+  "task.8F53BDE6197402AC.title": "Halte 8 Fackeln im Inventar",
+
+  "quest.9064CEF72A8513BD.title": "Ein sicherer Unterschlupf",
+  "quest.9064CEF72A8513BD.quest_subtitle": "Wände, Dach, Licht und ein verschliessbarer Eingang",
+  "quest.9064CEF72A8513BD.quest_desc": [
+    "Ziel: Bereite vor der Nacht einen kleinen Unterschlupf vor.",
+    "",
+    "Er braucht feste Wände, ein Dach, genügend Platz zum Stehen, Licht im Inneren und einen Eingang, den du mit einer Tür oder Blöcken verschliessen kannst.",
+    "",
+    "Lasse auf Bodenhöhe keine offenen Lücken. Zombies und Skelette können durch einen schlechten Eingang angreifen, und Spinnen können Wände hochklettern.",
+    "",
+    "Setze das Häkchen, wenn du drinnen stehen, den Eingang schliessen und alles gut sehen kannst.",
+  ],
+  "task.A175DF083B9624CE.title": "Mein Unterschlupf ist geschlossen und beleuchtet",
+
+  "quest.B286E0194CA735DF.title": "Ein Bett, wenn möglich",
+  "quest.B286E0194CA735DF.quest_subtitle": "Überspringe die Nacht und setze deinen Rückkehrpunkt",
+  "quest.B286E0194CA735DF.quest_desc": [
+    "Ein Bett besteht aus drei Wolle in einer Reihe und drei Holzbrettern direkt darunter. Jede Wollfarbe funktioniert.",
+    "",
+    "Benutze nachts ein platziertes Bett, um zu schlafen. Dadurch setzt du auch deinen Rückkehrpunkt: Nach dem Tod erscheinst du dort, solange das Bett noch erreichbar ist.",
+    "",
+    "Keine Schafe in der Nähe? Das ist in Ordnung. Bleibe in deinem beleuchteten Unterschlupf und warte auf den Morgen. Setze das Häkchen, wenn du ein Bett hast oder den sicheren Warteplan verstanden hast.",
+  ],
+  "task.C397F12A5DB846E0.title": "Ich habe ein Bett oder einen sicheren Warteplan",
+
+  "quest.D4A8023B6EC957F1.title": "Der Morgen ist da",
+  "quest.D4A8023B6EC957F1.quest_subtitle": "Deine erste Überlebensroutine ist vollständig",
+  "quest.D4A8023B6EC957F1.quest_desc": [
+    "Du kennst nun den ersten Überlebensablauf: Holz sammeln, einfache Werkzeuge herstellen, Stein beschaffen, einen Ofen und Fackeln bauen und danach einen Unterschlupf sichern.",
+    "",
+    "Nimm am Morgen Nahrung, Ersatzblöcke, Werkzeuge und Fackeln mit. Merke dir, wo dein Unterschlupf steht. Vermeide Kämpfe gegen Gruppen von Monstern, die draussen noch verbrennen.",
+    "",
+    "Setze das Häkchen, wenn du einen sicheren Morgen erreicht hast. Das nächste Kapitel erklärt Nahrung, Gesundheit, Bergbau und die Ausrüstung, mit der du selbstständiger wirst.",
+  ],
+  "task.E5B9134C7FDA6803.title": "Ich habe einen sicheren Morgen erreicht",
+}
+

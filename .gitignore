@@ -1,0 +1,13 @@
+.cache/
+build/
+.idea/
+.vscode/
+*.log
+*.jar
+run/
+saves/
+world/
+crash-reports/
+logs/
+overrides/config/ftbquests/quests/progress/
+

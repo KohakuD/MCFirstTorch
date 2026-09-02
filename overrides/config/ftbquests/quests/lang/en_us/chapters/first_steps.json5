@@ -1,0 +1,118 @@
+{
+  "quest.B2E6801F4CAD3579.title": "Welcome to First Torch",
+  "quest.B2E6801F4CAD3579.quest_subtitle": "Your calm guide through Minecraft",
+  "quest.B2E6801F4CAD3579.quest_desc": [
+    "Welcome! This quest book teaches Minecraft in small steps. You do not need to remember everything at once.",
+    "",
+    "Each quest explains the goal, why it matters, and the exact steps. Some tasks complete automatically when the item is in your inventory. A checkmark means that you decide when you have tried or understood the step.",
+    "",
+    "You can explore at your own pace. If you already know something, read the safety note and continue.",
+  ],
+  "task.C3F7912A5DBE4680.title": "I am ready to begin",
+
+  "quest.D4A8023B6ECF5791.title": "Find a Tree",
+  "quest.D4A8023B6ECF5791.quest_subtitle": "Wood starts almost every early recipe",
+  "quest.D4A8023B6ECF5791.quest_desc": [
+    "Goal: collect at least one log from any tree.",
+    "",
+    "Walk up to a tree, aim at the trunk, and hold the attack button until the block breaks. Move close to the dropped log to pick it up.",
+    "",
+    "Open your inventory and turn the log into planks. One log makes four planks.",
+    "",
+    "Common problem: clicking briefly only damages the block. Keep holding until it breaks. Mark this quest when you have made planks.",
+  ],
+  "task.E5B9134C7FDA6802.title": "I made wooden planks",
+
+  "quest.F6CA245D80EB7913.title": "A Proper Workbench",
+  "quest.F6CA245D80EB7913.quest_subtitle": "Unlock the full 3 × 3 crafting grid",
+  "quest.F6CA245D80EB7913.quest_desc": [
+    "Goal: craft a Crafting Table.",
+    "",
+    "Open your inventory. Place one wooden plank in each of the four spaces of the small 2 × 2 crafting grid. Take the Crafting Table from the result slot.",
+    "",
+    "Place it on the ground with the use button, then use it to open a 3 × 3 crafting grid. Keep one in or near your shelter.",
+  ],
+  "task.07DB356E91FC8A24.title": "Obtain a Crafting Table",
+
+  "quest.18EC467FA20D9B35.title": "Your First Pickaxe",
+  "quest.18EC467FA20D9B35.quest_subtitle": "The correct tool for stone",
+  "quest.18EC467FA20D9B35.quest_desc": [
+    "Goal: craft a Wooden Pickaxe.",
+    "",
+    "First craft sticks: place two planks vertically in the crafting grid. At the Crafting Table, put three planks across the top row and one stick in the centre of each of the two rows below.",
+    "",
+    "A pickaxe mines stone and ore. Using the wrong tool can be very slow and may destroy the drop.",
+  ],
+  "task.29FD5780B31EAC46.title": "Obtain a Wooden Pickaxe",
+
+  "quest.3A0E6891C42FBD57.title": "Stone Age",
+  "quest.3A0E6891C42FBD57.quest_subtitle": "Collect eight Cobblestone",
+  "quest.3A0E6891C42FBD57.quest_desc": [
+    "Goal: mine at least eight Cobblestone with your Wooden Pickaxe.",
+    "",
+    "Look for exposed grey stone on a hillside, or dig a short staircase down. Never dig straight down: you could fall into a cave, lava, or a deep hole.",
+    "",
+    "Keep a clear route back to daylight. Eight Cobblestone is enough for the next essential block.",
+  ],
+  "task.4B1F79A2D530CE68.title": "Hold 8 Cobblestone",
+
+  "quest.5C208AB3E641DF79.title": "Build a Furnace",
+  "quest.5C208AB3E641DF79.quest_subtitle": "Cook food and process ore",
+  "quest.5C208AB3E641DF79.quest_desc": [
+    "Goal: craft a Furnace.",
+    "",
+    "At the Crafting Table, place Cobblestone in all eight outside spaces and leave the centre empty.",
+    "",
+    "The top furnace slot holds what you want to cook or smelt. The bottom slot holds fuel. Planks and logs work, but coal and charcoal last longer.",
+  ],
+  "task.6D319BC4F752E08A.title": "Obtain a Furnace",
+
+  "quest.7E42ACD50863F19B.title": "First Torch",
+  "quest.7E42ACD50863F19B.quest_subtitle": "Light makes a place safer and easier to find",
+  "quest.7E42ACD50863F19B.quest_desc": [
+    "Goal: make at least eight Torches.",
+    "",
+    "A torch is crafted from one coal or charcoal above one stick. Each pair makes four torches.",
+    "",
+    "No coal yet? Put a log in the top slot of a Furnace and use planks or another log as fuel in the bottom slot. The result is charcoal.",
+    "",
+    "Place torches inside your shelter, around the entrance, and along paths you want to find again.",
+  ],
+  "task.8F53BDE6197402AC.title": "Hold 8 Torches",
+
+  "quest.9064CEF72A8513BD.title": "A Safe Shelter",
+  "quest.9064CEF72A8513BD.quest_subtitle": "Walls, roof, light, and a closable entrance",
+  "quest.9064CEF72A8513BD.quest_desc": [
+    "Goal: prepare a small shelter before night.",
+    "",
+    "It needs solid walls, a roof, enough room to stand, light inside, and an entrance you can close with a door or blocks.",
+    "",
+    "Do not leave open gaps at ground level. Zombies and skeletons can attack through a bad entrance, and spiders can climb walls.",
+    "",
+    "Mark this quest when you can stand inside, close the entrance, and see clearly.",
+  ],
+  "task.A175DF083B9624CE.title": "My shelter is enclosed and lit",
+
+  "quest.B286E0194CA735DF.title": "A Bed, If Possible",
+  "quest.B286E0194CA735DF.quest_subtitle": "Skip the night and set your respawn point",
+  "quest.B286E0194CA735DF.quest_desc": [
+    "A bed is made from three wool across one row and three wooden planks directly below. Any wool colour works.",
+    "",
+    "Use a placed bed at night to sleep. Using it also sets your respawn point, so you return there after dying while the bed remains accessible.",
+    "",
+    "No sheep nearby? That is okay. Stay in your lit shelter and wait for daylight. Mark this quest when you have a bed or understand the safe waiting plan.",
+  ],
+  "task.C397F12A5DB846E0.title": "I have a bed or a safe waiting plan",
+
+  "quest.D4A8023B6EC957F1.title": "Morning Has Arrived",
+  "quest.D4A8023B6EC957F1.quest_subtitle": "Your first survival routine is complete",
+  "quest.D4A8023B6EC957F1.quest_desc": [
+    "You now know the first survival loop: collect wood, craft basic tools, gather stone, make a furnace and torches, then secure a shelter.",
+    "",
+    "Before leaving in the morning, take food, spare blocks, tools, and torches. Remember where your shelter is. Avoid fighting groups of monsters that are still burning outside.",
+    "",
+    "Mark this quest after you have reached a safe morning. The next chapter will teach food, health, mining, and the equipment that makes you more independent.",
+  ],
+  "task.E5B9134C7FDA6803.title": "I reached a safe morning",
+}
+
