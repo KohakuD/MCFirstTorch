@@ -179,3 +179,13 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 - The six-quest path covers an expanded supply check, reading and recording coordinates, reaching Deepslate, preparing a lit search tunnel near Y −53, collecting three Diamonds safely, and crafting a Diamond Pickaxe.
 - Added a diamond-shaped navigation link from the sustainable-supplies map. The chapter grants four Bread, eight replacement Torches, 10 total XP, and one Golden Apple without replacing the mining task itself.
 - Recipe guidance remains textual where an exact target-version recipe image has not yet been prepared; all chapter icons use live Minecraft item models.
+
+### 2026-09-02 — First enchanting loop implementation
+
+- Extended `Mining Deeper` with three parallel branches after the Diamond Pickaxe: safely create four Obsidian, grow and preserve Sugar Cane for a Book, and collect three Lapis Lazuli.
+- The Sugar Cane milestone grants one Leather so this lesson does not ask the learner to kill a protected breeding animal. The three branches rejoin at the Enchanting Table recipe.
+- The final task uses the verified Minecraft 26.1.2 `minecraft:story/enchant_item` advancement and its `enchanted_item` criterion.
+- Added 25 XP points across the preparation milestones, plus three replacement Lapis Lazuli after the first successful enchantment.
+- The initial iteration used text-only recipe guidance while keeping all visible icons on Minecraft's live target-version item models.
+- Added compact 1672 × 941 guides for Paper and Book crafting, the Enchanting Table recipe, and the Enchanting Table interface. Minecraft content comes from the installed 26.1.2 assets or its in-game rendered model; only instructional frames, arrows, and numbered highlights are constructed.
+- Added Cows and Horses as common Leather sources, while explicitly protecting the learner's final breeding pair and supplying the first Leather as a non-destructive bridge reward.

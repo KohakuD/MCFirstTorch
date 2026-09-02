@@ -260,7 +260,20 @@ The active milestone is **0.4.0 — Caves, Diamonds, and Enchanting**. Version *
 
 ### Planned 0.4.0 continuations
 
-- [ ] Continue from the Diamond Pickaxe through Obsidian, Books, Lapis Lazuli, and the Enchanting Table
+- [x] Continue from the Diamond Pickaxe through Obsidian, Books, Lapis Lazuli, and the Enchanting Table
+- [x] Split Obsidian, renewable Sugar Cane and Books, and Lapis Lazuli into parallel preparation paths
+- [x] Provide one Leather so the first Book never requires killing a protected breeding animal
+- [x] Rejoin all three material paths before crafting the Enchanting Table
+- [x] Detect the first successful enchantment with the exact Vanilla advancement criterion
+- [x] Explain level requirements separately from the one-to-three levels and Lapis actually consumed
+- [x] Add compact recipe guides for Paper and a Book, the Enchanting Table, and its original target-version interface
+- [x] Explain Cows and Horses as common Leather sources while preserving the final breeding pair
+- [x] Reward the preparation and first enchantment with practical materials and 25 total XP points
+- [ ] Confirm Water converts Lava sources to Obsidian and flowing Lava to Cobblestone as described
+- [ ] Confirm the Sugar Cane, Obsidian, Lapis Lazuli, Book, and Enchanting Table item tasks in survival mode
+- [ ] Confirm the first enchantment completes automatically only after an item is enchanted
+- [ ] Inspect the complete three-way branch in German and English
+- [ ] Add the Bookshelf expansion and explain the one-block air gap, 15-shelf maximum, and level-30 offers
 - [ ] Add an optional safe mob-drop branch covering common hostile-mob drops, including Bones and their Bone Meal use
 - [ ] Connect the hostile-mob branch back to the existing peaceful Composter route
 

@@ -166,6 +166,147 @@
         },
       ],
     },
+    {
+      id: "1D5FB17380C49E6A",
+      x: 2.5,
+      y: 5.0,
+      dependencies: ["7A2C84E05D916B37"],
+      min_width: 360,
+      icon: { id: "minecraft:obsidian", count: 1 },
+      tasks: [
+        {
+          id: "2E60C28491D5AF7B",
+          type: "item",
+          count: 4,
+          item: { id: "minecraft:obsidian", count: 1 },
+        },
+      ],
+      rewards: [
+        {
+          id: "3F71D395A2E6B08C",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+    {
+      id: "4082E4A6B3F7C19D",
+      x: 5.0,
+      y: 5.0,
+      dependencies: ["7A2C84E05D916B37"],
+      min_width: 360,
+      icon: { id: "minecraft:sugar_cane", count: 1 },
+      tasks: [
+        {
+          id: "5193F5B7C408D2AE",
+          type: "item",
+          count: 3,
+          item: { id: "minecraft:sugar_cane", count: 1 },
+        },
+      ],
+      rewards: [
+        {
+          id: "62A406C8D519E3BF",
+          type: "item",
+          item: { id: "minecraft:leather", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "73B517D9E62AF4C0",
+      x: 5.0,
+      y: 7.5,
+      dependencies: ["4082E4A6B3F7C19D"],
+      min_width: 360,
+      icon: { id: "minecraft:book", count: 1 },
+      tasks: [
+        {
+          id: "04C628EAF73B05D1",
+          type: "item",
+          item: { id: "minecraft:book", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "15D739FB084C16E2",
+      x: 7.5,
+      y: 5.0,
+      dependencies: ["7A2C84E05D916B37"],
+      min_width: 360,
+      icon: { id: "minecraft:lapis_lazuli", count: 1 },
+      tasks: [
+        {
+          id: "26E840AC195D27F3",
+          type: "item",
+          count: 3,
+          item: { id: "minecraft:lapis_lazuli", count: 1 },
+        },
+      ],
+      rewards: [
+        {
+          id: "37F951BD2A6E3804",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+    {
+      id: "480A62CE3B7F4915",
+      x: 5.0,
+      y: 10.0,
+      dependencies: [
+        "1D5FB17380C49E6A",
+        "73B517D9E62AF4C0",
+        "15D739FB084C16E2",
+      ],
+      min_width: 360,
+      icon: { id: "minecraft:enchanting_table", count: 1 },
+      tasks: [
+        {
+          id: "591B73DF4C805A26",
+          type: "item",
+          item: { id: "minecraft:enchanting_table", count: 1 },
+        },
+      ],
+      rewards: [
+        {
+          id: "2E60C82491D5AF7B",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+    {
+      id: "6A2C84E05D916B37",
+      x: 5.0,
+      y: 12.5,
+      dependencies: ["480A62CE3B7F4915"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:enchanted_book", count: 1 },
+      tasks: [
+        {
+          id: "7B3D95F16EA27C48",
+          type: "advancement",
+          advancement: "minecraft:story/enchant_item",
+          criterion: "enchanted_item",
+        },
+      ],
+      rewards: [
+        {
+          id: "0C4EA6027FB38D59",
+          type: "item",
+          count: 3,
+          item: { id: "minecraft:lapis_lazuli", count: 1 },
+        },
+        {
+          id: "1D5FB71380C49E6A",
+          type: "xp",
+          xp: 10,
+        },
+      ],
+    },
   ],
   quest_links: [],
   images: [],

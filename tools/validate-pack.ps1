@@ -88,6 +88,9 @@ $expectedTaskCounts = @{
     '6193F5B7C408D2AE' = 8
     '25D739FB084C16E2' = 16
     '691B73DF4C805A26' = 3
+    '2E60C28491D5AF7B' = 4
+    '5193F5B7C408D2AE' = 3
+    '26E840AC195D27F3' = 3
 }
 foreach ($taskId in $expectedTaskCounts.Keys) {
     $expectedCount = $expectedTaskCounts[$taskId]
@@ -122,6 +125,8 @@ $plantWheatPattern = 'id:\s*"73B95F1C84EA026D"[\s\S]{0,250}?type:\s*"advancement
 Assert-True ([regex]::IsMatch($allDefinitionText, $plantWheatPattern)) 'Planting Wheat must be detected through the Vanilla Wheat criterion.'
 $breedAnimalPattern = 'id:\s*"31E57C40A28DF63B"[\s\S]{0,250}?type:\s*"advancement"[\s\S]{0,250}?advancement:\s*"minecraft:husbandry/breed_an_animal"[\s\S]{0,150}?criterion:\s*"bred"'
 Assert-True ([regex]::IsMatch($allDefinitionText, $breedAnimalPattern)) 'Breeding must be detected through the Vanilla bred-animal criterion.'
+$firstEnchantmentPattern = 'id:\s*"7B3D95F16EA27C48"[\s\S]{0,250}?type:\s*"advancement"[\s\S]{0,250}?advancement:\s*"minecraft:story/enchant_item"[\s\S]{0,150}?criterion:\s*"enchanted_item"'
+Assert-True ([regex]::IsMatch($allDefinitionText, $firstEnchantmentPattern)) 'The first enchantment must use the exact Vanilla enchanted-item criterion.'
 $woodenFencePattern = 'id:\s*"285CE3B719F46DA2"[\s\S]{0,400}?ftbfiltersystem:item_tag\(minecraft:wooden_fences\)'
 Assert-True ([regex]::IsMatch($allDefinitionText, $woodenFencePattern)) 'The pen task must accept the Vanilla wooden Fences item tag.'
 $fenceGatePattern = 'id:\s*"396DF4C82A057EB3"[\s\S]{0,400}?ftbfiltersystem:item_tag\(minecraft:fence_gates\)'
@@ -148,6 +153,8 @@ $expectedSingleItemTasks = @{
     '3E60C28491D5AF7B' = 'minecraft:water_bucket'
     '4F71D395A2E6B08C' = 'minecraft:shield'
     '0B3D95F16EA27C48' = 'minecraft:diamond_pickaxe'
+    '04C628EAF73B05D1' = 'minecraft:book'
+    '591B73DF4C805A26' = 'minecraft:enchanting_table'
 }
 foreach ($taskId in $expectedSingleItemTasks.Keys) {
     $itemId = $expectedSingleItemTasks[$taskId]
@@ -191,6 +198,8 @@ $deepMiningUnlockPattern = 'id:\s*"1C4EA0627FB38D59"[\s\S]{0,220}?dependencies:\
 Assert-True ([regex]::IsMatch($allDefinitionText, $deepMiningUnlockPattern)) 'Deep Mining must require both sustainable storage and Iron Essentials.'
 $deepMiningLinkPattern = 'id:\s*"3F7B15D9C2E604A8"[\s\S]{0,180}?linked_quest:\s*"1C4EA0627FB38D59"[\s\S]{0,180}?shape:\s*"diamond"'
 Assert-True ([regex]::IsMatch($allDefinitionText, $deepMiningLinkPattern)) 'Sustainable Supplies must show a diamond-shaped link to Deep Mining.'
+$enchantingJoinPattern = 'id:\s*"480A62CE3B7F4915"[\s\S]{0,260}?dependencies:\s*\[[\s\S]{0,100}?"1D5FB17380C49E6A"[\s\S]{0,100}?"73B517D9E62AF4C0"[\s\S]{0,100}?"15D739FB084C16E2"'
+Assert-True ([regex]::IsMatch($allDefinitionText, $enchantingJoinPattern)) 'The Enchanting Table must wait for the Obsidian, Book, and Lapis paths.'
 
 $becomingChapterText = Get-Content -LiteralPath (Join-Path $questRoot 'chapters/becoming_independent.json5') -Raw
 $becomingXValues = @([regex]::Matches($becomingChapterText, '(?m)^\s+x:\s*(-?[0-9]+(?:\.[0-9]+)?)\s*,') | ForEach-Object { [double]$_.Groups[1].Value })
@@ -218,6 +227,8 @@ $expectedItemRewards = @{
     '4A8C26E0D3F715B9' = @{ Item = 'minecraft:bread'; Count = 4 }
     '5B9D37F1E40826CA' = @{ Item = 'minecraft:torch'; Count = 8 }
     '7DBF5913062A48EC' = @{ Item = 'minecraft:golden_apple'; Count = 1 }
+    '62A406C8D519E3BF' = @{ Item = 'minecraft:leather'; Count = 1 }
+    '0C4EA6027FB38D59' = @{ Item = 'minecraft:lapis_lazuli'; Count = 3 }
 }
 foreach ($rewardId in $expectedItemRewards.Keys) {
     $reward = $expectedItemRewards[$rewardId]
@@ -243,6 +254,10 @@ $expectedXpRewards = @{
     '7026C184FB9D3A5E' = 5
     '6CAE4802F51937DB' = 5
     '0EC06A24173B59FD' = 5
+    '3F71D395A2E6B08C' = 5
+    '37F951BD2A6E3804' = 5
+    '2E60C82491D5AF7B' = 5
+    '1D5FB71380C49E6A' = 10
 }
 foreach ($rewardId in $expectedXpRewards.Keys) {
     $xp = $expectedXpRewards[$rewardId]
@@ -259,10 +274,15 @@ Assert-True (Test-Path -LiteralPath $packMetadataPath -PathType Leaf) 'First Tor
 $packMetadata = Get-Content -LiteralPath $packMetadataPath -Raw | ConvertFrom-Json
 Assert-True ($packMetadata.pack.min_format[0] -eq 84 -and $packMetadata.pack.min_format[1] -eq 0) 'Guide resource pack min_format must be [84, 0] for Minecraft 26.1.2.'
 Assert-True ($packMetadata.pack.max_format[0] -eq 84 -and $packMetadata.pack.max_format[1] -eq 0) 'Guide resource pack max_format must be [84, 0] for Minecraft 26.1.2.'
-foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png', 'place_crafting_table.png', 'wooden_pickaxe.png', 'furnace.png', 'chest.png', 'charcoal.png', 'bed.png', 'hunger_and_eating.png', 'cooking_food.png', 'stone_pickaxe.png', 'shield.png', 'armour_recipes.png', 'safe_staircase.png', 'torch_route.png', 'iron_pickaxe.png', 'bucket.png', 'stonecutter.png', 'lodestone.png', 'stone_hoe.png', 'bread.png', 'farmland_9x9.png', 'fence_and_gate.png')) {
+foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png', 'place_crafting_table.png', 'wooden_pickaxe.png', 'furnace.png', 'chest.png', 'charcoal.png', 'bed.png', 'hunger_and_eating.png', 'cooking_food.png', 'stone_pickaxe.png', 'shield.png', 'armour_recipes.png', 'safe_staircase.png', 'torch_route.png', 'iron_pickaxe.png', 'bucket.png', 'stonecutter.png', 'lodestone.png', 'stone_hoe.png', 'bread.png', 'farmland_9x9.png', 'fence_and_gate.png', 'paper_and_book.png', 'enchanting_table_recipe.png', 'enchanting_interface.png')) {
     $imagePath = Join-Path $guidePackRoot (Join-Path 'assets/firsttorch/textures/questpics' $imageName)
     Assert-True (Test-Path -LiteralPath $imagePath -PathType Leaf) "Missing quest guide image: $imageName"
     Assert-True ((Get-Item -LiteralPath $imagePath).Length -gt 0) "Quest guide image is empty: $imageName"
+}
+$deepMiningLanguageText = ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter 'deep_mining.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n")
+foreach ($imageName in @('paper_and_book.png', 'enchanting_table_recipe.png', 'enchanting_interface.png')) {
+    $referenceCount = [regex]::Matches($deepMiningLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
+    Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each Deep Mining language file."
 }
 $armourImageReferences = [regex]::Matches($allDefinitionText + "`n" + ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"), 'firsttorch:textures/questpics/armour_recipes\.png')
 Assert-True ($armourImageReferences.Count -eq 2) 'The compact Armour recipe overview must be referenced once in each language.'
