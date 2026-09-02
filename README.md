@@ -8,7 +8,7 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 
 ## Current target
 
-- Pack version: `0.1.0`
+- Pack version: `0.1.1`
 - Minecraft: `26.1.2`
 - NeoForge: `26.1.2.84`
 - Languages: English (`en_us`) and German (`de_de`)
@@ -16,15 +16,14 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 
 ## Included foundation
 
-- FTB Quests, Library, Teams, and XMod Compat
-- KubeJS and Rhino for later custom detection where configuration is insufficient
+- FTB Quests, FTB Library, and FTB Teams
 - A bilingual starter chapter with ten small, ordered lessons
 - Reproducible CurseForge manifest with pinned dependency file IDs
 
 ## Install a development build
 
 1. Run `pwsh ./tools/build-pack.ps1`.
-2. Import `build/First-Torch-0.1.0.zip` into CurseForge, Prism Launcher, or another launcher that supports CurseForge modpack manifests.
+2. Import `build/First-Torch-0.1.1.zip` into CurseForge, Prism Launcher, or another launcher that supports CurseForge modpack manifests.
 3. Create a new world and open FTB Quests from its key binding.
 
 The archive contains no redistributed mod JARs. The launcher downloads dependencies from their official CurseForge entries.
@@ -36,4 +35,3 @@ The repository scaffold and the first playable learning path are ready for an in
 ## Licence and trademarks
 
 First Torch source content is available under the MIT License; see [LICENSE](LICENSE). Minecraft is a trademark of Microsoft. This project is not affiliated with Mojang Studios, Microsoft, FTB, CurseForge, or NeoForged.
-

@@ -30,10 +30,10 @@ The active milestone in `docs/Roadmap.md` controls scope and versioning.
 - Minecraft: `26.1.2`
 - Loader: NeoForge `26.1.2.84`
 - Quest system: FTB Quests `26.1.2.7`
-- Scripting: KubeJS `26.1.2-8.0.4`
 - FTB Quests 26.1+ uses JSON5. Do not add or restore legacy SNBT quest definitions.
 - Mod JARs, launcher instances, worlds, logs, and player progress never belong in Git.
 - Prefer configuration and quest content over custom Java code. Add KubeJS only when FTB Quests cannot express the behaviour cleanly.
+- KubeJS is intentionally absent from the 0.1.x pack because its Better Advanced Tooltips dependency crashes during NeoForge startup. Reintroduce scripting only after its complete dependency chain passes a clean-profile startup test.
 
 ## Workflow and verification
 
@@ -50,4 +50,3 @@ The active milestone in `docs/Roadmap.md` controls scope and versioning.
 - Never commit generated files under `build/`.
 - Release archives must contain only `manifest.json` and `overrides/` at their root.
 - Pin dependency file IDs for reproducible builds; version updates are deliberate changes with a validation pass.
-

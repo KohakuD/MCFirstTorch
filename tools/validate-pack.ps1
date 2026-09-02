@@ -25,9 +25,6 @@ $expectedFiles = @{
     '289412' = 8730542
     '404465' = 8574542
     '404468' = 8074003
-    '889915' = 8678090
-    '238086' = 8495199
-    '416294' = 8463898
 }
 Assert-True ($manifest.files.Count -eq $expectedFiles.Count) 'The pinned dependency count changed unexpectedly.'
 foreach ($file in $manifest.files) {

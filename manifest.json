@@ -11,7 +11,7 @@
   "manifestType": "minecraftModpack",
   "manifestVersion": 1,
   "name": "First Torch",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "KohakuD",
   "files": [
     {
@@ -28,23 +28,7 @@
       "projectID": 404468,
       "fileID": 8074003,
       "required": true
-    },
-    {
-      "projectID": 889915,
-      "fileID": 8678090,
-      "required": true
-    },
-    {
-      "projectID": 238086,
-      "fileID": 8495199,
-      "required": true
-    },
-    {
-      "projectID": 416294,
-      "fileID": 8463898,
-      "required": true
     }
   ],
   "overrides": "overrides"
 }
-

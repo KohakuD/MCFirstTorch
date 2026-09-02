@@ -15,6 +15,12 @@ The active milestone is **0.1.0 — First Safe Night**. Scope stays intentionall
 - [ ] Beginner playtest and wording adjustments
 - [ ] First public release archive
 
+### 0.1.1 startup fix
+
+- [x] Remove unused KubeJS integration after its Better Advanced Tooltips dependency crashed during startup
+- [x] Rebuild the minimal pack with only the required FTB quest stack
+- [ ] Confirm a clean CurseForge profile reaches the Minecraft title screen
+
 ## 0.2.0 — Becoming Independent
 
 - [ ] Hunger, food sources, and safe cooking
@@ -31,4 +37,3 @@ The active milestone is **0.1.0 — First Safe Night**. Scope stays intentionall
 - `0.5.0`: Nether preparation and first Nether trip
 
 No Nether content is required for the first 48-hour playable build.
-

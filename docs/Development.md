@@ -2,7 +2,9 @@
 
 ## Baseline
 
-First Torch targets Minecraft 26.1.2 on NeoForge 26.1.2.84. The minimum loader is set by the current KubeJS dependency. Dependency versions and CurseForge file IDs are pinned in `manifest.json`.
+First Torch targets Minecraft 26.1.2 on NeoForge 26.1.2.84. Dependency versions and CurseForge file IDs are pinned in `manifest.json`.
+
+The 0.1.x line deliberately uses only FTB Quests, FTB Library, and FTB Teams. KubeJS was removed after its required Better Advanced Tooltips dependency caused a startup Mixin failure. Add scripting only when the curriculum requires it and the full dependency chain has passed a clean-profile startup test.
 
 FTB Quests 26.1+ stores quest definitions and translations as JSON5. Legacy `.snbt` examples are not valid guidance for this project.
 
@@ -10,7 +12,6 @@ FTB Quests 26.1+ stores quest definitions and translations as JSON5. Legacy `.sn
 
 - `manifest.json`: CurseForge pack metadata and dependency pins
 - `overrides/config/ftbquests/quests/`: version-controlled quest book
-- `overrides/kubejs/`: reserved for custom detection and integration scripts
 - `docs/`: curriculum, development rules, and roadmap
 - `tools/`: local and CI validation/build scripts
 - `build/`: generated import archives; ignored by Git
@@ -43,13 +44,12 @@ The build creates `build/First-Torch-<version>.zip`. Import the archive into a c
 
 Use a fresh launcher profile and a new survival world.
 
-1. Confirm Minecraft and NeoForge start with all six dependencies.
+1. Confirm Minecraft and NeoForge start with all three dependencies.
 2. Open the quest book and confirm the `First Steps` chapter appears.
 3. Complete the path once in English and inspect it once in German.
 4. Verify automatic item tasks complete with the listed vanilla items.
 5. Confirm manual checkmarks clearly describe something the player must judge.
 6. Exit and reopen the world to confirm progress persists.
-7. Check `latest.log` for errors from FTB Quests or KubeJS.
+7. Check `latest.log` for errors from FTB Quests.
 
 Record playtest findings in `docs/Playtest.md` before declaring a milestone complete.
-
