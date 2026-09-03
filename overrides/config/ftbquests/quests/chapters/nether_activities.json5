@@ -1,0 +1,299 @@
+{
+  id: "7249E5AFB61C7D28",
+  group: "",
+  order_index: 8,
+  icon: { id: "minecraft:netherrack", count: 1 },
+  filename: "nether_activities",
+  default_quest_shape: "circle",
+  default_hide_dependency_lines: false,
+  quests: [
+    {
+      id: "07105D263E94F5A2",
+      x: 0.0,
+      y: 3.0,
+      dependencies: ["5D65A27B83E94AF6"],
+      shape: "gear",
+      size: 1.5,
+      min_width: 380,
+      icon: { id: "minecraft:netherrack", count: 1 },
+      tasks: [
+        { id: "18216E374FA506B3", type: "checkmark" },
+      ],
+    },
+    {
+      id: "6F87C49DA50B6C18",
+      x: 2.5,
+      y: 0.0,
+      dependencies: ["07105D263E94F5A2"],
+      min_width: 380,
+      icon: { id: "minecraft:gold_ingot", count: 1 },
+      tasks: [
+        {
+          id: "0098D5AEB61C7D29",
+          type: "item",
+          item: { id: "minecraft:gold_ingot", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "11A9E6BFC72D8E3A",
+      x: 5.0,
+      y: 0.0,
+      dependencies: ["6F87C49DA50B6C18"],
+      min_width: 380,
+      icon: { id: "minecraft:cobblestone_wall", count: 1 },
+      tasks: [
+        { id: "22BAF7C0D83E9F4B", type: "checkmark" },
+      ],
+    },
+    {
+      id: "33CB08D1E94FA05C",
+      x: 7.5,
+      y: 0.0,
+      dependencies: ["11A9E6BFC72D8E3A"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 380,
+      icon: { id: "minecraft:ender_pearl", count: 1 },
+      tasks: [
+        { id: "44DC19E2FA50B16D", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "55ED2AF30B61C27E",
+          type: "item",
+          item: { id: "minecraft:gold_ingot", count: 1 },
+        },
+        {
+          id: "66FE3B041C72D38F",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+    {
+      id: "1C83F0A24D6E917B",
+      x: 2.5,
+      y: 3.0,
+      dependencies: ["07105D263E94F5A2"],
+      min_width: 380,
+      icon: { id: "minecraft:iron_pickaxe", count: 1 },
+      tasks: [
+        { id: "2D94A1B35E7FA28C", type: "checkmark" },
+      ],
+    },
+    {
+      id: "3EA5B2C46F80939D",
+      x: 5.0,
+      y: 3.0,
+      dependencies: ["1C83F0A24D6E917B"],
+      min_width: 380,
+      icon: { id: "minecraft:netherrack", count: 1 },
+      tasks: [
+        {
+          id: "4FB6C3D57091A4AE",
+          type: "item",
+          item: { id: "minecraft:netherrack", count: 1 },
+          count: 16,
+        },
+      ],
+    },
+    {
+      id: "50C7D4E681A2B5BF",
+      x: 7.5,
+      y: 3.0,
+      dependencies: ["3EA5B2C46F80939D"],
+      min_width: 380,
+      icon: { id: "minecraft:quartz", count: 1 },
+      tasks: [
+        {
+          id: "61D8E5F792B3C6C0",
+          type: "item",
+          item: { id: "minecraft:quartz", count: 1 },
+          count: 4,
+        },
+      ],
+    },
+    {
+      id: "72E9F608A3C4D7D1",
+      x: 10.0,
+      y: 3.0,
+      dependencies: ["50C7D4E681A2B5BF"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 380,
+      icon: { id: "minecraft:quartz_block", count: 1 },
+      tasks: [
+        { id: "03FA0719B4D5E8E2", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "14AB182AC5E6F9F3",
+          type: "item",
+          item: { id: "minecraft:cobblestone", count: 1 },
+          count: 8,
+        },
+        {
+          id: "25BC293BD6F70A04",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+    {
+      id: "78FAD3D980F349BA",
+      x: 2.5,
+      y: 6.0,
+      dependencies: ["07105D263E94F5A2"],
+      min_width: 380,
+      icon: { id: "minecraft:shield", count: 1 },
+      tasks: [
+        {
+          id: "36AD35CCA4724357",
+          type: "item",
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "or(item(minecraft:iron_sword)item(minecraft:diamond_sword)item(minecraft:netherite_sword))",
+            },
+          },
+        },
+        {
+          id: "1B63A993ED3C4DB3",
+          type: "item",
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "or(item(minecraft:iron_pickaxe)item(minecraft:diamond_pickaxe)item(minecraft:netherite_pickaxe))",
+            },
+          },
+        },
+        {
+          id: "3E4AF2D781EC4B57",
+          type: "item",
+          item: { id: "minecraft:shield", count: 1 },
+        },
+        {
+          id: "65C89337665C4E28",
+          type: "item",
+          item: { id: "minecraft:cobblestone", count: 1 },
+          count: 64,
+        },
+        {
+          id: "21D6CE3AD23A412B",
+          type: "item",
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "or(item(minecraft:cooked_beef)item(minecraft:cooked_porkchop)item(minecraft:cooked_chicken)item(minecraft:cooked_mutton)item(minecraft:cooked_rabbit)item(minecraft:cooked_cod)item(minecraft:cooked_salmon)item(minecraft:baked_potato))",
+            },
+          },
+          count: 16,
+        },
+        { id: "5583FD1F127A4B12", type: "checkmark" },
+      ],
+    },
+    {
+      id: "73B2B39D1C674728",
+      x: 5.0,
+      y: 6.0,
+      dependencies: ["78FAD3D980F349BA"],
+      min_width: 380,
+      icon: { id: "minecraft:nether_bricks", count: 1 },
+      tasks: [
+        { id: "22D566F202A7429E", type: "checkmark" },
+      ],
+    },
+    {
+      id: "3D912A104D4A4E4E",
+      x: 7.5,
+      y: 6.0,
+      dependencies: ["73B2B39D1C674728"],
+      min_width: 380,
+      icon: { id: "minecraft:cobblestone_wall", count: 1 },
+      tasks: [
+        { id: "0F3B0653610D483B", type: "checkmark" },
+      ],
+    },
+    {
+      id: "676BFD158DEB4F7F",
+      x: 10.0,
+      y: 6.0,
+      dependencies: ["3D912A104D4A4E4E"],
+      min_width: 380,
+      icon: { id: "minecraft:wither_skeleton_skull", count: 1 },
+      tasks: [
+        { id: "54A8AA81D49E4187", type: "checkmark" },
+      ],
+    },
+    {
+      id: "5B0F14AD63E74BD3",
+      x: 10.0,
+      y: 9.0,
+      dependencies: ["676BFD158DEB4F7F"],
+      min_width: 380,
+      icon: { id: "minecraft:blaze_rod", count: 1 },
+      tasks: [
+        {
+          id: "31EF76AC88474111",
+          type: "item",
+          item: { id: "minecraft:blaze_rod", count: 1 },
+          count: 2,
+        },
+      ],
+    },
+    {
+      id: "15F17869891E4CE0",
+      x: 7.5,
+      y: 9.0,
+      dependencies: ["5B0F14AD63E74BD3"],
+      min_width: 380,
+      icon: { id: "minecraft:nether_wart", count: 1 },
+      tasks: [
+        {
+          id: "0966E3DA03134381",
+          type: "item",
+          item: { id: "minecraft:nether_wart", count: 1 },
+          count: 4,
+        },
+        {
+          id: "25DF04566B784491",
+          type: "item",
+          item: { id: "minecraft:soul_sand", count: 1 },
+          count: 4,
+        },
+      ],
+    },
+    {
+      id: "734140DAA3E544D2",
+      x: 5.0,
+      y: 9.0,
+      dependencies: ["15F17869891E4CE0"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 380,
+      icon: { id: "minecraft:brewing_stand", count: 1 },
+      tasks: [
+        { id: "4C2E1220EA4C4B18", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "059014A07CBC4436",
+          type: "item",
+          item: { id: "minecraft:cobblestone", count: 1 },
+          count: 16,
+        },
+        {
+          id: "55ACAB9F392443B6",
+          type: "xp",
+          xp: 10,
+        },
+      ],
+    },
+  ],
+  quest_links: [],
+  images: [],
+}

@@ -1,0 +1,163 @@
+{
+  id: "702FA5D18C643BE9",
+  group: "",
+  order_index: 6,
+  icon: { id: "minecraft:bone", count: 1 },
+  filename: "mob_drops",
+  default_quest_shape: "circle",
+  default_hide_dependency_lines: false,
+  quests: [
+    {
+      id: "0D51B7F3AE264C09",
+      x: 0.0,
+      y: 0.0,
+      dependencies: ["07B5E9C31D864AF2"],
+      min_width: 360,
+      icon: { id: "minecraft:iron_sword", count: 1 },
+      tasks: [
+        {
+          id: "1E62C804BF375D1A",
+          type: "item",
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "or(item(minecraft:wooden_sword)item(minecraft:stone_sword)item(minecraft:copper_sword)item(minecraft:iron_sword)item(minecraft:diamond_sword)item(minecraft:netherite_sword))",
+            },
+          },
+        },
+        {
+          id: "2F73D915C0486E2B",
+          type: "item",
+          item: { id: "minecraft:shield", count: 1 },
+        },
+        {
+          id: "3084EA26D1597F3C",
+          type: "item",
+          count: 2,
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "or(item(minecraft:cooked_beef)item(minecraft:cooked_porkchop)item(minecraft:cooked_chicken)item(minecraft:cooked_mutton)item(minecraft:cooked_rabbit)item(minecraft:cooked_cod)item(minecraft:cooked_salmon)item(minecraft:baked_potato)item(minecraft:dried_kelp))",
+            },
+          },
+        },
+      ],
+      rewards: [
+        {
+          id: "4195FB37E26A804D",
+          type: "item",
+          count: 4,
+          item: { id: "minecraft:torch", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "52A60C48F37B915E",
+      x: 2.5,
+      y: 0.0,
+      dependencies: ["0D51B7F3AE264C09"],
+      min_width: 360,
+      icon: { id: "minecraft:bundle", count: 1 },
+      tasks: [
+        { id: "63B71D59048CA26F", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "74C82E6A159DB370",
+          type: "item",
+          count: 2,
+          item: { id: "minecraft:bread", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "15D93F7B26AEC481",
+      x: 5.0,
+      y: -3.75,
+      dependencies: ["52A60C48F37B915E"],
+      min_width: 360,
+      icon: { id: "minecraft:rotten_flesh", count: 1 },
+      tasks: [
+        {
+          id: "26EA408C37BFD592",
+          type: "item",
+          item: { id: "minecraft:rotten_flesh", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "37FB519D48C0E6A3",
+      x: 5.0,
+      y: -1.25,
+      dependencies: ["52A60C48F37B915E"],
+      min_width: 360,
+      icon: { id: "minecraft:bone", count: 1 },
+      tasks: [
+        {
+          id: "480C62AE59D1F7B4",
+          type: "item",
+          item: { id: "minecraft:bone", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "591D73BF6AE208C5",
+      x: 5.0,
+      y: 1.25,
+      dependencies: ["52A60C48F37B915E"],
+      min_width: 360,
+      icon: { id: "minecraft:string", count: 1 },
+      tasks: [
+        {
+          id: "6A2E84C07BF319D6",
+          type: "item",
+          item: { id: "minecraft:string", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "6B3F95D18C042AE7",
+      x: 5.0,
+      y: 3.75,
+      dependencies: ["52A60C48F37B915E"],
+      min_width: 360,
+      icon: { id: "minecraft:gunpowder", count: 1 },
+      tasks: [
+        {
+          id: "0C51B7F3AE264D09",
+          type: "item",
+          item: { id: "minecraft:gunpowder", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "1D62C804BF375E1A",
+      x: 7.5,
+      y: -1.25,
+      dependencies: ["37FB519D48C0E6A3"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:bone_meal", count: 3 },
+      tasks: [
+        {
+          id: "2E73D915C0486F2B",
+          type: "item",
+          count: 3,
+          item: { id: "minecraft:bone_meal", count: 1 },
+        },
+      ],
+      rewards: [
+        {
+          id: "3F84EA26D159704C",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+  ],
+  quest_links: [],
+  images: [],
+}

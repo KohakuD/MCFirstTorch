@@ -42,6 +42,7 @@ The active milestone in `docs/Roadmap.md` controls scope and versioning.
 - Run `pwsh ./tools/validate-pack.ps1` after pack metadata or quest changes.
 - Run `pwsh ./tools/build-pack.ps1` before handing off an installable build.
 - Quest images that depict Minecraft items, blocks, entities, or interfaces must use the exact textures and models from the targeted Minecraft version. Never approximate or generatively redraw them. Neutral frames, arrows, labels, and other explanatory overlays may be constructed around the original game assets.
+- In crafting guides, render placeable block ingredients and results with the consistent three-dimensional Minecraft block-model view used by the established guides. Keep these models straight and uniformly aligned. Use flat two-dimensional textures only when the illustration is genuinely a top-down plan, such as an Enchanting Table and Bookshelf layout.
 - Use `tools/update-instance.ps1` for an authorised development-profile update. Keep its managed-path allowlist narrow, create a backup before replacement, and never add saves or player settings to that allowlist.
 - For quest changes, perform a fresh-profile in-game test when possible: load a new world, open the quest book, verify both languages, complete the affected path, and restart once.
 - Treat the learner's confusion as a product bug: improve the explanation or sequencing rather than assuming prior knowledge.

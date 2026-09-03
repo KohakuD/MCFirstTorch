@@ -8,22 +8,22 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 
 ## Current target
 
-- Pack version: `0.4.0`
+- Pack version: `0.5.0`
 - Minecraft: `26.1.2`
 - NeoForge: `26.1.2.84`
 - Languages: English (`en_us`) and German (`de_de`)
-- Current milestone: deeper caves, Diamonds, and preparation for enchanting
+- Current milestone: safe Nether preparation and the first Nether trip
 
 ## Included foundation
 
 - FTB Quests, FTB Library, FTB Teams, and the official FTB item-tag filter modules
-- Six bilingual chapters covering the first safe night, independent survival routines, essential Iron equipment, finding the way home, sustainable supplies, and the first deep Diamond expedition
+- Nine bilingual chapters covering the first safe night, independent survival routines, essential Iron equipment, finding the way home, sustainable supplies, the first deep Diamond expedition, optional safe mob drops, the first controlled Nether visit, and optional Nether activities
 - Reproducible CurseForge manifest with pinned dependency file IDs
 
 ## Install a development build
 
 1. Run `pwsh ./tools/build-pack.ps1`.
-2. Import `build/First-Torch-0.4.0.zip` into CurseForge, Prism Launcher, or another launcher that supports CurseForge modpack manifests.
+2. Import `build/First-Torch-0.5.0.zip` into CurseForge, Prism Launcher, or another launcher that supports CurseForge modpack manifests.
 3. Create a new world and open FTB Quests from its key binding.
 
 The archive contains no redistributed mod JARs. The launcher downloads dependencies from their official CurseForge entries.
@@ -40,7 +40,7 @@ The updater creates a timestamped backup inside `.first-torch/backups/` before r
 
 ## Project status
 
-Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 sustainable-supplies content has been implemented and remains under in-game review; development of 0.4.0 has begun with the first deep Diamond expedition. The detailed scope and acceptance record live in [docs/Roadmap.md](docs/Roadmap.md).
+Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 and 0.4.0 content has been implemented and remains under in-game review; version 0.5.0 now covers safe portal construction, Nether equipment, controlled activation, a secured portal shelter, and the first short marked scouting route. The separate `What to Do in the Nether?` chapter includes an optional Piglin barter, a biome-independent Netherrack-and-Quartz trip, and a prepared Nether Fortress path through Blaze Rods and a renewable Nether Wart supply. Bastion Remnants remain reserved for a later advanced branch. The detailed scope and acceptance record live in [docs/Roadmap.md](docs/Roadmap.md).
 
 ## Licence and trademarks
 

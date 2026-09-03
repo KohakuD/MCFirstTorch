@@ -21,7 +21,7 @@ Assert-True ($manifest.manifestVersion -eq 1) 'Unexpected manifest version.'
 Assert-True ($manifest.minecraft.version -eq '26.1.2') 'Minecraft must remain pinned to 26.1.2.'
 Assert-True ($manifest.minecraft.modLoaders[0].id -eq 'neoforge-26.1.2.84') 'NeoForge must remain pinned to 26.1.2.84.'
 Assert-True ($manifest.overrides -eq 'overrides') 'Manifest overrides directory must be "overrides".'
-Assert-True ($manifest.version -eq '0.4.0') 'The development pack version must be 0.4.0.'
+Assert-True ($manifest.version -eq '0.5.0') 'The development pack version must be 0.5.0.'
 
 $expectedFiles = @{
     '289412' = 8730542
@@ -91,6 +91,8 @@ $expectedTaskCounts = @{
     '2E60C28491D5AF7B' = 4
     '5193F5B7C408D2AE' = 3
     '26E840AC195D27F3' = 3
+    '2A327F4850B617C3' = 6
+    '3B43805961C728D4' = 3
 }
 foreach ($taskId in $expectedTaskCounts.Keys) {
     $expectedCount = $expectedTaskCounts[$taskId]
@@ -208,6 +210,7 @@ $becomingXExtent = (($becomingXValues | Measure-Object -Maximum).Maximum - ($bec
 Assert-True ($becomingXExtent -le 15.0) 'The Becoming Independent layout must remain compact enough for smaller displays.'
 
 $expectedItemRewards = @{
+    '27C3D4E5F6071829' = @{ Item = 'minecraft:cobblestone'; Count = 3 }
     '2C8E51A70D4B639F' = @{ Item = 'minecraft:apple'; Count = 2 }
     '61D304B8A7CE295F' = @{ Item = 'minecraft:apple'; Count = 2 }
     '2F517B3E160C248D' = @{ Item = 'minecraft:white_wool'; Count = 3 }
@@ -229,6 +232,10 @@ $expectedItemRewards = @{
     '7DBF5913062A48EC' = @{ Item = 'minecraft:golden_apple'; Count = 1 }
     '62A406C8D519E3BF' = @{ Item = 'minecraft:leather'; Count = 1 }
     '0C4EA6027FB38D59' = @{ Item = 'minecraft:lapis_lazuli'; Count = 3 }
+    '21A9E6BFC72D8E3A' = @{ Item = 'minecraft:torch'; Count = 4 }
+    '32BAF7C0D83E9F4B' = @{ Item = 'minecraft:cobblestone'; Count = 8 }
+    '43CB08D1E94FA05C' = @{ Item = 'minecraft:bread'; Count = 2 }
+    '55ED2AF30B61C27E' = @{ Item = 'minecraft:gold_ingot'; Count = 1 }
 }
 foreach ($rewardId in $expectedItemRewards.Keys) {
     $reward = $expectedItemRewards[$rewardId]
@@ -258,6 +265,8 @@ $expectedXpRewards = @{
     '37F951BD2A6E3804' = 5
     '2E60C82491D5AF7B' = 5
     '1D5FB71380C49E6A' = 10
+    '1098D5AEB61C7D29' = 10
+    '66FE3B041C72D38F' = 5
 }
 foreach ($rewardId in $expectedXpRewards.Keys) {
     $xp = $expectedXpRewards[$rewardId]
@@ -274,15 +283,31 @@ Assert-True (Test-Path -LiteralPath $packMetadataPath -PathType Leaf) 'First Tor
 $packMetadata = Get-Content -LiteralPath $packMetadataPath -Raw | ConvertFrom-Json
 Assert-True ($packMetadata.pack.min_format[0] -eq 84 -and $packMetadata.pack.min_format[1] -eq 0) 'Guide resource pack min_format must be [84, 0] for Minecraft 26.1.2.'
 Assert-True ($packMetadata.pack.max_format[0] -eq 84 -and $packMetadata.pack.max_format[1] -eq 0) 'Guide resource pack max_format must be [84, 0] for Minecraft 26.1.2.'
-foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png', 'place_crafting_table.png', 'wooden_pickaxe.png', 'furnace.png', 'chest.png', 'charcoal.png', 'bed.png', 'hunger_and_eating.png', 'cooking_food.png', 'stone_pickaxe.png', 'shield.png', 'armour_recipes.png', 'safe_staircase.png', 'torch_route.png', 'iron_pickaxe.png', 'bucket.png', 'stonecutter.png', 'lodestone.png', 'stone_hoe.png', 'bread.png', 'farmland_9x9.png', 'fence_and_gate.png', 'paper_and_book.png', 'enchanting_table_recipe.png', 'enchanting_interface.png')) {
+foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png', 'place_crafting_table.png', 'wooden_pickaxe.png', 'stone_axe.png', 'furnace.png', 'chest.png', 'charcoal.png', 'bed.png', 'hunger_and_eating.png', 'cooking_food.png', 'stone_pickaxe.png', 'shield.png', 'armour_recipes.png', 'safe_staircase.png', 'torch_route.png', 'iron_pickaxe.png', 'bucket.png', 'stonecutter.png', 'lodestone.png', 'stone_hoe.png', 'bread.png', 'farmland_9x9.png', 'fence_and_gate.png', 'paper_and_book.png', 'enchanting_table_recipe.png', 'enchanting_interface.png', 'bookshelf_recipe.png', 'enchanting_bookshelves.png', 'iron_sword.png', 'bone_meal_recipe.png', 'attack_indicator.png', 'flint_and_steel.png', 'nether_portal_frame.png', 'nether_route_marker.png', 'piglin_comparison.png', 'nether_fortress.png', 'fortress_hazards.png', 'blaze_spawner.png')) {
     $imagePath = Join-Path $guidePackRoot (Join-Path 'assets/firsttorch/textures/questpics' $imageName)
     Assert-True (Test-Path -LiteralPath $imagePath -PathType Leaf) "Missing quest guide image: $imageName"
     Assert-True ((Get-Item -LiteralPath $imagePath).Length -gt 0) "Quest guide image is empty: $imageName"
 }
 $deepMiningLanguageText = ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter 'deep_mining.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n")
-foreach ($imageName in @('paper_and_book.png', 'enchanting_table_recipe.png', 'enchanting_interface.png')) {
+foreach ($imageName in @('paper_and_book.png', 'enchanting_table_recipe.png', 'enchanting_interface.png', 'bookshelf_recipe.png', 'enchanting_bookshelves.png')) {
     $referenceCount = [regex]::Matches($deepMiningLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
     Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each Deep Mining language file."
+}
+$mobDropLanguageText = ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter 'mob_drops.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n")
+foreach ($imageName in @('iron_sword.png', 'bone_meal_recipe.png', 'attack_indicator.png')) {
+    $referenceCount = [regex]::Matches($mobDropLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
+    Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each Safe Mob Drops language file."
+}
+$netherLanguageText = ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter 'nether_preparation.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n")
+foreach ($imageName in @('flint_and_steel.png', 'nether_portal_frame.png', 'nether_route_marker.png')) {
+    $referenceCount = [regex]::Matches($netherLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
+    Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each Nether Preparation language file."
+}
+$piglinComparisonReferences = [regex]::Matches($allLanguageText, 'firsttorch:textures/questpics/piglin_comparison\.png')
+Assert-True ($piglinComparisonReferences.Count -eq 4) 'The Piglin comparison guide must be referenced in both relevant quests in each language.'
+foreach ($imageName in @('nether_fortress.png', 'fortress_hazards.png', 'blaze_spawner.png')) {
+    $referenceCount = [regex]::Matches($allLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
+    Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each language."
 }
 $armourImageReferences = [regex]::Matches($allDefinitionText + "`n" + ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"), 'firsttorch:textures/questpics/armour_recipes\.png')
 Assert-True ($armourImageReferences.Count -eq 2) 'The compact Armour recipe overview must be referenced once in each language.'
@@ -300,6 +325,8 @@ $lodestoneImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Join-
 Assert-True ($lodestoneImageReferences.Count -eq 2) 'The Lodestone recipe guide must be referenced once in each language.'
 $stoneHoeImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"), 'firsttorch:textures/questpics/stone_hoe\.png')
 Assert-True ($stoneHoeImageReferences.Count -eq 2) 'The Stone Hoe recipe guide must be referenced once in each language.'
+$stoneAxeImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"), 'firsttorch:textures/questpics/stone_axe\.png')
+Assert-True ($stoneAxeImageReferences.Count -eq 2) 'The Stone Axe recipe guide must be referenced once in each language.'
 $breadImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"), 'firsttorch:textures/questpics/bread\.png')
 Assert-True ($breadImageReferences.Count -eq 2) 'The Bread recipe guide must be referenced once in each language.'
 $farmlandImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"), 'firsttorch:textures/questpics/farmland_9x9\.png')
@@ -308,7 +335,7 @@ $fenceAndGateImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Jo
 Assert-True ($fenceAndGateImageReferences.Count -eq 2) 'The combined Fence and Fence Gate recipe guide must be referenced once in each language.'
 
 $localeRoot = Join-Path $questRoot 'lang'
-foreach ($relativePath in @('chapter.json5', 'chapters/first_steps.json5', 'chapters/becoming_independent.json5', 'chapters/iron_essentials.json5', 'chapters/finding_home.json5', 'chapters/sustainable_supplies.json5')) {
+foreach ($relativePath in @('chapter.json5', 'chapters/first_steps.json5', 'chapters/becoming_independent.json5', 'chapters/iron_essentials.json5', 'chapters/finding_home.json5', 'chapters/sustainable_supplies.json5', 'chapters/nether_preparation.json5', 'chapters/nether_activities.json5')) {
     $enPath = Join-Path (Join-Path $localeRoot 'en_us') $relativePath
     $dePath = Join-Path (Join-Path $localeRoot 'de_de') $relativePath
     Assert-True (Test-Path -LiteralPath $enPath -PathType Leaf) "Missing English translation file: $relativePath"

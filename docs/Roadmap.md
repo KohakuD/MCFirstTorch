@@ -1,6 +1,6 @@
 # Roadmap
 
-The active milestone is **0.4.0 — Caves, Diamonds, and Enchanting**. Version **0.2.0** is the latest completed and tested release. The 0.3.0 content remains under in-game review, and the current development build is **0.4.0**.
+The active milestone is **0.5.0 — Nether Preparation and First Visit**. Version **0.2.0** is the latest completed and tested release. The 0.3.0 and 0.4.0 content remains under in-game review, and the current development build is **0.5.0**.
 
 ## 0.1.0 — First Safe Night
 
@@ -40,10 +40,20 @@ The active milestone is **0.4.0 — Caves, Diamonds, and Enchanting**. Version *
 - [x] Confirm both illustrations render in the existing profile
 - [x] Confirm the Cobblestone task stays incomplete at 1–7 and completes at 8
 
+### Optional movement-controls refinement
+
+- [x] Add a non-gating branch after the mouse-control lesson
+- [x] Teach jumping onto a full block while explaining that slabs and stairs are climbed without jumping
+- [x] Teach safe sneaking at a low edge, including the slab-and-stair descent exception and its other limits
+- [x] Teach both default sprint inputs, Hunger use, and route safety
+- [x] Finish with one controlled sprint-jump and a small food-and-XP reward
+- [ ] Complete all four exercises once in survival mode and inspect both languages
+
 ### 0.1.4 illustrated crafting sequence
 
 - [x] Fix the guide resource-pack metadata for Minecraft 26.1.2's version-pair format
 - [x] Add illustrations for placing the Crafting Table, crafting a Wooden Pickaxe, crafting a Furnace, and making Charcoal
+- [x] Add a Stone Axe lesson after the first Cobblestone so beginners stop breaking wood by hand
 - [x] Show the stick recipe in the Crafting Table's 3 × 3 grid
 - [x] Explain stone collection explicitly as the same interaction loop as collecting wood, with the pickaxe as the key difference
 - [x] Confirm all six illustrations render in the existing profile
@@ -273,13 +283,58 @@ The active milestone is **0.4.0 — Caves, Diamonds, and Enchanting**. Version *
 - [ ] Confirm the Sugar Cane, Obsidian, Lapis Lazuli, Book, and Enchanting Table item tasks in survival mode
 - [ ] Confirm the first enchantment completes automatically only after an item is enchanted
 - [ ] Inspect the complete three-way branch in German and English
-- [ ] Add the Bookshelf expansion and explain the one-block air gap, 15-shelf maximum, and level-30 offers
-- [ ] Add an optional safe mob-drop branch covering common hostile-mob drops, including Bones and their Bone Meal use
-- [ ] Connect the hostile-mob branch back to the existing peaceful Composter route
+- [x] Add the Bookshelf expansion and explain the one-block air gap, 15-shelf maximum, and level-30 offers
+- [ ] Confirm the Bookshelf recipe, 15-item threshold, layout guide, and level-30 offer in survival mode
+- [x] Add an optional safe mob-drop branch covering common hostile-mob drops, including Bones and their Bone Meal use
+- [x] Connect the hostile-mob branch back to the existing peaceful Composter route
+- [ ] Confirm all preparation filters, four drop tasks, recipe images, and both chapter links in survival mode
+- [ ] Complete the Skeleton-to-Bone-Meal path once in German and inspect it once in English
+
+## 0.5.0 — Nether Preparation and First Visit
+
+### Safe portal preparation in the Overworld
+
+- [x] Unlock from the first successful enchantment without requiring the optional 15-Bookshelf expansion or mob-drop paths
+- [x] Explain the Nether's lack of normal daytime, evaporating placed Water, and dangerous Bed behaviour before entry
+- [x] Choose a portal site with clear access, keeping the immediate ignition area free of flammable blocks until activation succeeds
+- [x] Collect Flint from Gravel without standing beneath falling blocks
+- [x] Craft Flint and Steel with an exact target-version recipe guide and refund the Iron Ingot
+- [x] Require ten ordinary Obsidian and distinguish unusable Crying Obsidian
+- [x] Build an unlit minimum 4 × 5 frame with a 2 × 3 opening and optional corners
+- [x] Illustrate the unlit frame and its activated state with matching authentic in-world screenshots
+- [ ] Confirm the Flint, Flint and Steel, and ten-Obsidian item tasks in survival mode
+- [ ] Confirm all five recipe and portal images plus the chapter link in German and English
+- [x] Build and inspect both the unlit and activated frame at a safe Overworld site
+
+### Planned 0.5.0 continuations
+
+- [x] Prepare Nether-specific equipment, including one worn piece of Gold Armour
+- [x] Light the portal only after the equipment check and keep the learner outside
+- [x] Secure the Overworld side and enter only after a final checklist
+- [x] Secure and mark the Nether-side portal before exploring
+- [x] Teach the first short Nether scouting route, Piglin behaviour, Ghasts, fire, Lava, and safe retreat
+- [x] Return through the original portal with the route intact
+
+### What to Do in the Nether chapter foundation
+
+- [x] Separate completed Nether preparation from later activities in a dedicated ninth bilingual chapter
+- [x] Preserve the existing Piglin-barter quest, task, and reward IDs while moving the branch
+- [x] Add a cross-chapter navigation link after the first successful marked return
+- [x] Explain that an adult ordinary Piglin exchanges one Gold Ingot for one random result without a trading menu
+- [x] Keep Gold Armour equipped and use a manual completion check instead of the unsafe no-Gold-Armour Vanilla advancement condition
+- [x] Require a level place, Cobblestone cover, and an intact marked retreat before the first barter
+- [x] Distinguish adult Piglins from babies, Piglin Brutes, and Zombified Piglins as trading partners
+- [x] Illustrate the four Piglin variants with exact target-version textures and translucent rejection marks
+- [x] Return the first Gold Ingot after a completed barter without making the optional branch gate later progress
+- [ ] Complete one safe barter in survival mode and inspect both languages
+- [x] Add a safe first-resources branch without requiring one particular Nether biome
+- [x] Add a prepared Nether Fortress branch for Blazes, Blaze Rods, and Nether Wart
+- [x] Arrange Piglin barter, first resources, and Nether Fortress as three visibly parallel branches
+- [x] Illustrate the Fortress silhouette, its three principal enemies, and a Blaze Spawner with exact target-version assets
+- [ ] Add a separate advanced optional Bastion Remnant branch with explicit Piglin Brute and guarded-container rules
 
 ## Later milestones
 
-- `0.5.0`: Nether preparation and first Nether trip
 - CurseForge publication: native pack-version display and launcher-managed updates
 
-No Nether content is required for the first 48-hour playable build.
+The Nether remains a continuation beyond the original first 48-hour playable scope.

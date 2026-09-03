@@ -48,6 +48,65 @@
       ],
     },
     {
+      id: "0A71D4C8E2F963B5",
+      x: 2.5,
+      y: -2.5,
+      dependencies: ["34A8023B6ECF5791"],
+      min_width: 360,
+      icon: { id: "minecraft:rabbit_foot", count: 1 },
+      tasks: [
+        { id: "4EB5180C263DA7F9", type: "checkmark" },
+      ],
+    },
+    {
+      id: "1B82E5D9F30A74C6",
+      x: 5.0,
+      y: -2.5,
+      dependencies: ["0A71D4C8E2F963B5"],
+      min_width: 360,
+      icon: { id: "minecraft:leather_boots", count: 1 },
+      tasks: [
+        { id: "5FC6291D374EB80A", type: "checkmark" },
+      ],
+    },
+    {
+      id: "2C93F6EA041B85D7",
+      x: 7.5,
+      y: -2.5,
+      dependencies: ["1B82E5D9F30A74C6"],
+      min_width: 360,
+      icon: { id: "minecraft:sugar", count: 1 },
+      tasks: [
+        { id: "60D73A2E485FC91B", type: "checkmark" },
+      ],
+    },
+    {
+      id: "3DA407FB152C96E8",
+      x: 10.0,
+      y: -2.5,
+      dependencies: ["2C93F6EA041B85D7"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:feather", count: 1 },
+      tasks: [
+        { id: "71E84B3F5960DA2C", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "16C2A8E4F90B735D",
+          type: "item",
+          count: 2,
+          item: { id: "minecraft:apple", count: 1 },
+        },
+        {
+          id: "27D3B9F50A1C846E",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+    {
       id: "7B83D5F920C4160E",
       x: 5.0,
       y: 0.0,
@@ -115,10 +174,34 @@
       ],
     },
     {
+      id: "65A1B2C3D4E5F607",
+      x: 12.5,
+      y: 2.5,
+      dependencies: ["3A0E6891C42FBD57"],
+      min_width: 360,
+      icon: { id: "minecraft:stone_axe", count: 1 },
+      tasks: [
+        {
+          id: "16B2C3D4E5F60718",
+          type: "item",
+          item: { id: "minecraft:stone_axe", count: 1 },
+        },
+        { id: "38D4E5F60718293A", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "27C3D4E5F6071829",
+          type: "item",
+          count: 3,
+          item: { id: "minecraft:cobblestone", count: 1 },
+        },
+      ],
+    },
+    {
       id: "5C208AB3E641DF79",
       x: 12.5,
       y: 5.0,
-      dependencies: ["3A0E6891C42FBD57"],
+      dependencies: ["65A1B2C3D4E5F607"],
       min_width: 360,
       icon: { id: "minecraft:furnace", count: 1 },
       tasks: [

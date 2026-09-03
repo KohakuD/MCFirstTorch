@@ -307,7 +307,80 @@
         },
       ],
     },
+    {
+      id: "2E71A5C9D304B86F",
+      x: 5.0,
+      y: 15.0,
+      dependencies: ["6A2C84E05D916B37"],
+      min_width: 360,
+      icon: { id: "minecraft:bookshelf", count: 1 },
+      tasks: [
+        {
+          id: "51A4D8FC0637EB92",
+          type: "item",
+          item: { id: "minecraft:bookshelf", count: 1 },
+        },
+      ],
+      rewards: [
+        {
+          id: "04D70B2F396A1EC5",
+          type: "item",
+          count: 3,
+          item: { id: "minecraft:book", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "3F82B6DAE415C970",
+      x: 5.0,
+      y: 17.5,
+      dependencies: ["2E71A5C9D304B86F"],
+      min_width: 360,
+      icon: { id: "minecraft:bookshelf", count: 15 },
+      tasks: [
+        {
+          id: "62B5E90D1748FCA3",
+          type: "item",
+          count: 15,
+          item: { id: "minecraft:bookshelf", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "4093C7EBF526DA81",
+      x: 5.0,
+      y: 20.0,
+      dependencies: ["3F82B6DAE415C970"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:enchanting_table", count: 1 },
+      tasks: [
+        { id: "73C6FA1E28590DB4", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "15E81C304A7B2FD6",
+          type: "item",
+          count: 3,
+          item: { id: "minecraft:lapis_lazuli", count: 1 },
+        },
+        {
+          id: "26F92D415B8C30E7",
+          type: "xp",
+          xp: 10,
+        },
+      ],
+    },
   ],
-  quest_links: [],
+  quest_links: [
+    {
+      id: "6027A3DF6C8419B5",
+      linked_quest: "0249C5F18EA63BD7",
+      x: 7.5,
+      y: 15.0,
+      shape: "diamond",
+    },
+  ],
   images: [],
 }

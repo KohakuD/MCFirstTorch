@@ -406,6 +406,13 @@
       y: 10.0,
       shape: "diamond",
     },
+    {
+      id: "5BA60C48F37D915E",
+      linked_quest: "1D62C804BF375E1A",
+      x: 15.0,
+      y: 2.5,
+      shape: "diamond",
+    },
   ],
   images: [],
 }

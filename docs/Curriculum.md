@@ -10,7 +10,7 @@ First Torch teaches decisions, not only recipes. Every lesson should answer five
 
 ## Writing rules
 
-- Assume the learner knows movement and looking around, but not Minecraft vocabulary.
+- Assume the learner knows basic WASD movement and looking around, but offer an early optional path for jumping, sneaking, sprinting, and combining movement controls.
 - Introduce one new idea per quest.
 - Name the exact inventory items and controls involved.
 - Explain unfamiliar words on first use.

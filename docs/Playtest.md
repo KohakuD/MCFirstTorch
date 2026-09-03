@@ -34,6 +34,13 @@ Status: startup and world creation passed; 0.1.2 translation retest pending.
 - The installed client's `version.json` reports resource format 84.0. Modern packs require `min_format` and `max_format` version pairs; the guide pack incorrectly used only the legacy `pack_format` field.
 - Updated the metadata to `[84, 0]`, added a regression check, and expanded the illustrated sequence through Crafting Table placement, Wooden Pickaxe, Furnace, and Charcoal.
 
+### 2026-09-03 — First-steps Stone Axe refinement
+
+- Inserted a Stone Axe lesson between the first eight Cobblestone and the Furnace so a beginner learns the efficient tool for logs and common wooden blocks before hand-breaking becomes a habit.
+- Requires both the Stone Axe item and a manual confirmation after breaking one reachable log. The lesson distinguishes Axe and Pickaxe use, explains durability, and warns that right-clicking many logs strips their bark instead of breaking them.
+- Added an exact Minecraft 26.1.2 recipe guide with straight three-dimensional Cobblestone models and original Stick and Stone Axe item textures.
+- Rewards the three consumed Cobblestone after the practical check, preserving all eight previously collected blocks for the following Furnace without skipping the Axe lesson.
+
 ### 2026-09-02 — Flexible planks and CurseForge version diagnosis for 0.1.5
 
 - The first wood objective accepted only Oak Planks. It now requires four items matching `#minecraft:planks`, so all vanilla plank types and mixed stacks count.
@@ -173,6 +180,14 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 
 ## 0.4.0
 
+### 2026-09-03 — Optional movement-controls implementation
+
+- Added a four-quest optional branch after the first mouse-control lesson covering jumping, sneaking, sprinting, and one controlled sprint-jump.
+- The main First Steps path does not depend on the branch, so existing progression remains valid and learners who already know the controls can ignore it.
+- Clarified that full blocks require jumping while slabs and stairs are climbed automatically, and that sneaking reduces accidental edge falls without providing complete protection or stopping descent over slabs and stairs.
+- Used manual checkmarks because the exercises depend on safe, deliberate practice rather than a reliably exposed item or advancement criterion.
+- Added two Apples and 5 XP points after the final exercise without bypassing a later lesson.
+
 ### 2026-09-02 — First deep Diamond expedition implementation
 
 - Added the bilingual `Mining Deeper` chapter, gated by both the Iron-essentials recap and the sustainable-storage endpoint.
@@ -189,3 +204,100 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 - The initial iteration used text-only recipe guidance while keeping all visible icons on Minecraft's live target-version item models.
 - Added compact 1672 × 941 guides for Paper and Book crafting, the Enchanting Table recipe, and the Enchanting Table interface. Minecraft content comes from the installed 26.1.2 assets or its in-game rendered model; only instructional frames, arrows, and numbered highlights are constructed.
 - Added Cows and Horses as common Leather sources, while explicitly protecting the learner's final breeding pair and supplying the first Leather as a non-destructive bridge reward.
+
+### 2026-09-03 — Bookshelf expansion implementation
+
+- Continued the enchanting path with one Bookshelf, a gradual 15-shelf collection milestone, and a final placement check.
+- Added exact 26.1.2 Bookshelf recipe artwork and a top-down 15-shelf station plan using the original Bookshelf and Enchanting Table textures.
+- Revised the recipe artwork after in-game review so Wooden Planks and the Bookshelf use the established straight three-dimensional block-model view; the genuine top-down station plan deliberately remains two-dimensional.
+- Explained the one-block empty gap, valid shelf heights, 15-shelf maximum, open entrance, and the difference between requiring level 30 and consuming only three levels.
+- Rewarded three Books after the first shelf, then 10 XP points and three Lapis Lazuli after the completed station without replacing the full material-gathering lesson.
+
+### 2026-09-03 — Optional safe mob-drop path implementation
+
+- Added a dedicated optional chapter after the existing avoid-danger lesson, with a visible cross-chapter link from the peaceful Composter endpoint.
+- Requires a Sword, Shield, and two cooked foods before presenting separate Zombie, Skeleton, Spider, and Creeper branches; none of those branches gates the main curriculum.
+- Keeps the Creeper task fully isolated and explicitly prioritises retreat over Gunpowder, while the Skeleton branch continues to the useful Bone Meal lesson.
+- Added exact 26.1.2 recipe guides for an Iron Sword and the one-Bone-to-three-Bone-Meal inventory recipe.
+- Added a two-state attack-indicator guide directly from Minecraft 26.1.2's crosshair and HUD sprites, showing a partially recovered attack beside the fully ready target indicator.
+- Explains attack recovery, cover, Shield direction, each enemy's distinct danger, common drops, unsafe foods, and the peaceful renewable Composter alternative.
+- Adds four Torches, two Bread, and 5 XP points as small safety and completion rewards.
+
+## 0.5.0
+
+### 2026-09-03 — Safe Overworld portal preparation implementation
+
+- Began the Nether milestone after the first enchantment without requiring either optional Bookshelf completion or the safe mob-drop chapter.
+- Added six lessons covering dimensional hazards, a portal site with clear access, Flint from falling Gravel, Flint and Steel, ten ordinary Obsidian, and an unlit minimum frame.
+- Added an exact 26.1.2 guide for the shapeless Flint and Steel recipe and replaced the schematic frame guide with an authentic in-world screenshot of a 4 × 5 frame. Its ten Obsidian and four temporary Dirt corner blocks are explained explicitly.
+- Prepared a matching authentic screenshot of the activated frame for the following portal-activation lesson.
+- Added bilingual instructions for extinguishing a single fire block with a left click and no tool while remaining on safe ground.
+- Clarified that flammable blocks matter only around the ignition point until activation succeeds; an active portal is not itself a fire-spread hazard.
+- Explicitly distinguishes Crying Obsidian, keeps the portal unlit until the Nether equipment checklist exists, and reserves clear ground on both sides.
+- Reduced the attack-indicator guide display to 250 × 141 pixels following in-game review; this will be checked with the next profile update.
+
+### 2026-09-03 — Gold equipment and controlled portal activation
+
+- Added four lessons after the unlit frame: smelt five Gold Ingots, craft and wear a Golden Helmet, assemble the first-visit equipment, and activate the portal without entering.
+- Verified the Golden Helmet recipe and all four entries in `minecraft:piglin_safe_armor` directly against the local Minecraft 26.1.2 JAR.
+- Added an exact Golden Helmet recipe guide using the target-version item textures and reused the previously reviewed Iron Sword guide for the equipment checklist.
+- The equipment task accepts an Iron, Diamond, or Netherite Sword and Pickaxe, then also requires a Shield, Flint and Steel, 32 Cobblestone, 16 Torches, and eight substantial cooked foods at the same time.
+- Added a Silk Touch reminder that points back to random Enchanting Table offers without making the enchantment necessary for collecting or smelting Gold.
+- Ordinary Piglins, anger-provoking actions, and always-hostile Piglin Brutes are distinguished before entry; the detailed behaviour lesson remains part of the first Nether scouting route.
+- Activated-portal artwork uses the matching authentic in-world screenshot and explicitly keeps the learner outside until the Nether-side securing routine exists.
+
+### 2026-09-03 — Final departure check and first Nether entry
+
+- Added three lessons after activation: secure and light both approaches on the Overworld side, perform a final manual departure check, and make the first controlled dimension change.
+- The final check repeats the Bed respawn point, records the Overworld portal coordinates, verifies full health and Hunger, stores unnecessary valuables, and arranges the already-detected equipment.
+- The first entry uses the exact `entered_nether` criterion from Minecraft 26.1.2's `minecraft:nether/root` advancement plus a manual confirmation that the learner stopped beside the visible portal.
+- Exploration remains locked behind the next Nether-side securing lesson. The entry text tells the learner to return immediately through the same portal if the arrival point presents Lava, a drop, or an enemy.
+- Added eight Torches and 5 XP for the Overworld access, two Bread for the departure reserve, then 16 Cobblestone and 5 XP for the Nether-side shelter.
+
+### 2026-09-03 — Nether-side portal shelter and return proof
+
+- Added three lessons immediately after the first entry: assess the arrival area before moving away, build a compact Cobblestone shelter around the portal, and mark its coordinates before testing the return route.
+- The arrival check separates ordinary Piglins from Piglin Brutes and warns against attacking, opening unfamiliar containers, or mining Gold before the detailed behaviour lesson.
+- The shelter starts with safe footing, closes nearby drops, then adds Cobblestone walls, a roof, lighting, a clear two-block-high portal space, and one protected exit. It does not claim that Torches make the Nether fully spawn-proof.
+- Explains that Water cannot be placed normally, Beds explode, an ordinary Compass is unreliable without a Lodestone, and one horizontal Nether block corresponds to roughly eight Overworld blocks.
+- Ends with a deliberate trip back through the original portal and leaves the learner in the Overworld. Exploration remains locked for the following short scouting route.
+- Uses manual checkmarks for the visual safety inspection, shelter quality, recorded coordinates, visible marker, and return proof. Rewards add 40 Cobblestone, four Torches, four Bread, and 10 XP across the three steps.
+- Added a language-neutral route-marker guide made from the exact Minecraft 26.1.2 Cobblestone, Torch, Obsidian, and Nether Portal textures. Two stacked Cobblestone blocks make the marker visible, while the Torch side consistently points back toward the portal.
+
+### 2026-09-03 — First marked Nether scouting route
+
+- Added five lessons after the first return: re-enter the secured shelter with a fresh equipment check, distinguish three Piglin reactions, assess Ghast, fire, and Lava hazards from cover, walk a maximum three-marker practice route, and return through the original portal.
+- Verified the target-version `piglin_safe_armor` and `guarded_by_piglins` tags directly in the Minecraft 26.1.2 JAR. The text distinguishes ordinary Piglins from always-hostile Piglin Brutes and group-reactive Zombified Piglins without asking the learner to provoke any of them.
+- The hazard lesson prioritises a closed Cobblestone wall and roof over fighting a Ghast, repeats safe left-click fire removal, explains faster and farther Nether Lava flow, and explicitly forbids the first open-Lava bridge.
+- The route requires six Cobblestone and three Torches before departure, then uses at most three two-block markers with the Torch side facing the portal. A route that becomes unsafe ends early and still counts after a successful retreat.
+- The learner returns first to the Nether shelter and then through the original portal to the Overworld. Small rewards provide four Torches, eight Cobblestone, two Bread, and 10 XP without replacing any later lesson.
+
+### 2026-09-03 — Optional first Piglin barter
+
+- Added a separate bilingual `What to Do in the Nether?` chapter after the completed first Nether route. A cross-chapter link opens it from Nether preparation without extending the already complete preparation map.
+- Moved the existing three-quest optional Piglin branch with all quest, task, and reward IDs unchanged: prepare one Gold Ingot, assess a safe bartering place, then perform one barter and return to the Overworld.
+- Verified `minecraft:nether/distract_piglin` directly in the Minecraft 26.1.2 JAR. Its conditions require the player to wear no Piglin-safe Gold Armour, so the lesson deliberately uses a manual check and keeps the Golden Helmet equipped.
+- Verified the target-version Piglin bartering loot table. The player is told that the result is random and may include supplies such as Blackstone, Gravel, Obsidian, Quartz, Iron Nuggets, Ender Pearls, or a Fire Resistance Potion without promising any one result.
+- Requires an adult ordinary Piglin, level ground, nearby Cobblestone cover, the existing marked retreat, and no nearby Bastion, Lava, guarded block, Baby Piglin, Piglin Brute, or Zombified Piglin.
+- Teaches one deliberate right-click interaction with one Gold Ingot, safe collection, and immediate return. One Gold Ingot and 5 XP replace the first payment and reward the completed optional exercise.
+- Added a language-neutral four-panel comparison built from the exact Minecraft 26.1.2 Piglin textures and model proportions. The adult ordinary Piglin remains clear and green-framed; the Piglin Brute, Baby Piglin, and Zombified Piglin carry translucent red rejection marks.
+- The chapter introduction reserves distinct later paths for safe Nether resources, the progression-relevant Nether Fortress, and the substantially more dangerous optional Bastion Remnant.
+
+### 2026-09-03 — Safe first Nether resources
+
+- Added a second independent branch to `What to Do in the Nether?` for a short resource trip that does not require a particular Nether biome.
+- The learner checks a nearby mining place along the existing marked route, gathers 16 Netherrack and four Nether Quartz, then returns both samples through the original portal.
+- Netherrack instructions cover its high breaking speed, blind upward and downward digging, and indefinitely burning fire. Quartz instructions distinguish ordinary mining from Silk Touch and explain the irreversible four-Quartz Block recipe.
+- Gold Ore, high-ceiling Glowstone, unfamiliar structures, and route expansion remain deliberately outside this first trip. Eight Cobblestone and 5 XP reward the safe return without replacing later lessons.
+
+### 2026-09-03 — Prepared Nether Fortress path
+
+- Added a seven-quest progression path covering an Iron-or-better equipment check, safe Fortress search, protected entrance, threat recognition, two Blaze Rods, Nether Wart and Soul Sand, and the deliberate return home.
+- The search distinguishes dark-red Nether Brick bridges from Blackstone Bastion Remnants, preserves the Cobblestone-and-Torch marker rule, permits several journeys, and rejects open-Lava bridging or forced shortcuts.
+- The entrance lesson adds a roofed Cobblestone retreat room and a passage with only two blocks of open height. The text states its limits against Blaze fire and smaller enemies instead of presenting it as complete protection.
+- Combat guidance uses full-block line-of-sight cover for Blazes, the low passage for Wither Skeleton retreat, fully charged Sword attacks, and an optional Bow. Blaze Spawners remain intact for later controlled use.
+- The material path requires two Blaze Rods plus four Nether Wart and four Soul Sand, explains mature Wart and biome-independent farming, and ends with safe storage and a four-block home farm.
+- Sixteen Cobblestone and 10 XP replace part of the expedition supplies without crafting the future Brewing Stand or bypassing its lesson.
+- Rearranged the chapter map so the introduction sits on the left and the Piglin, first-resource, and Fortress paths begin in three separate rows. None of the three opening quests visually appears to depend on another branch.
+- Added three language-neutral 300 × 169 guides built from exact Minecraft 26.1.2 textures and model UVs: a Nether Brick bridge-and-pillar segment, Blaze/Wither Skeleton/Magma Cube identification, and a Blaze Spawner on a raised Nether Brick platform.
+- Clarified in the Blaze Rod lesson that a raised Shield can block incoming Blaze fireballs from the direction the player faces, while full-block cover remains safer against multiple angles.
