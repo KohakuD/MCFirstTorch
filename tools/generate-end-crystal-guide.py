@@ -96,46 +96,54 @@ def pillar(image, draw, centre, obsidian, crystal, cage=None, height=5):
     return None
 
 
-def create_guide(obsidian, end_stone, iron_bars, crystal, bow, pickaxe):
+def create_exposed_guide(obsidian, end_stone, crystal, bow):
     image = background()
     draw = ImageDraw.Draw(image, "RGBA")
-    margin, gap = 42, 28
-    panel_width = (W - 2 * margin - 2 * gap) // 3
+    left, right = 92, W - 92
+    draw.rounded_rectangle((left, 55, right, 886), radius=12, fill=(35, 35, 40, 255), outline=(111, 109, 119, 255), width=6)
+    floor(image, draw, left, right, end_stone)
+    pillar(image, draw, 1045, obsidian, crystal, height=6)
+    slot_item(image, bow, (365, 680), 150)
+    arrow(draw, (435, 635), (975, 190), width=19)
+    # A broad orange ring makes the intended shooting distance explicit without language.
+    draw.arc((210, 650, 620, 875), 195, 345, fill=(255, 137, 0, 255), width=12)
+    return image
+
+
+def create_cage_guide(obsidian, end_stone, iron_bars, crystal, bow, pickaxe):
+    image = background()
+    draw = ImageDraw.Draw(image, "RGBA")
+    margin, gap = 52, 34
+    panel_width = (W - 2 * margin - gap) // 2
     bounds = []
-    for index in range(3):
+    for index in range(2):
         left = margin + index * (panel_width + gap)
         right = left + panel_width
         panel(draw, left, right, index + 1)
         floor(image, draw, left, right, end_stone)
         bounds.append((left, right))
 
-    # 1: destroy an exposed Crystal with a fully drawn Bow from the ground.
+    # 1: climb on exact End Stone beside a cage and open only one side.
     left, right = bounds[0]
-    pillar(image, draw, left + 345, obsidian, crystal, height=5)
-    slot_item(image, bow, (left + 105, 686), 110)
-    arrow(draw, (left + 154, 652), (left + 314, 275))
-
-    # 2: climb on exact End Stone beside a cage and open only one side.
-    left, right = bounds[1]
-    cage_box = pillar(image, draw, left + 342, obsidian, crystal, iron_bars, height=5)
-    stair_left = left + 92
-    block = 72
-    for level in range(5):
-        x = stair_left + level * 44
+    cage_box = pillar(image, draw, left + 525, obsidian, crystal, iron_bars, height=5)
+    stair_left = left + 145
+    block = 78
+    for level in range(6):
+        x = stair_left + level * 57
         y = 766 - (level + 1) * block
         tile(image, end_stone, (x, y, x + block, y + block))
         draw.rectangle((x, y, x + block, y + block), outline=(91, 93, 62, 255), width=4)
-    slot_item(image, pickaxe, (left + 286, 270), 92)
-    arrow(draw, (left + 278, 316), (cage_box[0] + 12, (cage_box[1] + cage_box[3]) // 2), width=12)
+    slot_item(image, pickaxe, (left + 440, 220), 110)
+    arrow(draw, (left + 430, 270), (cage_box[0] + 12, (cage_box[1] + cage_box[3]) // 2), width=12)
     # White opening marks the single side bar to remove, never the Crystal.
     draw.rectangle((cage_box[0] - 5, cage_box[1] + 58, cage_box[0] + 39, cage_box[3] - 50), outline=(245, 245, 245, 255), width=8)
 
-    # 3: return to the ground and shoot through the opened side from a distance.
-    left, right = bounds[2]
-    cage_box = pillar(image, draw, left + 345, obsidian, crystal, iron_bars, height=5)
+    # 2: return to the ground and shoot through the opened side from a distance.
+    left, right = bounds[1]
+    cage_box = pillar(image, draw, left + 545, obsidian, crystal, iron_bars, height=5)
     draw.rectangle((cage_box[0] - 5, cage_box[1] + 58, cage_box[0] + 39, cage_box[3] - 50), fill=(35, 35, 40, 255), outline=(245, 245, 245, 255), width=7)
-    slot_item(image, bow, (left + 100, 686), 110)
-    arrow(draw, (left + 151, 650), (cage_box[0] + 28, (cage_box[1] + cage_box[3]) // 2))
+    slot_item(image, bow, (left + 145, 686), 135)
+    arrow(draw, (left + 205, 635), (cage_box[0] + 28, (cage_box[1] + cage_box[3]) // 2), width=17)
     return image
 
 
@@ -147,6 +155,7 @@ with ZipFile(JAR) as archive:
     crystal = asset(archive, "assets/minecraft/textures/item/end_crystal.png")
     bow = asset(archive, "assets/minecraft/textures/item/bow_pulling_2.png")
     pickaxe = asset(archive, "assets/minecraft/textures/item/iron_pickaxe.png")
-    create_guide(obsidian, end_stone, iron_bars, crystal, bow, pickaxe).save(OUT / "end_crystal_removal.png", optimize=True)
+    create_exposed_guide(obsidian, end_stone, crystal, bow).save(OUT / "end_crystal_exposed.png", optimize=True)
+    create_cage_guide(obsidian, end_stone, iron_bars, crystal, bow, pickaxe).save(OUT / "end_crystal_removal.png", optimize=True)
 
 print(OUT)

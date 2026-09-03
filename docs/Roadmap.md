@@ -452,7 +452,7 @@ The active milestone is **0.9.0 — The End**. Version **0.2.0** is the latest c
 - [x] Require 64 End Stone for Dragon-resistant approaches to the caged Crystals
 - [x] Open one cage side from an attached staircase, descend, and only then shoot from a safe distance
 - [x] Verify all ten pillar tops and the absence of healing beams before regrouping
-- [x] Add a language-neutral three-step guide made from exact Minecraft 26.1.2 textures
+- [x] Give exposed Crystals and cages separate language-neutral guides made from exact Minecraft 26.1.2 textures
 - [ ] Confirm the 64-End-Stone task and both manual completion checks in survival mode
 - [ ] Inspect the Crystal guide and full lesson text in German and English
 - [ ] Remove every Crystal once using the staged route and confirm that 16 replacement Arrows are granted
