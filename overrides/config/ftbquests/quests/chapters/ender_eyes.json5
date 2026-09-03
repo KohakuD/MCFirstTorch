@@ -1,0 +1,111 @@
+{
+  id: "746B17D3AE825CF0",
+  group: "",
+  order_index: 10,
+  icon: { id: "minecraft:ender_eye", count: 1 },
+  filename: "ender_eyes",
+  default_quest_shape: "circle",
+  default_hide_dependency_lines: false,
+  quests: [
+    {
+      id: "0C7539E5BF936D1A",
+      x: 0.0,
+      y: 0.0,
+      dependencies: ["5620D39F7A4E18B5"],
+      shape: "gear",
+      size: 1.5,
+      min_width: 380,
+      icon: { id: "minecraft:ender_eye", count: 1 },
+      tasks: [
+        { id: "1D864AF6C0A47E2B", type: "checkmark" },
+      ],
+    },
+    {
+      id: "2E975B07D1B58F3C",
+      x: 2.5,
+      y: 0.0,
+      dependencies: ["0C7539E5BF936D1A"],
+      min_width: 380,
+      icon: { id: "minecraft:ender_pearl", count: 1 },
+      tasks: [
+        { id: "3FA86C18E2C6904D", type: "checkmark" },
+      ],
+    },
+    {
+      id: "40B97D29F3D7A15E",
+      x: 5.0,
+      y: -1.5,
+      dependencies: ["2E975B07D1B58F3C"],
+      min_width: 380,
+      icon: { id: "minecraft:ender_pearl", count: 1 },
+      tasks: [
+        {
+          id: "51CA8E3A04E8B26F",
+          type: "item",
+          count: 16,
+          item: { id: "minecraft:ender_pearl", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "62DB9F4B15F9C370",
+      x: 5.0,
+      y: 1.5,
+      dependencies: ["2E975B07D1B58F3C"],
+      min_width: 380,
+      icon: { id: "minecraft:blaze_powder", count: 1 },
+      tasks: [
+        {
+          id: "73ECA05C260AD481",
+          type: "item",
+          count: 16,
+          item: { id: "minecraft:blaze_powder", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "14FDB16D371BE592",
+      x: 7.5,
+      y: 0.0,
+      dependencies: ["40B97D29F3D7A15E", "62DB9F4B15F9C370"],
+      min_width: 380,
+      icon: { id: "minecraft:ender_eye", count: 1 },
+      tasks: [
+        {
+          id: "250EC27E482CF6A3",
+          type: "item",
+          count: 16,
+          item: { id: "minecraft:ender_eye", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "361FD38F593D07B4",
+      x: 10.0,
+      y: 0.0,
+      dependencies: ["14FDB16D371BE592"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 380,
+      icon: { id: "minecraft:chest", count: 1 },
+      tasks: [
+        { id: "4720E4A06A4E18C5", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "5801F5B17B5F29D6",
+          type: "item",
+          count: 2,
+          item: { id: "minecraft:ender_eye", count: 1 },
+        },
+        {
+          id: "691206C28C603AE7",
+          type: "xp",
+          xp: 10,
+        },
+      ],
+    },
+  ],
+  quest_links: [],
+  images: [],
+}

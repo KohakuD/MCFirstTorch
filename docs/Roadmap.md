@@ -1,6 +1,6 @@
 # Roadmap
 
-The active milestone is **0.6.0 — Brewing and Potions**. Version **0.2.0** is the latest completed and tested release. The 0.3.0 through 0.5.0 content remains under in-game review, and the current development build is **0.6.0**.
+The active milestone is **0.7.0 — Eyes of Ender and the Stronghold**. Version **0.2.0** is the latest completed and tested release. The 0.3.0 through 0.6.0 content remains under in-game review, and the current development build is **0.7.0**.
 
 ## 0.1.0 — First Safe Night
 
@@ -364,6 +364,29 @@ The active milestone is **0.6.0 — Brewing and Potions**. Version **0.2.0** is 
 - [x] Add exact recipe and Brewing Stand images for Magma Cream, Fire Resistance, and its extension
 - [ ] Confirm Magma Cream detection and both manual brewing checks in survival mode
 - [ ] Inspect all three new images in German and English
+
+## 0.7.0 — Eyes of Ender and the Stronghold
+
+### Preparing the Eye supply
+
+- [x] Unlock directly from the completed first Strength sequence without requiring optional Fire Resistance
+- [x] Separate Ender Pearl and Blaze Powder gathering into parallel preparation branches
+- [x] Explain safe Enderman shelter combat, random Piglin bartering, and the experienced-Cleric trade as alternative Pearl sources
+- [x] Warn that thrown Ender Pearls deal two and a half hearts of damage and can rarely spawn an Endermite
+- [x] Require sixteen Ender Pearls and sixteen Blaze Powder before crafting sixteen Eyes of Ender
+- [x] Add an exact Minecraft 26.1.2 shapeless recipe guide using the original item textures
+- [x] Explain the twelve portal frames, the twenty-percent Eye break chance, and the rule to pause searching below twelve remaining Eyes
+- [x] Reward two additional Eyes as a search reserve only after the full preparation task is complete
+- [ ] Confirm all three sixteen-item thresholds and reward quantities in survival mode
+- [ ] Inspect the chapter map, recipe image, and full text in German and English
+
+### Planned 0.7.0 continuation
+
+- [ ] Prepare a complete Overworld expedition loadout before throwing the first Eye
+- [ ] Teach controlled Eye throws, recovery, route notes, and a safe return threshold
+- [ ] Locate the Stronghold without unsafe straight-down digging
+- [ ] Recognise Silverfish, secure the portal room, and assess existing frame Eyes
+- [ ] Activate the End Portal only after a separate End-expedition checklist
 
 ## Later milestones
 

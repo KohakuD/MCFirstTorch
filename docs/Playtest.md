@@ -337,3 +337,16 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 - The branch brews three-minute Fire Resistance from Awkward Potions and Magma Cream, then uses one of the previously rewarded Redstone Dust to extend the duration to eight minutes.
 - Safety text explains the Potion's specific protection and its limits, forbids deliberate Lava testing, and gives a clear retreat response for an accidental fall.
 - Added three language-neutral guides using the exact Minecraft 26.1.2 item textures, potion tint, Brewing Stand interface, and filled fuel sprite.
+
+## 0.7.0
+
+### 2026-09-03 — First Eye of Ender preparation
+
+- Added a six-quest bilingual chapter that unlocks directly from the completed Strength lesson; optional Fire Resistance does not gate progression.
+- Ender Pearl and Blaze Powder supplies form two parallel branches before rejoining at the shapeless Eye of Ender recipe.
+- The Pearl lesson offers safe two-block-roof Enderman combat, random Piglin bartering, and an experienced Cleric trade as alternatives without promising a particular random result.
+- Verified against Minecraft 26.1.2 that Endermen drop zero to one Pearl before Looting, Piglin barter returns two to four Pearls when selected, and a Cleric's relevant offer costs five Emeralds.
+- Warns that a thrown Ender Pearl costs two and a half hearts and has a five-percent Endermite chance.
+- Requires sixteen Pearls and sixteen Blaze Powder, explains that eight Blaze Rods make the Powder, and then requires sixteen completed Eyes.
+- Explains the twelve portal frames and the twenty-percent chance that a thrown search Eye shatters. The learner pauses a later search whenever fewer than twelve Eyes remain.
+- Added an exact target-version recipe guide from the original Ender Pearl, Blaze Powder, and Eye of Ender textures. Two bonus Eyes and 10 XP are awarded only after the initial sixteen have been crafted and safely stored.
