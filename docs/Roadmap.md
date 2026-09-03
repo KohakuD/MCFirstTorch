@@ -465,7 +465,7 @@ The active milestone is **0.9.0 — The End**. Version **0.2.0** is the latest c
 
 - [x] Teach fully drawn Bow shots from broad inner ground, leading the moving Dragon, and reassessing after every shot
 - [x] Separate Dragon's Breath avoidance, Enderman gaze control, and sideways dodging from the act of aiming
-- [x] Teach that Arrows are ineffective while the Dragon is perched and that recovered Sword strikes should target its head or upper neck
+- [x] Teach that Arrows are ineffective while the Dragon is perched and approach from behind for recovered jumping strikes beneath its tail instead of entering the wing area
 - [x] Require a controlled retreat from the Bedrock centre as soon as the Dragon takes off
 - [x] Explicitly exclude explosive Bed tactics from the beginner route
 - [x] Detect the first real Dragon victory through the exact Vanilla killed-Dragon advancement criterion

@@ -78,6 +78,29 @@ def dragon_front(image, dragon, centre, scale=1.0):
     paste_nearest(image, face, (cx - face_size // 2, cy - face_size // 2, cx + face_size // 2, cy + face_size // 2))
 
 
+def textured_polygon(image, texture, points):
+    left = min(point[0] for point in points)
+    top = min(point[1] for point in points)
+    right = max(point[0] for point in points)
+    bottom = max(point[1] for point in points)
+    fill = texture.resize((right - left, bottom - top), Image.Resampling.NEAREST)
+    mask = Image.new("L", (right - left, bottom - top), 0)
+    mask_draw = ImageDraw.Draw(mask)
+    mask_draw.polygon([(x - left, y - top) for x, y in points], fill=255)
+    image.alpha_composite(Image.composite(fill, Image.new("RGBA", fill.size), mask), (left, top))
+
+
+def dragon_side(image, dragon):
+    """Side silhouette exposing the rear approach, using exact dragon texture regions."""
+    body = dragon.crop((0, 0, 112, 64))
+    wing = dragon.crop((0, 96, 56, 144))
+    face = dragon.crop((128, 48, 144, 64))
+    textured_polygon(image, body, [(560, 230), (1040, 225), (1120, 385), (610, 410)])
+    paste_nearest(image, wing, (650, 80, 1080, 365))
+    paste_nearest(image, face, (405, 220, 620, 435))
+    textured_polygon(image, body, [(1050, 275), (1450, 355), (1450, 420), (1070, 385)])
+
+
 def create_flight_guide(dragon, fireball, bow, end_stone):
     image = background()
     draw = ImageDraw.Draw(image, "RGBA")
@@ -118,14 +141,15 @@ def create_perched_guide(dragon, bow, sword, bedrock, end_stone):
     draw = ImageDraw.Draw(image, "RGBA")
     end_floor(image, end_stone)
     bedrock_fountain(image, bedrock)
-    dragon_front(image, dragon, (W // 2, 250), 0.88)
+    dragon_side(image, dragon)
 
     paste_nearest(image, bow, (150, 190, 325, 365))
     cross(draw, (135, 175, 340, 380))
 
-    paste_nearest(image, sword, (1270, 455, 1475, 660))
-    arrow(draw, (1260, 565), (1000, 330), width=20)
-    arrow(draw, (1430, 820), (1190, 820), width=20)
+    paste_nearest(image, sword, (1375, 535, 1555, 715))
+    arrow(draw, (1390, 650), (1115, 455), width=20)
+    # Short upward arrow under the tail represents the required jumping strike.
+    arrow(draw, (1195, 680), (1195, 505), width=20)
     return image
 
 
