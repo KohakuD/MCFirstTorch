@@ -1,0 +1,90 @@
+{
+  id: "779E4A06D1B58F4E",
+  group: "",
+  order_index: 12,
+  icon: { id: "minecraft:end_stone", count: 1 },
+  filename: "the_end",
+  default_quest_shape: "circle",
+  default_hide_dependency_lines: false,
+  quests: [
+    {
+      id: "0A6FB17D482C07C5",
+      x: 0.0,
+      y: 0.0,
+      dependencies: ["6F54A06C371BF6A3"],
+      shape: "gear",
+      size: 1.5,
+      min_width: 390,
+      icon: { id: "minecraft:obsidian", count: 1 },
+      tasks: [
+        { id: "5FB406C29D715C1A", type: "checkmark" },
+      ],
+    },
+    {
+      id: "1B70C28E593D18D6",
+      x: 2.5,
+      y: 0.0,
+      dependencies: ["0A6FB17D482C07C5"],
+      min_width: 390,
+      icon: { id: "minecraft:end_portal_frame", count: 1 },
+      tasks: [
+        {
+          id: "60C517D3AE826D2B",
+          type: "advancement",
+          advancement: "minecraft:end/root",
+          criterion: "entered_end",
+        },
+      ],
+    },
+    {
+      id: "2C81D39F6A4E29E7",
+      x: 5.0,
+      y: 0.0,
+      dependencies: ["1B70C28E593D18D6"],
+      min_width: 390,
+      icon: { id: "minecraft:cobblestone", count: 1 },
+      tasks: [
+        { id: "71D628E4BF937E3C", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "24A95B17E2C6B16F",
+          type: "item",
+          count: 16,
+          item: { id: "minecraft:cobblestone", count: 1 },
+        },
+        {
+          id: "35BA6C28F3D7C270",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+    {
+      id: "3D92E4A07B5F3AF8",
+      x: 7.5,
+      y: 0.0,
+      dependencies: ["2C81D39F6A4E29E7"],
+      min_width: 390,
+      icon: { id: "minecraft:water_bucket", count: 1 },
+      tasks: [
+        { id: "02E739F5C0A48F4D", type: "checkmark" },
+      ],
+    },
+    {
+      id: "4EA3F5B18C604B09",
+      x: 10.0,
+      y: 0.0,
+      dependencies: ["3D92E4A07B5F3AF8"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 390,
+      icon: { id: "minecraft:end_crystal", count: 1 },
+      tasks: [
+        { id: "13F84A06D1B5A05E", type: "checkmark" },
+      ],
+    },
+  ],
+  quest_links: [],
+  images: [],
+}

@@ -1,6 +1,6 @@
 # Roadmap
 
-The active milestone is **0.8.0 — Preparing the End Expedition**. Version **0.2.0** is the latest completed and tested release. The 0.3.0 through 0.7.0 content remains under in-game review, and the current development build is **0.8.0**.
+The active milestone is **0.9.0 — The End**. Version **0.2.0** is the latest completed and tested release. The 0.3.0 through 0.8.0 content remains under in-game review, and the current development build is **0.9.0**.
 
 ## 0.1.0 — First Safe Night
 
@@ -422,7 +422,24 @@ The active milestone is **0.8.0 — Preparing the End Expedition**. Version **0.
 - [ ] Confirm the Bow, 32-Arrow, equipment, block, and food tasks in survival mode
 - [ ] Inspect the extended Stronghold chapter layout and both new guide images in German and English
 - [ ] Activate the portal from outside the frame and confirm that no accidental entry occurs
-- [ ] Enter the End only after a separate arrival and Dragon-fight plan
+- [x] Enter the End only after a separate arrival and Dragon-fight plan
+
+## 0.9.0 — The End
+
+### Controlled arrival
+
+- [x] Start a dedicated End chapter large enough to continue through Crystals, the Dragon, return, and later outer-island travel
+- [x] Prepare the first ten seconds before entry with a fixed hotbar and stand-still, Sneak, look-down routine
+- [x] Detect the first real End entry through the exact Vanilla entered-End advancement criterion
+- [x] Explain both an End-Stone-enclosed platform and a platform floating beside the main island
+- [x] Teach a diagonal staircase from an enclosed platform and a crouched two-wide bridge from a floating platform
+- [x] Add a language-neutral top-down arrival guide made from exact Minecraft 26.1.2 block textures
+- [x] Establish a Water retreat on safe End Stone without presenting it as protection from the Dragon or Void
+- [x] Identify End Crystals, healing beams, Iron Bar cages, Dragon's Breath, the inactive Bedrock exit, and avoidable Endermen before combat
+- [ ] Confirm the entered-End advancement task in survival mode
+- [ ] Inspect the End chapter layout and arrival image in German and English
+- [ ] Complete both arrival responses in controlled test worlds
+- [ ] Continue with a staged Crystal-removal and Dragon-fight plan
 
 ## Later milestones
 
