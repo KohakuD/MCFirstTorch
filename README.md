@@ -12,7 +12,7 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 - Minecraft: `26.1.2`
 - NeoForge: `26.1.2.84`
 - Languages: English (`en_us`) and German (`de_de`)
-- Current milestone: preparing a safe Eye of Ender supply after the first brewing sequence
+- Current milestone: preparing Eyes of Ender and locating the Overworld Stronghold safely
 
 ## Included foundation
 
@@ -40,7 +40,7 @@ The updater creates a timestamped backup inside `.first-torch/backups/` before r
 
 ## Project status
 
-Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 through 0.6.0 content has been implemented and remains under in-game review. Version 0.7.0 now prepares sixteen Eyes of Ender through parallel Ender Pearl and Blaze Powder supplies, without beginning the Stronghold search prematurely. Optional Bastion and Fire Resistance branches remain independent. The detailed scope and acceptance record live in [docs/Roadmap.md](docs/Roadmap.md).
+Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 through 0.6.0 content has been implemented and remains under in-game review. Version 0.7.0 prepares sixteen Eyes of Ender through parallel material supplies, then teaches a staged, documented Stronghold search and a safe staircase to the structure. Portal-room exploration remains a separate continuation. Optional Bastion and Fire Resistance branches remain independent. The detailed scope and acceptance record live in [docs/Roadmap.md](docs/Roadmap.md).
 
 ## Licence and trademarks
 

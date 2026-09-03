@@ -350,3 +350,12 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 - Requires sixteen Pearls and sixteen Blaze Powder, explains that eight Blaze Rods make the Powder, and then requires sixteen completed Eyes.
 - Explains the twelve portal frames and the twenty-percent chance that a thrown search Eye shatters. The learner pauses a later search whenever fewer than twelve Eyes remain.
 - Added an exact target-version recipe guide from the original Ender Pearl, Blaze Powder, and Eye of Ender textures. Two bonus Eyes and 10 XP are awarded only after the initial sixteen have been crafted and safely stored.
+
+### 2026-09-03 — Controlled Stronghold search
+
+- Continued the chapter with six lessons for an Overworld expedition loadout, one controlled first throw, documented travel stages, surface triangulation, a safe descending staircase, and a verified return to the surface.
+- The route repeats the twelve-Eye abort threshold, separates world-spawn Compass behaviour from Bed and home coordinates, and permits multiple daylight journeys instead of encouraging one uninterrupted chase.
+- Eye throws are limited to clear safe areas and observed until recovery or shattering. Reversing direction narrows the previous interval; a downward flight marks the local target area.
+- Straight-down digging is forbidden. The learner approaches beside the target via a lit staircase, closes unknown side caves, and opens a suspected Stronghold wall from a protected standing place.
+- The exact `minecraft:story/follow_ender_eye` advancement criterion `in_stronghold` detects arrival automatically. The portal room remains outside this implementation.
+- Added a three-stage, language-neutral search guide using only the original 26.1.2 Eye, terrain, Stone, and Stone Brick textures. Sixteen Torches and 10 XP reward the secured entrance and proven surface return.

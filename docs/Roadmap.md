@@ -382,9 +382,12 @@ The active milestone is **0.7.0 — Eyes of Ender and the Stronghold**. Version 
 
 ### Planned 0.7.0 continuation
 
-- [ ] Prepare a complete Overworld expedition loadout before throwing the first Eye
-- [ ] Teach controlled Eye throws, recovery, route notes, and a safe return threshold
-- [ ] Locate the Stronghold without unsafe straight-down digging
+- [x] Prepare a complete Overworld expedition loadout before throwing the first Eye
+- [x] Teach controlled Eye throws, recovery, route notes, and a safe return threshold
+- [x] Locate the Stronghold without unsafe straight-down digging
+- [x] Illustrate rising, forward-leading, and downward-diving Eyes with a language-neutral guide made from exact target-version textures
+- [x] Detect the first Stronghold entry with the exact Vanilla advancement criterion
+- [x] Require a secured entrance, recorded depth, and a successful return to the surface before exploration
 - [ ] Recognise Silverfish, secure the portal room, and assess existing frame Eyes
 - [ ] Activate the End Portal only after a separate End-expedition checklist
 
