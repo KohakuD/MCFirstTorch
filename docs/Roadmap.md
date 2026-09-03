@@ -459,7 +459,21 @@ The active milestone is **0.9.0 — The End**. Version **0.2.0** is the latest c
 - [ ] Confirm the 64-End-Stone task and both manual completion checks in survival mode
 - [ ] Inspect the Crystal guide and full lesson text in German and English
 - [ ] Remove every Crystal once using the staged route and confirm that 16 replacement Arrows are granted
-- [ ] Continue with the grounded and perched Dragon-fight phases
+- [x] Continue with the flying and perched Dragon-fight phases
+
+### Ender Dragon fight
+
+- [x] Teach fully drawn Bow shots from broad inner ground, leading the moving Dragon, and reassessing after every shot
+- [x] Separate Dragon's Breath avoidance, Enderman gaze control, and sideways dodging from the act of aiming
+- [x] Teach that Arrows are ineffective while the Dragon is perched and that recovered Sword strikes should target its head or upper neck
+- [x] Require a controlled retreat from the Bedrock centre as soon as the Dragon takes off
+- [x] Explicitly exclude explosive Bed tactics from the beginner route
+- [x] Detect the first real Dragon victory through the exact Vanilla killed-Dragon advancement criterion
+- [x] Add separate language-neutral flight and perched-phase guides made from exact Minecraft 26.1.2 textures
+- [ ] Confirm both manual phase checks and the killed-Dragon advancement task in survival mode
+- [ ] Inspect the two Dragon-fight guides and full lesson text in German and English
+- [ ] Complete the full Crystal-to-Dragon sequence without using a Bed explosion
+- [ ] Continue with the opened exit, Dragon Egg, and safe Overworld return
 
 ## Later milestones
 
