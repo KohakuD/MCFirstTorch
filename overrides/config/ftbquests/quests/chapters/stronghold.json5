@@ -1,0 +1,117 @@
+{
+  id: "757C28E4BF936D0A",
+  group: "",
+  order_index: 11,
+  icon: { id: "minecraft:end_portal_frame", count: 1 },
+  filename: "stronghold",
+  default_quest_shape: "circle",
+  default_hide_dependency_lines: false,
+  quests: [
+    {
+      id: "086D39F5C0A47E2B",
+      x: 0.0,
+      y: 0.0,
+      dependencies: ["74DB8F5B15F9C370"],
+      shape: "gear",
+      size: 1.5,
+      min_width: 380,
+      icon: { id: "minecraft:stone_bricks", count: 1 },
+      tasks: [
+        { id: "197E4A06D1B58F3C", type: "checkmark" },
+      ],
+    },
+    {
+      id: "2A8F5B17E2C6904D",
+      x: 2.5,
+      y: 0.0,
+      dependencies: ["086D39F5C0A47E2B"],
+      min_width: 380,
+      icon: { id: "minecraft:torch", count: 1 },
+      tasks: [
+        { id: "3B906C28F3D7A15E", type: "checkmark" },
+      ],
+    },
+    {
+      id: "4CA17D3904E8B26F",
+      x: 5.0,
+      y: 0.0,
+      dependencies: ["2A8F5B17E2C6904D"],
+      min_width: 380,
+      icon: { id: "minecraft:silverfish_spawn_egg", count: 1 },
+      tasks: [
+        { id: "5DB28E4A15F9C370", type: "checkmark" },
+      ],
+    },
+    {
+      id: "6EC39F5B260AD481",
+      x: 2.5,
+      y: 3.0,
+      dependencies: ["2A8F5B17E2C6904D"],
+      min_width: 380,
+      icon: { id: "minecraft:bookshelf", count: 1 },
+      tasks: [
+        { id: "7FD4A06C371BE592", type: "checkmark" },
+      ],
+    },
+    {
+      id: "10E5B17D482CF6A3",
+      x: 7.5,
+      y: 0.0,
+      dependencies: ["4CA17D3904E8B26F"],
+      min_width: 380,
+      icon: { id: "minecraft:end_portal_frame", count: 1 },
+      tasks: [
+        { id: "21F6C28E593D07B4", type: "checkmark" },
+      ],
+    },
+    {
+      id: "3207D39F6A4E18C5",
+      x: 10.0,
+      y: 0.0,
+      dependencies: ["10E5B17D482CF6A3"],
+      min_width: 380,
+      icon: { id: "minecraft:spawner", count: 1 },
+      tasks: [
+        { id: "4318E4A07B5F29D6", type: "checkmark" },
+      ],
+    },
+    {
+      id: "5429F5B18C603AE7",
+      x: 12.5,
+      y: 0.0,
+      dependencies: ["3207D39F6A4E18C5"],
+      min_width: 380,
+      icon: { id: "minecraft:ender_eye", count: 1 },
+      tasks: [
+        { id: "653A06C29D714BF8", type: "checkmark" },
+      ],
+    },
+    {
+      id: "764B17D3AE825C09",
+      x: 12.5,
+      y: 3.0,
+      dependencies: ["5429F5B18C603AE7"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 380,
+      icon: { id: "minecraft:golden_apple", count: 1 },
+      tasks: [
+        { id: "075C28E4BF936D1A", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "186D39F5C0A47E2B",
+          type: "item",
+          item: { id: "minecraft:golden_apple", count: 1 },
+        },
+        {
+          id: "297E4A06D1B58F3C",
+          type: "xp",
+          xp: 10,
+        },
+      ],
+    },
+  ],
+  quest_links: [],
+  images: [],
+}

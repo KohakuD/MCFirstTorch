@@ -12,12 +12,12 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 - Minecraft: `26.1.2`
 - NeoForge: `26.1.2.84`
 - Languages: English (`en_us`) and German (`de_de`)
-- Current milestone: preparing Eyes of Ender and locating the Overworld Stronghold safely
+- Current milestone: locating and securing the End Portal room without activating it
 
 ## Included foundation
 
 - FTB Quests, FTB Library, FTB Teams, and the official FTB item-tag filter modules
-- Eleven bilingual chapters covering the first safe night, independent survival routines, essential Iron equipment, finding the way home, sustainable supplies, the first deep Diamond expedition, optional safe mob drops, the first controlled Nether visit, optional Nether activities, brewing, and preparation for the Stronghold search
+- Twelve bilingual chapters covering the first safe night, independent survival routines, essential Iron equipment, finding the way home, sustainable supplies, the first deep Diamond expedition, optional safe mob drops, the first controlled Nether visit, optional Nether activities, brewing, the Stronghold search, and controlled Stronghold exploration
 - Reproducible CurseForge manifest with pinned dependency file IDs
 
 ## Install a development build
@@ -40,7 +40,7 @@ The updater creates a timestamped backup inside `.first-torch/backups/` before r
 
 ## Project status
 
-Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 through 0.6.0 content has been implemented and remains under in-game review. Version 0.7.0 prepares sixteen Eyes of Ender through parallel material supplies, then teaches a staged, documented Stronghold search and a safe staircase to the structure. Portal-room exploration remains a separate continuation. Optional Bastion and Fire Resistance branches remain independent. The detailed scope and acceptance record live in [docs/Roadmap.md](docs/Roadmap.md).
+Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 through 0.6.0 content has been implemented and remains under in-game review. Version 0.7.0 prepares Eyes of Ender, teaches a staged Stronghold search, and continues through a marked labyrinth route to a secured but inactive End Portal room. Activation remains locked behind a later End-expedition checklist. Optional Bastion, Fire Resistance, and Stronghold Library paths remain independent. The detailed scope and acceptance record live in [docs/Roadmap.md](docs/Roadmap.md).
 
 ## Licence and trademarks
 

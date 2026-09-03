@@ -388,8 +388,18 @@ The active milestone is **0.7.0 — Eyes of Ender and the Stronghold**. Version 
 - [x] Illustrate rising, forward-leading, and downward-diving Eyes with a language-neutral guide made from exact target-version textures
 - [x] Detect the first Stronghold entry with the exact Vanilla advancement criterion
 - [x] Require a secured entrance, recorded depth, and a successful return to the surface before exploration
-- [ ] Recognise Silverfish, secure the portal room, and assess existing frame Eyes
+- [x] Split controlled Stronghold exploration into a separate twelfth bilingual chapter
+- [x] Teach a right-wall Torch rule while explaining why loops still require coordinates and junction markers
+- [x] Explain ordinary dark-room enemies separately from visually indistinguishable infested blocks and Silverfish
+- [x] Keep Stronghold Libraries optional because generation can omit or truncate them
+- [x] Identify the portal room through twelve frames, Lava, and its Silverfish Spawner
+- [x] Secure a retreat, destroy the Spawner, light the room, and control reachable Lava before approaching the frames
+- [x] Count existing and missing Eyes across all twelve frames without inserting any
+- [x] Add exact-texture guides for Silverfish risk, the top-down portal-room arrangement, and empty versus filled frames
+- [x] Return home with the frame count and Eyes stored together before activation
 - [ ] Activate the End Portal only after a separate End-expedition checklist
+- [ ] Inspect the Stronghold chapter layout and all three new images in German and English
+- [ ] Complete the marked labyrinth route, Spawner removal, twelve-frame count, and home return in survival mode
 
 ## Later milestones
 

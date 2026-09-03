@@ -192,6 +192,14 @@
       ],
     },
   ],
-  quest_links: [],
+  quest_links: [
+    {
+      id: "3A8F5B17E2C6904D",
+      linked_quest: "086D39F5C0A47E2B",
+      x: 5.0,
+      y: 3.0,
+      shape: "diamond",
+    },
+  ],
   images: [],
 }

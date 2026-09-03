@@ -359,3 +359,14 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 - Straight-down digging is forbidden. The learner approaches beside the target via a lit staircase, closes unknown side caves, and opens a suspected Stronghold wall from a protected standing place.
 - The exact `minecraft:story/follow_ender_eye` advancement criterion `in_stronghold` detects arrival automatically. The portal room remains outside this implementation.
 - Added a three-stage, language-neutral search guide using only the original 26.1.2 Eye, terrain, Stone, and Stone Brick textures. Sixteen Torches and 10 XP reward the secured entrance and proven surface return.
+
+### 2026-09-03 — Controlled Stronghold and portal-room exploration
+
+- Added a separate eight-quest bilingual chapter after the proven surface return so the search map remains compact and portal-room work cannot be confused with locating the structure.
+- The learner leaves Eyes outside the exploration inventory, establishes a stopping rule, and uses right-wall Torches plus coordinates and junction markers to handle loops and changing elevation.
+- Separates ordinary mobs in dark corridors from Silverfish hidden in visually ordinary Stone variants. Unnecessary wall mining is discouraged, and a narrow lit retreat is prioritised if Silverfish appear.
+- Stronghold Libraries are an optional side branch because they are not required for progression and may be absent or truncated by structure generation.
+- The main path identifies the portal room through twelve frames, Lava, and the Silverfish Spawner, then requires an external retreat room before the Spawner is destroyed and reachable Lava is controlled.
+- Existing and missing Eyes are counted across all twelve frames without carrying or inserting Eyes. The learner returns home with the written count before any activation lesson appears.
+- Added three language-neutral guides from exact Minecraft 26.1.2 assets: three straight 3D Stone Brick variants beside the segmented Silverfish model, a top-down portal-room orientation plan, and top-down empty/filled frame states.
+- One Golden Apple and 10 XP reward the completed exploration without activating the portal or bypassing the later End equipment lesson.
