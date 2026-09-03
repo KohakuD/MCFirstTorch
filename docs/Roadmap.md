@@ -439,10 +439,13 @@ The active milestone is **0.9.0 — The End**. Version **0.2.0** is the latest c
 - [x] Teach a diagonal staircase from an enclosed platform and a crouched two-wide bridge from a floating platform
 - [x] Add a language-neutral top-down arrival guide made from exact Minecraft 26.1.2 block textures
 - [x] Establish a Water retreat on safe End Stone without presenting it as protection from the Dragon or Void
+- [x] Add an optional three-by-three End Stone roof with two-block clearance as a dry Enderman retreat
+- [x] Show its safe centre and exact clearance in a language-neutral guide made from original target-version assets
 - [x] Identify End Crystals, healing beams, Iron Bar cages, Dragon's Breath, the inactive Bedrock exit, and avoidable Endermen before combat
 - [ ] Confirm the entered-End advancement task in survival mode
 - [ ] Inspect the End chapter layout and arrival image in German and English
 - [ ] Complete both arrival responses in controlled test worlds
+- [ ] Build the optional shelter and confirm an Enderman cannot reach the player at its centre
 - [x] Continue with a staged Crystal-removal plan before teaching direct Dragon attacks
 
 ### Staged Crystal removal

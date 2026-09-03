@@ -72,6 +72,18 @@
       ],
     },
     {
+      id: "0CB72D9F6A4E29E8",
+      x: 7.5,
+      y: -2.5,
+      dependencies: ["3D92E4A07B5F3AF8"],
+      shape: "gear",
+      min_width: 390,
+      icon: { id: "minecraft:end_stone", count: 1 },
+      tasks: [
+        { id: "1DC83EA07B5F3AF9", type: "checkmark" },
+      ],
+    },
+    {
       id: "4EA3F5B18C604B09",
       x: 10.0,
       y: 0.0,

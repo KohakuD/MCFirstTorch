@@ -59,6 +59,25 @@
   ],
   "task.02E739F5C0A48F4D.title": "Water retreat prepared on safe End Stone",
 
+  "quest.0CB72D9F6A4E29E8.title": "Optional: Build an Enderman Shelter Roof",
+  "quest.0CB72D9F6A4E29E8.quest_subtitle": "Three by three blocks with exactly two clear blocks of interior height",
+  "quest.0CB72D9F6A4E29E8.quest_desc": [
+    "Goal: optionally build a dry retreat that Endermen are too tall to enter.",
+    "",
+    "Choose a broad, level End Stone area at the foot of an Obsidian pillar, far from the Void. Build a three-by-three roof from nine End Stone blocks. Its underside sits exactly two blocks above the ground: you can stand upright beneath it, but an almost three-block-tall Enderman cannot.",
+    "",
+    "{image:firsttorch:textures/questpics/enderman_roof_shelter.png width:300 height:169 align:center}",
+    "",
+    "The top view marks the safe centre in orange. The side view shows the two clear blocks between ground and roof. Use the Obsidian pillar as an obvious rear wall and remove every temporary support from the interior before testing it.",
+    "",
+    "After provoking an Enderman accidentally, lower the view and move beneath the roof to the centre square. Remain there instead of colliding with it at the edge. If defence is necessary, attack only its legs from inside with fully recovered strikes.",
+    "",
+    "The roof protects only against Enderman height and melee reach. It does not protect against the Dragon, Dragon's Breath, knockback, or the Void. If purple Breath covers the entrance or the Dragon attacks, the roof is not a safe place to remain.",
+    "",
+    "This side branch is entirely optional and does not block the Crystal path. Set the checkmark only if the roof really measures three by three blocks, has two clear blocks of interior height, and its centre can be reached safely.",
+  ],
+  "task.1DC83EA07B5F3AF9.title": "Build an optional 3 × 3 shelter roof with a safe centre",
+
   "quest.4EA3F5B18C604B09.title": "Read the Battlefield",
   "quest.4EA3F5B18C604B09.quest_subtitle": "Crystals heal, purple clouds hurt, and the centre is not an exit yet",
   "quest.4EA3F5B18C604B09.quest_desc": [

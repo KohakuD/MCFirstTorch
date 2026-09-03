@@ -59,6 +59,25 @@
   ],
   "task.02E739F5C0A48F4D.title": "Wasser-Rückzug auf sicherem Endstein angelegt",
 
+  "quest.0CB72D9F6A4E29E8.title": "Optional: Baue ein Enderman-Schutzdach",
+  "quest.0CB72D9F6A4E29E8.quest_subtitle": "Drei mal drei Blöcke und genau zwei Blöcke freie Innenhöhe",
+  "quest.0CB72D9F6A4E29E8.quest_desc": [
+    "Ziel: Baue freiwillig einen trockenen Rückzugsort, unter den Endermen nicht passen.",
+    "",
+    "Wähle am Fuss einer Obsidiansäule eine breite, ebene Endsteinfläche weit weg von der Leere. Baue dort aus neun Endsteinblöcken ein drei mal drei Blöcke grosses Dach. Seine Unterseite liegt genau zwei Blöcke über dem Boden: Du kannst aufrecht darunter stehen, ein fast drei Blöcke grosser Enderman jedoch nicht.",
+    "",
+    "{image:firsttorch:textures/questpics/enderman_roof_shelter.png width:300 height:169 align:center}",
+    "",
+    "Die Draufsicht markiert den sicheren Mittelpunkt orange. Die Seitenansicht zeigt die zwei freien Blöcke zwischen Boden und Dach. Nutze die Obsidiansäule als gut sichtbare Rückwand und entferne vor dem Test alle provisorischen Stützen aus dem Innenraum.",
+    "",
+    "Hast du versehentlich einen Enderman provoziert, senke den Blick und gehe unter das Dach bis zum mittleren Feld. Bleibe dort, statt am Rand mit ihm zusammenzustossen. Musst du dich verteidigen, greife von innen nur seine Beine mit vollständig erholten Schlägen an.",
+    "",
+    "Das Dach schützt nur vor der Körpergrösse und Nahkampfreichweite der Endermen. Es schützt nicht vor dem Drachen, Drachenatem, Rückstoss oder der Leere. Liegt violetter Atem am Eingang oder greift der Drache an, ist das Dach kein sicherer Aufenthaltsort.",
+    "",
+    "Dieser Seitenzweig ist vollständig freiwillig und blockiert den Kristallweg nicht. Setze das Häkchen nur, wenn das Dach wirklich drei mal drei Blöcke misst, zwei Blöcke freie Innenhöhe besitzt und du seinen Mittelpunkt sicher erreichen kannst.",
+  ],
+  "task.1DC83EA07B5F3AF9.title": "Freiwilliges 3 × 3-Schutzdach mit sicherem Mittelpunkt gebaut",
+
   "quest.4EA3F5B18C604B09.title": "Lies das Kampffeld",
   "quest.4EA3F5B18C604B09.quest_subtitle": "Kristalle heilen, violette Wolken schaden und die Mitte ist noch kein Ausgang",
   "quest.4EA3F5B18C604B09.quest_desc": [
