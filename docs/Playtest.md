@@ -301,3 +301,12 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 - Rearranged the chapter map so the introduction sits on the left and the Piglin, first-resource, and Fortress paths begin in three separate rows. None of the three opening quests visually appears to depend on another branch.
 - Added three language-neutral 300 × 169 guides built from exact Minecraft 26.1.2 textures and model UVs: a Nether Brick bridge-and-pillar segment, Blaze/Wither Skeleton/Magma Cube identification, and a Blaze Spawner on a raised Nether Brick platform.
 - Clarified in the Blaze Rod lesson that a raised Shield can block incoming Blaze fireballs from the direction the player faces, while full-block cover remains safer against multiple angles.
+
+### 2026-09-03 — Advanced optional Bastion Remnant path
+
+- Added a fourth independent path that explicitly states Bastion Remnants are not required for brewing materials or later progression and may remain incomplete permanently.
+- The seven lessons cover the voluntary decision, Iron-or-better equipment with Diamond and ranged-combat recommendations, visual identification, a closed outer retreat room, the exact Piglin Brute and guarded-block rules, at most one fully secured Chest, and deliberate return to the Overworld.
+- Verified the `find_bastion` advancement criterion and the complete `guarded_by_piglins` block tag directly against the Minecraft 26.1.2 JAR. The player is warned about Gold and Raw Gold Blocks, Gilded Blackstone, Gold Ores, Barrels, Ender Chests, ordinary/Trapped/Copper Chests, and Shulker Boxes.
+- The first controlled entry combines the Vanilla Bastion-location criterion with a manual confirmation that the learner returned to the closed Cobblestone room. Loot remains manual because every Bastion table is random and safety cannot be inferred from an item.
+- Added a language-neutral Bastion silhouette built from the exact target-version Blackstone, Polished and Cracked Polished Blackstone Brick, and Gilded Blackstone textures. The existing four-Piglin comparison is repeated at the Brute lesson.
+- The final reward is 10 XP only; no Bastion loot or later crafting material is granted.

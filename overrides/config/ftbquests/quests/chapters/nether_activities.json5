@@ -293,6 +293,145 @@
         },
       ],
     },
+    {
+      id: "0756BFDE228E428E",
+      x: 2.5,
+      y: 12.0,
+      dependencies: ["07105D263E94F5A2"],
+      shape: "gear",
+      size: 1.5,
+      min_width: 380,
+      icon: { id: "minecraft:polished_blackstone_bricks", count: 1 },
+      tasks: [
+        { id: "4AC7E176091C4381", type: "checkmark" },
+      ],
+    },
+    {
+      id: "3DE769F7D32C4A9C",
+      x: 5.0,
+      y: 12.0,
+      dependencies: ["0756BFDE228E428E"],
+      min_width: 380,
+      icon: { id: "minecraft:diamond_chestplate", count: 1 },
+      tasks: [
+        {
+          id: "78AFC92617A54283",
+          type: "item",
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "or(item(minecraft:iron_sword)item(minecraft:diamond_sword)item(minecraft:netherite_sword))",
+            },
+          },
+        },
+        {
+          id: "54148BC05EBD45D0",
+          type: "item",
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "or(item(minecraft:iron_pickaxe)item(minecraft:diamond_pickaxe)item(minecraft:netherite_pickaxe))",
+            },
+          },
+        },
+        {
+          id: "14D146623A394141",
+          type: "item",
+          item: { id: "minecraft:shield", count: 1 },
+        },
+        {
+          id: "4E35081C01814BE1",
+          type: "item",
+          item: { id: "minecraft:cobblestone", count: 1 },
+          count: 64,
+        },
+        {
+          id: "15AA86345B664DDC",
+          type: "item",
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "or(item(minecraft:cooked_beef)item(minecraft:cooked_porkchop)item(minecraft:cooked_chicken)item(minecraft:cooked_mutton)item(minecraft:cooked_rabbit)item(minecraft:cooked_cod)item(minecraft:cooked_salmon)item(minecraft:baked_potato))",
+            },
+          },
+          count: 16,
+        },
+        { id: "63C39DFA6EEC4313", type: "checkmark" },
+      ],
+    },
+    {
+      id: "639CF2C727F64672",
+      x: 7.5,
+      y: 12.0,
+      dependencies: ["3DE769F7D32C4A9C"],
+      min_width: 380,
+      icon: { id: "minecraft:blackstone", count: 1 },
+      tasks: [
+        { id: "3F9D7D5D79B54342", type: "checkmark" },
+      ],
+    },
+    {
+      id: "69CCB8EF5C5C4F39",
+      x: 10.0,
+      y: 12.0,
+      dependencies: ["639CF2C727F64672"],
+      min_width: 380,
+      icon: { id: "minecraft:cobblestone_wall", count: 1 },
+      tasks: [
+        {
+          id: "06B993147A0C4E1C",
+          type: "advancement",
+          advancement: "minecraft:nether/find_bastion",
+          criterion: "bastion",
+        },
+        { id: "402ABF971FE94B86", type: "checkmark" },
+      ],
+    },
+    {
+      id: "4BBE2FCA33A44E31",
+      x: 10.0,
+      y: 15.0,
+      dependencies: ["69CCB8EF5C5C4F39"],
+      min_width: 380,
+      icon: { id: "minecraft:golden_axe", count: 1 },
+      tasks: [
+        { id: "50F984274598419E", type: "checkmark" },
+      ],
+    },
+    {
+      id: "2B8E074C6B014FB6",
+      x: 7.5,
+      y: 15.0,
+      dependencies: ["4BBE2FCA33A44E31"],
+      min_width: 380,
+      icon: { id: "minecraft:chest", count: 1 },
+      tasks: [
+        { id: "232D9AA60A8E408C", type: "checkmark" },
+      ],
+    },
+    {
+      id: "5648FD5148EA4CA9",
+      x: 5.0,
+      y: 15.0,
+      dependencies: ["2B8E074C6B014FB6"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 380,
+      icon: { id: "minecraft:lodestone", count: 1 },
+      tasks: [
+        { id: "301286261C404A31", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "543FFA158A2E4B1C",
+          type: "xp",
+          xp: 10,
+        },
+      ],
+    },
   ],
   quest_links: [],
   images: [],

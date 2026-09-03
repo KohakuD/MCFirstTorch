@@ -40,7 +40,7 @@ The updater creates a timestamped backup inside `.first-torch/backups/` before r
 
 ## Project status
 
-Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 and 0.4.0 content has been implemented and remains under in-game review; version 0.5.0 now covers safe portal construction, Nether equipment, controlled activation, a secured portal shelter, and the first short marked scouting route. The separate `What to Do in the Nether?` chapter includes an optional Piglin barter, a biome-independent Netherrack-and-Quartz trip, and a prepared Nether Fortress path through Blaze Rods and a renewable Nether Wart supply. Bastion Remnants remain reserved for a later advanced branch. The detailed scope and acceptance record live in [docs/Roadmap.md](docs/Roadmap.md).
+Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 and 0.4.0 content has been implemented and remains under in-game review; version 0.5.0 now covers safe portal construction, Nether equipment, controlled activation, a secured portal shelter, and the first short marked scouting route. The separate `What to Do in the Nether?` chapter includes an optional Piglin barter, a biome-independent Netherrack-and-Quartz trip, a prepared Nether Fortress path through Blaze Rods and a renewable Nether Wart supply, and a clearly optional advanced Bastion Remnant branch. The detailed scope and acceptance record live in [docs/Roadmap.md](docs/Roadmap.md).
 
 ## Licence and trademarks
 

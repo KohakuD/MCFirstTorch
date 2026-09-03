@@ -331,7 +331,7 @@ The active milestone is **0.5.0 — Nether Preparation and First Visit**. Versio
 - [x] Add a prepared Nether Fortress branch for Blazes, Blaze Rods, and Nether Wart
 - [x] Arrange Piglin barter, first resources, and Nether Fortress as three visibly parallel branches
 - [x] Illustrate the Fortress silhouette, its three principal enemies, and a Blaze Spawner with exact target-version assets
-- [ ] Add a separate advanced optional Bastion Remnant branch with explicit Piglin Brute and guarded-container rules
+- [x] Add a separate advanced optional Bastion Remnant branch with explicit Piglin Brute and guarded-container rules
 
 ## Later milestones
 

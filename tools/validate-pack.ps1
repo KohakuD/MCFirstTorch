@@ -283,7 +283,7 @@ Assert-True (Test-Path -LiteralPath $packMetadataPath -PathType Leaf) 'First Tor
 $packMetadata = Get-Content -LiteralPath $packMetadataPath -Raw | ConvertFrom-Json
 Assert-True ($packMetadata.pack.min_format[0] -eq 84 -and $packMetadata.pack.min_format[1] -eq 0) 'Guide resource pack min_format must be [84, 0] for Minecraft 26.1.2.'
 Assert-True ($packMetadata.pack.max_format[0] -eq 84 -and $packMetadata.pack.max_format[1] -eq 0) 'Guide resource pack max_format must be [84, 0] for Minecraft 26.1.2.'
-foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png', 'place_crafting_table.png', 'wooden_pickaxe.png', 'stone_axe.png', 'furnace.png', 'chest.png', 'charcoal.png', 'bed.png', 'hunger_and_eating.png', 'cooking_food.png', 'stone_pickaxe.png', 'shield.png', 'armour_recipes.png', 'safe_staircase.png', 'torch_route.png', 'iron_pickaxe.png', 'bucket.png', 'stonecutter.png', 'lodestone.png', 'stone_hoe.png', 'bread.png', 'farmland_9x9.png', 'fence_and_gate.png', 'paper_and_book.png', 'enchanting_table_recipe.png', 'enchanting_interface.png', 'bookshelf_recipe.png', 'enchanting_bookshelves.png', 'iron_sword.png', 'bone_meal_recipe.png', 'attack_indicator.png', 'flint_and_steel.png', 'nether_portal_frame.png', 'nether_route_marker.png', 'piglin_comparison.png', 'nether_fortress.png', 'fortress_hazards.png', 'blaze_spawner.png')) {
+foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png', 'place_crafting_table.png', 'wooden_pickaxe.png', 'stone_axe.png', 'furnace.png', 'chest.png', 'charcoal.png', 'bed.png', 'hunger_and_eating.png', 'cooking_food.png', 'stone_pickaxe.png', 'shield.png', 'armour_recipes.png', 'safe_staircase.png', 'torch_route.png', 'iron_pickaxe.png', 'bucket.png', 'stonecutter.png', 'lodestone.png', 'stone_hoe.png', 'bread.png', 'farmland_9x9.png', 'fence_and_gate.png', 'paper_and_book.png', 'enchanting_table_recipe.png', 'enchanting_interface.png', 'bookshelf_recipe.png', 'enchanting_bookshelves.png', 'iron_sword.png', 'bone_meal_recipe.png', 'attack_indicator.png', 'flint_and_steel.png', 'nether_portal_frame.png', 'nether_route_marker.png', 'piglin_comparison.png', 'nether_fortress.png', 'fortress_hazards.png', 'blaze_spawner.png', 'bastion_remnant.png')) {
     $imagePath = Join-Path $guidePackRoot (Join-Path 'assets/firsttorch/textures/questpics' $imageName)
     Assert-True (Test-Path -LiteralPath $imagePath -PathType Leaf) "Missing quest guide image: $imageName"
     Assert-True ((Get-Item -LiteralPath $imagePath).Length -gt 0) "Quest guide image is empty: $imageName"
@@ -304,11 +304,13 @@ foreach ($imageName in @('flint_and_steel.png', 'nether_portal_frame.png', 'neth
     Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each Nether Preparation language file."
 }
 $piglinComparisonReferences = [regex]::Matches($allLanguageText, 'firsttorch:textures/questpics/piglin_comparison\.png')
-Assert-True ($piglinComparisonReferences.Count -eq 4) 'The Piglin comparison guide must be referenced in both relevant quests in each language.'
+Assert-True ($piglinComparisonReferences.Count -eq 6) 'The Piglin comparison guide must be referenced in all three relevant quests in each language.'
 foreach ($imageName in @('nether_fortress.png', 'fortress_hazards.png', 'blaze_spawner.png')) {
     $referenceCount = [regex]::Matches($allLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
     Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each language."
 }
+$bastionImageReferences = [regex]::Matches($allLanguageText, 'firsttorch:textures/questpics/bastion_remnant\.png')
+Assert-True ($bastionImageReferences.Count -eq 2) 'The Bastion Remnant guide must be referenced once in each language.'
 $armourImageReferences = [regex]::Matches($allDefinitionText + "`n" + ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"), 'firsttorch:textures/questpics/armour_recipes\.png')
 Assert-True ($armourImageReferences.Count -eq 2) 'The compact Armour recipe overview must be referenced once in each language.'
 $chestImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"), 'firsttorch:textures/questpics/chest\.png')

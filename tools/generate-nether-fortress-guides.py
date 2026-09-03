@@ -195,6 +195,44 @@ def create_spawner_scene(nether_bricks, spawner, blaze):
     return image
 
 
+def create_bastion_scene(blackstone, polished_bricks, cracked_bricks, gilded_blackstone):
+    image = framed_background()
+    draw = ImageDraw.Draw(image, "RGBA")
+    draw.ellipse((220, 760, 1450, 885), fill=(8, 8, 9, 110))
+    scene = IsoScene(image, blackstone, center=(820, 790), tile=(88, 44), block_height=68)
+
+    # Uneven foundation and two broken towers reproduce the Bastion's irregular silhouette.
+    for x in range(-6, 7):
+        for z in range(-3, 4):
+            if not (x in (-6, 6) and z in (-3, 3)):
+                scene.add_block(x, 0, z, blackstone)
+    for y in range(1, 6):
+        for x in range(-5, -1):
+            for z in range(-2, 3):
+                edge = x in (-5, -2) or z in (-2, 2)
+                broken = (x + 2 * z + y) % 11 == 0 or (y > 3 and x == -2 and z == 2)
+                if edge and not broken:
+                    texture = cracked_bricks if (x + z + y) % 7 == 0 else polished_bricks
+                    scene.add_block(x, y, z, texture)
+    for y in range(1, 8):
+        for x in range(2, 6):
+            for z in range(-3, 2):
+                edge = x in (2, 5) or z in (-3, 1)
+                broken = (2 * x + z + y) % 13 == 0 or (y > 5 and x == 2 and z == -3)
+                if edge and not broken:
+                    texture = cracked_bricks if (x - z + y) % 6 == 0 else polished_bricks
+                    scene.add_block(x, y, z, texture)
+
+    # A narrow internal bridge and a few exact guarded Gilded Blackstone blocks.
+    for x in range(-1, 3):
+        for z in (-1, 0, 1):
+            scene.add_block(x, 4, z, polished_bricks)
+    scene.add_block(3, 2, 1, gilded_blackstone)
+    scene.add_block(4, 3, 1, gilded_blackstone)
+    scene.render()
+    return image
+
+
 OUT.mkdir(parents=True, exist_ok=True)
 with ZipFile(JAR) as archive:
     nether_bricks = asset(archive, "assets/minecraft/textures/block/nether_bricks.png")
@@ -202,11 +240,18 @@ with ZipFile(JAR) as archive:
     blaze = asset(archive, "assets/minecraft/textures/entity/blaze/blaze.png")
     wither = asset(archive, "assets/minecraft/textures/entity/skeleton/wither_skeleton.png")
     magma = asset(archive, "assets/minecraft/textures/entity/slime/magmacube.png")
+    blackstone = asset(archive, "assets/minecraft/textures/block/blackstone.png")
+    polished_bricks = asset(archive, "assets/minecraft/textures/block/polished_blackstone_bricks.png")
+    cracked_bricks = asset(archive, "assets/minecraft/textures/block/cracked_polished_blackstone_bricks.png")
+    gilded_blackstone = asset(archive, "assets/minecraft/textures/block/gilded_blackstone.png")
 
     fortress = framed_background()
     add_fortress_scene(fortress, nether_bricks)
     fortress.save(OUT / "nether_fortress.png", optimize=True)
     create_hazards(blaze, wither, magma).save(OUT / "fortress_hazards.png", optimize=True)
     create_spawner_scene(nether_bricks, spawner, blaze).save(OUT / "blaze_spawner.png", optimize=True)
+    create_bastion_scene(blackstone, polished_bricks, cracked_bricks, gilded_blackstone).save(
+        OUT / "bastion_remnant.png", optimize=True
+    )
 
 print(OUT)
