@@ -311,6 +311,9 @@ foreach ($rewardId in $expectedItemRewards.Keys) {
     $rewardPattern += '[\s\S]{0,180}?item:\s*\{\s*id:\s*"' + [regex]::Escape($reward.Item) + '"\s*,\s*count:\s*1\s*\}'
     Assert-True ([regex]::IsMatch($allDefinitionText, $rewardPattern)) "Reward $rewardId must grant $($reward.Count) $($reward.Item)."
 }
+$woolRewardTitlePattern = 'reward\.2F517B3E160C248D\.title"\s*:\s*"3\s*×\s*(?:weisse Wolle|White Wool)"'
+$woolRewardTitleMatches = [regex]::Matches($allLanguageText, $woolRewardTitlePattern)
+Assert-True ($woolRewardTitleMatches.Count -eq 2) 'The three-Wool reward must state its quantity explicitly in both languages.'
 
 $expectedXpRewards = @{
     '4BD9A6E31F028C75' = 5

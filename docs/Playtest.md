@@ -62,6 +62,7 @@ Status: startup and world creation passed; 0.1.2 translation retest pending.
 - Moved all multi-item quantities to the supported field and added a regression check for the ignored form.
 - Existing claimed-reward state is intentionally preserved; the corrected quantities require an unclaimed reward or a fresh test world for verification.
 - Reset only the backed-up FTB Quests progress for the test world and repeated the claims. In-game verification confirmed both 2-Apple rewards, 3 Bread, and 1 Lantern are granted correctly and only once.
+- Follow-up inspection confirmed that the safe-shelter reward also uses the supported reward-level count of three. Because FTB keeps the embedded icon stack at one, the Wool reward now has an explicit bilingual `3 ×` title so the intended quantity remains unambiguous in its tooltip without changing payout behaviour.
 
 Record each test with date, Minecraft/NeoForge versions, language, fresh or existing world, confusing moments, technical errors, and the resulting change.
 
