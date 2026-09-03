@@ -12,7 +12,7 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 - Minecraft: `26.1.2`
 - NeoForge: `26.1.2.84`
 - Languages: English (`en_us`) and German (`de_de`)
-- Current milestone: defeating the Ender Dragon through controlled flight and perched phases
+- Current milestone: securing the first Dragon victory, optionally retrieving the Egg, and returning safely
 
 ## Included foundation
 
@@ -40,7 +40,7 @@ The updater creates a timestamped backup inside `.first-torch/backups/` before r
 
 ## Project status
 
-Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 through 0.8.0 content has been implemented and remains under in-game review. Version 0.9.0 now covers controlled End entry, both possible arrival-platform situations, Enderman retreats, staged removal of exposed and caged End Crystals, safe ranged and perched Dragon phases, and automatic recognition of the first Dragon victory. Optional Bastion, Fire Resistance, and Stronghold Library paths remain independent. The detailed scope and acceptance record live in [docs/Roadmap.md](docs/Roadmap.md).
+Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 through 0.8.0 content has been implemented and remains under in-game review. Version 0.9.0 now covers controlled End entry, Enderman retreats, staged Crystal removal, safe ranged and perched Dragon phases, the first Dragon victory, an optional Dragon Egg retrieval, and the safe return through the exit portal. Optional Bastion, Fire Resistance, and Stronghold Library paths remain independent. The detailed scope and acceptance record live in [docs/Roadmap.md](docs/Roadmap.md).
 
 ## Licence and trademarks
 

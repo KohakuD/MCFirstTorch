@@ -473,7 +473,20 @@ The active milestone is **0.9.0 — The End**. Version **0.2.0** is the latest c
 - [ ] Confirm both manual phase checks and the killed-Dragon advancement task in survival mode
 - [ ] Inspect the two Dragon-fight guides and full lesson text in German and English
 - [ ] Complete the full Crystal-to-Dragon sequence without using a Bed explosion
-- [ ] Continue with the opened exit, Dragon Egg, and safe Overworld return
+- [x] Continue with the opened exit, Dragon Egg, and safe Overworld return
+
+### Victory and return
+
+- [x] Separate post-fight recovery and experience collection from entering the newly opened exit portal
+- [x] Identify the exit surface and unique Dragon Egg before allowing the player to choose what comes next
+- [x] Add the Dragon Egg as a fully optional side branch that never gates the return
+- [x] Teach the Torch retrieval method and detect the collected Egg through its exact Vanilla advancement criterion
+- [x] Explain the End Poem, skippable credits, retained inventory and experience, and the return to a valid respawn point or world spawn
+- [x] Add a top-down exit guide and a three-step Egg guide made from exact Minecraft 26.1.2 textures and the target-version Egg model silhouette
+- [ ] Inspect the post-victory layout, both guide images, and all text in German and English
+- [ ] Collect the Dragon Egg once and confirm its automatic advancement task
+- [ ] Return once with and once without the optional Egg and confirm the manual completion flow
+- [ ] Continue with a deliberate second End visit and the route to the outer islands
 
 ## Later milestones
 
