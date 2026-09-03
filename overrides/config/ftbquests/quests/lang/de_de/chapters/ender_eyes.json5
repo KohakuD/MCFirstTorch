@@ -17,7 +17,9 @@
   "quest.2E975B07D1B58F3C.quest_desc": [
     "Ziel: Wähle einen zu deiner Welt und Erfahrung passenden Beschaffungsweg.",
     "",
-    "Endermen können beim Besiegen null oder eine Enderperle fallen lassen; Plünderung kann die Höchstmenge erhöhen. Kämpfe nur vorbereitet: Stelle dich unter ein Dach mit genau zwei Blöcken Höhe, halte einen freien Rückweg und greife erst von dort mit vollständig aufgeladenen Schlägen an. Endermen sind fast drei Blöcke hoch und passen nicht unter dieses Dach.",
+    "Endermen sind normalerweise neutral. Sie greifen dich erst an, wenn du ihnen direkt ins Gesicht schaust oder sie selbst angreifst. Schaue deshalb auf ihre Beine und beginne keinen versehentlichen Kampf.",
+    "",
+    "Beim Besiegen können Endermen null oder eine Enderperle fallen lassen. Die Schwertverzauberung Plünderung kann die Höchstmenge erhöhen, garantiert aber weiterhin keinen Fund. Kämpfe nur vorbereitet: Stelle dich unter ein Dach mit genau zwei Blöcken Höhe, halte einen freien Rückweg und greife erst von dort mit vollständig aufgeladenen Schlägen an. Endermen sind fast drei Blöcke hoch und passen nicht unter dieses Dach.",
     "",
     "Ein erwachsener gewöhnlicher Piglin kann beim Tausch zufällig zwei bis vier Enderperlen geben. Das Ergebnis ist jedoch nicht garantiert. Verwende nur den bereits erklärten sicheren Tauschplatz, trage Goldrüstung und halte den markierten Rückweg frei.",
     "",

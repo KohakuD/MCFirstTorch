@@ -344,7 +344,7 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 
 - Added a six-quest bilingual chapter that unlocks directly from the completed Strength lesson; optional Fire Resistance does not gate progression.
 - Ender Pearl and Blaze Powder supplies form two parallel branches before rejoining at the shapeless Eye of Ender recipe.
-- The Pearl lesson offers safe two-block-roof Enderman combat, random Piglin bartering, and an experienced Cleric trade as alternatives without promising a particular random result.
+- The Pearl lesson explains that Endermen remain neutral until directly looked in the face or attacked, then offers safe two-block-roof combat, random Piglin bartering, and an experienced Cleric trade as alternatives without promising a particular random result. Looting is identified explicitly as a Sword enchantment that raises the possible maximum without guaranteeing a drop.
 - Verified against Minecraft 26.1.2 that Endermen drop zero to one Pearl before Looting, Piglin barter returns two to four Pearls when selected, and a Cleric's relevant offer costs five Emeralds.
 - Warns that a thrown Ender Pearl costs two and a half hearts and has a five-percent Endermite chance.
 - Requires sixteen Pearls and sixteen Blaze Powder, explains that eight Blaze Rods make the Powder, and then requires sixteen completed Eyes.
