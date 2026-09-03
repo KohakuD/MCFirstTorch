@@ -310,3 +310,15 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 - The first controlled entry combines the Vanilla Bastion-location criterion with a manual confirmation that the learner returned to the closed Cobblestone room. Loot remains manual because every Bastion table is random and safety cannot be inferred from an item.
 - Added a language-neutral Bastion silhouette built from the exact target-version Blackstone, Polished and Cracked Polished Blackstone Brick, and Gilded Blackstone textures. The existing four-Piglin comparison is repeated at the Brute lesson.
 - The final reward is 10 XP only; no Bastion loot or later crafting material is granted.
+
+## 0.6.0
+
+### 2026-09-03 — First complete brewing sequence
+
+- Added a seven-quest bilingual chapter that unlocks directly from the safe Nether Fortress return, has a diamond-shaped map link there, and does not require the optional Bastion branch.
+- The learner deliberately converts one of two Blaze Rods into two Blaze Powder and preserves the other for a Brewing Stand. Fuel and ingredient uses are explained separately.
+- The path crafts and places a Brewing Stand, crafts three reusable Glass Bottles, fills all three with Water in the Overworld, and shows their exact interface slots.
+- The first Nether-Wart brew produces Awkward Potions and uses the verified `minecraft:nether/brew_potion` criterion `potion` for automatic completion.
+- A second brew produces three-minute Potions of Strength. The manual final check includes drinking one, reading its effect, and understanding that Strength does not replace defensive equipment.
+- Three Redstone Dust and 10 XP reward the completed sequence. Redstone duration, Glowstone strength, and the later Magma-Cream path to Fire Resistance are explained without requiring those extensions now.
+- Added five language-neutral guides from exact Minecraft 26.1.2 textures, models, and the original Brewing Stand interface. Placeable Glass, Cobblestone, and the Brewing Stand use 3D model views in recipe images.

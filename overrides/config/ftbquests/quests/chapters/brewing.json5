@@ -1,0 +1,126 @@
+{
+  id: "735A06C29D714BE8",
+  group: "",
+  order_index: 9,
+  icon: { id: "minecraft:brewing_stand", count: 1 },
+  filename: "brewing",
+  default_quest_shape: "circle",
+  default_hide_dependency_lines: false,
+  quests: [
+    {
+      id: "0A6417D3BE825CF9",
+      x: 0.0,
+      y: 0.0,
+      dependencies: ["734140DAA3E544D2"],
+      shape: "gear",
+      size: 1.5,
+      min_width: 380,
+      icon: { id: "minecraft:brewing_stand", count: 1 },
+      tasks: [
+        { id: "1B7528E4CF936D0A", type: "checkmark" },
+      ],
+    },
+    {
+      id: "2C8639F5D0A47E1B",
+      x: 2.5,
+      y: 0.0,
+      dependencies: ["0A6417D3BE825CF9"],
+      min_width: 380,
+      icon: { id: "minecraft:blaze_powder", count: 1 },
+      tasks: [
+        {
+          id: "3D974A06E1B58F2C",
+          type: "item",
+          count: 2,
+          item: { id: "minecraft:blaze_powder", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "4EA85B17F2C6903D",
+      x: 5.0,
+      y: 0.0,
+      dependencies: ["2C8639F5D0A47E1B"],
+      min_width: 380,
+      icon: { id: "minecraft:brewing_stand", count: 1 },
+      tasks: [
+        {
+          id: "5FB96C2803D7A14E",
+          type: "item",
+          item: { id: "minecraft:brewing_stand", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "60CA7D3914E8B25F",
+      x: 7.5,
+      y: 0.0,
+      dependencies: ["4EA85B17F2C6903D"],
+      min_width: 380,
+      icon: { id: "minecraft:glass_bottle", count: 1 },
+      tasks: [
+        {
+          id: "71DB8E4A25F9C360",
+          type: "item",
+          count: 3,
+          item: { id: "minecraft:glass_bottle", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "12EC9F5B360AD471",
+      x: 10.0,
+      y: 0.0,
+      dependencies: ["60CA7D3914E8B25F"],
+      min_width: 380,
+      icon: { id: "minecraft:potion", count: 1 },
+      tasks: [
+        { id: "23FDA06C471BE582", type: "checkmark" },
+      ],
+    },
+    {
+      id: "340EB17D582CF693",
+      x: 10.0,
+      y: 3.0,
+      dependencies: ["12EC9F5B360AD471"],
+      min_width: 380,
+      icon: { id: "minecraft:nether_wart", count: 1 },
+      tasks: [
+        {
+          id: "451FC28E693D07A4",
+          type: "advancement",
+          advancement: "minecraft:nether/brew_potion",
+          criterion: "potion",
+        },
+      ],
+    },
+    {
+      id: "5620D39F7A4E18B5",
+      x: 7.5,
+      y: 3.0,
+      dependencies: ["340EB17D582CF693"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 380,
+      icon: { id: "minecraft:potion", count: 1 },
+      tasks: [
+        { id: "6731E4A08B5F29C6", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "0B9746E2C5F183AD",
+          type: "item",
+          count: 3,
+          item: { id: "minecraft:redstone", count: 1 },
+        },
+        {
+          id: "1CA857F3D60294BE",
+          type: "xp",
+          xp: 10,
+        },
+      ],
+    },
+  ],
+  quest_links: [],
+  images: [],
+}

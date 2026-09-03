@@ -1,6 +1,6 @@
 # Roadmap
 
-The active milestone is **0.5.0 — Nether Preparation and First Visit**. Version **0.2.0** is the latest completed and tested release. The 0.3.0 and 0.4.0 content remains under in-game review, and the current development build is **0.5.0**.
+The active milestone is **0.6.0 — Brewing and Potions**. Version **0.2.0** is the latest completed and tested release. The 0.3.0 through 0.5.0 content remains under in-game review, and the current development build is **0.6.0**.
 
 ## 0.1.0 — First Safe Night
 
@@ -332,6 +332,26 @@ The active milestone is **0.5.0 — Nether Preparation and First Visit**. Versio
 - [x] Arrange Piglin barter, first resources, and Nether Fortress as three visibly parallel branches
 - [x] Illustrate the Fortress silhouette, its three principal enemies, and a Blaze Spawner with exact target-version assets
 - [x] Add a separate advanced optional Bastion Remnant branch with explicit Piglin Brute and guarded-container rules
+
+## 0.6.0 — Brewing and Potions
+
+### First complete brewing sequence
+
+- [x] Unlock only after the safe Nether Fortress return, without requiring the optional Bastion branch
+- [x] Add a diamond-shaped map link from the Fortress return into the new chapter
+- [x] Preserve exactly one Blaze Rod for the Brewing Stand and process the other into two Blaze Powder
+- [x] Explain Blaze Powder separately as Brewing Stand fuel and as a potion ingredient
+- [x] Craft and place a Brewing Stand with an exact target-version recipe guide using 3D block models
+- [x] Smelt Glass when needed and craft three reusable Glass Bottles with an exact recipe guide
+- [x] Fill three Water Bottles in the Overworld and place all three into the Brewing Stand
+- [x] Brew three Awkward Potions from Nether Wart and detect the first completed brew automatically
+- [x] Brew and drink the first Potion of Strength while explaining its limits
+- [x] Explain Redstone duration, Glowstone strength, and the later Magma-Cream route to Fire Resistance
+- [x] Add exact Minecraft 26.1.2 recipe and Brewing Stand interface images for every new visual step
+- [ ] Confirm the chapter unlocks after the Fortress return but not through the Bastion path
+- [ ] Confirm the Blaze Powder, Brewing Stand, Glass Bottle, and first-brew tasks in survival mode
+- [ ] Inspect all five new guide images in German and English
+- [ ] Complete the full first brewing sequence once in survival mode
 
 ## Later milestones
 

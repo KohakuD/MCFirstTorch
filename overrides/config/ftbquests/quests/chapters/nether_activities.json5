@@ -433,6 +433,14 @@
       ],
     },
   ],
-  quest_links: [],
+  quest_links: [
+    {
+      id: "7842F5B19C603AD7",
+      linked_quest: "0A6417D3BE825CF9",
+      x: 2.5,
+      y: 9.0,
+      shape: "diamond",
+    },
+  ],
   images: [],
 }
