@@ -21,7 +21,7 @@ Assert-True ($manifest.manifestVersion -eq 1) 'Unexpected manifest version.'
 Assert-True ($manifest.minecraft.version -eq '26.1.2') 'Minecraft must remain pinned to 26.1.2.'
 Assert-True ($manifest.minecraft.modLoaders[0].id -eq 'neoforge-26.1.2.84') 'NeoForge must remain pinned to 26.1.2.84.'
 Assert-True ($manifest.overrides -eq 'overrides') 'Manifest overrides directory must be "overrides".'
-Assert-True ($manifest.version -eq '0.7.0') 'The development pack version must be 0.7.0.'
+Assert-True ($manifest.version -eq '0.8.0') 'The development pack version must be 0.8.0.'
 
 $expectedFiles = @{
     '289412' = 8730542
@@ -99,6 +99,9 @@ $expectedTaskCounts = @{
     '73ECA05C260AD481' = 16
     '250EC27E482CF6A3' = 16
     '4DA17E3904E8B26F' = 2
+    '4DC28E4A15F9C381' = 32
+    '45AA06C29D714C09' = 64
+    '56BB17D3AE825D1A' = 16
 }
 foreach ($taskId in $expectedTaskCounts.Keys) {
     $expectedCount = $expectedTaskCounts[$taskId]
@@ -117,6 +120,9 @@ $expectedSmartFilters = @{
     '2BD17C3FA648E509' = 'ftbfiltersystem:item_tag(minecraft:wooden_slabs)'
     '2D5FB17380C49E6A' = 'or(item(minecraft:iron_pickaxe)item(minecraft:diamond_pickaxe)item(minecraft:netherite_pickaxe))'
     '6193F5B7C408D2AE' = 'or(item(minecraft:cooked_beef)item(minecraft:cooked_porkchop)item(minecraft:cooked_chicken)item(minecraft:cooked_mutton)item(minecraft:cooked_rabbit)item(minecraft:cooked_cod)item(minecraft:cooked_salmon)item(minecraft:baked_potato)item(minecraft:dried_kelp))'
+    '0166C28E593D07C5' = 'or(item(minecraft:iron_sword)item(minecraft:diamond_sword)item(minecraft:netherite_sword))'
+    '1277D39F6A4E18D6' = 'or(item(minecraft:iron_pickaxe)item(minecraft:diamond_pickaxe)item(minecraft:netherite_pickaxe))'
+    '56BB17D3AE825D1A' = 'or(item(minecraft:cooked_beef)item(minecraft:cooked_porkchop)item(minecraft:cooked_chicken)item(minecraft:cooked_mutton)item(minecraft:cooked_rabbit)item(minecraft:cooked_cod)item(minecraft:cooked_salmon)item(minecraft:baked_potato))'
 }
 foreach ($taskId in $expectedSmartFilters.Keys) {
     $filterPattern = 'id:\s*"' + $taskId + '"[\s\S]{0,700}?"ftbfiltersystem:filter":\s*"' + [regex]::Escape($expectedSmartFilters[$taskId]) + '"'
@@ -163,6 +169,9 @@ $expectedSingleItemTasks = @{
     '0B3D95F16EA27C48' = 'minecraft:diamond_pickaxe'
     '04C628EAF73B05D1' = 'minecraft:book'
     '591B73DF4C805A26' = 'minecraft:enchanting_table'
+    '3CB17D3904E8B270' = 'minecraft:bow'
+    '2388E4A07B5F29E7' = 'minecraft:shield'
+    '3499F5B18C603AF8' = 'minecraft:water_bucket'
 }
 foreach ($taskId in $expectedSingleItemTasks.Keys) {
     $itemId = $expectedSingleItemTasks[$taskId]
@@ -230,6 +239,10 @@ $strongholdLinkPattern = 'id:\s*"3A8F5B17E2C6904D"[\s\S]{0,180}?linked_quest:\s*
 Assert-True ([regex]::IsMatch($allDefinitionText, $strongholdLinkPattern)) 'Eye preparation must show a diamond-shaped link to Stronghold exploration.'
 $strongholdExplorationPathPattern = 'id:\s*"086D39F5C0A47E2B"[\s\S]{0,180}?dependencies:\s*\["74DB8F5B15F9C370"\][\s\S]*?id:\s*"2A8F5B17E2C6904D"[\s\S]{0,180}?dependencies:\s*\["086D39F5C0A47E2B"\][\s\S]*?id:\s*"3C906D28F3D7A15E"[\s\S]{0,180}?dependencies:\s*\["2A8F5B17E2C6904D"\][\s\S]*?id:\s*"4CA17D3904E8B26F"[\s\S]{0,180}?dependencies:\s*\["3C906D28F3D7A15E"\][\s\S]*?id:\s*"10E5B17D482CF6A3"[\s\S]{0,180}?dependencies:\s*\["4CA17D3904E8B26F"\][\s\S]*?id:\s*"3207D39F6A4E18C5"[\s\S]{0,180}?dependencies:\s*\["10E5B17D482CF6A3"\][\s\S]*?id:\s*"5429F5B18C603AE7"[\s\S]{0,180}?dependencies:\s*\["3207D39F6A4E18C5"\][\s\S]*?id:\s*"764B17D3AE825C09"[\s\S]{0,180}?dependencies:\s*\["5429F5B18C603AE7"\]'
 Assert-True ([regex]::IsMatch($allDefinitionText, $strongholdExplorationPathPattern)) 'The main Stronghold exploration path must remain ordered and independent of the optional Library lesson.'
+$endPreparationLinkPattern = 'id:\s*"1287D39F6A4E29D6"[\s\S]{0,180}?linked_quest:\s*"098E4A06D1B58F3D"[\s\S]{0,180}?shape:\s*"diamond"'
+Assert-True ([regex]::IsMatch($allDefinitionText, $endPreparationLinkPattern)) 'Stronghold exploration must show a diamond-shaped link to End preparation.'
+$endPreparationPathPattern = 'id:\s*"098E4A06D1B58F3D"[\s\S]{0,180}?dependencies:\s*\["764B17D3AE825C09"\][\s\S]*?id:\s*"2BA06C28F3D7A15F"[\s\S]{0,180}?dependencies:\s*\["098E4A06D1B58F3D"\][\s\S]*?id:\s*"7055B17D482CF6B4"[\s\S]{0,180}?dependencies:\s*\["2BA06C28F3D7A15F"\][\s\S]*?id:\s*"78DD39F5C0A47F3C"[\s\S]{0,180}?dependencies:\s*\["7055B17D482CF6B4"\][\s\S]*?id:\s*"2B106C28F3D7B26F"[\s\S]{0,180}?dependencies:\s*\["78DD39F5C0A47F3C"\][\s\S]*?id:\s*"4D328E4A15F9D481"[\s\S]{0,180}?dependencies:\s*\["2B106C28F3D7B26F"\][\s\S]*?id:\s*"6F54A06C371BF6A3"[\s\S]{0,180}?dependencies:\s*\["4D328E4A15F9D481"\]'
+Assert-True ([regex]::IsMatch($allDefinitionText, $endPreparationPathPattern)) 'End preparation must remain ordered from the Stronghold return through activation without entry.'
 
 $becomingChapterText = Get-Content -LiteralPath (Join-Path $questRoot 'chapters/becoming_independent.json5') -Raw
 $becomingXValues = @([regex]::Matches($becomingChapterText, '(?m)^\s+x:\s*(-?[0-9]+(?:\.[0-9]+)?)\s*,') | ForEach-Object { [double]$_.Groups[1].Value })
@@ -268,6 +281,8 @@ $expectedItemRewards = @{
     '5801F5B17B5F29D6' = @{ Item = 'minecraft:ender_eye'; Count = 2 }
     '16FDA17D371BE592' = @{ Item = 'minecraft:torch'; Count = 16 }
     '186D39F5C0A47E2B' = @{ Item = 'minecraft:golden_apple'; Count = 1 }
+    '5ED39F5B260AD492' = @{ Item = 'minecraft:arrow'; Count = 32 }
+    '1AFF5B17E2C6A15E' = @{ Item = 'minecraft:bread'; Count = 4 }
 }
 foreach ($rewardId in $expectedItemRewards.Keys) {
     $reward = $expectedItemRewards[$rewardId]
@@ -304,6 +319,8 @@ $expectedXpRewards = @{
     '691206C28C603AE7' = 10
     '270EB28E482CF6A3' = 10
     '297E4A06D1B58F3C' = 10
+    '6FE4A06C371BE5A3' = 5
+    '0176C28E593D18C5' = 10
 }
 foreach ($rewardId in $expectedXpRewards.Keys) {
     $xp = $expectedXpRewards[$rewardId]
@@ -320,7 +337,7 @@ Assert-True (Test-Path -LiteralPath $packMetadataPath -PathType Leaf) 'First Tor
 $packMetadata = Get-Content -LiteralPath $packMetadataPath -Raw | ConvertFrom-Json
 Assert-True ($packMetadata.pack.min_format[0] -eq 84 -and $packMetadata.pack.min_format[1] -eq 0) 'Guide resource pack min_format must be [84, 0] for Minecraft 26.1.2.'
 Assert-True ($packMetadata.pack.max_format[0] -eq 84 -and $packMetadata.pack.max_format[1] -eq 0) 'Guide resource pack max_format must be [84, 0] for Minecraft 26.1.2.'
-foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png', 'place_crafting_table.png', 'wooden_pickaxe.png', 'stone_axe.png', 'furnace.png', 'chest.png', 'charcoal.png', 'bed.png', 'hunger_and_eating.png', 'cooking_food.png', 'stone_pickaxe.png', 'shield.png', 'armour_recipes.png', 'safe_staircase.png', 'torch_route.png', 'iron_pickaxe.png', 'bucket.png', 'stonecutter.png', 'lodestone.png', 'stone_hoe.png', 'bread.png', 'farmland_9x9.png', 'fence_and_gate.png', 'paper_and_book.png', 'enchanting_table_recipe.png', 'enchanting_interface.png', 'bookshelf_recipe.png', 'enchanting_bookshelves.png', 'iron_sword.png', 'bone_meal_recipe.png', 'attack_indicator.png', 'flint_and_steel.png', 'nether_portal_frame.png', 'nether_route_marker.png', 'piglin_comparison.png', 'nether_fortress.png', 'fortress_hazards.png', 'blaze_spawner.png', 'bastion_remnant.png', 'blaze_powder_recipe.png', 'brewing_stand_recipe.png', 'glass_bottle_recipe.png', 'awkward_potion_brewing.png', 'strength_potion_brewing.png', 'magma_cream_recipe.png', 'fire_resistance_brewing.png', 'long_fire_resistance_brewing.png', 'ender_eye_recipe.png', 'ender_eye_search.png', 'stronghold_silverfish.png', 'end_portal_room.png', 'end_portal_frame_states.png', 'stronghold_iron_door.png')) {
+foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png', 'place_crafting_table.png', 'wooden_pickaxe.png', 'stone_axe.png', 'furnace.png', 'chest.png', 'charcoal.png', 'bed.png', 'hunger_and_eating.png', 'cooking_food.png', 'stone_pickaxe.png', 'shield.png', 'armour_recipes.png', 'safe_staircase.png', 'torch_route.png', 'iron_pickaxe.png', 'bucket.png', 'stonecutter.png', 'lodestone.png', 'stone_hoe.png', 'bread.png', 'farmland_9x9.png', 'fence_and_gate.png', 'paper_and_book.png', 'enchanting_table_recipe.png', 'enchanting_interface.png', 'bookshelf_recipe.png', 'enchanting_bookshelves.png', 'iron_sword.png', 'bone_meal_recipe.png', 'attack_indicator.png', 'flint_and_steel.png', 'nether_portal_frame.png', 'nether_route_marker.png', 'piglin_comparison.png', 'nether_fortress.png', 'fortress_hazards.png', 'blaze_spawner.png', 'bastion_remnant.png', 'blaze_powder_recipe.png', 'brewing_stand_recipe.png', 'glass_bottle_recipe.png', 'awkward_potion_brewing.png', 'strength_potion_brewing.png', 'magma_cream_recipe.png', 'fire_resistance_brewing.png', 'long_fire_resistance_brewing.png', 'ender_eye_recipe.png', 'ender_eye_search.png', 'stronghold_silverfish.png', 'end_portal_room.png', 'end_portal_frame_states.png', 'stronghold_iron_door.png', 'bow_and_arrows.png', 'end_portal_final_eye.png')) {
     $imagePath = Join-Path $guidePackRoot (Join-Path 'assets/firsttorch/textures/questpics' $imageName)
     Assert-True (Test-Path -LiteralPath $imagePath -PathType Leaf) "Missing quest guide image: $imageName"
     Assert-True ((Get-Item -LiteralPath $imagePath).Length -gt 0) "Quest guide image is empty: $imageName"
@@ -363,6 +380,11 @@ foreach ($imageName in @('stronghold_silverfish.png', 'end_portal_room.png', 'en
     $referenceCount = [regex]::Matches($strongholdLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
     Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each Stronghold language file."
 }
+$endPreparationLanguageText = ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter 'end_preparation.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n")
+foreach ($imageName in @('bow_and_arrows.png', 'end_portal_final_eye.png')) {
+    $referenceCount = [regex]::Matches($endPreparationLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
+    Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each End Preparation language file."
+}
 $armourImageReferences = [regex]::Matches($allDefinitionText + "`n" + ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"), 'firsttorch:textures/questpics/armour_recipes\.png')
 Assert-True ($armourImageReferences.Count -eq 2) 'The compact Armour recipe overview must be referenced once in each language.'
 $chestImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"), 'firsttorch:textures/questpics/chest\.png')
@@ -389,7 +411,7 @@ $fenceAndGateImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Jo
 Assert-True ($fenceAndGateImageReferences.Count -eq 2) 'The combined Fence and Fence Gate recipe guide must be referenced once in each language.'
 
 $localeRoot = Join-Path $questRoot 'lang'
-foreach ($relativePath in @('chapter.json5', 'chapters/first_steps.json5', 'chapters/becoming_independent.json5', 'chapters/iron_essentials.json5', 'chapters/finding_home.json5', 'chapters/sustainable_supplies.json5', 'chapters/nether_preparation.json5', 'chapters/nether_activities.json5', 'chapters/brewing.json5', 'chapters/ender_eyes.json5', 'chapters/stronghold.json5')) {
+foreach ($relativePath in @('chapter.json5', 'chapters/first_steps.json5', 'chapters/becoming_independent.json5', 'chapters/iron_essentials.json5', 'chapters/finding_home.json5', 'chapters/sustainable_supplies.json5', 'chapters/nether_preparation.json5', 'chapters/nether_activities.json5', 'chapters/brewing.json5', 'chapters/ender_eyes.json5', 'chapters/stronghold.json5', 'chapters/end_preparation.json5')) {
     $enPath = Join-Path (Join-Path $localeRoot 'en_us') $relativePath
     $dePath = Join-Path (Join-Path $localeRoot 'de_de') $relativePath
     Assert-True (Test-Path -LiteralPath $enPath -PathType Leaf) "Missing English translation file: $relativePath"

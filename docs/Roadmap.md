@@ -1,6 +1,6 @@
 # Roadmap
 
-The active milestone is **0.7.0 — Eyes of Ender and the Stronghold**. Version **0.2.0** is the latest completed and tested release. The 0.3.0 through 0.6.0 content remains under in-game review, and the current development build is **0.7.0**.
+The active milestone is **0.8.0 — Preparing the End Expedition**. Version **0.2.0** is the latest completed and tested release. The 0.3.0 through 0.7.0 content remains under in-game review, and the current development build is **0.8.0**.
 
 ## 0.1.0 — First Safe Night
 
@@ -399,9 +399,30 @@ The active milestone is **0.7.0 — Eyes of Ender and the Stronghold**. Version 
 - [x] Count existing and missing Eyes across all twelve frames without inserting any
 - [x] Add exact-texture guides for Silverfish risk, the top-down portal-room arrangement, and empty versus filled frames
 - [x] Return home with the frame count and Eyes stored together before activation
-- [ ] Activate the End Portal only after a separate End-expedition checklist
+- [x] Activate the End Portal only after a separate End-expedition checklist
 - [ ] Inspect the Stronghold chapter layout and all three new images in German and English
 - [ ] Complete the marked labyrinth route, Spawner removal, twelve-frame count, and home return in survival mode
+
+## 0.8.0 — Preparing the End Expedition
+
+### Safe activation without entry
+
+- [x] Continue from the completed Stronghold return in a separate thirteenth bilingual chapter
+- [x] Explain that safe return from the End requires defeating the Dragon and distinguish death from a normal return route
+- [x] Explain the Void, exploding Beds, usable Water, Enderman eye contact, and the optional Carved Pumpkin
+- [x] Teach the exact Bow and Arrow recipes and require a first 32-Arrow reserve
+- [x] Reward another 32 Arrows only after the learner prepares the first half personally
+- [x] Require an Iron-or-better Sword and Pickaxe, Shield, Water Bucket, 64 Cobblestone, and 16 cooked foods
+- [x] Require a checked full Iron-or-better Armour set without forcing a long Diamond grind
+- [x] Establish a slept-in Bed and reserve Chest in the Overworld Stronghold retreat room
+- [x] Return over the known marked route and recheck all equipment before touching a frame
+- [x] Remove only the temporary three-by-three centre cover and recount the empty frames
+- [x] Insert the exact required Eyes from a safe outside position and remain outside the active portal
+- [x] Add exact-texture guides for Bow and Arrow crafting and the final Eye placement
+- [ ] Confirm the Bow, 32-Arrow, equipment, block, and food tasks in survival mode
+- [ ] Inspect the new chapter layout and both guide images in German and English
+- [ ] Activate the portal from outside the frame and confirm that no accidental entry occurs
+- [ ] Enter the End only after a separate arrival and Dragon-fight plan
 
 ## Later milestones
 
