@@ -94,7 +94,7 @@ def model_icon(elements, textures, size=108):
         faces = [
             ([project(x0, y1, z0), project(x1, y1, z0), project(x1, y1, z1), project(x0, y1, z1)], 1.0),
             ([project(x1, y0, z0), project(x1, y0, z1), project(x1, y1, z1), project(x1, y1, z0)], 0.72),
-            ([project(x0, y0, z1), project(x0, y0, z0), project(x0, y1, z0), project(x0, y1, z1)], 0.84),
+            ([project(x0, y0, z1), project(x1, y0, z1), project(x1, y1, z1), project(x0, y1, z1)], 0.84),
         ]
         for points, shade in faces:
             face, xy = textured_quad(texture, points, shade)
@@ -128,13 +128,17 @@ def potion_icon(base, overlay, colour, size=58):
     return icon.resize((size, size), Image.Resampling.NEAREST)
 
 
-def brewing_guide(gui, ingredient, bottle, fuel):
+def brewing_guide(gui, fuel_length, ingredient, bottle):
     image = background()
     # Only the functional top of the exact interface is needed; inventory rows add no new lesson.
     panel = gui.crop((0, 0, 176, 83)).resize((880, 415), Image.Resampling.NEAREST)
     image.alpha_composite(panel, (396, 255))
     scale = 5
-    positions = [(79, 17, ingredient), (17, 42, fuel), (56, 51, bottle), (79, 58, bottle), (102, 51, bottle)]
+    # A loaded fuel item is consumed from the upper-left slot. The stored charge is
+    # represented by Minecraft's own yellow horizontal fuel sprite at (60, 44).
+    fuel_bar = fuel_length.resize((18 * scale, 4 * scale), Image.Resampling.NEAREST)
+    image.alpha_composite(fuel_bar, (396 + 60 * scale, 255 + 44 * scale))
+    positions = [(79, 17, ingredient), (56, 51, bottle), (79, 58, bottle), (102, 51, bottle)]
     for x, y, icon in positions:
         scaled = icon.resize((16 * scale, 16 * scale), Image.Resampling.NEAREST)
         image.alpha_composite(scaled, (396 + x * scale, 255 + y * scale))
@@ -154,6 +158,7 @@ with ZipFile(JAR) as archive:
     potion = asset(archive, "assets/minecraft/textures/item/potion.png")
     potion_overlay = asset(archive, "assets/minecraft/textures/item/potion_overlay.png")
     gui = asset(archive, "assets/minecraft/textures/gui/container/brewing_stand.png")
+    fuel_length = asset(archive, "assets/minecraft/textures/gui/sprites/container/brewing_stand/fuel_length.png")
 
     cube = [{"from": [0, 0, 0], "to": [16, 16, 16], "texture": "all"}]
     cobble_icon = model_icon(cube, {"all": cobblestone})
@@ -181,10 +186,10 @@ with ZipFile(JAR) as archive:
     water = potion_icon(potion, potion_overlay, (56, 93, 198), 16)
     awkward = potion_icon(potion, potion_overlay, (56, 93, 198), 16)
     strength = potion_icon(potion, potion_overlay, (147, 36, 35), 16)
-    brewing_guide(gui, sprite(nether_wart, 16), water, sprite(blaze_powder, 16)).save(
+    brewing_guide(gui, fuel_length, sprite(nether_wart, 16), water).save(
         OUT / "awkward_potion_brewing.png", optimize=True
     )
-    brewing_guide(gui, sprite(blaze_powder, 16), awkward, sprite(blaze_powder, 16)).save(
+    brewing_guide(gui, fuel_length, sprite(blaze_powder, 16), awkward).save(
         OUT / "strength_potion_brewing.png", optimize=True
     )
 

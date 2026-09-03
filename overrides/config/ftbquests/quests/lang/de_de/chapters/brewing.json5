@@ -77,7 +77,7 @@
   "quest.340EB17D582CF693.quest_desc": [
     "Ziel: Verwandle die drei Wasserflaschen mit einer Netherwarze in seltsame Tränke.",
     "",
-    "Lege einen Lohenstaub in den Brennstoffplatz links. Der Gegenstand verschwindet und füllt die gelbe Brennstoffanzeige mit 20 Ladungen; pro abgeschlossenem Brauvorgang wird eine Ladung verbraucht.",
+    "Lege einen Lohenstaub in den quadratischen Brennstoffplatz oben links. Der Gegenstand wird sofort verbraucht; dafür füllt sich das waagrechte Feld über der linken Flasche gelb. Es speichert 20 Ladungen, von denen pro abgeschlossenem Brauvorgang eine verbraucht wird.",
     "",
     "Setze eine Netherwarze in den einzelnen Zutatenplatz oben. Sobald Brennstoff, Zutat und mindestens eine passende Flasche vorhanden sind, beginnt der Fortschrittsbalken. Warte, bis er ganz abgelaufen ist.",
     "",

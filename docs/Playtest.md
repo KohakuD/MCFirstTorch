@@ -322,3 +322,9 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 - A second brew produces three-minute Potions of Strength. The manual final check includes drinking one, reading its effect, and understanding that Strength does not replace defensive equipment.
 - Three Redstone Dust and 10 XP reward the completed sequence. Redstone duration, Glowstone strength, and the later Magma-Cream path to Fire Resistance are explained without requiring those extensions now.
 - Added five language-neutral guides from exact Minecraft 26.1.2 textures, models, and the original Brewing Stand interface. Placeable Glass, Cobblestone, and the Brewing Stand use 3D model views in recipe images.
+
+### 2026-09-03 — Brewing guide rendering correction
+
+- Corrected the isometric face selection so all placeable recipe ingredients and results render as closed 3D models rather than disconnected faces.
+- Verified the Brewing Stand menu directly from the Minecraft 26.1.2 classes: the fuel slot is at the upper left, while the filled fuel state is rendered as the exact yellow horizontal fuel sprite above the left bottle.
+- Removed the incorrect Blaze Powder icon from the flame area in both brewing guides and clarified that loading fuel consumes the item immediately while storing 20 charges in the yellow bar.

@@ -77,7 +77,7 @@
   "quest.340EB17D582CF693.quest_desc": [
     "Goal: turn the three Water Bottles into Awkward Potions with one Nether Wart.",
     "",
-    "Place one Blaze Powder in the fuel slot on the left. The item disappears and fills the yellow fuel bar with 20 charges; one charge is used for each completed brewing operation.",
+    "Place one Blaze Powder in the square fuel slot at the upper left. The item is consumed immediately; the horizontal field above the left bottle turns yellow instead. It stores 20 charges, one of which is used for each completed brewing operation.",
     "",
     "Put one Nether Wart into the single ingredient slot at the top. When fuel, an ingredient, and at least one suitable bottle are present, the progress bar begins. Wait until it finishes.",
     "",
