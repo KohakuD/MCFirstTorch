@@ -17,7 +17,7 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 ## Included foundation
 
 - FTB Quests, FTB Library, FTB Teams, and the official FTB item-tag filter modules
-- Thirteen bilingual chapters covering the first safe night, independent survival routines, essential Iron equipment, finding the way home, sustainable supplies, the first deep Diamond expedition, optional safe mob drops, the first controlled Nether visit, optional Nether activities, brewing, the Stronghold search, controlled Stronghold exploration, and the first safe arrival in the End
+- Fourteen bilingual chapters covering the first safe night, independent survival routines, essential Iron equipment, finding the way home, sustainable supplies, the first deep Diamond expedition, optional safe mob drops, the first controlled Nether visit, optional Nether activities, brewing, the Stronghold search, controlled Stronghold exploration, the first safe arrival in the End, and later End exploration
 - Reproducible CurseForge manifest with pinned dependency file IDs
 
 ## Install a development build
@@ -40,7 +40,7 @@ The updater creates a timestamped backup inside `.first-torch/backups/` before r
 
 ## Project status
 
-Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 through 0.8.0 content has been implemented and remains under in-game review. Version 0.9.0 now covers controlled End entry, staged Crystal removal, the first Dragon victory, an optional Dragon Egg retrieval, safe return, a prepared second visit, and a secured End Gateway journey to the outer islands. Optional Bastion, Fire Resistance, and Stronghold Library paths remain independent. The detailed scope and acceptance record live in [docs/Roadmap.md](docs/Roadmap.md).
+Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 through 0.8.0 content has been implemented and remains under in-game review. Version 0.9.0 now covers controlled End entry, staged Crystal removal, the first Dragon victory, an optional Dragon Egg retrieval, and safe return. A separate `What to Do in the End?` chapter begins with a prepared second visit and secured End Gateway journey to the outer islands. Optional Bastion, Fire Resistance, and Stronghold Library paths remain independent. The detailed scope and acceptance record live in [docs/Roadmap.md](docs/Roadmap.md).
 
 ## Licence and trademarks
 

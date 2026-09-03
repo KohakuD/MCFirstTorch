@@ -71,50 +71,43 @@ def create_access_guide(end_stone, bedrock, portal, pearl):
     image = background()
     draw = ImageDraw.Draw(image, "RGBA")
     floor_y, cell = 790, 100
-    for col in range(10):
+    for col in range(9):
         block(image, end_stone, (35 + col * cell, floor_y, 35 + (col + 1) * cell, 890), (91, 93, 61, 255))
 
-    # A crouched staircase and small working platform reach the elevated gateway without an open jump.
-    for step in range(7):
-        x = 620 + step * 75
-        y = floor_y - (step + 1) * 68
-        block(image, end_stone, (x, y, x + 105, y + 105), (91, 93, 61, 255))
+    # A continuous crouched staircase reaches a platform aligned with the portal opening.
+    for step in range(6):
+        x = 650 + step * 75
+        y = floor_y - (step + 1) * 50
+        block(image, end_stone, (x, y, x + 110, y + 110), (91, 93, 61, 255))
     for col in range(5):
         x = 1080 + col * 105
-        block(image, end_stone, (x, 520, x + 105, 625), (91, 93, 61, 255))
-    # Raised rear edge communicates a guarded standing platform.
-    for col in range(4):
-        x = 1185 + col * 105
-        block(image, end_stone, (x, 415, x + 105, 520), (91, 93, 61, 255))
+        block(image, end_stone, (x, 590, x + 105, 695), (91, 93, 61, 255))
 
-    gateway_front(image, bedrock, portal, (1335, 285), 92)
-    paste_nearest(image, pearl, (865, 300, 1015, 450))
-    arrow(draw, (1000, 355), (1270, 285), width=20)
+    gateway_front(image, bedrock, portal, (1335, 365), 92)
+    paste_nearest(image, pearl, (920, 365, 1070, 515))
+    arrow(draw, (1060, 425), (1272, 365), width=20)
     return image
 
 
-def create_arrival_guide(end_stone, bedrock, portal, cobblestone, torch, player):
+def create_arrival_guide(end_stone, bedrock, portal, cobblestone, torch):
     image = background()
     draw = ImageDraw.Draw(image, "RGBA")
-    cell, floor_y = 105, 760
+    cell, floor_y = 105, 620
     for row in range(3):
         for col in range(13):
-            x = 150 + col * cell + row * 35
-            y = floor_y - row * 70
+            x = 150 + col * cell
+            y = floor_y + row * cell
             block(image, end_stone, (x, y, x + cell, y + 105), (91, 93, 61, 255))
 
-    gateway_front(image, bedrock, portal, (390, 340), 88)
-    draw.ellipse((245, 115, 535, 600), outline=ORANGE, width=14)
+    gateway_front(image, bedrock, portal, (390, 395), 90)
+    draw.ellipse((240, 135, 540, 655), outline=ORANGE, width=14)
 
     # A conspicuous exact-texture marker remains beside the return gateway.
-    block(image, cobblestone, (625, 550, 740, 665), (44, 44, 44, 255))
-    block(image, cobblestone, (625, 435, 740, 550), (44, 44, 44, 255))
-    paste_nearest(image, torch, (650, 310, 715, 435))
-
-    steve = player.crop((8, 8, 16, 16)).resize((115, 115), Image.Resampling.NEAREST)
-    image.alpha_composite(steve, (1010, 505))
-    arrow(draw, (945, 590), (760, 535), width=18)
-    arrow(draw, (1135, 590), (1370, 590), width=18)
+    block(image, cobblestone, (680, 505, 795, 620), (44, 44, 44, 255))
+    block(image, cobblestone, (680, 390, 795, 505), (44, 44, 44, 255))
+    paste_nearest(image, torch, (705, 265, 770, 390))
+    arrow(draw, (570, 570), (660, 570), width=18)
+    arrow(draw, (820, 570), (1320, 570), width=18)
     return image
 
 
@@ -126,8 +119,7 @@ with ZipFile(JAR) as archive:
     pearl = asset(archive, "assets/minecraft/textures/item/ender_pearl.png")
     cobblestone = asset(archive, "assets/minecraft/textures/block/cobblestone.png")
     torch = asset(archive, "assets/minecraft/textures/block/torch.png")
-    player = asset(archive, "assets/minecraft/textures/entity/player/wide/steve.png")
     create_access_guide(end_stone, bedrock, portal, pearl).save(OUT / "end_gateway_access.png", optimize=True)
-    create_arrival_guide(end_stone, bedrock, portal, cobblestone, torch, player).save(OUT / "outer_end_arrival.png", optimize=True)
+    create_arrival_guide(end_stone, bedrock, portal, cobblestone, torch).save(OUT / "outer_end_arrival.png", optimize=True)
 
 print(OUT)

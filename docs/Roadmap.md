@@ -490,17 +490,19 @@ The active milestone is **0.9.0 — The End**. Version **0.2.0** is the latest c
 
 ### Outer-island arrival
 
+- [x] Move every lesson from the second End visit onward into a dedicated `What to Do in the End?` chapter linked from the safe first return
 - [x] Treat the outer islands as a separate expedition after the first safe return instead of extending the Dragon trip indefinitely
 - [x] Require four Ender Pearls for outward travel, return, and two reserves plus 64 End Stone for safe access work
 - [x] Reuse the secured Stronghold, arrival platform, and main-island landmarks during the second End entry
 - [x] Identify the elevated End Gateway and require a crouched staircase, standing area, and guarded edges before throwing
 - [x] Detect the first real Gateway transfer through the exact Vanilla entered-End-Gateway advancement criterion
 - [x] Secure the outer-island arrival before exploration, visibly mark the return Gateway, and record its coordinates
-- [x] Add separate access and arrival guides made from exact Minecraft 26.1.2 textures
+- [x] Add separate access and arrival guides made from exact Minecraft 26.1.2 textures and align every structure, route, and marker to a shared ground level
 - [ ] Confirm all preparation item tasks and manual safety checks in survival mode
 - [ ] Inspect the Gateway access, arrival images, and full lesson text in German and English
 - [ ] Complete an outward and return Gateway transfer while retaining at least one reserve Pearl
 - [ ] Continue with Chorus plants, safe island crossings, and the first End City search
+- [ ] Teach the first Elytra glide only after returning to a low, protected Overworld practice platform; introduce Firework Rockets after the unpowered glide is understood
 
 ## Later milestones
 

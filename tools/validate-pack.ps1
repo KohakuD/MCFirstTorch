@@ -261,6 +261,8 @@ $dragonKillPattern = 'id:\s*"672C8E4A15F9E4A3"[\s\S]{0,180}?type:\s*"advancement
 Assert-True ([regex]::IsMatch($allDefinitionText, $dragonKillPattern)) 'The Ender Dragon victory task must use the exact Vanilla killed-dragon criterion.'
 $endReturnPathPattern = 'id:\s*"013E8F5B26A0F5B5"[\s\S]{0,180}?dependencies:\s*\["561B7D3904E8D392"\][\s\S]*?id:\s*"4572CD9F6AE439F9"[\s\S]{0,180}?dependencies:\s*\["013E8F5B26A0F5B5"\]'
 Assert-True ([regex]::IsMatch($allDefinitionText, $endReturnPathPattern)) 'The safe End return must follow victory-area orientation without requiring the optional Dragon Egg.'
+$endActivitiesLinkPattern = 'id:\s*"10BE6C28F3D7A15F"[\s\S]{0,180}?linked_quest:\s*"6794EFB18C065B1B"[\s\S]{0,180}?shape:\s*"diamond"'
+Assert-True ([regex]::IsMatch($allDefinitionText, $endActivitiesLinkPattern)) 'The first End chapter must show a diamond-shaped link to later End activities.'
 $dragonEggPattern = 'id:\s*"2350AB7D48C217D7"[\s\S]{0,180}?dependencies:\s*\["013E8F5B26A0F5B5"\][\s\S]{0,180}?shape:\s*"gear"[\s\S]*?id:\s*"3461BC8E59D328E8"[\s\S]{0,180}?type:\s*"advancement"[\s\S]{0,120}?advancement:\s*"minecraft:end/dragon_egg"[\s\S]{0,120}?criterion:\s*"dragon_egg"'
 Assert-True ([regex]::IsMatch($allDefinitionText, $dragonEggPattern)) 'The optional Dragon Egg branch must use the exact Vanilla Dragon-Egg criterion.'
 $dragonEggDependencyPattern = 'dependencies:\s*\[[^\]]*"2350AB7D48C217D7"'
@@ -423,7 +425,7 @@ foreach ($imageName in @('bow_and_arrows.png', 'end_portal_final_eye.png')) {
     $referenceCount = [regex]::Matches($strongholdLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
     Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each Stronghold language file."
 }
-$endLanguageText = ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter 'the_end.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n")
+$endLanguageText = ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File | Where-Object { $_.Name -in @('the_end.json5', 'end_activities.json5') } | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n")
 $endArrivalImageReferences = [regex]::Matches($endLanguageText, 'firsttorch:textures/questpics/end_arrival_platform\.png')
 Assert-True ($endArrivalImageReferences.Count -eq 2) 'The End arrival guide must be referenced once in each language.'
 $endermanShelterImageReferences = [regex]::Matches($endLanguageText, 'firsttorch:textures/questpics/enderman_roof_shelter\.png')
@@ -464,7 +466,7 @@ $fenceAndGateImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Jo
 Assert-True ($fenceAndGateImageReferences.Count -eq 2) 'The combined Fence and Fence Gate recipe guide must be referenced once in each language.'
 
 $localeRoot = Join-Path $questRoot 'lang'
-foreach ($relativePath in @('chapter.json5', 'chapters/first_steps.json5', 'chapters/becoming_independent.json5', 'chapters/iron_essentials.json5', 'chapters/finding_home.json5', 'chapters/sustainable_supplies.json5', 'chapters/nether_preparation.json5', 'chapters/nether_activities.json5', 'chapters/brewing.json5', 'chapters/ender_eyes.json5', 'chapters/stronghold.json5', 'chapters/the_end.json5')) {
+foreach ($relativePath in @('chapter.json5', 'chapters/first_steps.json5', 'chapters/becoming_independent.json5', 'chapters/iron_essentials.json5', 'chapters/finding_home.json5', 'chapters/sustainable_supplies.json5', 'chapters/nether_preparation.json5', 'chapters/nether_activities.json5', 'chapters/brewing.json5', 'chapters/ender_eyes.json5', 'chapters/stronghold.json5', 'chapters/the_end.json5', 'chapters/end_activities.json5')) {
     $enPath = Join-Path (Join-Path $localeRoot 'en_us') $relativePath
     $dePath = Join-Path (Join-Path $localeRoot 'de_de') $relativePath
     Assert-True (Test-Path -LiteralPath $enPath -PathType Leaf) "Missing English translation file: $relativePath"
