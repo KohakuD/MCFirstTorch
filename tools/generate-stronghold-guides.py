@@ -75,6 +75,38 @@ def cube_icon(texture, size=230):
     return crop
 
 
+def button_icon(texture, size=150):
+    canvas = Image.new("RGBA", (260, 210), (0, 0, 0, 0))
+    top_texture = texture.crop((5, 6, 11, 10))
+    front_texture = texture.crop((5, 12, 11, 16))
+    side_texture = texture.crop((6, 12, 10, 16))
+    faces = (
+        (top_texture, [(130, 30), (220, 75), (130, 120), (40, 75)], 1.0),
+        (side_texture, [(220, 75), (130, 120), (130, 165), (220, 120)], 0.70),
+        (front_texture, [(130, 120), (40, 75), (40, 120), (130, 165)], 0.83),
+    )
+    for face_texture, points, shade in faces:
+        face, position = textured_quad(face_texture, points, shade)
+        canvas.alpha_composite(face, position)
+    crop = canvas.crop(canvas.getbbox())
+    crop.thumbnail((size, size), Image.Resampling.NEAREST)
+    return crop
+
+
+def slot(draw, x, y, size=124):
+    draw.rectangle((x, y, x + size, y + size), fill=(29, 31, 32, 255), outline=(5, 6, 7, 255), width=8)
+    draw.line((x + 8, y + 8, x + size - 8, y + 8), fill=(153, 156, 158, 255), width=4)
+    draw.line((x + 8, y + 8, x + 8, y + size - 8), fill=(115, 118, 120, 255), width=4)
+
+
+def arrow(draw, left, top, width=130, height=82):
+    points = [(left, top + height // 3), (left + width * 3 // 5, top + height // 3),
+              (left + width * 3 // 5, top), (left + width, top + height // 2),
+              (left + width * 3 // 5, top + height), (left + width * 3 // 5, top + height * 2 // 3),
+              (left, top + height * 2 // 3)]
+    draw.polygon(points, fill=(194, 195, 196, 255))
+
+
 def silverfish_top(texture):
     # Exact cuboid sizes and UV origins used by Minecraft's seven-part Silverfish model.
     sizes = [(3, 2, 2), (4, 3, 2), (6, 4, 3), (3, 3, 3), (2, 2, 3), (2, 1, 2), (1, 1, 1)]
@@ -158,6 +190,48 @@ def create_frame_states(frame_top, frame_eye):
     return image
 
 
+def create_iron_door_guide(stone, stone_bricks, iron_door_top, iron_door_bottom):
+    image = background()
+    draw = ImageDraw.Draw(image)
+    draw.line((805, 70, 805, 870), fill=(90, 92, 94, 255), width=5)
+
+    # Left: exact shapeless one-Stone recipe, with placeable Stone in 3D.
+    left, top, cell = 170, 310, 130
+    for row in range(2):
+        for col in range(2):
+            slot(draw, left + col * cell, top + row * cell, cell)
+    stone_icon = cube_icon(stone, 102)
+    image.alpha_composite(stone_icon, (left + (cell - stone_icon.width) // 2, top + (cell - stone_icon.height) // 2))
+    arrow(draw, 485, 400)
+    output_x, output_y, output_size = 600, 345, 180
+    slot(draw, output_x, output_y, output_size)
+    result = button_icon(stone, 125)
+    image.alpha_composite(result, (output_x + (output_size - result.width) // 2,
+                                   output_y + (output_size - result.height) // 2))
+
+    # Right: exact Iron Door faces in a Stone Brick wall; the wall-mounted
+    # button is built from the exact Stone texture and highlighted for use.
+    wall_left, wall_top, wall_cell = 935, 185, 112
+    for row in range(5):
+        for col in range(5):
+            x, y = wall_left + col * wall_cell, wall_top + row * wall_cell
+            if col == 2 and row in (2, 3):
+                door_texture = iron_door_top if row == 2 else iron_door_bottom
+                tile(image, door_texture, (x, y, x + wall_cell, y + wall_cell))
+            else:
+                tile(image, stone_bricks, (x, y, x + wall_cell, y + wall_cell))
+    button_x = wall_left + 3 * wall_cell + 35
+    button_y = wall_top + 3 * wall_cell + 42
+    button_face = stone.crop((5, 12, 11, 16))
+    tile(image, button_face, (button_x, button_y, button_x + 42, button_y + 28))
+    draw.rectangle((button_x - 12, button_y - 12, button_x + 54, button_y + 40),
+                   outline=(255, 137, 0, 255), width=9)
+    draw.line((1505, 680, button_x + 34, button_y + 25), fill=(255, 137, 0, 255), width=16)
+    draw.polygon(((button_x + 34, button_y + 25), (button_x + 82, button_y + 15),
+                  (button_x + 57, button_y + 61)), fill=(255, 137, 0, 255))
+    return image
+
+
 OUT.mkdir(parents=True, exist_ok=True)
 with ZipFile(JAR) as archive:
     stone_bricks = asset(archive, "assets/minecraft/textures/block/stone_bricks.png")
@@ -168,6 +242,9 @@ with ZipFile(JAR) as archive:
     frame_eye = asset(archive, "assets/minecraft/textures/block/end_portal_frame_eye.png")
     lava = asset(archive, "assets/minecraft/textures/block/lava_still.png")
     spawner = asset(archive, "assets/minecraft/textures/block/spawner.png")
+    stone = asset(archive, "assets/minecraft/textures/block/stone.png")
+    iron_door_top = asset(archive, "assets/minecraft/textures/block/iron_door_top.png")
+    iron_door_bottom = asset(archive, "assets/minecraft/textures/block/iron_door_bottom.png")
 
     create_silverfish_guide(stone_bricks, mossy, cracked, silverfish).save(
         OUT / "stronghold_silverfish.png", optimize=True
@@ -177,6 +254,9 @@ with ZipFile(JAR) as archive:
     )
     create_frame_states(frame_top, frame_eye).save(
         OUT / "end_portal_frame_states.png", optimize=True
+    )
+    create_iron_door_guide(stone, stone_bricks, iron_door_top, iron_door_bottom).save(
+        OUT / "stronghold_iron_door.png", optimize=True
     )
 
 print(OUT)

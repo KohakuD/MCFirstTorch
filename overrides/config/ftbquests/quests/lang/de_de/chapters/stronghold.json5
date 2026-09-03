@@ -29,6 +29,25 @@
   ],
   "task.3B906C28F3D7A15E.title": "Ersten Festungsweg markiert und Rückweg geprüft",
 
+  "quest.3C906D28F3D7A15E.title": "Öffne Eisentüren mit einem Knopf",
+  "quest.3C906D28F3D7A15E.quest_subtitle": "Rechtsklick auf die Tür genügt hier nicht",
+  "quest.3C906D28F3D7A15E.quest_desc": [
+    "Ziel: Verstehe Eisentüren und halte zwei eigene Steinknöpfe als Rückwegsicherung bereit.",
+    "",
+    "Eine Holztür öffnet sich mit Rechtsklick direkt. Eine Eisentür reagiert darauf nicht: Sie braucht ein Redstone-Signal. In Festungsgängen findest du dafür häufig einen kleinen Steinknopf auf einem benachbarten Block.",
+    "",
+    "Klicke den Steinknopf mit Rechts an. Die Eisentür öffnet sich nur für kurze Zeit und schliesst danach automatisch. Stelle dich vor dem Drücken richtig hin, prüfe den sichtbaren Boden hinter der Tür und gehe zügig hindurch, ohne im Türrahmen stehenzubleiben.",
+    "",
+    "{image:firsttorch:textures/questpics/stronghold_iron_door.png width:300 height:169 align:center}",
+    "",
+    "Prüfe auf der anderen Seite sofort, ob dort ebenfalls ein Knopf oder ein anderer Öffner erreichbar ist. Fehlt er, setzt du einen eigenen Steinknopf auf einen festen Block direkt neben der Tür. Betritt keinen weiteren Raum, bevor sich der Rückweg von deiner Seite öffnen lässt.",
+    "",
+    "Ein Steinknopf wird formlos aus einem gewöhnlichen Stein hergestellt. Schmilz dafür Bruchstein im Ofen; ein Stein ergibt einen Knopf. Halte zwei Knöpfe gleichzeitig im Inventar, damit du bei einer fehlenden oder abgebauten Bedienung beide Türseiten absichern kannst.",
+    "",
+    "Die automatische Aufgabe ist erfüllt, sobald zwei Steinknöpfe gleichzeitig in deinem Inventar liegen.",
+  ],
+  "task.4DA17E3904E8B26F.title": "Halte 2 Steinknöpfe gleichzeitig im Inventar",
+
   "quest.4CA17D3904E8B26F.title": "Erkenne Silberfische und Dunkelheit",
   "quest.4CA17D3904E8B26F.quest_subtitle": "Nicht jeder gewöhnlich aussehende Steinziegel ist harmlos",
   "quest.4CA17D3904E8B26F.quest_desc": [

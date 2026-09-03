@@ -370,3 +370,10 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 - Existing and missing Eyes are counted across all twelve frames without carrying or inserting Eyes. The learner returns home with the written count before any activation lesson appears.
 - Added three language-neutral guides from exact Minecraft 26.1.2 assets: three straight 3D Stone Brick variants beside the segmented Silverfish model, a top-down portal-room orientation plan, and top-down empty/filled frame states.
 - One Golden Apple and 10 XP reward the completed exploration without activating the portal or bypassing the later End equipment lesson.
+
+### 2026-09-03 — Stronghold Iron Door lesson
+
+- Inserted a dedicated lesson between the first marked corridor and the hazard explanation for the Iron Doors a beginner may first encounter inside a Stronghold.
+- Contrasts direct right-click Wooden Doors with Iron Doors that require a Redstone signal, explains the nearby Stone Button's short opening interval, and keeps the learner out of the doorway while it closes.
+- Requires two Stone Buttons automatically so a missing control can be replaced from either side before the learner proceeds. The exact 26.1.2 recipe is one ordinary Stone per Button after smelting Cobblestone.
+- Added a combined language-neutral guide with a straight 3D Stone ingredient and Stone Button result beside the exact Iron Door, Stone Button, and Stone Brick wall textures.

@@ -390,6 +390,8 @@ The active milestone is **0.7.0 — Eyes of Ender and the Stronghold**. Version 
 - [x] Require a secured entrance, recorded depth, and a successful return to the surface before exploration
 - [x] Split controlled Stronghold exploration into a separate twelfth bilingual chapter
 - [x] Teach a right-wall Torch rule while explaining why loops still require coordinates and junction markers
+- [x] Explain that Stronghold Iron Doors require a short Redstone signal, show the nearby Stone Button, and require two spare Buttons for the return route
+- [x] Add a combined exact-texture guide for the shapeless Stone Button recipe and an Iron Door in its Stronghold wall
 - [x] Explain ordinary dark-room enemies separately from visually indistinguishable infested blocks and Silverfish
 - [x] Keep Stronghold Libraries optional because generation can omit or truncate them
 - [x] Identify the portal room through twelve frames, Lava, and its Silverfish Spawner

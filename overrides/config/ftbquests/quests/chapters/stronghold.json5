@@ -32,10 +32,26 @@
       ],
     },
     {
-      id: "4CA17D3904E8B26F",
+      id: "3C906D28F3D7A15E",
       x: 5.0,
       y: 0.0,
       dependencies: ["2A8F5B17E2C6904D"],
+      min_width: 380,
+      icon: { id: "minecraft:iron_door", count: 1 },
+      tasks: [
+        {
+          id: "4DA17E3904E8B26F",
+          type: "item",
+          count: 2,
+          item: { id: "minecraft:stone_button", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "4CA17D3904E8B26F",
+      x: 7.5,
+      y: 0.0,
+      dependencies: ["3C906D28F3D7A15E"],
       min_width: 380,
       icon: { id: "minecraft:silverfish_spawn_egg", count: 1 },
       tasks: [
@@ -55,7 +71,7 @@
     },
     {
       id: "10E5B17D482CF6A3",
-      x: 7.5,
+      x: 10.0,
       y: 0.0,
       dependencies: ["4CA17D3904E8B26F"],
       min_width: 380,
@@ -66,7 +82,7 @@
     },
     {
       id: "3207D39F6A4E18C5",
-      x: 10.0,
+      x: 12.5,
       y: 0.0,
       dependencies: ["10E5B17D482CF6A3"],
       min_width: 380,
@@ -78,7 +94,7 @@
     {
       id: "5429F5B18C603AE7",
       x: 12.5,
-      y: 0.0,
+      y: 3.0,
       dependencies: ["3207D39F6A4E18C5"],
       min_width: 380,
       icon: { id: "minecraft:ender_eye", count: 1 },
@@ -88,7 +104,7 @@
     },
     {
       id: "764B17D3AE825C09",
-      x: 12.5,
+      x: 10.0,
       y: 3.0,
       dependencies: ["5429F5B18C603AE7"],
       shape: "hexagon",

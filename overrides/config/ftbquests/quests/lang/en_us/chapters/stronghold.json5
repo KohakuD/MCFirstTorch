@@ -29,6 +29,25 @@
   ],
   "task.3B906C28F3D7A15E.title": "First Stronghold route marked and return checked",
 
+  "quest.3C906D28F3D7A15E.title": "Open Iron Doors with a Button",
+  "quest.3C906D28F3D7A15E.quest_subtitle": "Right-clicking the Door itself is not enough here",
+  "quest.3C906D28F3D7A15E.quest_desc": [
+    "Goal: understand Iron Doors and carry two Stone Buttons to protect the return route.",
+    "",
+    "A Wooden Door opens directly with right-click. An Iron Door does not respond that way: it needs a Redstone signal. Stronghold corridors often provide a small Stone Button on a neighbouring block for this purpose.",
+    "",
+    "Right-click the Stone Button. The Iron Door opens only briefly and then closes automatically. Stand in the correct position before pressing, check the visible floor beyond the Door, and move through promptly without stopping in the doorway.",
+    "",
+    "{image:firsttorch:textures/questpics/stronghold_iron_door.png width:300 height:169 align:center}",
+    "",
+    "Immediately check whether a Button or another control is reachable on the other side. If not, place your own Stone Button on a solid block directly beside the Door. Do not enter another room until the return route can be opened from your side.",
+    "",
+    "One Stone Button is crafted shapelessly from one ordinary Stone. Smelt Cobblestone in a Furnace first; one Stone makes one Button. Hold two Buttons at the same time so both sides can be made safe when a control is missing or removed.",
+    "",
+    "The automatic task completes when two Stone Buttons are in your inventory at the same time.",
+  ],
+  "task.4DA17E3904E8B26F.title": "Hold 2 Stone Buttons in your inventory at once",
+
   "quest.4CA17D3904E8B26F.title": "Recognise Silverfish and Darkness",
   "quest.4CA17D3904E8B26F.quest_subtitle": "Not every ordinary-looking Stone Brick is harmless",
   "quest.4CA17D3904E8B26F.quest_desc": [
