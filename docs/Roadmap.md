@@ -349,9 +349,21 @@ The active milestone is **0.6.0 — Brewing and Potions**. Version **0.2.0** is 
 - [x] Explain Redstone duration, Glowstone strength, and the later Magma-Cream route to Fire Resistance
 - [x] Add exact Minecraft 26.1.2 recipe and Brewing Stand interface images for every new visual step
 - [ ] Confirm the chapter unlocks after the Fortress return but not through the Bastion path
-- [ ] Confirm the Blaze Powder, Brewing Stand, Glass Bottle, and first-brew tasks in survival mode
-- [ ] Inspect all five new guide images in German and English
-- [ ] Complete the full first brewing sequence once in survival mode
+- [x] Confirm the Blaze Powder, Brewing Stand, Glass Bottle, and first-brew tasks in survival mode
+- [ ] Inspect all five new guide images in English after the completed German review
+- [x] Complete the full first brewing sequence once in survival mode
+
+### Optional Fire Resistance extension
+
+- [x] Keep the branch completely optional and explain that a Potion never replaces ordinary Nether safety
+- [x] Accept Magma Cream from either its shapeless Slimeball-and-Blaze-Powder recipe or a suitable Magma Cube drop
+- [x] Explain Magma Cube splitting, unreliable drops, and a controlled retreat before combat
+- [x] Brew up to three three-minute Potions of Fire Resistance from Awkward Potions and one Magma Cream
+- [x] Use the earned Redstone Dust to extend Fire Resistance from three to eight minutes
+- [x] Warn against deliberate Lava testing and explain the safe response to an accidental fall
+- [x] Add exact recipe and Brewing Stand images for Magma Cream, Fire Resistance, and its extension
+- [ ] Confirm Magma Cream detection and both manual brewing checks in survival mode
+- [ ] Inspect all three new images in German and English
 
 ## Later milestones
 

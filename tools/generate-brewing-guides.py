@@ -155,6 +155,9 @@ with ZipFile(JAR) as archive:
     stand = asset(archive, "assets/minecraft/textures/block/brewing_stand.png")
     stand_base = asset(archive, "assets/minecraft/textures/block/brewing_stand_base.png")
     nether_wart = asset(archive, "assets/minecraft/textures/item/nether_wart.png")
+    slime_ball = asset(archive, "assets/minecraft/textures/item/slime_ball.png")
+    magma_cream = asset(archive, "assets/minecraft/textures/item/magma_cream.png")
+    redstone = asset(archive, "assets/minecraft/textures/item/redstone.png")
     potion = asset(archive, "assets/minecraft/textures/item/potion.png")
     potion_overlay = asset(archive, "assets/minecraft/textures/item/potion_overlay.png")
     gui = asset(archive, "assets/minecraft/textures/gui/container/brewing_stand.png")
@@ -183,14 +186,25 @@ with ZipFile(JAR) as archive:
     recipe_grid(image, {(1, 0): glass_icon, (1, 2): glass_icon, (2, 1): glass_icon}, sprite(glass_bottle, 118))
     image.save(OUT / "glass_bottle_recipe.png", optimize=True)
 
+    image = background()
+    recipe_grid(image, {(1, 0): sprite(slime_ball), (1, 1): sprite(blaze_powder)}, sprite(magma_cream, 118))
+    image.save(OUT / "magma_cream_recipe.png", optimize=True)
+
     water = potion_icon(potion, potion_overlay, (56, 93, 198), 16)
     awkward = potion_icon(potion, potion_overlay, (56, 93, 198), 16)
     strength = potion_icon(potion, potion_overlay, (147, 36, 35), 16)
+    fire_resistance = potion_icon(potion, potion_overlay, (228, 154, 58), 16)
     brewing_guide(gui, fuel_length, sprite(nether_wart, 16), water).save(
         OUT / "awkward_potion_brewing.png", optimize=True
     )
     brewing_guide(gui, fuel_length, sprite(blaze_powder, 16), awkward).save(
         OUT / "strength_potion_brewing.png", optimize=True
+    )
+    brewing_guide(gui, fuel_length, sprite(magma_cream, 16), awkward).save(
+        OUT / "fire_resistance_brewing.png", optimize=True
+    )
+    brewing_guide(gui, fuel_length, sprite(redstone, 16), fire_resistance).save(
+        OUT / "long_fire_resistance_brewing.png", optimize=True
     )
 
 print(OUT)

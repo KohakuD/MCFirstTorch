@@ -210,6 +210,8 @@ $brewingLinkPattern = 'id:\s*"7842F5B19C603AD7"[\s\S]{0,180}?linked_quest:\s*"0A
 Assert-True ([regex]::IsMatch($allDefinitionText, $brewingLinkPattern)) 'The Nether activities map must show a diamond-shaped link to Brewing.'
 $firstBrewPattern = 'id:\s*"451FC28E693D07A4"[\s\S]{0,180}?type:\s*"advancement"[\s\S]{0,120}?advancement:\s*"minecraft:nether/brew_potion"[\s\S]{0,120}?criterion:\s*"potion"'
 Assert-True ([regex]::IsMatch($allDefinitionText, $firstBrewPattern)) 'The first completed brewing operation must use the exact Vanilla advancement criterion.'
+$fireResistancePathPattern = 'id:\s*"1D9468F4A713C5E0"[\s\S]{0,180}?dependencies:\s*\["5620D39F7A4E18B5"\][\s\S]*?id:\s*"3FB68A16C935E702"[\s\S]{0,180}?dependencies:\s*\["1D9468F4A713C5E0"\][\s\S]*?id:\s*"51D8AC38EB570924"[\s\S]{0,180}?dependencies:\s*\["3FB68A16C935E702"\][\s\S]*?id:\s*"73FACD5A0D792B46"[\s\S]{0,180}?dependencies:\s*\["51D8AC38EB570924"\]'
+Assert-True ([regex]::IsMatch($allDefinitionText, $fireResistancePathPattern)) 'The optional Fire Resistance lessons must follow the completed first Strength sequence in order.'
 
 $becomingChapterText = Get-Content -LiteralPath (Join-Path $questRoot 'chapters/becoming_independent.json5') -Raw
 $becomingXValues = @([regex]::Matches($becomingChapterText, '(?m)^\s+x:\s*(-?[0-9]+(?:\.[0-9]+)?)\s*,') | ForEach-Object { [double]$_.Groups[1].Value })
@@ -277,6 +279,7 @@ $expectedXpRewards = @{
     '1098D5AEB61C7D29' = 10
     '66FE3B041C72D38F' = 5
     '1CA857F3D60294BE' = 10
+    '15BCEF7C2F9B4D68' = 5
 }
 foreach ($rewardId in $expectedXpRewards.Keys) {
     $xp = $expectedXpRewards[$rewardId]
@@ -293,7 +296,7 @@ Assert-True (Test-Path -LiteralPath $packMetadataPath -PathType Leaf) 'First Tor
 $packMetadata = Get-Content -LiteralPath $packMetadataPath -Raw | ConvertFrom-Json
 Assert-True ($packMetadata.pack.min_format[0] -eq 84 -and $packMetadata.pack.min_format[1] -eq 0) 'Guide resource pack min_format must be [84, 0] for Minecraft 26.1.2.'
 Assert-True ($packMetadata.pack.max_format[0] -eq 84 -and $packMetadata.pack.max_format[1] -eq 0) 'Guide resource pack max_format must be [84, 0] for Minecraft 26.1.2.'
-foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png', 'place_crafting_table.png', 'wooden_pickaxe.png', 'stone_axe.png', 'furnace.png', 'chest.png', 'charcoal.png', 'bed.png', 'hunger_and_eating.png', 'cooking_food.png', 'stone_pickaxe.png', 'shield.png', 'armour_recipes.png', 'safe_staircase.png', 'torch_route.png', 'iron_pickaxe.png', 'bucket.png', 'stonecutter.png', 'lodestone.png', 'stone_hoe.png', 'bread.png', 'farmland_9x9.png', 'fence_and_gate.png', 'paper_and_book.png', 'enchanting_table_recipe.png', 'enchanting_interface.png', 'bookshelf_recipe.png', 'enchanting_bookshelves.png', 'iron_sword.png', 'bone_meal_recipe.png', 'attack_indicator.png', 'flint_and_steel.png', 'nether_portal_frame.png', 'nether_route_marker.png', 'piglin_comparison.png', 'nether_fortress.png', 'fortress_hazards.png', 'blaze_spawner.png', 'bastion_remnant.png', 'blaze_powder_recipe.png', 'brewing_stand_recipe.png', 'glass_bottle_recipe.png', 'awkward_potion_brewing.png', 'strength_potion_brewing.png')) {
+foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png', 'place_crafting_table.png', 'wooden_pickaxe.png', 'stone_axe.png', 'furnace.png', 'chest.png', 'charcoal.png', 'bed.png', 'hunger_and_eating.png', 'cooking_food.png', 'stone_pickaxe.png', 'shield.png', 'armour_recipes.png', 'safe_staircase.png', 'torch_route.png', 'iron_pickaxe.png', 'bucket.png', 'stonecutter.png', 'lodestone.png', 'stone_hoe.png', 'bread.png', 'farmland_9x9.png', 'fence_and_gate.png', 'paper_and_book.png', 'enchanting_table_recipe.png', 'enchanting_interface.png', 'bookshelf_recipe.png', 'enchanting_bookshelves.png', 'iron_sword.png', 'bone_meal_recipe.png', 'attack_indicator.png', 'flint_and_steel.png', 'nether_portal_frame.png', 'nether_route_marker.png', 'piglin_comparison.png', 'nether_fortress.png', 'fortress_hazards.png', 'blaze_spawner.png', 'bastion_remnant.png', 'blaze_powder_recipe.png', 'brewing_stand_recipe.png', 'glass_bottle_recipe.png', 'awkward_potion_brewing.png', 'strength_potion_brewing.png', 'magma_cream_recipe.png', 'fire_resistance_brewing.png', 'long_fire_resistance_brewing.png')) {
     $imagePath = Join-Path $guidePackRoot (Join-Path 'assets/firsttorch/textures/questpics' $imageName)
     Assert-True (Test-Path -LiteralPath $imagePath -PathType Leaf) "Missing quest guide image: $imageName"
     Assert-True ((Get-Item -LiteralPath $imagePath).Length -gt 0) "Quest guide image is empty: $imageName"
@@ -322,7 +325,7 @@ foreach ($imageName in @('nether_fortress.png', 'fortress_hazards.png', 'blaze_s
 $bastionImageReferences = [regex]::Matches($allLanguageText, 'firsttorch:textures/questpics/bastion_remnant\.png')
 Assert-True ($bastionImageReferences.Count -eq 2) 'The Bastion Remnant guide must be referenced once in each language.'
 $brewingLanguageText = ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter 'brewing.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n")
-foreach ($imageName in @('blaze_powder_recipe.png', 'brewing_stand_recipe.png', 'glass_bottle_recipe.png', 'awkward_potion_brewing.png', 'strength_potion_brewing.png')) {
+foreach ($imageName in @('blaze_powder_recipe.png', 'brewing_stand_recipe.png', 'glass_bottle_recipe.png', 'awkward_potion_brewing.png', 'strength_potion_brewing.png', 'magma_cream_recipe.png', 'fire_resistance_brewing.png', 'long_fire_resistance_brewing.png')) {
     $referenceCount = [regex]::Matches($brewingLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
     Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each Brewing language file."
 }

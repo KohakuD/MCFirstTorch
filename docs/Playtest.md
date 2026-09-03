@@ -328,3 +328,12 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 - Corrected the isometric face selection so all placeable recipe ingredients and results render as closed 3D models rather than disconnected faces.
 - Verified the Brewing Stand menu directly from the Minecraft 26.1.2 classes: the fuel slot is at the upper left, while the filled fuel state is rendered as the exact yellow horizontal fuel sprite above the left bottle.
 - Removed the incorrect Blaze Powder icon from the flame area in both brewing guides and clarified that loading fuel consumes the item immediately while storing 20 charges in the yellow bar.
+
+### 2026-09-03 — Beginner brewing playtest and optional Fire Resistance
+
+- The user confirmed the first complete brewing sequence after the corrected recipe models and fuel display; the concrete item tasks and full German survival path now count as tested.
+- Added a four-quest optional branch for Fire Resistance without making it a prerequisite for later progression.
+- Magma Cream may come from the verified shapeless Slimeball-and-Blaze-Powder recipe or from a medium or large Magma Cube. The lesson states that small Cubes cannot drop it and larger drops are not guaranteed.
+- The branch brews three-minute Fire Resistance from Awkward Potions and Magma Cream, then uses one of the previously rewarded Redstone Dust to extend the duration to eight minutes.
+- Safety text explains the Potion's specific protection and its limits, forbids deliberate Lava testing, and gives a clear retreat response for an accidental fall.
+- Added three language-neutral guides using the exact Minecraft 26.1.2 item textures, potion tint, Brewing Stand interface, and filled fuel sprite.
