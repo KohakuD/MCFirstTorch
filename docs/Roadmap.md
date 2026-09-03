@@ -172,11 +172,15 @@ The active milestone is **0.9.0 — The End**. Version **0.2.0** is the latest c
 - [x] Explain that Stone and Copper Pickaxes cannot collect Iron-tier ores such as Diamond Ore
 - [x] Teach the three-Ingot Bucket recipe
 - [x] Require a Water Bucket and practise placing and retrieving a source block safely
+- [x] Teach both 2 × 2 and 1 × 3 infinite Water sources directly after the first Water Bucket exercise
+- [x] Explain diagonal source placement for 2 × 2 and centre-only collection for 1 × 3
+- [x] Add a language-neutral top-down guide made from exact Minecraft 26.1.2 Water and Bucket textures
 - [x] Rejoin both branches in a short safety recap with a 5 XP reward
 - [x] Confirm the six-Ingot task remains incomplete at 1–5 and completes at 6
 - [x] Confirm the Iron Pickaxe, Bucket, and Water Bucket tasks in game
 - [x] Confirm the separate Iron Pickaxe and Bucket recipe images render in their matching quests
 - [x] Practise placing and retrieving Water once in survival mode
+- [ ] Build and collect twice from both infinite Water-source layouts in survival mode
 
 ### Bed onboarding refinement
 

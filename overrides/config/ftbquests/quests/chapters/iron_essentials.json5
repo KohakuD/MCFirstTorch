@@ -72,12 +72,23 @@
       ],
     },
     {
-      id: "3F215C6E03ABD479",
+      id: "50A42D7E18C6B39F",
       x: 7.5,
+      y: 1.25,
+      dependencies: ["1D0F3A4C61E9B257"],
+      min_width: 380,
+      icon: { id: "minecraft:water_bucket", count: 1 },
+      tasks: [
+        { id: "61B53E8F29D7C4A0", type: "checkmark" },
+      ],
+    },
+    {
+      id: "3F215C6E03ABD479",
+      x: 10.0,
       y: 0.0,
       dependencies: [
         "49CBF6082DA57E13",
-        "1D0F3A4C61E9B257",
+        "50A42D7E18C6B39F",
       ],
       shape: "hexagon",
       size: 1.5,
