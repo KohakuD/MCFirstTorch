@@ -407,7 +407,7 @@ The active milestone is **0.8.0 — Preparing the End Expedition**. Version **0.
 
 ### Safe activation without entry
 
-- [x] Continue from the completed Stronghold return in a separate thirteenth bilingual chapter
+- [x] Continue from the completed Stronghold return inside the existing Stronghold chapter
 - [x] Explain that safe return from the End requires defeating the Dragon and distinguish death from a normal return route
 - [x] Explain the Void, exploding Beds, usable Water, Enderman eye contact, and the optional Carved Pumpkin
 - [x] Teach the exact Bow and Arrow recipes and require a first 32-Arrow reserve
@@ -420,7 +420,7 @@ The active milestone is **0.8.0 — Preparing the End Expedition**. Version **0.
 - [x] Insert the exact required Eyes from a safe outside position and remain outside the active portal
 - [x] Add exact-texture guides for Bow and Arrow crafting and the final Eye placement
 - [ ] Confirm the Bow, 32-Arrow, equipment, block, and food tasks in survival mode
-- [ ] Inspect the new chapter layout and both guide images in German and English
+- [ ] Inspect the extended Stronghold chapter layout and both new guide images in German and English
 - [ ] Activate the portal from outside the frame and confirm that no accidental entry occurs
 - [ ] Enter the End only after a separate arrival and Dragon-fight plan
 

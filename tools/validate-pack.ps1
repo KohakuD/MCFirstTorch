@@ -239,8 +239,6 @@ $strongholdLinkPattern = 'id:\s*"3A8F5B17E2C6904D"[\s\S]{0,180}?linked_quest:\s*
 Assert-True ([regex]::IsMatch($allDefinitionText, $strongholdLinkPattern)) 'Eye preparation must show a diamond-shaped link to Stronghold exploration.'
 $strongholdExplorationPathPattern = 'id:\s*"086D39F5C0A47E2B"[\s\S]{0,180}?dependencies:\s*\["74DB8F5B15F9C370"\][\s\S]*?id:\s*"2A8F5B17E2C6904D"[\s\S]{0,180}?dependencies:\s*\["086D39F5C0A47E2B"\][\s\S]*?id:\s*"3C906D28F3D7A15E"[\s\S]{0,180}?dependencies:\s*\["2A8F5B17E2C6904D"\][\s\S]*?id:\s*"4CA17D3904E8B26F"[\s\S]{0,180}?dependencies:\s*\["3C906D28F3D7A15E"\][\s\S]*?id:\s*"10E5B17D482CF6A3"[\s\S]{0,180}?dependencies:\s*\["4CA17D3904E8B26F"\][\s\S]*?id:\s*"3207D39F6A4E18C5"[\s\S]{0,180}?dependencies:\s*\["10E5B17D482CF6A3"\][\s\S]*?id:\s*"5429F5B18C603AE7"[\s\S]{0,180}?dependencies:\s*\["3207D39F6A4E18C5"\][\s\S]*?id:\s*"764B17D3AE825C09"[\s\S]{0,180}?dependencies:\s*\["5429F5B18C603AE7"\]'
 Assert-True ([regex]::IsMatch($allDefinitionText, $strongholdExplorationPathPattern)) 'The main Stronghold exploration path must remain ordered and independent of the optional Library lesson.'
-$endPreparationLinkPattern = 'id:\s*"1287D39F6A4E29D6"[\s\S]{0,180}?linked_quest:\s*"098E4A06D1B58F3D"[\s\S]{0,180}?shape:\s*"diamond"'
-Assert-True ([regex]::IsMatch($allDefinitionText, $endPreparationLinkPattern)) 'Stronghold exploration must show a diamond-shaped link to End preparation.'
 $endPreparationPathPattern = 'id:\s*"098E4A06D1B58F3D"[\s\S]{0,180}?dependencies:\s*\["764B17D3AE825C09"\][\s\S]*?id:\s*"2BA06C28F3D7A15F"[\s\S]{0,180}?dependencies:\s*\["098E4A06D1B58F3D"\][\s\S]*?id:\s*"7055B17D482CF6B4"[\s\S]{0,180}?dependencies:\s*\["2BA06C28F3D7A15F"\][\s\S]*?id:\s*"78DD39F5C0A47F3C"[\s\S]{0,180}?dependencies:\s*\["7055B17D482CF6B4"\][\s\S]*?id:\s*"2B106C28F3D7B26F"[\s\S]{0,180}?dependencies:\s*\["78DD39F5C0A47F3C"\][\s\S]*?id:\s*"4D328E4A15F9D481"[\s\S]{0,180}?dependencies:\s*\["2B106C28F3D7B26F"\][\s\S]*?id:\s*"6F54A06C371BF6A3"[\s\S]{0,180}?dependencies:\s*\["4D328E4A15F9D481"\]'
 Assert-True ([regex]::IsMatch($allDefinitionText, $endPreparationPathPattern)) 'End preparation must remain ordered from the Stronghold return through activation without entry.'
 
@@ -380,10 +378,9 @@ foreach ($imageName in @('stronghold_silverfish.png', 'end_portal_room.png', 'en
     $referenceCount = [regex]::Matches($strongholdLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
     Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each Stronghold language file."
 }
-$endPreparationLanguageText = ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter 'end_preparation.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n")
 foreach ($imageName in @('bow_and_arrows.png', 'end_portal_final_eye.png')) {
-    $referenceCount = [regex]::Matches($endPreparationLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
-    Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each End Preparation language file."
+    $referenceCount = [regex]::Matches($strongholdLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
+    Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each Stronghold language file."
 }
 $armourImageReferences = [regex]::Matches($allDefinitionText + "`n" + ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"), 'firsttorch:textures/questpics/armour_recipes\.png')
 Assert-True ($armourImageReferences.Count -eq 2) 'The compact Armour recipe overview must be referenced once in each language.'
@@ -411,7 +408,7 @@ $fenceAndGateImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Jo
 Assert-True ($fenceAndGateImageReferences.Count -eq 2) 'The combined Fence and Fence Gate recipe guide must be referenced once in each language.'
 
 $localeRoot = Join-Path $questRoot 'lang'
-foreach ($relativePath in @('chapter.json5', 'chapters/first_steps.json5', 'chapters/becoming_independent.json5', 'chapters/iron_essentials.json5', 'chapters/finding_home.json5', 'chapters/sustainable_supplies.json5', 'chapters/nether_preparation.json5', 'chapters/nether_activities.json5', 'chapters/brewing.json5', 'chapters/ender_eyes.json5', 'chapters/stronghold.json5', 'chapters/end_preparation.json5')) {
+foreach ($relativePath in @('chapter.json5', 'chapters/first_steps.json5', 'chapters/becoming_independent.json5', 'chapters/iron_essentials.json5', 'chapters/finding_home.json5', 'chapters/sustainable_supplies.json5', 'chapters/nether_preparation.json5', 'chapters/nether_activities.json5', 'chapters/brewing.json5', 'chapters/ender_eyes.json5', 'chapters/stronghold.json5')) {
     $enPath = Join-Path (Join-Path $localeRoot 'en_us') $relativePath
     $dePath = Join-Path (Join-Path $localeRoot 'de_de') $relativePath
     Assert-True (Test-Path -LiteralPath $enPath -PathType Leaf) "Missing English translation file: $relativePath"
