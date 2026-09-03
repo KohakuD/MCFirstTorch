@@ -50,6 +50,8 @@ $definitionFiles = Get-ChildItem -LiteralPath $questRoot -Recurse -File -Filter 
 $allDefinitionText = ($definitionFiles | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"
 $allLanguageText = (Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter '*.json5' |
     ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"
+$allQuestJson5Text = $allDefinitionText + "`n" + $allLanguageText
+Assert-True (-not [regex]::IsMatch($allQuestJson5Text, ',\s*,')) 'Quest JSON5 contains consecutive commas and cannot be parsed.'
 $invalidFormattingAmpersands = [regex]::Matches($allLanguageText, '(?<!\\)&\s')
 Assert-True ($invalidFormattingAmpersands.Count -eq 0) 'Quest text contains an ampersand followed by whitespace; FTB Quests treats this as an invalid formatting code.'
 $idMatches = [regex]::Matches($allDefinitionText, '\bid:\s*"([0-7][0-9A-F]{15})"')
