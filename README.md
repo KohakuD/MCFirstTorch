@@ -12,7 +12,7 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 - Minecraft: `26.1.2`
 - NeoForge: `26.1.2.84`
 - Languages: English (`en_us`) and German (`de_de`)
-- Current milestone: entering the End safely and securing the arrival area before combat
+- Current milestone: removing End Crystals safely before the direct Dragon fight
 
 ## Included foundation
 
@@ -40,7 +40,7 @@ The updater creates a timestamped backup inside `.first-torch/backups/` before r
 
 ## Project status
 
-Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 through 0.8.0 content has been implemented and remains under in-game review. Version 0.9.0 begins the dedicated End chapter with a controlled first entry, both possible arrival-platform situations, a safe route to End Stone, an Enderman water retreat, and battlefield orientation before any Crystal is attacked. Optional Bastion, Fire Resistance, and Stronghold Library paths remain independent. The detailed scope and acceptance record live in [docs/Roadmap.md](docs/Roadmap.md).
+Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 through 0.8.0 content has been implemented and remains under in-game review. Version 0.9.0 now covers controlled End entry, both possible arrival-platform situations, an Enderman water retreat, battlefield orientation, and staged removal of exposed and caged End Crystals before any direct Dragon attack. Optional Bastion, Fire Resistance, and Stronghold Library paths remain independent. The detailed scope and acceptance record live in [docs/Roadmap.md](docs/Roadmap.md).
 
 ## Licence and trademarks
 

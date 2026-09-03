@@ -443,7 +443,20 @@ The active milestone is **0.9.0 — The End**. Version **0.2.0** is the latest c
 - [ ] Confirm the entered-End advancement task in survival mode
 - [ ] Inspect the End chapter layout and arrival image in German and English
 - [ ] Complete both arrival responses in controlled test worlds
-- [ ] Continue with a staged Crystal-removal and Dragon-fight plan
+- [x] Continue with a staged Crystal-removal plan before teaching direct Dragon attacks
+
+### Staged Crystal removal
+
+- [x] Destroy exposed End Crystals individually with fully drawn Bow shots from safe ground
+- [x] Separate every shot with movement, hazard checks, and recovery instead of encouraging rapid fire
+- [x] Require 64 End Stone for Dragon-resistant approaches to the caged Crystals
+- [x] Open one cage side from an attached staircase, descend, and only then shoot from a safe distance
+- [x] Verify all ten pillar tops and the absence of healing beams before regrouping
+- [x] Add a language-neutral three-step guide made from exact Minecraft 26.1.2 textures
+- [ ] Confirm the 64-End-Stone task and both manual completion checks in survival mode
+- [ ] Inspect the Crystal guide and full lesson text in German and English
+- [ ] Remove every Crystal once using the staged route and confirm that 16 replacement Arrows are granted
+- [ ] Continue with the grounded and perched Dragon-fight phases
 
 ## Later milestones
 
