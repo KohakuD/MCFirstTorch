@@ -159,6 +159,22 @@
       ],
     },
     {
+      id: "46B7D91E2A5C803F",
+      x: 7.5,
+      y: 2.5,
+      dependencies: ["56CA245D80EB7913"],
+      min_width: 360,
+      icon: { id: "minecraft:wooden_shovel", count: 1 },
+      tasks: [
+        {
+          id: "57C8EA2F3B6D9140",
+          type: "item",
+          item: { id: "minecraft:wooden_shovel", count: 1 },
+        },
+        { id: "68D9FB304C7EA251", type: "checkmark" },
+      ],
+    },
+    {
       id: "3A0E6891C42FBD57",
       x: 12.5,
       y: 0.0,
@@ -264,9 +280,10 @@
     {
       id: "1064CEF72A8513BD",
       x: 5.0,
-      y: 3.75,
-      dependencies: ["7E42ACD50863F19B"],
-      icon: { id: "minecraft:oak_door", count: 1 },
+      y: 2.5,
+      dependencies: ["46B7D91E2A5C803F"],
+      min_width: 360,
+      icon: { id: "minecraft:dirt", count: 1 },
       tasks: [
         { id: "2175DF083B9624CE", type: "checkmark" },
       ],
@@ -281,8 +298,8 @@
     },
     {
       id: "3286E0194CA735DF",
-      x: 5.0,
-      y: 6.25,
+      x: 2.5,
+      y: 2.5,
       dependencies: ["1064CEF72A8513BD"],
       min_width: 360,
       icon: { id: "minecraft:white_bed", count: 1 },
@@ -291,12 +308,26 @@
       ],
     },
     {
+      id: "6E9B173C5D802AF4",
+      x: 5.0,
+      y: 5.0,
+      dependencies: [
+        "7E42ACD50863F19B",
+        "1064CEF72A8513BD",
+      ],
+      min_width: 360,
+      icon: { id: "minecraft:oak_door", count: 1 },
+      tasks: [
+        { id: "1FA284B6C9D03E75", type: "checkmark" },
+      ],
+    },
+    {
       id: "54A8023B6EC957F1",
       x: 2.5,
       y: 5.0,
       dependencies: [
-        "1064CEF72A8513BD",
         "3286E0194CA735DF",
+        "6E9B173C5D802AF4",
       ],
       shape: "hexagon",
       size: 1.5,

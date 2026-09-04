@@ -7,7 +7,7 @@ The active milestone is **0.9.0 — The End**. Version **0.2.0** is the latest c
 - [x] Independent repository and reproducible pack manifest
 - [x] FTB Quests JSON5 foundation
 - [x] English and German quest text
-- [x] Guided path: orientation, wood, crafting table, first pickaxe, stone, furnace, chest storage, torches, shelter, bed, first-night check
+- [x] Guided path: orientation, wood, crafting table, Wooden Shovel, emergency shelter, Bed, then Pickaxe, Stone, Furnace, Chest storage, Torches, permanent shelter, and first-morning check
 - [x] Automated metadata and translation validation
 - [x] Fresh-profile startup test on Minecraft 26.1.2
 - [x] Full quest completion test in English
@@ -82,6 +82,16 @@ The active milestone is **0.9.0 — The End**. Version **0.2.0** is the latest c
 - [x] Keep the displayed item stack at one, as required by the 26.1 item reward format
 - [x] Reject ignored quantities inside reward item stacks during validation
 - [x] Confirm a fresh claim grants 2 Apples, 2 Apples, 3 Bread, and 1 Lantern
+
+### First-night safety refinement
+
+- [x] Add an early Wooden Shovel lesson and distinguish soil, stone, and wood tools
+- [x] Branch first-night safety from the Crafting Table so it does not wait for the complete tool route
+- [x] Teach a quick, fully sealed emergency shelter before requiring a lit permanent home
+- [x] Move the three-White-Wool reward and Bed lesson directly behind the emergency shelter
+- [x] Rejoin the route after the learner has both a Bed and a lit shelter with protected storage
+- [x] Add exact-texture guides for the Wooden Shovel recipe and emergency shelter entrance
+- [ ] Complete the revised route once from a fresh survival world and inspect both languages
 
 ## 0.2.0 — Becoming Independent
 
@@ -184,7 +194,7 @@ The active milestone is **0.9.0 — The End**. Version **0.2.0** is the latest c
 
 ### Bed onboarding refinement
 
-- [x] Grant three White Wool after the safe-shelter lesson instead of giving a finished Bed
+- [x] Grant three White Wool after the emergency-shelter lesson instead of giving a finished Bed
 - [x] Teach the White Bed recipe, placement, sleeping, and the respawn point explicitly
 - [x] Keep the learner responsible for crafting the Wooden Planks and Bed
 - [x] Confirm the three-Wool reward quantity and Bed guide image in game

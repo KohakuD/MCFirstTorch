@@ -1,5 +1,16 @@
 # Playtest log
 
+## 0.9.0
+
+### 2026-09-05 — Beginner first-night safety refinement
+
+- A laptop beginner playtest exposed two missing assumptions: the learner used a Pickaxe on Dirt because the Shovel had never been taught, and the first night arrived before the original shelter sequence could be completed.
+- Added a Wooden Shovel immediately after the Crafting Table, with an exact Minecraft 26.1.2 recipe guide and a direct comparison of soil, stone, and wood tools.
+- Split shelter building into an early emergency branch and a later permanent upgrade. The emergency shelter may be a small dirt or hillside room, but its two-block-high entrance must be sealed completely before night.
+- Moved the three White Wool and Bed lesson behind that emergency shelter. The learner can continue the parallel Pickaxe route during daylight and return to the Bed before dark.
+- The later upgrade requires the already-taught Chest and Torches, protected storage, a lit interior and entrance, and either a Wooden Door or solid temporary entrance blocks.
+- Generated both new guides exclusively from exact textures in the official, SHA-1-verified Minecraft 26.1.2 client JAR. The revised map flow, text fit, and completion behaviour still require a fresh survival-mode test.
+
 ## 0.1.0
 
 ### 2026-09-02 — CurseForge 0.1.1 smoke test
