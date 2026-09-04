@@ -74,18 +74,24 @@ def create_access_guide(end_stone, bedrock, portal, pearl):
     for col in range(9):
         block(image, end_stone, (35 + col * cell, floor_y, 35 + (col + 1) * cell, 890), (91, 93, 61, 255))
 
-    # A continuous crouched staircase reaches a platform aligned with the portal opening.
-    for step in range(6):
-        x = 650 + step * 75
-        y = floor_y - (step + 1) * 50
-        block(image, end_stone, (x, y, x + 110, y + 110), (91, 93, 61, 255))
-    for col in range(5):
-        x = 1080 + col * 105
-        block(image, end_stone, (x, 590, x + 105, 695), (91, 93, 61, 255))
+    # The single approach block makes the first rise climbable without jumping
+    # two blocks. Each following stage is a grid-aligned pair: Sneak outward with
+    # the lower block, then place the next block on top.
+    block(image, end_stone, (535, 690, 635, 790), (91, 93, 61, 255))
+    for step in range(3):
+        x = 635 + step * 100
+        lower_y = floor_y - (step + 1) * 100
+        block(image, end_stone, (x, lower_y, x + 100, lower_y + 100), (91, 93, 61, 255))
+        block(image, end_stone, (x, lower_y - 100, x + 100, lower_y), (91, 93, 61, 255))
+    # The standing platform stops before the Bedrock frame instead of passing
+    # behind the portal in this side-view diagram.
+    for col in range(3):
+        x = 935 + col * 100
+        block(image, end_stone, (x, 390, x + 100, 490), (91, 93, 61, 255))
 
     gateway_front(image, bedrock, portal, (1335, 365), 92)
-    paste_nearest(image, pearl, (920, 365, 1070, 515))
-    arrow(draw, (1060, 425), (1272, 365), width=20)
+    paste_nearest(image, pearl, (700, 230, 840, 370))
+    arrow(draw, (830, 310), (1272, 365), width=20)
     return image
 
 
