@@ -1,6 +1,6 @@
 # Roadmap
 
-The active milestone is **0.9.0 — The End**. Version **0.2.0** is the latest completed and tested release. The 0.3.0 through 0.8.0 content remains under in-game review, and the current development build is **0.9.0**.
+The active milestone is **0.9.0 — The End**, with a deliberate Overworld curriculum interlude before outer-island exploration continues. Version **0.2.0** is the latest completed and tested release. The 0.3.0 through 0.8.0 content remains under in-game review, and the current development build is **0.9.0**.
 
 ## 0.1.0 — First Safe Night
 
@@ -437,6 +437,19 @@ The active milestone is **0.9.0 — The End**. Version **0.2.0** is the latest c
 - [ ] Inspect the extended Stronghold chapter layout and both new guide images in German and English
 - [ ] Activate the portal from outside the frame and confirm that no accidental entry occurs
 - [x] Enter the End only after a separate arrival and Dragon-fight plan
+
+## Pre-1.0 Overworld expansion
+
+The beginner playtest showed that practical Overworld exploration needs its own teaching space before the later End journey. The detailed sequencing, deferred topics, and acceptance criteria live in [Overworld-Roadmap.md](Overworld-Roadmap.md).
+
+- [x] Define a separate, non-gating `What to Do in the Overworld?` curriculum
+- [x] Add an exact-texture visual overview of the four common hostile mobs
+- [ ] Teach safe excursion preparation and a tested return routine
+- [ ] Teach Boat crafting, controls, recovery, and a short practice trip
+- [ ] Introduce Villages, Villagers, professions, workstations, and one simple trade
+- [ ] Explain Village safety, Iron Golems, Beds, Bells, farms, and respectful use
+- [ ] Return home deliberately and record the Village for a later visit
+- [ ] Complete the entire chapter and both-language visual review in survival mode
 
 ## 0.9.0 — The End
 

@@ -11,6 +11,14 @@
 - The later upgrade requires the already-taught Chest and Torches, protected storage, a lit interior and entrance, and either a Wooden Door or solid temporary entrance blocks.
 - Generated both new guides exclusively from exact textures in the official, SHA-1-verified Minecraft 26.1.2 client JAR. The revised map flow, text fit, and completion behaviour still require a fresh survival-mode test.
 
+### 2026-09-05 — Overworld expansion planning and hostile-mob overview
+
+- Paused further outer-End expansion so common Overworld systems can be taught before the learner is likely to encounter them without context.
+- Added a separate Overworld roadmap for safe excursions, Boats, Villages, Villager professions and trading, Village safety, and a deliberate return home. The route is planned as an independent chapter and will not gate Nether or End progress.
+- Deferred Raids, Zombie Villager curing, Villager breeding, trading optimisation, and specialised structures into optional later branches.
+- Added a language-neutral four-panel overview to the existing mob-drop introduction. Zombie, Skeleton, Spider, and Creeper use exact Minecraft 26.1.2 entity textures and are paired with exact textures for Rotten Flesh, Bone, String, and Gunpowder.
+- The new overview still requires an in-game size and active-resource-pack check in German and English.
+
 ## 0.1.0
 
 ### 2026-09-02 — CurseForge 0.1.1 smoke test

@@ -12,7 +12,7 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 - Minecraft: `26.1.2`
 - NeoForge: `26.1.2.84`
 - Languages: English (`en_us`) and German (`de_de`)
-- Current milestone: completing a prepared second End visit and securing the outer-island arrival
+- Current milestone: expanding practical Overworld guidance before continuing the outer-island End journey
 
 ## Included foundation
 
@@ -40,7 +40,7 @@ The updater creates a timestamped backup inside `.first-torch/backups/` before r
 
 ## Project status
 
-Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 through 0.8.0 content has been implemented and remains under in-game review. Version 0.9.0 now covers controlled End entry, staged Crystal removal, the first Dragon victory, an optional Dragon Egg retrieval, and safe return. A separate `What to Do in the End?` chapter begins with a prepared second visit and secured End Gateway journey to the outer islands. Optional Bastion, Fire Resistance, and Stronghold Library paths remain independent. The detailed scope and acceptance record live in [docs/Roadmap.md](docs/Roadmap.md).
+Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 through 0.8.0 content has been implemented and remains under in-game review. Version 0.9.0 now covers controlled End entry, staged Crystal removal, the first Dragon victory, an optional Dragon Egg retrieval, and safe return. A separate `What to Do in the End?` chapter begins with a prepared second visit and secured End Gateway journey to the outer islands. Before that journey continues, practical Overworld travel, Boats, Villages, and basic Villager interaction are being added through the [Overworld expansion roadmap](docs/Overworld-Roadmap.md). Optional Bastion, Fire Resistance, and Stronghold Library paths remain independent. The complete version history remains in [docs/Roadmap.md](docs/Roadmap.md).
 
 ## Licence and trademarks
 
