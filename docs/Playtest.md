@@ -414,4 +414,4 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 - The search uses repeated daytime legs, food and Torch stopping thresholds, landmarks, and intermediate coordinates rather than encouraging directionless travel.
 - The recognition lesson identifies paths, several buildings, Villagers, Beds, workstations, farms, a Bell, and the possible Iron Golem while explaining biome-dependent layouts.
 - The learner records exact X/Y/Z coordinates outside the game, adds a sparse marker without blocking doors or paths, and leaves Chests, Beds, and workstations untouched for the later Villager lesson.
-- Added a language-neutral in-world overview cropped from an actual Minecraft 26.1.2 Village screenshot. Five XP rewards the secured location without replacing a future trade.
+- Added a language-neutral in-world-style overview generated from the user's Minecraft 26.1.2 Village screenshot and approved separately before installation. The original screenshot remains beside the selected illustration as provenance. Five XP rewards the secured location without replacing a future trade.
