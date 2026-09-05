@@ -1,7 +1,7 @@
 {
   id: "68C1F4072D9A5BE3",
   group: "",
-  order_index: 7,
+  order_index: 6,
   icon: { id: "minecraft:oak_boat", count: 1 },
   filename: "overworld_activities",
   default_quest_shape: "circle",

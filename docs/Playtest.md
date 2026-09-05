@@ -27,6 +27,7 @@
 - Added a short daylight walking rehearsal before water travel, including thunderstorms, changing landmarks, intermediate coordinates, and an explicit early-return threshold.
 - Added the exact five-Plank Boat recipe, support for every ordinary Boat variant plus the Bamboo Raft, all basic controls, safe dismounting, retrieval, and a 100-block same-shore practice trip.
 - Added an exact-texture recipe guide with straight three-dimensional Planks and a language-neutral top-down controls guide. Both images and the full chapter still require in-game review in German and English.
+- Beginner review moved `Safe Mob Drops` and `What to Do in the Overworld?` ahead of `Mining Deeper`. Practical exploration now appears before Diamonds and Enchanting in the chapter list without changing any quest dependency.
 
 ## 0.1.0
 

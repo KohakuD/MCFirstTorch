@@ -1,7 +1,7 @@
 {
   id: "702FA5D18C643BE9",
   group: "",
-  order_index: 6,
+  order_index: 5,
   icon: { id: "minecraft:bone", count: 1 },
   filename: "mob_drops",
   default_quest_shape: "circle",

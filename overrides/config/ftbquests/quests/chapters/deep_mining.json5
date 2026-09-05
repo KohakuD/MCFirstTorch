@@ -1,7 +1,7 @@
 {
   id: "6B3D9F215E8C4A70",
   group: "",
-  order_index: 5,
+  order_index: 7,
   icon: { id: "minecraft:diamond_pickaxe", count: 1 },
   filename: "deep_mining",
   default_quest_shape: "circle",

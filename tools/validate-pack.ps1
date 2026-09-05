@@ -218,6 +218,14 @@ $overworldBoatPathPattern = 'id:\s*"16B02D4FC7B8135E"[\s\S]{0,180}?dependencies:
 Assert-True ([regex]::IsMatch($allDefinitionText, $overworldBoatPathPattern)) 'The Overworld Boat lessons must remain ordered from daylight rehearsal through the return to shore.'
 $overworldChapterLinkPattern = 'id:\s*"57B3E81A6C04DF29"[\s\S]{0,180}?linked_quest:\s*"12E8A5C74F309BD6"[\s\S]{0,180}?shape:\s*"diamond"'
 Assert-True ([regex]::IsMatch($allDefinitionText, $overworldChapterLinkPattern)) 'Finding Home must show a diamond-shaped link to the Overworld activities chapter.'
+$chapterOrders = @{}
+foreach ($chapterFileName in @('mob_drops', 'overworld_activities', 'deep_mining')) {
+    $chapterText = Get-Content -LiteralPath (Join-Path $questRoot "chapters/$chapterFileName.json5") -Raw
+    $orderMatch = [regex]::Match($chapterText, '(?m)^\s*order_index:\s*(\d+)\s*,')
+    Assert-True ($orderMatch.Success) "Chapter $chapterFileName must define an order_index."
+    $chapterOrders[$chapterFileName] = [int]$orderMatch.Groups[1].Value
+}
+Assert-True ($chapterOrders['mob_drops'] -lt $chapterOrders['overworld_activities'] -and $chapterOrders['overworld_activities'] -lt $chapterOrders['deep_mining']) 'Safe Mob Drops and Overworld Activities must appear before Mining Deeper.'
 $findingHomeDependencyPattern = 'id:\s*"16C8E2A50D739BF4"[\s\S]{0,180}?dependencies:\s*\["36CF412575EB038D"\]'
 Assert-True ([regex]::IsMatch($allDefinitionText, $findingHomeDependencyPattern)) 'The Finding Home chapter must unlock after the safe-return lesson.'
 $compassLessonPattern = 'id:\s*"2F6A91C4D8E307B5"[\s\S]{0,180}?dependencies:\s*\["7C2E480B63D9F15A"\][\s\S]{0,180}?icon:\s*\{\s*id:\s*"minecraft:compass"'
