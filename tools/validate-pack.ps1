@@ -218,6 +218,10 @@ $overworldBoatPathPattern = 'id:\s*"16B02D4FC7B8135E"[\s\S]{0,180}?dependencies:
 Assert-True ([regex]::IsMatch($allDefinitionText, $overworldBoatPathPattern)) 'The Overworld Boat lessons must remain ordered from daylight rehearsal through the return to shore.'
 $overworldVillagePathPattern = 'id:\s*"2F49B6D81E50AC73"[\s\S]{0,180}?dependencies:\s*\["7C1683A52D1E79B4"\][\s\S]*?id:\s*"416BD8FA3072CE95"[\s\S]{0,180}?dependencies:\s*\["2F49B6D81E50AC73"\][\s\S]*?id:\s*"638DFA1C5294E0B7"[\s\S]{0,180}?dependencies:\s*\["416BD8FA3072CE95"\]'
 Assert-True ([regex]::IsMatch($allDefinitionText, $overworldVillagePathPattern)) 'The Village discovery lessons must remain ordered from the search through the secured location.'
+$overworldTradingPathPattern = 'id:\s*"14C9E72A5B603DF8"[\s\S]{0,180}?dependencies:\s*\["638DFA1C5294E0B7"\][\s\S]*?id:\s*"36EB094C7D825F1A"[\s\S]{0,180}?dependencies:\s*\["14C9E72A5B603DF8"\][\s\S]*?id:\s*"580D2B6E1FA47C3D"[\s\S]{0,180}?dependencies:\s*\["36EB094C7D825F1A"\][\s\S]*?id:\s*"7A2F4D801C639E5F"[\s\S]{0,180}?dependencies:\s*\["580D2B6E1FA47C3D"\]'
+Assert-True ([regex]::IsMatch($allDefinitionText, $overworldTradingPathPattern)) 'The Village interaction lessons must remain ordered from safe behaviour through the first trade.'
+$firstVillagerTradePattern = 'id:\s*"0B305E912D74AF60"[\s\S]{0,180}?type:\s*"advancement"[\s\S]{0,120}?advancement:\s*"minecraft:adventure/trade"[\s\S]{0,120}?criterion:\s*"traded"'
+Assert-True ([regex]::IsMatch($allDefinitionText, $firstVillagerTradePattern)) 'The first Villager trade must use the exact Vanilla traded criterion.'
 $overworldChapterLinkPattern = 'id:\s*"57B3E81A6C04DF29"[\s\S]{0,180}?linked_quest:\s*"12E8A5C74F309BD6"[\s\S]{0,180}?shape:\s*"diamond"'
 Assert-True ([regex]::IsMatch($allDefinitionText, $overworldChapterLinkPattern)) 'Finding Home must show a diamond-shaped link to the Overworld activities chapter.'
 $chapterOrders = @{}
@@ -350,6 +354,7 @@ $expectedItemRewards = @{
     '1AFF5B17E2C6A15E' = @{ Item = 'minecraft:bread'; Count = 4 }
     '24A95B17E2C6B16F' = @{ Item = 'minecraft:cobblestone'; Count = 16 }
     '68FD9F5B260AF5A4' = @{ Item = 'minecraft:arrow'; Count = 16 }
+    '1C416FA23E85B071' = @{ Item = 'minecraft:torch'; Count = 4 }
 }
 foreach ($rewardId in $expectedItemRewards.Keys) {
     $reward = $expectedItemRewards[$rewardId]
@@ -395,6 +400,7 @@ $expectedXpRewards = @{
     '09AE0A6C371B06B5' = 10
     '1E38A5C74F309BD6' = 5
     '05AF1C3E74B602D9' = 5
+    '2D5270B34F96C182' = 5
 }
 foreach ($rewardId in $expectedXpRewards.Keys) {
     $xp = $expectedXpRewards[$rewardId]
@@ -411,7 +417,7 @@ Assert-True (Test-Path -LiteralPath $packMetadataPath -PathType Leaf) 'First Tor
 $packMetadata = Get-Content -LiteralPath $packMetadataPath -Raw | ConvertFrom-Json
 Assert-True ($packMetadata.pack.min_format[0] -eq 84 -and $packMetadata.pack.min_format[1] -eq 0) 'Guide resource pack min_format must be [84, 0] for Minecraft 26.1.2.'
 Assert-True ($packMetadata.pack.max_format[0] -eq 84 -and $packMetadata.pack.max_format[1] -eq 0) 'Guide resource pack max_format must be [84, 0] for Minecraft 26.1.2.'
-foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png', 'place_crafting_table.png', 'wooden_shovel.png', 'first_night_shelter.png', 'wooden_pickaxe.png', 'stone_axe.png', 'furnace.png', 'chest.png', 'charcoal.png', 'bed.png', 'hunger_and_eating.png', 'cooking_food.png', 'stone_pickaxe.png', 'shield.png', 'armour_recipes.png', 'safe_staircase.png', 'torch_route.png', 'iron_pickaxe.png', 'bucket.png', 'infinite_water_sources.png', 'stonecutter.png', 'lodestone.png', 'stone_hoe.png', 'bread.png', 'farmland_9x9.png', 'fence_and_gate.png', 'paper_and_book.png', 'enchanting_table_recipe.png', 'enchanting_interface.png', 'bookshelf_recipe.png', 'enchanting_bookshelves.png', 'iron_sword.png', 'bone_meal_recipe.png', 'attack_indicator.png', 'hostile_mob_overview.png', 'boat_recipe.png', 'boat_controls.png', 'village_overview.png', 'flint_and_steel.png', 'nether_portal_frame.png', 'nether_route_marker.png', 'piglin_comparison.png', 'nether_fortress.png', 'fortress_hazards.png', 'blaze_spawner.png', 'bastion_remnant.png', 'blaze_powder_recipe.png', 'brewing_stand_recipe.png', 'glass_bottle_recipe.png', 'awkward_potion_brewing.png', 'strength_potion_brewing.png', 'magma_cream_recipe.png', 'fire_resistance_brewing.png', 'long_fire_resistance_brewing.png', 'ender_eye_recipe.png', 'ender_eye_search.png', 'stronghold_silverfish.png', 'end_portal_room.png', 'end_portal_frame_states.png', 'stronghold_iron_door.png', 'bow_and_arrows.png', 'end_portal_final_eye.png', 'end_arrival_platform.png', 'enderman_roof_shelter.png', 'end_crystal_exposed.png', 'end_crystal_removal.png', 'ender_dragon_flight.png', 'ender_dragon_perched.png', 'end_exit_portal.png', 'dragon_egg_retrieval.png', 'end_gateway_access.png', 'outer_end_arrival.png')) {
+foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png', 'place_crafting_table.png', 'wooden_shovel.png', 'first_night_shelter.png', 'wooden_pickaxe.png', 'stone_axe.png', 'furnace.png', 'chest.png', 'charcoal.png', 'bed.png', 'hunger_and_eating.png', 'cooking_food.png', 'stone_pickaxe.png', 'shield.png', 'armour_recipes.png', 'safe_staircase.png', 'torch_route.png', 'iron_pickaxe.png', 'bucket.png', 'infinite_water_sources.png', 'stonecutter.png', 'lodestone.png', 'stone_hoe.png', 'bread.png', 'farmland_9x9.png', 'fence_and_gate.png', 'paper_and_book.png', 'enchanting_table_recipe.png', 'enchanting_interface.png', 'bookshelf_recipe.png', 'enchanting_bookshelves.png', 'iron_sword.png', 'bone_meal_recipe.png', 'attack_indicator.png', 'hostile_mob_overview.png', 'boat_recipe.png', 'boat_controls.png', 'village_overview.png', 'villager_trading.png', 'flint_and_steel.png', 'nether_portal_frame.png', 'nether_route_marker.png', 'piglin_comparison.png', 'nether_fortress.png', 'fortress_hazards.png', 'blaze_spawner.png', 'bastion_remnant.png', 'blaze_powder_recipe.png', 'brewing_stand_recipe.png', 'glass_bottle_recipe.png', 'awkward_potion_brewing.png', 'strength_potion_brewing.png', 'magma_cream_recipe.png', 'fire_resistance_brewing.png', 'long_fire_resistance_brewing.png', 'ender_eye_recipe.png', 'ender_eye_search.png', 'stronghold_silverfish.png', 'end_portal_room.png', 'end_portal_frame_states.png', 'stronghold_iron_door.png', 'bow_and_arrows.png', 'end_portal_final_eye.png', 'end_arrival_platform.png', 'enderman_roof_shelter.png', 'end_crystal_exposed.png', 'end_crystal_removal.png', 'ender_dragon_flight.png', 'ender_dragon_perched.png', 'end_exit_portal.png', 'dragon_egg_retrieval.png', 'end_gateway_access.png', 'outer_end_arrival.png')) {
     $imagePath = Join-Path $guidePackRoot (Join-Path 'assets/firsttorch/textures/questpics' $imageName)
     Assert-True (Test-Path -LiteralPath $imagePath -PathType Leaf) "Missing quest guide image: $imageName"
     Assert-True ((Get-Item -LiteralPath $imagePath).Length -gt 0) "Quest guide image is empty: $imageName"
@@ -432,7 +438,7 @@ foreach ($imageName in @('iron_sword.png', 'bone_meal_recipe.png', 'attack_indic
     Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each Safe Mob Drops language file."
 }
 $overworldLanguageText = ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter 'overworld_activities.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n")
-foreach ($imageName in @('boat_recipe.png', 'boat_controls.png', 'village_overview.png')) {
+foreach ($imageName in @('boat_recipe.png', 'boat_controls.png', 'village_overview.png', 'villager_trading.png')) {
     $referenceCount = [regex]::Matches($overworldLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
     Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each Overworld Activities language file."
 }

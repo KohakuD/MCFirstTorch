@@ -415,3 +415,11 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 - The recognition lesson identifies paths, several buildings, Villagers, Beds, workstations, farms, a Bell, and the possible Iron Golem while explaining biome-dependent layouts.
 - The learner records exact X/Y/Z coordinates outside the game, adds a sparse marker without blocking doors or paths, and leaves Chests, Beds, and workstations untouched for the later Villager lesson.
 - Added a language-neutral in-world-style overview generated from the user's Minecraft 26.1.2 Village screenshot and approved separately before installation. The original screenshot remains beside the selected illustration as provenance. Five XP rewards the secured location without replacing a future trade.
+
+### 2026-09-05 — Villager professions and first trade
+
+- Added four bilingual lessons after the secured Village location: respectful behaviour, recognising professions and workstations, reading the trading screen, and completing a first trade.
+- Warns against attacking Villagers or Iron Golems, explains a safe retreat from an angered Golem, and leaves Beds, workstations, Chests, fields, doors, and paths undisturbed.
+- Introduces adult employed Villagers, babies, Nitwits, four representative workstation mappings, and the profession lock created by a completed trade without requiring the learner to rearrange the Village.
+- Added a language-neutral trading guide assembled from the exact Minecraft 26.1.2 Villager GUI, Wheat, Emerald, trade-arrow, and profession-experience textures. Its 20-Wheat example is explicitly separated from the offers actually present in the learner's world.
+- The exact `minecraft:adventure/trade` advancement criterion `traded` detects the first completed trade automatically. Four Torches and 5 XP support the return trip without replacing its cost or granting valuable equipment.

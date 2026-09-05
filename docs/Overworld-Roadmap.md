@@ -41,12 +41,13 @@ This roadmap defines the additional Overworld curriculum that will be completed 
 
 ## Stage 5 — Villagers, professions, and trading
 
-- [ ] Explain that adult Villagers use nearby workstations to obtain professions and that their clothing and trade screen help identify their work.
-- [ ] Teach opening the trade interface, reading input and output slots, completing one affordable trade, and recognising experience-based trade progression.
-- [ ] Explain Emeralds as the main Villager trading item without presenting them as a universal currency outside trading.
-- [ ] Warn the learner not to hit Villagers or Iron Golems and to retreat rather than fight an angered Golem.
-- [ ] Explain Beds, workstations, the Bell, farms, and Chests without requiring the learner to dismantle or loot the Village.
-- [ ] Use small rewards that support the return trip without replacing a trade or granting valuable equipment.
+- [x] Explain that adult Villagers use nearby workstations to obtain professions and that their clothing and trade screen help identify their work.
+- [x] Teach opening the trade interface, reading input and output slots, completing one affordable trade, and recognising experience-based trade progression.
+- [x] Explain Emeralds as the main Villager trading item without presenting them as a universal currency outside trading.
+- [x] Warn the learner not to hit Villagers or Iron Golems and to retreat rather than fight an angered Golem.
+- [x] Explain Beds, workstations, the Bell, farms, and Chests without requiring the learner to dismantle or loot the Village.
+- [x] Use small rewards that support the return trip without replacing a trade or granting valuable equipment.
+- [ ] Inspect the four new lessons, exact-GUI guide, and automatic first-trade detection in survival mode.
 
 ## Stage 6 — Secure the visit and return home
 
