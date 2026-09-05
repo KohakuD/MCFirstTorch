@@ -19,6 +19,15 @@
 - Added a language-neutral four-panel overview to the existing mob-drop introduction. Zombie, Skeleton, Spider, and Creeper use exact Minecraft 26.1.2 entity textures and are paired with exact textures for Rotten Flesh, Bone, String, and Gunpowder.
 - The new overview still requires an in-game size and active-resource-pack check in German and English.
 
+### 2026-09-05 — Overworld excursion and Boat foundation
+
+- Added a fifteenth bilingual chapter, `What to Do in the Overworld?`, between the optional mob-drop material and the Nether chapters in the chapter list.
+- The chapter unlocks only after both the personal Lodestone Compass test and the basic protection recap, but remains completely independent from Nether, Stronghold, and End progression.
+- Added a deliberate day-trip checklist covering the Bed left at home, recorded coordinates, suitable tools, Iron-or-better Armour, Shield, eight cooked foods, 16 Torches, 32 Cobblestone, and eight free inventory slots.
+- Added a short daylight walking rehearsal before water travel, including thunderstorms, changing landmarks, intermediate coordinates, and an explicit early-return threshold.
+- Added the exact five-Plank Boat recipe, support for every ordinary Boat variant plus the Bamboo Raft, all basic controls, safe dismounting, retrieval, and a 100-block same-shore practice trip.
+- Added an exact-texture recipe guide with straight three-dimensional Planks and a language-neutral top-down controls guide. Both images and the full chapter still require in-game review in German and English.
+
 ## 0.1.0
 
 ### 2026-09-02 — CurseForge 0.1.1 smoke test

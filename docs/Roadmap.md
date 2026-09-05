@@ -444,8 +444,8 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 
 - [x] Define a separate, non-gating `What to Do in the Overworld?` curriculum
 - [x] Add an exact-texture visual overview of the four common hostile mobs
-- [ ] Teach safe excursion preparation and a tested return routine
-- [ ] Teach Boat crafting, controls, recovery, and a short practice trip
+- [x] Teach safe excursion preparation and a tested return routine
+- [x] Teach Boat crafting, controls, recovery, and a short practice trip
 - [ ] Introduce Villages, Villagers, professions, workstations, and one simple trade
 - [ ] Explain Village safety, Iron Golems, Beds, Bells, farms, and respectful use
 - [ ] Return home deliberately and record the Village for a later visit

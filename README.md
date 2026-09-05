@@ -17,7 +17,7 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 ## Included foundation
 
 - FTB Quests, FTB Library, FTB Teams, and the official FTB item-tag filter modules
-- Fourteen bilingual chapters covering the first safe night, independent survival routines, essential Iron equipment, finding the way home, sustainable supplies, the first deep Diamond expedition, optional safe mob drops, the first controlled Nether visit, optional Nether activities, brewing, the Stronghold search, controlled Stronghold exploration, the first safe arrival in the End, and later End exploration
+- Fifteen bilingual chapters covering the first safe night, independent survival routines, essential Iron equipment, finding the way home, sustainable supplies, the first deep Diamond expedition, optional safe mob drops, safe Overworld excursions and Boat travel, the first controlled Nether visit, optional Nether activities, brewing, the Stronghold search, controlled Stronghold exploration, the first safe arrival in the End, and later End exploration
 - Reproducible CurseForge manifest with pinned dependency file IDs
 
 ## Install a development build

@@ -1,7 +1,7 @@
 {
   id: "6138B4E07D952AC6",
   group: "",
-  order_index: 7,
+  order_index: 8,
   icon: { id: "minecraft:flint_and_steel", count: 1 },
   filename: "nether_preparation",
   default_quest_shape: "circle",

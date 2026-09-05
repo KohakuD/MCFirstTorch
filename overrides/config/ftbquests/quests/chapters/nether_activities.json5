@@ -1,7 +1,7 @@
 {
   id: "7249E5AFB61C7D28",
   group: "",
-  order_index: 8,
+  order_index: 9,
   icon: { id: "minecraft:netherrack", count: 1 },
   filename: "nether_activities",
   default_quest_shape: "circle",

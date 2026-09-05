@@ -1,0 +1,132 @@
+{
+  id: "68C1F4072D9A5BE3",
+  group: "",
+  order_index: 7,
+  icon: { id: "minecraft:oak_boat", count: 1 },
+  filename: "overworld_activities",
+  default_quest_shape: "circle",
+  default_hide_dependency_lines: false,
+  quests: [
+    {
+      id: "12E8A5C74F309BD6",
+      x: 0.0,
+      y: 0.0,
+      dependencies: [
+        "0BED012A8146C359",
+        "07B5E9C31D864AF2",
+      ],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:filled_map", count: 1 },
+      tasks: [
+        { id: "23F9B6D85041ACE7", type: "checkmark" },
+      ],
+    },
+    {
+      id: "34FAC7E96152BDF8",
+      x: 2.5,
+      y: 0.0,
+      dependencies: ["12E8A5C74F309BD6"],
+      min_width: 360,
+      icon: { id: "minecraft:bundle", count: 1 },
+      tasks: [
+        {
+          id: "451BD8FA7263CE09",
+          type: "item",
+          item: { id: "minecraft:shield", count: 1 },
+        },
+        {
+          id: "562CE90B8374DF1A",
+          type: "item",
+          count: 8,
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "or(item(minecraft:cooked_beef)item(minecraft:cooked_porkchop)item(minecraft:cooked_chicken)item(minecraft:cooked_mutton)item(minecraft:cooked_rabbit)item(minecraft:cooked_cod)item(minecraft:cooked_salmon)item(minecraft:baked_potato)item(minecraft:dried_kelp))",
+            },
+          },
+        },
+        {
+          id: "673DFA1C9485E02B",
+          type: "item",
+          count: 16,
+          item: { id: "minecraft:torch", count: 1 },
+        },
+        {
+          id: "704E0B2DA596F13C",
+          type: "item",
+          count: 32,
+          item: { id: "minecraft:cobblestone", count: 1 },
+        },
+        { id: "05AF1C3EB6A7024D", type: "checkmark" },
+      ],
+    },
+    {
+      id: "16B02D4FC7B8135E",
+      x: 5.0,
+      y: 0.0,
+      dependencies: ["34FAC7E96152BDF8"],
+      min_width: 360,
+      icon: { id: "minecraft:sunflower", count: 1 },
+      tasks: [
+        { id: "27C13E50D8C9246F", type: "checkmark" },
+      ],
+    },
+    {
+      id: "38D24F61E9DA3570",
+      x: 7.5,
+      y: 0.0,
+      dependencies: ["16B02D4FC7B8135E"],
+      min_width: 360,
+      icon: { id: "minecraft:oak_boat", count: 1 },
+      tasks: [
+        {
+          id: "49E35072FAEB4681",
+          type: "item",
+          item: {
+            id: "ftbfiltersystem:smart_filter",
+            count: 1,
+            components: {
+              "ftbfiltersystem:filter": "or(item(minecraft:oak_boat)item(minecraft:spruce_boat)item(minecraft:birch_boat)item(minecraft:jungle_boat)item(minecraft:acacia_boat)item(minecraft:dark_oak_boat)item(minecraft:mangrove_boat)item(minecraft:cherry_boat)item(minecraft:pale_oak_boat)item(minecraft:bamboo_raft))",
+            },
+          },
+        },
+      ],
+    },
+    {
+      id: "5AF461830BFC5792",
+      x: 10.0,
+      y: 0.0,
+      dependencies: ["38D24F61E9DA3570"],
+      min_width: 360,
+      icon: { id: "minecraft:oak_boat", count: 1 },
+      tasks: [
+        { id: "6B0572941C0D68A3", type: "checkmark" },
+      ],
+    },
+    {
+      id: "7C1683A52D1E79B4",
+      x: 12.5,
+      y: 0.0,
+      dependencies: ["5AF461830BFC5792"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:compass", count: 1 },
+      tasks: [
+        { id: "0D2794B63E2F8AC5", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "1E38A5C74F309BD6",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+  ],
+  quest_links: [],
+  images: [],
+}

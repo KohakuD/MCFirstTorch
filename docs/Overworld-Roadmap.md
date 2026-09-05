@@ -18,18 +18,18 @@ This roadmap defines the additional Overworld curriculum that will be completed 
 
 ## Stage 2 — Prepare an Overworld excursion
 
-- [ ] Introduce the chapter and distinguish exploration from wandering without a return plan.
-- [ ] Require a slept-in Bed at home, recorded home coordinates, suitable tools, a Shield, food, Torches, blocks, and free inventory space.
-- [ ] Teach daytime departure, weather awareness, frequent landmarks, and returning before supplies are exhausted.
-- [ ] Keep death consequences and retreat instructions specific without making a peaceful trip sound punitive.
+- [x] Introduce the chapter and distinguish exploration from wandering without a return plan.
+- [x] Require a slept-in Bed at home, recorded home coordinates, suitable tools, a Shield, food, Torches, blocks, and free inventory space.
+- [x] Teach daytime departure, weather awareness, frequent landmarks, and returning before supplies are exhausted.
+- [x] Keep death consequences and retreat instructions specific without making a peaceful trip sound punitive.
 
 ## Stage 3 — Travel by Boat
 
-- [ ] Teach the exact current Boat recipe using the established three-dimensional block-model style for plank ingredients and the exact Boat item texture.
-- [ ] Accept all ordinary Vanilla Boat wood variants rather than forcing one biome-specific wood type.
-- [ ] Explain placement on Water, boarding, steering, leaving the Boat, and collecting it again.
-- [ ] Explain that Boats are excellent on Water but awkward and slow on land, and that a Boat can drift away if left unsecured.
-- [ ] Add a short safe practice trip that returns to the same shore before using a Boat for exploration.
+- [x] Teach the exact current Boat recipe using the established three-dimensional block-model style for plank ingredients and the exact Boat item texture.
+- [x] Accept all ordinary Vanilla Boat wood variants rather than forcing one biome-specific wood type.
+- [x] Explain placement on Water, boarding, steering, leaving the Boat, and collecting it again.
+- [x] Explain that Boats are excellent on Water but awkward and slow on land, and that a Boat can drift away if left unsecured.
+- [x] Add a short safe practice trip that returns to the same shore before using a Boat for exploration.
 
 ## Stage 4 — Approach and recognise a Village
 
