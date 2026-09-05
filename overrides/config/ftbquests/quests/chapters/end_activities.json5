@@ -124,6 +124,62 @@
         },
       ],
     },
+    {
+      id: "1A8C05F7D3E692B1",
+      x: 5.0,
+      y: 2.5,
+      dependencies: ["7682DAF5C0B4916E"],
+      min_width: 390,
+      icon: { id: "minecraft:end_stone", count: 1 },
+      tasks: [
+        {
+          id: "2B9D1608E4F7A3C2",
+          type: "item",
+          count: 64,
+          item: { id: "minecraft:end_stone", count: 1 },
+        },
+        {
+          id: "3CAE2719F508B4D3",
+          type: "item",
+          count: 2,
+          item: { id: "minecraft:ender_pearl", count: 1 },
+        },
+        { id: "4DBF382A0619C5E4", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "5EC0493B172AD6F5",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
+    {
+      id: "6FD15A4C283BE706",
+      x: 2.5,
+      y: 2.5,
+      dependencies: ["1A8C05F7D3E692B1"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 390,
+      icon: { id: "minecraft:purpur_block", count: 1 },
+      tasks: [
+        {
+          id: "70E26B5D394CF817",
+          type: "advancement",
+          advancement: "minecraft:end/find_end_city",
+          criterion: "in_city",
+        },
+        { id: "01F37C6E4A5D0928", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "12048D7F5B6E1A39",
+          type: "xp",
+          xp: 10,
+        },
+      ],
+    },
   ],
   quest_links: [],
   images: [],
