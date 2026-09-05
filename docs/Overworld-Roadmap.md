@@ -36,7 +36,7 @@ This roadmap defines the additional Overworld curriculum that will be completed 
 - [x] Explain the visual signs of a Village: several buildings, paths, Villagers, workstations, Beds, farms, and often an Iron Golem.
 - [x] Teach a daylight approach and require the learner to note the Village coordinates before exploring it.
 - [x] Explain that Village layouts and building materials vary by biome without requiring a particular Village type.
-- [x] Add an in-world-style guide assembled exclusively from exact target-version textures.
+- [x] Add an in-world guide cropped from an actual target-version Village screenshot.
 - [ ] Inspect the three new lessons and their guide at the configured quest width in German and English.
 
 ## Stage 5 — Villagers, professions, and trading
