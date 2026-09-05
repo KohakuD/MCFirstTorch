@@ -525,7 +525,8 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 - [ ] Confirm all preparation item tasks and manual safety checks in survival mode
 - [ ] Inspect the Gateway access, arrival images, and full lesson text in German and English
 - [ ] Complete an outward and return Gateway transfer while retaining at least one reserve Pearl
-- [ ] Continue with Chorus plants, safe island crossings, and the first End City search
+- [x] Teach safe Chorus Fruit and Chorus Flower harvesting plus one controlled teleport test
+- [ ] Continue with safe island crossings and the first End City search
 - [ ] Teach the first Elytra glide only after returning to a low, protected Overworld practice platform; introduce Firework Rockets after the unpowered glide is understood
 
 ## Later milestones

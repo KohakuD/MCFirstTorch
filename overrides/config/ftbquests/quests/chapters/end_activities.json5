@@ -83,6 +83,47 @@
         { id: "324F9A6C37B106C6", type: "checkmark" },
       ],
     },
+    {
+      id: "435FA7C29D816E3B",
+      x: 10.0,
+      y: 2.5,
+      dependencies: ["213E895B26A0F5B5"],
+      min_width: 390,
+      icon: { id: "minecraft:chorus_flower", count: 1 },
+      tasks: [
+        {
+          id: "5460B8D3AE927F4C",
+          type: "item",
+          count: 8,
+          item: { id: "minecraft:chorus_fruit", count: 1 },
+        },
+        {
+          id: "6571C9E4BFA3805D",
+          type: "item",
+          item: { id: "minecraft:chorus_flower", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "7682DAF5C0B4916E",
+      x: 7.5,
+      y: 2.5,
+      dependencies: ["435FA7C29D816E3B"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 390,
+      icon: { id: "minecraft:chorus_fruit", count: 1 },
+      tasks: [
+        { id: "0793EB06D1C5A27F", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "18A4FC17E2D6B380",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
   ],
   quest_links: [],
   images: [],

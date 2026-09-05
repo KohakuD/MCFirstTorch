@@ -444,3 +444,11 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 - Teaches Sugar Cane to Paper, the eight-Paper-and-Compass Empty Map recipe, activation at home, cardinal orientation, updating while held, and the limits of a fixed mapped area.
 - Adds the Cartography Table recipe and its three target-version operations: Filled Map plus Paper expands, plus Empty Map clones, and plus Glass Pane irreversibly locks.
 - Added two language-neutral 300 × 169 guides built from exact Minecraft 26.1.2 item, block, and Cartography Table interface textures. The Cartography Table is shown as a straight 3D block model while flat items remain in their normal 2D form.
+
+### 2026-09-05 — First Chorus harvest and controlled teleport
+
+- Continued `What to Do in the End?` after the secured outer-island arrival with a two-lesson bilingual Chorus sequence.
+- Requires eight Chorus Fruit and one directly harvested Chorus Flower simultaneously. The flower is preserved for later cultivation on End Stone rather than lost by destroying its supporting plant first.
+- The first Fruit is tested only on broad level End Stone with at least eight blocks of solid room in every direction and a recommended ten-block margin from the void. Full health, hands-off teleporting, immediate Sneak, and reorientation towards the marked return Gateway are explicit.
+- Explains that Chorus Fruit restores hunger, remains edible at full hunger, teleports randomly up to eight blocks, and is not a reliable escape or navigation tool.
+- Added two language-neutral guides from exact target-version End Stone, Chorus, Chorus Fruit, and player textures: a 3D harvest distinction and a top-down safe-area plan.
