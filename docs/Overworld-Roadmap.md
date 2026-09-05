@@ -64,7 +64,7 @@ This roadmap defines the additional Overworld curriculum that will be completed 
 - Villager breeding and deliberate trading-hall design.
 - Advanced trade rerolling, discounts, and profession optimisation.
 - Woodland Mansions, Ocean Monuments, Trial Chambers, and other specialised structures.
-- Detailed mapmaking and large-scale biome exploration.
+- Advanced map walls, banners, and large-scale biome exploration beyond the basic optional home-map lesson.
 
 These topics require more preparation or introduce systems too broad for the first Village visit. They can become independent optional chapters without changing the core exploration route.
 

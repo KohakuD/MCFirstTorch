@@ -160,6 +160,7 @@ The active milestone is **0.9.0 — The End**, with a deliberate Overworld curri
 - [x] Explain X, Y, and Z, including minus signs and laptop function keys
 - [x] Record the real home coordinates outside the world
 - [x] Practise a short daylight return using the landmark first and coordinates as a backup
+- [x] Add an optional first Map and Cartography Table branch without replacing coordinates or the Lodestone path
 - [x] Explain that coordinates point toward the goal but do not guarantee a safe route
 - [x] Add 5 XP points as a non-skipping route-test reward
 - [x] Give one Compass after the tested route without replacing landmarks or coordinates

@@ -64,6 +64,7 @@
         {
           id: "6D3A80F152C7BE49",
           type: "item",
+          count: 2,
           item: { id: "minecraft:compass", count: 1 },
         },
       ],
@@ -149,6 +150,39 @@
           type: "xp",
           xp: 5,
         },
+      ],
+    },
+    {
+      id: "43F829E5B61A7C0D",
+      x: 12.5,
+      y: 2.5,
+      dependencies: ["2F6A91C4D8E307B5"],
+      shape: "gear",
+      min_width: 360,
+      icon: { id: "minecraft:filled_map", count: 1 },
+      tasks: [
+        {
+          id: "54A93AF6C72B8D1E",
+          type: "item",
+          item: { id: "minecraft:filled_map", count: 1 },
+        },
+      ],
+    },
+    {
+      id: "65BA4B07D83C9E2F",
+      x: 12.5,
+      y: 5.0,
+      dependencies: ["43F829E5B61A7C0D"],
+      shape: "gear",
+      min_width: 360,
+      icon: { id: "minecraft:cartography_table", count: 1 },
+      tasks: [
+        {
+          id: "76CB5C18E94DAF30",
+          type: "item",
+          item: { id: "minecraft:cartography_table", count: 1 },
+        },
+        { id: "07DC6D29FA5EB041", type: "checkmark" },
       ],
     },
   ],

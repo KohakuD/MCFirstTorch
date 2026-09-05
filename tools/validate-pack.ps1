@@ -246,6 +246,10 @@ $chiseledStoneCountPattern = 'id:\s*"48BADCF75E139026"[\s\S]{0,180}?type:\s*"ite
 Assert-True ([regex]::IsMatch($allDefinitionText, $chiseledStoneCountPattern)) 'The Lodestone path must require eight Chiseled Stone Bricks.'
 $useLodestoneAdvancementPattern = 'id:\s*"3E1045DAB479F68C"[\s\S]{0,180}?type:\s*"advancement"[\s\S]{0,120}?advancement:\s*"minecraft:adventure/use_lodestone"[\s\S]{0,120}?criterion:\s*"use_lodestone"'
 Assert-True ([regex]::IsMatch($allDefinitionText, $useLodestoneAdvancementPattern)) 'Binding the Compass to the Lodestone must be detected automatically.'
+$mapmakingBranchPattern = 'id:\s*"43F829E5B61A7C0D"[\s\S]{0,180}?dependencies:\s*\["2F6A91C4D8E307B5"\][\s\S]{0,180}?shape:\s*"gear"[\s\S]*?id:\s*"65BA4B07D83C9E2F"[\s\S]{0,180}?dependencies:\s*\["43F829E5B61A7C0D"\][\s\S]{0,180}?shape:\s*"gear"'
+Assert-True ([regex]::IsMatch($allDefinitionText, $mapmakingBranchPattern)) 'Basic mapmaking must remain an optional two-step branch after the normal Compass explanation.'
+$mapmakingDependencyPattern = 'dependencies:\s*\[[^\]]*"65BA4B07D83C9E2F"'
+Assert-True (-not [regex]::IsMatch($allDefinitionText, $mapmakingDependencyPattern)) 'The optional Cartography Table lesson must not gate another quest.'
 $ironEssentialsDependencyPattern = 'id:\s*"27A9D4E60B835CF1"[\s\S]{0,180}?dependencies:\s*\["3C16B9E50A724DF8"\]'
 Assert-True ([regex]::IsMatch($allDefinitionText, $ironEssentialsDependencyPattern)) 'The Iron Essentials chapter must unlock after the first Iron Ingot.'
 $ironEssentialsLinkPattern = 'id:\s*"62448F9136DEA7C0"[\s\S]{0,180}?linked_quest:\s*"27A9D4E60B835CF1"[\s\S]{0,180}?shape:\s*"diamond"'
@@ -334,7 +338,7 @@ $expectedItemRewards = @{
     '14B8D2F60A975CE3' = @{ Item = 'minecraft:charcoal'; Count = 1 }
     '72E5A1C83D609BF4' = @{ Item = 'minecraft:cookie'; Count = 1 }
     '56E8B2C10D734AF9' = @{ Item = 'minecraft:iron_ingot'; Count = 1 }
-    '6D3A80F152C7BE49' = @{ Item = 'minecraft:compass'; Count = 1 }
+    '6D3A80F152C7BE49' = @{ Item = 'minecraft:compass'; Count = 2 }
     '16AB73C90D4E258F' = @{ Item = 'minecraft:bone_meal'; Count = 3 }
     '27BC84DA1E5F3690' = @{ Item = 'minecraft:torch'; Count = 4 }
     '38CD95EB2F6047A1' = @{ Item = 'minecraft:lead'; Count = 1 }
@@ -423,7 +427,7 @@ Assert-True (Test-Path -LiteralPath $packMetadataPath -PathType Leaf) 'First Tor
 $packMetadata = Get-Content -LiteralPath $packMetadataPath -Raw | ConvertFrom-Json
 Assert-True ($packMetadata.pack.min_format[0] -eq 84 -and $packMetadata.pack.min_format[1] -eq 0) 'Guide resource pack min_format must be [84, 0] for Minecraft 26.1.2.'
 Assert-True ($packMetadata.pack.max_format[0] -eq 84 -and $packMetadata.pack.max_format[1] -eq 0) 'Guide resource pack max_format must be [84, 0] for Minecraft 26.1.2.'
-foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png', 'place_crafting_table.png', 'wooden_shovel.png', 'first_night_shelter.png', 'wooden_pickaxe.png', 'stone_axe.png', 'furnace.png', 'chest.png', 'charcoal.png', 'bed.png', 'hunger_and_eating.png', 'cooking_food.png', 'stone_pickaxe.png', 'shield.png', 'armour_recipes.png', 'safe_staircase.png', 'torch_route.png', 'iron_pickaxe.png', 'bucket.png', 'infinite_water_sources.png', 'stonecutter.png', 'lodestone.png', 'stone_hoe.png', 'bread.png', 'farmland_9x9.png', 'fence_and_gate.png', 'paper_and_book.png', 'enchanting_table_recipe.png', 'enchanting_interface.png', 'bookshelf_recipe.png', 'enchanting_bookshelves.png', 'iron_sword.png', 'bone_meal_recipe.png', 'attack_indicator.png', 'hostile_mob_overview.png', 'boat_recipe.png', 'boat_controls.png', 'village_overview.png', 'villager_trading.png', 'flint_and_steel.png', 'nether_portal_frame.png', 'nether_route_marker.png', 'piglin_comparison.png', 'nether_fortress.png', 'fortress_hazards.png', 'blaze_spawner.png', 'bastion_remnant.png', 'blaze_powder_recipe.png', 'brewing_stand_recipe.png', 'glass_bottle_recipe.png', 'awkward_potion_brewing.png', 'strength_potion_brewing.png', 'magma_cream_recipe.png', 'fire_resistance_brewing.png', 'long_fire_resistance_brewing.png', 'ender_eye_recipe.png', 'ender_eye_search.png', 'stronghold_silverfish.png', 'end_portal_room.png', 'end_portal_frame_states.png', 'stronghold_iron_door.png', 'bow_and_arrows.png', 'end_portal_final_eye.png', 'end_arrival_platform.png', 'enderman_roof_shelter.png', 'end_crystal_exposed.png', 'end_crystal_removal.png', 'ender_dragon_flight.png', 'ender_dragon_perched.png', 'end_exit_portal.png', 'dragon_egg_retrieval.png', 'end_gateway_access.png', 'outer_end_arrival.png')) {
+foreach ($imageName in @('attack_and_break.png', 'log_to_planks.png', 'place_crafting_table.png', 'wooden_shovel.png', 'first_night_shelter.png', 'wooden_pickaxe.png', 'stone_axe.png', 'furnace.png', 'chest.png', 'charcoal.png', 'bed.png', 'hunger_and_eating.png', 'cooking_food.png', 'stone_pickaxe.png', 'shield.png', 'armour_recipes.png', 'safe_staircase.png', 'torch_route.png', 'iron_pickaxe.png', 'bucket.png', 'infinite_water_sources.png', 'stonecutter.png', 'lodestone.png', 'map_recipe.png', 'cartography_table_guide.png', 'stone_hoe.png', 'bread.png', 'farmland_9x9.png', 'fence_and_gate.png', 'paper_and_book.png', 'enchanting_table_recipe.png', 'enchanting_interface.png', 'bookshelf_recipe.png', 'enchanting_bookshelves.png', 'iron_sword.png', 'bone_meal_recipe.png', 'attack_indicator.png', 'hostile_mob_overview.png', 'boat_recipe.png', 'boat_controls.png', 'village_overview.png', 'villager_trading.png', 'flint_and_steel.png', 'nether_portal_frame.png', 'nether_route_marker.png', 'piglin_comparison.png', 'nether_fortress.png', 'fortress_hazards.png', 'blaze_spawner.png', 'bastion_remnant.png', 'blaze_powder_recipe.png', 'brewing_stand_recipe.png', 'glass_bottle_recipe.png', 'awkward_potion_brewing.png', 'strength_potion_brewing.png', 'magma_cream_recipe.png', 'fire_resistance_brewing.png', 'long_fire_resistance_brewing.png', 'ender_eye_recipe.png', 'ender_eye_search.png', 'stronghold_silverfish.png', 'end_portal_room.png', 'end_portal_frame_states.png', 'stronghold_iron_door.png', 'bow_and_arrows.png', 'end_portal_final_eye.png', 'end_arrival_platform.png', 'enderman_roof_shelter.png', 'end_crystal_exposed.png', 'end_crystal_removal.png', 'ender_dragon_flight.png', 'ender_dragon_perched.png', 'end_exit_portal.png', 'dragon_egg_retrieval.png', 'end_gateway_access.png', 'outer_end_arrival.png')) {
     $imagePath = Join-Path $guidePackRoot (Join-Path 'assets/firsttorch/textures/questpics' $imageName)
     Assert-True (Test-Path -LiteralPath $imagePath -PathType Leaf) "Missing quest guide image: $imageName"
     Assert-True ((Get-Item -LiteralPath $imagePath).Length -gt 0) "Quest guide image is empty: $imageName"
@@ -437,6 +441,11 @@ $deepMiningLanguageText = ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'la
 foreach ($imageName in @('paper_and_book.png', 'enchanting_table_recipe.png', 'enchanting_interface.png', 'bookshelf_recipe.png', 'enchanting_bookshelves.png')) {
     $referenceCount = [regex]::Matches($deepMiningLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
     Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each Deep Mining language file."
+}
+$findingHomeLanguageText = ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter 'finding_home.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n")
+foreach ($imageName in @('map_recipe.png', 'cartography_table_guide.png')) {
+    $referenceCount = [regex]::Matches($findingHomeLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
+    Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each Finding Home language file."
 }
 $mobDropLanguageText = ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter 'mob_drops.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n")
 foreach ($imageName in @('iron_sword.png', 'bone_meal_recipe.png', 'attack_indicator.png', 'hostile_mob_overview.png')) {

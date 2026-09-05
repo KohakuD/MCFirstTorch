@@ -436,3 +436,11 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 - Explains that ordinary hostile mobs threaten Villagers at night while explicitly removing any expectation that a beginner must fight a group to rescue the Village. Waiting safely for daylight is a valid fallback.
 - Requires the learner to use Village and home coordinates, landmarks, and any marked Boat landing on the return rather than simply checking the task while still in the Village.
 - The final recap stores gathered resources, prepares a future travel kit, and records coordinates, route details, landing place, and a useful trade. Three Bread and 5 XP support the next trip without granting valuable equipment.
+
+### 2026-09-05 — Optional home map and Cartography Table
+
+- Added a two-lesson optional branch after the normal Compass explanation in `Finding Home`; neither lesson gates the Lodestone route or later chapters.
+- The tested route-home reward now contains two Compasses. One remains available for the Compass and Lodestone lessons while the second is consumed by the Empty Map recipe.
+- Teaches Sugar Cane to Paper, the eight-Paper-and-Compass Empty Map recipe, activation at home, cardinal orientation, updating while held, and the limits of a fixed mapped area.
+- Adds the Cartography Table recipe and its three target-version operations: Filled Map plus Paper expands, plus Empty Map clones, and plus Glass Pane irreversibly locks.
+- Added two language-neutral 300 × 169 guides built from exact Minecraft 26.1.2 item, block, and Cartography Table interface textures. The Cartography Table is shown as a straight 3D block model while flat items remain in their normal 2D form.
