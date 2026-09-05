@@ -37,6 +37,13 @@ When a guide image depicts a Minecraft item, block, entity, or interface, render
 
 Crafting guides show placeable block ingredients and results with the same straight, consistently aligned three-dimensional Minecraft block-model view as the established recipe images. A flat texture is appropriate only when the image is a genuine top-down plan, such as the layout of an Enchanting Table and its Bookshelves.
 
+The island-crossing and End City guides are unchanged Minecraft 26.1.2 screenshots supplied by the project owner:
+
+- `end_island_crossing.png`: `2026-09-06_01.45.54.png`
+- `end_city_search.png`: `2026-09-06_01.46.11.png`
+
+Both originals are 3440 × 1369 pixels and display at 300 × 119 in both languages. The former schematic generator was removed to prevent it from overwriting the screenshots. The bridge caption distinguishes the pictured Cobblestone from the exercise's End Stone and reminds learners to add the required safety features.
+
 ## Reward design
 
 Beginner rewards are fixed, small, and explained before the first claim. They may provide a safety buffer or celebrate a milestone, but must not complete or bypass a later lesson. Prefer small amounts of exact XP points when an item reward would be too powerful; do not grant whole XP levels for routine lessons. Avoid random loot, powerful equipment, and unexplained currencies. Manual claiming remains enabled so the quest book can teach the reward interaction explicitly.
