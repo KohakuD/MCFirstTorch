@@ -407,3 +407,11 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 - Contrasts direct right-click Wooden Doors with Iron Doors that require a Redstone signal, explains the nearby Stone Button's short opening interval, and keeps the learner out of the doorway while it closes.
 - Requires two Stone Buttons automatically so a missing control can be replaced from either side before the learner proceeds. The exact 26.1.2 recipe is one ordinary Stone per Button after smelting Cobblestone.
 - Added a combined language-neutral guide with a straight 3D Stone ingredient and Stone Button result beside the exact Iron Door, Stone Button, and Stone Brick wall textures.
+
+### 2026-09-05 — First Village discovery
+
+- Continued the Overworld chapter after the completed Boat return with three lessons for a controlled daylight search, recognising a Village, and recording a safe return point.
+- The search uses repeated daytime legs, food and Torch stopping thresholds, landmarks, and intermediate coordinates rather than encouraging directionless travel.
+- The recognition lesson identifies paths, several buildings, Villagers, Beds, workstations, farms, a Bell, and the possible Iron Golem while explaining biome-dependent layouts.
+- The learner records exact X/Y/Z coordinates outside the game, adds a sparse marker without blocking doors or paths, and leaves Chests, Beds, and workstations untouched for the later Villager lesson.
+- Added a language-neutral overview assembled only from exact Minecraft 26.1.2 block, item, Villager, and Iron Golem textures. Five XP rewards the secured location without replacing a future trade.

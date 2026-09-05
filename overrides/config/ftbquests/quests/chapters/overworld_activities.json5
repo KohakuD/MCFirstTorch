@@ -126,6 +126,48 @@
         },
       ],
     },
+    {
+      id: "2F49B6D81E50AC73",
+      x: 12.5,
+      y: 2.5,
+      dependencies: ["7C1683A52D1E79B4"],
+      min_width: 360,
+      icon: { id: "minecraft:compass", count: 1 },
+      tasks: [
+        { id: "305AC7E92F61BD84", type: "checkmark" },
+      ],
+    },
+    {
+      id: "416BD8FA3072CE95",
+      x: 10.0,
+      y: 2.5,
+      dependencies: ["2F49B6D81E50AC73"],
+      min_width: 360,
+      icon: { id: "minecraft:bell", count: 1 },
+      tasks: [
+        { id: "527CE90B4183DFA6", type: "checkmark" },
+      ],
+    },
+    {
+      id: "638DFA1C5294E0B7",
+      x: 7.5,
+      y: 2.5,
+      dependencies: ["416BD8FA3072CE95"],
+      shape: "hexagon",
+      size: 1.5,
+      min_width: 360,
+      icon: { id: "minecraft:oak_sign", count: 1 },
+      tasks: [
+        { id: "749E0B2D63A5F1C8", type: "checkmark" },
+      ],
+      rewards: [
+        {
+          id: "05AF1C3E74B602D9",
+          type: "xp",
+          xp: 5,
+        },
+      ],
+    },
   ],
   quest_links: [],
   images: [],
