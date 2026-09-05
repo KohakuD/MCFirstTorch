@@ -32,9 +32,25 @@ def background():
 
 def panel(draw, box, number):
     draw.rounded_rectangle(box, radius=12, fill=(42, 43, 45, 255), outline=(113, 116, 118, 255), width=6)
-    x, y = box[0] + 28, box[1] + 28
-    draw.ellipse((x, y, x + 64, y + 64), fill=ORANGE)
-    draw.text((x + 32, y + 31), str(number), anchor="mm", fill=(255, 255, 255, 255), stroke_width=1)
+    x, y = box[0] + 24, box[1] + 24
+    draw.ellipse((x, y, x + 80, y + 80), fill=ORANGE)
+    pixel_digit(draw, str(number), x + 40, y + 40, scale=9)
+
+
+def pixel_digit(draw, number, centre_x, centre_y, scale=7):
+    glyphs = {
+        "1": ("010", "110", "010", "010", "111"),
+        "2": ("111", "001", "111", "100", "111"),
+    }
+    rows = glyphs[number]
+    left = centre_x - (3 * scale) // 2
+    top = centre_y - (5 * scale) // 2
+    for row, bits in enumerate(rows):
+        for column, bit in enumerate(bits):
+            if bit == "1":
+                draw.rectangle((left + column * scale, top + row * scale,
+                                left + (column + 1) * scale - 1, top + (row + 1) * scale - 1),
+                               fill=(255, 255, 255, 255))
 
 
 def slot(draw, x, y, size):
@@ -57,8 +73,10 @@ def plus(draw, x, y, size=50):
 
 
 def item(image, texture, x, y, size):
-    icon = texture.resize((size, size), Image.Resampling.NEAREST)
-    image.alpha_composite(icon, (x, y))
+    icon = texture.copy()
+    scale = min(size / icon.width, size / icon.height)
+    icon = icon.resize((max(1, round(icon.width * scale)), max(1, round(icon.height * scale))), Image.Resampling.NEAREST)
+    image.alpha_composite(icon, (x + (size - icon.width) // 2, y + (size - icon.height) // 2))
 
 
 def textured_quad(texture, points, shade=1.0):
@@ -140,7 +158,9 @@ def cartography_guide(paper, empty_map, filled_map, planks, table_top, table_lef
 
     cell = 122
     x, y = 90, 270
-    ingredients = [(0, 0, paper), (1, 0, paper), (0, 1, planks), (1, 1, planks), (0, 2, planks), (1, 2, planks)]
+    plank_cube = table_cube(planks, planks, planks, size=cell - 18)
+    ingredients = [(0, 0, paper), (1, 0, paper), (0, 1, plank_cube), (1, 1, plank_cube),
+                   (0, 2, plank_cube), (1, 2, plank_cube)]
     recipe_grid(image, draw, x, y, cell, ingredients)
     arrow(draw, 485, 418)
     slot(draw, 620, 350, 145)
