@@ -428,3 +428,11 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 
 - Replaced the manual checkmark in `Your First Bed` with the exact Minecraft 26.1.2 `minecraft:adventure/sleep_in_bed` advancement criterion `slept_in_bed`.
 - The lesson now completes only after a successful sleep rather than after merely crafting or placing a Bed. The existing task ID remains unchanged to preserve stored quest references.
+
+### 2026-09-05 — Safe end to the first Village visit
+
+- Added three bilingual lessons after the first Villager trade: leaving the Village without obstructing its inhabitants, returning home through the recorded route, and storing supplies with a complete Village note.
+- Limited Village changes to a few useful Torches and closing exposed Wooden Doors. Doors, paths, Beds, workstations, Chests, and fields remain intact and reachable.
+- Explains that ordinary hostile mobs threaten Villagers at night while explicitly removing any expectation that a beginner must fight a group to rescue the Village. Waiting safely for daylight is a valid fallback.
+- Requires the learner to use Village and home coordinates, landmarks, and any marked Boat landing on the return rather than simply checking the task while still in the Village.
+- The final recap stores gathered resources, prepares a future travel kit, and records coordinates, route details, landing place, and a useful trade. Three Bread and 5 XP support the next trip without granting valuable equipment.

@@ -51,10 +51,11 @@ This roadmap defines the additional Overworld curriculum that will be completed 
 
 ## Stage 6 — Secure the visit and return home
 
-- [ ] Teach lighting and closing exposed Village buildings without trapping Villagers permanently.
-- [ ] Explain that ordinary hostile mobs can threaten Villagers at night and that the learner is not required to fight a group to save the Village.
-- [ ] Require a deliberate return using recorded coordinates and landmarks, with the Boat collected or left at a clearly marked shore.
-- [ ] End with an inventory unload and a written note of the Village location for later visits.
+- [x] Teach lighting and closing exposed Village buildings without trapping Villagers permanently.
+- [x] Explain that ordinary hostile mobs can threaten Villagers at night and that the learner is not required to fight a group to save the Village.
+- [x] Require a deliberate return using recorded coordinates and landmarks, with the Boat collected or left at a clearly marked shore.
+- [x] End with an inventory unload and a written note of the Village location for later visits.
+- [ ] Inspect the three closing lessons at the configured quest width and complete the return in survival mode.
 
 ## Deferred optional branches
 

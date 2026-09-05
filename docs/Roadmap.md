@@ -448,7 +448,7 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 - [x] Teach Boat crafting, controls, recovery, and a short practice trip
 - [x] Introduce Villages, Villagers, professions, workstations, and one simple trade
 - [x] Explain Village safety, Iron Golems, Beds, Bells, farms, and respectful use
-- [ ] Return home deliberately and record the Village for a later visit
+- [x] Return home deliberately and record the Village for a later visit
 - [ ] Complete the entire chapter and both-language visual review in survival mode
 
 ## 0.9.0 — The End

@@ -224,6 +224,8 @@ $overworldTradingPathPattern = 'id:\s*"14C9E72A5B603DF8"[\s\S]{0,180}?dependenci
 Assert-True ([regex]::IsMatch($allDefinitionText, $overworldTradingPathPattern)) 'The Village interaction lessons must remain ordered from safe behaviour through the first trade.'
 $firstVillagerTradePattern = 'id:\s*"0B305E912D74AF60"[\s\S]{0,180}?type:\s*"advancement"[\s\S]{0,120}?advancement:\s*"minecraft:adventure/trade"[\s\S]{0,120}?criterion:\s*"traded"'
 Assert-True ([regex]::IsMatch($allDefinitionText, $firstVillagerTradePattern)) 'The first Villager trade must use the exact Vanilla traded criterion.'
+$overworldVillageReturnPattern = 'id:\s*"4B70A16D3E92C5F8"[\s\S]{0,180}?dependencies:\s*\["7A2F4D801C639E5F"\][\s\S]*?id:\s*"6D92C38F50B4E71A"[\s\S]{0,180}?dependencies:\s*\["4B70A16D3E92C5F8"\][\s\S]*?id:\s*"0FB4E5A172D6093C"[\s\S]{0,180}?dependencies:\s*\["6D92C38F50B4E71A"\]'
+Assert-True ([regex]::IsMatch($allDefinitionText, $overworldVillageReturnPattern)) 'The first Village visit must end with safety, a deliberate return, and an inventory recap in order.'
 $overworldChapterLinkPattern = 'id:\s*"57B3E81A6C04DF29"[\s\S]{0,180}?linked_quest:\s*"12E8A5C74F309BD6"[\s\S]{0,180}?shape:\s*"diamond"'
 Assert-True ([regex]::IsMatch($allDefinitionText, $overworldChapterLinkPattern)) 'Finding Home must show a diamond-shaped link to the Overworld activities chapter.'
 $chapterOrders = @{}
@@ -357,6 +359,7 @@ $expectedItemRewards = @{
     '24A95B17E2C6B16F' = @{ Item = 'minecraft:cobblestone'; Count = 16 }
     '68FD9F5B260AF5A4' = @{ Item = 'minecraft:arrow'; Count = 16 }
     '1C416FA23E85B071' = @{ Item = 'minecraft:torch'; Count = 4 }
+    '21D607C394F82B5E' = @{ Item = 'minecraft:bread'; Count = 3 }
 }
 foreach ($rewardId in $expectedItemRewards.Keys) {
     $reward = $expectedItemRewards[$rewardId]
@@ -403,6 +406,7 @@ $expectedXpRewards = @{
     '1E38A5C74F309BD6' = 5
     '05AF1C3E74B602D9' = 5
     '2D5270B34F96C182' = 5
+    '32E718D4A50F3C6B' = 5
 }
 foreach ($rewardId in $expectedXpRewards.Keys) {
     $xp = $expectedXpRewards[$rewardId]
