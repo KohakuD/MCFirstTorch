@@ -304,7 +304,12 @@
       min_width: 360,
       icon: { id: "minecraft:white_bed", count: 1 },
       tasks: [
-        { id: "4397F12A5DB846E0", type: "checkmark" },
+        {
+          id: "4397F12A5DB846E0",
+          type: "advancement",
+          advancement: "minecraft:adventure/sleep_in_bed",
+          criterion: "slept_in_bed",
+        },
       ],
     },
     {

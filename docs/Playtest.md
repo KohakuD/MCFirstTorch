@@ -423,3 +423,8 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 - Introduces adult employed Villagers, babies, Nitwits, four representative workstation mappings, and the profession lock created by a completed trade without requiring the learner to rearrange the Village.
 - Added a language-neutral trading guide assembled from the exact Minecraft 26.1.2 Villager GUI, Wheat, Emerald, trade-arrow, and profession-experience textures. Its 20-Wheat example is explicitly separated from the offers actually present in the learner's world.
 - The exact `minecraft:adventure/trade` advancement criterion `traded` detects the first completed trade automatically. Four Torches and 5 XP support the return trip without replacing its cost or granting valuable equipment.
+
+### 2026-09-05 — Automatic first sleep
+
+- Replaced the manual checkmark in `Your First Bed` with the exact Minecraft 26.1.2 `minecraft:adventure/sleep_in_bed` advancement criterion `slept_in_bed`.
+- The lesson now completes only after a successful sleep rather than after merely crafting or placing a Bed. The existing task ID remains unchanged to preserve stored quest references.

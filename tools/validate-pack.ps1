@@ -208,6 +208,8 @@ $emergencyShelterDependencyPattern = 'id:\s*"1064CEF72A8513BD"[\s\S]{0,180}?depe
 Assert-True ([regex]::IsMatch($allDefinitionText, $emergencyShelterDependencyPattern)) 'The emergency shelter must follow the Wooden Shovel lesson.'
 $bedDependencyPattern = 'id:\s*"3286E0194CA735DF"[\s\S]{0,180}?dependencies:\s*\["1064CEF72A8513BD"\]'
 Assert-True ([regex]::IsMatch($allDefinitionText, $bedDependencyPattern)) 'The Bed lesson must follow the emergency shelter that grants its Wool.'
+$firstSleepPattern = 'id:\s*"4397F12A5DB846E0"[\s\S]{0,180}?type:\s*"advancement"[\s\S]{0,120}?advancement:\s*"minecraft:adventure/sleep_in_bed"[\s\S]{0,120}?criterion:\s*"slept_in_bed"'
+Assert-True ([regex]::IsMatch($allDefinitionText, $firstSleepPattern)) 'The first Bed lesson must use the exact Vanilla slept-in-bed criterion.'
 $improvedShelterDependencyPattern = 'id:\s*"6E9B173C5D802AF4"[\s\S]{0,260}?dependencies:\s*\[[\s\S]{0,100}?"7E42ACD50863F19B"[\s\S]{0,100}?"1064CEF72A8513BD"'
 Assert-True ([regex]::IsMatch($allDefinitionText, $improvedShelterDependencyPattern)) 'The permanent shelter upgrade must follow both Torches and the emergency shelter.'
 $firstMorningDependencyPattern = 'id:\s*"54A8023B6EC957F1"[\s\S]{0,260}?dependencies:\s*\[[\s\S]{0,100}?"3286E0194CA735DF"[\s\S]{0,100}?"6E9B173C5D802AF4"'
