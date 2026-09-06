@@ -1,9 +1,12 @@
 .cache/
+.gradle/
 build/
 .idea/
 .vscode/
+out/
 *.log
 *.jar
+!gradle/wrapper/gradle-wrapper.jar
 run/
 saves/
 world/

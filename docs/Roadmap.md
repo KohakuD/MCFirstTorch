@@ -636,6 +636,8 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 
 ## 0.13.0 — Independent First Torch Mod
 
+The minimal NeoForge/IntelliJ build foundation now lives beside the existing FTB-based pack. The checklist remains open until the native runtime implements the required behaviour and passes the full parity playtest.
+
 - [ ] Build a dedicated NeoForge mod that runs without FTB Quests, FTB Library, FTB Teams, FTB Filter System, FTB XMod Compat, or Initially
 - [ ] Keep the curriculum data-driven and maintain every player-facing entry in `en_us` and `de_de`
 - [ ] Provide a native quest and reference interface with chapters, dependency lines, progressive visibility, search, guide images, tasks, manual confirmations, completion states, and claimable rewards

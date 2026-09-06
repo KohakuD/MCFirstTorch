@@ -4,6 +4,8 @@
 
 First Torch targets Minecraft 26.1.2 on NeoForge 26.1.2.84. Dependency versions and CurseForge file IDs are pinned in `manifest.json`.
 
+The repository also contains the initial native NeoForge mod foundation for the 0.13.0 migration. It uses ModDevGradle and Java 25 and intentionally runs without FTB dependencies. The existing pack remains unchanged as the authoritative curriculum and migration source until the native runtime reaches feature parity.
+
 The current pack deliberately uses the FTB quest stack plus FTB Filter System and FTB XMod Compat for flexible vanilla item objectives. Initially provides exactly one Quest Book per player on first entry; its configuration is limited to `ftbquests:book` in hotbar slot 8. KubeJS was removed after its required Better Advanced Tooltips dependency caused a startup Mixin failure. Add scripting only when the curriculum requires it and the full dependency chain has passed a clean-profile startup test.
 
 FTB Quests 26.1+ stores quest definitions and translations as JSON5. Legacy `.snbt` examples are not valid guidance for this project.
@@ -12,6 +14,11 @@ The quest book sets `pause_game: true` so the integrated single-player world pau
 
 ## Repository layout
 
+- `build.gradle`, `settings.gradle`, and `gradle.properties`: native NeoForge mod build
+- `src/main/java/`: native mod source code
+- `src/main/resources/`: native mod assets and translations
+- `src/main/templates/`: generated NeoForge metadata templates
+- `.run/`: shared IntelliJ IDEA Gradle run configurations
 - `manifest.json`: CurseForge pack metadata and dependency pins
 - `overrides/config/ftbquests/quests/`: version-controlled quest book
 - `overrides/config/initially/`: one-time starter Quest Book configuration
@@ -69,11 +76,14 @@ Beginner rewards are fixed, small, and explained before the first claim. They ma
 ## Build and validate
 
 ```powershell
+./gradlew.bat build
 pwsh ./tools/validate-pack.ps1
 pwsh ./tools/build-pack.ps1
 ```
 
-The build creates `build/First-Torch-<version>.zip`. Import the archive into a compatible launcher; the launcher downloads the pinned mods.
+The Gradle build creates the independent mod JAR under `build/libs/`. The pack commands continue to validate and build the unchanged FTB-based migration source.
+
+The pack build creates `build/First-Torch-<version>.zip`. Import the archive into a compatible launcher; the launcher downloads the pinned mods.
 
 For integration into an existing compatible profile, run `pwsh ./tools/build-quest-overlay.ps1`. The resulting Quest Overlay contains only the three updater-managed runtime trees and `FIRST-TORCH-INSTALL.txt`. It excludes `manifest.json`, `options.txt`, mod JARs, saves, and player progress. Existing FTB quest books and Initially configurations require a deliberate merge rather than replacement.
 

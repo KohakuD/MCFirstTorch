@@ -9,10 +9,15 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 ## Current target
 
 - Pack version: `0.9.1`
+- Native mod foundation: `0.13.0-alpha.1`
 - Minecraft: `26.1.2`
 - NeoForge: `26.1.2.84`
 - Languages: English (`en_us`) and German (`de_de`)
 - Current milestone: first-time quest-book onboarding and progressive chapter navigation
+
+The repository now also contains the minimal NeoForge mod foundation planned for 0.13.0. It builds alongside the existing FTB-based pack, which remains the curriculum and migration source until native feature parity is complete.
+
+Import this repository as a Gradle project in IntelliJ IDEA and use the shared `First Torch Client` run configuration, or start it with `./gradlew runClient` (`.\gradlew.bat runClient` on Windows).
 
 ## Included foundation
 
