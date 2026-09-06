@@ -53,6 +53,8 @@ Additional unchanged Minecraft 26.1.2 screenshots supplied by the project owner 
 
 These 3440 × 1369 originals also display at 300 × 119. Their generators no longer overwrite the screenshot-backed files. The exact instructional diagrams remain in place for Crystal removal, Dragon Egg retrieval, Chorus Fruit safety, and securing an outer-island arrival because those lessons depend on a sequence or safety layout that a single screenshot does not fully show.
 
+`shulker_levitation.png` uses the exact Minecraft 26.1.2 Shulker, Shulker Bullet, Levitation, Milk Bucket, and Water Bucket textures. Its closed and open Shulker views follow the dimensions and UV positions from the target version's `ShulkerModel`, while the projectile face follows `ShulkerBulletModel`. The corresponding target-version projectile code applies four base damage points and 200 ticks of Levitation only after a successful hit, which grounds the lesson's ten-second recovery sequence.
+
 ## Reward design
 
 Beginner rewards are fixed, small, and explained before the first claim. They may provide a safety buffer or celebrate a milestone, but must not complete or bypass a later lesson. Prefer small amounts of exact XP points when an item reward would be too powerful; do not grant whole XP levels for routine lessons. Avoid random loot, powerful equipment, and unexplained currencies. Manual claiming remains enabled so the quest book can teach the reward interaction explicitly.

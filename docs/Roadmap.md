@@ -528,7 +528,10 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 - [x] Teach safe Chorus Fruit and Chorus Flower harvesting plus one controlled teleport test
 - [x] Teach a two-wide, marked island crossing and require a successful return test before travelling farther
 - [x] Find the first End City systematically, identify its exact-material silhouette, and stop outside until its hazards are taught
-- [ ] Continue with Shulkers, Levitation safety, and controlled End City entry
+- [x] Prepare a covered staging point with Milk, Water, a Shield, and spare End Stone before entering the city
+- [x] Teach Shulker identification, homing-bullet responses, and Levitation recovery without requiring a deliberate hit
+- [x] Enter one ground-level End City room, handle one Shulker from cover, and return to the staging point
+- [ ] Continue with the first controlled tower ascent and secured loot-room exploration
 - [ ] Teach the first Elytra glide only after returning to a low, protected Overworld practice platform; introduce Firework Rockets after the unpowered glide is understood
 
 ## Later milestones
