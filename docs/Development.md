@@ -57,6 +57,8 @@ These 3440 × 1369 originals also display at 300 × 119. Their generators no lon
 
 `shulker_box_recipe.png` follows the target recipe data and uses the exact Shulker Shell texture. Its result joins the exact closed lid and base faces from the 64 by 64 Shulker texture according to the target `ShulkerBoxModel` dimensions. The ordinary Chest ingredient reuses the exact special-model item render from the established Chest recipe guide.
 
+`elytra_water_course.png` combines a genuine top-down plan and side profile made from exact Cobblestone, Ladder, Grass, Water, and Elytra textures. The raw animated Water frame receives the standard Plains water tint that Minecraft applies at render time. `firework_rocket_recipe.png` follows the target shapeless simple-Rocket recipe and uses the exact Paper, Gunpowder, and Firework Rocket textures.
+
 ## Reward design
 
 Beginner rewards are fixed, small, and explained before the first claim. They may provide a safety buffer or celebrate a milestone, but must not complete or bypass a later lesson. Prefer small amounts of exact XP points when an item reward would be too powerful; do not grant whole XP levels for routine lessons. Avoid random loot, powerful equipment, and unexplained currencies. Manual claiming remains enabled so the quest book can teach the reward interaction explicitly.

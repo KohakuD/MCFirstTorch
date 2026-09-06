@@ -541,7 +541,13 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 - [x] Board one enclosed ship space and secure the guarded Elytra room before touching the Item Frame
 - [x] Collect the Elytra automatically, keep the Chestplate equipped, and pack the wings without a first flight
 - [x] Retrace the city and Gateway route and return the Elytra safely to the Overworld
-- [ ] Teach the first Elytra glide only after returning to a low, protected Overworld practice platform; introduce Firework Rockets after the unpowered glide is understood
+- [x] Build a four-block-high guarded Elytra platform over a wide and long unobstructed water landing
+- [x] Complete the first unpowered glide and three repeat glides before introducing propulsion
+- [x] Teach the shapeless three-Rocket recipe with one Paper, one Gunpowder, and no explosive Firework Star
+- [x] Apply exactly one short Rocket boost during an established glide and finish in water
+- [ ] Inspect both Elytra guides and the complete practice sequence in German and English
+- [ ] Complete the unpowered and one-Rocket exercises in survival mode and verify every manual completion condition
+- [ ] Continue with Elytra maintenance, safe altitude management, and deliberate long-range navigation
 
 ## Later milestones
 
