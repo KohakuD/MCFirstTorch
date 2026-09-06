@@ -75,6 +75,8 @@ pwsh ./tools/build-pack.ps1
 
 The build creates `build/First-Torch-<version>.zip`. Import the archive into a compatible launcher; the launcher downloads the pinned mods.
 
+For integration into an existing compatible profile, run `pwsh ./tools/build-quest-overlay.ps1`. The resulting Quest Overlay contains only the three updater-managed runtime trees and `FIRST-TORCH-INSTALL.txt`. It excludes `manifest.json`, `options.txt`, mod JARs, saves, and player progress. Existing FTB quest books and Initially configurations require a deliberate merge rather than replacement.
+
 ## Update a development instance in place
 
 For quest and configuration iterations, close Minecraft and run:

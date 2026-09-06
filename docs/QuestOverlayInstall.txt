@@ -1,0 +1,50 @@
+FIRST TORCH 0.9.1 - QUEST OVERLAY
+
+Purpose
+=======
+
+This archive adds the First Torch quest book to an existing compatible
+NeoForge modpack. Extract the contents into that profile's Minecraft directory,
+where the config and resourcepacks directories are located.
+
+Compatibility
+=============
+
+- Minecraft 26.1.2
+- NeoForge 26.1.2.84
+
+Install these exact required mods through the launcher before starting:
+
+- FTB Library 26.1.2.7
+- FTB Teams 26.1.2.4
+- FTB Quests 26.1.2.7
+- FTB Filter System 26.1.2.2
+- FTB XMod Compat 26.1.2.4
+- Initially 26.1-10.0.0
+
+Safe installation
+=================
+
+1. Close Minecraft.
+2. Back up the existing profile.
+3. Check whether config/ftbquests/quests already exists and contains another
+   pack's quest book. If it does, stop: replacing it would remove those quests.
+   The books must be merged deliberately instead.
+4. Check whether config/initially/Initially.json already grants starter items.
+   If it does, merge the First Torch ftbquests:book entry into its initialList
+   instead of replacing the file.
+5. Extract this archive into the profile's Minecraft directory.
+6. Enable the First Torch Guides resource pack in Minecraft's Resource Packs
+   screen. This archive intentionally does not replace options.txt.
+7. Join a test world, use the Quest Book, and verify that Welcome is the only
+   chapter shown initially.
+
+Contents
+========
+
+- config/ftbquests/quests: bilingual First Torch quest definitions
+- config/initially: one-time starter Quest Book configuration
+- resourcepacks/first_torch_guides: exact-version instructional images
+
+The archive contains no mod JARs, saves, player progress, controls, logs, or
+launcher metadata.

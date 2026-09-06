@@ -28,6 +28,12 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 
 The archive contains no redistributed mod JARs. The launcher downloads dependencies from their official CurseForge entries.
 
+## Add the quests to an existing compatible modpack
+
+Run `pwsh ./tools/build-quest-overlay.ps1` to create `build/First-Torch-0.9.1-Quest-Overlay.zip`. This smaller integration archive contains only the First Torch quest definitions, starter-book configuration, guide resource pack, and installation notes. It deliberately excludes launcher metadata and `options.txt` so it can be added to an existing profile without replacing that profile's settings.
+
+Do not overwrite an existing `config/ftbquests/quests` tree from another modpack. FTB Quests uses one book per profile, so two existing books require a deliberate content merge. Likewise, merge the single First Torch Quest Book entry if the target already has an Initially starter-item configuration.
+
 ## Update an existing development profile
 
 Close Minecraft, then update only the files owned by First Torch:
