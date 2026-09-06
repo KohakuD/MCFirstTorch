@@ -425,6 +425,8 @@ $expectedXpRewards = @{
     '4225EAE33895B2F2' = 5
     '528687F6180B2406' = 5
     '01F6ED8E1B608E1B' = 10
+    '2865665A360306C8' = 5
+    '24C312051DF1D742' = 10
 }
 foreach ($rewardId in $expectedXpRewards.Keys) {
     $xp = $expectedXpRewards[$rewardId]
@@ -476,7 +478,7 @@ foreach ($imageName in @('flint_and_steel.png', 'nether_portal_frame.png', 'neth
     $referenceCount = [regex]::Matches($netherLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
     Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each Nether Preparation language file."
 }
-$endActivitiesLanguageText = ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter 'end_activities.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n")
+$endActivitiesLanguageText = ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File | Where-Object { $_.Name -in @('end_activities.json5', 'elytra_flight.json5') } | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n")
 foreach ($imageName in @('chorus_harvest.png', 'chorus_fruit_safety.png', 'shulker_levitation.png', 'shulker_box_recipe.png', 'elytra_water_course.png', 'firework_rocket_recipe.png')) {
     $referenceCount = [regex]::Matches($endActivitiesLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
     Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each End Activities language file."
@@ -551,7 +553,7 @@ $fenceAndGateImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Jo
 Assert-True ($fenceAndGateImageReferences.Count -eq 2) 'The combined Fence and Fence Gate recipe guide must be referenced once in each language.'
 
 $localeRoot = Join-Path $questRoot 'lang'
-foreach ($relativePath in @('chapter.json5', 'chapters/first_steps.json5', 'chapters/becoming_independent.json5', 'chapters/iron_essentials.json5', 'chapters/finding_home.json5', 'chapters/sustainable_supplies.json5', 'chapters/overworld_activities.json5', 'chapters/nether_preparation.json5', 'chapters/nether_activities.json5', 'chapters/brewing.json5', 'chapters/ender_eyes.json5', 'chapters/stronghold.json5', 'chapters/the_end.json5', 'chapters/end_activities.json5')) {
+foreach ($relativePath in @('chapter.json5', 'chapters/first_steps.json5', 'chapters/becoming_independent.json5', 'chapters/iron_essentials.json5', 'chapters/finding_home.json5', 'chapters/sustainable_supplies.json5', 'chapters/overworld_activities.json5', 'chapters/nether_preparation.json5', 'chapters/nether_activities.json5', 'chapters/brewing.json5', 'chapters/ender_eyes.json5', 'chapters/stronghold.json5', 'chapters/the_end.json5', 'chapters/end_activities.json5', 'chapters/elytra_flight.json5', 'chapters/and_now.json5')) {
     $enPath = Join-Path (Join-Path $localeRoot 'en_us') $relativePath
     $dePath = Join-Path (Join-Path $localeRoot 'de_de') $relativePath
     Assert-True (Test-Path -LiteralPath $enPath -PathType Leaf) "Missing English translation file: $relativePath"

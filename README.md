@@ -12,12 +12,12 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 - Minecraft: `26.1.2`
 - NeoForge: `26.1.2.84`
 - Languages: English (`en_us`) and German (`de_de`)
-- Current milestone: expanding practical Overworld guidance before continuing the outer-island End journey
+- Current milestone: completing guided Elytra flight training and handing exploration to the player
 
 ## Included foundation
 
 - FTB Quests, FTB Library, FTB Teams, and the official FTB item-tag filter modules
-- Fifteen bilingual chapters covering the first safe night, independent survival routines, essential Iron equipment, finding the way home, sustainable supplies, optional safe mob drops, safe Overworld excursions and Boat travel, the first deep Diamond expedition, the first controlled Nether visit, optional Nether activities, brewing, the Stronghold search, controlled Stronghold exploration, the first safe arrival in the End, and later End exploration
+- Seventeen bilingual chapters covering the first safe night, independent survival routines, essential Iron equipment, finding the way home, sustainable supplies, optional safe mob drops, safe Overworld excursions and Boat travel, the first deep Diamond expedition, the first controlled Nether visit, optional Nether activities, brewing, the Stronghold search, controlled Stronghold exploration, the End journey, guided Elytra flight training, and a final independent-exploration guide
 - Reproducible CurseForge manifest with pinned dependency file IDs
 
 ## Install a development build
@@ -40,7 +40,7 @@ The updater creates a timestamped backup inside `.first-torch/backups/` before r
 
 ## Project status
 
-Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 through 0.8.0 content has been implemented and remains under in-game review. Version 0.9.0 now covers controlled End entry, staged Crystal removal, the first Dragon victory, an optional Dragon Egg retrieval, and safe return. A separate `What to Do in the End?` chapter begins with a prepared second visit and secured End Gateway journey to the outer islands. Before that journey continues, practical Overworld travel, Boats, Villages, and basic Villager interaction are being added through the [Overworld expansion roadmap](docs/Overworld-Roadmap.md). Optional Bastion, Fire Resistance, and Stronghold Library paths remain independent. The complete version history remains in [docs/Roadmap.md](docs/Roadmap.md).
+Version 0.2.0 has passed its iterative in-game beginner review. The 0.3.0 through 0.8.0 content has been implemented and remains under in-game review. Version 0.9.0 covers the complete guided journey through the End, recovery of the first Elytra, low-risk flight practice, maintenance, route planning, an abort exercise, and a planned return flight. The final `And Now?` chapter offers optional safety notes for major structures and leaves the player's next goal open. Optional Bastion, Fire Resistance, Stronghold Library, and exploration cards remain independent. The complete version history remains in [docs/Roadmap.md](docs/Roadmap.md).
 
 ## Licence and trademarks
 

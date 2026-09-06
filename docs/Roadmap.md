@@ -541,13 +541,30 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 - [x] Board one enclosed ship space and secure the guarded Elytra room before touching the Item Frame
 - [x] Collect the Elytra automatically, keep the Chestplate equipped, and pack the wings without a first flight
 - [x] Retrace the city and Gateway route and return the Elytra safely to the Overworld
+
+### Elytra flight training
+
+- [x] Move the Elytra practice sequence into a dedicated chapter without regenerating existing quest IDs
 - [x] Build a four-block-high guarded Elytra platform over a wide and long unobstructed water landing
 - [x] Complete the first unpowered glide and three repeat glides before introducing propulsion
 - [x] Teach the shapeless three-Rocket recipe with one Paper, one Gunpowder, and no explosive Firework Star
 - [x] Apply exactly one short Rocket boost during an established glide and finish in water
+- [x] Teach Elytra durability, Phantom Membrane repair, Unbreaking, Mending, and safe Chestplate handling
+- [x] Prepare a surveyed 250-to-500-block route with coordinates, emergency landings, and a protected return reserve
+- [x] Practise ending a flight early and restoring armour on safe ground
+- [x] Complete a planned waypoint landing and return flight as the end of the guided course
 - [ ] Inspect both Elytra guides and the complete practice sequence in German and English
-- [ ] Complete the unpowered and one-Rocket exercises in survival mode and verify every manual completion condition
-- [ ] Continue with Elytra maintenance, safe altitude management, and deliberate long-range navigation
+- [ ] Complete the unpowered, one-Rocket, abort, and planned return-flight exercises in survival mode
+
+### Course completion and independent exploration
+
+- [x] Add a final `And Now?` chapter that unlocks after the planned return flight
+- [x] State clearly that the guided course is complete and the player chooses what comes next
+- [x] Keep every exploration card optional and prevent it from gating another lesson
+- [x] Cover Desert Pyramids, Jungle Temples, Trail Ruins, Shipwrecks, Ocean Ruins, Buried Treasure, and Ocean Monuments
+- [x] Cover Pillager Outposts, Woodland Mansions, Trial Chambers, the Ancient City, and the Warden
+- [x] Mention the Wither, Dragon rematches, building, Redstone, farms, exploration, advancements, and multiplayer as possible personal goals
+- [ ] Inspect the final chapter layout and all optional cards in German and English
 
 ## Later milestones
 
