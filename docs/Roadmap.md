@@ -1,6 +1,6 @@
 # Roadmap
 
-The active milestone is **0.9.0 — The End**, with a deliberate Overworld curriculum interlude before outer-island exploration continues. Version **0.2.0** is the latest completed and tested release. The 0.3.0 through 0.8.0 content remains under in-game review, and the current development build is **0.9.0**.
+The active milestone is **0.9.0 — The End**. Its complete guided path is implemented through safe Elytra flight and the independent-exploration handoff. Version **0.2.0** is the latest completed and tested release. The 0.3.0 through 0.9.0 content remains under in-game review. The next planned releases improve first-time navigation before adding optional Redstone and reference material.
 
 ## 0.1.0 — First Safe Night
 
@@ -565,6 +565,77 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 - [x] Cover Pillager Outposts, Woodland Mansions, Trial Chambers, the Ancient City, and the Warden
 - [x] Mention the Wither, Dragon rematches, building, Redstone, farms, exploration, advancements, and multiplayer as possible personal goals
 - [ ] Inspect the final chapter layout and all optional cards in German and English
+
+## 0.9.1 — Quest Book Onboarding and Progressive Navigation
+
+### First contact with the quest book
+
+- [ ] Turn the first welcome quest into a complete introduction page before teaching movement or survival
+- [ ] Explain the quest map, quest windows, dependency lines, automatic tasks, manual checkmarks, required progression, optional branches, completed states, and unclaimed rewards
+- [ ] Explain that item tasks normally inspect the inventory and do not consume items unless a lesson states otherwise
+- [ ] Explain how to click and claim item or experience rewards and how to recognise an unclaimed reward
+- [ ] Explain how to close the book, reopen it, switch chapters, move around the map, and return to the currently relevant quest
+- [ ] Keep every onboarding instruction in `en_us` and `de_de` and verify it without assuming previous modpack experience
+
+### Reliable first opening
+
+- [ ] Give each player one `ftbquests:book` exactly once on their first entry without relying on KubeJS
+- [ ] Prefer the smallest maintained NeoForge-compatible starter-item mechanism; add custom code only if configuration or a narrowly scoped dependency cannot provide the item reliably
+- [ ] Confirm that right-clicking the Quest Book opens First Torch directly and that the book remains usable after death according to the chosen death behaviour
+- [ ] Document the built-in fallback recipe: one Book plus one item from the conventional Stone tag in a shapeless recipe
+- [ ] Explain the alternative key binding under Options → Controls → Key Binds → FTB Quests → Quests
+- [ ] Mention `§`, below Escape and left of `1` on the project owner's keyboard, as a convenient example while telling players to choose any free key on their own layout
+- [ ] Do not overwrite an existing player's controls or force a layout-specific key code
+- [ ] Test first join, repeated join, death, a full inventory, and multiplayer so the book is neither duplicated nor lost unexpectedly
+
+### Progressive chapter visibility
+
+- [ ] Hide guided chapter quests until their dependencies are complete by using FTB Quests 26.1.2.7's `hide_quest_until_deps_complete` chapter property
+- [ ] Keep `First Steps` visible from the beginning and reveal each later guided chapter only when its first available quest becomes startable
+- [ ] Decide separately when optional activity chapters and the future reference library become visible; do not let an optional chapter reveal the next required destination early
+- [ ] Add validation for the visibility property and for a visible dependency chain from `First Steps` through `And Now?`
+- [ ] Confirm the initial chapter list, every chapter reveal, cross-chapter navigation links, and search behaviour in a fresh survival world
+- [ ] Confirm the visibility change does not hide already completed chapters or damage progress in an existing 0.9.0 world
+- [ ] Record before-and-after screenshots of the chapter list at the start, after the first safe morning, before the Nether, and after course completion
+
+## 0.10.0 — Redstone Foundations
+
+- [ ] Add a bilingual practical chapter that unlocks after the guided course and remains optional
+- [ ] Introduce Redstone Dust through a Lever-controlled Redstone Lamp before combining several components
+- [ ] Teach buttons, Levers, Pressure Plates, signal strength, the fifteen-block range, and visible powered versus unpowered states
+- [ ] Teach Repeaters for extending signals and creating deliberate delay
+- [ ] Teach Comparators through one observable container-fill example
+- [ ] Teach Pistons, Sticky Pistons, Observers, and their direction before using them in a machine
+- [ ] Build small isolated exercises first, then complete one safe automatic door and one simple farm helper or status display
+- [ ] Explain common failure cases such as wrong component direction, missing support blocks, unintended pulses, and machines left running
+- [ ] Use exact Minecraft 26.1.2 textures and models for every circuit guide and verify each circuit in survival mode
+
+## 0.11.0 — Creature and Drop Field Guide
+
+- [ ] Add a bilingual, non-gating reference chapter separated from the guided course
+- [ ] Group creatures by useful context such as passive animals, common hostile mobs, Nether mobs, End mobs, aquatic mobs, and rare encounters
+- [ ] Give each entry a compact pattern: habitat, behaviour, main danger, common drops, conditional or rare drops, safe approach, and practical use
+- [ ] Distinguish guaranteed, chance-based, Looting-affected, player-kill-only, transformation-based, and environment-created drops
+- [ ] Link back to existing full safety lessons instead of duplicating their instructions
+- [ ] Keep reference checkmarks optional and prevent every field-guide card from gating another quest
+- [ ] Validate all drop facts against the targeted Minecraft version and avoid presenting approximate rates as exact
+- [ ] Start with the creatures already used by the course, then expand by dimension in reviewable batches
+
+## 0.12.0 — Discoverable Secrets and Unusual Mechanics
+
+- [ ] Add a bilingual optional reference chapter for useful mechanics that ordinary play rarely explains clearly
+- [ ] Cover selected transformation mechanics, unusual item interactions, name-dependent behaviours, archaeology rules, music-disc conditions, bee and pollination details, Villager curing, and other high-value discoveries
+- [ ] Separate practical hints from deliberate surprises so the reference remains useful without spoiling every discovery
+- [ ] Give each card a short trigger, observable result, danger note where needed, and one safe experiment
+- [ ] Cross-link mechanics to Redstone, structures, creatures, farming, or existing course lessons when that reduces duplication
+- [ ] Review each entry against the targeted Minecraft version and remove entries that cannot be verified reliably
+
+## Reference-library organisation
+
+- [ ] Evaluate chapter groups or another clear visual separation between `Guided Course` and `Reference Library`
+- [ ] Keep the reference library easy to reopen after course completion without crowding the beginner's initial chapter list
+- [ ] Add a compact index and consistent icons only after the first field-guide and unusual-mechanics batches establish the final structure
+- [ ] Treat reference updates as versioned data maintenance whenever Minecraft changes drops, structures, or mechanics
 
 ## Later milestones
 
