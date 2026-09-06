@@ -1,6 +1,6 @@
 # Roadmap
 
-The active milestone is **0.9.0 — The End**. Its complete guided path is implemented through safe Elytra flight and the independent-exploration handoff. Version **0.2.0** is the latest completed and tested release. The 0.3.0 through 0.9.0 content remains under in-game review. The next planned releases improve first-time navigation before adding optional Redstone and reference material.
+The active milestone is **0.9.1 — Quest Book Onboarding and Progressive Navigation**. Its configuration and bilingual content are implemented. Version **0.2.0** is the latest completed and tested release. The 0.3.0 through 0.9.1 content remains under in-game review. The next planned releases add optional Redstone and reference material, followed by a native First Torch mod without an FTB runtime dependency.
 
 ## 0.1.0 — First Safe Night
 
@@ -570,30 +570,31 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 
 ### First contact with the quest book
 
-- [ ] Turn the first welcome quest into a complete introduction page before teaching movement or survival
-- [ ] Explain the quest map, quest windows, dependency lines, automatic tasks, manual checkmarks, required progression, optional branches, completed states, and unclaimed rewards
-- [ ] Explain that item tasks normally inspect the inventory and do not consume items unless a lesson states otherwise
-- [ ] Explain how to click and claim item or experience rewards and how to recognise an unclaimed reward
-- [ ] Explain how to close the book, reopen it, switch chapters, move around the map, and return to the currently relevant quest
-- [ ] Keep every onboarding instruction in `en_us` and `de_de` and verify it without assuming previous modpack experience
+- [x] Turn the first welcome quest into a complete introduction page before teaching movement or survival
+- [x] Explain the quest map, quest windows, dependency lines, automatic tasks, manual checkmarks, required progression, optional branches, completed states, and unclaimed rewards
+- [x] Explain that item tasks normally inspect the inventory and do not consume items unless a lesson states otherwise
+- [x] Explain how to click and claim item or experience rewards and how to recognise an unclaimed reward
+- [x] Explain how to close the book, reopen it, switch chapters, and move around the map
+- [x] Keep every onboarding instruction in `en_us` and `de_de` without assuming previous modpack experience
+- [ ] Inspect the complete introduction and confirm the most relevant available quest is easy to find in both languages
 
 ### Reliable first opening
 
-- [ ] Give each player one `ftbquests:book` exactly once on their first entry without relying on KubeJS
-- [ ] Prefer the smallest maintained NeoForge-compatible starter-item mechanism; add custom code only if configuration or a narrowly scoped dependency cannot provide the item reliably
+- [x] Give each player one `ftbquests:book` exactly once on their first entry without relying on KubeJS
+- [x] Use the narrowly scoped Initially mod and limit its configuration to one Quest Book in hotbar slot 8
 - [ ] Confirm that right-clicking the Quest Book opens First Torch directly and that the book remains usable after death according to the chosen death behaviour
-- [ ] Document the built-in fallback recipe: one Book plus one item from the conventional Stone tag in a shapeless recipe
-- [ ] Explain the alternative key binding under Options → Controls → Key Binds → FTB Quests → Quests
-- [ ] Mention `§`, below Escape and left of `1` on the project owner's keyboard, as a convenient example while telling players to choose any free key on their own layout
-- [ ] Do not overwrite an existing player's controls or force a layout-specific key code
+- [x] Document the built-in fallback recipe: one Book plus one item from the conventional Stone tag in a shapeless recipe
+- [x] Explain the alternative key binding under Options → Controls → Key Binds → FTB Quests → Quests
+- [x] Mention `§`, below Escape and left of `1` on the project owner's keyboard, as a convenient example while telling players to choose any free key on their own layout
+- [x] Do not overwrite an existing player's controls or force a layout-specific key code
 - [ ] Test first join, repeated join, death, a full inventory, and multiplayer so the book is neither duplicated nor lost unexpectedly
 
 ### Progressive chapter visibility
 
-- [ ] Hide guided chapter quests until their dependencies are complete by using FTB Quests 26.1.2.7's `hide_quest_until_deps_complete` chapter property
-- [ ] Keep `First Steps` visible from the beginning and reveal each later guided chapter only when its first available quest becomes startable
-- [ ] Decide separately when optional activity chapters and the future reference library become visible; do not let an optional chapter reveal the next required destination early
-- [ ] Add validation for the visibility property and for a visible dependency chain from `First Steps` through `And Now?`
+- [x] Hide guided chapter quests until their dependencies are complete by using FTB Quests 26.1.2.7's `hide_quest_until_deps_complete` chapter property
+- [x] Keep `First Steps` visible from the beginning and reveal each later guided chapter only when its first available quest becomes startable
+- [x] Reveal optional activity chapters only from their own prerequisites so they do not expose a later required destination
+- [x] Add validation for the visibility property while preserving the established dependency chain from `First Steps` through `And Now?`
 - [ ] Confirm the initial chapter list, every chapter reveal, cross-chapter navigation links, and search behaviour in a fresh survival world
 - [ ] Confirm the visibility change does not hide already completed chapters or damage progress in an existing 0.9.0 world
 - [ ] Record before-and-after screenshots of the chapter list at the start, after the first safe morning, before the Nether, and after course completion
@@ -629,6 +630,19 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 - [ ] Give each card a short trigger, observable result, danger note where needed, and one safe experiment
 - [ ] Cross-link mechanics to Redstone, structures, creatures, farming, or existing course lessons when that reduces duplication
 - [ ] Review each entry against the targeted Minecraft version and remove entries that cannot be verified reliably
+
+## 0.13.0 — Independent First Torch Mod
+
+- [ ] Build a dedicated NeoForge mod that runs without FTB Quests, FTB Library, FTB Teams, FTB Filter System, FTB XMod Compat, or Initially
+- [ ] Keep the curriculum data-driven and maintain every player-facing entry in `en_us` and `de_de`
+- [ ] Provide a native quest and reference interface with chapters, dependency lines, progressive visibility, search, guide images, tasks, manual confirmations, completion states, and claimable rewards
+- [ ] Provide a native first-join welcome flow, an accessible menu entry, a configurable key binding, and a recoverable book or equivalent in-world entry point
+- [ ] Make progress server-authoritative and support single-player, multiplayer teams, reconnects, deaths, backups, and version upgrades safely
+- [ ] Preserve the stable curriculum identifiers and design an explicit migration path for progress created by the FTB-based pack
+- [ ] Match the current automatic inventory, advancement, location, and manual-check task behaviour before removing the FTB dependencies
+- [ ] Add accessibility options for text scale, contrast, keyboard navigation, reduced visual clutter, and screen-reader-friendly labels where the Minecraft UI permits them
+- [ ] Verify asset and library licences, keep Minecraft-derived artwork tied to the targeted game version, and publish source and migration documentation
+- [ ] Ship the independent runtime only after a clean-profile parity playtest covers the complete guided route and both languages
 
 ## Reference-library organisation
 

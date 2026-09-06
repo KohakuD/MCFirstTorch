@@ -9,6 +9,7 @@
   filename: "finding_home",
   default_quest_shape: "circle",
   default_hide_dependency_lines: false,
+  hide_quest_until_deps_complete: true,
   quests: [
     {
       id: "16C8E2A50D739BF4",

@@ -6,6 +6,7 @@ $repoRoot = Split-Path -Parent $PSScriptRoot
 $manifestPath = Join-Path $repoRoot 'manifest.json'
 $questRoot = Join-Path $repoRoot 'overrides/config/ftbquests/quests'
 $guidePackRoot = Join-Path $repoRoot 'overrides/resourcepacks/first_torch_guides'
+$initiallyConfigPath = Join-Path $repoRoot 'overrides/config/initially/Initially.json'
 
 function Assert-True {
     param([bool]$Condition, [string]$Message)
@@ -21,7 +22,7 @@ Assert-True ($manifest.manifestVersion -eq 1) 'Unexpected manifest version.'
 Assert-True ($manifest.minecraft.version -eq '26.1.2') 'Minecraft must remain pinned to 26.1.2.'
 Assert-True ($manifest.minecraft.modLoaders[0].id -eq 'neoforge-26.1.2.84') 'NeoForge must remain pinned to 26.1.2.84.'
 Assert-True ($manifest.overrides -eq 'overrides') 'Manifest overrides directory must be "overrides".'
-Assert-True ($manifest.version -eq '0.9.0') 'The development pack version must be 0.9.0.'
+Assert-True ($manifest.version -eq '0.9.1') 'The development pack version must be 0.9.1.'
 
 $expectedFiles = @{
     '289412' = 8730542
@@ -29,6 +30,7 @@ $expectedFiles = @{
     '404468' = 8074003
     '943925' = 8300191
     '889915' = 8678090
+    '570654' = 7847604
 }
 Assert-True ($manifest.files.Count -eq $expectedFiles.Count) 'The pinned dependency count changed unexpectedly.'
 foreach ($file in $manifest.files) {
@@ -44,6 +46,17 @@ Assert-True ($legacyFiles.Count -eq 0) 'Legacy SNBT quest files are not supporte
 
 $jarFiles = Get-ChildItem -LiteralPath (Join-Path $repoRoot 'overrides') -Recurse -File -Filter '*.jar'
 Assert-True ($jarFiles.Count -eq 0) 'Mod JARs must not be distributed in overrides.'
+
+Assert-True (Test-Path -LiteralPath $initiallyConfigPath -PathType Leaf) 'Initially starter-item configuration is missing.'
+$initiallyConfig = Get-Content -LiteralPath $initiallyConfigPath -Raw | ConvertFrom-Json
+$initialItems = @($initiallyConfig.initialList)
+Assert-True ($initialItems.Count -eq 1) 'Initially must grant exactly one configured starter item.'
+$starterItem = $initialItems[0]
+Assert-True ($starterItem.slot -eq 8) 'The starter Quest Book must target hotbar slot 8.'
+Assert-True ($null -eq $starterItem.slotName) 'The starter Quest Book must use an inventory slot rather than an equipment slot.'
+Assert-True ($starterItem.itemLocation -eq 'ftbquests:book') 'Initially must grant only the FTB Quests book.'
+Assert-True ($starterItem.components -eq '') 'The starter Quest Book must not contain custom components.'
+Assert-True ($starterItem.count -eq 1) 'Initially must grant exactly one Quest Book.'
 
 $definitionFiles = Get-ChildItem -LiteralPath $questRoot -Recurse -File -Filter '*.json5' |
     Where-Object { $_.FullName -notmatch '[\\/]lang[\\/]' }
@@ -64,6 +77,21 @@ $hexLikeIds = [regex]::Matches($allDefinitionText, '\bid:\s*"([^":]+)"') |
     ForEach-Object { $_.Groups[1].Value }
 $invalidObjectIds = @($hexLikeIds | Where-Object { $_ -notmatch '^[0-7][0-9A-F]{15}$' })
 Assert-True ($invalidObjectIds.Count -eq 0) ('Invalid FTB Quest object IDs; IDs must fit a positive signed Java long: ' + ($invalidObjectIds -join ', '))
+
+$chapterRoot = Join-Path $questRoot 'chapters'
+$firstStepsChapterPath = Join-Path $chapterRoot 'first_steps.json5'
+$firstStepsChapterText = Get-Content -LiteralPath $firstStepsChapterPath -Raw
+Assert-True (-not [regex]::IsMatch($firstStepsChapterText, '(?m)^\s*hide_quest_until_deps_complete\s*:')) 'First Steps must remain visible from the beginning.'
+$laterChapterFiles = @(Get-ChildItem -LiteralPath $chapterRoot -File -Filter '*.json5' | Where-Object { $_.Name -ne 'first_steps.json5' })
+Assert-True ($laterChapterFiles.Count -eq 16) 'The progressive-visibility chapter set changed unexpectedly.'
+foreach ($chapterFile in $laterChapterFiles) {
+    $chapterText = Get-Content -LiteralPath $chapterFile.FullName -Raw
+    Assert-True ([regex]::IsMatch($chapterText, '(?m)^\s*hide_quest_until_deps_complete\s*:\s*true\s*,')) "Later chapter must hide locked quests: $($chapterFile.Name)"
+}
+$elytraChapterText = Get-Content -LiteralPath (Join-Path $chapterRoot 'elytra_flight.json5') -Raw
+$andNowChapterText = Get-Content -LiteralPath (Join-Path $chapterRoot 'and_now.json5') -Raw
+Assert-True ([regex]::IsMatch($elytraChapterText, 'id:\s*"3E4D819BA0DFF522"[\s\S]{0,180}?dependencies:\s*\["58AE2C09C8263482"\]')) 'The planned return flight must follow the abort exercise.'
+Assert-True ([regex]::IsMatch($andNowChapterText, 'id:\s*"3C3122DF5C0EA192"[\s\S]{0,180}?dependencies:\s*\["3E4D819BA0DFF522"\]')) 'And Now? must unlock from the planned return flight.'
 
 $taskArrayText = ([regex]::Matches($allDefinitionText, 'tasks:\s*\[(?<body>[\s\S]*?)\]\s*,') | ForEach-Object { $_.Groups['body'].Value }) -join "`n"
 $ignoredItemStackCounts = [regex]::Matches($taskArrayText, 'item:\s*\{[^}]*\bcount:\s*([2-9][0-9]*)', [System.Text.RegularExpressions.RegexOptions]::Singleline)

@@ -9,6 +9,7 @@
   filename: "iron_essentials",
   default_quest_shape: "circle",
   default_hide_dependency_lines: false,
+  hide_quest_until_deps_complete: true,
   quests: [
     {
       id: "27A9D4E60B835CF1",

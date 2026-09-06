@@ -6,6 +6,7 @@
   filename: "overworld_activities",
   default_quest_shape: "circle",
   default_hide_dependency_lines: false,
+  hide_quest_until_deps_complete: true,
   quests: [
     {
       id: "12E8A5C74F309BD6",

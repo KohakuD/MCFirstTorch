@@ -68,6 +68,7 @@ if ($instanceRoot -eq [System.IO.Path]::GetPathRoot($instanceRoot).TrimEnd('\', 
 $manifest = Get-Content -LiteralPath $manifestPath -Raw | ConvertFrom-Json
 $managedPaths = @(
     'config/ftbquests/quests',
+    'config/initially',
     'resourcepacks/first_torch_guides'
 )
 $timestamp = Get-Date -Format 'yyyyMMdd-HHmmss'
@@ -150,5 +151,5 @@ if ($updatedPaths.Count -gt 0) {
     Write-Host "Updated First Torch to $($manifest.version) in $instanceRoot"
     Write-Host "Verified $($updatedPaths.Count) managed path(s) by SHA-256."
     Write-Host "Backup: $backupRoot"
-    Write-Host 'Worlds and player settings were preserved; only the First Torch guide resource pack was enabled in options.txt.'
+    Write-Host 'Worlds and player settings were preserved; only First Torch quest/configuration files were replaced and the guide resource pack was enabled in options.txt.'
 }

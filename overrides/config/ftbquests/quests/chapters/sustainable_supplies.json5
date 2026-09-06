@@ -6,6 +6,7 @@
   filename: "sustainable_supplies",
   default_quest_shape: "circle",
   default_hide_dependency_lines: false,
+  hide_quest_until_deps_complete: true,
   quests: [
     {
       id: "0C42E8A51D739BF6",

@@ -4,7 +4,7 @@
 
 First Torch targets Minecraft 26.1.2 on NeoForge 26.1.2.84. Dependency versions and CurseForge file IDs are pinned in `manifest.json`.
 
-The current pack deliberately uses the FTB quest stack plus FTB Filter System and FTB XMod Compat for flexible vanilla item objectives. KubeJS was removed after its required Better Advanced Tooltips dependency caused a startup Mixin failure. Add scripting only when the curriculum requires it and the full dependency chain has passed a clean-profile startup test.
+The current pack deliberately uses the FTB quest stack plus FTB Filter System and FTB XMod Compat for flexible vanilla item objectives. Initially provides exactly one Quest Book per player on first entry; its configuration is limited to `ftbquests:book` in hotbar slot 8. KubeJS was removed after its required Better Advanced Tooltips dependency caused a startup Mixin failure. Add scripting only when the curriculum requires it and the full dependency chain has passed a clean-profile startup test.
 
 FTB Quests 26.1+ stores quest definitions and translations as JSON5. Legacy `.snbt` examples are not valid guidance for this project.
 
@@ -12,6 +12,7 @@ FTB Quests 26.1+ stores quest definitions and translations as JSON5. Legacy `.sn
 
 - `manifest.json`: CurseForge pack metadata and dependency pins
 - `overrides/config/ftbquests/quests/`: version-controlled quest book
+- `overrides/config/initially/`: one-time starter Quest Book configuration
 - `docs/`: curriculum, development rules, and roadmap
 - `tools/`: local and CI validation/build scripts
 - `build/`: generated import archives; ignored by Git
@@ -77,10 +78,10 @@ The build creates `build/First-Torch-<version>.zip`. Import the archive into a c
 For quest and configuration iterations, close Minecraft and run:
 
 ```powershell
-pwsh ./tools/update-instance.ps1 -InstancePath "D:\Minecraft\curseforge\minecraft\Instances\First Torch"
+pwsh ./tools/update-instance.ps1 -InstancePath "C:\Games\CurseForge\Minecraft\Instances\First Torch"
 ```
 
-The updater has an explicit managed-path allowlist. It backs up the current managed files under `<instance>/.first-torch/backups/<timestamp>/`, replaces only the quest book and the First Torch guide resource pack from `overrides/`, verifies copied trees by SHA-256, and records the installed pack version in `<instance>/.first-torch/state.json`. It adds `file/first_torch_guides` to the existing `resourcePacks` option without removing other packs or changing unrelated settings.
+The updater has an explicit managed-path allowlist. It backs up the current managed files under `<instance>/.first-torch/backups/<timestamp>/`, replaces only the quest book, the Initially starter-item configuration, and the First Torch guide resource pack from `overrides/`, verifies copied trees by SHA-256, and records the installed pack version in `<instance>/.first-torch/state.json`. It adds `file/first_torch_guides` to the existing `resourcePacks` option without removing other packs or changing unrelated settings.
 
 The following stay outside updater ownership:
 
@@ -96,12 +97,14 @@ The updater does not install or remove mod JARs. If `manifest.json` changes its 
 
 Use a fresh launcher profile and a new survival world.
 
-1. Confirm Minecraft and NeoForge start with all five dependencies.
-2. Open the quest book and confirm the `First Steps` chapter appears.
+1. Confirm Minecraft and NeoForge start with all six dependencies.
+2. Join with a new player, use the Quest Book in hotbar slot 8, and confirm only the currently available chapters appear.
 3. Complete the path once in English and inspect it once in German.
 4. Verify automatic item tasks complete with the listed vanilla items.
 5. Confirm manual checkmarks clearly describe something the player must judge.
 6. Exit and reopen the world to confirm progress persists.
 7. Check `latest.log` for errors from FTB Quests.
+
+For 0.9.1, also verify that repeated joins do not duplicate the starter book; a full inventory drops it safely; each player receives one copy in multiplayer; death follows the world's ordinary inventory-loss rule; and the built-in shapeless Book-plus-`#c:stones` fallback recipe remains available.
 
 Record playtest findings in `docs/Playtest.md` before declaring a milestone complete.

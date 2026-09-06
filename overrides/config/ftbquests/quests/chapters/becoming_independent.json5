@@ -9,6 +9,7 @@
   filename: "becoming_independent",
   default_quest_shape: "circle",
   default_hide_dependency_lines: false,
+  hide_quest_until_deps_complete: true,
   quests: [
     {
       id: "1D4A83C6E2057B9F",
