@@ -595,7 +595,7 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 ### Progressive chapter visibility
 
 - [x] Hide guided chapter quests until their dependencies are complete by using FTB Quests 26.1.2.7's `hide_quest_until_deps_complete` chapter property
-- [x] Keep `First Steps` visible from the beginning and reveal each later guided chapter only when its first available quest becomes startable
+- [x] Keep `Welcome` visible from the beginning, reveal `First Steps` after onboarding, and show each later guided chapter only when its first lesson becomes startable
 - [x] Reveal optional activity chapters only from their own prerequisites so they do not expose a later required destination
 - [x] Add validation for the visibility property while preserving the established dependency chain from `First Steps` through `And Now?`
 - [ ] Confirm the initial chapter list, every chapter reveal, cross-chapter navigation links, and search behaviour in a fresh survival world
