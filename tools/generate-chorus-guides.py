@@ -141,7 +141,6 @@ with ZipFile(JAR) as archive:
     flower = asset(archive, "assets/minecraft/textures/block/chorus_flower.png")
     fruit = asset(archive, "assets/minecraft/textures/item/chorus_fruit.png")
     steve = asset(archive, "assets/minecraft/textures/entity/player/wide/steve.png")
-    harvest_guide(end_stone, plant, flower, fruit).save(OUT / "chorus_harvest.png", optimize=True)
     safety_guide(end_stone, fruit, steve).save(OUT / "chorus_fruit_safety.png", optimize=True)
 
 print(OUT)

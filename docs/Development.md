@@ -44,6 +44,15 @@ The island-crossing and End City guides are unchanged Minecraft 26.1.2 screensho
 
 Both originals are 3440 × 1369 pixels and display at 300 × 119 in both languages. The former schematic generator was removed to prevent it from overwriting the screenshots. The bridge caption distinguishes the pictured Cobblestone from the exercise's End Stone and reminds learners to add the required safety features.
 
+Additional unchanged Minecraft 26.1.2 screenshots supplied by the project owner provide authentic End context:
+
+- `end_battlefield.png`: `2026-09-06_00.27.29.png`
+- `end_exit_portal.png`: `2026-09-06_00.32.15.png`
+- `chorus_harvest.png`: `2026-09-06_00.33.39.png`
+- `end_gateway_access.png`: `2026-09-06_01.49.58.png`
+
+These 3440 × 1369 originals also display at 300 × 119. Their generators no longer overwrite the screenshot-backed files. The exact instructional diagrams remain in place for Crystal removal, Dragon Egg retrieval, Chorus Fruit safety, and securing an outer-island arrival because those lessons depend on a sequence or safety layout that a single screenshot does not fully show.
+
 ## Reward design
 
 Beginner rewards are fixed, small, and explained before the first claim. They may provide a safety buffer or celebrate a milestone, but must not complete or bypass a later lesson. Prefer small amounts of exact XP points when an item reward would be too powerful; do not grant whole XP levels for routine lessons. Avoid random loot, powerful equipment, and unexplained currencies. Manual claiming remains enabled so the quest book can teach the reward interaction explicitly.

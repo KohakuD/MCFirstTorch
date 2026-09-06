@@ -144,7 +144,6 @@ with ZipFile(JAR) as archive:
     end_stone = asset(archive, "assets/minecraft/textures/block/end_stone.png")
     egg = asset(archive, "assets/minecraft/textures/block/dragon_egg.png")
     torch = asset(archive, "assets/minecraft/textures/block/torch.png")
-    create_exit_guide(bedrock, portal, end_stone, egg).save(OUT / "end_exit_portal.png", optimize=True)
     create_egg_guide(egg, end_stone, torch).save(OUT / "dragon_egg_retrieval.png", optimize=True)
 
 print(OUT)

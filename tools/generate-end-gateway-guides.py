@@ -125,7 +125,6 @@ with ZipFile(JAR) as archive:
     pearl = asset(archive, "assets/minecraft/textures/item/ender_pearl.png")
     cobblestone = asset(archive, "assets/minecraft/textures/block/cobblestone.png")
     torch = asset(archive, "assets/minecraft/textures/block/torch.png")
-    create_access_guide(end_stone, bedrock, portal, pearl).save(OUT / "end_gateway_access.png", optimize=True)
     create_arrival_guide(end_stone, bedrock, portal, cobblestone, torch).save(OUT / "outer_end_arrival.png", optimize=True)
 
 print(OUT)
