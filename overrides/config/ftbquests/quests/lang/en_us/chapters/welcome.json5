@@ -28,6 +28,8 @@
     "",
     "The Tasks tab contains what must be completed. A Rewards tab appears when the quest offers something to collect. Press Escape to close the quest book.",
     "",
+    "In an ordinary single-player world, the game pauses while the quest book is open so you can read safely. A multiplayer server or a world opened to LAN continues running, so move to a safe place before reading there.",
+    "",
     "If you already know a lesson, still read its safety note before completing the task.",
   ],
   "task.1B23C45D67E89F01.title": "I understand the parts of a quest window",

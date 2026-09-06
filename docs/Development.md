@@ -8,6 +8,8 @@ The current pack deliberately uses the FTB quest stack plus FTB Filter System an
 
 FTB Quests 26.1+ stores quest definitions and translations as JSON5. Legacy `.snbt` examples are not valid guidance for this project.
 
+The quest book sets `pause_game: true` so the integrated single-player world pauses while a learner reads. Dedicated multiplayer servers and worlds opened to LAN continue running; the Welcome chapter states that distinction explicitly.
+
 ## Repository layout
 
 - `manifest.json`: CurseForge pack metadata and dependency pins

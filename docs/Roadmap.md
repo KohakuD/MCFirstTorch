@@ -578,6 +578,7 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 - [x] Keep every onboarding instruction in `en_us` and `de_de` without assuming previous modpack experience
 - [x] Require every introduction checkmark before revealing `First Steps`
 - [x] Avoid the literal paragraph-sign key label because FTB interprets it as a formatting marker; describe the physical key instead
+- [x] Pause ordinary single-player worlds while the quest book is open and explain that multiplayer and LAN worlds continue running
 - [ ] Inspect the complete introduction and confirm the most relevant available quest is easy to find in both languages
 
 ### Reliable first opening

@@ -462,4 +462,5 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 - Replaced the single page with a dedicated bilingual Welcome chapter: one short introduction, six compact information quests, and one final confirmation.
 - `First Steps` now stays hidden until every onboarding point and the final confirmation are complete.
 - Reworded the suggested key as the physical paragraph-sign key below Escape and left of 1 without including the formatting-sensitive symbol.
+- Enabled FTB Quests' pack-wide pause setting so ordinary single-player worlds stop while the book is open; multiplayer and LAN limitations are explained in the Welcome chapter.
 - The revised layout, chapter reveal, reward flow, and both languages still require an in-game review.

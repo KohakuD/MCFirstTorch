@@ -65,6 +65,8 @@ $allLanguageText = (Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Re
     ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n"
 $allQuestJson5Text = $allDefinitionText + "`n" + $allLanguageText
 Assert-True (-not [regex]::IsMatch($allQuestJson5Text, ',\s*,')) 'Quest JSON5 contains consecutive commas and cannot be parsed.'
+$questDataText = Get-Content -LiteralPath (Join-Path $questRoot 'data.json5') -Raw
+Assert-True ([regex]::IsMatch($questDataText, '(?m)^\s*pause_game\s*:\s*true\s*,')) 'The quest book must pause ordinary single-player worlds while open.'
 $invalidFormattingAmpersands = [regex]::Matches($allLanguageText, '(?<!\\)&\s')
 Assert-True ($invalidFormattingAmpersands.Count -eq 0) 'Quest text contains an ampersand followed by whitespace; FTB Quests treats this as an invalid formatting code.'
 $sectionSigns = [regex]::Matches($allLanguageText, '§')

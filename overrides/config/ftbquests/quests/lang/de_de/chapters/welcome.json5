@@ -28,6 +28,8 @@
     "",
     "Unter Aufgaben steht, was abgeschlossen werden muss. Der Reiter Belohnungen erscheint, wenn die Quest etwas zum Abholen anbietet. Mit Escape schliesst du das Questbuch.",
     "",
+    "In einer gewöhnlichen Einzelspielerwelt pausiert das Spiel, solange das Questbuch geöffnet ist. So kannst du sicher lesen. Ein Mehrspielerserver oder eine für LAN geöffnete Welt läuft weiter; suche dort vor dem Lesen einen sicheren Ort auf.",
+    "",
     "Wenn du eine Lektion bereits kennst, lies trotzdem ihren Sicherheitshinweis, bevor du die Aufgabe abschliesst.",
   ],
   "task.1B23C45D67E89F01.title": "Ich verstehe die Teile eines Questfensters",

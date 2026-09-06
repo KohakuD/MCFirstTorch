@@ -18,7 +18,7 @@
   },
   disable_gui: false,
   grid_scale: 0.5,
-  pause_game: false,
+  pause_game: true,
   lock_message: "",
   progression_mode: "flexible",
   detection_delay: 20,
@@ -42,4 +42,3 @@
     },
   },
 }
-
