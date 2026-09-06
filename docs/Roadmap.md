@@ -531,7 +531,10 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 - [x] Prepare a covered staging point with Milk, Water, a Shield, and spare End Stone before entering the city
 - [x] Teach Shulker identification, homing-bullet responses, and Levitation recovery without requiring a deliberate hit
 - [x] Enter one ground-level End City room, handle one Shulker from cover, and return to the staging point
-- [ ] Continue with the first controlled tower ascent and secured loot-room exploration
+- [x] Secure and test one tower level at a time with marked covered landings
+- [x] Find and secure one ordinary End City loot room without relying on a particular generated city or chest item
+- [x] Return the first chest contents to the outside staging point before continuing upwards
+- [ ] Continue with Shulker Shells, the first Shulker Box, and a secured approach towards an End Ship
 - [ ] Teach the first Elytra glide only after returning to a low, protected Overworld practice platform; introduce Firework Rockets after the unpowered glide is understood
 
 ## Later milestones

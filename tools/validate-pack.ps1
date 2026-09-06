@@ -419,6 +419,7 @@ $expectedXpRewards = @{
     '32E718D4A50F3C6B' = 5
     '18A4FC17E2D6B380' = 5
     '377D9627F332A842' = 10
+    '79C93CC618B04E8A' = 10
 }
 foreach ($rewardId in $expectedXpRewards.Keys) {
     $xp = $expectedXpRewards[$rewardId]
