@@ -452,3 +452,14 @@ Record each test with date, Minecraft/NeoForge versions, language, fresh or exis
 - The first Fruit is tested only on broad level End Stone with at least eight blocks of solid room in every direction and a recommended ten-block margin from the void. Full health, hands-off teleporting, immediate Sneak, and reorientation towards the marked return Gateway are explicit.
 - Explains that Chorus Fruit restores hunger, remains edible at full hunger, teleports randomly up to eight blocks, and is not a reliable escape or navigation tool.
 - Added two language-neutral guides from exact target-version End Stone, Chorus, Chorus Fruit, and player textures: a 3D harvest distinction and a top-down safe-area plan.
+
+## 0.9.1
+
+### 2026-09-06 — Quest-book onboarding review
+
+- The first in-game review showed that one long Welcome quest produced an overly dense reading column and hid the structure of the instructions.
+- The literal paragraph-sign key label was interpreted as formatting by FTB Quests and displayed an invalid-formatting error.
+- Replaced the single page with a dedicated bilingual Welcome chapter: one short introduction, six compact information quests, and one final confirmation.
+- `First Steps` now stays hidden until every onboarding point and the final confirmation are complete.
+- Reworded the suggested key as the physical paragraph-sign key below Escape and left of 1 without including the formatting-sensitive symbol.
+- The revised layout, chapter reveal, reward flow, and both languages still require an in-game review.

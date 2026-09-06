@@ -1,0 +1,87 @@
+{
+  "quest.12E6801F4CAD3579.title": "Welcome to First Torch",
+  "quest.12E6801F4CAD3579.quest_subtitle": "A calm course you can follow at your own pace",
+  "quest.12E6801F4CAD3579.quest_desc": [
+    "Welcome! First Torch teaches Minecraft in small, practical steps. You do not need to know anything beforehand or remember everything at once.",
+    "",
+    "This short chapter explains how the course works. Read each information point and confirm its checkmark. When all points are complete, the First Steps chapter appears.",
+    "",
+    "This first quest gives 5 experience points. They are points, not five complete experience levels. The Rewards point explains how to collect them.",
+  ],
+  "task.23F7912A5DBE4680.title": "I have read the welcome",
+
+  "quest.21A3B5C7D9E10246.title": "Chapters and the Quest Map",
+  "quest.21A3B5C7D9E10246.quest_subtitle": "Choose a chapter, move the map, and open a quest",
+  "quest.21A3B5C7D9E10246.quest_desc": [
+    "The chapter list is on the left. At first, it contains only this introduction. New chapters appear when their first lesson becomes available, keeping the list clear.",
+    "",
+    "Click a chapter to open its quest map. Drag the empty background to move around and use the mouse wheel to zoom. Each icon is a quest; click an icon to open its window.",
+    "",
+    "Confirm this point after you have moved the map and opened this quest window.",
+  ],
+  "task.0A12B34C56D78E90.title": "I can navigate the chapter and quest map",
+
+  "quest.32B4C6D8E0F21357.title": "Reading a Quest",
+  "quest.32B4C6D8E0F21357.quest_subtitle": "Goal, reason, steps, and safety notes",
+  "quest.32B4C6D8E0F21357.quest_desc": [
+    "A quest window explains what to achieve, why it matters, and how to do it. Safety notes describe common mistakes or a safer place to practise.",
+    "",
+    "The Tasks tab contains what must be completed. A Rewards tab appears when the quest offers something to collect. Press Escape to close the quest book.",
+    "",
+    "If you already know a lesson, still read its safety note before completing the task.",
+  ],
+  "task.1B23C45D67E89F01.title": "I understand the parts of a quest window",
+
+  "quest.43C5D7E9F1023468.title": "Required Paths and Optional Branches",
+  "quest.43C5D7E9F1023468.quest_subtitle": "Follow the connected route without losing your freedom",
+  "quest.43C5D7E9F1023468.quest_desc": [
+    "Lines on the map show dependencies: one quest must be completed before the next becomes available. The connected main route is the required learning path.",
+    "",
+    "Side branches labelled Optional are extra practice or information. They do not block the next required lesson. Complete them when they interest you, or return later.",
+    "",
+    "A completed quest is marked on the map. Later chapters appear automatically as the course progresses.",
+  ],
+  "task.2C34D56E78F90112.title": "I understand required paths and optional branches",
+
+  "quest.54D6E8F102345679.title": "Automatic Tasks and Checkmarks",
+  "quest.54D6E8F102345679.quest_subtitle": "Know what the game checks and what you confirm",
+  "quest.54D6E8F102345679.quest_desc": [
+    "Item tasks normally inspect your current inventory. They do not consume the item unless a lesson clearly says otherwise. Some tasks also recognise a Minecraft action automatically.",
+    "",
+    "A checkmark is manual. Click it only after you have tried, checked, or understood the described step. This lets the course include practical exercises that Minecraft cannot judge reliably.",
+    "",
+    "A quest completes when all of its required tasks are complete.",
+  ],
+  "task.3D45E67F89012324.title": "I understand automatic tasks and manual checkmarks",
+
+  "quest.65E7F1023456780A.title": "Claiming Rewards",
+  "quest.65E7F1023456780A.quest_subtitle": "Collect items and experience separately",
+  "quest.65E7F1023456780A.quest_desc": [
+    "Some completed quests contain a small reward. An unclaimed reward remains visible in the quest window and may also be indicated on the map.",
+    "",
+    "Open the Rewards tab and click the reward icon. Item rewards enter your inventory. Experience fills the green bar above your hotbar.",
+    "",
+    "Try this with the 5 experience points from the first welcome quest, then confirm this point.",
+  ],
+  "task.4E56F78012345635.title": "I know how to claim a reward",
+
+  "quest.06F8123456789A2B.title": "Opening the Book Again",
+  "quest.06F8123456789A2B.quest_subtitle": "Use the item, choose a key, or craft a replacement",
+  "quest.06F8123456789A2B.quest_desc": [
+    "Use the Quest Book item to reopen First Torch. You can also assign any free key under Options → Controls → Key Binds → FTB Quests → Quests.",
+    "",
+    "On the project owner's keyboard, the key carrying the paragraph sign below Escape and left of 1 is convenient. Keyboard layouts differ, so choose any free key you prefer. First Torch never changes your controls.",
+    "",
+    "If the Quest Book is lost, combine one ordinary Book with one block or item accepted by Minecraft's conventional Stone tag. The recipe is shapeless, so their positions in the crafting grid do not matter.",
+  ],
+  "task.5F67012345678946.title": "I know how to reopen or replace the Quest Book",
+
+  "quest.17A923456789AB3C.title": "Ready for First Steps",
+  "quest.17A923456789AB3C.quest_subtitle": "Finish the introduction and reveal the course",
+  "quest.17A923456789AB3C.quest_desc": [
+    "You have viewed every introduction point. Confirm the final checkmark to unlock the First Steps chapter.",
+    "",
+    "From there, First Torch reveals the course gradually. Learn at your own pace, return to optional branches whenever you like, and do not worry about remembering everything immediately.",
+  ],
+  "task.6078123456789A57.title": "Reveal the First Steps chapter",
+}

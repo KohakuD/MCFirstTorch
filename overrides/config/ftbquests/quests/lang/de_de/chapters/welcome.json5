@@ -1,0 +1,87 @@
+{
+  "quest.12E6801F4CAD3579.title": "Willkommen bei First Torch",
+  "quest.12E6801F4CAD3579.quest_subtitle": "Ein ruhiger Kurs in deinem eigenen Tempo",
+  "quest.12E6801F4CAD3579.quest_desc": [
+    "Willkommen! First Torch erklärt Minecraft in kleinen, praktischen Schritten. Du brauchst kein Vorwissen und musst dir nicht alles auf einmal merken.",
+    "",
+    "Dieses kurze Kapitel erklärt, wie der Kurs funktioniert. Lies jeden Informationspunkt und bestätige sein Häkchen. Sobald alle Punkte abgeschlossen sind, erscheint das Kapitel Erste Schritte.",
+    "",
+    "Diese erste Quest schenkt dir 5 Erfahrungspunkte. Das sind Punkte, nicht fünf ganze Erfahrungslevel. Der Punkt Belohnungen erklärt, wie du sie abholst.",
+  ],
+  "task.23F7912A5DBE4680.title": "Ich habe die Begrüssung gelesen",
+
+  "quest.21A3B5C7D9E10246.title": "Kapitel und Questkarte",
+  "quest.21A3B5C7D9E10246.quest_subtitle": "Kapitel wählen, Karte bewegen und Quest öffnen",
+  "quest.21A3B5C7D9E10246.quest_desc": [
+    "Links steht die Kapitelliste. Am Anfang enthält sie nur diese Einführung. Neue Kapitel erscheinen erst, wenn ihre erste Lektion verfügbar wird. So bleibt die Liste übersichtlich.",
+    "",
+    "Klicke ein Kapitel an, um seine Questkarte zu öffnen. Ziehe den leeren Hintergrund, um die Karte zu verschieben, und zoome mit dem Mausrad. Jedes Symbol ist eine Quest; klicke es an, um sein Fenster zu öffnen.",
+    "",
+    "Bestätige diesen Punkt, nachdem du die Karte bewegt und dieses Questfenster geöffnet hast.",
+  ],
+  "task.0A12B34C56D78E90.title": "Ich kann Kapitel und Questkarte bedienen",
+
+  "quest.32B4C6D8E0F21357.title": "Eine Quest lesen",
+  "quest.32B4C6D8E0F21357.quest_subtitle": "Ziel, Grund, Schritte und Sicherheitshinweise",
+  "quest.32B4C6D8E0F21357.quest_desc": [
+    "Ein Questfenster erklärt, was du erreichen sollst, warum es wichtig ist und wie du vorgehst. Sicherheitshinweise beschreiben häufige Fehler oder einen sicheren Übungsort.",
+    "",
+    "Unter Aufgaben steht, was abgeschlossen werden muss. Der Reiter Belohnungen erscheint, wenn die Quest etwas zum Abholen anbietet. Mit Escape schliesst du das Questbuch.",
+    "",
+    "Wenn du eine Lektion bereits kennst, lies trotzdem ihren Sicherheitshinweis, bevor du die Aufgabe abschliesst.",
+  ],
+  "task.1B23C45D67E89F01.title": "Ich verstehe die Teile eines Questfensters",
+
+  "quest.43C5D7E9F1023468.title": "Erforderliche Wege und freiwillige Abzweigungen",
+  "quest.43C5D7E9F1023468.quest_subtitle": "Folge dem Lernweg und behalte deine Freiheit",
+  "quest.43C5D7E9F1023468.quest_desc": [
+    "Linien auf der Karte zeigen Abhängigkeiten: Eine Quest muss abgeschlossen sein, bevor die nächste verfügbar wird. Der verbundene Hauptweg ist der erforderliche Lernweg.",
+    "",
+    "Abzweigungen mit der Bezeichnung Freiwillig bieten zusätzliche Übungen oder Informationen. Sie blockieren die nächste erforderliche Lektion nicht. Schliesse sie ab, wenn sie dich interessieren, oder kehre später zurück.",
+    "",
+    "Eine abgeschlossene Quest wird auf der Karte markiert. Spätere Kapitel erscheinen im Verlauf des Kurses automatisch.",
+  ],
+  "task.2C34D56E78F90112.title": "Ich verstehe erforderliche Wege und freiwillige Abzweigungen",
+
+  "quest.54D6E8F102345679.title": "Automatische Aufgaben und Häkchen",
+  "quest.54D6E8F102345679.quest_subtitle": "Erkenne, was das Spiel prüft und was du bestätigst",
+  "quest.54D6E8F102345679.quest_desc": [
+    "Gegenstandsaufgaben prüfen normalerweise dein aktuelles Inventar. Sie verbrauchen den Gegenstand nicht, sofern die Lektion nichts anderes ausdrücklich sagt. Manche Aufgaben erkennen auch eine Minecraft-Aktion automatisch.",
+    "",
+    "Ein Häkchen ist manuell. Klicke es erst an, nachdem du den beschriebenen Schritt ausprobiert, geprüft oder verstanden hast. So kann der Kurs praktische Übungen enthalten, die Minecraft nicht zuverlässig beurteilen kann.",
+    "",
+    "Eine Quest ist abgeschlossen, sobald alle erforderlichen Aufgaben erledigt sind.",
+  ],
+  "task.3D45E67F89012324.title": "Ich verstehe automatische Aufgaben und manuelle Häkchen",
+
+  "quest.65E7F1023456780A.title": "Belohnungen abholen",
+  "quest.65E7F1023456780A.quest_subtitle": "Gegenstände und Erfahrung separat einsammeln",
+  "quest.65E7F1023456780A.quest_desc": [
+    "Manche abgeschlossenen Quests enthalten eine kleine Belohnung. Eine nicht abgeholte Belohnung bleibt im Questfenster sichtbar und kann auch auf der Karte angezeigt werden.",
+    "",
+    "Öffne den Reiter Belohnungen und klicke das Belohnungssymbol an. Gegenstände landen in deinem Inventar. Erfahrung füllt den grünen Balken über der Schnellleiste.",
+    "",
+    "Probiere dies mit den 5 Erfahrungspunkten aus der ersten Begrüssungsquest und bestätige danach diesen Punkt.",
+  ],
+  "task.4E56F78012345635.title": "Ich weiss, wie ich eine Belohnung abhole",
+
+  "quest.06F8123456789A2B.title": "Das Buch wieder öffnen",
+  "quest.06F8123456789A2B.quest_subtitle": "Gegenstand benutzen, Taste wählen oder Ersatz herstellen",
+  "quest.06F8123456789A2B.quest_desc": [
+    "Benutze das Questbuch, um First Torch erneut zu öffnen. Du kannst auch unter Optionen → Steuerung → Tastenbelegung → FTB Quests → Quests eine beliebige freie Taste zuweisen.",
+    "",
+    "Auf der Tastatur des Projektinhabers eignet sich die Taste mit dem Paragraphenzeichen unter Escape und links von 1. Tastaturlayouts unterscheiden sich; wähle deshalb selbst eine freie Taste. First Torch verändert deine Steuerung nie.",
+    "",
+    "Falls das Questbuch verloren geht, kombiniere ein gewöhnliches Buch mit einem Block oder Gegenstand, den Minecraft im üblichen Stein-Tag akzeptiert. Das Rezept ist formlos; die Positionen im Herstellungsfeld spielen keine Rolle.",
+  ],
+  "task.5F67012345678946.title": "Ich weiss, wie ich das Questbuch erneut öffne oder ersetze",
+
+  "quest.17A923456789AB3C.title": "Bereit für die ersten Schritte",
+  "quest.17A923456789AB3C.quest_subtitle": "Schliesse die Einführung ab und öffne den Kurs",
+  "quest.17A923456789AB3C.quest_desc": [
+    "Du hast alle Einführungspunkte angesehen. Bestätige das letzte Häkchen, um das Kapitel Erste Schritte freizuschalten.",
+    "",
+    "Danach blendet First Torch den Kurs nach und nach ein. Lerne in deinem Tempo, kehre jederzeit zu freiwilligen Abzweigungen zurück und mache dir keine Sorgen, wenn du dir nicht sofort alles merken kannst.",
+  ],
+  "task.6078123456789A57.title": "Das Kapitel Erste Schritte einblenden",
+}

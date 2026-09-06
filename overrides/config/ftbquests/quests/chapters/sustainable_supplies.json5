@@ -1,7 +1,7 @@
 {
   id: "5D91A7C30E624BF8",
   group: "",
-  order_index: 4,
+  order_index: 5,
   icon: { id: "minecraft:wheat", count: 1 },
   filename: "sustainable_supplies",
   default_quest_shape: "circle",

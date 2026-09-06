@@ -1,7 +1,7 @@
 {
   id: "757C28E4BF936D0A",
   group: "",
-  order_index: 12,
+  order_index: 13,
   icon: { id: "minecraft:end_portal_frame", count: 1 },
   filename: "stronghold",
   default_quest_shape: "circle",

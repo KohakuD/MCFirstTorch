@@ -570,12 +570,14 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 
 ### First contact with the quest book
 
-- [x] Turn the first welcome quest into a complete introduction page before teaching movement or survival
+- [x] Add a dedicated Welcome chapter with separate, compact information quests before movement or survival
 - [x] Explain the quest map, quest windows, dependency lines, automatic tasks, manual checkmarks, required progression, optional branches, completed states, and unclaimed rewards
 - [x] Explain that item tasks normally inspect the inventory and do not consume items unless a lesson states otherwise
 - [x] Explain how to click and claim item or experience rewards and how to recognise an unclaimed reward
 - [x] Explain how to close the book, reopen it, switch chapters, and move around the map
 - [x] Keep every onboarding instruction in `en_us` and `de_de` without assuming previous modpack experience
+- [x] Require every introduction checkmark before revealing `First Steps`
+- [x] Avoid the literal paragraph-sign key label because FTB interprets it as a formatting marker; describe the physical key instead
 - [ ] Inspect the complete introduction and confirm the most relevant available quest is easy to find in both languages
 
 ### Reliable first opening

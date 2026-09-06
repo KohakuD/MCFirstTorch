@@ -67,6 +67,8 @@ $allQuestJson5Text = $allDefinitionText + "`n" + $allLanguageText
 Assert-True (-not [regex]::IsMatch($allQuestJson5Text, ',\s*,')) 'Quest JSON5 contains consecutive commas and cannot be parsed.'
 $invalidFormattingAmpersands = [regex]::Matches($allLanguageText, '(?<!\\)&\s')
 Assert-True ($invalidFormattingAmpersands.Count -eq 0) 'Quest text contains an ampersand followed by whitespace; FTB Quests treats this as an invalid formatting code.'
+$sectionSigns = [regex]::Matches($allLanguageText, '§')
+Assert-True ($sectionSigns.Count -eq 0) 'Quest text must spell out the paragraph-sign key because FTB interprets its literal symbol as formatting.'
 $idMatches = [regex]::Matches($allDefinitionText, '\bid:\s*"([0-7][0-9A-F]{15})"')
 $ids = @($idMatches | ForEach-Object { $_.Groups[1].Value })
 $duplicateIds = $ids | Group-Object | Where-Object Count -gt 1
@@ -79,15 +81,19 @@ $invalidObjectIds = @($hexLikeIds | Where-Object { $_ -notmatch '^[0-7][0-9A-F]{
 Assert-True ($invalidObjectIds.Count -eq 0) ('Invalid FTB Quest object IDs; IDs must fit a positive signed Java long: ' + ($invalidObjectIds -join ', '))
 
 $chapterRoot = Join-Path $questRoot 'chapters'
-$firstStepsChapterPath = Join-Path $chapterRoot 'first_steps.json5'
-$firstStepsChapterText = Get-Content -LiteralPath $firstStepsChapterPath -Raw
-Assert-True (-not [regex]::IsMatch($firstStepsChapterText, '(?m)^\s*hide_quest_until_deps_complete\s*:')) 'First Steps must remain visible from the beginning.'
-$laterChapterFiles = @(Get-ChildItem -LiteralPath $chapterRoot -File -Filter '*.json5' | Where-Object { $_.Name -ne 'first_steps.json5' })
-Assert-True ($laterChapterFiles.Count -eq 16) 'The progressive-visibility chapter set changed unexpectedly.'
+$welcomeChapterPath = Join-Path $chapterRoot 'welcome.json5'
+$welcomeChapterText = Get-Content -LiteralPath $welcomeChapterPath -Raw
+Assert-True (-not [regex]::IsMatch($welcomeChapterText, '(?m)^\s*hide_quest_until_deps_complete\s*:')) 'Welcome must remain visible from the beginning.'
+$laterChapterFiles = @(Get-ChildItem -LiteralPath $chapterRoot -File -Filter '*.json5' | Where-Object { $_.Name -ne 'welcome.json5' })
+Assert-True ($laterChapterFiles.Count -eq 17) 'The progressive-visibility chapter set changed unexpectedly.'
 foreach ($chapterFile in $laterChapterFiles) {
     $chapterText = Get-Content -LiteralPath $chapterFile.FullName -Raw
     Assert-True ([regex]::IsMatch($chapterText, '(?m)^\s*hide_quest_until_deps_complete\s*:\s*true\s*,')) "Later chapter must hide locked quests: $($chapterFile.Name)"
 }
+$welcomeFinalPattern = 'id:\s*"17A923456789AB3C"[\s\S]{0,300}?dependencies:\s*\[[\s\S]{0,220}?"21A3B5C7D9E10246"[\s\S]{0,220}?"32B4C6D8E0F21357"[\s\S]{0,220}?"43C5D7E9F1023468"[\s\S]{0,220}?"54D6E8F102345679"[\s\S]{0,220}?"65E7F1023456780A"[\s\S]{0,220}?"06F8123456789A2B"'
+Assert-True ([regex]::IsMatch($welcomeChapterText, $welcomeFinalPattern)) 'The Welcome finale must require all six information quests.'
+$firstStepsChapterText = Get-Content -LiteralPath (Join-Path $chapterRoot 'first_steps.json5') -Raw
+Assert-True ([regex]::IsMatch($firstStepsChapterText, 'id:\s*"34A8023B6ECF5791"[\s\S]{0,180}?dependencies:\s*\["17A923456789AB3C"\]')) 'First Steps must unlock only after the Welcome finale.'
 $elytraChapterText = Get-Content -LiteralPath (Join-Path $chapterRoot 'elytra_flight.json5') -Raw
 $andNowChapterText = Get-Content -LiteralPath (Join-Path $chapterRoot 'and_now.json5') -Raw
 Assert-True ([regex]::IsMatch($elytraChapterText, 'id:\s*"3E4D819BA0DFF522"[\s\S]{0,180}?dependencies:\s*\["58AE2C09C8263482"\]')) 'The planned return flight must follow the abort exercise.'
@@ -581,7 +587,7 @@ $fenceAndGateImageReferences = [regex]::Matches(((Get-ChildItem -LiteralPath (Jo
 Assert-True ($fenceAndGateImageReferences.Count -eq 2) 'The combined Fence and Fence Gate recipe guide must be referenced once in each language.'
 
 $localeRoot = Join-Path $questRoot 'lang'
-foreach ($relativePath in @('chapter.json5', 'chapters/first_steps.json5', 'chapters/becoming_independent.json5', 'chapters/iron_essentials.json5', 'chapters/finding_home.json5', 'chapters/sustainable_supplies.json5', 'chapters/overworld_activities.json5', 'chapters/nether_preparation.json5', 'chapters/nether_activities.json5', 'chapters/brewing.json5', 'chapters/ender_eyes.json5', 'chapters/stronghold.json5', 'chapters/the_end.json5', 'chapters/end_activities.json5', 'chapters/elytra_flight.json5', 'chapters/and_now.json5')) {
+foreach ($relativePath in @('chapter.json5', 'chapters/welcome.json5', 'chapters/first_steps.json5', 'chapters/becoming_independent.json5', 'chapters/iron_essentials.json5', 'chapters/finding_home.json5', 'chapters/sustainable_supplies.json5', 'chapters/overworld_activities.json5', 'chapters/nether_preparation.json5', 'chapters/nether_activities.json5', 'chapters/brewing.json5', 'chapters/ender_eyes.json5', 'chapters/stronghold.json5', 'chapters/the_end.json5', 'chapters/end_activities.json5', 'chapters/elytra_flight.json5', 'chapters/and_now.json5')) {
     $enPath = Join-Path (Join-Path $localeRoot 'en_us') $relativePath
     $dePath = Join-Path (Join-Path $localeRoot 'de_de') $relativePath
     Assert-True (Test-Path -LiteralPath $enPath -PathType Leaf) "Missing English translation file: $relativePath"

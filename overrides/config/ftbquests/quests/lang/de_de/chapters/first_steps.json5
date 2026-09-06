@@ -1,27 +1,4 @@
 {
-  "quest.12E6801F4CAD3579.title": "Willkommen bei First Torch",
-  "quest.12E6801F4CAD3579.quest_subtitle": "Deine ruhige Begleitung durch Minecraft",
-  "quest.12E6801F4CAD3579.quest_desc": [
-    "Willkommen! First Torch erklärt Minecraft in kleinen Schritten. Du musst dir nicht alles auf einmal merken.",
-    "",
-    "Du hast dieses Buch geöffnet, indem du das Questbuch benutzt hast. Später kannst du es wieder benutzen oder unter Optionen → Steuerung → Tastenbelegung → FTB Quests → Quests eine freie Taste zuweisen. Auf der Tastatur des Projektinhabers eignet sich § unter Escape und links von 1; wähle selbst eine freie Taste, die zu deinem Tastaturlayout passt.",
-    "",
-    "Links steht die Kapitelliste. Am Anfang werden nur Kapitel angezeigt, die du bereits benutzen kannst. Neue Kapitel erscheinen, sobald du den erforderlichen Weg abgeschlossen hast. Klicke ein Kapitel an, um zu seiner Questkarte zu wechseln. Ziehe die Karte, um sie zu verschieben, und zoome mit dem Mausrad. Mit Escape schliesst du das Buch.",
-    "",
-    "Jedes Symbol auf der Karte ist eine Quest. Klicke darauf, um ihr Fenster zu öffnen. Linien zeigen, welche Quest abgeschlossen sein muss, bevor eine andere verfügbar wird. Der zusammenhängende Hauptweg ist der erforderliche Lernweg. Abzweigungen mit der Bezeichnung Freiwillig sind zusätzliche Übungen und blockieren nie die nächste erforderliche Lektion.",
-    "",
-    "In einer Quest stehen ihre Aufgaben. Gegenstandsaufgaben prüfen normalerweise dein aktuelles Inventar und verbrauchen den Gegenstand nicht, sofern die Lektion nichts anderes ausdrücklich sagt. Ein Häkchen ist manuell: Klicke es erst an, nachdem du den beschriebenen Schritt ausprobiert, geprüft oder verstanden hast.",
-    "",
-    "Eine abgeschlossene Quest wird auf der Karte markiert. Manche abgeschlossenen Quests enthalten zusätzlich eine Belohnung, die du separat abholen musst. Eine nicht abgeholte Belohnung bleibt im Questfenster sichtbar. Klicke ihr Symbol an: Gegenstände landen in deinem Inventar, Erfahrung füllt den grünen Balken über der Schnellleiste.",
-    "",
-    "Falls dein Questbuch einmal fehlt, kannst du ein neues herstellen: Kombiniere ein gewöhnliches Buch mit einem Block oder Gegenstand, den Minecraft im üblichen Stein-Tag akzeptiert. Das Rezept ist formlos; die Positionen im Herstellungsfeld spielen deshalb keine Rolle.",
-    "",
-    "Du kannst alles in deinem Tempo erkunden. Wenn du etwas bereits kennst, lies kurz den Sicherheitshinweis und gehe weiter. Klicke zum Start auf das Häkchen unten, sobald du bereit bist.",
-    "",
-    "Belohnung: 5 Erfahrungspunkte für deinen Start. Das sind Punkte, nicht fünf ganze Erfahrungslevel.",
-  ],
-  "task.23F7912A5DBE4680.title": "Ich bin bereit anzufangen",
-
   "quest.34A8023B6ECF5791.title": "Deine Hände und Maustasten",
   "quest.34A8023B6ECF5791.quest_subtitle": "Angreifen, abbauen, benutzen und platzieren",
   "quest.34A8023B6ECF5791.quest_desc": [

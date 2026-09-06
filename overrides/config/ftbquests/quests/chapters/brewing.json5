@@ -1,7 +1,7 @@
 {
   id: "735A06C29D714BE8",
   group: "",
-  order_index: 10,
+  order_index: 11,
   icon: { id: "minecraft:brewing_stand", count: 1 },
   filename: "brewing",
   default_quest_shape: "circle",

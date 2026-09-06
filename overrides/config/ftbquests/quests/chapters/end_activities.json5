@@ -1,7 +1,7 @@
 {
   id: "78AF5B17E2C6904D",
   group: "",
-  order_index: 14,
+  order_index: 15,
   icon: { id: "minecraft:chorus_flower", count: 1 },
   filename: "end_activities",
   default_quest_shape: "circle",

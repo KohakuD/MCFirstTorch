@@ -1,7 +1,7 @@
 {
   id: "779E4A06D1B58F4E",
   group: "",
-  order_index: 13,
+  order_index: 14,
   icon: { id: "minecraft:end_stone", count: 1 },
   filename: "the_end",
   default_quest_shape: "circle",

@@ -1,7 +1,7 @@
 {
   id: "6E095C883A1E5D3D",
   group: "",
-  order_index: 16,
+  order_index: 17,
   icon: { id: "minecraft:compass", count: 1 },
   filename: "and_now",
   default_quest_shape: "circle",

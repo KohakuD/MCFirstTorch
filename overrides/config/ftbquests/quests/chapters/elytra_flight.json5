@@ -1,7 +1,7 @@
 {
   id: "1BF47781183796A1",
   group: "",
-  order_index: 15,
+  order_index: 16,
   icon: { id: "minecraft:elytra", count: 1 },
   filename: "elytra_flight",
   default_quest_shape: "circle",

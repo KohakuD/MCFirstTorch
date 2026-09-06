@@ -1,27 +1,4 @@
 {
-  "quest.12E6801F4CAD3579.title": "Welcome to First Torch",
-  "quest.12E6801F4CAD3579.quest_subtitle": "Your calm guide through Minecraft",
-  "quest.12E6801F4CAD3579.quest_desc": [
-    "Welcome! First Torch teaches Minecraft in small steps. You do not need to remember everything at once.",
-    "",
-    "You opened this book by using the Quest Book. To return later, use the book again or assign a free key under Options → Controls → Key Binds → FTB Quests → Quests. On the project owner's keyboard, § below Escape and left of 1 is convenient; choose any free key that suits your keyboard layout.",
-    "",
-    "The chapter list is on the left. At first, only the chapters you can use are shown. New chapters appear as you complete the required path. Click a chapter to switch to its quest map. Drag the map to move around it and use the mouse wheel to zoom. Press Escape to close the book.",
-    "",
-    "Each icon on the map is a quest. Click one to open its window. Lines show which quest must be completed before another becomes available. The main connected route is the required learning path. Branches labelled Optional or Voluntary are extra practice and never block the next required lesson.",
-    "",
-    "Tasks appear inside a quest. Item tasks normally inspect your current inventory and do not consume the item unless the lesson clearly says otherwise. A checkmark is manual: click it only after you have tried, checked, or understood the described step.",
-    "",
-    "A completed quest is marked on the map. Some completed quests also contain a reward that you must claim separately. An unclaimed reward remains visible in the quest window. Click its icon: item rewards enter your inventory, while experience fills the green bar above your hotbar.",
-    "",
-    "If your Quest Book is ever missing, craft another one by combining one ordinary Book with one block or item accepted by Minecraft's conventional Stone tag. The recipe is shapeless, so their positions in the crafting grid do not matter.",
-    "",
-    "You can explore at your own pace. If you already know something, read its safety note and continue. Start by clicking the checkmark below when you are ready.",
-    "",
-    "Reward: 5 experience points for getting started. These are points, not five complete experience levels.",
-  ],
-  "task.23F7912A5DBE4680.title": "I am ready to begin",
-
   "quest.34A8023B6ECF5791.title": "Your Hands and Mouse Buttons",
   "quest.34A8023B6ECF5791.quest_subtitle": "Attack, break, use, and place",
   "quest.34A8023B6ECF5791.quest_desc": [

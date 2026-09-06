@@ -1,7 +1,7 @@
 {
   id: "01F57C0E3B9D2468",
   group: "",
-  order_index: 0,
+  order_index: 1,
   icon: {
     id: "minecraft:torch",
     count: 1,
@@ -9,30 +9,13 @@
   filename: "first_steps",
   default_quest_shape: "circle",
   default_hide_dependency_lines: false,
+  hide_quest_until_deps_complete: true,
   quests: [
     {
-      id: "12E6801F4CAD3579",
+      id: "34A8023B6ECF5791",
       x: 0.0,
       y: 0.0,
-      shape: "gear",
-      size: 1.5,
-      icon: { id: "ftbquests:book", count: 1 },
-      tasks: [
-        { id: "23F7912A5DBE4680", type: "checkmark" },
-      ],
-      rewards: [
-        {
-          id: "4BD9A6E31F028C75",
-          type: "xp",
-          xp: 5,
-        },
-      ],
-    },
-    {
-      id: "34A8023B6ECF5791",
-      x: 2.5,
-      y: 0.0,
-      dependencies: ["12E6801F4CAD3579"],
+      dependencies: ["17A923456789AB3C"],
       min_width: 360,
       icon: { id: "minecraft:wooden_sword", count: 1 },
       tasks: [
