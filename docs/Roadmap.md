@@ -534,7 +534,10 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 - [x] Secure and test one tower level at a time with marked covered landings
 - [x] Find and secure one ordinary End City loot room without relying on a particular generated city or chest item
 - [x] Return the first chest contents to the outside staging point before continuing upwards
-- [ ] Continue with Shulker Shells, the first Shulker Box, and a secured approach towards an End Ship
+- [x] Collect two Shulker Shells through controlled encounters without assuming a drop from every Shulker
+- [x] Craft and safely test the first Shulker Box with an exact-model recipe guide
+- [x] Locate an End Ship and secure a tested ship-facing city position without starting the Void crossing
+- [ ] Board the End Ship from the secured approach, recover Elytra, and return safely to the Overworld
 - [ ] Teach the first Elytra glide only after returning to a low, protected Overworld practice platform; introduce Firework Rockets after the unpowered glide is understood
 
 ## Later milestones

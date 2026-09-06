@@ -420,6 +420,7 @@ $expectedXpRewards = @{
     '18A4FC17E2D6B380' = 5
     '377D9627F332A842' = 10
     '79C93CC618B04E8A' = 10
+    '3DCCE25084BBD9CE' = 10
 }
 foreach ($rewardId in $expectedXpRewards.Keys) {
     $xp = $expectedXpRewards[$rewardId]
@@ -472,7 +473,7 @@ foreach ($imageName in @('flint_and_steel.png', 'nether_portal_frame.png', 'neth
     Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each Nether Preparation language file."
 }
 $endActivitiesLanguageText = ((Get-ChildItem -LiteralPath (Join-Path $questRoot 'lang') -Recurse -File -Filter 'end_activities.json5' | ForEach-Object { Get-Content -LiteralPath $_.FullName -Raw }) -join "`n")
-foreach ($imageName in @('chorus_harvest.png', 'chorus_fruit_safety.png', 'shulker_levitation.png')) {
+foreach ($imageName in @('chorus_harvest.png', 'chorus_fruit_safety.png', 'shulker_levitation.png', 'shulker_box_recipe.png')) {
     $referenceCount = [regex]::Matches($endActivitiesLanguageText, [regex]::Escape("firsttorch:textures/questpics/$imageName")).Count
     Assert-True ($referenceCount -eq 2) "The $imageName guide must be referenced once in each End Activities language file."
 }

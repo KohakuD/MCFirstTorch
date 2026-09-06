@@ -55,6 +55,8 @@ These 3440 × 1369 originals also display at 300 × 119. Their generators no lon
 
 `shulker_levitation.png` uses the exact Minecraft 26.1.2 Shulker, Shulker Bullet, Levitation, Milk Bucket, and Water Bucket textures. Its closed and open Shulker views follow the dimensions and UV positions from the target version's `ShulkerModel`, while the projectile face follows `ShulkerBulletModel`. The corresponding target-version projectile code applies four base damage points and 200 ticks of Levitation only after a successful hit, which grounds the lesson's ten-second recovery sequence.
 
+`shulker_box_recipe.png` follows the target recipe data and uses the exact Shulker Shell texture. Its result joins the exact closed lid and base faces from the 64 by 64 Shulker texture according to the target `ShulkerBoxModel` dimensions. The ordinary Chest ingredient reuses the exact special-model item render from the established Chest recipe guide.
+
 ## Reward design
 
 Beginner rewards are fixed, small, and explained before the first claim. They may provide a safety buffer or celebrate a milestone, but must not complete or bypass a later lesson. Prefer small amounts of exact XP points when an item reward would be too powerful; do not grant whole XP levels for routine lessons. Avoid random loot, powerful equipment, and unexplained currencies. Manual claiming remains enabled so the quest book can teach the reward interaction explicitly.
