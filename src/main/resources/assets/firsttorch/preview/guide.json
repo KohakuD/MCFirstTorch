@@ -1,0 +1,299 @@
+{
+  "schemaVersion": 1,
+  "id": "0D15000000000001",
+  "titleKey": "guide.firsttorch.preview.title",
+  "descriptionKey": "guide.firsttorch.preview.description",
+  "chapters": [
+    {
+      "id": "1D15000000000001",
+      "order": 0,
+      "titleKey": "chapter.firsttorch.preview.first_steps.title",
+      "descriptionKey": "chapter.firsttorch.preview.first_steps.description",
+      "quests": [
+        {
+          "id": "2D15000000000001",
+          "order": 0,
+          "titleKey": "quest.firsttorch.preview.first_steps.wood.title",
+          "descriptionKey": "quest.firsttorch.preview.first_steps.wood.description",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "prerequisiteQuestIds": []
+        },
+        {
+          "id": "2D15000000000002",
+          "order": 1,
+          "titleKey": "quest.firsttorch.preview.first_steps.bench.title",
+          "descriptionKey": "quest.firsttorch.preview.first_steps.bench.description",
+          "position": {
+            "x": -1,
+            "y": 1
+          },
+          "prerequisiteQuestIds": [
+            "2D15000000000001"
+          ]
+        },
+        {
+          "id": "2D15000000000003",
+          "order": 2,
+          "titleKey": "quest.firsttorch.preview.first_steps.tools.title",
+          "descriptionKey": "quest.firsttorch.preview.first_steps.tools.description",
+          "position": {
+            "x": 1,
+            "y": 1
+          },
+          "prerequisiteQuestIds": [
+            "2D15000000000001"
+          ]
+        },
+        {
+          "id": "2D15000000000004",
+          "order": 3,
+          "titleKey": "quest.firsttorch.preview.first_steps.shelter.title",
+          "descriptionKey": "quest.firsttorch.preview.first_steps.shelter.description",
+          "position": {
+            "x": 0,
+            "y": 2
+          },
+          "prerequisiteQuestIds": [
+            "2D15000000000002",
+            "2D15000000000003"
+          ]
+        },
+        {
+          "id": "2D15000000000005",
+          "order": 4,
+          "titleKey": "quest.firsttorch.preview.first_steps.light.title",
+          "descriptionKey": "quest.firsttorch.preview.first_steps.light.description",
+          "position": {
+            "x": -1,
+            "y": 3
+          },
+          "prerequisiteQuestIds": [
+            "2D15000000000004"
+          ]
+        },
+        {
+          "id": "2D15000000000006",
+          "order": 5,
+          "titleKey": "quest.firsttorch.preview.first_steps.bed.title",
+          "descriptionKey": "quest.firsttorch.preview.first_steps.bed.description",
+          "position": {
+            "x": 1,
+            "y": 3
+          },
+          "prerequisiteQuestIds": [
+            "2D15000000000004"
+          ]
+        },
+        {
+          "id": "2D15000000000007",
+          "order": 6,
+          "titleKey": "quest.firsttorch.preview.first_steps.food.title",
+          "descriptionKey": "quest.firsttorch.preview.first_steps.food.description",
+          "position": {
+            "x": -1,
+            "y": 4
+          },
+          "prerequisiteQuestIds": [
+            "2D15000000000005"
+          ]
+        },
+        {
+          "id": "2D15000000000008",
+          "order": 7,
+          "titleKey": "quest.firsttorch.preview.first_steps.morning.title",
+          "descriptionKey": "quest.firsttorch.preview.first_steps.morning.description",
+          "position": {
+            "x": 1,
+            "y": 4
+          },
+          "prerequisiteQuestIds": [
+            "2D15000000000006"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1D15000000000002",
+      "order": 1,
+      "titleKey": "chapter.firsttorch.preview.tools.title",
+      "descriptionKey": "chapter.firsttorch.preview.tools.description",
+      "quests": [
+        {
+          "id": "2D15000000000009",
+          "order": 0,
+          "titleKey": "quest.firsttorch.preview.tools.pickaxe.title",
+          "descriptionKey": "quest.firsttorch.preview.tools.pickaxe.description",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "prerequisiteQuestIds": []
+        },
+        {
+          "id": "2D1500000000000A",
+          "order": 1,
+          "titleKey": "quest.firsttorch.preview.tools.furnace.title",
+          "descriptionKey": "quest.firsttorch.preview.tools.furnace.description",
+          "position": {
+            "x": 0,
+            "y": 1
+          },
+          "prerequisiteQuestIds": [
+            "2D15000000000009"
+          ]
+        },
+        {
+          "id": "2D1500000000000B",
+          "order": 2,
+          "titleKey": "quest.firsttorch.preview.tools.iron.title",
+          "descriptionKey": "quest.firsttorch.preview.tools.iron.description",
+          "position": {
+            "x": 0,
+            "y": 2
+          },
+          "prerequisiteQuestIds": [
+            "2D1500000000000A"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1D15000000000003",
+      "order": 2,
+      "titleKey": "chapter.firsttorch.preview.home.title",
+      "descriptionKey": "chapter.firsttorch.preview.home.description",
+      "quests": [
+        {
+          "id": "2D1500000000000C",
+          "order": 0,
+          "titleKey": "quest.firsttorch.preview.home.door.title",
+          "descriptionKey": "quest.firsttorch.preview.home.door.description",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "prerequisiteQuestIds": []
+        },
+        {
+          "id": "2D1500000000000D",
+          "order": 1,
+          "titleKey": "quest.firsttorch.preview.home.chest.title",
+          "descriptionKey": "quest.firsttorch.preview.home.chest.description",
+          "position": {
+            "x": 0,
+            "y": 1
+          },
+          "prerequisiteQuestIds": [
+            "2D1500000000000C"
+          ]
+        },
+        {
+          "id": "2D1500000000000E",
+          "order": 2,
+          "titleKey": "quest.firsttorch.preview.home.return.title",
+          "descriptionKey": "quest.firsttorch.preview.home.return.description",
+          "position": {
+            "x": 0,
+            "y": 2
+          },
+          "prerequisiteQuestIds": [
+            "2D1500000000000D"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1D15000000000004",
+      "order": 3,
+      "titleKey": "chapter.firsttorch.preview.food.title",
+      "descriptionKey": "chapter.firsttorch.preview.food.description",
+      "quests": [
+        {
+          "id": "2D1500000000000F",
+          "order": 0,
+          "titleKey": "quest.firsttorch.preview.food.seeds.title",
+          "descriptionKey": "quest.firsttorch.preview.food.seeds.description",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "prerequisiteQuestIds": []
+        },
+        {
+          "id": "2D15000000000010",
+          "order": 1,
+          "titleKey": "quest.firsttorch.preview.food.garden.title",
+          "descriptionKey": "quest.firsttorch.preview.food.garden.description",
+          "position": {
+            "x": 0,
+            "y": 1
+          },
+          "prerequisiteQuestIds": [
+            "2D1500000000000F"
+          ]
+        },
+        {
+          "id": "2D15000000000011",
+          "order": 2,
+          "titleKey": "quest.firsttorch.preview.food.bread.title",
+          "descriptionKey": "quest.firsttorch.preview.food.bread.description",
+          "position": {
+            "x": 0,
+            "y": 2
+          },
+          "prerequisiteQuestIds": [
+            "2D15000000000010"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1D15000000000005",
+      "order": 4,
+      "titleKey": "chapter.firsttorch.preview.travel.title",
+      "descriptionKey": "chapter.firsttorch.preview.travel.description",
+      "quests": [
+        {
+          "id": "2D15000000000012",
+          "order": 0,
+          "titleKey": "quest.firsttorch.preview.travel.supplies.title",
+          "descriptionKey": "quest.firsttorch.preview.travel.supplies.description",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "prerequisiteQuestIds": []
+        },
+        {
+          "id": "2D15000000000013",
+          "order": 1,
+          "titleKey": "quest.firsttorch.preview.travel.route.title",
+          "descriptionKey": "quest.firsttorch.preview.travel.route.description",
+          "position": {
+            "x": 0,
+            "y": 1
+          },
+          "prerequisiteQuestIds": [
+            "2D15000000000012"
+          ]
+        },
+        {
+          "id": "2D15000000000014",
+          "order": 2,
+          "titleKey": "quest.firsttorch.preview.travel.boat.title",
+          "descriptionKey": "quest.firsttorch.preview.travel.boat.description",
+          "position": {
+            "x": 0,
+            "y": 2
+          },
+          "prerequisiteQuestIds": [
+            "2D15000000000013"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -28,6 +28,12 @@ The quest book sets `pause_game: true` so the integrated single-player world pau
 
 Player progress belongs to a world or server instance and must never be copied into this repository.
 
+### Native guide data boundary
+
+Native guide definitions live under `data/firsttorch/guides/*.json` in server datapacks; the bundled alpha schema example is stored at `src/main/resources/data/firsttorch/guides/`. On each server resource reload, First Torch sorts matching resources by path, parses them with path-aware diagnostics, validates the complete guide set, and atomically publishes an immutable server snapshot only after every resource succeeds. A failed reload therefore leaves the previously published snapshot untouched.
+
+NeoForge play networking synchronises that validated snapshot to a joining player and to all connected players after a successful datapack reload. The payload protocol is versioned, clientbound-only, bounded during encoding and decoding, and validates the reconstructed model again before a client-only immutable cache accepts it. Disconnecting clears the cache. The native screen reads this cache and presents deterministic guide switching, ordered chapters, a neutral dependency map, and translated quest details. It intentionally does not infer completion, current, locked, task, or reward states: server-authoritative player progress, progress persistence, progress synchronisation, and full curriculum rendering remain future migration work.
+
 ## Editing quests
 
 Prefer FTB Quests' in-game editor when discovering a new property or task type. Save the book, copy only the resulting definitions back into `overrides/config/ftbquests/quests/`, and review the diff. Hand-editing is appropriate for translation text, coordinates, dependencies, and already-understood structures.

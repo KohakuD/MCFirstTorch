@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "0A13F17C00000001",
+  "titleKey": "guide.firsttorch.alpha.getting_started.title",
+  "descriptionKey": "guide.firsttorch.alpha.getting_started.description",
+  "chapters": [
+    {
+      "id": "1A13F17C00000001",
+      "order": 0,
+      "titleKey": "chapter.firsttorch.alpha.getting_started.title",
+      "descriptionKey": "chapter.firsttorch.alpha.getting_started.description",
+      "quests": [
+        {
+          "id": "2A13F17C00000001",
+          "order": 0,
+          "titleKey": "quest.firsttorch.alpha.schema_intro.title",
+          "descriptionKey": "quest.firsttorch.alpha.schema_intro.description",
+          "position": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "id": "2A13F17C00000002",
+          "order": 1,
+          "titleKey": "quest.firsttorch.alpha.schema_next.title",
+          "descriptionKey": "quest.firsttorch.alpha.schema_next.description",
+          "position": {
+            "x": 2,
+            "y": 0
+          },
+          "prerequisiteQuestIds": [
+            "2A13F17C00000001"
+          ]
+        }
+      ]
+    }
+  ]
+}
