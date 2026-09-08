@@ -614,13 +614,19 @@ Implementation target: native 0.13.0-alpha.1; retained pack 0.9.1 remains unchan
 - [x] Teach Comparators through one observable container-fill example
 - [x] In-game acceptance: eight Repeater/Comparator lessons, direction reversal, range restoration, deliberate delay, single-Chest 0/1/2 output, two rewards and trophies (user-confirmed)
 - [x] Teach Pistons, Sticky Pistons, Observers, and their direction before using them in a machine
-- [ ] In-game acceptance: eight Piston/Observer lessons, push versus pull, orientation, observed-block changes, stable versus pulsed signals, XP and trophies
+- [x] In-game acceptance: eight Piston/Observer lessons, push versus pull, orientation, observed-block changes, stable versus pulsed signals, XP and trophies (user-confirmed 2026-09-09)
 - [x] Implement small isolated exercises followed by a safe automatic Iron Door and a Comparator status display
-- [ ] In-game acceptance: automatic door materials, both travel directions, closing, troubleshooting, XP and trophy (test together with Pistons and Observers)
-- [ ] Explain common failure cases such as wrong component direction, missing support blocks, unintended pulses, and machines left running
+- [x] In-game acceptance: automatic door materials, both travel directions, closing, troubleshooting, XP and trophy (user-confirmed 2026-09-09 with Pistons and Observers)
+- [x] Explain common failure cases such as wrong component direction, missing support blocks, unintended pulses, and machines left running
 - [ ] Use exact Minecraft 26.1.2 textures and models for every circuit guide and verify each circuit in survival mode
 
 ## 0.11.0 — Creature and Drop Field Guide
+
+Implementation target remains native 0.13.0-alpha.1. The initial three-chapter batch covers twelve familiar creatures in optional reference cards after the course introduction. Redstone circuit illustrations remain an explicit 0.10.0 follow-up, not completed by this content work.
+
+- [x] Implement initial bilingual farm-animal, common Overworld-monster and Nether-creature reference chapters, with independently readable cards and book-only trophies
+- [x] Check the initial twelve ordinary drop summaries against target 26.1.2 entity loot tables and distinguish the listed special conditions
+- [ ] In-game acceptance: all twelve reading cards, independent selection, both languages, trophy eligibility and restart persistence
 
 - [ ] Add a bilingual, non-gating reference chapter separated from the guided course
 - [ ] Group creatures by useful context such as passive animals, common hostile mobs, Nether mobs, End mobs, aquatic mobs, and rare encounters

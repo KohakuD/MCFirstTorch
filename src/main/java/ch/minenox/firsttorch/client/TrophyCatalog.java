@@ -66,7 +66,10 @@ public final class TrophyCatalog {
             Map.entry("660D9035C2EA7F1C", new Trophy("redstone_comparators", "minecraft:comparator")),
             Map.entry("671EA146D3FB802D", new Trophy("redstone_pistons", "minecraft:sticky_piston")),
             Map.entry("682FB257E40C913E", new Trophy("redstone_observers", "minecraft:observer")),
-            Map.entry("6930C368F51DA24F", new Trophy("redstone_door", "minecraft:iron_door")));
+            Map.entry("6930C368F51DA24F", new Trophy("redstone_door", "minecraft:iron_door")),
+            Map.entry("6A41D479062EB350", new Trophy("field_animals", "minecraft:milk_bucket")),
+            Map.entry("6B52E58A173FC461", new Trophy("field_overworld", "minecraft:bone")),
+            Map.entry("6C63F69B2840D572", new Trophy("field_nether", "minecraft:blaze_rod")));
 
     private TrophyCatalog() {
     }

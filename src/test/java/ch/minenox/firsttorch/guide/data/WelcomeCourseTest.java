@@ -66,7 +66,7 @@ final class WelcomeCourseTest {
     @Test
     void firstStepsKeepsSourceIdsAndRewardsAndRequiresWelcome() throws Exception {
         var guide = load("course");
-        assertEquals(55, guide.chapters().size());
+        assertEquals(58, guide.chapters().size());
         var chapter = guide.chapters().get(1);
         assertEquals("01F57C0E3B9D2468", chapter.id());
         var quests = chapter.quests().subList(0, 5);

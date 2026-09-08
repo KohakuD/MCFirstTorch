@@ -1,0 +1,29 @@
+# Initial creature-reference verification
+
+Target: Minecraft Java 26.1.2, bundled native First Torch 0.13.0-alpha.1. This is a small reference selection, not an exhaustive creature or rare-drop catalogue.
+
+## Authoritative drop data
+
+Read directly from the target game artifact: `data/minecraft/loot_table/entities/{cow,sheep,pig,chicken,zombie,skeleton,spider,creeper,blaze,wither_skeleton,ghast,magma_cube}.json`.
+
+- Ordinary adult Cow: 1–3 Beef, 0–2 Leather before Looting. Pig: 1–3 Porkchops. Chicken: one Chicken, 0–2 Feathers. Sheep: 1–2 Mutton, separate colour-specific Wool table only when not sheared. Meat entries have conditional furnace-smelting functions. Living-animal milk, eggs and shearing are not death-loot rewards.
+- Zombie: 0–2 Rotten Flesh; the rare Iron/Carrot/Potato pool requires player credit and a chance check. Special mounted variants are outside this initial ordinary-Zombie summary.
+- Skeleton: separate 0–2 Arrow and Bone entries. Equipment is separate from ordinary loot-table entries and must not be promised.
+- Spider: 0–2 String; Spider Eye pool requires player credit and can yield none.
+- Creeper: 0–2 Gunpowder; a separate disc pool requires an attacker in `#minecraft:skeletons`. An exploding Creeper is not a reliable Gunpowder harvest.
+- Blaze: its entire Rod pool requires player credit; ordinary count is 0–1, with Looting increases. The read-only verification script reads this exact target-game resource.
+- Wither Skeleton: possible Coal and Bones; Skull pool requires player credit and a rare chance check with Looting bonus. No guaranteed Skull claim.
+- Ghast: possible 0–1 Tear and 0–2 Gunpowder before Looting. The target also has a conditional player-credited Fireball-kill disc; the ordinary-drop card need not enumerate every special disc.
+- Magma Cube: Cream requires size at least two and a non-Frog damage source; count can be zero. Frog-source entries instead select a Froglight by Frog variant. Small cubes are not a Cream source even with Looting.
+
+Counts above describe unmodified ordinary loot tables, not an exhaustive promise covering babies, equipment, data packs or other mods. Player-credit conditions can include credited tame-Wolf kills. Looting affects the listed death-loot functions, not milk, egg-laying or shearing. Avoid unsupported exact rates for other behaviours.
+
+## Supporting official reading
+
+Repeat the key conditional-drop checks with `pwsh ./tools/verify-creature-loot.ps1 -MinecraftJar <path-to-26.1.2-client.jar>`. Vanilla data resources are not exposed on the unit-test runtime classpath, so this explicit archive check is separate from the content tests and does not copy game assets into the repository.
+
+- [Mojang: Cow](https://www.minecraft.net/fr-fr/article/cow) — renewable milk and everyday Cow context.
+- [Mojang: Music Disc](https://www.minecraft.net/en-us/article/taking-inventory--music-disc) — Skeleton-killed Creeper disc example; use the target table for the precise current attacker tag.
+- [Mojang: Blaze](https://www.minecraft.net/de-de/article/blaze) — Fortress and fire-projectile context. Target Java data takes precedence over older articles and other editions.
+
+Detailed course safety lessons remain the practical instructions; reference cards point back to their existing translated titles. No new encounter is required to tick a reading card. Physical encounter playtesting is not claimed by the data checks.

@@ -17,6 +17,16 @@ import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 final class TrophyCatalogTest {
+    @Test void fieldGuideTrophiesRemainIndependentReadingMilestones() {
+        var guides = snapshot(chapter("6A41D479062EB350", 55, "16A0B0C0D0E00001", "16A0B0C0D0E00004"),
+                chapter("6B52E58A173FC461", 56, "17A0B0C0D0E00001", "17A0B0C0D0E00004"),
+                chapter("6C63F69B2840D572", 57, "18A0B0C0D0E00001", "18A0B0C0D0E00004"));
+        var entries = TrophyCatalog.entries(guides, progress("16A0B0C0D0E00001", "16A0B0C0D0E00004", "18A0B0C0D0E00001"));
+        assertEquals(List.of(true, false, false), entries.stream().map(TrophyCatalog.Entry::earned).toList());
+        assertEquals(List.of("minecraft:milk_bucket", "minecraft:bone", "minecraft:blaze_rod"),
+                entries.stream().map(TrophyCatalog.Entry::iconItemId).toList());
+    }
+
     @Test void automaticDoorTrophyRequiresEveryPracticeLesson() {
         var guides = snapshot(chapter("6930C368F51DA24F", 54,
                 "15A0B0C0D0E00001", "15A0B0C0D0E00002", "15A0B0C0D0E00003", "15A0B0C0D0E00004"));

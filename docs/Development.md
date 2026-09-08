@@ -2,7 +2,7 @@
 
 ## Baseline
 
-Delivery cadence: approximately three complete chapters per user test batch, not three quests. The pending batch is Pistons, Observers and Automatic Door; adding the third chapter does not accept the first two.
+Delivery cadence: approximately three complete chapters per user test batch, not three quests. Pistons, Observers and Automatic Door were accepted by the user on 2026-09-09. The next pending batch is the three creature-reference chapters.
 
 The four-lesson automatic Iron Door uses two adjacent Stone Pressure Plates on a free-standing practice site, not a secure home entrance. Material possession is automatic; building, crossing and safety observations remain manual. Its five-XP reward and book-only trophy do not supply progression items. Existing chapter IDs and player data are preserved.
 
@@ -39,6 +39,8 @@ Native guide definitions live under `data/firsttorch/guides/*.json` in server da
 NeoForge play networking synchronises validated definitions and the executing player's live progress on login and datapack reload. Progress changes are sent after server evaluation, including manual confirmations; unchanged observations are not repeatedly transmitted. Both payloads are versioned and bounded. Disconnecting clears both client caches, and a definition reload clears the prior progress until its replacement arrives. Storage or transport failure publishes an unavailable state rather than stale progress. The native screen opens in live mode with server-supplied badges, prerequisite locks and task counts. The independent design preview remains optional and never changes player data.
 
 ## Editing quests
+
+The initial native creature field guide adds three optional four-card chapters: farm animals, common Overworld monsters and Nether creatures (58 chapters, 296 course quests, 383 tasks; 92 image references unchanged). Each reading card depends only on the existing final course introduction, never on another reference card or Redstone completion. No earlier lesson depends on these cards. Checkmarks record reading only; no killing, loot collection, XP or item reward is required or granted. Three independent cosmetic book trophies mark reading completion. The vanilla 26.1.2 entity loot tables ground ordinary, conditional and chance-based drops; see `docs/CreatureReferenceSources.md`. This is the first 0.11.0 content slice inside native 0.13.0-alpha.1, not a new release. The retained pack stays 0.9.1.
 
 The third native Redstone slice adds two four-quest chapters for Pistons and Observers (54 chapters, 280 quests, 366 tasks). Three component-possession objectives are automatic; five practical direction/movement/observation checks remain manual. The isolated Cobblestone test compares ordinary push with sticky return under a maintained Lever input, not a short pulse. The Observer watches a placed/removed block with the output facing a Lamp; walking nearby is deliberately contrasted with changing the watched block. Recipe patterns, Observer signal direction and the twelve-block push limit are grounded in target 26.1.2 files/classes. Each chapter grants five XP at its conclusion and a cosmetic trophy. Existing content, progress, reward claims and protocol remain unchanged. Survival circuit validation and authentic circuit images remain open; the automatic door is a subsequent slice.
 

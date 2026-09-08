@@ -1,5 +1,11 @@
 # Playtest log
 
+## 2026-09-09 — Initial creature-reference batch
+
+Verification passed: 359 automated tests, native build and retained-pack validation/build. The read-only target-archive check passed for the critical conditional drops. All 55 earlier native chapter definitions compare unchanged; no player files were touched.
+
+User accepted Pistons, Observers and Automatic Door. New batch: three four-card chapters for farm animals, common Overworld monsters and Nether creatures. They become available after the existing course-completion introduction without requiring Redstone completion. Review all twelve cards in both languages. Select the fourth card first in each chapter: other cards must not lock it. Inventory possession must not complete a reading card. Confirming a card means only that it was read, not that a creature was killed or loot collected. There are no XP/item claims; the chapter trophy appears after all four cards are read. Check collapsed completed chapters, search, trophy inspection and persistence after restart. Existing progress is preserved. Further creature groups and Redstone circuit illustrations remain pending.
+
 ## Native Redstone three-chapter batch — Automatic Door added
 
 Verification passed: 356 automated tests, native build and retained-pack validation/build. All 54 prior native chapter definitions compare unchanged. The target recipes were inspected; automated content tests cover one-versus-two plates, early inventory recognition without bypassing prerequisites, separate practical confirmations, reward and trophy eligibility.
