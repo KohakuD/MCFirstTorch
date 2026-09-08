@@ -1,5 +1,9 @@
 # Playtest log
 
+## 2026-09-08 — Native End arrival and Crystal removal
+
+Previous Stronghold/Portal/End-preparation batch and owner screenshots accepted by the user. New in-game acceptance is pending: review all nine lessons and five images in both languages and pane widths; verify early End-entry detection, 63 versus 64 End Stone, sticky inventory completion, separate cage safety confirmation, optional roof bypass, two trophies and original one-time Cobblestone/Arrow/XP rewards. Restart and verify existing progress and claims. Use development completion for content review; test automatic detection separately without bypassing its objectives.
+
 ## 2026-09-08 — Owner's Iron Door and End Portal captures
 
 - Marked the real Stone Button to the right of the Iron Door using an orange frame/arrow; no scene repainting or brightness changes. Original captures are unchanged.

@@ -36,6 +36,8 @@ NeoForge play networking synchronises validated definitions and the executing pl
 
 ## Editing quests
 
+The native End-arrival batch adds six arrival/orientation lessons and three Crystal-removal lessons (39 chapters, 200 course quests, 240 tasks). Original quest, task and reward IDs and prerequisite edges are preserved. End entry uses `minecraft:end/root` / `entered_end`; the cage objective observes 64 End Stone separately from its practical manual check. Automatic objectives can be recorded before unlock, while prerequisites still gate completion and claiming. The optional Enderman roof does not gate the battlefield or Crystal chapter; the arrival trophy still requires every lesson including that branch. Five existing images are packaged unchanged, including the owner's battlefield capture. Both languages retain full lessons; world data, protocol and reward journals are unchanged.
+
 The native header shows a gold Chest action only when live data contains completed, prerequisite-unlocked, unclaimed rewards (including archived chapters and other loaded guides). Preview and unavailable state hide it. `/firsttorch claim_all` freezes the initial eligible quest IDs and uses the existing durable whole-quest payout for each. Inventory-full batches stay unclaimed while later fitting or XP-only batches can succeed; an unavailable payout stops the loop. A single final progress sync drives button visibility and the existing XP sound. Newly completed quests caused by received items are left for a subsequent click. This is per-quest safety, not one all-or-nothing transaction across the book.
 
 ### Local test completion

@@ -148,6 +148,16 @@ final class TrophyCatalogTest {
         assertTrue(TrophyCatalog.entries(guides, progress("5B0F14AD63E74BD3", "15F17869891E4CE0", "734140DAA3E544D2")).getFirst().earned());
     }
 
+    @Test void endMilestonesRemainIndependentAndRequireTheirOwnLessons() {
+        var guides = snapshot(chapter("779E4A06D1B58F4E", 37, "4EA3F5B18C604B09", "0CB72D9F6A4E29E8"),
+                chapter("7CC3F69B2840D572", 38, "71C628E4BF937E3D"));
+        var entries = TrophyCatalog.entries(guides, progress("4EA3F5B18C604B09", "71C628E4BF937E3D"));
+        assertEquals(2, entries.size());
+        assertFalse(entries.getFirst().earned());
+        assertTrue(entries.getLast().earned());
+        assertTrue(TrophyCatalog.entries(guides, progress("4EA3F5B18C604B09", "0CB72D9F6A4E29E8")).getFirst().earned());
+    }
+
     private static GuideSnapshot snapshot(ChapterDefinition... chapters) {
         return new GuideSnapshot(List.of(new GuideDefinition(
                 1, COURSE_ID, "guide.test.title", "guide.test.description", List.of(chapters))));

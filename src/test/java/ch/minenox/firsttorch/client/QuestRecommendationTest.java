@@ -225,6 +225,14 @@ final class QuestRecommendationTest {
         assertEquals("15E7C9A42B806DF3", QuestRecommendation.choose(snapshot, progress(done)).questId());
     }
 
+    @Test void crystalRouteTakesPriorityOverOptionalEndermanRoof() throws Exception {
+        var snapshot = course();
+        Set<String> done = new HashSet<>();
+        snapshot.guides().getFirst().chapters().stream().limit(38).flatMap(c -> c.quests().stream())
+                .filter(q -> !q.id().equals("0CB72D9F6A4E29E8")).forEach(q -> done.add(q.id()));
+        assertEquals("5FA406C29D715C1B", QuestRecommendation.choose(snapshot, progress(done)).questId());
+    }
+
     @Test void completedIronAndMiningRecommendFindingHome() throws Exception {
         var snapshot = course();
         Set<String> done = new HashSet<>();

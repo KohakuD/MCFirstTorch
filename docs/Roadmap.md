@@ -750,8 +750,10 @@ Acceptance convention (2026-09-08): the user confirms that previous "correct/goo
     - [x] Batch in-game acceptance: sixteen new quests, material thresholds, Stronghold arrival, separate practical checks, five images, three trophies and original rewards (user-confirmed 2026-09-08)
     - [x] Add sixteen Stronghold interior, portal-room safety and End-preparation quests in three compact chapters, preserving optional Library navigation
     - [x] Integrate the owner's Iron Door and End Portal captures, mark the Door Button and retain explicit Lava-safety guidance
-    - [ ] Batch in-game acceptance: sixteen quests, nine automatic inventory conditions, separate safety/respawn/activation checks, six images, three trophies and original rewards
-    - [ ] Continue with compact End-arrival and Crystal-removal chapters before the Dragon fight
+    - [x] Batch in-game acceptance: sixteen quests, nine automatic inventory conditions, separate safety/respawn/activation checks, six images including owner captures, three trophies and original rewards (user-confirmed 2026-09-08)
+    - [x] Add nine End-arrival and Crystal-removal quests in two compact chapters before the Dragon fight
+    - [ ] Batch in-game acceptance: nine quests, End-entry detection, 64 End Stone, separate cage confirmation, optional roof bypass, five images, two trophies and original rewards
+    - [ ] Continue with the Dragon fight, victory and safe return, keeping Dragon Egg retrieval optional
     - [ ] Migrate the optional Bastion exploration branch without adding a main-path gate
 
 The checked schema step provides data only: it does not complete tasks, grant rewards, or turn preview values into player progress.
