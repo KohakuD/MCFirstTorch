@@ -609,9 +609,10 @@ Implementation target: native 0.13.0-alpha.1; retained pack 0.9.1 remains unchan
 - [x] Add a bilingual practical chapter that unlocks after the guided course and remains optional
 - [x] Introduce Redstone Dust through a Lever-controlled Redstone Lamp before combining several components
 - [x] Teach buttons, Levers, Pressure Plates, signal strength, the fifteen-block range, and visible powered versus unpowered states
-- [ ] In-game acceptance: six introductory lessons, 19/20 Dust, component possession, switched Lamp, 15/16-Dust boundary, Button/Pressure Plate comparison, XP claims and trophy
-- [ ] Teach Repeaters for extending signals and creating deliberate delay
-- [ ] Teach Comparators through one observable container-fill example
+- [x] In-game acceptance: six introductory lessons, 19/20 Dust, component possession, switched Lamp, 15/16-Dust boundary, Button/Pressure Plate comparison, XP claims and trophy (user-confirmed)
+- [x] Teach Repeaters for extending signals and creating deliberate delay
+- [x] Teach Comparators through one observable container-fill example
+- [ ] In-game acceptance: eight Repeater/Comparator lessons, direction reversal, range restoration, deliberate delay, single-Chest 0/1/2 output, two rewards and trophies
 - [ ] Teach Pistons, Sticky Pistons, Observers, and their direction before using them in a machine
 - [ ] Build small isolated exercises first, then complete one safe automatic door and one simple farm helper or status display
 - [ ] Explain common failure cases such as wrong component direction, missing support blocks, unintended pulses, and machines left running

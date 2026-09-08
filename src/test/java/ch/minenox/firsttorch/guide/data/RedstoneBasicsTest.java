@@ -14,7 +14,7 @@ final class RedstoneBasicsTest {
 
     @Test void optionalChapterOpensAfterCourseWithoutGatingEarlierLessons() throws Exception {
         var chapters = snapshot().guides().getFirst().chapters();
-        var chapter = chapters.getLast();
+        var chapter = chapters.get(49);
         assertEquals("64EB7E13A0C85DFA", chapter.id());
         assertEquals(49, chapter.order());
         assertEquals(6, chapter.quests().size());
@@ -31,7 +31,7 @@ final class RedstoneBasicsTest {
 
     @Test void materialChecksStayAutomaticAndCircuitProofStaysManual() throws Exception {
         var snapshot = snapshot();
-        var quests = snapshot.guides().getFirst().chapters().getLast().quests();
+        var quests = snapshot.guides().getFirst().chapters().get(49).quests();
         assertEquals(List.of(1, 1, 2, 1, 1, 3), quests.stream().map(q -> q.tasks().size()).toList());
         var dust = quests.get(1).tasks().getFirst();
         assertEquals(TaskDefinition.Type.INVENTORY, dust.type());

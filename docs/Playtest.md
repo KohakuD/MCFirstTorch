@@ -1,5 +1,11 @@
 # Playtest log
 
+## Native Redstone signals — Repeaters and Comparators
+
+Verification passed: 349 automated tests, native build and retained-pack validation/build. A target-game SimpleContainer fixture confirms signals at 0, 1, 64, 123, 124 and 128 Cobblestone; the tutorial distinguishes the actual 124-item threshold from the convenient 128-item test. All 50 earlier chapter definitions compare unchanged. Practical in-game circuit verification is pending.
+
+The user accepted the first six Redstone lessons. New batch: two compact four-quest chapters following that optional branch. Verify both languages, automatic two-Repeater/material counts and the manual direction/range/delay exercises. Two Repeaters at minimum/maximum delay should show the stated nominal timing while the world runs; no free-running clock is built. For the Comparator use one ordinary single Chest, comparison mode and no side inputs: empty, one Cobblestone, 64 Cobblestone, then 128 in two full stacks. The last state powers the Lamp beyond two Dust; removing all items turns it off. Check reward claiming, both trophies and restart persistence. TEST completion cannot verify the built circuit. Circuit illustrations remain pending. No player data was reset.
+
 ## Native Redstone foundations — first six lessons
 
 Verification: 345 automated tests and native build passed, including compact-map arrow clearance, inventory thresholds, optional dependencies and trophy eligibility. Retained-pack validation/build passed; all earlier 49 native chapters compare unchanged. Target 26.1.2 recipe JSON and RedstoneWireEvaluator/BasePressurePlateBlock code ground the recipes, one-level-per-Dust decay and adjacent Lamp exercise. No in-game circuit verification is claimed.

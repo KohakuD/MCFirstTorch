@@ -218,6 +218,14 @@ final class TrophyCatalogTest {
         assertTrue(TrophyCatalog.entries(guides, progress(ids)).getFirst().earned());
     }
 
+    @Test void repeaterAndComparatorTrophiesAreIndependent() {
+        var guides = snapshot(chapter("65FC8F24B1D96E0B", 50, "11A0B0C0D0E00001", "11A0B0C0D0E00004"),
+                chapter("660D9035C2EA7F1C", 51, "12A0B0C0D0E00001", "12A0B0C0D0E00004"));
+        assertEquals(List.of(true, false), TrophyCatalog.entries(guides,
+                progress("11A0B0C0D0E00001", "11A0B0C0D0E00004", "12A0B0C0D0E00001"))
+                .stream().map(TrophyCatalog.Entry::earned).toList());
+    }
+
     private static GuideSnapshot snapshot(ChapterDefinition... chapters) {
         return new GuideSnapshot(List.of(new GuideDefinition(
                 1, COURSE_ID, "guide.test.title", "guide.test.description", List.of(chapters))));
