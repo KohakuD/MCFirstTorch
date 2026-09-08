@@ -1,5 +1,11 @@
 # Playtest log
 
+## Native Redstone motion — Pistons and Observers
+
+Verification passed: 353 tests, native build and retained-pack validation/build. Target-game Observer state fixtures verify powered/unpowered output on every direction; the target push limit is twelve. All 52 earlier chapter definitions compare unchanged. This is not a substitute for the physical push/pull/pulse exercises in a running world.
+
+The user accepted the Repeater/Comparator batch. New batch: two four-quest chapters after that optional path. Check both languages, component possession and distinct normal/sticky behaviour with one Cobblestone, a maintained Lever input and a clear horizontal lane. Check Observer face/output orientation, initial placement pulse settling, removing/replacing the watched block, walking without changing it, and the stable final state. Never connect the Observer exercise to the Piston yet; TEST completion does not verify the actual circuit. Claim each five-XP reward once, inspect both trophies and restart to verify progress. No world or reward data was reset. Authentic circuit illustrations remain pending.
+
 ## Native Redstone signals — Repeaters and Comparators
 
 Verification passed: 349 automated tests, native build and retained-pack validation/build. A target-game SimpleContainer fixture confirms signals at 0, 1, 64, 123, 124 and 128 Cobblestone; the tutorial distinguishes the actual 124-item threshold from the convenient 128-item test. All 50 earlier chapter definitions compare unchanged. Practical in-game circuit verification is pending.

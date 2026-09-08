@@ -63,7 +63,9 @@ public final class TrophyCatalog {
             Map.entry("63DA6D029FB74CE9", new Trophy("bastion", "minecraft:polished_blackstone_bricks")),
             Map.entry("64EB7E13A0C85DFA", new Trophy("redstone_basics", "minecraft:redstone_lamp")),
             Map.entry("65FC8F24B1D96E0B", new Trophy("redstone_repeaters", "minecraft:repeater")),
-            Map.entry("660D9035C2EA7F1C", new Trophy("redstone_comparators", "minecraft:comparator")));
+            Map.entry("660D9035C2EA7F1C", new Trophy("redstone_comparators", "minecraft:comparator")),
+            Map.entry("671EA146D3FB802D", new Trophy("redstone_pistons", "minecraft:sticky_piston")),
+            Map.entry("682FB257E40C913E", new Trophy("redstone_observers", "minecraft:observer")));
 
     private TrophyCatalog() {
     }

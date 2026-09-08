@@ -612,8 +612,9 @@ Implementation target: native 0.13.0-alpha.1; retained pack 0.9.1 remains unchan
 - [x] In-game acceptance: six introductory lessons, 19/20 Dust, component possession, switched Lamp, 15/16-Dust boundary, Button/Pressure Plate comparison, XP claims and trophy (user-confirmed)
 - [x] Teach Repeaters for extending signals and creating deliberate delay
 - [x] Teach Comparators through one observable container-fill example
-- [ ] In-game acceptance: eight Repeater/Comparator lessons, direction reversal, range restoration, deliberate delay, single-Chest 0/1/2 output, two rewards and trophies
-- [ ] Teach Pistons, Sticky Pistons, Observers, and their direction before using them in a machine
+- [x] In-game acceptance: eight Repeater/Comparator lessons, direction reversal, range restoration, deliberate delay, single-Chest 0/1/2 output, two rewards and trophies (user-confirmed)
+- [x] Teach Pistons, Sticky Pistons, Observers, and their direction before using them in a machine
+- [ ] In-game acceptance: eight Piston/Observer lessons, push versus pull, orientation, observed-block changes, stable versus pulsed signals, XP and trophies
 - [ ] Build small isolated exercises first, then complete one safe automatic door and one simple farm helper or status display
 - [ ] Explain common failure cases such as wrong component direction, missing support blocks, unintended pulses, and machines left running
 - [ ] Use exact Minecraft 26.1.2 textures and models for every circuit guide and verify each circuit in survival mode

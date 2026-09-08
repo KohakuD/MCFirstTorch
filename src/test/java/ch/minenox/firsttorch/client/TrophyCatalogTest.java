@@ -226,6 +226,14 @@ final class TrophyCatalogTest {
                 .stream().map(TrophyCatalog.Entry::earned).toList());
     }
 
+    @Test void pistonAndObserverTrophiesRemainIndependent() {
+        var guides = snapshot(chapter("671EA146D3FB802D", 52, "13A0B0C0D0E00001", "13A0B0C0D0E00004"),
+                chapter("682FB257E40C913E", 53, "14A0B0C0D0E00001", "14A0B0C0D0E00004"));
+        assertEquals(List.of(true, false), TrophyCatalog.entries(guides,
+                progress("13A0B0C0D0E00001", "13A0B0C0D0E00004", "14A0B0C0D0E00001"))
+                .stream().map(TrophyCatalog.Entry::earned).toList());
+    }
+
     private static GuideSnapshot snapshot(ChapterDefinition... chapters) {
         return new GuideSnapshot(List.of(new GuideDefinition(
                 1, COURSE_ID, "guide.test.title", "guide.test.description", List.of(chapters))));
