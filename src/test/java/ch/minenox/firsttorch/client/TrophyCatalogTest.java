@@ -109,6 +109,26 @@ final class TrophyCatalogTest {
     }
 
     @Test
+    void newSearchBatchExposesThreeIndependentCosmeticTrophies() {
+        var guides = snapshot(chapter("788FB257E40C913E", 31, "73FACD5A0D792B46"),
+                chapter("746B17D3AE825CF0", 32, "361FD38F593D07B4"),
+                chapter("7990C368F51DA24F", 33, "74DB8F5B15F9C370"));
+        var entries = TrophyCatalog.entries(guides, progress("361FD38F593D07B4", "74DB8F5B15F9C370"));
+        assertEquals(3, entries.size());
+        assertFalse(entries.getFirst().earned());
+        assertTrue(entries.get(1).earned());
+        assertTrue(entries.getLast().earned());
+    }
+
+    @Test
+    void brewingTrophyIsAvailableOnlyAfterItsChapterIsComplete() {
+        var guides = snapshot(chapter("735A06C29D714BE8", 30, "0A6417D3BE825CF9", "5620D39F7A4E18B5"));
+        assertEquals(1, TrophyCatalog.entries(guides, ProgressPayload.UNAVAILABLE).size());
+        assertFalse(TrophyCatalog.entries(guides, progress("0A6417D3BE825CF9")).getFirst().earned());
+        assertTrue(TrophyCatalog.entries(guides, progress("0A6417D3BE825CF9", "5620D39F7A4E18B5")).getFirst().earned());
+    }
+
+    @Test
     void fortressReturnTrophyNeedsAllThreeLessonsButNoRewardClaim() {
         GuideSnapshot guides = snapshot(chapter("777EA146D3FB802D", 29,
                 "5B0F14AD63E74BD3", "15F17869891E4CE0", "734140DAA3E544D2"));

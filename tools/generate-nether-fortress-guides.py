@@ -248,7 +248,7 @@ with ZipFile(JAR) as archive:
     # nether_fortress.png is the owner's approved, brightened in-game screenshot.
     # Never overwrite it with the former schematic illustration.
     create_hazards(blaze, wither, magma).save(OUT / "fortress_hazards.png", optimize=True)
-    create_spawner_scene(nether_bricks, spawner, blaze).save(OUT / "blaze_spawner.png", optimize=True)
+    # blaze_spawner.png is also an owner-supplied screenshot; preserve it.
     create_bastion_scene(blackstone, polished_bricks, cracked_bricks, gilded_blackstone).save(
         OUT / "bastion_remnant.png", optimize=True
     )

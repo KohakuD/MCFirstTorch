@@ -41,7 +41,11 @@ public final class TrophyCatalog {
             Map.entry("7249E5AFB61C7D28", new Trophy("piglin_barter", "minecraft:gold_ingot")),
             Map.entry("757CF824B1D96E0B", new Trophy("nether_resources", "minecraft:quartz")),
             Map.entry("766D0935C2EA7F1C", new Trophy("nether_fortress", "minecraft:nether_bricks")),
-            Map.entry("777EA146D3FB802D", new Trophy("fortress_return", "minecraft:brewing_stand")));
+            Map.entry("777EA146D3FB802D", new Trophy("fortress_return", "minecraft:brewing_stand")),
+            Map.entry("735A06C29D714BE8", new Trophy("brewing", "minecraft:brewing_stand")),
+            Map.entry("788FB257E40C913E", new Trophy("fire_resistance", "minecraft:fire_charge")),
+            Map.entry("746B17D3AE825CF0", new Trophy("ender_eyes", "minecraft:ender_eye")),
+            Map.entry("7990C368F51DA24F", new Trophy("stronghold_search", "minecraft:compass")));
 
     private TrophyCatalog() {
     }

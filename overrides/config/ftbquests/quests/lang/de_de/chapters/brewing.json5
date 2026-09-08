@@ -83,9 +83,9 @@
     "",
     "{image:firsttorch:textures/questpics/awkward_potion_brewing.png width:300 height:169 align:center}",
     "",
-    "Die drei Wasserflaschen heissen danach seltsame Tränke. Sie haben allein noch keine Wirkung, bilden aber die Grundlage für fast alle nützlichen Tränke. Nimm sie noch nicht heraus.",
+    "Die drei Wasserflaschen heissen danach seltsame Tränke. Sie haben allein noch keine Wirkung, bilden aber die Grundlage für fast alle nützlichen Tränke. Prüfe die Namen, nimm eine fertige Flasche ins Inventar und setze sie danach für den nächsten Schritt wieder unten ein.",
     "",
-    "Der erste abgeschlossene Brauvorgang wird automatisch über den Vanilla-Fortschritt erkannt.",
+    "Der Vanilla-Braufortschritt wird beim Herausnehmen einer Flasche erkannt, nicht allein beim Warten. Ein früher verdienter Fortschritt zählt ebenfalls. Er prüft weder die genaue Tranksorte noch drei Flaschen; kontrolliere deshalb selbst, dass alle drei seltsame Tränke sind.",
   ],
   "task.451FC28E693D07A4.title": "Schliesse erstmals einen Brauvorgang ab",
 

@@ -38,6 +38,8 @@ final class QuestRecommendation {
             if (byId.containsKey("07105D263E94F5A2")) pending.add("07105D263E94F5A2"); // Shared gateway, not optional barter.
             if (byId.containsKey("676BFD158DEB4F7F")) pending.add("676BFD158DEB4F7F");
             if (byId.containsKey("734140DAA3E544D2")) pending.add("734140DAA3E544D2");
+            if (byId.containsKey("5620D39F7A4E18B5")) pending.add("5620D39F7A4E18B5");
+            if (byId.containsKey("74DB8F5B15F9C370")) pending.add("74DB8F5B15F9C370"); // Fire Resistance and Bastions remain optional.
             if (byId.containsKey(IRON_GOAL)) pending.add(IRON_GOAL);
             if (byId.containsKey("26EC824FB71D3590")) pending.add("26EC824FB71D3590"); // Parallel renewable-food route.
             if (byId.containsKey("42F68D51B39E074C")) pending.add("42F68D51B39E074C"); // Animal care, independent of composting.

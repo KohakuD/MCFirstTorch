@@ -155,6 +155,17 @@ tasks.named('processResources', ProcessResources).configure {
         include 'assets/firsttorch/textures/questpics/nether_fortress.png'
         include 'assets/firsttorch/textures/questpics/fortress_hazards.png'
         include 'assets/firsttorch/textures/questpics/blaze_spawner.png'
+        include 'assets/firsttorch/textures/questpics/nether_wart_garden.png'
+        include 'assets/firsttorch/textures/questpics/blaze_powder_recipe.png'
+        include 'assets/firsttorch/textures/questpics/brewing_stand_recipe.png'
+        include 'assets/firsttorch/textures/questpics/glass_bottle_recipe.png'
+        include 'assets/firsttorch/textures/questpics/awkward_potion_brewing.png'
+        include 'assets/firsttorch/textures/questpics/strength_potion_brewing.png'
+        include 'assets/firsttorch/textures/questpics/magma_cream_recipe.png'
+        include 'assets/firsttorch/textures/questpics/fire_resistance_brewing.png'
+        include 'assets/firsttorch/textures/questpics/long_fire_resistance_brewing.png'
+        include 'assets/firsttorch/textures/questpics/ender_eye_recipe.png'
+        include 'assets/firsttorch/textures/questpics/ender_eye_search.png'
     }
 }
 neoForge.ideSyncTask generateModMetadata

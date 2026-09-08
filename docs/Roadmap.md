@@ -741,8 +741,15 @@ Acceptance convention (2026-09-08): the user confirms that previous "correct/goo
     - [x] In-game acceptance of Fortress equipment thresholds, three practical safety checks, illustrations and twenty-ninth trophy (user-confirmed 2026-09-08)
     - [x] Replace the Fortress schematic with the approved brightened screenshot and add five XP for discovery (user-confirmed 2026-09-08)
     - [x] Add three Blaze Rod, Nether Wart and safe Fortress return lessons with original thresholds and rewards
-    - [ ] In-game acceptance of two Rods, four Wart/four Soul Sand, manual safe return, illustration and thirtieth trophy
-    - [ ] Continue with brewing foundations; keep Bastion exploration optional
+    - [x] In-game acceptance of two Rods, four Wart/four Soul Sand, manual safe return, illustrations and thirtieth trophy (user-confirmed 2026-09-08)
+    - [x] Add and optimise the owner's Nether Wart and Blaze Spawner screenshots (user-confirmed 2026-09-08)
+    - [x] Add seven brewing-foundation lessons through the first Strength Potion, with five original images and rewards
+    - [x] In-game acceptance of brewing inventory thresholds, potion retrieval detection, practical checks, five images and thirty-first trophy (user-confirmed 2026-09-08)
+    - [x] Add four optional Fire Resistance lessons with source objectives, three illustrations and five XP
+    - [x] Add six Eye-supply lessons and six safe Stronghold-search lessons as separate compact chapters
+    - [ ] Batch in-game acceptance: sixteen new quests, material thresholds, Stronghold arrival, separate practical checks, five images, three trophies and original rewards
+    - [ ] Continue with compact Stronghold interior and portal-preparation chapters
+    - [ ] Migrate the optional Bastion exploration branch without adding a main-path gate
 
 The checked schema step provides data only: it does not complete tasks, grant rewards, or turn preview values into player progress.
 

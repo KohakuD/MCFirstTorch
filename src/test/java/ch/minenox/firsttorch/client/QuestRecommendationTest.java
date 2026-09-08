@@ -21,6 +21,28 @@ final class QuestRecommendationTest {
         assertEquals(expected, QuestRecommendation.choose(snapshot, progress(Set.of())).questId());
     }
 
+    @Test void eyesAndSearchContinueWithoutFireResistanceOrOptionalNetherBranches() throws Exception {
+        var snapshot = course();
+        Set<String> done = new HashSet<>();
+        snapshot.guides().getFirst().chapters().stream().limit(31)
+                .filter(c -> c.order() != 26 && c.order() != 27)
+                .flatMap(c -> c.quests().stream()).forEach(q -> done.add(q.id()));
+        done.add("07105D263E94F5A2");
+        assertEquals("0C7539E5BF936D1A", QuestRecommendation.choose(snapshot, progress(done)).questId());
+        snapshot.guides().getFirst().chapters().get(32).quests().forEach(q -> done.add(q.id()));
+        assertEquals("5A31E5B17B5F29D6", QuestRecommendation.choose(snapshot, progress(done)).questId());
+    }
+
+    @Test void brewingContinuesBeforeOptionalNetherBranches() throws Exception {
+        var snapshot = course();
+        Set<String> done = new HashSet<>();
+        snapshot.guides().getFirst().chapters().stream().limit(30)
+                .filter(c -> c.order() != 26 && c.order() != 27)
+                .flatMap(c -> c.quests().stream()).forEach(q -> done.add(q.id()));
+        done.add("07105D263E94F5A2");
+        assertEquals("0A6417D3BE825CF9", QuestRecommendation.choose(snapshot, progress(done)).questId());
+    }
+
     @Test void mainPathTakesPriorityOverOptionalMovement() throws Exception {
         var snapshot = course();
         Set<String> done = new HashSet<>();

@@ -83,9 +83,9 @@
     "",
     "{image:firsttorch:textures/questpics/awkward_potion_brewing.png width:300 height:169 align:center}",
     "",
-    "The three Water Bottles are now called Awkward Potions. They have no effect by themselves, but form the foundation for nearly every useful potion. Leave them in place for now.",
+    "The three Water Bottles are now called Awkward Potions. They have no effect by themselves, but form the foundation for nearly every useful potion. Check their names, take one finished bottle into your inventory, then put it back into a lower slot for the next step.",
     "",
-    "The first completed brewing operation is detected automatically through the Vanilla advancement.",
+    "The Vanilla brewing advancement is detected when you take a bottle out, not merely while waiting. A previously earned advancement also counts. It checks neither the exact potion type nor three bottles, so check for yourself that all three are Awkward Potions.",
   ],
   "task.451FC28E693D07A4.title": "Complete a brewing operation for the first time",
 

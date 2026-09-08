@@ -1,5 +1,29 @@
 # Playtest log
 
+## 2026-09-08 — Fire Resistance and Stronghold search batch
+
+- User accepted Brewing Foundations and requested larger content batches. Prior brewing acceptance notes are superseded.
+- Pending: review all 16 new lessons, both languages, five images, compact graphs and three trophies together.
+- Fire Resistance: one Magma Cream counts automatically; brewing/name/duration/storage checks remain manual. Verify the five-XP reward.
+- Eye Supplies: test 15 versus 16 Pearls, Powder and Eyes; both material branches must precede Eye completion. Keep observed materials long enough before crafting. Confirm physical storage separately; claim two Eyes and ten XP once.
+- Search: continue even with Fire Resistance, barter/resources and Bastions unfinished. Check first Eye throw, route narrowing and marked stair start separately. Prior/new Stronghold advancement must not confirm the secured entrance/surface return. Claim sixteen Torches and ten XP once after that exercise.
+- Restart and inspect preserved prior progress and reward state. No saves, settings or claim journals were reset.
+- Automated verification passed: 304 tests and native build, retained-pack validation, bilingual key/image checks, preserved historical IDs, and arrow clearance in both map widths. The Eye material fork is vertical to retain arrow spacing in reading mode.
+
+## 2026-09-08 — Brewing foundations (native)
+
+- User accepted the Fortress-return slice and the two improved screenshots; earlier pending notes for those deliveries are superseded.
+- Pending: inspect seven compact lessons, both languages, five half-width illustrations and the thirty-first trophy.
+- Check one/two Blaze Powder, zero/one Brewing Stand and two/three empty Glass Bottles. Keep the Stand and bottles in inventory long enough for observation before placing/filling them.
+- With no previous brewing advancement, take a finished potion out to trigger detection, then reinsert it for Strength. Existing vanilla progress must count without bypassing prerequisite/manual exercises.
+- Confirm water placement and drinking/inspecting Strength separately; claim three Redstone and ten XP once, restart and check persistence. Optional Nether branches remain optional; no saves were reset.
+
+## 2026-09-08 — Nether Wart and Blaze Spawner screenshots
+
+- Replaced the Spawner schematic and added the first Nether Wart garden image using the owner's new in-game captures. Applied only deterministic shadow brightening; source captures and player data are unchanged.
+- Both languages reference the full 2277 × 1353 assets; retained pack dimensions are 300 × 178. Native images stay half-width.
+- Pending: inspect brightness, captions, aspect ratio and scrolling in both affected quests after restarting the client.
+
 ## 2026-09-08 — Fortress resources and return (native)
 
 - User accepted the previous Fortress slice, approved screenshot and five-XP discovery reward. Earlier pending notes for those deliveries are superseded.

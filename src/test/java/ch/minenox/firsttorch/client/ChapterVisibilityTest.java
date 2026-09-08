@@ -17,6 +17,16 @@ import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 final class ChapterVisibilityTest {
+    @Test void brewingUnlocksOptionalFireResistanceAndEyeSuppliesTogether() throws Exception {
+        var visible = ChapterVisibility.visibleChapters(course(), available(quests("5620D39F7A4E18B5")))
+                .stream().map(ChapterDefinition::id).toList();
+        org.junit.jupiter.api.Assertions.assertTrue(visible.containsAll(List.of("788FB257E40C913E", "746B17D3AE825CF0")));
+        org.junit.jupiter.api.Assertions.assertFalse(visible.contains("7990C368F51DA24F"));
+        var prepared = ChapterVisibility.visibleChapters(course(), available(quests("361FD38F593D07B4")))
+                .stream().map(ChapterDefinition::id).toList();
+        org.junit.jupiter.api.Assertions.assertTrue(prepared.contains("7990C368F51DA24F"));
+    }
+
     @Test void animalsOpenFromBreadWithoutComposting() throws Exception {
         var chapters = ChapterVisibility.visibleChapters(course(), available(quests("26EC824FB71D3590")));
         org.junit.jupiter.api.Assertions.assertTrue(chapters.stream().anyMatch(c -> c.id().equals("1BD93F587CE4062A")));
