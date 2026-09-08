@@ -175,7 +175,7 @@ tasks.named('processResources', ProcessResources).configure {
         include 'assets/firsttorch/textures/questpics/stronghold_iron_door_capture.png'
         include 'assets/firsttorch/textures/questpics/end_portal_room_capture.png'
         include 'assets/firsttorch/textures/questpics/end_portal_active_capture.png'
-        include 'assets/firsttorch/textures/questpics/end_arrival_platform.png'
+        include 'assets/firsttorch/textures/questpics/end_arrival_platform_capture.png'
         include 'assets/firsttorch/textures/questpics/enderman_roof_shelter.png'
         include 'assets/firsttorch/textures/questpics/end_battlefield.png'
         include 'assets/firsttorch/textures/questpics/end_crystal_exposed.png'
