@@ -192,6 +192,17 @@ final class TrophyCatalogTest {
         assertTrue(TrophyCatalog.entries(guides, progress(all.toArray(String[]::new))).stream().allMatch(TrophyCatalog.Entry::earned));
     }
 
+    @Test void flightAndReadingTrophiesRequireOnlyTheirOwnChapters() {
+        var guides = snapshot(chapter("61B84BE07D952AC7", 44, "1000000000000001"),
+                chapter("62C95CF18EA63BD8", 45, "1000000000000002"),
+                chapter("6E095C883A1E5D3D", 46, "1000000000000003", "1000000000000004"));
+        assertEquals(List.of(true, true, false), TrophyCatalog.entries(guides,
+                progress("1000000000000001", "1000000000000002", "1000000000000003"))
+                .stream().map(TrophyCatalog.Entry::earned).toList());
+        assertTrue(TrophyCatalog.entries(guides, progress("1000000000000001", "1000000000000002",
+                "1000000000000003", "1000000000000004")).stream().allMatch(TrophyCatalog.Entry::earned));
+    }
+
     private static GuideSnapshot snapshot(ChapterDefinition... chapters) {
         return new GuideSnapshot(List.of(new GuideDefinition(
                 1, COURSE_ID, "guide.test.title", "guide.test.description", List.of(chapters))));

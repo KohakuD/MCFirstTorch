@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-08 — Native flight training and course completion
+
+Milk preparation correction accepted by the user. New batch: five first-flight lessons, four maintenance/travel lessons and seven closing/reference cards. Review both languages, two unchanged half-width images and all three compact maps. Check 63/64 Cobblestone, 7/8 Ladders, ingredients before crafting, 2/3 Rockets and 15/16 Rockets for travel. Item completion must never auto-confirm safe Rocket components, the built practice course, flight/landing or equipment routines. Rocket safety remains a manual check as explicitly described in the lesson. Verify the five original XP payouts (5/5/10/5/10), three independent quest-book trophies, and progress/claims after restart. The six optional reference cards open together after And Now; none requires a structure visit or blocks another card. Development completion accelerates content review but cannot validate the actual practice routine.
+
+After this migration only fourteen retained quests remain: seven optional mob-drop lessons and seven optional Bastion lessons. Native multiplayer parity and other release requirements remain separate from curriculum migration.
+
+Verified: 337 native tests and native build pass. Retained-pack validation/build pass with 739 stable source object IDs and six pinned dependencies. Regression tests cover original IDs/rewards, material and Rocket thresholds, manual safety separation, independent final reading, recommendation priority, trophies and packaged image dimensions. In-game acceptance of this batch remains pending.
+
 ## 2026-09-08 — Pack milk before the second End journey
 
 User found that milk was first required at the End City, too late for normal preparation. Added an automatic Milk Bucket objective to the earlier second-visit packing lesson in native and retained content, with bilingual separate-Bucket/cow instructions. Existing completed packing quests and claims remain untouched. Pending: on an unfinished packing quest, verify that Pearls and End Stone alone are insufficient, a filled Milk Bucket completes only its item objective, and manual packing confirmation is still separate. Inspect the revised End City fallback to the Overworld; no cow is implied on the main End island. No quest progress was reset.

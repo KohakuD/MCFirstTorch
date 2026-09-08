@@ -257,6 +257,11 @@ final class QuestRecommendationTest {
         snapshot.guides().getFirst().chapters().get(43).quests().stream().limit(4).forEach(q -> done.add(q.id()));
         assertEquals("7AC2CFDD99167DA0", QuestRecommendation.choose(snapshot, progress(done)).questId());
         done.add("7AC2CFDD99167DA0");
+        assertEquals("7E16D835774FBB8B", QuestRecommendation.choose(snapshot, progress(done)).questId());
+        snapshot.guides().getFirst().chapters().subList(44, 46).stream().flatMap(c -> c.quests().stream())
+                .forEach(q -> done.add(q.id()));
+        assertEquals("3C3122DF5C0EA192", QuestRecommendation.choose(snapshot, progress(done)).questId());
+        done.add("3C3122DF5C0EA192");
         assertEquals("2350AB7D48C217D7", QuestRecommendation.choose(snapshot, progress(done)).questId());
     }
 
