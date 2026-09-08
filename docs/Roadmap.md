@@ -632,6 +632,8 @@ Implementation target remains native 0.13.0-alpha.1. The initial three-chapter b
 - [x] In-game acceptance: expanded nine-card animal grid, new care text in both languages, preserved old readings and updated trophy eligibility (user-confirmed 2026-09-09; 17 reference cards)
 
 - [x] Implement three more four-card reference chapters for End/approach, aquatic life and special encounters (29 cards total)
+- [ ] Add requested Witch, Breeze, Bogged, Creaking and Goat reading cards; explain Trial Chambers and Pale Garden context without combat requirements (requested 2026-09-09)
+- [x] Fix the Turtle reference icon to the target-version Turtle Scute item ID instead of the obsolete scute ID
 - [ ] In-game acceptance: twelve new cards, independent reading, translated safety references, three trophies and restart persistence
 
 - [x] Add bilingual optional reference chapters separate from the guided lesson sequence

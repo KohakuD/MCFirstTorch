@@ -10,6 +10,14 @@ import net.minecraft.network.FriendlyByteBuf;
 import org.junit.jupiter.api.Test;
 
 final class QuestIconTest {
+    @Test void turtleReferenceUsesCurrentScuteIdentifier() throws Exception {
+        try (var input = getClass().getResourceAsStream("/data/firsttorch/guides/course.json")) {
+            var turtle = GuideJson.read(input).chapters().stream().flatMap(c -> c.quests().stream())
+                    .filter(q -> q.id().equals("1AA0B0C0D0E00004")).findFirst().orElseThrow();
+            assertEquals("minecraft:turtle_scute", turtle.iconItemId());
+        }
+    }
+
     @Test void bundledIconsUseOriginalVanillaItemsAndRoundTrip() throws Exception {
         try (var input = getClass().getResourceAsStream("/data/firsttorch/guides/course.json")) {
             var guide = GuideJson.read(input);
