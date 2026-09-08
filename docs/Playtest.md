@@ -1,5 +1,9 @@
 # Playtest log
 
+## 2026-09-08 — Native outer-island arrival
+
+Dragon-victory batch accepted by the user. Pending: review five new lessons and both images in both languages and widths. Test three/four Pearls and 63/64 End Stone; packing must still require its manual check. Test genuine Gateway entry separately from ordinary End entry and development completion. Automatic entry must not certify access construction or secured arrival. Check continuation without the optional Dragon Egg, the new trophy, and progress after restart.
+
 ## 2026-09-08 — Native Dragon victory and return
 
 The preceding End-arrival/Crystal batch and owner's arrival screenshot are user-accepted. New acceptance pending: review six lessons and four images in both languages and map widths; verify actual Dragon defeat and Egg pickup detection separately from development test completion; verify earlier advancements stick but cannot bypass manual combat practice. Confirm return without retrieving the optional Egg, inspect the chapter trophy after all six lessons, and reconnect to check preserved progress and reward claims. No extra quest payouts are added to the source's vanilla victory rewards.

@@ -754,8 +754,10 @@ Acceptance convention (2026-09-08): the user confirms that previous "correct/goo
     - [x] Add nine End-arrival and Crystal-removal quests in two compact chapters before the Dragon fight
     - [x] Batch in-game acceptance: nine quests, End-entry detection, 64 End Stone, separate cage confirmation, optional roof bypass, five images including the owner's arrival capture, two trophies and original rewards (user-confirmed 2026-09-08)
     - [x] Add six Dragon fight, victory and safe-return quests, keeping Dragon Egg retrieval optional
-    - [ ] In-game acceptance: six lessons, Dragon and Egg detection, optional Egg bypass, four images and chapter trophy
-    - [ ] Continue with the second End visit, Gateway access and safe outer-island arrival
+    - [x] In-game acceptance: six lessons, Dragon and Egg detection, optional Egg bypass, four images and chapter trophy (user-confirmed 2026-09-08)
+    - [x] Add five second-visit, Gateway access and safe outer-island arrival lessons
+    - [ ] In-game acceptance: five lessons, four-Pearl/64-End-Stone thresholds, Gateway detection, separate safety checks, two images and trophy
+    - [ ] Continue with Chorus harvesting, island crossing and the End City search
     - [ ] Migrate the optional Bastion exploration branch without adding a main-path gate
 
 The checked schema step provides data only: it does not complete tasks, grant rewards, or turn preview values into player progress.

@@ -167,6 +167,14 @@ final class TrophyCatalogTest {
         assertTrue(TrophyCatalog.entries(guides, progress(victory)).getFirst().earned());
     }
 
+    @Test void gatewayArrivalTrophyRequiresAllFiveLessons() {
+        String[] gateway = {"6794EFB18C065B1B", "3BD823F5C04A9F5F", "5DFA4517E26CB171",
+                "7F1C6739048ED393", "213E895B26A0F5B5"};
+        var guides = snapshot(chapter("78AF5B17E2C6904D", 40, gateway));
+        assertFalse(TrophyCatalog.entries(guides, progress(java.util.Arrays.copyOf(gateway, 4))).getFirst().earned());
+        assertTrue(TrophyCatalog.entries(guides, progress(gateway)).getFirst().earned());
+    }
+
     private static GuideSnapshot snapshot(ChapterDefinition... chapters) {
         return new GuideSnapshot(List.of(new GuideDefinition(
                 1, COURSE_ID, "guide.test.title", "guide.test.description", List.of(chapters))));
