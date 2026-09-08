@@ -1,5 +1,11 @@
 # Playtest log
 
+## 2026-09-09 — First unusual-mechanics batch
+
+Automated verification: all 369 tests and the native mod build pass; retained-pack validation/build pass separately. Target 26.1.2 recipe, harvest and icon checks pass. All 62 previous chapter definitions are structurally unchanged. The course now has 65 chapters, 327 quests and 414 tasks. In-game review of the new cards and physical experiments remains pending.
+
+User accepted the five requested creature cards and Turtle Scute icon. New pending batch: block transformations (Concrete Powder, Mud, Wet Sponge), name effects (Dinnerbone/Grumm, jeb_, Toast), Bees/Honey (pollination, Honey Bottle, Honeycomb). Check all nine English/German reading cards, three compact maps and book-only trophies. Each card must be independently readable after the common course introduction; the optional experiment is never required for the checkmark. Do not spend Name Tags or provoke Bees just to test completion. If voluntarily testing the experiments, use safe home-ground setups; preserve original Sheep colour and exact name casing. Existing readings and reward claims must survive reopening and restart. No player/world files are modified.
+
 ## 2026-09-09 — Requested creature additions and Turtle icon
 
 Verification passed: 365 automated tests, native build, retained-pack validation/build and target-archive loot/icon checks. All previous 313 quest definitions remain unchanged. Tests cover independent manual reading and expanded/new trophy eligibility; German names were checked against the target language asset. In-game review remains pending.

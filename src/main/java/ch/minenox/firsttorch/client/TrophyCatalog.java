@@ -73,7 +73,10 @@ public final class TrophyCatalog {
             Map.entry("6D7407AC3951E683", new Trophy("field_end", "minecraft:ender_pearl")),
             Map.entry("6E8518BD4A62F794", new Trophy("field_water", "minecraft:ink_sac")),
             Map.entry("6F9629CE5B7308A5", new Trophy("field_special", "minecraft:honeycomb")),
-            Map.entry("70A7B8C9D0E1F203", new Trophy("field_chambers_garden", "minecraft:breeze_rod")));
+            Map.entry("70A7B8C9D0E1F203", new Trophy("field_chambers_garden", "minecraft:breeze_rod")),
+            Map.entry("71B8C9D0E1F20314", new Trophy("mechanics_blocks", "minecraft:white_concrete")),
+            Map.entry("72C9D0E1F2031425", new Trophy("mechanics_names", "minecraft:name_tag")),
+            Map.entry("73D0E1F203142536", new Trophy("mechanics_bees", "minecraft:honey_bottle")));
 
     private TrophyCatalog() {
     }

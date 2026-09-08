@@ -633,7 +633,7 @@ Implementation target remains native 0.13.0-alpha.1. The initial three-chapter b
 
 - [x] Implement three more four-card reference chapters for End/approach, aquatic life and special encounters (29 cards total)
 - [x] Add requested Witch, Breeze, Bogged, Creaking and Goat reading cards; explain Trial Chambers and Pale Garden context without combat requirements (34 reference cards total)
-- [ ] In-game acceptance: five requested cards across Animals, Overworld monsters and Trial Chambers/Pale Garden; expanded trophies, preserved readings and Turtle Scute icon
+- [x] In-game acceptance: five requested cards across Animals, Overworld monsters and Trial Chambers/Pale Garden; expanded trophies, preserved readings and Turtle Scute icon (user-confirmed 2026-09-09)
 - [x] Fix the Turtle reference icon to the target-version Turtle Scute item ID instead of the obsolete scute ID
 - [ ] In-game acceptance: twelve new cards, independent reading, translated safety references, three trophies and restart persistence
 
@@ -648,7 +648,12 @@ Implementation target remains native 0.13.0-alpha.1. The initial three-chapter b
 
 ## 0.12.0 — Discoverable Secrets and Unusual Mechanics
 
-- [ ] Add a bilingual optional reference chapter for useful mechanics that ordinary play rarely explains clearly
+First implementation batch inside native 0.13.0-alpha.1: three optional three-card chapters for block transformations, harmless name effects, and Bees/Honey. Older creature-reference cross-links and Redstone illustrations remain separate open items.
+
+- [x] Implement the first nine bilingual cards with independent reading tasks and book-only trophies
+- [ ] In-game acceptance: all nine cards, exact name spelling, safe optional experiments, independent trophies and persistence
+
+- [x] Add a bilingual optional reference chapter for useful mechanics that ordinary play rarely explains clearly (first three chapters)
 - [ ] Cover selected transformation mechanics, unusual item interactions, name-dependent behaviours, archaeology rules, music-disc conditions, bee and pollination details, Villager curing, and other high-value discoveries
 - [ ] Separate practical hints from deliberate surprises so the reference remains useful without spoiling every discovery
 - [ ] Give each card a short trigger, observable result, danger note where needed, and one safe experiment
