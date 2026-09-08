@@ -16,7 +16,7 @@ final class GatewayArrivalBatchTest {
             "6794EFB18C065B1B", "3BD823F5C04A9F5F", "5DFA4517E26CB171",
             "7F1C6739048ED393", "213E895B26A0F5B5");
     private static final List<String> TASKS = List.of(
-            "08A5F0C29D176C2C", "19B601D3AE287D3D", "2AC712E4BF398E4E",
+            "08A5F0C29D176C2C", "19B601D3AE287D3D", "30D823F5C04A9F60", "2AC712E4BF398E4E",
             "4CE93406D15BA060", "6E0B5628F37DC282", "102D784A159FE4A4",
             "324F9A6C37B106C6");
 
@@ -30,7 +30,7 @@ final class GatewayArrivalBatchTest {
         for (int index = 1; index < QUESTS.size(); index++) {
             assertEquals(List.of(QUESTS.get(index - 1)), chapter.quests().get(index).prerequisiteQuestIds());
         }
-        assertEquals(List.of(TaskDefinition.Type.INVENTORY, TaskDefinition.Type.INVENTORY, TaskDefinition.Type.MANUAL,
+        assertEquals(List.of(TaskDefinition.Type.INVENTORY, TaskDefinition.Type.INVENTORY, TaskDefinition.Type.INVENTORY, TaskDefinition.Type.MANUAL,
                         TaskDefinition.Type.MANUAL, TaskDefinition.Type.MANUAL, TaskDefinition.Type.ADVANCEMENT,
                         TaskDefinition.Type.MANUAL),
                 chapter.quests().stream().flatMap(q -> q.tasks().stream()).map(TaskDefinition::type).toList());
@@ -43,22 +43,42 @@ final class GatewayArrivalBatchTest {
         var arrival = snapshot.guides().getFirst().chapters().get(40).quests().getFirst();
         var pearls = arrival.tasks().get(0);
         var endStone = arrival.tasks().get(1);
+        var milk = arrival.tasks().get(2);
         assertEquals("minecraft:ender_pearl", pearls.itemId());
         assertEquals(4, pearls.count());
         assertEquals("minecraft:end_stone", endStone.itemId());
         assertEquals(64, endStone.count());
+        assertEquals("minecraft:milk_bucket", milk.itemId());
+        assertEquals(1, milk.count());
         var early = TaskEvaluator.evaluate(snapshot, new ProgressState(Set.of(), Set.of("4572CD9F6AE439F9")), key ->
                 key.equals(pearls.inventoryKey()) ? 3 : key.equals(endStone.inventoryKey()) ? 63 : 0);
         assertFalse(early.completedTaskIds().contains(pearls.id()));
         assertFalse(early.completedTaskIds().contains(endStone.id()));
+        assertFalse(early.completedTaskIds().contains(milk.id()));
         var supplied = TaskEvaluator.evaluate(snapshot, early, key ->
                 key.equals(pearls.inventoryKey()) ? 4 : key.equals(endStone.inventoryKey()) ? 64 : 0);
         assertTrue(supplied.completedTaskIds().containsAll(Set.of(pearls.id(), endStone.id())));
+        assertFalse(supplied.completedTaskIds().contains(milk.id()));
         assertEquals(supplied, TaskEvaluator.evaluate(snapshot, supplied, key -> 0));
         assertFalse(supplied.completedQuestIds().contains(arrival.id()));
         assertThrows(IllegalArgumentException.class, () -> TaskEvaluator.confirm(snapshot, supplied, arrival.id(), pearls.id(), key -> 4));
-        assertTrue(TaskEvaluator.confirm(snapshot, supplied, arrival.id(), TASKS.get(2), key -> 0)
-                .completedQuestIds().contains(arrival.id()));
+        var manuallyReady = TaskEvaluator.confirm(snapshot, supplied, arrival.id(), TASKS.get(3), key -> 0);
+        assertFalse(manuallyReady.completedQuestIds().contains(arrival.id()));
+        var complete = TaskEvaluator.evaluate(snapshot, manuallyReady, key -> key.equals(milk.inventoryKey()) ? 1 : 0);
+        assertTrue(complete.completedTaskIds().contains(milk.id()));
+        assertTrue(complete.completedQuestIds().contains(arrival.id()));
+    }
+
+    @Test
+    void existingCompletedPreparationSurvivesTheNewMilkObjective() throws Exception {
+        var snapshot = snapshot();
+        var arrival = snapshot.guides().getFirst().chapters().get(40).quests().getFirst();
+        var persisted = new ProgressState(Set.of("08A5F0C29D176C2C", "19B601D3AE287D3D", "2AC712E4BF398E4E"),
+                Set.of(arrival.id()));
+        var evaluated = TaskEvaluator.evaluate(snapshot, persisted, key -> 0);
+        assertTrue(evaluated.completedQuestIds().contains(arrival.id()));
+        assertTrue(evaluated.completedTaskIds().contains("2AC712E4BF398E4E"));
+        assertFalse(evaluated.completedTaskIds().contains("30D823F5C04A9F60"));
     }
 
     @Test

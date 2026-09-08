@@ -760,6 +760,8 @@ Acceptance convention (2026-09-08): the user confirms that previous "correct/goo
     - [x] Add five second-visit, Gateway access and safe outer-island arrival lessons
     - [x] In-game acceptance: five lessons, four-Pearl/64-End-Stone thresholds, Gateway detection, separate safety checks, two images and trophy (user-confirmed 2026-09-08)
     - [x] Add seventeen Chorus, End City, Shulker and End Ship lessons in three compact chapters with original IDs, rewards, six existing images and three trophies
+    - [x] Require a separate Milk Bucket in second-visit preparation before End entry; retain the later city reminder and explain the Overworld fallback in both languages
+    - [ ] In-game acceptance of the earlier Milk Bucket check and revised preparation text (existing completed quests remain preserved)
     - [ ] Batch in-game acceptance: seventeen lessons, inventory thresholds, End City detection, separate practical checks, seven image placements, original XP rewards and Elytra home return
     - [ ] Continue with the nine Elytra flight lessons and seven final independent-exploration lessons
     - [ ] Migrate the seven optional mob-drop lessons without adding a main-path gate

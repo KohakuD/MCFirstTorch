@@ -1,5 +1,9 @@
 # Playtest log
 
+## 2026-09-08 — Pack milk before the second End journey
+
+User found that milk was first required at the End City, too late for normal preparation. Added an automatic Milk Bucket objective to the earlier second-visit packing lesson in native and retained content, with bilingual separate-Bucket/cow instructions. Existing completed packing quests and claims remain untouched. Pending: on an unfinished packing quest, verify that Pearls and End Stone alone are insufficient, a filled Milk Bucket completes only its item objective, and manual packing confirmation is still separate. Inspect the revised End City fallback to the Overworld; no cow is implied on the main End island. No quest progress was reset.
+
 ## 2026-09-08 — Native End City three-chapter batch
 
 The five outer-arrival lessons are user-accepted. This supersedes their pending note below. User requests multi-chapter deliveries until all retained quests are migrated.

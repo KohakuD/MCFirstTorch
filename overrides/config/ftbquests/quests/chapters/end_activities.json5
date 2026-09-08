@@ -30,6 +30,12 @@
           count: 64,
           item: { id: "minecraft:end_stone", count: 1 },
         },
+        {
+          id: "30D823F5C04A9F60",
+          type: "item",
+          count: 1,
+          item: { id: "minecraft:milk_bucket", count: 1 },
+        },
         { id: "2AC712E4BF398E4E", type: "checkmark" },
       ],
     },
