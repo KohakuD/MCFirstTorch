@@ -12,7 +12,7 @@ final class ChapterSplitTest {
     @Test void keepsSmallThematicChaptersAndAllExistingCompletionIds() throws Exception {
         try (var input = getClass().getResourceAsStream("/data/firsttorch/guides/course.json")) {
             var guide = GuideJson.read(input);
-            assertEquals(List.of(8, 5, 5, 8, 6, 6, 5, 6, 6, 5, 4, 2, 6, 3, 6, 5, 6, 4, 6, 6, 6, 3, 5, 6, 4, 5, 4, 4, 4), guide.chapters().stream().map(c -> c.quests().size()).toList());
+            assertEquals(List.of(8, 5, 5, 8, 6, 6, 5, 6, 6, 5, 4, 2, 6, 3, 6, 5, 6, 4, 6, 6, 6, 3, 5, 6, 4, 5, 4, 4, 4, 3), guide.chapters().stream().map(c -> c.quests().size()).toList());
             assertEquals("01F57C0E3B9D2468", guide.chapters().get(1).id());
             assertEquals(List.of("7B83D5F920C4160E", "56CA245D80EB7913", "46B7D91E2A5C803F", "1064CEF72A8513BD", "3286E0194CA735DF"),
                     guide.chapters().get(2).quests().stream().map(q -> q.id()).toList());

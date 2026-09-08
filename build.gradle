@@ -154,6 +154,7 @@ tasks.named('processResources', ProcessResources).configure {
         include 'assets/firsttorch/textures/questpics/piglin_comparison.png'
         include 'assets/firsttorch/textures/questpics/nether_fortress.png'
         include 'assets/firsttorch/textures/questpics/fortress_hazards.png'
+        include 'assets/firsttorch/textures/questpics/blaze_spawner.png'
     }
 }
 neoForge.ideSyncTask generateModMetadata

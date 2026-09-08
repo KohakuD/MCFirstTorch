@@ -245,9 +245,8 @@ with ZipFile(JAR) as archive:
     cracked_bricks = asset(archive, "assets/minecraft/textures/block/cracked_polished_blackstone_bricks.png")
     gilded_blackstone = asset(archive, "assets/minecraft/textures/block/gilded_blackstone.png")
 
-    fortress = framed_background()
-    add_fortress_scene(fortress, nether_bricks)
-    fortress.save(OUT / "nether_fortress.png", optimize=True)
+    # nether_fortress.png is the owner's approved, brightened in-game screenshot.
+    # Never overwrite it with the former schematic illustration.
     create_hazards(blaze, wither, magma).save(OUT / "fortress_hazards.png", optimize=True)
     create_spawner_scene(nether_bricks, spawner, blaze).save(OUT / "blaze_spawner.png", optimize=True)
     create_bastion_scene(blackstone, polished_bricks, cracked_bricks, gilded_blackstone).save(

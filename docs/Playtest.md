@@ -1,5 +1,23 @@
 # Playtest log
 
+## 2026-09-08 — Fortress resources and return (native)
+
+- User accepted the previous Fortress slice, approved screenshot and five-XP discovery reward. Earlier pending notes for those deliveries are superseded.
+- Pending: inspect the three-quest chapter in both languages and widths, including its illustration and thirtieth trophy.
+- Test one versus two Blaze Rods, three versus four Nether Wart/Soul Sand, and early item detection without bypassing prerequisites. Item possession must not confirm the separate safe return and planted farm.
+- Claim 16 Cobblestone and ten XP once after returning; verify restart persistence and continuation despite unfinished optional Nether branches. No world data was reset.
+
+## 2026-09-08 — Fortress discovery reward
+
+- User accepted the brightened screenshot and requested a small reward for discovery.
+- Added five XP points to the native discovery quest. Pending: claim from a newly or previously completed quest, verify five points and no repeat payout. No world data changed.
+
+## 2026-09-08 — Approved Fortress screenshot
+
+- User selected the brightened original screenshot without added creatures, replacing the schematic Fortress illustration.
+- Original capture: `2026-09-08_15.13.05.png`, 2277 × 1353. Original screenshot and world data remain untouched.
+- Pending in-game: inspect the half-width image and its caption in the Fortress search lesson; check scrolling and undistorted proportions.
+
 ## 2026-09-08 — Fortress preparation (native)
 
 - Optional Nether resources accepted by the user. No world data changed.

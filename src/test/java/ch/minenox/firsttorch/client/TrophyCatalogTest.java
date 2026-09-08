@@ -108,6 +108,16 @@ final class TrophyCatalogTest {
         return new ProgressPayload(new ProgressState(Set.of(), Set.of(completedQuests)), Map.of(), true);
     }
 
+    @Test
+    void fortressReturnTrophyNeedsAllThreeLessonsButNoRewardClaim() {
+        GuideSnapshot guides = snapshot(chapter("777EA146D3FB802D", 29,
+                "5B0F14AD63E74BD3", "15F17869891E4CE0", "734140DAA3E544D2"));
+        var partial = TrophyCatalog.entries(guides, progress("5B0F14AD63E74BD3", "15F17869891E4CE0"));
+        assertEquals(1, partial.size());
+        assertFalse(partial.getFirst().earned());
+        assertTrue(TrophyCatalog.entries(guides, progress("5B0F14AD63E74BD3", "15F17869891E4CE0", "734140DAA3E544D2")).getFirst().earned());
+    }
+
     private static GuideSnapshot snapshot(ChapterDefinition... chapters) {
         return new GuideSnapshot(List.of(new GuideDefinition(
                 1, COURSE_ID, "guide.test.title", "guide.test.description", List.of(chapters))));

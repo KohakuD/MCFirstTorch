@@ -76,6 +76,10 @@ The server now evaluates inventory and advancement tasks once every 20 player ti
 
 ### First native curriculum slice
 
+Fortress Resources and Return adds three source lessons after Fortress enemy safety: two Blaze Rods, four Nether Wart plus four Soul Sand, and a separate manually confirmed safe return and planting exercise. Original quest/task/reward IDs are retained. The course now has 30 chapters, 152 quests and 184 tasks. Inventory observations can complete early but cannot bypass prerequisite gates or prove the homecoming. The original final reward is 16 Cobblestone and ten exact XP points. Main-path recommendations continue here before optional barter/resources. The thirtieth trophy is quest-book-only; no world data, claims, schema or protocol changes.
+
+User-requested reward adjustment: native Fortress discovery (`73B2B39D1C674728`) now grants five exact XP points under reward ID `277EA146D3FB802D`. This is an intentional native addition beyond the retained source pack, not a regenerated quest/task ID. It uses normal one-time manual claiming; already completed, previously rewardless quests can claim it without a progress reset. No reward journals are rewritten.
+
 Nether Fortress Preparation adds four source lessons with nine tasks: equipment, locating a Fortress, establishing retreat cover and enemy safety. The course now has 29 chapters, 149 quests and 180 tasks. Five inventory objectives reuse the exact Sword/Pickaxe/food tags with one Sword, one Pickaxe, one Shield, 64 Cobblestone and 16 foods. Physical equipment must be checked again because objective completion is sticky. Four distinct manual checks remain explicit. The chapter opens from the activity introduction without barter or resource completion; its final safety lesson is the new main-path recommendation endpoint. Source rewards remain empty; the twenty-ninth trophy is cosmetic. Blaze Rods, Wart and safe return form the next slice. Player state and protocol are unchanged.
 
 First Nether Resources adds four optional source lessons: safe material planning, sixteen Netherrack, four Quartz and a manual return. The course now has 28 chapters, 145 quests and 171 tasks. Both inventory checks are automatic and sticky; possession does not prove a safe excavation or return. The branch opens directly from the shared activity introduction, independently of Piglin barter, and does not become a main-path recommendation endpoint. Original eight-Cobblestone/five-XP rewards and all stable IDs are retained. The twenty-eighth trophy is quest-book-only; images, saves and protocol are unchanged.
@@ -195,6 +199,8 @@ Each player-facing change must update both:
 Run the validator to catch missing keys.
 
 ## Guide artwork
+
+`nether_fortress.png` now uses the owner's `2026-09-08_15.13.05.png` screenshot (2277 × 1353). The approved clean variant lifts shadows with the per-channel transform `min(1, (channel / 255)^0.72 * 1.06)`; no scene geometry, textures or creatures were added. The original remains in the local screenshots folder. Native metadata preserves the full aspect ratio; the retained pack uses 300 × 178. The old Fortress generator no longer overwrites this asset. The creature-composite preview was not selected or shipped.
 
 When a guide image depicts a Minecraft item, block, entity, or interface, render it from the exact textures and models shipped with the targeted Minecraft version. Do not approximate or generatively redraw game content. Constructed frames, arrows, measurements, and other explanatory overlays are allowed around those original assets.
 

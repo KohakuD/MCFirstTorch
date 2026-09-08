@@ -40,7 +40,8 @@ public final class TrophyCatalog {
             Map.entry("746BE713A0C85DFA", new Trophy("nether_safety", "minecraft:fire_charge")),
             Map.entry("7249E5AFB61C7D28", new Trophy("piglin_barter", "minecraft:gold_ingot")),
             Map.entry("757CF824B1D96E0B", new Trophy("nether_resources", "minecraft:quartz")),
-            Map.entry("766D0935C2EA7F1C", new Trophy("nether_fortress", "minecraft:nether_bricks")));
+            Map.entry("766D0935C2EA7F1C", new Trophy("nether_fortress", "minecraft:nether_bricks")),
+            Map.entry("777EA146D3FB802D", new Trophy("fortress_return", "minecraft:brewing_stand")));
 
     private TrophyCatalog() {
     }

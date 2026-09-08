@@ -738,8 +738,11 @@ Acceptance convention (2026-09-08): the user confirms that previous "correct/goo
     - [x] Add four optional first-Nether-resource lessons directly from the shared introduction
     - [x] In-game acceptance of sixteen Netherrack/four Quartz, independent branch, manual return and twenty-eighth trophy (user-confirmed 2026-09-08)
     - [x] Add four Fortress preparation, search, retreat-point and enemy-safety lessons directly from the shared introduction
-    - [ ] In-game acceptance of Fortress equipment thresholds, three practical safety checks, illustrations and twenty-ninth trophy
-    - [ ] Continue with Blaze Rods, Nether Wart and safe Fortress return
+    - [x] In-game acceptance of Fortress equipment thresholds, three practical safety checks, illustrations and twenty-ninth trophy (user-confirmed 2026-09-08)
+    - [x] Replace the Fortress schematic with the approved brightened screenshot and add five XP for discovery (user-confirmed 2026-09-08)
+    - [x] Add three Blaze Rod, Nether Wart and safe Fortress return lessons with original thresholds and rewards
+    - [ ] In-game acceptance of two Rods, four Wart/four Soul Sand, manual safe return, illustration and thirtieth trophy
+    - [ ] Continue with brewing foundations; keep Bastion exploration optional
 
 The checked schema step provides data only: it does not complete tasks, grant rewards, or turn preview values into player progress.
 

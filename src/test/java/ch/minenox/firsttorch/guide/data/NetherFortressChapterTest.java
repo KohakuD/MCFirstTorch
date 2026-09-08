@@ -20,7 +20,11 @@ final class NetherFortressChapterTest {
         for (int i = 1; i < QUESTS.size(); i++) assertEquals(List.of(QUESTS.get(i - 1)), chapter.quests().get(i).prerequisiteQuestIds());
         assertEquals(List.of("36AD35CCA4724357", "1B63A993ED3C4DB3", "3E4AF2D781EC4B57", "65C89337665C4E28", "21D6CE3AD23A412B", "5583FD1F127A4B12", "22D566F202A7429E", "0F3B0653610D483B", "54A8AA81D49E4187"), chapter.quests().stream().flatMap(q -> q.tasks().stream()).map(t -> t.id()).toList());
         assertEquals(List.of(1, 1, 1, 64, 16, 1), chapter.quests().getFirst().tasks().stream().map(t -> t.count()).toList());
-        assertTrue(chapter.quests().stream().allMatch(q -> q.rewards().isEmpty()));
+        assertEquals(1, chapter.quests().stream().mapToInt(q -> q.rewards().size()).sum());
+        var discoveryReward = chapter.quests().get(1).rewards().getFirst();
+        assertEquals("277EA146D3FB802D", discoveryReward.id());
+        assertEquals(ch.minenox.firsttorch.guide.model.RewardDefinition.Type.EXPERIENCE, discoveryReward.type());
+        assertEquals(5, discoveryReward.amount());
     }
 
     @Test void inventoryThresholdsCountEarlyWithoutProvingSafety() throws Exception {

@@ -107,6 +107,20 @@ final class QuestRecommendationTest {
         assertEquals("6519B084E62C3A7D", QuestRecommendation.choose(snapshot, progress(done)).questId());
     }
 
+    @Test void fortressReturnContinuesBeforeOptionalBarterAndResources() throws Exception {
+        var snapshot = course();
+        Set<String> done = new HashSet<>();
+        snapshot.guides().getFirst().chapters().stream().limit(29)
+                .filter(c -> c.order() != 26 && c.order() != 27)
+                .flatMap(c -> c.quests().stream()).forEach(q -> done.add(q.id()));
+        done.add("07105D263E94F5A2");
+        assertEquals("5B0F14AD63E74BD3", QuestRecommendation.choose(snapshot, progress(done)).questId());
+        done.add("5B0F14AD63E74BD3");
+        assertEquals("15F17869891E4CE0", QuestRecommendation.choose(snapshot, progress(done)).questId());
+        done.add("15F17869891E4CE0");
+        assertEquals("734140DAA3E544D2", QuestRecommendation.choose(snapshot, progress(done)).questId());
+    }
+
     @Test void fortressTakesPriorityOverOptionalBarterAndResources() throws Exception {
         var snapshot = course();
         Set<String> done = new HashSet<>();
