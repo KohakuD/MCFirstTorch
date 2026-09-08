@@ -1,5 +1,15 @@
 # Playtest log
 
+## 2026-09-08 — Native End City three-chapter batch
+
+The five outer-arrival lessons are user-accepted. This supersedes their pending note below. User requests multi-chapter deliveries until all retained quests are migrated.
+
+Pending: review seventeen lessons across Chorus/search (4), Shulker/city (8) and End Ship/home return (5), in both languages and pane widths. Inspect seven half-width image placements and three independent quest-book trophies. Inventory examples: 7/8 Chorus Fruit, 0/1 Flower, 63/64 End Stone for island travel, 1/2 Shulker Shells, 127/128 and 255/256 End Stone for ship preparation/bridge work. Early possession must remain recorded without bypassing manual practice or prerequisites. Test genuine End City discovery separately from test completion, then confirm the marked safe route separately. Elytra possession does not prove return to the Overworld or storage at home. Claim each original XP reward once; restart and verify previous progress and claims are intact. The local TEST button can accelerate reading review but does not validate genuine automatic detection.
+
+Source-ID audit after this batch leaves thirty retained quests: nine flight-training lessons, seven final exploration lessons, seven optional mob-drop lessons and seven optional Bastion lessons.
+
+Verified: 332 native tests and native build pass; retained-pack validator/build pass (738 source object IDs, six pinned dependencies). Tests cover source IDs/rewards, material thresholds, sticky observation, genuine End City criterion, manual separation, recommendation priority, three trophies, and packaged image dimensions/translations. No in-game acceptance is claimed for this batch yet.
+
 ## 2026-09-08 — Native outer-island arrival
 
 Dragon-victory batch accepted by the user. Pending: review five new lessons and both images in both languages and widths. Test three/four Pearls and 63/64 End Stone; packing must still require its manual check. Test genuine Gateway entry separately from ordinary End entry and development completion. Automatic entry must not certify access construction or secured arrival. Check continuation without the optional Dragon Egg, the new trophy, and progress after restart.

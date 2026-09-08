@@ -244,6 +244,22 @@ final class QuestRecommendationTest {
         assertEquals("6794EFB18C065B1B", QuestRecommendation.choose(snapshot, progress(done)).questId());
     }
 
+    @Test void endShipEndpointTakesPriorityOverTheOptionalDragonEgg() throws Exception {
+        var snapshot = course();
+        Set<String> done = new HashSet<>();
+        snapshot.guides().getFirst().chapters().stream().limit(39).flatMap(c -> c.quests().stream())
+                .forEach(q -> done.add(q.id()));
+        snapshot.guides().getFirst().chapters().get(39).quests().stream().limit(4).forEach(q -> done.add(q.id()));
+        done.add("4572CD9F6AE439F9");
+        snapshot.guides().getFirst().chapters().get(40).quests().forEach(q -> done.add(q.id()));
+        snapshot.guides().getFirst().chapters().subList(41, 43).stream().flatMap(c -> c.quests().stream())
+                .forEach(q -> done.add(q.id()));
+        snapshot.guides().getFirst().chapters().get(43).quests().stream().limit(4).forEach(q -> done.add(q.id()));
+        assertEquals("7AC2CFDD99167DA0", QuestRecommendation.choose(snapshot, progress(done)).questId());
+        done.add("7AC2CFDD99167DA0");
+        assertEquals("2350AB7D48C217D7", QuestRecommendation.choose(snapshot, progress(done)).questId());
+    }
+
     @Test void completedIronAndMiningRecommendFindingHome() throws Exception {
         var snapshot = course();
         Set<String> done = new HashSet<>();

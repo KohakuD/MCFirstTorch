@@ -52,7 +52,10 @@ public final class TrophyCatalog {
             Map.entry("779E4A06D1B58F4E", new Trophy("end_arrival", "minecraft:end_stone")),
             Map.entry("7CC3F69B2840D572", new Trophy("crystal_removal", "minecraft:end_crystal")),
             Map.entry("7DD407AC3951E683", new Trophy("dragon_victory", "minecraft:dragon_head")),
-            Map.entry("78AF5B17E2C6904D", new Trophy("outer_arrival", "minecraft:ender_pearl")));
+            Map.entry("78AF5B17E2C6904D", new Trophy("outer_arrival", "minecraft:ender_pearl")),
+            Map.entry("7EE518BD4A62F794", new Trophy("chorus_city", "minecraft:chorus_flower")),
+            Map.entry("7FF629CE5B7308A5", new Trophy("shulker_city", "minecraft:shulker_shell")),
+            Map.entry("60A73ADF6C8419B6", new Trophy("end_ship", "minecraft:elytra")));
 
     private TrophyCatalog() {
     }

@@ -175,6 +175,23 @@ final class TrophyCatalogTest {
         assertTrue(TrophyCatalog.entries(guides, progress(gateway)).getFirst().earned());
     }
 
+    @Test void endCityTrophiesAreIndependentAndRequireEveryOwnLesson() {
+        String[] chorus = {"435FA7C29D816E3B", "7682DAF5C0B4916E", "1A8C05F7D3E692B1", "6FD15A4C283BE706"};
+        String[] shulker = {"58A57A615D0EF444", "6FEC02D106FBA924", "4DF0AA017358AFED", "42E183B7F772D99C",
+                "6C6318A949755526", "1A6EFC93E3474D60", "1239D170F79C0405", "0B875B8819CB3C72"};
+        String[] ship = {"78C3992F3DF1AAB1", "4DA52C070AC3CC11", "36ED20D0FACD3629", "115C8A2BF37D0635", "7AC2CFDD99167DA0"};
+        var guides = snapshot(chapter("7EE518BD4A62F794", 41, chorus),
+                chapter("7FF629CE5B7308A5", 42, shulker), chapter("60A73ADF6C8419B6", 43, ship));
+        var partial = TrophyCatalog.entries(guides, progress(chorus[0], chorus[1], chorus[2], shulker[0], ship[0]));
+        assertEquals(3, partial.size());
+        assertEquals(List.of(false, false, false), partial.stream().map(TrophyCatalog.Entry::earned).toList());
+        var all = new java.util.ArrayList<String>();
+        all.addAll(List.of(chorus));
+        all.addAll(List.of(shulker));
+        all.addAll(List.of(ship));
+        assertTrue(TrophyCatalog.entries(guides, progress(all.toArray(String[]::new))).stream().allMatch(TrophyCatalog.Entry::earned));
+    }
+
     private static GuideSnapshot snapshot(ChapterDefinition... chapters) {
         return new GuideSnapshot(List.of(new GuideDefinition(
                 1, COURSE_ID, "guide.test.title", "guide.test.description", List.of(chapters))));

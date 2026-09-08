@@ -638,6 +638,8 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 
 This is the active native-mod implementation track. The 0.9.1 milestone above describes the retained FTB pack and its separate content playtest.
 
+Delivery preference (2026-09-08): continue in multi-chapter batches until all retained quests have been migrated. Keep individual chapter maps compact and wait for user acceptance of each delivered batch; do not reset existing progress.
+
 ### Native implementation sequence
 
 Acceptance convention (2026-09-08): the user confirms that previous "correct/good, continue" messages mean the delivered changes were tested successfully. All delivered single-player curriculum/UI acceptance items through optional Piglin barter are therefore accepted. This does not claim an independently performed multiplayer, player-isolation or fault-injection campaign; remaining mixed test items below retain those separate checks. Future deliveries await the next user confirmation.
@@ -756,8 +758,11 @@ Acceptance convention (2026-09-08): the user confirms that previous "correct/goo
     - [x] Add six Dragon fight, victory and safe-return quests, keeping Dragon Egg retrieval optional
     - [x] In-game acceptance: six lessons, Dragon and Egg detection, optional Egg bypass, four images and chapter trophy (user-confirmed 2026-09-08)
     - [x] Add five second-visit, Gateway access and safe outer-island arrival lessons
-    - [ ] In-game acceptance: five lessons, four-Pearl/64-End-Stone thresholds, Gateway detection, separate safety checks, two images and trophy
-    - [ ] Continue with Chorus harvesting, island crossing and the End City search
+    - [x] In-game acceptance: five lessons, four-Pearl/64-End-Stone thresholds, Gateway detection, separate safety checks, two images and trophy (user-confirmed 2026-09-08)
+    - [x] Add seventeen Chorus, End City, Shulker and End Ship lessons in three compact chapters with original IDs, rewards, six existing images and three trophies
+    - [ ] Batch in-game acceptance: seventeen lessons, inventory thresholds, End City detection, separate practical checks, seven image placements, original XP rewards and Elytra home return
+    - [ ] Continue with the nine Elytra flight lessons and seven final independent-exploration lessons
+    - [ ] Migrate the seven optional mob-drop lessons without adding a main-path gate
     - [ ] Migrate the optional Bastion exploration branch without adding a main-path gate
 
 The checked schema step provides data only: it does not complete tasks, grant rewards, or turn preview values into player progress.
