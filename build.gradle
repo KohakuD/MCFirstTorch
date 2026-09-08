@@ -172,6 +172,9 @@ tasks.named('processResources', ProcessResources).configure {
         include 'assets/firsttorch/textures/questpics/end_portal_frame_states.png'
         include 'assets/firsttorch/textures/questpics/end_portal_final_eye.png'
         include 'assets/firsttorch/textures/questpics/bow_and_arrows.png'
+        include 'assets/firsttorch/textures/questpics/stronghold_iron_door_capture.png'
+        include 'assets/firsttorch/textures/questpics/end_portal_room_capture.png'
+        include 'assets/firsttorch/textures/questpics/end_portal_active_capture.png'
     }
 }
 neoForge.ideSyncTask generateModMetadata

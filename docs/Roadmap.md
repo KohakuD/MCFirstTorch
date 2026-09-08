@@ -749,6 +749,7 @@ Acceptance convention (2026-09-08): the user confirms that previous "correct/goo
     - [x] Add six Eye-supply lessons and six safe Stronghold-search lessons as separate compact chapters
     - [x] Batch in-game acceptance: sixteen new quests, material thresholds, Stronghold arrival, separate practical checks, five images, three trophies and original rewards (user-confirmed 2026-09-08)
     - [x] Add sixteen Stronghold interior, portal-room safety and End-preparation quests in three compact chapters, preserving optional Library navigation
+    - [x] Integrate the owner's Iron Door and End Portal captures, mark the Door Button and retain explicit Lava-safety guidance
     - [ ] Batch in-game acceptance: sixteen quests, nine automatic inventory conditions, separate safety/respawn/activation checks, six images, three trophies and original rewards
     - [ ] Continue with compact End-arrival and Crystal-removal chapters before the Dragon fight
     - [ ] Migrate the optional Bastion exploration branch without adding a main-path gate

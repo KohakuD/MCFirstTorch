@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-08 — Owner's Iron Door and End Portal captures
+
+- Marked the real Stone Button to the right of the Iron Door using an orange frame/arrow; no scene repainting or brightness changes. Original captures are unchanged.
+- Replaced the Portal Room and final-activation diagrams with the owner's missing-Eye/Spawner and active/no-Spawner captures. The separate frame-state comparison remains.
+- Native and retained languages now describe the real scenes; the active-portal caption explicitly distinguishes Spawner removal from the still-open side Lava.
+- Pending in-game: inspect the three images at half width, button visibility, captions and scrolling. No quest/task/reward identifiers or player data changed.
+- Verified: 312 native tests and native build pass; retained-pack validator/build pass with the new asset references. Image packaging checks confirm actual dimensions and bilingual captions. Both portal copies have the same SHA-256 as their originals; the Door overlay was visually checked against the real Button.
+
 ## 2026-09-08 — Stronghold interior and End preparation batch
 
 - User accepted all sixteen Fire Resistance/Eye Supplies/Stronghold Search lessons and requested another multi-quest batch. Their previous pending acceptance notes are superseded.
