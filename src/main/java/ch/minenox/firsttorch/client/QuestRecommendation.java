@@ -29,6 +29,7 @@ final class QuestRecommendation {
         if (guide.id().equals(COURSE) && byId.containsKey(COURSE_GOAL)) {
             var pending = new ArrayDeque<String>();
             pending.add(COURSE_GOAL);
+            if (byId.containsKey("4572CD9F6AE439F9")) pending.add("4572CD9F6AE439F9"); // Returning home does not require the optional Dragon Egg.
             if (byId.containsKey("71C628E4BF937E3D")) pending.add("71C628E4BF937E3D"); // Optional Enderman roof never gates the Crystal route.
             if (byId.containsKey("7A2C84E05D916B37")) pending.add("7A2C84E05D916B37");
             if (byId.containsKey("6A2C84E05D916B37")) pending.add("6A2C84E05D916B37");

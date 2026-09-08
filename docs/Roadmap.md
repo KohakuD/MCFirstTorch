@@ -752,8 +752,10 @@ Acceptance convention (2026-09-08): the user confirms that previous "correct/goo
     - [x] Integrate the owner's Iron Door and End Portal captures, mark the Door Button and retain explicit Lava-safety guidance
     - [x] Batch in-game acceptance: sixteen quests, nine automatic inventory conditions, separate safety/respawn/activation checks, six images including owner captures, three trophies and original rewards (user-confirmed 2026-09-08)
     - [x] Add nine End-arrival and Crystal-removal quests in two compact chapters before the Dragon fight
-    - [ ] Batch in-game acceptance: nine quests, End-entry detection, 64 End Stone, separate cage confirmation, optional roof bypass, five images, two trophies and original rewards
-    - [ ] Continue with the Dragon fight, victory and safe return, keeping Dragon Egg retrieval optional
+    - [x] Batch in-game acceptance: nine quests, End-entry detection, 64 End Stone, separate cage confirmation, optional roof bypass, five images including the owner's arrival capture, two trophies and original rewards (user-confirmed 2026-09-08)
+    - [x] Add six Dragon fight, victory and safe-return quests, keeping Dragon Egg retrieval optional
+    - [ ] In-game acceptance: six lessons, Dragon and Egg detection, optional Egg bypass, four images and chapter trophy
+    - [ ] Continue with the second End visit, Gateway access and safe outer-island arrival
     - [ ] Migrate the optional Bastion exploration branch without adding a main-path gate
 
 The checked schema step provides data only: it does not complete tasks, grant rewards, or turn preview values into player progress.

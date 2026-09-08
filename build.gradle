@@ -180,6 +180,10 @@ tasks.named('processResources', ProcessResources).configure {
         include 'assets/firsttorch/textures/questpics/end_battlefield.png'
         include 'assets/firsttorch/textures/questpics/end_crystal_exposed.png'
         include 'assets/firsttorch/textures/questpics/end_crystal_removal.png'
+        include 'assets/firsttorch/textures/questpics/ender_dragon_flight.png'
+        include 'assets/firsttorch/textures/questpics/ender_dragon_perched.png'
+        include 'assets/firsttorch/textures/questpics/end_exit_portal.png'
+        include 'assets/firsttorch/textures/questpics/dragon_egg_retrieval.png'
     }
 }
 neoForge.ideSyncTask generateModMetadata

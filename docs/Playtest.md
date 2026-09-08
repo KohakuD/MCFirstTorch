@@ -1,5 +1,9 @@
 # Playtest log
 
+## 2026-09-08 — Native Dragon victory and return
+
+The preceding End-arrival/Crystal batch and owner's arrival screenshot are user-accepted. New acceptance pending: review six lessons and four images in both languages and map widths; verify actual Dragon defeat and Egg pickup detection separately from development test completion; verify earlier advancements stick but cannot bypass manual combat practice. Confirm return without retrieving the optional Egg, inspect the chapter trophy after all six lessons, and reconnect to check preserved progress and reward claims. No extra quest payouts are added to the source's vanilla victory rewards.
+
 ## 2026-09-08 — Owner's End arrival capture
 
 Replaced the top-down arrival diagram with the approved unchanged capture. Pending in-game check: open Reach Safe End Stone, inspect half-width presentation and aspect ratio, and read the updated route-width/railing guidance. Progress, objectives and rewards are unchanged.

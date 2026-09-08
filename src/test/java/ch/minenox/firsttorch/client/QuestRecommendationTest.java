@@ -233,6 +233,15 @@ final class QuestRecommendationTest {
         assertEquals("5FA406C29D715C1B", QuestRecommendation.choose(snapshot, progress(done)).questId());
     }
 
+    @Test void endReturnTakesPriorityOverTheOptionalDragonEgg() throws Exception {
+        var snapshot = course();
+        Set<String> done = new HashSet<>();
+        snapshot.guides().getFirst().chapters().stream().limit(39).flatMap(c -> c.quests().stream())
+                .forEach(q -> done.add(q.id()));
+        snapshot.guides().getFirst().chapters().get(39).quests().stream().limit(4).forEach(q -> done.add(q.id()));
+        assertEquals("4572CD9F6AE439F9", QuestRecommendation.choose(snapshot, progress(done)).questId());
+    }
+
     @Test void completedIronAndMiningRecommendFindingHome() throws Exception {
         var snapshot = course();
         Set<String> done = new HashSet<>();
