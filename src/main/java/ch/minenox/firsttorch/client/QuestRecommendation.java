@@ -39,6 +39,7 @@ final class QuestRecommendation {
             if (byId.containsKey("676BFD158DEB4F7F")) pending.add("676BFD158DEB4F7F");
             if (byId.containsKey("734140DAA3E544D2")) pending.add("734140DAA3E544D2");
             if (byId.containsKey("5620D39F7A4E18B5")) pending.add("5620D39F7A4E18B5");
+            if (byId.containsKey("6F54A06C371BF6A3")) pending.add("6F54A06C371BF6A3"); // Stronghold completion ends before End entry; optional Library never gates it.
             if (byId.containsKey("74DB8F5B15F9C370")) pending.add("74DB8F5B15F9C370"); // Fire Resistance and Bastions remain optional.
             if (byId.containsKey(IRON_GOAL)) pending.add(IRON_GOAL);
             if (byId.containsKey("26EC824FB71D3590")) pending.add("26EC824FB71D3590"); // Parallel renewable-food route.

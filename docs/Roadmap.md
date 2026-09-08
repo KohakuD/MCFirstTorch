@@ -747,8 +747,10 @@ Acceptance convention (2026-09-08): the user confirms that previous "correct/goo
     - [x] In-game acceptance of brewing inventory thresholds, potion retrieval detection, practical checks, five images and thirty-first trophy (user-confirmed 2026-09-08)
     - [x] Add four optional Fire Resistance lessons with source objectives, three illustrations and five XP
     - [x] Add six Eye-supply lessons and six safe Stronghold-search lessons as separate compact chapters
-    - [ ] Batch in-game acceptance: sixteen new quests, material thresholds, Stronghold arrival, separate practical checks, five images, three trophies and original rewards
-    - [ ] Continue with compact Stronghold interior and portal-preparation chapters
+    - [x] Batch in-game acceptance: sixteen new quests, material thresholds, Stronghold arrival, separate practical checks, five images, three trophies and original rewards (user-confirmed 2026-09-08)
+    - [x] Add sixteen Stronghold interior, portal-room safety and End-preparation quests in three compact chapters, preserving optional Library navigation
+    - [ ] Batch in-game acceptance: sixteen quests, nine automatic inventory conditions, separate safety/respawn/activation checks, six images, three trophies and original rewards
+    - [ ] Continue with compact End-arrival and Crystal-removal chapters before the Dragon fight
     - [ ] Migrate the optional Bastion exploration branch without adding a main-path gate
 
 The checked schema step provides data only: it does not complete tasks, grant rewards, or turn preview values into player progress.

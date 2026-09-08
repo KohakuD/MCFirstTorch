@@ -17,6 +17,14 @@ import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 final class ChapterVisibilityTest {
+    @Test void portalChaptersOpenAtIndividualMilestonesWithoutOptionalLibrary() throws Exception {
+        for (var gate : Map.of("74DB8F5B15F9C370", "757C28E4BF936D0A",
+                "4CA17D3904E8B26F", "7AA1D479062EB350", "764B17D3AE825C09", "7BB2E58A173FC461").entrySet()) {
+            var visible = ChapterVisibility.visibleChapters(course(), available(quests(gate.getKey())));
+            org.junit.jupiter.api.Assertions.assertTrue(visible.stream().anyMatch(c -> c.id().equals(gate.getValue())));
+        }
+    }
+
     @Test void brewingUnlocksOptionalFireResistanceAndEyeSuppliesTogether() throws Exception {
         var visible = ChapterVisibility.visibleChapters(course(), available(quests("5620D39F7A4E18B5")))
                 .stream().map(ChapterDefinition::id).toList();

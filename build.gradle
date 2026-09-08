@@ -166,6 +166,12 @@ tasks.named('processResources', ProcessResources).configure {
         include 'assets/firsttorch/textures/questpics/long_fire_resistance_brewing.png'
         include 'assets/firsttorch/textures/questpics/ender_eye_recipe.png'
         include 'assets/firsttorch/textures/questpics/ender_eye_search.png'
+        include 'assets/firsttorch/textures/questpics/stronghold_iron_door.png'
+        include 'assets/firsttorch/textures/questpics/stronghold_silverfish.png'
+        include 'assets/firsttorch/textures/questpics/end_portal_room.png'
+        include 'assets/firsttorch/textures/questpics/end_portal_frame_states.png'
+        include 'assets/firsttorch/textures/questpics/end_portal_final_eye.png'
+        include 'assets/firsttorch/textures/questpics/bow_and_arrows.png'
     }
 }
 neoForge.ideSyncTask generateModMetadata

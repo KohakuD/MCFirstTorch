@@ -9,6 +9,18 @@ import java.util.*;
 import org.junit.jupiter.api.Test;
 
 final class QuestRecommendationTest {
+    @Test void portalRouteTakesPriorityOverOptionalLibraryAndFireResistance() throws Exception {
+        var snapshot = course();
+        Set<String> done = new HashSet<>();
+        snapshot.guides().getFirst().chapters().stream().limit(34)
+                .filter(c -> c.order() != 31).flatMap(c -> c.quests().stream()).forEach(q -> done.add(q.id()));
+        assertEquals("086D39F5C0A47E2B", QuestRecommendation.choose(snapshot, progress(done)).questId());
+        snapshot.guides().getFirst().chapters().get(34).quests().stream().limit(4).forEach(q -> done.add(q.id()));
+        assertEquals("10E5B17D482CF6A3", QuestRecommendation.choose(snapshot, progress(done)).questId());
+        snapshot.guides().getFirst().chapters().get(35).quests().forEach(q -> done.add(q.id()));
+        assertEquals("098E4A06D1B58F3D", QuestRecommendation.choose(snapshot, progress(done)).questId());
+    }
+
     private GuideSnapshot course() throws Exception {
         try (var input = getClass().getResourceAsStream("/data/firsttorch/guides/course.json")) {
             return new GuideSnapshot(List.of(GuideJson.read(input)));

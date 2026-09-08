@@ -45,7 +45,10 @@ public final class TrophyCatalog {
             Map.entry("735A06C29D714BE8", new Trophy("brewing", "minecraft:brewing_stand")),
             Map.entry("788FB257E40C913E", new Trophy("fire_resistance", "minecraft:fire_charge")),
             Map.entry("746B17D3AE825CF0", new Trophy("ender_eyes", "minecraft:ender_eye")),
-            Map.entry("7990C368F51DA24F", new Trophy("stronghold_search", "minecraft:compass")));
+            Map.entry("7990C368F51DA24F", new Trophy("stronghold_search", "minecraft:compass")),
+            Map.entry("757C28E4BF936D0A", new Trophy("stronghold_interior", "minecraft:stone_bricks")),
+            Map.entry("7AA1D479062EB350", new Trophy("portal_room", "minecraft:end_portal_frame")),
+            Map.entry("7BB2E58A173FC461", new Trophy("end_preparation", "minecraft:ender_eye")));
 
     private TrophyCatalog() {
     }

@@ -1,5 +1,16 @@
 # Playtest log
 
+## 2026-09-08 — Stronghold interior and End preparation batch
+
+- User accepted all sixteen Fire Resistance/Eye Supplies/Stronghold Search lessons and requested another multi-quest batch. Their previous pending acceptance notes are superseded.
+- Pending: inspect sixteen new lessons in three compact maps (5/4/7), both languages, six half-width images and three independent trophies.
+- Continue through portal-room discovery while the optional Library is unfinished. Portal Room opens after hazard awareness; End Preparation follows the separately confirmed home return.
+- Test one versus two Stone Buttons, 31 versus 32 Arrows, 63 versus 64 Cobblestone and 15 versus 16 supported cooked foods. Iron-or-better tools must match the existing exact tags. Early inventory completion must not bypass prerequisites, current armour checks or manual exercises.
+- Check the marked return, secured Spawner/Lava, twelve-frame count, home storage and the new Overworld Bed/reserve Chest separately. Old sleep advancement progress must not auto-confirm this new return point.
+- Claim the Golden Apple/ten XP, 32 Arrows/five XP, four Bread and final ten XP once at their respective milestones. Restart and check persistence.
+- Final lesson activates the portal from a safe outside position without entering; End arrival is deliberately a later batch. No player data, settings or reward journals are reset.
+- Automated verification passed: 312 tests, native build and retained-pack build/validation. Checks cover source IDs and quantities, exact item-tag alternatives, early/sticky inventory completion, manual safety gates, optional navigation, separate trophies, image packaging/aspect ratios and arrow clearance in both map widths. All prior 34 chapter definitions are unchanged; all sixteen new source descriptions are preserved in both languages apart from extracted image directives.
+
 ## 2026-09-08 — Fire Resistance and Stronghold search batch
 
 - User accepted Brewing Foundations and requested larger content batches. Prior brewing acceptance notes are superseded.

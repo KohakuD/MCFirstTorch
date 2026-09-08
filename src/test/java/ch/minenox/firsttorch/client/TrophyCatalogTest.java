@@ -17,6 +17,16 @@ import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 final class TrophyCatalogTest {
+    @Test void portalBatchAddsThreeIndependentCosmeticMilestones() {
+        var guides = snapshot(chapter("757C28E4BF936D0A", 34, "086D39F5C0A47E2B", "6EC39F5B260AD481"),
+                chapter("7AA1D479062EB350", 35, "764B17D3AE825C09"),
+                chapter("7BB2E58A173FC461", 36, "6F54A06C371BF6A3"));
+        var entries = TrophyCatalog.entries(guides, progress("764B17D3AE825C09"));
+        assertEquals(3, entries.size());
+        assertEquals(List.of(false, true, false), entries.stream().map(TrophyCatalog.Entry::earned).toList());
+        assertTrue(TrophyCatalog.entries(guides, progress("086D39F5C0A47E2B", "6EC39F5B260AD481", "764B17D3AE825C09", "6F54A06C371BF6A3")).stream().allMatch(TrophyCatalog.Entry::earned));
+    }
+
     private static final String COURSE_ID = "0013F17C00000001";
     private static final String WELCOME = "0F91A2B3C4D5E607";
     private static final String MOVEMENT = "01F57C0E3B9D2468";
