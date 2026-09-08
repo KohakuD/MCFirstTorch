@@ -15,6 +15,69 @@ final class FirstTorchTheme {
 
     private FirstTorchTheme() {}
 
+    // Eight separated teeth, a continuous rim and an open central bore.
+    private static final String[] SETTINGS_GEAR = {
+            ".....###.....",
+            ".....###.....",
+            "..##.###.##..",
+            "..#########..",
+            "...##...##...",
+            "####.....####",
+            "####.....####",
+            "####.....####",
+            "...##...##...",
+            "..#########..",
+            "..##.###.##..",
+            ".....###.....",
+            ".....###....."
+    };
+
+    /** Pixel-aligned UI symbols; these do not imitate Minecraft items. */
+    static void headerIcon(GuiGraphicsExtractor graphics, int x, int y, FirstTorchButton.Kind kind) {
+        if (kind == FirstTorchButton.Kind.SEARCH) {
+            graphics.outline(x + 1, y, 7, 8, TEXT);
+            graphics.fill(x, y + 2, x + 1, y + 6, TEXT);
+            graphics.fill(x + 8, y + 2, x + 9, y + 6, TEXT);
+            for (int i = 0; i < 5; i++) graphics.fill(x + 7 + i, y + 7 + i, x + 9 + i, y + 9 + i, TEXT);
+        } else if (kind == FirstTorchButton.Kind.ACCESSIBILITY) {
+            graphics.fill(x + 5, y, x + 8, y + 3, TEXT);
+            graphics.fill(x + 1, y + 4, x + 12, y + 6, TEXT);
+            graphics.fill(x + 5, y + 5, x + 8, y + 9, TEXT);
+            for (int i = 0; i < 5; i++) {
+                graphics.fill(x + 5 - i / 2, y + 8 + i, x + 7 - i / 2, y + 9 + i, TEXT);
+                graphics.fill(x + 6 + i / 2, y + 8 + i, x + 8 + i / 2, y + 9 + i, TEXT);
+            }
+        } else {
+            for (int row = 0; row < SETTINGS_GEAR.length; row++) {
+                for (int column = 0; column < SETTINGS_GEAR[row].length(); column++) {
+                    if (SETTINGS_GEAR[row].charAt(column) == '#') {
+                        graphics.fill(x + column, y + row, x + column + 1, y + row + 1,
+                                row + column < 12 ? TEXT : MUTED);
+                    }
+                }
+            }
+        }
+    }
+
+    /** Original UI cup symbol, not an in-world Minecraft item. */
+    static void trophyIcon(GuiGraphicsExtractor graphics, int x, int y) {
+        graphics.fill(x + 3, y + 1, x + 10, y + 6, GOLD);
+        graphics.fill(x + 4, y + 6, x + 9, y + 8, GOLD);
+        graphics.outline(x, y + 2, 4, 4, GOLD);
+        graphics.outline(x + 9, y + 2, 4, 4, GOLD);
+        graphics.fill(x + 6, y + 8, x + 7, y + 11, GOLD);
+        graphics.fill(x + 3, y + 11, x + 10, y + 13, GOLD);
+        graphics.fill(x + 3, y + 1, x + 10, y + 2, AMBER);
+    }
+
+    /** Shared completion badge for quest nodes and their task cards. */
+    static void completionBadge(GuiGraphicsExtractor graphics, int left, int top) {
+        medallion(graphics, new Rect(left, top, 16, 16), true, false);
+        int x = left + 3, y = top + 7;
+        for (int i = 0; i < 4; i++) graphics.fill(x + i, y + i, x + i + 2, y + i + 2, TEXT);
+        for (int i = 0; i < 7; i++) graphics.fill(x + 3 + i, y + 3 - i, x + 5 + i, y + 5 - i, TEXT);
+    }
+
     static void frame(GuiGraphicsExtractor graphics, Rect rect, boolean selected) {
         int l = rect.x(), t = rect.y(), r = rect.right(), b = rect.bottom();
         graphics.fill(l, t, r, b, 0xFF070809);

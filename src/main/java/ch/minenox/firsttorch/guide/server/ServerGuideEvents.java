@@ -25,6 +25,14 @@ public final class ServerGuideEvents {
     @SubscribeEvent
     public static void syncGuides(OnDatapackSyncEvent event) {
         GuideSnapshotPayload payload = new GuideSnapshotPayload(ServerGuideRepository.INSTANCE.snapshot());
-        event.getRelevantPlayers().forEach(player -> PacketDistributor.sendToPlayer(player, payload));
+        event.getRelevantPlayers().forEach(player -> {
+            PacketDistributor.sendToPlayer(player, payload);
+            ServerTaskEvents.sync(player, true);
+            try {
+                ServerWelcomeService.INSTANCE.offer(player);
+            } catch (IllegalStateException ignored) {
+                // A missing or unreadable progress/welcome save must not offer a stale first-join modal.
+            }
+        });
     }
 }

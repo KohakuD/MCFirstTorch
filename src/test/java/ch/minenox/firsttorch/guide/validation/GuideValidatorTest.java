@@ -8,6 +8,7 @@ import ch.minenox.firsttorch.guide.model.ChapterDefinition;
 import ch.minenox.firsttorch.guide.model.GuideDefinition;
 import ch.minenox.firsttorch.guide.model.QuestDefinition;
 import ch.minenox.firsttorch.guide.model.QuestPosition;
+import ch.minenox.firsttorch.guide.model.QuestDefinition.PrerequisiteMode;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
@@ -61,6 +62,24 @@ final class GuideValidatorTest {
         GuideDefinition guide = guideWithQuests(questA, questB);
 
         assertInvalid(guide, "cycle");
+    }
+
+    @Test
+    void rejectsAnyModeWithoutPrerequisites() {
+        QuestDefinition quest = new QuestDefinition(
+                QUEST_A_ID, 0, "quest.valid.title", "quest.valid.description", new QuestPosition(0, 0),
+                List.of(), List.of(), List.of(), null, null, PrerequisiteMode.ANY);
+
+        assertInvalid(guideWithQuests(quest), "prerequisite mode ANY");
+    }
+
+    @Test
+    void validatesAnyModeReferenceEdges() {
+        QuestDefinition quest = new QuestDefinition(
+                QUEST_B_ID, 1, "quest.valid.title", "quest.valid.description", new QuestPosition(2, 0),
+                List.of("3A13F17C00000009"), List.of(), List.of(), null, null, PrerequisiteMode.ANY);
+
+        assertInvalid(guideWithQuests(questA(), quest), "missing prerequisite");
     }
 
     @Test

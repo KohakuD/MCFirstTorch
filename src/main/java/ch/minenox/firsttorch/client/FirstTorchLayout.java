@@ -10,7 +10,18 @@ import java.util.Map;
 
 public final class FirstTorchLayout {
     public static final int PANEL_GAP = 5;
-    public static final int NODE_SIZE = 48;
+    public static final int NODE_SIZE = 28;
+
+    /** Keep the item comfortably inside compact rings in either browser mode. */
+    public static int nodeIconSize(int diameter) {
+        return Math.max(6, Math.min(12, diameter / 2 - 2));
+    }
+
+    public static Rect nodeCompletionBadge(Rect node) {
+        int size = Math.max(6, Math.min(10, node.width() / 3));
+        int offset = Math.max(node.width() - size + 2, (node.width() + nodeIconSize(node.width()) + 1) / 2);
+        return new Rect(node.x() + offset, node.y() + offset, size, size);
+    }
 
     private static final int MARGIN = 8;
     private static final int TOP_BAR_HEIGHT = 58;
@@ -21,6 +32,10 @@ public final class FirstTorchLayout {
     }
 
     public static ScreenLayout calculate(int screenWidth, int screenHeight) {
+        return calculate(screenWidth, screenHeight, false);
+    }
+
+    public static ScreenLayout calculate(int screenWidth, int screenHeight, boolean reading) {
         int contentWidth = Math.max(1, screenWidth - MARGIN * 2 - PANEL_GAP * 2);
         int leftWidth = Math.max(58, contentWidth * 25 / 100);
         int rightWidth = Math.max(74, contentWidth * 39 / 100);
@@ -30,6 +45,12 @@ public final class FirstTorchLayout {
             leftWidth = sideSpace * 45 / 100;
             rightWidth = sideSpace - leftWidth;
             centerWidth = contentWidth - leftWidth - rightWidth;
+        }
+        // Preserve readable navigation on small windows; do not scale the detail text.
+        if (reading && screenWidth >= 500) {
+            leftWidth = 52;
+            centerWidth = Math.max(125, contentWidth * 27 / 100);
+            rightWidth = contentWidth - leftWidth - centerWidth;
         }
 
         Rect topBar = new Rect(MARGIN, MARGIN, Math.max(1, screenWidth - MARGIN * 2), TOP_BAR_HEIGHT);
@@ -44,6 +65,9 @@ public final class FirstTorchLayout {
     }
 
     public static Map<String, Rect> questNodes(Rect panel, List<QuestDefinition> quests) {
+        if (panel.width() >= 110 && panel.height() >= 240 && ParallelQuestLayout.supports(quests)) {
+            return ParallelQuestLayout.nodes(panel, quests);
+        }
         if (quests.isEmpty()) {
             return Map.of();
         }

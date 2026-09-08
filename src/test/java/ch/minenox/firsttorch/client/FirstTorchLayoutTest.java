@@ -43,6 +43,47 @@ final class FirstTorchLayoutTest {
     }
 
     @Test
+    void readingModeGivesDetailsAboutTwoThirdsOfTheAvailableWidth() {
+        ScreenLayout overview = FirstTorchLayout.calculate(720, 405);
+        ScreenLayout reading = FirstTorchLayout.calculate(720, 405, true);
+        Rect screen = new Rect(0, 0, 720, 405);
+        int columnWidth = reading.chapters().width() + reading.questMap().width() + reading.details().width();
+
+        assertEquals(52, reading.chapters().width());
+        assertEquals(0.65, (double) reading.details().width() / columnWidth, 0.01);
+        assertTrue(reading.details().width() > overview.details().width());
+        assertTrue(reading.chapters().right() < reading.questMap().x());
+        assertTrue(reading.questMap().right() < reading.details().x());
+        assertTrue(List.of(reading.topBar(), reading.chapters(), reading.questMap(), reading.details(), reading.footer())
+                .stream().allMatch(screen::contains));
+    }
+
+    @Test
+    void preservesOverviewAndSmallWindowFallback() {
+        ScreenLayout overview = FirstTorchLayout.calculate(720, 405);
+        assertEquals(173, overview.chapters().width());
+        assertEquals(251, overview.questMap().width());
+        assertEquals(270, overview.details().width());
+        assertEquals(overview, FirstTorchLayout.calculate(720, 405, false));
+        assertEquals(FirstTorchLayout.calculate(320, 240), FirstTorchLayout.calculate(320, 240, true));
+    }
+
+    @Test
+    void keepsEveryPreviewChapterInsideTheReadingMapBelowItsOverviewButton() {
+        Rect map = FirstTorchLayout.calculate(720, 405, true).questMap();
+        Rect nodeArea = new Rect(map.x(), map.y() + 23, map.width(), map.height() - 23);
+
+        for (var guide : DesignPreview.snapshot().guides()) {
+            for (var chapter : guide.chapters()) {
+                Map<String, Rect> nodes = FirstTorchLayout.questNodes(nodeArea, chapter.quests());
+                assertEquals(chapter.quests().size(), nodes.size());
+                assertTrue(nodes.values().stream().allMatch(nodeArea::contains), chapter.id());
+                assertTrue(nodes.values().stream().allMatch(node -> node.y() >= map.y() + 24), chapter.id());
+            }
+        }
+    }
+
+    @Test
     void mapsQuestCoordinatesDeterministically() {
         Rect panel = new Rect(10, 20, 300, 180);
         QuestDefinition right = quest("2000000000000002", 1, 5, 0);

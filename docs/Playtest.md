@@ -1,5 +1,205 @@
 # Playtest log
 
+## 2026-09-08 — Fortress preparation (native)
+
+- Optional Nether resources accepted by the user. No world data changed.
+- New acceptance pending: inspect both languages, original Fortress/enemy artwork, and entry directly from the activity introduction without optional branches.
+- Check exact equipment thresholds (64 Cobblestone, 16 eligible foods, Iron-or-better Sword/Pickaxe and Shield); holding equipment must not complete physical preparation, Fortress search, retreat cover or enemy-safety checks. Check the twenty-ninth trophy and saved state after restart.
+
+## 2026-09-08 — First Nether resources (native)
+
+- New slice awaiting user acceptance; the retrospective acceptance below applies only to earlier deliveries.
+- Check independent access after the activity introduction without Piglin barter. Fifteen Netherrack/three Quartz are insufficient; sixteen/four count automatically even while locked.
+- Confirm safe planning and return separately, inspect both languages, claim eight Cobblestone and five XP once and inspect the twenty-eighth trophy. No player data changed.
+
+## 2026-09-08 — Retrospective user acceptance
+
+The user explicitly confirms that all prior "correct/good, continue" replies mean the delivered changes were tested successfully. This supersedes the historical pending single-player acceptance notes below through the Piglin-barter slice. The corresponding native roadmap checks are now complete. Separate multiplayer/player-isolation and failure-injection coverage is not inferred from ordinary single-player acceptance. New slices still await confirmation.
+
+## 2026-09-08 — Optional Piglin barter (native)
+
+- Previous Nether-safety slice accepted by the user; no world data changed.
+- Pending: inspect both languages and optional branch labelling. A Gold Ingot counts automatically, Gold Nuggets do not; possession does not confirm a safe place or actual barter.
+- Pending: confirm one exchange regardless of the random result, claim one Gold Ingot and five XP once, inspect the twenty-seventh trophy, and verify restart persistence.
+
+## 2026-09-08 — Nether safety (native)
+
+- First Nether arrival slice accepted by the user; no player data changed.
+- Pending in-game: review Piglin/Gold/Ghast guidance and illustrations in both languages.
+- Pending in-game: five Cobblestone/two Torches must be insufficient, six/three must count automatically even before unlock. Materials alone must not complete marker placement or return.
+- Pending in-game: confirm the marked route and return separately, claim four Torches/eight Cobblestone/two Bread/ten XP once at their respective quests, inspect the twenty-sixth trophy and restart to verify persistence.
+
+## 2026-09-08 — First Nether arrival (native)
+
+- Previous equipment slice accepted by the user; no player data changed.
+- Pending in-game: automatic Nether entry plus separate stay-near-portal confirmation. Prior entry must count without bypassing the prerequisite gate.
+- Pending in-game: inspect both languages and the route illustration, confirm observation/shelter/return separately, claim original rewards once and inspect the twenty-fifth trophy. Reopen/restart to verify persistence.
+
+## Native 0.13.0 alpha
+
+### 2026-09-08 — Nether equipment and pre-entry checks
+
+- Added six source lessons after the unlit frame, through Gold, worn Helmet, supplies, controlled ignition, Overworld safety and the departure check. User reported the preceding frame slice correct.
+- Pending in-game: four/five Gold Ingots, Helmet possession versus manual wearing check, accepted Iron-or-better swords/Pickaxes, 32 Cobblestone, 16 Torches and eight supported foods. Dried Kelp must not count for this trip.
+- Check three original pictures in both languages, sticky objectives and the explicit physical recheck before entry. Ignition, securing the area and the final check remain manual; do not enter yet.
+- Check original Coal/Gold/Bread/Torch/XP rewards and twenty-fourth trophy. Existing progress and reward records were not changed.
+
+### 2026-09-08 — Nether portal preparation
+
+- Added five original lessons through the unlit portal frame. The first enchantment opens the chapter; unfinished Bookshelves must not block it.
+- Pending in-game: Flint/Flint and Steel detection, nine versus ten normal Obsidian, rejection of Crying Obsidian, manual site/frame checks and both original illustrations in both languages.
+- Confirm the Iron refund, five-XP material reward, eight Torches plus five XP after frame completion, and the preparation-only trophy. Do not light or enter the portal yet; equipment and safe-entry lessons follow separately.
+- No player data changed. User reported the preceding Library slice correct.
+
+### 2026-09-08 — Library expansion
+
+- Added three original Bookshelf lessons after the first enchantment, with recipe and top-down layout illustrations and a cosmetic twenty-second trophy.
+- Pending in-game: one shelf completes the first inventory objective; fourteen do not complete the fifteen-shelf objective; fifteen do. Placing the shelves afterwards must not erase that completion.
+- The final confirmation remains manual: inspect the spacing and see a level-30 offer, without needing to buy it. Review both pictures/languages, claim three Books and later three Lapis plus ten XP, and reopen/restart.
+- No player data changed. The user reported the preceding enchanting slice was good; detailed survival edge cases remain part of full acceptance testing.
+
+### 2026-09-08 — Enchanting foundations
+
+- Added six source lessons after the Diamond Pickaxe, with parallel Obsidian/Sugar Cane/Lapis branches and three unchanged half-width illustrations.
+- Pending in-game: four Obsidian, three Sugar Cane, one Book, three Lapis and one Enchanting Table; prior/new enchanting advancement detection must not bypass prerequisite quests.
+- Check Paper/Book, Table recipe and interface images in both languages and reading widths; check original Leather/XP/Lapis rewards, twenty-first trophy and opening recommendation despite unfinished optional excursions.
+- No world, progress, reward journal or key binding was changed for this slice.
+
+### 2026-09-08 — Reward journal recovery follow-up
+
+- User reported successful behaviour after the backed-up recovery and separate completion-marker fix. Full-inventory and multiplayer edge cases remain part of the broader acceptance checklist.
+
+### Bulk reward collection
+
+- Pending in-game: gold Chest appears at the top right only with eligible rewards, including archived chapters; disappears after collection; remains for inventory-full batches.
+- Test mixed item/XP rewards, repeated clicks, restart, a full inventory, preview mode and another player. Locked/pending/claimed rewards must not pay again. Check header spacing at small GUI widths and XP sound.
+- No player progress was reset. Server collection reuses the existing durable per-quest payout.
+
+### 2026-09-08 — Your First Diamonds
+
+- Added six original lessons after storage and Iron Essentials. Optional Village work is not required.
+- Pending in-game: two Iron-or-better Pickaxes, Water Bucket, Shield, 32 Torches, eight cooked foods, 16 Cobbled Deepslate, three Diamonds, manual safety checks and Diamond Pickaxe.
+- Check original four Bread, eight Torches, two five-XP rewards, Golden Apple and twentieth trophy in both languages. No player data changed.
+
+### 2026-09-08 — Trading and returning home
+
+- Added six original lessons after respectful Village behaviour, with the unchanged half-width trading illustration.
+- Pending in-game: chapter reveal, profession/offer text, automatic first trade (including prior vanilla progress), manual return checks, four Torches plus five XP, three Bread plus five XP, and nineteenth trophy in both languages.
+- No saves, reward journals or main-path gates were changed.
+
+### 2026-09-08 — Discover a Village
+
+- Added four optional source lessons after the Boat return, with original IDs, five XP and the unchanged Village overview diagram.
+- Pending in-game: chapter reveal after returning to the same shore, sequential practical confirmations, both languages, half-width image, reward and eighteenth trophy.
+- No player progress or reward journal was changed. Trading remains the next slice.
+
+### 2026-09-08 — Optional excursions and Boats
+
+- Added six source lessons, two original half-width diagrams and a cosmetic trophy. No player data was changed.
+- Pending in-game: complete Compass binding/return and protection recap to reveal the chapter; check Shield, eight cooked foods, 16 Torches, 32 Cobblestone, ordinary Boat/Raft detection, manual preparation/travel, five XP and both languages.
+- The chapter does not gate the main course. Village exploration remains separate.
+
+### 2026-09-08 — Storage and organisation
+
+- Added five source lessons after animal care, preserving identifiers and rewards. The Sign description now matches mixed-wood tag counting.
+- Pending in-game: two versus three Chests/Signs, separate practical confirmations, three Item Frames, one Bundle, five XP and the sixteenth trophy in both languages.
+- No world data was changed; optional composting does not gate the chapter.
+
+### 2026-09-08 — Your First Animals
+
+- Added six bilingual source lessons after Bread, independent of optional composting. The original Fence/Gate diagram remains half-width.
+- Pending in-game: 14 versus 15 mixed wooden Fences plus one Gate, two feed items, practical pen/luring checks, automatic breeding including prior vanilla progress, four Torches, one Lead, five XP and the fifteenth trophy.
+- Existing player progress is unchanged. Storage remains the next slice.
+
+### 2026-09-08 — Optional composting
+
+- Added three source lessons with stable IDs; the branch opens after Wheat planting and does not gate the course.
+- Pending in-game: six versus seven mixed wooden Slabs, automatic Composter possession, exactly 32 Seeds, manual Bone Meal collection, five XP and the fourteenth trophy in both languages.
+- Existing saves and reward journals were not changed.
+
+### 2026-09-08 — First Wheat field
+
+- Added six original field-to-Bread lessons with three original half-width illustrations; optional composting and animal care are deferred.
+- Pending in-game: two versus three Seeds/Wheat, automatic Wheat planting (including prior vanilla progress), manual Farmland confirmation, three Bone Meal and five-XP claims, all images and thirteenth trophy.
+- The field opens from the food reserve, not Iron completion. Instructions include nearby natural Water for players without a Bucket. No saves or reward journals were changed.
+
+### 2026-09-08 — Optional maps
+
+- Added the two source map lessons as an explicitly optional chapter, without making them a prerequisite for the course.
+- Pending in-game: an Empty Map alone must not satisfy Filled Map possession; inspect both half-width diagrams; obtain a Cartography Table and confirm the separate expansion exercise; verify the twelfth trophy.
+- The inventory objective does not prove where a map was opened. The text distinguishes possession detection from the recommended at-home exercise. No progress or reward state was reset.
+
+### 2026-09-08 — Lodestone slice
+
+- Added four source lessons in a separate compact chapter after Compass basics, retaining item counts, task IDs, binding criterion and five-XP reward.
+- Pending in-game: Stonecutter, seven versus eight Chiseled Stone Bricks, Lodestone recipe, automatic Compass binding and separate manual return; inspect both half-width images and the eleventh trophy in both languages.
+- Prior binding should count without repeating it, while the return exercise and reward prerequisite gate remain enforced. No world state was reset.
+
+### 2026-09-08 — Smaller images accepted; Finding Home basics
+
+- User confirmed the half-width, centred image presentation and asked to continue with Minecraft closed.
+- Added five orientation lessons; Lodestone and optional mapping are deferred to separate compact maps.
+- Pending in-game: safe-return chapter reveal, all five manual steps, exactly five XP and two Compasses after the route test, tenth trophy and both languages. No world progress or reward journal was modified.
+
+### 2026-09-08 — Iron Essentials migration
+
+- Continued with six source lessons, preserving the early first-Iron prerequisite, original IDs, four automatic possession tasks, two manual exercises and five-XP reward.
+- Added the original Iron Pickaxe, Bucket and renewable-water illustrations plus the ninth quest-book trophy.
+- Pending in-game: five versus six Ingots, parallel Pickaxe/Bucket route, Water Bucket detection, both water-source layouts, final two-branch gate, images and languages. The TEST completion shortcut remains available; no world state was reset.
+
+### 2026-09-08 — Protection accepted; Safe Underground migration
+
+- User accepted the previous Shield and Armour slice and asked to continue. Full parity edge cases remain separate from this general acceptance.
+- Added six underground lessons preserving source IDs and rewards, plus the original staircase and Torch-route illustrations.
+- Pending in-game: inspect the six-node map in both widths and languages; check two mixed suitable Pickaxes, 16 Torches and four mixed cooked foods; confirm manual safety exercises remain separate; claim ten XP once and inspect the eighth trophy.
+- No world progress or reward claims were reset. The development completion button remains available for faster review.
+
+### 2026-09-08 — Shield and Armour migration
+
+- Added five source lessons as a compact seventh chapter, retaining task/reward IDs and both original illustrations.
+- Armour accepts either completed Iron Ingot or Copper Ingot; Shield remains Iron-only. The shared gate is used by server completion and reward claims as well as the browser.
+- In-game review pending: inspect both images and languages, check Copper-only armour access versus Iron-only Shield access, complete both practice branches and claim the final single Iron Ingot. Confirm the seventh quest-book trophy and chapter celebration.
+- The development completion shortcut remains available; it satisfies one alternative path instead of completing both. It changes saved progress permanently but never claims rewards automatically.
+
+### 2026-09-08 — Ores accepted and opt-in testing shortcut
+
+- The user accepted the ore quests and requested a faster way to complete quests without meeting objectives.
+- The IntelliJ/Gradle development client now opts into a local-owner-only test completion utility. It completes the selected quest and prerequisite closure; optional unrelated branches and reward claim records remain unchanged. No world is modified until the user activates it.
+- In-game check: use TEST: Complete on a locked quest, inspect completed prerequisites, claim rewards separately, and verify ordinary completion still works. Existing test progress is deliberately persistent; this is not a temporary preview.
+
+### 2026-09-08 — Food accepted; first ores migration
+
+- The user reported the native food chapter as correct and requested continued work.
+- Next slice: a separate six-quest First Ores chapter after the food reserve, including retreat planning, Stone Pickaxe and parallel Iron/Copper routes. Preserve existing identifiers, source objectives and the original Stone Pickaxe illustration; add a quest-book-only milestone.
+- Remaining in-game checks for this slice: food gate, manual retreat check, automatic item recognition (including pre-owned items), two visible branches, recipe illustration and sixth trophy. No world progress reset.
+
+### 2026-09-08 — Food chapter migration
+
+- The user accepted the corrected physical-key welcome wording and requested continued roadmap work.
+- Next native slice: six food/hunger lessons after the safe morning, preserving source quest/task/reward IDs and keeping the eating exercise non-gating. Original raw/cooked food alternatives become native item tags; no FTB filter dependency is added.
+- In-game acceptance: chapter reveal, optional eating detection, raw food alternatives, three versus four mixed cooked foods, manual safety checks, three original small rewards, both unchanged images, fifth quest-book trophy, and restart persistence. No existing world progress is reset.
+
+### 2026-09-08 — Welcome accepted, physical key wording corrected
+
+- The user confirmed the welcome behaviour as correct. The rendered shortcut was blank, so both welcome translations now describe the physical key below ESC as the default binding and retain the pause-menu alternative. No bindings or player progress were changed.
+
+### 2026-09-08 — Follow-up acceptance and first-join introduction
+
+- The user confirmed all four follow-up fixes as correct in game: celebration caption, main-path opening selection, automatic completion notifications and pre-unlock inventory objectives with locked rewards.
+- Next implementation: a one-time, dismissible first-join introduction. Acceptance remains open for a fresh world, Open/Later/Escape, rejoin, another player, remapped controls and both languages. Established quest progress must remain untouched and must not trigger a retroactive introduction.
+
+### 2026-09-08 — User acceptance and four follow-up fixes
+
+- The user reported all other requested checks as correct, including the pause-menu entry and its centred label. This is user-reported acceptance, not an automated or independently observed playtest.
+- Four remaining cases: chapter celebration must not show an unexpanded `%s`; opening the book must recommend the next available main-path quest; automatic quest completion must notify the player and mention claimable rewards; automatic objectives must count before prerequisites while quest completion and rewards remain locked.
+- Re-test these four cases after the fixes, including one restart and simultaneous vanilla notifications. Existing player progress was not reset.
+
+### 2026-09-08 — Trophy collection and chapter navigation
+
+- The user accepted the title-bar trophy collection and requested continued roadmap work. This confirms the general presentation, not every language/reconnect/small-window acceptance case.
+- Progressive chapter navigation implemented next: Welcome initially, then individual prerequisite-based reveals, retaining saved progress and optional movement branches.
+- Fresh-world reveals, search restrictions and existing-save navigation remain to be reviewed in game; no player progress was reset.
+
 ## 0.9.0
 
 ### 2026-09-05 — Beginner first-night safety refinement

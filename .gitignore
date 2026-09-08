@@ -1,5 +1,6 @@
 .cache/
 .gradle/
+.gradle-workspace/
 build/
 .idea/
 .vscode/
@@ -13,4 +14,3 @@ world/
 crash-reports/
 logs/
 overrides/config/ftbquests/quests/progress/
-

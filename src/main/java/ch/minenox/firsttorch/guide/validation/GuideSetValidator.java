@@ -24,6 +24,8 @@ public final class GuideSetValidator {
                 add(globalIds, chapter.id());
                 for (QuestDefinition quest : chapter.quests()) {
                     add(globalIds, quest.id());
+                    quest.tasks().forEach(task -> add(globalIds, task.id()));
+                    quest.rewards().forEach(reward -> add(globalIds, reward.id()));
                 }
             }
         }

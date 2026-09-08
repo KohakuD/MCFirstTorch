@@ -9,6 +9,7 @@ public final class FirstTorch {
     public static final String MOD_ID = "firsttorch";
 
     public FirstTorch(IEventBus modEventBus, ModContainer modContainer) {
-        // Native curriculum services and UI registration will be added incrementally.
+        modContainer.registerConfig(net.neoforged.fml.config.ModConfig.Type.CLIENT,
+                ch.minenox.firsttorch.client.FirstTorchClientConfig.SPEC);
     }
 }

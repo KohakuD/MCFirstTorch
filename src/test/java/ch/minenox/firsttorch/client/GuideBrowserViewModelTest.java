@@ -87,6 +87,25 @@ final class GuideBrowserViewModelTest {
         assertEquals(1, view.guideIndex());
         assertEquals(List.of(first.id(), second.id()), view.guides().stream().map(GuideDefinition::id).toList());
     }
+    @Test
+    void visibilityDoesNotRemoveHiddenPrerequisiteDefinitionsOrLeakHiddenSelection() {
+        String chapterC = "1000000000000003", questC = "2000000000000003";
+        var first = chapter(CHAPTER_A_ID, 0, quest(QUEST_A_ID, 0, List.of()));
+        var hidden = chapter(CHAPTER_B_ID, 1, quest(QUEST_B_ID, 0, List.of(QUEST_A_ID)));
+        var started = chapter(chapterC, 2, quest(questC, 0, List.of(QUEST_B_ID)));
+        var snapshot = new GuideSnapshot(List.of(guide(List.of(first, hidden, started))));
+        var progress = new ch.minenox.firsttorch.network.ProgressPayload(
+                new ch.minenox.firsttorch.guide.progress.ProgressState(java.util.Set.of(), java.util.Set.of(questC)),
+                java.util.Map.of(), true);
+        var view = GuideBrowserViewModel.resolve(snapshot, new Selection(GUIDE_ID, chapterC, questC), progress);
+        assertEquals(List.of(CHAPTER_A_ID, chapterC), view.chapters().stream().map(ChapterDefinition::id).toList());
+        assertEquals(3, view.guide().chapters().size());
+        assertEquals(QUEST_B_ID, view.prerequisites().getFirst().questId());
+        var rejected = GuideBrowserViewModel.resolve(snapshot, new Selection(GUIDE_ID, CHAPTER_B_ID, QUEST_B_ID), progress);
+        assertEquals(CHAPTER_A_ID, rejected.chapter().id());
+        assertEquals(3, GuideBrowserViewModel.resolve(snapshot, Selection.EMPTY).chapters().size());
+    }
+
     private static GuideSnapshot twoQuestSnapshot() {
         QuestDefinition prerequisite = quest(QUEST_A_ID, 0, List.of());
         QuestDefinition dependent = quest(QUEST_B_ID, 1, List.of(QUEST_A_ID));

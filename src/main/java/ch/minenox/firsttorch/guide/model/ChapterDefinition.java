@@ -7,7 +7,13 @@ public record ChapterDefinition(
         int order,
         String titleKey,
         String descriptionKey,
-        List<QuestDefinition> quests) {
+        List<QuestDefinition> quests,
+        String iconItemId) {
+
+    public ChapterDefinition(String id, int order, String titleKey, String descriptionKey,
+            List<QuestDefinition> quests) {
+        this(id, order, titleKey, descriptionKey, quests, null);
+    }
 
     public ChapterDefinition {
         quests = quests == null ? null : List.copyOf(quests);

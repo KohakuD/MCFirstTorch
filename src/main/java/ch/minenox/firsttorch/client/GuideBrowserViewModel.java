@@ -4,6 +4,7 @@ import ch.minenox.firsttorch.guide.GuideSnapshot;
 import ch.minenox.firsttorch.guide.model.ChapterDefinition;
 import ch.minenox.firsttorch.guide.model.GuideDefinition;
 import ch.minenox.firsttorch.guide.model.QuestDefinition;
+import ch.minenox.firsttorch.network.ProgressPayload;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.LinkedHashMap;
@@ -34,6 +35,15 @@ public record GuideBrowserViewModel(
     }
 
     public static GuideBrowserViewModel resolve(GuideSnapshot snapshot, Selection preferred) {
+        return resolve(snapshot, preferred, GuideDefinition::chapters);
+    }
+
+    public static GuideBrowserViewModel resolve(GuideSnapshot snapshot, Selection preferred, ProgressPayload progress) {
+        return resolve(snapshot, preferred, guide -> ChapterVisibility.visibleChapters(guide, progress));
+    }
+
+    private static GuideBrowserViewModel resolve(GuideSnapshot snapshot, Selection preferred,
+            java.util.function.Function<GuideDefinition, List<ChapterDefinition>> visibleChapters) {
         List<GuideDefinition> guides = snapshot.guides();
         if (guides.isEmpty()) {
             return new GuideBrowserViewModel(
@@ -41,7 +51,7 @@ public record GuideBrowserViewModel(
         }
 
         GuideDefinition guide = findGuide(guides, preferred.guideId());
-        List<ChapterDefinition> chapters = guide.chapters().stream().sorted(CHAPTER_ORDER).toList();
+        List<ChapterDefinition> chapters = visibleChapters.apply(guide).stream().sorted(CHAPTER_ORDER).toList();
         ChapterDefinition chapter = findChapter(chapters, preferred.chapterId());
         List<QuestDefinition> quests = chapter.quests().stream().sorted(QUEST_ORDER).toList();
         QuestDefinition quest = findQuest(quests, preferred.questId());

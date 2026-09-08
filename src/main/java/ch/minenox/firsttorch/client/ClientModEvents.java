@@ -2,6 +2,8 @@ package ch.minenox.firsttorch.client;
 
 import ch.minenox.firsttorch.FirstTorch;
 import ch.minenox.firsttorch.network.GuideSnapshotPayload;
+import ch.minenox.firsttorch.network.ProgressPayload;
+import ch.minenox.firsttorch.network.WelcomePayload;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
@@ -20,6 +22,11 @@ public final class ClientModEvents {
 
     @SubscribeEvent
     public static void registerPayloadHandlers(RegisterClientPayloadHandlersEvent event) {
-        event.register(GuideSnapshotPayload.TYPE, (payload, context) -> ClientGuideCache.install(payload.snapshot()));
+        event.register(GuideSnapshotPayload.TYPE, (payload, context) -> {
+            ClientProgressCache.clear();
+            ClientGuideCache.install(payload.snapshot());
+        });
+        event.register(ProgressPayload.TYPE, (payload, context) -> ClientProgressCache.install(payload));
+        event.register(WelcomePayload.TYPE, (payload, context) -> FirstTorchWelcome.request());
     }
 }

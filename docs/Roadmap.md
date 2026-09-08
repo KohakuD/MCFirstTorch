@@ -636,6 +636,113 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 
 ## 0.13.0 — Independent First Torch Mod
 
+This is the active native-mod implementation track. The 0.9.1 milestone above describes the retained FTB pack and its separate content playtest.
+
+### Native implementation sequence
+
+Acceptance convention (2026-09-08): the user confirms that previous "correct/good, continue" messages mean the delivered changes were tested successfully. All delivered single-player curriculum/UI acceptance items through optional Piglin barter are therefore accepted. This does not claim an independently performed multiplayer, player-isolation or fault-injection campaign; remaining mixed test items below retain those separate checks. Future deliveries await the next user confirmation.
+
+- [x] Independent NeoForge build and validated, synchronised guide definitions
+- [x] Native chapter browser, dependency map, industrial design preview, and reading layout prototype
+- [x] Add a narrated First Torch pause-menu entry without replacing vanilla controls
+- [x] Add a dismissible native first-join introduction with world-owned per-player acknowledgement and remapped-key guidance
+- [x] In-game acceptance of first-join Open/Later/Escape, repeat join and existing saves (user-confirmed 2026-09-08)
+- [ ] Verify first-join behaviour for another player
+- [x] In-game acceptance of pause-menu entry, Escape return, resize and keyboard navigation (user-confirmed 2026-09-08)
+- [x] Validated manual/inventory task and fixed item/experience reward definitions, including bounded network transport
+- [x] Server-authoritative task evaluation and prerequisite gating (alpha session runtime)
+- [x] Add an explicitly enabled local-owner test-completion button without automatic reward payouts
+- [x] In-game acceptance of manual confirmation and inventory thresholds (user-confirmed 2026-09-08)
+- [ ] Verify multiplayer player isolation for task actions
+- [x] Versioned per-player world persistence with strict loading and native save/reopen tests
+- [x] In-game restart, death and dimension-change persistence acceptance (user-confirmed 2026-09-08)
+- [ ] Verify dedicated multiplayer persistence
+- [x] Synchronise live player progress and task quantities to the client
+- [x] Live completion badges, scrollable task cards and server-checked manual confirmation
+- [x] Add a client-only chapter-completion firework overlay with an accessibility toggle and silent reconnect baseline
+- [x] Add a title-bar trophy collection for the four initial native chapters, derived from saved quest completions without inventory items
+- [x] In-game acceptance of earned/locked trophies, both languages, small-window paging and reconnect persistence (user-confirmed 2026-09-08)
+- [x] In-game acceptance of the chapter firework, disabled effects and non-replaying chapter completions (user-confirmed 2026-09-08)
+- [x] In-game acceptance of live quantities, manual task button, reconnect and preview isolation (user-confirmed 2026-09-08)
+- [x] Server-checked whole-quest reward claiming with inventory preflight and durable no-retry reservations
+- [x] In-game reward acceptance: full inventory, exact XP/items, repeat click and restart (user-confirmed 2026-09-08)
+- [ ] Verify multiplayer player isolation for reward claims
+- [x] Migrate and test the first curriculum path before migrating the complete course (user-confirmed 2026-09-08)
+  - [x] Port the eight Welcome lessons with original identifiers, native controls and bilingual text
+  - [x] Review the native introduction in both languages, including its five-XP reward and final prerequisite gate (user-confirmed 2026-09-08)
+  - [x] Continue with First Steps objectives and progressive chapter visibility; no FTB progress import yet (user-confirmed 2026-09-08)
+    - [x] Reveal native chapters from individual quest prerequisites while retaining started/completed chapters and optional branches
+    - [x] Group completed chapters behind an expandable entry, remove chapter numbers and keep archived lessons searchable
+    - [x] In-game acceptance of progressive chapter visibility, search, saved progress and parallel shelter/tool routes (user-confirmed 2026-09-08)
+    - [x] Port mouse controls and four optional movement exercises with their original prerequisites and rewards
+    - [x] Restore original item icons for all thirteen migrated quests in map and detail views
+    - [x] Render the existing instructional images in the native reading pane (user-confirmed 2026-09-08)
+      - [x] Add optional local PNG illustrations and restore the original attack/break image with bilingual description
+      - [x] Batch-port nine additional original illustrations alongside ten material/tool/shelter lessons
+      - [x] Review all ten native illustrations together: scrolling, aspect ratio, clipping and both languages (user-confirmed 2026-09-08)
+    - [x] Review these five lessons in both languages and verify the Welcome-to-First-Steps gate in game (user-confirmed 2026-09-08)
+    - [x] Add mixed-item tag counting and migrate the planks objective without restricting wood types
+    - [x] In-game acceptance of mixed wood counts, tool/manual combinations, rewards and saved progress (user-confirmed 2026-09-08)
+    - [x] Add exact-criterion/whole-advancement objectives with server observation, gating, persistence and bounded protocol 10
+    - [x] Migrate sleeping, permanent shelter and safe morning with original IDs, rewards and Bed illustration
+    - [x] In-game acceptance of sleep detection, prior vanilla completion, closing gates, Bed image and final rewards (user-confirmed 2026-09-08)
+  - [x] Continue with a compact native food chapter before migrating protection and mining
+    - [x] Port the six food/hunger lessons with original IDs, optional eating, native food tags and original rewards
+    - [x] Include both unchanged food illustrations and a fifth quest-book trophy
+    - [x] In-game acceptance of mixed food quantities, eating detection, images, rewards and saved progress (user-reported)
+  - [x] Continue with small native ore/protection chapters (user-confirmed 2026-09-08)
+    - [x] Port retreat planning, Stone Pickaxe and parallel Iron/Copper routes as six quests with the original recipe illustration
+    - [x] In-game acceptance of the food gate, automatic ore objectives, branches, illustration and sixth trophy (user-reported)
+    - [x] Follow with five Shield and armour lessons, preserving the source's alternative Iron-or-Copper prerequisite
+    - [x] General in-game acceptance of Shield and Armour (user-reported); detailed alternate-path edge cases remain part of full parity testing
+  - [x] Port six Safe Underground lessons with original IDs, equipment thresholds, two illustrations and the ten-XP return reward
+    - [x] In-game acceptance of mixed Pickaxes/food, compact route, illustrations, manual safety exercises and eighth trophy (user-confirmed 2026-09-08)
+  - [x] Port six Iron Essentials lessons with original inventory checks, three illustrations and the five-XP recap
+    - [x] In-game acceptance of early Iron access, six-Ingot threshold, tool/Bucket branches, water-source practice and ninth trophy (user-confirmed 2026-09-08)
+  - [x] Port five Finding Home basics with original manual objectives, five XP and two Compasses
+    - [x] In-game acceptance of coordinates, safe-return gate, reward quantities and tenth trophy (user-confirmed 2026-09-08)
+    - [x] Add four Lodestone lessons with three inventory objectives, automatic binding detection and a manual return test
+    - [x] In-game acceptance of eight Chiseled Stone Bricks, Compass binding, return confirmation, two images and eleventh trophy (user-confirmed 2026-09-08)
+    - [x] Add two optional map lessons in a separate chapter with original images and inventory/manual objectives
+    - [x] In-game acceptance of map detection, Cartography Table practice, both illustrations and twelfth trophy (user-confirmed 2026-09-08)
+  - [x] Add six first-field lessons through Bread with automatic Wheat planting, original rewards and three images
+    - [x] In-game acceptance of three Seeds/Wheat, planting detection, natural-water fallback and thirteenth trophy (user-confirmed 2026-09-08)
+    - [x] Add three optional composting lessons with original seven-Slab objective, 32 Seeds, five XP and a quest-book trophy
+    - [x] In-game acceptance of Slab counting, Composter rewards, manual collection and optional navigation (user-confirmed 2026-09-08)
+    - [x] Add six animal-care lessons with original objectives, breeding detection, rewards and Fence/Gate image
+    - [x] In-game acceptance of mixed Fence/Gate and feed counts, automatic breeding, practical confirmations and fifteenth trophy (user-confirmed 2026-09-08)
+    - [x] Add five storage and organisation lessons with original objectives, rewards and a quest-book trophy
+    - [x] In-game acceptance of Chest/Sign thresholds, practical sorting, three Item Frames, Bundle, five XP and sixteenth trophy (user-confirmed 2026-09-08)
+    - [x] Add six optional excursion/Boat lessons with original equipment checks, two illustrations and five XP
+    - [x] In-game acceptance of the Lodestone/protection gate, equipment thresholds, Boat variants, practice and seventeenth trophy (user-confirmed 2026-09-08)
+    - [x] Add four optional Village exploration lessons, original overview image and five-XP location reward
+    - [x] In-game acceptance of Boat-return entry gate, practical confirmations, overview image and eighteenth trophy (user-confirmed 2026-09-08)
+    - [x] Add six optional profession, trading and return lessons with automatic first-trade detection and original artwork/rewards
+    - [x] In-game acceptance of prior/new trade detection, prerequisites, practical return, rewards and nineteenth trophy (user-confirmed 2026-09-08)
+    - [x] Add six deep-mining lessons through the Diamond Pickaxe with original thresholds and rewards
+    - [x] In-game acceptance of storage/Iron gate, equipment counts, practical tunnel checks, rewards and twentieth trophy (user-confirmed 2026-09-08)
+    - [x] Add six enchanting-foundation lessons with original objectives, three illustrations and rewards
+    - [x] In-game acceptance of parallel ingredients, first-enchantment detection, images, rewards and twenty-first trophy (user-confirmed 2026-09-08)
+    - [x] Add three Bookshelf expansion lessons with original objectives, two images and rewards
+    - [x] In-game acceptance of one/fifteen Bookshelves, manual layout check, pictures and twenty-second trophy (user-confirmed 2026-09-08)
+    - [x] Add five portal-preparation lessons with original gate, objectives, rewards and two pictures
+    - [x] In-game acceptance of Flint, ten normal Obsidian, manual unlit-frame check, images and twenty-third trophy (user-confirmed 2026-09-08)
+    - [x] Add six Gold-equipment and pre-entry lessons with original checks, rewards and three images
+    - [x] In-game acceptance of Gold/helmet, mixed equipment counts, ignition/safety confirmations and twenty-fourth trophy (user-confirmed 2026-09-08)
+    - [x] Add four first-arrival and safe-return Nether lessons with original checks and rewards
+    - [x] In-game acceptance of entry detection, separate safety checks, return rewards and twenty-fifth trophy (user-confirmed 2026-09-08)
+    - [x] Add five Piglin, Ghast and route-marker safety lessons with original objectives and rewards
+    - [x] In-game acceptance of creature guides, six-Cobblestone/three-Torch checks, placement/return confirmations and twenty-sixth trophy (user-confirmed 2026-09-08)
+    - [x] Add the shared Nether-activity introduction and three optional Piglin-barter lessons
+    - [x] In-game acceptance of Gold Ingot detection, safe exchange, random-result independence and twenty-seventh trophy (user-confirmed 2026-09-08)
+    - [x] Add four optional first-Nether-resource lessons directly from the shared introduction
+    - [x] In-game acceptance of sixteen Netherrack/four Quartz, independent branch, manual return and twenty-eighth trophy (user-confirmed 2026-09-08)
+    - [x] Add four Fortress preparation, search, retreat-point and enemy-safety lessons directly from the shared introduction
+    - [ ] In-game acceptance of Fortress equipment thresholds, three practical safety checks, illustrations and twenty-ninth trophy
+    - [ ] Continue with Blaze Rods, Nether Wart and safe Fortress return
+
+The checked schema step provides data only: it does not complete tasks, grant rewards, or turn preview values into player progress.
+
 The minimal NeoForge/IntelliJ build foundation now lives beside the existing FTB-based pack. The checklist remains open until the native runtime implements the required behaviour and passes the full parity playtest.
 
 - [ ] Build a dedicated NeoForge mod that runs without FTB Quests, FTB Library, FTB Teams, FTB Filter System, FTB XMod Compat, or Initially

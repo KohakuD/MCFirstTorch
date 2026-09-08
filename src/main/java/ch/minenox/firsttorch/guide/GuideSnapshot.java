@@ -11,4 +11,5 @@ public record GuideSnapshot(List<GuideDefinition> guides) {
         guides = guides == null ? null : List.copyOf(guides);
         GuideSetValidator.validate(guides);
     }
+
 }

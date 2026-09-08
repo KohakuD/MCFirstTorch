@@ -5,6 +5,9 @@ import ch.minenox.firsttorch.guide.model.ChapterDefinition;
 import ch.minenox.firsttorch.guide.model.GuideDefinition;
 import ch.minenox.firsttorch.guide.model.QuestDefinition;
 import ch.minenox.firsttorch.guide.model.QuestPosition;
+import ch.minenox.firsttorch.guide.model.GuideImage;
+import ch.minenox.firsttorch.guide.model.TaskDefinition;
+import ch.minenox.firsttorch.guide.model.RewardDefinition;
 import io.netty.handler.codec.DecoderException;
 import io.netty.handler.codec.EncoderException;
 import java.util.ArrayList;
@@ -18,6 +21,7 @@ public final class GuideSnapshotWireCodec {
     public static final int MAX_PREREQUISITES_PER_QUEST = 128;
     public static final int MAX_TOTAL_QUESTS = 16_384;
     public static final int MAX_TRANSLATION_KEY_LENGTH = 256;
+    public static final int MAX_ENTRIES_PER_QUEST = 32;
 
     private static final int STABLE_ID_LENGTH = 16;
 
@@ -40,6 +44,7 @@ public final class GuideSnapshotWireCodec {
                 output.writeVarInt(chapter.order());
                 writeKey(output, chapter.titleKey());
                 writeKey(output, chapter.descriptionKey());
+                output.writeUtf(chapter.iconItemId() == null ? "" : chapter.iconItemId(), 256);
                 requireSize("quests", chapter.quests().size(), MAX_QUESTS_PER_CHAPTER);
                 totalQuests += chapter.quests().size();
                 requireSize("total quests", totalQuests, MAX_TOTAL_QUESTS);
@@ -49,12 +54,40 @@ public final class GuideSnapshotWireCodec {
                     output.writeVarInt(quest.order());
                     writeKey(output, quest.titleKey());
                     writeKey(output, quest.descriptionKey());
+                    output.writeUtf(quest.iconItemId() == null ? "" : quest.iconItemId(), 256);
+                    output.writeBoolean(quest.image() != null);
+                    if (quest.image() != null) {
+                        output.writeUtf(quest.image().resource(), 256);
+                        output.writeVarInt(quest.image().width());
+                        output.writeVarInt(quest.image().height());
+                        output.writeUtf(quest.image().altKey(), 256);
+                    }
                     output.writeInt(quest.position().x());
                     output.writeInt(quest.position().y());
                     requireSize("prerequisites", quest.prerequisiteQuestIds().size(), MAX_PREREQUISITES_PER_QUEST);
                     output.writeVarInt(quest.prerequisiteQuestIds().size());
                     for (String prerequisite : quest.prerequisiteQuestIds()) {
                         writeId(output, prerequisite);
+                    }
+                    output.writeUtf(quest.prerequisiteMode().name(), 16);
+                    requireSize("tasks", quest.tasks().size(), MAX_ENTRIES_PER_QUEST);
+                    output.writeVarInt(quest.tasks().size());
+                    for (TaskDefinition task : quest.tasks()) {
+                        writeId(output, task.id());
+                        output.writeUtf(task.type().name(), 16);
+                        output.writeUtf(task.itemId() == null ? "" : task.itemId(), 256);
+                        output.writeVarInt(task.count());
+                        output.writeUtf(task.titleKey() == null ? "" : task.titleKey(), MAX_TRANSLATION_KEY_LENGTH);
+                        output.writeUtf(task.advancementId() == null ? "" : task.advancementId(), 256);
+                        output.writeUtf(task.criterion() == null ? "" : task.criterion(), 256);
+                    }
+                    requireSize("rewards", quest.rewards().size(), MAX_ENTRIES_PER_QUEST);
+                    output.writeVarInt(quest.rewards().size());
+                    for (RewardDefinition reward : quest.rewards()) {
+                        writeId(output, reward.id());
+                        output.writeUtf(reward.type().name(), 16);
+                        output.writeUtf(reward.itemId() == null ? "" : reward.itemId(), 256);
+                        output.writeVarInt(reward.amount());
                     }
                 }
             }
@@ -77,6 +110,7 @@ public final class GuideSnapshotWireCodec {
                 int order = input.readVarInt();
                 String chapterTitleKey = input.readUtf(MAX_TRANSLATION_KEY_LENGTH);
                 String chapterDescriptionKey = input.readUtf(MAX_TRANSLATION_KEY_LENGTH);
+                String chapterIconItemId = input.readUtf(256);
                 int questCount = readSize(input, "quests", MAX_QUESTS_PER_CHAPTER);
                 totalQuests += questCount;
                 if (totalQuests > MAX_TOTAL_QUESTS) {
@@ -88,17 +122,47 @@ public final class GuideSnapshotWireCodec {
                     int questOrder = input.readVarInt();
                     String questTitleKey = input.readUtf(MAX_TRANSLATION_KEY_LENGTH);
                     String questDescriptionKey = input.readUtf(MAX_TRANSLATION_KEY_LENGTH);
+                    String iconItemId = input.readUtf(256);
+                    GuideImage image = null;
+                    if (input.readBoolean()) {
+                        image = new GuideImage(input.readUtf(256), input.readVarInt(), input.readVarInt(), input.readUtf(256));
+                    }
                     QuestPosition position = new QuestPosition(input.readInt(), input.readInt());
                     int prerequisiteCount = readSize(input, "prerequisites", MAX_PREREQUISITES_PER_QUEST);
                     List<String> prerequisites = new ArrayList<>(prerequisiteCount);
                     for (int prerequisiteIndex = 0; prerequisiteIndex < prerequisiteCount; prerequisiteIndex++) {
                         prerequisites.add(input.readUtf(STABLE_ID_LENGTH));
                     }
+                    QuestDefinition.PrerequisiteMode prerequisiteMode = readType(input, QuestDefinition.PrerequisiteMode.class);
+                    int taskCount = readSize(input, "tasks", MAX_ENTRIES_PER_QUEST);
+                    List<TaskDefinition> tasks = new ArrayList<>(taskCount);
+                    for (int i = 0; i < taskCount; i++) {
+                        String taskId = input.readUtf(STABLE_ID_LENGTH);
+                        TaskDefinition.Type type = readType(input, TaskDefinition.Type.class);
+                        String itemId = input.readUtf(256);
+                        int count = input.readVarInt();
+                        String taskTitleKey = input.readUtf(MAX_TRANSLATION_KEY_LENGTH);
+                        String advancementId = input.readUtf(256);
+                        String criterion = input.readUtf(256);
+                        tasks.add(new TaskDefinition(taskId, type, itemId.isEmpty() ? null : itemId, count,
+                                taskTitleKey.isEmpty() ? null : taskTitleKey,
+                                advancementId.isEmpty() ? null : advancementId, criterion.isEmpty() ? null : criterion));
+                    }
+                    int rewardCount = readSize(input, "rewards", MAX_ENTRIES_PER_QUEST);
+                    List<RewardDefinition> rewards = new ArrayList<>(rewardCount);
+                    for (int i = 0; i < rewardCount; i++) {
+                        String rewardId = input.readUtf(STABLE_ID_LENGTH);
+                        RewardDefinition.Type type = readType(input, RewardDefinition.Type.class);
+                        String itemId = input.readUtf(256);
+                        rewards.add(new RewardDefinition(rewardId, type, itemId.isEmpty() ? null : itemId, input.readVarInt()));
+                    }
                     quests.add(new QuestDefinition(
-                            questId, questOrder, questTitleKey, questDescriptionKey, position, prerequisites));
+                            questId, questOrder, questTitleKey, questDescriptionKey, position, prerequisites, tasks, rewards,
+                            iconItemId.isEmpty() ? null : iconItemId, image, prerequisiteMode));
                 }
                 chapters.add(new ChapterDefinition(
-                        chapterId, order, chapterTitleKey, chapterDescriptionKey, quests));
+                        chapterId, order, chapterTitleKey, chapterDescriptionKey, quests,
+                        chapterIconItemId.isEmpty() ? null : chapterIconItemId));
             }
             guides.add(new GuideDefinition(schemaVersion, id, titleKey, descriptionKey, chapters));
         }
@@ -106,6 +170,15 @@ public final class GuideSnapshotWireCodec {
             return new GuideSnapshot(guides);
         } catch (IllegalArgumentException exception) {
             throw new DecoderException("Received invalid guide snapshot: " + exception.getMessage(), exception);
+        }
+    }
+
+    private static <T extends Enum<T>> T readType(FriendlyByteBuf input, Class<T> type) {
+        String value = input.readUtf(16);
+        try {
+            return Enum.valueOf(type, value);
+        } catch (IllegalArgumentException exception) {
+            throw new DecoderException("Unknown guide entry type: " + value, exception);
         }
     }
 

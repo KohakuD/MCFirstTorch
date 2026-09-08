@@ -6,11 +6,11 @@ import ch.minenox.firsttorch.client.GuideBrowserViewModel.Selection;
 import ch.minenox.firsttorch.guide.GuideSnapshot;
 import ch.minenox.firsttorch.guide.model.ChapterDefinition;
 import ch.minenox.firsttorch.guide.model.QuestDefinition;
+import ch.minenox.firsttorch.guide.model.TaskDefinition;
+import ch.minenox.firsttorch.network.ProgressPayload;
 import java.util.List;
 import java.util.Map;
 import java.util.Locale;
-import net.minecraft.client.gui.components.EditBox;
-import net.minecraft.client.gui.screens.options.AccessibilityOptionsScreen;
 import net.minecraft.client.renderer.RenderPipelines;
 import net.minecraft.client.resources.model.ModelBakery;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -36,10 +36,18 @@ class FirstTorchBrowserScreen extends Screen {
     private ScreenLayout layout = FirstTorchLayout.calculate(320, 240);
     private Map<String, Rect> questNodes = Map.of();
     private Boolean previewChoice;
-    private EditBox searchBox;
     private String query = "";
-    private boolean searchPending;
     private boolean searchEmpty;
+    private boolean reading;
+    private ProgressPayload observedProgress;
+    private int detailsScroll;
+    private int detailsMaxScroll;
+    private boolean trophiesOpen;
+    private List<TrophyCatalog.Entry> trophies = List.of();
+    private String selectedTrophy;
+    private boolean completedExpanded;
+    private int chapterPage;
+    private boolean recommendOnOpen = true;
 
     FirstTorchBrowserScreen(Screen parent) {
         super(Component.translatable("screen.firsttorch.title"));
@@ -49,40 +57,124 @@ class FirstTorchBrowserScreen extends Screen {
     @Override
     protected void init() {
         super.init();
-        boolean searching = searchBox != null && searchBox.isFocused();
         observedSnapshot = ClientGuideCache.snapshot();
+        observedProgress = ClientProgressCache.snapshot();
         GuideSnapshot displayed = usesPreview() ? DesignPreview.snapshot() : observedSnapshot;
+        if (!usesPreview() && recommendOnOpen && liveAvailable() && !observedSnapshot.guides().isEmpty()) {
+            selection = QuestRecommendation.choose(observedSnapshot, observedProgress);
+            reading = selection.questId() != null;
+            recommendOnOpen = false;
+            completedExpanded = selection.questId() != null && completed(selection.questId());
+        }
         if (usesPreview() && !DesignPreview.isPreview(selection.guideId())) {
             selection = new Selection("0D15000000000001", null, "2D15000000000004");
         }
-        viewModel = GuideBrowserViewModel.resolve(displayed, selection);
+        viewModel = usesPreview() ? GuideBrowserViewModel.resolve(displayed, selection)
+                : GuideBrowserViewModel.resolve(displayed, selection, observedProgress);
         selection = viewModel.selection();
         viewport = FirstTorchViewport.fit(width, height);
-        layout = FirstTorchLayout.calculate(viewport.width(), viewport.height());
-        questNodes = FirstTorchLayout.questNodes(layout.questMap(), viewModel.quests());
+        layout = FirstTorchLayout.calculate(viewport.width(), viewport.height(), reading && !trophiesOpen);
+        Rect map = layout.questMap();
+        Rect nodeArea = reading ? new Rect(map.x(), map.y() + 23, map.width(), map.height() - 23) : map;
+        questNodes = FirstTorchLayout.questNodes(nodeArea, viewModel.quests());
+        trophies = TrophyCatalog.entries(observedSnapshot, observedProgress);
+        if (trophies.stream().noneMatch(entry -> entry.chapterId().equals(selectedTrophy))) {
+            selectedTrophy = trophies.isEmpty() ? null : trophies.getFirst().chapterId();
+        }
         addHeaderControls();
-        addGuideNavigation();
+        if (!trophiesOpen) addGuideNavigation();
         addChapterButtons();
-        addQuestButtons();
-        if (searching) setFocused(searchBox);
+        if (trophiesOpen) addTrophyButtons();
+        else {
+            addQuestButtons();
+            addManualConfirmation();
+            addRewardClaim();
+            addTestCompletion();
+        }
+        if (reading && !trophiesOpen) {
+            Component overview = Component.translatable("screen.firsttorch.overview");
+            addRenderableWidget(button(map.x() + 7, map.y() + 7, map.width() - 14, 17,
+                    overview, ignored -> { reading = false; rebuildWidgets(); }, overview,
+                    Tooltip.create(overview), FirstTorchButton.Kind.NAVIGATION, false));
+        }
     }
 
     @Override
     public void tick() {
         GuideSnapshot current = ClientGuideCache.snapshot();
-        if (current != observedSnapshot) {
+        if (current != observedSnapshot || ClientProgressCache.snapshot() != observedProgress) {
             rebuildWidgets();
-        }
-        if (searchPending) {
-            searchPending = false;
-            search();
         }
     }
 
     private boolean usesPreview() {
         if (previewChoice != null) return previewChoice;
-        return observedSnapshot.guides().size() == 1
-                && observedSnapshot.guides().getFirst().id().equals("0A13F17C00000001");
+        return false;
+    }
+
+    private boolean liveAvailable() {
+        return observedProgress != null && observedProgress.available();
+    }
+
+    private void addRewardClaim() {
+        if (preview() || !liveAvailable() || viewModel.quest() == null) return;
+        QuestDefinition quest = viewModel.quest();
+        if (quest.rewards().isEmpty() || !completed(quest.id())
+                || !quest.prerequisitesMet(this::completed)
+                || observedProgress.claimedQuestIds().contains(quest.id())
+                || observedProgress.pendingQuestIds().contains(quest.id())) return;
+        Rect panel = layout.details();
+        Component label = Component.translatable("screen.firsttorch.reward.claim");
+        addRenderableWidget(button(panel.x() + 10, panel.bottom() - 28, panel.width() - 20, 18,
+                label, control -> {
+                    if (minecraft.player != null) minecraft.player.connection.sendCommand("firsttorch claim " + quest.id());
+                }, label, null, FirstTorchButton.Kind.FOOTER, false));
+    }
+
+    private boolean testCompletionAvailable() {
+        if (preview() || !liveAvailable() || viewModel.quest() == null || completed(viewModel.quest().id())) return false;
+        var server = minecraft.getSingleplayerServer();
+        if (server == null || minecraft.player == null) return false;
+        var owner = server.getSingleplayerProfile();
+        return ch.minenox.firsttorch.guide.progress.DevelopmentQuestAccess.allowed(
+                ch.minenox.firsttorch.guide.progress.DevelopmentQuestAccess.enabled(), true,
+                owner == null ? null : owner.id(), minecraft.player.getUUID());
+    }
+
+    private void addTestCompletion() {
+        if (!testCompletionAvailable()) return;
+        Rect panel = layout.details();
+        int width = (panel.width() - 26) / 2;
+        String questId = viewModel.quest().id();
+        Component label = Component.translatable("screen.firsttorch.test.complete");
+        addRenderableWidget(button(panel.right() - 10 - width, panel.bottom() - 28, width, 18,
+                label, control -> {
+                    if (minecraft.player != null) minecraft.player.connection.sendCommand("firsttorch test_complete " + questId);
+                }, Component.translatable("screen.firsttorch.test.narration"), null, FirstTorchButton.Kind.FOOTER, false));
+    }
+
+    private boolean completed(String questId) {
+        return preview() ? DesignPreview.completed(questId)
+                : liveAvailable() && observedProgress.state().completedQuestIds().contains(questId);
+    }
+
+    private void addManualConfirmation() {
+        if (preview() || !liveAvailable() || viewModel.quest() == null) return;
+        QuestDefinition quest = viewModel.quest();
+        if (!quest.prerequisitesMet(this::completed)) return;
+        if (completed(quest.id())) return;
+        quest.tasks().stream().filter(task -> task.type() == TaskDefinition.Type.MANUAL
+                && !observedProgress.state().completedTaskIds().contains(task.id())).findFirst().ifPresent(task -> {
+            Rect panel = layout.details();
+            Component label = Component.translatable("screen.firsttorch.task.confirm");
+            int actionWidth = testCompletionAvailable() ? (panel.width() - 26) / 2 : panel.width() - 20;
+            addRenderableWidget(button(panel.x() + 10, panel.bottom() - 28, actionWidth, 18,
+                    label, control -> {
+                        if (minecraft.player != null) {
+                            minecraft.player.connection.sendCommand("firsttorch confirm " + quest.id() + " " + task.id());
+                        }
+                    }, label, null, FirstTorchButton.Kind.FOOTER, false));
+        });
     }
 
     private boolean preview() {
@@ -90,6 +182,9 @@ class FirstTorchBrowserScreen extends Screen {
     }
 
     private void togglePreview() {
+        trophiesOpen = false;
+        detailsScroll = 0;
+        reading = false;
         previewChoice = !preview();
         selection = Selection.EMPTY;
         query = "";
@@ -97,55 +192,84 @@ class FirstTorchBrowserScreen extends Screen {
         rebuildWidgets();
     }
 
-    private void search() {
+    private boolean search(String query) {
+        // Refresh visibility on submission, not on every edit in the modal.
+        rebuildWidgets();
+        this.query = query;
         searchEmpty = false;
-        if (query.isBlank() || viewModel.guide() == null) return;
+        if (query.isBlank() || viewModel.guide() == null) return false;
         String needle = query.toLowerCase(Locale.ROOT).strip();
         searchEmpty = true;
         search: for (ChapterDefinition chapter : viewModel.chapters()) {
             for (QuestDefinition quest : chapter.quests()) {
                 if (Component.translatable(quest.titleKey()).getString().toLowerCase(Locale.ROOT).contains(needle)) {
                     selection = new Selection(selection.guideId(), chapter.id(), quest.id());
+                    if (ChapterArchive.completed(chapter, this::completed)) completedExpanded = true;
+                    var navigationRows = ChapterArchive.rows(viewModel.chapters(), this::completed, completedExpanded);
+                    int rowIndex = 0;
+                    while (rowIndex < navigationRows.size() && !chapter.equals(navigationRows.get(rowIndex).chapter())) rowIndex++;
+                    int cardHeight = Math.max(23, Math.min(42, layout.chapters().height() / 7));
+                    chapterPage = rowIndex / Math.max(1, (layout.chapters().height() - 51) / (cardHeight + 5));
                     searchEmpty = false;
                     break search;
                 }
             }
         }
-        rebuildWidgets();
+        if (!searchEmpty) {
+            reading = true;
+            trophiesOpen = false;
+            detailsScroll = 0;
+        }
+        return !searchEmpty;
+    }
+
+    private boolean hasClaimableRewards() {
+        return !usesPreview() && liveAvailable()
+                && !ch.minenox.firsttorch.guide.progress.ClaimableRewards.ids(observedSnapshot,
+                        observedProgress.state(), observedProgress.claimedQuestIds(),
+                        observedProgress.pendingQuestIds()).isEmpty();
     }
 
     private void addHeaderControls() {
         Rect bar = layout.topBar();
-        boolean compact = bar.width() < 600;
-        int areaWidth = compact ? Math.min(148, bar.width() / 2) : 150;
-        int x = bar.right() - areaWidth - 9;
-        int y = compact ? bar.bottom() - 23 : bar.y() + 10;
-        int searchWidth = compact ? areaWidth - 44 : areaWidth;
+        int size = 20;
+        int x = bar.right() - 2 * size - 13;
+        int y = bar.y() + 7;
+        if (hasClaimableRewards()) {
+            Component claimAll = Component.translatable("screen.firsttorch.reward.claim_all");
+            addRenderableWidget(button(x - size - 5, y, size, size, Component.empty(),
+                    control -> {
+                        if (minecraft.player != null) {
+                            control.active = false;
+                            minecraft.player.connection.sendCommand("firsttorch claim_all");
+                        }
+                    }, claimAll, null, FirstTorchButton.Kind.CLAIM_ALL, true));
+        }
         Component search = Component.translatable("screen.firsttorch.search");
-        searchBox = new EditBox(font, x, y, searchWidth, 16, search);
-        searchBox.setHint(search);
-        searchBox.setMaxLength(80);
-        searchBox.setValue(query);
-        searchBox.setResponder(value -> { query = value; searchPending = true; });
-        addRenderableWidget(searchBox);
+        addRenderableWidget(button(x, y, size, size, Component.empty(),
+                ignored -> minecraft.setScreenAndShow(new FirstTorchSearchScreen(this, query, this::search)),
+                search, null, FirstTorchButton.Kind.SEARCH, false));
         Component access = Component.translatable("screen.firsttorch.accessibility");
-        Component settings = Component.translatable("screen.firsttorch.settings");
-        int controlsY = compact ? y : y + 22;
-        int controlsX = compact ? x + searchWidth + 3 : x;
-        int buttonWidth = compact ? 19 : 73;
-        addRenderableWidget(button(controlsX, controlsY, buttonWidth, 16,
-                compact ? Component.literal("A") : access,
-                ignored -> minecraft.setScreenAndShow(new AccessibilityOptionsScreen(this, minecraft.options)),
-                access, Tooltip.create(access), FirstTorchButton.Kind.NAVIGATION, false));
-        addRenderableWidget(button(controlsX + buttonWidth + 4, controlsY, buttonWidth, 16,
-                compact ? Component.literal("⚙") : settings, ignored -> togglePreview(),
+        Component collectionLabel = Component.translatable("screen.firsttorch.trophies");
+        addRenderableWidget(button(x + size + 4, y, size, size, Component.empty(),
+                ignored -> { trophiesOpen = !trophiesOpen; detailsScroll = 0; rebuildWidgets(); },
+                collectionLabel, null, FirstTorchButton.Kind.TROPHY, trophiesOpen));
+        addRenderableWidget(button(x, y + size + 4, size, size, Component.empty(),
+                ignored -> minecraft.setScreenAndShow(new FirstTorchAccessibilityScreen(this, minecraft.options)),
+                access, null, FirstTorchButton.Kind.ACCESSIBILITY, false));
+        addRenderableWidget(button(x + size + 4, y + size + 4, size, size,
+                Component.empty(), ignored -> togglePreview(),
                 Component.translatable("screen.firsttorch.preview.toggle"),
                 Tooltip.create(Component.translatable("screen.firsttorch.preview.toggle")),
-                FirstTorchButton.Kind.NAVIGATION, preview()));
+                FirstTorchButton.Kind.SETTINGS, preview()));
     }
 
     private ItemStack icon(String objectId) {
-        if (!preview()) return new ItemStack(Items.BOOK);
+        if (!preview()) {
+            return viewModel.quests().stream().filter(q -> q.id().equals(objectId))
+                    .findFirst().map(QuestIcons::resolve)
+                    .orElseGet(() -> new ItemStack(Items.BOOK));
+        }
         return new ItemStack(BuiltInRegistries.ITEM.getValue(Identifier.parse(DesignPreview.itemId(objectId))));
     }
 
@@ -160,9 +284,10 @@ class FirstTorchBrowserScreen extends Screen {
         FirstTorchTheme.frame(graphics, layout.questMap(), false);
         FirstTorchTheme.frame(graphics, layout.details(), false);
         FirstTorchTheme.frame(graphics, layout.footer(), false);
-        drawConnections(graphics);
+        if (!trophiesOpen) drawConnections(graphics);
         drawText(graphics);
         super.extractRenderState(graphics, (int) viewport.localX(mouseX), (int) viewport.localY(mouseY), partialTick);
+        if (!preview()) ChapterFirework.draw(graphics, font, viewport.width(), viewport.height());
         graphics.pose().popMatrix();
     }
 
@@ -187,6 +312,13 @@ class FirstTorchBrowserScreen extends Screen {
 
     @Override
     public boolean mouseScrolled(double x, double y, double scrollX, double scrollY) {
+        Rect panel = layout.details();
+        double localX = viewport.localX(x), localY = viewport.localY(y);
+        if ((trophiesOpen || !preview()) && localX >= panel.x() && localX < panel.right()
+                && localY >= panel.y() && localY < panel.bottom()) {
+            detailsScroll = Math.max(0, Math.min(detailsMaxScroll, detailsScroll - (int) (scrollY * 20)));
+            return true;
+        }
         return super.mouseScrolled(viewport.localX(x), viewport.localY(y), scrollX, scrollY);
     }
 
@@ -211,6 +343,9 @@ class FirstTorchBrowserScreen extends Screen {
     }
 
     private void switchGuide(int delta) {
+        completedExpanded = false;
+        chapterPage = 0;
+        reading = false;
         int size = viewModel.guides().size();
         if (size == 0) return;
         selection = new Selection(viewModel.guides().get(Math.floorMod(viewModel.guideIndex() + delta, size)).id(), null, null);
@@ -222,43 +357,55 @@ class FirstTorchBrowserScreen extends Screen {
         Rect panel = layout.chapters();
         int cardHeight = Math.max(23, Math.min(42, panel.height() / 7));
         int visibleCount = Math.max(1, (panel.height() - 51) / (cardHeight + 5));
-        int selectedIndex = Math.max(0, viewModel.chapters().indexOf(viewModel.chapter()));
-        int pageStart = selectedIndex / visibleCount * visibleCount;
-        int pageEnd = Math.min(viewModel.chapters().size(), pageStart + visibleCount);
+        var rows = ChapterArchive.rows(viewModel.chapters(), this::completed, completedExpanded);
+        int pageStart = Math.min(chapterPage, (rows.size() - 1) / visibleCount) * visibleCount;
+        int pageEnd = Math.min(rows.size(), pageStart + visibleCount);
         int y = panel.y() + 9;
         for (int index = pageStart; index < pageEnd; index++) {
-            ChapterDefinition chapter = viewModel.chapters().get(index);
-            Component label = Component.literal((index + 1) + "  ").append(Component.translatable(chapter.titleKey()));
+            var row = rows.get(index);
+            if (row.heading()) {
+                Component archive = Component.translatable("screen.firsttorch.chapter.completed", row.completedCount());
+                addRenderableWidget(button(panel.x() + 7, y, panel.width() - 14, cardHeight, archive,
+                        ignored -> { completedExpanded = !completedExpanded; rebuildWidgets(); },
+                        archive.copy().append(". ").append(Component.translatable(completedExpanded
+                                ? "screen.firsttorch.chapter.collapse" : "screen.firsttorch.chapter.expand")),
+                        null, FirstTorchButton.Kind.ARCHIVE, completedExpanded));
+                y += cardHeight + 5;
+                continue;
+            }
+            ChapterDefinition chapter = row.chapter();
+            Component label = panel.width() - 14 >= 100 ? Component.translatable(chapter.titleKey()) : Component.empty();
             FirstTorchButton card = button(panel.x() + 7, y, panel.width() - 14, cardHeight, label,
                     ignored -> selectChapter(chapter.id()),
                     Component.translatable("screen.firsttorch.chapter.narration", Component.translatable(chapter.titleKey())),
-                    Tooltip.create(Component.translatable(chapter.descriptionKey())),
-                    FirstTorchButton.Kind.CARD, chapter.id().equals(selection.chapterId()));
+                    null,
+                    FirstTorchButton.Kind.CARD, !trophiesOpen && chapter.id().equals(selection.chapterId()));
             if (preview()) card.preview(icon(chapter.id()), false, false);
+            else card.preview(QuestIcons.resolveItem(chapter.iconItemId()), false, false);
             addRenderableWidget(card);
             y += cardHeight + 5;
         }
-        if (viewModel.chapters().size() > visibleCount) {
+        if (rows.size() > visibleCount) {
             Component previousLabel = Component.translatable("screen.firsttorch.chapter.previous_page");
             Component nextLabel = Component.translatable("screen.firsttorch.chapter.next_page");
-            FirstTorchButton previous = button(panel.x() + 7, panel.bottom() - 23, 20, 16,
-                    Component.literal("↑"), ignored -> selectChapterPage(pageStart - visibleCount),
+            int pageButtonWidth = Math.min(20, Math.max(8, (panel.width() - 18) / 2));
+            FirstTorchButton previous = button(panel.x() + 7, panel.bottom() - 23, pageButtonWidth, 16,
+                    Component.literal("↑"), ignored -> { chapterPage = Math.max(0, pageStart / visibleCount - 1); rebuildWidgets(); },
                     previousLabel, Tooltip.create(previousLabel), FirstTorchButton.Kind.NAVIGATION, false);
-            FirstTorchButton next = button(panel.right() - 27, panel.bottom() - 23, 20, 16,
-                    Component.literal("↓"), ignored -> selectChapterPage(pageStart + visibleCount),
+            FirstTorchButton next = button(panel.right() - 7 - pageButtonWidth, panel.bottom() - 23, pageButtonWidth, 16,
+                    Component.literal("↓"), ignored -> { chapterPage = pageStart / visibleCount + 1; rebuildWidgets(); },
                     nextLabel, Tooltip.create(nextLabel), FirstTorchButton.Kind.NAVIGATION, false);
             previous.active = pageStart > 0;
-            next.active = pageEnd < viewModel.chapters().size();
+            next.active = pageEnd < rows.size();
             addRenderableWidget(previous);
             addRenderableWidget(next);
         }
     }
 
-    private void selectChapterPage(int index) {
-        selectChapter(viewModel.chapters().get(Math.max(0, Math.min(index, viewModel.chapters().size() - 1))).id());
-    }
-
     private void selectChapter(String chapterId) {
+        trophiesOpen = false;
+        detailsScroll = 0;
+        reading = false;
         selection = new Selection(selection.guideId(), chapterId, null);
         rebuildWidgets();
     }
@@ -268,29 +415,96 @@ class FirstTorchBrowserScreen extends Screen {
             QuestDefinition quest = viewModel.quests().get(index);
             Rect bounds = questNodes.get(quest.id());
             if (bounds == null) continue;
+            var narration = Component.translatable(quest.titleKey()).append(". ")
+                    .append(Component.translatable(quest.descriptionKey()));
+            if (quest.image() != null) narration.append(". ").append(Component.translatable(quest.image().altKey()));
             FirstTorchButton node = button(bounds.x(), bounds.y(), bounds.width(), bounds.height(),
                     Component.empty(), ignored -> selectQuest(quest.id()),
-                    Component.translatable(quest.titleKey()).append(". ").append(Component.translatable(quest.descriptionKey())),
-                    Tooltip.create(Component.translatable(quest.titleKey())),
+                    narration,
+                    null,
                     FirstTorchButton.Kind.MEDALLION, quest.id().equals(selection.questId()));
             if (preview()) node.preview(icon(quest.id()), DesignPreview.completed(quest.id()),
-                    quest.prerequisiteQuestIds().stream().anyMatch(id -> !DesignPreview.completed(id)));
+                    !quest.prerequisitesMet(DesignPreview::completed));
+            else node.preview(icon(quest.id()), completed(quest.id()),
+                    liveAvailable() && !quest.prerequisitesMet(this::completed));
             addRenderableWidget(node);
         }
     }
 
+    private void addTrophyButtons() {
+        Rect panel = layout.questMap();
+        int selected = 0;
+        for (int i = 0; i < trophies.size(); i++) if (trophies.get(i).chapterId().equals(selectedTrophy)) selected = i;
+        int capacity = TrophyCollectionLayout.capacity(panel);
+        int start = selected / capacity * capacity;
+        List<Rect> cards = TrophyCollectionLayout.cards(panel, Math.max(0, trophies.size() - start));
+        for (int i = 0; i < cards.size(); i++) {
+            var entry = trophies.get(start + i);
+            addRenderableWidget(new TrophyCardButton(cards.get(i), entry, entry.chapterId().equals(selectedTrophy),
+                    ignored -> { selectedTrophy = entry.chapterId(); detailsScroll = 0; rebuildWidgets(); }));
+        }
+        if (trophies.size() > capacity) {
+            int previousIndex = Math.max(0, start - capacity);
+            int nextIndex = Math.min(trophies.size() - 1, start + capacity);
+            Component previousLabel = Component.translatable("screen.firsttorch.chapter.previous_page");
+            Component nextLabel = Component.translatable("screen.firsttorch.chapter.next_page");
+            var previous = button(panel.x() + 10, panel.bottom() - 23, 20, 15, Component.literal("‹"),
+                    ignored -> { selectedTrophy = trophies.get(previousIndex).chapterId(); detailsScroll = 0; rebuildWidgets(); },
+                    previousLabel, null, FirstTorchButton.Kind.NAVIGATION, false);
+            var next = button(panel.right() - 30, panel.bottom() - 23, 20, 15, Component.literal("›"),
+                    ignored -> { selectedTrophy = trophies.get(nextIndex).chapterId(); detailsScroll = 0; rebuildWidgets(); },
+                    nextLabel, null, FirstTorchButton.Kind.NAVIGATION, false);
+            previous.active = start > 0;
+            next.active = start + capacity < trophies.size();
+            addRenderableWidget(previous);
+            addRenderableWidget(next);
+        }
+    }
+
     private void selectQuest(String questId) {
+        detailsScroll = 0;
+        reading = true;
         selection = new Selection(selection.guideId(), selection.chapterId(), questId);
         rebuildWidgets();
     }
 
     private void drawConnections(GuiGraphicsExtractor graphics) {
+        if (ParallelQuestLayout.supports(viewModel.quests())
+                && questNodes.values().stream().map(Rect::centerX).distinct().count() == 1) {
+            for (var segment : ParallelQuestLayout.connections(questNodes, viewModel.quests())) {
+                drawLine(graphics, segment.x1(), segment.y1(), segment.x2(), segment.y2());
+                if (segment.arrow()) {
+                    int direction = Integer.signum(segment.x2() - segment.x1());
+                    for (int offset = -1; offset <= 1; offset++) {
+                        drawLine(graphics, segment.x2(), segment.y2(), segment.x2() - direction * 4,
+                                segment.y2() - 3 + offset);
+                        drawLine(graphics, segment.x2(), segment.y2(), segment.x2() - direction * 4,
+                                segment.y2() + 3 + offset);
+                    }
+                }
+            }
+            return;
+        }
         for (QuestDefinition quest : viewModel.quests()) {
             Rect target = questNodes.get(quest.id());
             if (target == null) continue;
             for (String prerequisiteId : quest.prerequisiteQuestIds()) {
                 Rect source = questNodes.get(prerequisiteId);
-                if (source != null) drawArrow(graphics, source, target);
+                if (source != null) {
+                    // Long vertical prerequisites must not disappear underneath intermediate quests.
+                    boolean obstructed = source.centerX() == target.centerX() && questNodes.values().stream()
+                            .anyMatch(node -> node != source && node != target && node.centerX() == source.centerX()
+                                    && node.centerY() > Math.min(source.centerY(), target.centerY())
+                                    && node.centerY() < Math.max(source.centerY(), target.centerY()));
+                    if (obstructed) {
+                        int nextColumn = questNodes.values().stream().mapToInt(Rect::centerX)
+                                .filter(cx -> cx > source.centerX()).min().orElse(source.centerX() + 48);
+                        int railX = (source.centerX() + nextColumn) / 2;
+                        drawLine(graphics, source.right() + 2, source.centerY(), railX, source.centerY());
+                        drawLine(graphics, railX, source.centerY(), railX, target.centerY());
+                        drawArrow(graphics, new Rect(railX, target.centerY(), 0, 0), target);
+                    } else drawArrow(graphics, source, target);
+                }
             }
         }
     }
@@ -339,14 +553,27 @@ class FirstTorchBrowserScreen extends Screen {
             guideLabel = Component.translatable("screen.firsttorch.guide.page",
                     viewModel.guideIndex() + 1, viewModel.guides().size(), guideLabel);
         }
+        if (trophiesOpen) guideLabel = Component.translatable("screen.firsttorch.trophies");
         if (top.width() >= 600) text.acceptScrollingWithDefaultCenter(colored(guideLabel, FirstTorchTheme.MUTED),
                 top.centerX() - 61, top.centerX() + 61, top.bottom() - 20, top.bottom() - 5);
         drawProgress(graphics, text, top);
-        if (viewModel.guide() == null) drawEmptyState(text);
+        if (trophiesOpen) {
+            Rect panel = layout.questMap();
+            text.acceptScrollingWithDefaultCenter(colored(Component.translatable("screen.firsttorch.trophies.milestones"), FirstTorchTheme.GOLD),
+                    panel.x() + 10, panel.right() - 10, panel.y() + 9, panel.y() + 21);
+            var entry = trophies.stream().filter(t -> t.chapterId().equals(selectedTrophy)).findFirst().orElse(null);
+            detailsMaxScroll = TrophyCollectionRenderer.draw(graphics, font, layout.details(), entry, liveAvailable(), detailsScroll);
+            detailsScroll = Math.min(detailsScroll, detailsMaxScroll);
+        }
+        else if (viewModel.guide() == null) drawEmptyState(text);
         else if (preview()) PreviewDetailsRenderer.draw(graphics, font, layout.details(), viewModel.quest());
-        else drawDetails(graphics, text);
+        else {
+            detailsMaxScroll = LiveDetailsRenderer.draw(graphics, font, layout.details(), viewModel.quest(), observedProgress, detailsScroll);
+            detailsScroll = Math.min(detailsScroll, detailsMaxScroll);
+        }
         Rect footer = layout.footer();
         Component hint = Component.translatable(searchEmpty ? "screen.firsttorch.search.none" : "screen.firsttorch.controls_hint");
+        if (trophiesOpen) hint = Component.translatable("screen.firsttorch.trophies.back");
         if (preview()) hint = Component.translatable("screen.firsttorch.preview").append("  ·  ").append(hint);
         text.acceptScrollingWithDefaultCenter(colored(hint, FirstTorchTheme.MUTED),
                 footer.x() + 8, footer.right() - 8, footer.y() + 3, footer.bottom() - 3);
@@ -359,7 +586,8 @@ class FirstTorchBrowserScreen extends Screen {
         int brandWidth = Math.round(font.width(brand) * scale);
         int torchSize = compact ? 24 : 40;
         int groupWidth = brandWidth + torchSize + 9;
-        int x = top.centerX() - groupWidth / 2;
+        int x = Math.min(top.centerX() - groupWidth / 2,
+                top.right() - (hasClaimableRewards() ? 91 : 66) - groupWidth);
         int y = top.y() + (compact ? 4 : 5);
         // Original vanilla assets, with a separate brass mounting collar.
         graphics.pose().pushMatrix();
@@ -385,18 +613,22 @@ class FirstTorchBrowserScreen extends Screen {
         boolean compact = top.width() < 600;
         int x = top.x() + 11, y = compact ? top.bottom() - 22 : top.y() + 11;
         int w = compact ? Math.max(40, top.width() / 2 - 25) : 145;
-        int completed = preview() ? (int) viewModel.quests().stream().filter(q -> DesignPreview.completed(q.id())).count() : 0;
-        Component progress = preview() ? Component.translatable("screen.firsttorch.progress", completed, viewModel.quests().size())
+        int completed = trophiesOpen ? (int) trophies.stream().filter(TrophyCatalog.Entry::earned).count()
+                : (int) viewModel.quests().stream().filter(q -> completed(q.id())).count();
+        int total = trophiesOpen ? trophies.size() : viewModel.quests().size();
+        Component progress = (!trophiesOpen && preview()) || liveAvailable() ? Component.translatable(trophiesOpen
+                ? "screen.firsttorch.trophies.progress" : "screen.firsttorch.progress", completed, total)
                 : Component.translatable("screen.firsttorch.progress.unavailable");
         if (!compact) {
-            text.accept(x, y, colored(Component.translatable(preview() ? "screen.firsttorch.preview" : "screen.firsttorch.chapters"), FirstTorchTheme.GOLD));
+            text.accept(x, y, colored(Component.translatable(trophiesOpen ? "screen.firsttorch.trophies"
+                    : preview() ? "screen.firsttorch.preview" : "screen.firsttorch.chapters"), FirstTorchTheme.GOLD));
             y += 14;
         }
         text.acceptScrollingWithDefaultCenter(colored(progress, FirstTorchTheme.TEXT), x, x + w, y, y + 10);
-        if (preview()) {
+        if ((!trophiesOpen && preview()) || liveAvailable()) {
             int barY = y + 13;
             graphics.fill(x, barY, x + w, barY + 4, 0xFF0E1011);
-            graphics.fill(x, barY, x + w * completed / Math.max(1, viewModel.quests().size()), barY + 4, FirstTorchTheme.GOLD);
+            graphics.fill(x, barY, x + w * completed / Math.max(1, total), barY + 4, FirstTorchTheme.GOLD);
         }
     }
 
@@ -464,6 +696,12 @@ class FirstTorchBrowserScreen extends Screen {
 
     @Override
     public void onClose() {
+        if (trophiesOpen) {
+            trophiesOpen = false;
+            detailsScroll = 0;
+            rebuildWidgets();
+            return;
+        }
         minecraft.setScreenAndShow(parent);
     }
 }

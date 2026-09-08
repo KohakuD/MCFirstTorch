@@ -30,6 +30,7 @@ neoForge {
             client()
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
             systemProperty 'firsttorch.devWindowLayout', 'left_two_thirds'
+            systemProperty 'firsttorch.testMode', 'true'
         }
 
         server {
@@ -81,6 +82,7 @@ dependencies {
 
 tasks.withType(Test).configureEach {
     useJUnitPlatform()
+    systemProperty 'firsttorch.projectDir', projectDir.absolutePath
 }
 
 var generateModMetadata = tasks.register('generateModMetadata', ProcessResources) {
@@ -102,6 +104,58 @@ var generateModMetadata = tasks.register('generateModMetadata', ProcessResources
 }
 
 sourceSets.main.resources.srcDir generateModMetadata
+// Reuse the exact existing curriculum artwork; do not maintain a second binary copy.
+tasks.named('processResources', ProcessResources).configure {
+    from('overrides/resourcepacks/first_torch_guides') {
+        include 'assets/firsttorch/textures/questpics/attack_and_break.png'
+        include 'assets/firsttorch/textures/questpics/log_to_planks.png'
+        include 'assets/firsttorch/textures/questpics/place_crafting_table.png'
+        include 'assets/firsttorch/textures/questpics/wooden_pickaxe.png'
+        include 'assets/firsttorch/textures/questpics/wooden_shovel.png'
+        include 'assets/firsttorch/textures/questpics/stone_axe.png'
+        include 'assets/firsttorch/textures/questpics/furnace.png'
+        include 'assets/firsttorch/textures/questpics/chest.png'
+        include 'assets/firsttorch/textures/questpics/charcoal.png'
+        include 'assets/firsttorch/textures/questpics/first_night_shelter.png'
+        include 'assets/firsttorch/textures/questpics/bed.png'
+        include 'assets/firsttorch/textures/questpics/hunger_and_eating.png'
+        include 'assets/firsttorch/textures/questpics/cooking_food.png'
+        include 'assets/firsttorch/textures/questpics/stone_pickaxe.png'
+        include 'assets/firsttorch/textures/questpics/shield.png'
+        include 'assets/firsttorch/textures/questpics/armour_recipes.png'
+        include 'assets/firsttorch/textures/questpics/safe_staircase.png'
+        include 'assets/firsttorch/textures/questpics/torch_route.png'
+        include 'assets/firsttorch/textures/questpics/iron_pickaxe.png'
+        include 'assets/firsttorch/textures/questpics/bucket.png'
+        include 'assets/firsttorch/textures/questpics/infinite_water_sources.png'
+        include 'assets/firsttorch/textures/questpics/stonecutter.png'
+        include 'assets/firsttorch/textures/questpics/lodestone.png'
+        include 'assets/firsttorch/textures/questpics/map_recipe.png'
+        include 'assets/firsttorch/textures/questpics/cartography_table_guide.png'
+        include 'assets/firsttorch/textures/questpics/stone_hoe.png'
+        include 'assets/firsttorch/textures/questpics/farmland_9x9.png'
+        include 'assets/firsttorch/textures/questpics/bread.png'
+        include 'assets/firsttorch/textures/questpics/fence_and_gate.png'
+        include 'assets/firsttorch/textures/questpics/boat_recipe.png'
+        include 'assets/firsttorch/textures/questpics/boat_controls.png'
+        include 'assets/firsttorch/textures/questpics/village_overview.png'
+        include 'assets/firsttorch/textures/questpics/villager_trading.png'
+        include 'assets/firsttorch/textures/questpics/paper_and_book.png'
+        include 'assets/firsttorch/textures/questpics/enchanting_table_recipe.png'
+        include 'assets/firsttorch/textures/questpics/enchanting_interface.png'
+        include 'assets/firsttorch/textures/questpics/bookshelf_recipe.png'
+        include 'assets/firsttorch/textures/questpics/enchanting_bookshelves.png'
+        include 'assets/firsttorch/textures/questpics/flint_and_steel.png'
+        include 'assets/firsttorch/textures/questpics/nether_portal_frame.png'
+        include 'assets/firsttorch/textures/questpics/golden_helmet.png'
+        include 'assets/firsttorch/textures/questpics/iron_sword.png'
+        include 'assets/firsttorch/textures/questpics/nether_portal_lit.png'
+        include 'assets/firsttorch/textures/questpics/nether_route_marker.png'
+        include 'assets/firsttorch/textures/questpics/piglin_comparison.png'
+        include 'assets/firsttorch/textures/questpics/nether_fortress.png'
+        include 'assets/firsttorch/textures/questpics/fortress_hazards.png'
+    }
+}
 neoForge.ideSyncTask generateModMetadata
 
 tasks.named('jar', Jar).configure {

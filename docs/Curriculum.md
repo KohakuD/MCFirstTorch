@@ -20,6 +20,7 @@ First Torch teaches decisions, not only recipes. Every lesson should answer five
 - Avoid valuable rewards that replace the skill being taught.
 - Keep danger warnings specific and actionable.
 - Keep chapter maps readable on smaller displays: wrap long paths into clear thematic rows before horizontal scrolling becomes necessary.
+- Prefer 5–10 quests per thematic chapter; split crowded maps at meaningful learning milestones rather than shrinking icons indefinitely. Cross-chapter prerequisites must remain discoverable, and optional practice must not become a chapter-wide progression gate.
 
 ## Definition of done for a lesson
 

@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 1,
+  "id": "0013F17C00000001",
+  "titleKey": "guide.firsttorch.course.title",
+  "descriptionKey": "guide.firsttorch.course.description",
+  "chapters": [
+    {
+      "id": "0F91A2B3C4D5E607",
+      "iconItemId": "minecraft:book",
+      "order": 0,
+      "titleKey": "chapter.firsttorch.welcome.title",
+      "descriptionKey": "chapter.firsttorch.welcome.description",
+      "quests": [
+        {
+          "id": "12E6801F4CAD3579", "order": 0,
+          "titleKey": "quest.firsttorch.welcome.welcome.title",
+          "descriptionKey": "quest.firsttorch.welcome.welcome.description",
+          "iconItemId": "minecraft:book",
+          "tasks": [{"id": "23F7912A5DBE4680", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.23f7912a5dbe4680.title"}],
+          "rewards": [{"id": "4BD9A6E31F028C75", "type": "EXPERIENCE", "amount": 5}],
+          "position": {"x": 1, "y": 0}
+        },
+        {
+          "id": "21A3B5C7D9E10246", "order": 1,
+          "titleKey": "quest.firsttorch.welcome.overview.title",
+          "descriptionKey": "quest.firsttorch.welcome.overview.description",
+          "iconItemId": "minecraft:map",
+          "tasks": [{"id": "0A12B34C56D78E90", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.0a12b34c56d78e90.title"}],
+          "position": {"x": 0, "y": 2},
+          "prerequisiteQuestIds": ["12E6801F4CAD3579"]
+        },
+        {
+          "id": "32B4C6D8E0F21357", "order": 2,
+          "titleKey": "quest.firsttorch.welcome.reading.title",
+          "descriptionKey": "quest.firsttorch.welcome.reading.description",
+          "iconItemId": "minecraft:spyglass",
+          "tasks": [{"id": "1B23C45D67E89F01", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.1b23c45d67e89f01.title"}],
+          "position": {"x": 1, "y": 2},
+          "prerequisiteQuestIds": ["12E6801F4CAD3579"]
+        },
+        {
+          "id": "43C5D7E9F1023468", "order": 3,
+          "titleKey": "quest.firsttorch.welcome.paths.title",
+          "descriptionKey": "quest.firsttorch.welcome.paths.description",
+          "iconItemId": "minecraft:compass",
+          "tasks": [{"id": "2C34D56E78F90112", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.2c34d56e78f90112.title"}],
+          "position": {"x": 2, "y": 2},
+          "prerequisiteQuestIds": ["12E6801F4CAD3579"]
+        },
+        {
+          "id": "54D6E8F102345679", "order": 4,
+          "titleKey": "quest.firsttorch.welcome.tasks.title",
+          "descriptionKey": "quest.firsttorch.welcome.tasks.description",
+          "iconItemId": "minecraft:chest",
+          "tasks": [{"id": "3D45E67F89012324", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.3d45e67f89012324.title"}],
+          "position": {"x": 0, "y": 4},
+          "prerequisiteQuestIds": ["12E6801F4CAD3579"]
+        },
+        {
+          "id": "65E7F1023456780A", "order": 5,
+          "titleKey": "quest.firsttorch.welcome.rewards.title",
+          "descriptionKey": "quest.firsttorch.welcome.rewards.description",
+          "iconItemId": "minecraft:experience_bottle",
+          "tasks": [{"id": "4E56F78012345635", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.4e56f78012345635.title"}],
+          "position": {"x": 1, "y": 4},
+          "prerequisiteQuestIds": ["12E6801F4CAD3579"]
+        },
+        {
+          "id": "06F8123456789A2B", "order": 6,
+          "titleKey": "quest.firsttorch.welcome.opening.title",
+          "descriptionKey": "quest.firsttorch.welcome.opening.description",
+          "iconItemId": "minecraft:book",
+          "tasks": [{"id": "5F67012345678946", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.5f67012345678946.title"}],
+          "position": {"x": 2, "y": 4},
+          "prerequisiteQuestIds": ["12E6801F4CAD3579"]
+        },
+        {
+          "id": "17A923456789AB3C", "order": 7,
+          "titleKey": "quest.firsttorch.welcome.ready.title",
+          "descriptionKey": "quest.firsttorch.welcome.ready.description",
+          "iconItemId": "minecraft:torch",
+          "tasks": [{"id": "6078123456789A57", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.6078123456789a57.title"}],
+          "position": {"x": 1, "y": 6},
+          "prerequisiteQuestIds": ["21A3B5C7D9E10246", "32B4C6D8E0F21357", "43C5D7E9F1023468", "54D6E8F102345679", "65E7F1023456780A", "06F8123456789A2B"]
+        }
+      ]
+    },
+    {
+      "id": "01F57C0E3B9D2468",
+      "iconItemId": "minecraft:torch",
+      "order": 1,
+      "titleKey": "chapter.firsttorch.first_steps.title",
+      "descriptionKey": "chapter.firsttorch.first_steps.description",
+      "quests": [
+        {
+          "id": "34A8023B6ECF5791", "order": 0,
+          "image": {
+            "resource": "firsttorch:textures/questpics/attack_and_break.png",
+            "width": 1672, "height": 941,
+            "altKey": "image.firsttorch.attack_and_break.description"
+          },
+          "titleKey": "quest.firsttorch.first_steps.hands.title",
+          "descriptionKey": "quest.firsttorch.first_steps.hands.description",
+          "iconItemId": "minecraft:wooden_sword",
+          "tasks": [{"id": "6A72C4E819B305FD", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.6a72c4e819b305fd.title"}],
+          "rewards": [{"id": "2C8E51A70D4B639F", "type": "ITEM", "itemId": "minecraft:apple", "amount": 2}],
+          "position": {"x": 0, "y": 0},
+          "prerequisiteQuestIds": ["17A923456789AB3C"]
+        },
+        {
+          "id": "0A71D4C8E2F963B5", "order": 1,
+          "titleKey": "quest.firsttorch.first_steps.jump.title",
+          "descriptionKey": "quest.firsttorch.first_steps.jump.description",
+          "iconItemId": "minecraft:rabbit_foot",
+          "tasks": [{"id": "4EB5180C263DA7F9", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.4eb5180c263da7f9.title"}],
+          "position": {"x": 0, "y": 1},
+          "prerequisiteQuestIds": ["34A8023B6ECF5791"]
+        },
+        {
+          "id": "1B82E5D9F30A74C6", "order": 2,
+          "titleKey": "quest.firsttorch.first_steps.sneak.title",
+          "descriptionKey": "quest.firsttorch.first_steps.sneak.description",
+          "iconItemId": "minecraft:leather_boots",
+          "tasks": [{"id": "5FC6291D374EB80A", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.5fc6291d374eb80a.title"}],
+          "position": {"x": 0, "y": 2},
+          "prerequisiteQuestIds": ["0A71D4C8E2F963B5"]
+        },
+        {
+          "id": "2C93F6EA041B85D7", "order": 3,
+          "titleKey": "quest.firsttorch.first_steps.sprint.title",
+          "descriptionKey": "quest.firsttorch.first_steps.sprint.description",
+          "iconItemId": "minecraft:sugar",
+          "tasks": [{"id": "60D73A2E485FC91B", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.60d73a2e485fc91b.title"}],
+          "position": {"x": 0, "y": 3},
+          "prerequisiteQuestIds": ["1B82E5D9F30A74C6"]
+        },
+        {
+          "id": "3DA407FB152C96E8", "order": 4,
+          "titleKey": "quest.firsttorch.first_steps.sprint_jump.title",
+          "descriptionKey": "quest.firsttorch.first_steps.sprint_jump.description",
+          "iconItemId": "minecraft:feather",
+          "tasks": [{"id": "71E84B3F5960DA2C", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.71e84b3f5960da2c.title"}],
+          "rewards": [
+            {"id": "16C2A8E4F90B735D", "type": "ITEM", "itemId": "minecraft:apple", "amount": 2},
+            {"id": "27D3B9F50A1C846E", "type": "EXPERIENCE", "amount": 5}
+          ],
+          "position": {"x": 0, "y": 4},
+          "prerequisiteQuestIds": ["2C93F6EA041B85D7"]
+        }
+      ]
+    },
+    {
+      "id": "0C9E12A4B6D83F70",
+      "iconItemId": "minecraft:white_bed",
+      "order": 2,
+      "titleKey": "chapter.firsttorch.first_shelter.title",
+      "descriptionKey": "chapter.firsttorch.first_shelter.description",
+      "quests": [
+        {
+          "id": "7B83D5F920C4160E", "order": 0,
+          "image": {"resource": "firsttorch:textures/questpics/log_to_planks.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.log_to_planks.description"},
+          "titleKey": "quest.firsttorch.first_steps.planks.title",
+          "descriptionKey": "quest.firsttorch.first_steps.planks.description",
+          "iconItemId": "minecraft:oak_log",
+          "tasks": [{"id": "45B9134C7FDA6802", "type": "INVENTORY_TAG", "itemId": "minecraft:planks", "count": 4, "titleKey": "task.firsttorch.45b9134c7fda6802.title"}],
+          "position": {"x": 0, "y": 0},
+          "prerequisiteQuestIds": ["34A8023B6ECF5791"]
+        },
+        {
+          "id": "56CA245D80EB7913", "order": 1,
+          "image": {"resource": "firsttorch:textures/questpics/place_crafting_table.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.place_crafting_table.description"},
+          "titleKey": "quest.firsttorch.first_steps.crafting_table.title",
+          "descriptionKey": "quest.firsttorch.first_steps.crafting_table.description",
+          "iconItemId": "minecraft:crafting_table",
+          "tasks": [{"id": "07DB356E91FC8A24", "type": "INVENTORY", "itemId": "minecraft:crafting_table", "count": 1, "titleKey": "task.firsttorch.07db356e91fc8a24.title"}],
+          "position": {"x": 0, "y": 1},
+          "prerequisiteQuestIds": ["7B83D5F920C4160E"]
+        },
+        {
+          "id": "46B7D91E2A5C803F", "order": 2,
+          "image": {"resource": "firsttorch:textures/questpics/wooden_shovel.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.wooden_shovel.description"},
+          "titleKey": "quest.firsttorch.first_steps.shovel.title",
+          "descriptionKey": "quest.firsttorch.first_steps.shovel.description",
+          "iconItemId": "minecraft:wooden_shovel",
+          "tasks": [{"id": "57C8EA2F3B6D9140", "type": "INVENTORY", "itemId": "minecraft:wooden_shovel", "count": 1, "titleKey": "task.firsttorch.57c8ea2f3b6d9140.title"}, {"id": "68D9FB304C7EA251", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.68d9fb304c7ea251.title"}],
+          "position": {"x": 0, "y": 2},
+          "prerequisiteQuestIds": ["56CA245D80EB7913"]
+        },
+        {
+          "id": "1064CEF72A8513BD", "order": 3,
+          "image": {"resource": "firsttorch:textures/questpics/first_night_shelter.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.first_night_shelter.description"},
+          "titleKey": "quest.firsttorch.first_steps.emergency_shelter.title",
+          "descriptionKey": "quest.firsttorch.first_steps.emergency_shelter.description",
+          "iconItemId": "minecraft:dirt",
+          "tasks": [{"id": "2175DF083B9624CE", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.2175df083b9624ce.title"}],
+          "rewards": [{"id": "2F517B3E160C248D", "type": "ITEM", "itemId": "minecraft:white_wool", "amount": 3}],
+          "position": {"x": 0, "y": 3},
+          "prerequisiteQuestIds": ["46B7D91E2A5C803F"]
+        },
+        {
+          "id": "3286E0194CA735DF", "order": 4,
+          "image": {"resource": "firsttorch:textures/questpics/bed.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.bed.description"},
+          "titleKey": "quest.firsttorch.first_steps.bed.title",
+          "descriptionKey": "quest.firsttorch.first_steps.bed.description",
+          "iconItemId": "minecraft:white_bed",
+          "tasks": [{"id": "4397F12A5DB846E0", "type": "ADVANCEMENT", "advancementId": "minecraft:adventure/sleep_in_bed", "criterion": "slept_in_bed", "count": 1, "titleKey": "task.firsttorch.4397f12a5db846e0.title"}],
+          "position": {"x": 0, "y": 4},
+          "prerequisiteQuestIds": ["1064CEF72A8513BD"]
+        }
+      ]
+    },
+    {
+      "id": "1D8F4C2A7B9E6053",
+      "iconItemId": "minecraft:lantern",
+      "order": 3,
+      "titleKey": "chapter.firsttorch.safe_home.title",
+      "descriptionKey": "chapter.firsttorch.safe_home.description",
+      "quests": [
+        {
+          "id": "18EC467FA20D9B35", "order": 0,
+          "image": {"resource": "firsttorch:textures/questpics/wooden_pickaxe.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.wooden_pickaxe.description"},
+          "titleKey": "quest.firsttorch.first_steps.pickaxe.title",
+          "descriptionKey": "quest.firsttorch.first_steps.pickaxe.description",
+          "iconItemId": "minecraft:wooden_pickaxe",
+          "tasks": [{"id": "29FD5780B31EAC46", "type": "INVENTORY", "itemId": "minecraft:wooden_pickaxe", "count": 1, "titleKey": "task.firsttorch.29fd5780b31eac46.title"}],
+          "position": {"x": 0, "y": 0},
+          "prerequisiteQuestIds": ["56CA245D80EB7913"]
+        },
+        {
+          "id": "3A0E6891C42FBD57", "order": 1,
+          "titleKey": "quest.firsttorch.first_steps.cobble.title",
+          "descriptionKey": "quest.firsttorch.first_steps.cobble.description",
+          "iconItemId": "minecraft:cobblestone",
+          "tasks": [{"id": "4B1F79A2D530CE68", "type": "INVENTORY", "itemId": "minecraft:cobblestone", "count": 8, "titleKey": "task.firsttorch.4b1f79a2d530ce68.title"}],
+          "position": {"x": 0, "y": 1},
+          "prerequisiteQuestIds": ["18EC467FA20D9B35"]
+        },
+        {
+          "id": "65A1B2C3D4E5F607", "order": 2,
+          "image": {"resource": "firsttorch:textures/questpics/stone_axe.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.stone_axe.description"},
+          "titleKey": "quest.firsttorch.first_steps.axe.title",
+          "descriptionKey": "quest.firsttorch.first_steps.axe.description",
+          "iconItemId": "minecraft:stone_axe",
+          "tasks": [{"id": "16B2C3D4E5F60718", "type": "INVENTORY", "itemId": "minecraft:stone_axe", "count": 1, "titleKey": "task.firsttorch.16b2c3d4e5f60718.title"}, {"id": "38D4E5F60718293A", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.38d4e5f60718293a.title"}],
+          "rewards": [{"id": "27C3D4E5F6071829", "type": "ITEM", "itemId": "minecraft:cobblestone", "amount": 3}],
+          "position": {"x": 0, "y": 2},
+          "prerequisiteQuestIds": ["3A0E6891C42FBD57"]
+        },
+        {
+          "id": "5C208AB3E641DF79", "order": 3,
+          "image": {"resource": "firsttorch:textures/questpics/furnace.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.furnace.description"},
+          "titleKey": "quest.firsttorch.first_steps.furnace.title",
+          "descriptionKey": "quest.firsttorch.first_steps.furnace.description",
+          "iconItemId": "minecraft:furnace",
+          "tasks": [{"id": "6D319BC4F752E08A", "type": "INVENTORY", "itemId": "minecraft:furnace", "count": 1, "titleKey": "task.firsttorch.6d319bc4f752e08a.title"}],
+          "position": {"x": 0, "y": 3},
+          "prerequisiteQuestIds": ["65A1B2C3D4E5F607"]
+        },
+        {
+          "id": "6A24D8F30C715BE9", "order": 4,
+          "image": {"resource": "firsttorch:textures/questpics/chest.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.chest.description"},
+          "titleKey": "quest.firsttorch.first_steps.chest.title",
+          "descriptionKey": "quest.firsttorch.first_steps.chest.description",
+          "iconItemId": "minecraft:chest",
+          "tasks": [{"id": "1B35E9042D826CF0", "type": "INVENTORY", "itemId": "minecraft:chest", "count": 1, "titleKey": "task.firsttorch.1b35e9042d826cf0.title"}, {"id": "2C46FA153E937D01", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.2c46fa153e937d01.title"}],
+          "rewards": [{"id": "3D570B264FA48E12", "type": "EXPERIENCE", "amount": 5}],
+          "position": {"x": 1, "y": 3},
+          "prerequisiteQuestIds": ["5C208AB3E641DF79"]
+        },
+        {
+          "id": "7E42ACD50863F19B", "order": 5,
+          "image": {"resource": "firsttorch:textures/questpics/charcoal.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.charcoal.description"},
+          "titleKey": "quest.firsttorch.first_steps.torch.title",
+          "descriptionKey": "quest.firsttorch.first_steps.torch.description",
+          "iconItemId": "minecraft:torch",
+          "tasks": [{"id": "0F53BDE6197402AC", "type": "INVENTORY", "itemId": "minecraft:torch", "count": 8, "titleKey": "task.firsttorch.0f53bde6197402ac.title"}],
+          "rewards": [{"id": "61D304B8A7CE295F", "type": "ITEM", "itemId": "minecraft:apple", "amount": 2}],
+          "position": {"x": 1, "y": 2},
+          "prerequisiteQuestIds": ["6A24D8F30C715BE9"]
+        },
+        {
+          "id": "6E9B173C5D802AF4", "order": 6,
+          "titleKey": "quest.firsttorch.first_steps.shelter_upgrade.title",
+          "descriptionKey": "quest.firsttorch.first_steps.shelter_upgrade.description",
+          "iconItemId": "minecraft:oak_door",
+          "tasks": [{"id": "1FA284B6C9D03E75", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.1fa284b6c9d03e75.title"}],
+          "position": {"x": 1, "y": 1},
+          "prerequisiteQuestIds": ["7E42ACD50863F19B", "1064CEF72A8513BD"]
+        },
+        {
+          "id": "54A8023B6EC957F1", "order": 7,
+          "titleKey": "quest.firsttorch.first_steps.morning.title",
+          "descriptionKey": "quest.firsttorch.first_steps.morning.description",
+          "iconItemId": "minecraft:sunflower",
+          "tasks": [{"id": "65B9134C7FDA6803", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.65b9134c7fda6803.title"}],
+          "rewards": [
+            {"id": "37AF205CE961B4D8", "type": "ITEM", "itemId": "minecraft:bread", "amount": 3},
+            {"id": "5E18C7D042AB936F", "type": "ITEM", "itemId": "minecraft:lantern", "amount": 1}
+          ],
+          "position": {"x": 1, "y": 0},
+          "prerequisiteQuestIds": ["3286E0194CA735DF", "6E9B173C5D802AF4"]
+        }
+      ]
+    },
+    {
+      "id": "2A64C8E10B7D395F",
+      "iconItemId": "minecraft:bread",
+      "order": 4,
+      "titleKey": "chapter.firsttorch.food.title",
+      "descriptionKey": "chapter.firsttorch.food.description",
+      "quests": [
+        {
+          "id": "1D4A83C6E2057B9F", "order": 0,
+          "image": {"resource": "firsttorch:textures/questpics/hunger_and_eating.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.hunger_and_eating.description"},
+          "titleKey": "quest.firsttorch.food.hunger.title", "descriptionKey": "quest.firsttorch.food.hunger.description", "iconItemId": "minecraft:bread",
+          "tasks": [{"id": "6F20B4D98C315EA7", "type": "ADVANCEMENT", "advancementId": "minecraft:husbandry/root", "criterion": "consumed_item", "count": 1, "titleKey": "task.firsttorch.6f20b4d98c315ea7.title"}],
+          "rewards": [{"id": "0C71E4A95B263DF8", "type": "ITEM", "itemId": "minecraft:apple", "amount": 1}],
+          "position": {"x": 0, "y": 0}, "prerequisiteQuestIds": ["54A8023B6EC957F1"]
+        },
+        {
+          "id": "35B7E10C9A624DF8", "order": 1,
+          "titleKey": "quest.firsttorch.food.source.title", "descriptionKey": "quest.firsttorch.food.source.description", "iconItemId": "minecraft:beef",
+          "tasks": [{"id": "09E4A72D5C813BF6", "type": "INVENTORY_TAG", "itemId": "firsttorch:raw_food", "count": 1, "titleKey": "task.firsttorch.09e4a72d5c813bf6.title"}],
+          "position": {"x": 2, "y": 0}, "prerequisiteQuestIds": ["54A8023B6EC957F1"]
+        },
+        {
+          "id": "4A91D6F30C7E285B", "order": 2,
+          "image": {"resource": "firsttorch:textures/questpics/cooking_food.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.cooking_food.description"},
+          "titleKey": "quest.firsttorch.food.cook.title", "descriptionKey": "quest.firsttorch.food.cook.description", "iconItemId": "minecraft:cooked_beef",
+          "tasks": [{"id": "2E73C5A09D164BF8", "type": "INVENTORY_TAG", "itemId": "firsttorch:cooked_food", "count": 1, "titleKey": "task.firsttorch.2e73c5a09d164bf8.title"}],
+          "rewards": [{"id": "14B8D2F60A975CE3", "type": "ITEM", "itemId": "minecraft:charcoal", "amount": 1}],
+          "position": {"x": 2, "y": 1}, "prerequisiteQuestIds": ["35B7E10C9A624DF8"]
+        },
+        {
+          "id": "5B28E7A14D906CF3", "order": 3,
+          "titleKey": "quest.firsttorch.food.health.title", "descriptionKey": "quest.firsttorch.food.health.description", "iconItemId": "minecraft:red_dye",
+          "tasks": [{"id": "18C6F2A75D409BE3", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.18c6f2a75d409be3.title"}],
+          "position": {"x": 2, "y": 2}, "prerequisiteQuestIds": ["4A91D6F30C7E285B"]
+        },
+        {
+          "id": "274B9E60A3D85FC1", "order": 4,
+          "titleKey": "quest.firsttorch.food.risky.title", "descriptionKey": "quest.firsttorch.food.risky.description", "iconItemId": "minecraft:spider_eye",
+          "tasks": [{"id": "43D1A8F70C625BE9", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.43d1a8f70c625be9.title"}],
+          "position": {"x": 2, "y": 3}, "prerequisiteQuestIds": ["5B28E7A14D906CF3"]
+        },
+        {
+          "id": "6C03B5E98A417DF2", "order": 5,
+          "titleKey": "quest.firsttorch.food.reserve.title", "descriptionKey": "quest.firsttorch.food.reserve.description", "iconItemId": "minecraft:cooked_chicken",
+          "tasks": [{"id": "3D85F1C70A624BE9", "type": "INVENTORY_TAG", "itemId": "firsttorch:cooked_food", "count": 4, "titleKey": "task.firsttorch.3d85f1c70a624be9.title"}],
+          "rewards": [{"id": "72E5A1C83D609BF4", "type": "ITEM", "itemId": "minecraft:cookie", "amount": 1}],
+          "position": {"x": 2, "y": 4}, "prerequisiteQuestIds": ["274B9E60A3D85FC1"]
+        }
+      ]
+    },
+    {
+      "id": "3B75D9F21C8E406A",
+      "iconItemId": "minecraft:iron_ore",
+      "order": 5,
+      "titleKey": "chapter.firsttorch.ores.title",
+      "descriptionKey": "chapter.firsttorch.ores.description",
+      "quests": [
+        {
+          "id": "0A73D9E14C628BF5", "order": 0,
+          "titleKey": "quest.firsttorch.ores.retreat.title", "descriptionKey": "quest.firsttorch.ores.retreat.description", "iconItemId": "minecraft:feather",
+          "tasks": [{"id": "4E16B8C30D795AF2", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.4e16b8c30d795af2.title"}],
+          "position": {"x": 1, "y": 0}, "prerequisiteQuestIds": ["6C03B5E98A417DF2"]
+        },
+        {
+          "id": "19C5E2A70B864DF3", "order": 1,
+          "image": {"resource": "firsttorch:textures/questpics/stone_pickaxe.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.stone_pickaxe.description"},
+          "titleKey": "quest.firsttorch.ores.stone_pickaxe.title", "descriptionKey": "quest.firsttorch.ores.stone_pickaxe.description", "iconItemId": "minecraft:stone_pickaxe",
+          "tasks": [{"id": "57A0D4C91E326BF8", "type": "INVENTORY", "itemId": "minecraft:stone_pickaxe", "count": 1, "titleKey": "task.firsttorch.57a0d4c91e326bf8.title"}],
+          "position": {"x": 1, "y": 1}, "prerequisiteQuestIds": ["0A73D9E14C628BF5"]
+        },
+        {
+          "id": "2B84F1C60D735AE9", "order": 2,
+          "titleKey": "quest.firsttorch.ores.raw_iron.title", "descriptionKey": "quest.firsttorch.ores.raw_iron.description", "iconItemId": "minecraft:iron_ore",
+          "tasks": [{"id": "0D39A7E25C614BF8", "type": "INVENTORY", "itemId": "minecraft:raw_iron", "count": 1, "titleKey": "task.firsttorch.0d39a7e25c614bf8.title"}],
+          "position": {"x": 0, "y": 2}, "prerequisiteQuestIds": ["19C5E2A70B864DF3"]
+        },
+        {
+          "id": "3C16B9E50A724DF8", "order": 3,
+          "titleKey": "quest.firsttorch.ores.iron_ingot.title", "descriptionKey": "quest.firsttorch.ores.iron_ingot.description", "iconItemId": "minecraft:iron_ingot",
+          "tasks": [{"id": "61E4A8C20D935BF7", "type": "INVENTORY", "itemId": "minecraft:iron_ingot", "count": 1, "titleKey": "task.firsttorch.61e4a8c20d935bf7.title"}],
+          "position": {"x": 0, "y": 3}, "prerequisiteQuestIds": ["2B84F1C60D735AE9"]
+        },
+        {
+          "id": "4A28C6E10D735BF9", "order": 4,
+          "titleKey": "quest.firsttorch.ores.raw_copper.title", "descriptionKey": "quest.firsttorch.ores.raw_copper.description", "iconItemId": "minecraft:copper_ore",
+          "tasks": [{"id": "5B39D7F20E846AC1", "type": "INVENTORY", "itemId": "minecraft:raw_copper", "count": 1, "titleKey": "task.firsttorch.5b39d7f20e846ac1.title"}],
+          "position": {"x": 2, "y": 2}, "prerequisiteQuestIds": ["19C5E2A70B864DF3"]
+        },
+        {
+          "id": "6C4AE8F31D957B20", "order": 5,
+          "titleKey": "quest.firsttorch.ores.copper_ingot.title", "descriptionKey": "quest.firsttorch.ores.copper_ingot.description", "iconItemId": "minecraft:copper_ingot",
+          "tasks": [{"id": "7D5BF9042EA68C31", "type": "INVENTORY", "itemId": "minecraft:copper_ingot", "count": 1, "titleKey": "task.firsttorch.7d5bf9042ea68c31.title"}],
+          "position": {"x": 2, "y": 3}, "prerequisiteQuestIds": ["4A28C6E10D735BF9"]
+        }
+      ]
+    },
+    {
+      "id": "4C86EA032D9F517B", "iconItemId": "minecraft:shield", "order": 6,
+      "titleKey": "chapter.firsttorch.protection.title", "descriptionKey": "chapter.firsttorch.protection.description",
+      "quests": [
+        {"id": "4D92C7A10E638BF5", "order": 0, "image": {"resource": "firsttorch:textures/questpics/shield.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.shield.description"}, "titleKey": "quest.firsttorch.protection.shield.title", "descriptionKey": "quest.firsttorch.protection.shield.description", "iconItemId": "minecraft:shield", "tasks": [{"id": "12A6E3D80C754BF9", "type": "INVENTORY", "itemId": "minecraft:shield", "count": 1, "titleKey": "task.firsttorch.12a6e3d80c754bf9.title"}], "position": {"x": 0, "y": 0}, "prerequisiteQuestIds": ["3C16B9E50A724DF8"]},
+        {"id": "18A6D3F90C754BE2", "order": 1, "image": {"resource": "firsttorch:textures/questpics/armour_recipes.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.armour_recipes.description"}, "titleKey": "quest.firsttorch.protection.armour.title", "descriptionKey": "quest.firsttorch.protection.armour.description", "iconItemId": "minecraft:copper_chestplate", "tasks": [{"id": "29B7E4C10D836AF5", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.29b7e4c10d836af5.title"}], "rewards": [{"id": "3AC8F5D20E917B64", "type": "EXPERIENCE", "amount": 5}], "position": {"x": 2, "y": 0}, "prerequisiteQuestIds": ["3C16B9E50A724DF8", "6C4AE8F31D957B20"], "prerequisiteMode": "ANY"},
+        {"id": "6F40D8A21C953BE7", "order": 2, "titleKey": "quest.firsttorch.protection.shield_practice.title", "descriptionKey": "quest.firsttorch.protection.shield_practice.description", "iconItemId": "minecraft:shield", "tasks": [{"id": "34C7E2A90D615BF8", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.34c7e2a90d615bf8.title"}], "position": {"x": 0, "y": 2}, "prerequisiteQuestIds": ["4D92C7A10E638BF5"]},
+        {"id": "5E27A4D90B836CF1", "order": 3, "titleKey": "quest.firsttorch.protection.armour_slots.title", "descriptionKey": "quest.firsttorch.protection.armour_slots.description", "iconItemId": "minecraft:iron_chestplate", "tasks": [{"id": "23B9F1C60D745AE8", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.23b9f1c60d745ae8.title"}], "position": {"x": 2, "y": 2}, "prerequisiteQuestIds": ["18A6D3F90C754BE2"]},
+        {"id": "07B5E9C31D864AF2", "order": 4, "titleKey": "quest.firsttorch.protection.avoid_danger.title", "descriptionKey": "quest.firsttorch.protection.avoid_danger.description", "iconItemId": "minecraft:oak_door", "tasks": [{"id": "45D1A7E80C936BF2", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.45d1a7e80c936bf2.title"}], "rewards": [{"id": "56E8B2C10D734AF9", "type": "ITEM", "itemId": "minecraft:iron_ingot", "amount": 1}], "position": {"x": 1, "y": 4}, "prerequisiteQuestIds": ["6F40D8A21C953BE7", "5E27A4D90B836CF1"]}
+      ]
+    },
+    {
+      "id": "5D97FB143EA0628C", "iconItemId": "minecraft:stone_pickaxe", "order": 7,
+      "titleKey": "chapter.firsttorch.mining.title", "descriptionKey": "chapter.firsttorch.mining.description",
+      "quests": [
+        {"id": "1A62D8E30C745BF9", "order": 0, "titleKey": "quest.firsttorch.mining.equipment.title", "descriptionKey": "quest.firsttorch.mining.equipment.description", "iconItemId": "minecraft:bundle", "tasks": [{"id": "2B73E9F40D856AC1", "type": "INVENTORY_TAG", "itemId": "firsttorch:stone_or_better_pickaxes", "count": 2, "titleKey": "task.firsttorch.2b73e9f40d856ac1.title"}, {"id": "3C84FA150E967BD2", "type": "INVENTORY", "itemId": "minecraft:torch", "count": 16, "titleKey": "task.firsttorch.3c84fa150e967bd2.title"}, {"id": "4D950B261FA78CE3", "type": "INVENTORY_TAG", "itemId": "firsttorch:cooked_food", "count": 4, "titleKey": "task.firsttorch.4d950b261fa78ce3.title"}], "position": {"x": 0, "y": 0}, "prerequisiteQuestIds": ["07B5E9C31D864AF2"]},
+        {"id": "2E17C9A40D638BF5", "order": 1, "image": {"resource": "firsttorch:textures/questpics/safe_staircase.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.safe_staircase.description"}, "titleKey": "quest.firsttorch.mining.staircase.title", "descriptionKey": "quest.firsttorch.mining.staircase.description", "iconItemId": "minecraft:stone_stairs", "tasks": [{"id": "3F28DAB50E749C16", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.3f28dab50e749c16.title"}], "position": {"x": 0, "y": 2}, "prerequisiteQuestIds": ["1A62D8E30C745BF9"]},
+        {"id": "4059EBC61F85AD27", "order": 2, "image": {"resource": "firsttorch:textures/questpics/torch_route.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.torch_route.description"}, "titleKey": "quest.firsttorch.mining.torch_route.title", "descriptionKey": "quest.firsttorch.mining.torch_route.description", "iconItemId": "minecraft:torch", "tasks": [{"id": "516AFC702096BE38", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.516afc702096be38.title"}], "position": {"x": 0, "y": 4}, "prerequisiteQuestIds": ["2E17C9A40D638BF5"]},
+        {"id": "627B0D8131A7CF49", "order": 3, "titleKey": "quest.firsttorch.mining.falling_blocks.title", "descriptionKey": "quest.firsttorch.mining.falling_blocks.description", "iconItemId": "minecraft:gravel", "tasks": [{"id": "738C1E9242B8D05A", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.738c1e9242b8d05a.title"}], "position": {"x": 2, "y": 4}, "prerequisiteQuestIds": ["4059EBC61F85AD27"]},
+        {"id": "14AD2F0353C9E16B", "order": 4, "titleKey": "quest.firsttorch.mining.water_lava.title", "descriptionKey": "quest.firsttorch.mining.water_lava.description", "iconItemId": "minecraft:water_bucket", "tasks": [{"id": "25BE301464DAF27C", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.25be301464daf27c.title"}], "position": {"x": 2, "y": 2}, "prerequisiteQuestIds": ["627B0D8131A7CF49"]},
+        {"id": "36CF412575EB038D", "order": 5, "titleKey": "quest.firsttorch.mining.return_home.title", "descriptionKey": "quest.firsttorch.mining.return_home.description", "iconItemId": "minecraft:compass", "tasks": [{"id": "47D0523686FC149E", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.47d0523686fc149e.title"}], "rewards": [{"id": "58E16347970D25AF", "type": "EXPERIENCE", "amount": 10}], "position": {"x": 2, "y": 0}, "prerequisiteQuestIds": ["14AD2F0353C9E16B"]}
+      ]
+    },
+    {
+      "id": "4C86EA031D9F5B72", "iconItemId": "minecraft:water_bucket", "order": 8,
+      "titleKey": "chapter.firsttorch.iron_essentials.title", "descriptionKey": "chapter.firsttorch.iron_essentials.description",
+      "quests": [
+        {"id": "27A9D4E60B835CF1", "order": 0, "titleKey": "quest.firsttorch.iron_essentials.ingots.title", "descriptionKey": "quest.firsttorch.iron_essentials.ingots.description", "iconItemId": "minecraft:iron_ingot", "tasks": [{"id": "38BAE5F71C946D02", "type": "INVENTORY", "itemId": "minecraft:iron_ingot", "count": 6, "titleKey": "task.firsttorch.38bae5f71c946d02.title"}], "position": {"x": 1, "y": 0}, "prerequisiteQuestIds": ["3C16B9E50A724DF8"]},
+        {"id": "49CBF6082DA57E13", "order": 1, "image": {"resource": "firsttorch:textures/questpics/iron_pickaxe.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.iron_pickaxe.description"}, "titleKey": "quest.firsttorch.iron_essentials.pickaxe.title", "descriptionKey": "quest.firsttorch.iron_essentials.pickaxe.description", "iconItemId": "minecraft:iron_pickaxe", "tasks": [{"id": "5ADC07193EB68F24", "type": "INVENTORY", "itemId": "minecraft:iron_pickaxe", "count": 1, "titleKey": "task.firsttorch.5adc07193eb68f24.title"}], "position": {"x": 0, "y": 2}, "prerequisiteQuestIds": ["27A9D4E60B835CF1"]},
+        {"id": "6BED182A4FC79035", "order": 2, "image": {"resource": "firsttorch:textures/questpics/bucket.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.bucket.description"}, "titleKey": "quest.firsttorch.iron_essentials.bucket.title", "descriptionKey": "quest.firsttorch.iron_essentials.bucket.description", "iconItemId": "minecraft:bucket", "tasks": [{"id": "7CFE293B50D8A146", "type": "INVENTORY", "itemId": "minecraft:bucket", "count": 1, "titleKey": "task.firsttorch.7cfe293b50d8a146.title"}], "position": {"x": 2, "y": 2}, "prerequisiteQuestIds": ["27A9D4E60B835CF1"]},
+        {"id": "1D0F3A4C61E9B257", "order": 3, "titleKey": "quest.firsttorch.iron_essentials.water_bucket.title", "descriptionKey": "quest.firsttorch.iron_essentials.water_bucket.description", "iconItemId": "minecraft:water_bucket", "tasks": [{"id": "2E104B5D72FAC368", "type": "INVENTORY", "itemId": "minecraft:water_bucket", "count": 1, "titleKey": "task.firsttorch.2e104b5d72fac368.title"}], "position": {"x": 2, "y": 4}, "prerequisiteQuestIds": ["6BED182A4FC79035"]},
+        {"id": "50A42D7E18C6B39F", "order": 4, "image": {"resource": "firsttorch:textures/questpics/infinite_water_sources.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.infinite_water_sources.description"}, "titleKey": "quest.firsttorch.iron_essentials.infinite_water.title", "descriptionKey": "quest.firsttorch.iron_essentials.infinite_water.description", "iconItemId": "minecraft:water_bucket", "tasks": [{"id": "61B53E8F29D7C4A0", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.61b53e8f29d7c4a0.title"}], "position": {"x": 2, "y": 6}, "prerequisiteQuestIds": ["1D0F3A4C61E9B257"]},
+        {"id": "3F215C6E03ABD479", "order": 5, "titleKey": "quest.firsttorch.iron_essentials.helpers.title", "descriptionKey": "quest.firsttorch.iron_essentials.helpers.description", "iconItemId": "minecraft:iron_pickaxe", "tasks": [{"id": "40326D7F14BCE58A", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.40326d7f14bce58a.title"}], "rewards": [{"id": "51337E8025CDF69B", "type": "EXPERIENCE", "amount": 5}], "position": {"x": 0, "y": 6}, "prerequisiteQuestIds": ["49CBF6082DA57E13", "50A42D7E18C6B39F"]}
+      ]
+    },
+    {
+      "id": "3B75D9F20C8E4A61", "iconItemId": "minecraft:compass", "order": 9,
+      "titleKey": "chapter.firsttorch.finding_home.title", "descriptionKey": "chapter.firsttorch.finding_home.description",
+      "quests": [
+        {"id": "16C8E2A50D739BF4", "order": 0, "titleKey": "quest.firsttorch.finding_home.landmark.title", "descriptionKey": "quest.firsttorch.finding_home.landmark.description", "iconItemId": "minecraft:lantern", "tasks": [{"id": "27D9F3B61E84AC05", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.27d9f3b61e84ac05.title"}], "position": {"x": 0, "y": 0}, "prerequisiteQuestIds": ["36CF412575EB038D"]},
+        {"id": "38EA04C72F95BD16", "order": 1, "titleKey": "quest.firsttorch.finding_home.coordinates.title", "descriptionKey": "quest.firsttorch.finding_home.coordinates.description", "iconItemId": "minecraft:filled_map", "tasks": [{"id": "49FB15D830A6CE27", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.49fb15d830a6ce27.title"}], "position": {"x": 0, "y": 2}, "prerequisiteQuestIds": ["16C8E2A50D739BF4"]},
+        {"id": "5A0C26E941B7DF38", "order": 2, "titleKey": "quest.firsttorch.finding_home.record.title", "descriptionKey": "quest.firsttorch.finding_home.record.description", "iconItemId": "minecraft:paper", "tasks": [{"id": "6B1D37FA52C8E049", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.6b1d37fa52c8e049.title"}], "position": {"x": 0, "y": 4}, "prerequisiteQuestIds": ["38EA04C72F95BD16"]},
+        {"id": "7C2E480B63D9F15A", "order": 3, "titleKey": "quest.firsttorch.finding_home.test_route.title", "descriptionKey": "quest.firsttorch.finding_home.test_route.description", "iconItemId": "minecraft:oak_door", "tasks": [{"id": "0D3F591C74EA026B", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.0d3f591c74ea026b.title"}], "rewards": [{"id": "1E406A2D05FB137C", "type": "EXPERIENCE", "amount": 5}, {"id": "6D3A80F152C7BE49", "type": "ITEM", "itemId": "minecraft:compass", "amount": 2}], "position": {"x": 0, "y": 6}, "prerequisiteQuestIds": ["5A0C26E941B7DF38"]},
+        {"id": "2F6A91C4D8E307B5", "order": 4, "titleKey": "quest.firsttorch.finding_home.compass.title", "descriptionKey": "quest.firsttorch.finding_home.compass.description", "iconItemId": "minecraft:compass", "tasks": [{"id": "40B7E2D96A1C58F3", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.40b7e2d96a1c58f3.title"}], "position": {"x": 0, "y": 8}, "prerequisiteQuestIds": ["7C2E480B63D9F15A"]}
+      ]
+    },
+    {
+      "id": "6EA80C254FB1739D", "iconItemId": "minecraft:lodestone", "order": 10,
+      "titleKey": "chapter.firsttorch.lodestone.title", "descriptionKey": "chapter.firsttorch.lodestone.description",
+      "quests": [
+        {"id": "15E7C9A42B806DF3", "order": 0, "image": {"resource": "firsttorch:textures/questpics/stonecutter.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.stonecutter.description"}, "titleKey": "quest.firsttorch.lodestone.stonecutter.title", "descriptionKey": "quest.firsttorch.lodestone.stonecutter.description", "iconItemId": "minecraft:stonecutter", "tasks": [{"id": "26F8DAB53C917E04", "type": "INVENTORY", "itemId": "minecraft:stonecutter", "count": 1, "titleKey": "task.firsttorch.26f8dab53c917e04.title"}], "position": {"x": 0, "y": 0}, "prerequisiteQuestIds": ["2F6A91C4D8E307B5"]},
+        {"id": "37A9EBC64D028F15", "order": 1, "titleKey": "quest.firsttorch.lodestone.bricks.title", "descriptionKey": "quest.firsttorch.lodestone.bricks.description", "iconItemId": "minecraft:chiseled_stone_bricks", "tasks": [{"id": "48BADCF75E139026", "type": "INVENTORY", "itemId": "minecraft:chiseled_stone_bricks", "count": 8, "titleKey": "task.firsttorch.48badcf75e139026.title"}], "position": {"x": 0, "y": 2}, "prerequisiteQuestIds": ["15E7C9A42B806DF3"]},
+        {"id": "59CBED086F24A137", "order": 2, "image": {"resource": "firsttorch:textures/questpics/lodestone.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.lodestone.description"}, "titleKey": "quest.firsttorch.lodestone.craft.title", "descriptionKey": "quest.firsttorch.lodestone.craft.description", "iconItemId": "minecraft:lodestone", "tasks": [{"id": "6ADCF0197035B248", "type": "INVENTORY", "itemId": "minecraft:lodestone", "count": 1, "titleKey": "task.firsttorch.6adcf0197035b248.title"}], "position": {"x": 0, "y": 4}, "prerequisiteQuestIds": ["37A9EBC64D028F15"]},
+        {"id": "0BED012A8146C359", "order": 3, "titleKey": "quest.firsttorch.lodestone.bind.title", "descriptionKey": "quest.firsttorch.lodestone.bind.description", "iconItemId": "minecraft:compass", "tasks": [{"id": "3E1045DAB479F68C", "type": "ADVANCEMENT", "advancementId": "minecraft:adventure/use_lodestone", "criterion": "use_lodestone", "count": 1, "titleKey": "task.firsttorch.3e1045dab479f68c.title"}, {"id": "1CFE123B9257D46A", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.1cfe123b9257d46a.title"}], "rewards": [{"id": "2D0F234CA368E57B", "type": "EXPERIENCE", "amount": 5}], "position": {"x": 0, "y": 6}, "prerequisiteQuestIds": ["59CBED086F24A137"]}
+      ]
+    },
+    {
+      "id": "7FB91D365AC2840E", "iconItemId": "minecraft:filled_map", "order": 11,
+      "titleKey": "chapter.firsttorch.maps.title", "descriptionKey": "chapter.firsttorch.maps.description",
+      "quests": [
+        {"id": "43F829E5B61A7C0D", "order": 0, "image": {"resource": "firsttorch:textures/questpics/map_recipe.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.map_recipe.description"}, "titleKey": "quest.firsttorch.maps.create.title", "descriptionKey": "quest.firsttorch.maps.create.description", "iconItemId": "minecraft:filled_map", "tasks": [{"id": "54A93AF6C72B8D1E", "type": "INVENTORY", "itemId": "minecraft:filled_map", "count": 1, "titleKey": "task.firsttorch.54a93af6c72b8d1e.title"}], "position": {"x": 0, "y": 0}, "prerequisiteQuestIds": ["2F6A91C4D8E307B5"]},
+        {"id": "65BA4B07D83C9E2F", "order": 1, "image": {"resource": "firsttorch:textures/questpics/cartography_table_guide.png", "width": 1672, "height": 941, "altKey": "image.firsttorch.cartography_table_guide.description"}, "titleKey": "quest.firsttorch.maps.cartography.title", "descriptionKey": "quest.firsttorch.maps.cartography.description", "iconItemId": "minecraft:cartography_table", "tasks": [{"id": "76CB5C18E94DAF30", "type": "INVENTORY", "itemId": "minecraft:cartography_table", "count": 1, "titleKey": "task.firsttorch.76cb5c18e94daf30.title"}, {"id": "07DC6D29FA5EB041", "type": "MANUAL", "count": 1, "titleKey": "task.firsttorch.07dc6d29fa5eb041.title"}], "position": {"x": 0, "y": 2}, "prerequisiteQuestIds": ["43F829E5B61A7C0D"]}
+      ]
+    },
+    {"id":"5D91A7C30E624BF8","iconItemId":"minecraft:wheat","order":12,"titleKey":"chapter.firsttorch.farming.title","descriptionKey":"chapter.firsttorch.farming.description","quests":[
+      {"id":"0C42E8A51D739BF6","order":0,"titleKey":"quest.firsttorch.farming.seeds.title","descriptionKey":"quest.firsttorch.farming.seeds.description","iconItemId":"minecraft:wheat_seeds","tasks":[{"id":"1D53F9B62E84AC07","type":"INVENTORY","itemId":"minecraft:wheat_seeds","count":3,"titleKey":"task.firsttorch.1d53f9b62e84ac07.title"}],"position":{"x":0,"y":0},"prerequisiteQuestIds":["6C03B5E98A417DF2"]},
+      {"id":"2E640AC73F95BD18","order":1,"image":{"resource":"firsttorch:textures/questpics/stone_hoe.png","width":1672,"height":941,"altKey":"image.firsttorch.stone_hoe.description"},"titleKey":"quest.firsttorch.farming.hoe.title","descriptionKey":"quest.firsttorch.farming.hoe.description","iconItemId":"minecraft:stone_hoe","tasks":[{"id":"3F751BD840A6CE29","type":"INVENTORY","itemId":"minecraft:stone_hoe","count":1,"titleKey":"task.firsttorch.3f751bd840a6ce29.title"}],"position":{"x":0,"y":2},"prerequisiteQuestIds":["0C42E8A51D739BF6"]},
+      {"id":"40862CE951B7DF3A","order":2,"image":{"resource":"firsttorch:textures/questpics/farmland_9x9.png","width":1024,"height":576,"altKey":"image.firsttorch.farmland_9x9.description"},"titleKey":"quest.firsttorch.farming.farmland.title","descriptionKey":"quest.firsttorch.farming.farmland.description","iconItemId":"minecraft:farmland","tasks":[{"id":"51973DFA62C8E04B","type":"MANUAL","count":1,"titleKey":"task.firsttorch.51973dfa62c8e04b.title"}],"position":{"x":0,"y":4},"prerequisiteQuestIds":["2E640AC73F95BD18"]},
+      {"id":"62A84E0B73D9F15C","order":3,"titleKey":"quest.firsttorch.farming.plant.title","descriptionKey":"quest.firsttorch.farming.plant.description","iconItemId":"minecraft:wheat_seeds","tasks":[{"id":"73B95F1C84EA026D","type":"ADVANCEMENT","advancementId":"minecraft:husbandry/plant_seed","criterion":"wheat","count":1,"titleKey":"task.firsttorch.73b95f1c84ea026d.title"}],"rewards":[{"id":"16AB73C90D4E258F","type":"ITEM","itemId":"minecraft:bone_meal","amount":3}],"position":{"x":2,"y":4},"prerequisiteQuestIds":["40862CE951B7DF3A"]},
+      {"id":"04CA602D95FB137E","order":4,"titleKey":"quest.firsttorch.farming.wheat.title","descriptionKey":"quest.firsttorch.farming.wheat.description","iconItemId":"minecraft:wheat","tasks":[{"id":"15DB713EA60C248F","type":"INVENTORY","itemId":"minecraft:wheat","count":3,"titleKey":"task.firsttorch.15db713ea60c248f.title"}],"position":{"x":2,"y":2},"prerequisiteQuestIds":["62A84E0B73D9F15C"]},
+      {"id":"26EC824FB71D3590","order":5,"image":{"resource":"firsttorch:textures/questpics/bread.png","width":1672,"height":941,"altKey":"image.firsttorch.bread.description"},"titleKey":"quest.firsttorch.farming.bread.title","descriptionKey":"quest.firsttorch.farming.bread.description","iconItemId":"minecraft:bread","tasks":[{"id":"37FD9350C82E46A1","type":"INVENTORY","itemId":"minecraft:bread","count":1,"titleKey":"task.firsttorch.37fd9350c82e46a1.title"}],"rewards":[{"id":"480EA461D93F57B2","type":"EXPERIENCE","amount":5}],"position":{"x":2,"y":0},"prerequisiteQuestIds":["04CA602D95FB137E"]}
+    ]},
+    {"id":"0AC82E476BD3951F","iconItemId":"minecraft:composter","order":13,"titleKey":"chapter.firsttorch.composting.title","descriptionKey":"chapter.firsttorch.composting.description","quests":[
+      {"id":"1AC06B2E9537D4F8","order":0,"titleKey":"quest.firsttorch.composting.slabs.title","descriptionKey":"quest.firsttorch.composting.slabs.description","iconItemId":"minecraft:oak_slab","tasks":[{"id":"2BD17C3FA648E509","type":"INVENTORY_TAG","itemId":"minecraft:wooden_slabs","count":7,"titleKey":"task.firsttorch.2bd17c3fa648e509.title"}],"position":{"x":0,"y":0},"prerequisiteQuestIds":["62A84E0B73D9F15C"]},
+      {"id":"3CE28D40B759F61A","order":1,"titleKey":"quest.firsttorch.composting.composter.title","descriptionKey":"quest.firsttorch.composting.composter.description","iconItemId":"minecraft:composter","tasks":[{"id":"4DF39E51C86A072B","type":"INVENTORY","itemId":"minecraft:composter","count":1,"titleKey":"task.firsttorch.4df39e51c86a072b.title"}],"rewards":[{"id":"0137D2950CAE4B6F","type":"ITEM","itemId":"minecraft:wheat_seeds","amount":32}],"position":{"x":0,"y":2},"prerequisiteQuestIds":["1AC06B2E9537D4F8"]},
+      {"id":"5E04AF62D97B183C","order":2,"titleKey":"quest.firsttorch.composting.bonemeal.title","descriptionKey":"quest.firsttorch.composting.bonemeal.description","iconItemId":"minecraft:bone_meal","tasks":[{"id":"6F15B073EA8C294D","type":"MANUAL","count":1,"titleKey":"task.firsttorch.6f15b073ea8c294d.title"}],"rewards":[{"id":"7026C184FB9D3A5E","type":"EXPERIENCE","amount":5}],"position":{"x":0,"y":4},"prerequisiteQuestIds":["3CE28D40B759F61A"]}
+    ]},
+    {"id":"1BD93F587CE4062A","iconItemId":"minecraft:hay_block","order":14,"titleKey":"chapter.firsttorch.animal_care.title","descriptionKey":"chapter.firsttorch.animal_care.description","quests":[
+      {"id":"174BD2A608E35C91","order":0,"image":{"resource":"firsttorch:textures/questpics/fence_and_gate.png","width":1672,"height":941,"altKey":"image.firsttorch.fence_and_gate.description"},"titleKey":"quest.firsttorch.animals.parts.title","descriptionKey":"quest.firsttorch.animals.parts.description","iconItemId":"minecraft:oak_fence","tasks":[{"id":"285CE3B719F46DA2","type":"INVENTORY_TAG","itemId":"minecraft:wooden_fences","count":15,"titleKey":"task.firsttorch.285ce3b719f46da2.title"},{"id":"396DF4C82A057EB3","type":"INVENTORY_TAG","itemId":"minecraft:fence_gates","count":1,"titleKey":"task.firsttorch.396df4c82a057eb3.title"}],"position":{"x":0,"y":0},"prerequisiteQuestIds":["26EC824FB71D3590"]},
+      {"id":"4A7E05D93B168FC4","order":1,"titleKey":"quest.firsttorch.animals.pen.title","descriptionKey":"quest.firsttorch.animals.pen.description","iconItemId":"minecraft:oak_fence_gate","tasks":[{"id":"5B8F16EA4C2790D5","type":"MANUAL","count":1,"titleKey":"task.firsttorch.5b8f16ea4c2790d5.title"}],"rewards":[{"id":"27BC84DA1E5F3690","type":"ITEM","itemId":"minecraft:torch","amount":4}],"position":{"x":0,"y":2},"prerequisiteQuestIds":["174BD2A608E35C91"]},
+      {"id":"6C9027FB5D38A1E6","order":2,"titleKey":"quest.firsttorch.animals.feed.title","descriptionKey":"quest.firsttorch.animals.feed.description","iconItemId":"minecraft:wheat","tasks":[{"id":"7DA1380C6E49B2F7","type":"INVENTORY_TAG","itemId":"firsttorch:animal_feed","count":2,"titleKey":"task.firsttorch.7da1380c6e49b2f7.title"}],"position":{"x":0,"y":4},"prerequisiteQuestIds":["4A7E05D93B168FC4"]},
+      {"id":"0EB2491D7F5AC308","order":3,"titleKey":"quest.firsttorch.animals.lure.title","descriptionKey":"quest.firsttorch.animals.lure.description","iconItemId":"minecraft:cow_spawn_egg","tasks":[{"id":"1FC35A2E806BD419","type":"MANUAL","count":1,"titleKey":"task.firsttorch.1fc35a2e806bd419.title"}],"position":{"x":2,"y":4},"prerequisiteQuestIds":["6C9027FB5D38A1E6"]},
+      {"id":"20D46B3F917CE52A","order":4,"titleKey":"quest.firsttorch.animals.breed.title","descriptionKey":"quest.firsttorch.animals.breed.description","iconItemId":"minecraft:wheat","tasks":[{"id":"31E57C40A28DF63B","type":"ADVANCEMENT","advancementId":"minecraft:husbandry/breed_an_animal","criterion":"bred","count":1,"titleKey":"task.firsttorch.31e57c40a28df63b.title"}],"position":{"x":2,"y":2},"prerequisiteQuestIds":["0EB2491D7F5AC308"]},
+      {"id":"42F68D51B39E074C","order":5,"titleKey":"quest.firsttorch.animals.care.title","descriptionKey":"quest.firsttorch.animals.care.description","iconItemId":"minecraft:hay_block","tasks":[{"id":"53079E62C4AF185D","type":"MANUAL","count":1,"titleKey":"task.firsttorch.53079e62c4af185d.title"}],"rewards":[{"id":"38CD95EB2F6047A1","type":"ITEM","itemId":"minecraft:lead","amount":1},{"id":"6418AF73D5B0296E","type":"EXPERIENCE","amount":5}],"position":{"x":2,"y":0},"prerequisiteQuestIds":["20D46B3F917CE52A"]}
+    ]}
+    ,{"id":"2CEA40698DF5173B","order":15,"titleKey":"chapter.firsttorch.storage.title","descriptionKey":"chapter.firsttorch.storage.description","iconItemId":"minecraft:chest","quests":[{"id":"6519B084E62C3A7D","order":0,"titleKey":"quest.firsttorch.storage.chests.title","descriptionKey":"quest.firsttorch.storage.chests.description","iconItemId":"minecraft:chest","position":{"x":0,"y":0},"prerequisiteQuestIds":["42F68D51B39E074C"],"tasks":[{"id":"762AC195F73D4B8E","type":"INVENTORY","itemId":"minecraft:chest","count":3,"titleKey":"task.firsttorch.762ac195f73d4b8e.title"}]},{"id":"073BD2A6084E5C9F","order":1,"titleKey":"quest.firsttorch.storage.areas.title","descriptionKey":"quest.firsttorch.storage.areas.description","iconItemId":"minecraft:chest","position":{"x":0,"y":2},"prerequisiteQuestIds":["6519B084E62C3A7D"],"tasks":[{"id":"184CE3B7195F6DA0","type":"MANUAL","count":1,"titleKey":"task.firsttorch.184ce3b7195f6da0.title"}],"rewards":[{"id":"49DEA6FC307158B2","type":"ITEM","itemId":"minecraft:item_frame","amount":3}]},{"id":"295DF4C82A607EB1","order":2,"titleKey":"quest.firsttorch.storage.signs.title","descriptionKey":"quest.firsttorch.storage.signs.description","iconItemId":"minecraft:oak_sign","position":{"x":0,"y":4},"prerequisiteQuestIds":["073BD2A6084E5C9F"],"tasks":[{"id":"3A6E05D93B718FC2","type":"INVENTORY_TAG","itemId":"minecraft:signs","count":3,"titleKey":"task.firsttorch.3a6e05d93b718fc2.title"}]},{"id":"4B7F16EA4C8290D3","order":3,"titleKey":"quest.firsttorch.storage.sort.title","descriptionKey":"quest.firsttorch.storage.sort.description","iconItemId":"minecraft:oak_sign","position":{"x":0,"y":6},"prerequisiteQuestIds":["295DF4C82A607EB1"],"tasks":[{"id":"5C8027FB5D93A1E4","type":"MANUAL","count":1,"titleKey":"task.firsttorch.5c8027fb5d93a1e4.title"}]},{"id":"6D91380C6EA4B2F5","order":4,"titleKey":"quest.firsttorch.storage.routine.title","descriptionKey":"quest.firsttorch.storage.routine.description","iconItemId":"minecraft:bundle","position":{"x":0,"y":8},"prerequisiteQuestIds":["4B7F16EA4C8290D3"],"tasks":[{"id":"7EA2491D7FB5C306","type":"MANUAL","count":1,"titleKey":"task.firsttorch.7ea2491d7fb5c306.title"}],"rewards":[{"id":"5AEFB70D418269C3","type":"ITEM","itemId":"minecraft:bundle","amount":1},{"id":"0FB35A2E806CD417","type":"EXPERIENCE","amount":5}]}]}
+    ,{"id":"68C1F4072D9A5BE3","order":16,"titleKey":"chapter.firsttorch.excursions.title","descriptionKey":"chapter.firsttorch.excursions.description","iconItemId":"minecraft:oak_boat","quests":[{"id":"12E8A5C74F309BD6","order":0,"titleKey":"quest.firsttorch.excursions.plan.title","descriptionKey":"quest.firsttorch.excursions.plan.description","iconItemId":"minecraft:filled_map","position":{"x":0,"y":0},"prerequisiteQuestIds":["0BED012A8146C359","07B5E9C31D864AF2"],"tasks":[{"id":"23F9B6D85041ACE7","type":"MANUAL","count":1,"titleKey":"task.firsttorch.23f9b6d85041ace7.title"}]},{"id":"34FAC7E96152BDF8","order":1,"titleKey":"quest.firsttorch.excursions.equipment.title","descriptionKey":"quest.firsttorch.excursions.equipment.description","iconItemId":"minecraft:bundle","position":{"x":0,"y":2},"prerequisiteQuestIds":["12E8A5C74F309BD6"],"tasks":[{"id":"451BD8FA7263CE09","type":"INVENTORY","itemId":"minecraft:shield","count":1,"titleKey":"task.firsttorch.451bd8fa7263ce09.title"},{"id":"562CE90B8374DF1A","type":"INVENTORY_TAG","itemId":"firsttorch:cooked_food","count":8,"titleKey":"task.firsttorch.562ce90b8374df1a.title"},{"id":"673DFA1C9485E02B","type":"INVENTORY","itemId":"minecraft:torch","count":16,"titleKey":"task.firsttorch.673dfa1c9485e02b.title"},{"id":"704E0B2DA596F13C","type":"INVENTORY","itemId":"minecraft:cobblestone","count":32,"titleKey":"task.firsttorch.704e0b2da596f13c.title"},{"id":"05AF1C3EB6A7024D","type":"MANUAL","count":1,"titleKey":"task.firsttorch.05af1c3eb6a7024d.title"}]},{"id":"16B02D4FC7B8135E","order":2,"titleKey":"quest.firsttorch.excursions.daylight.title","descriptionKey":"quest.firsttorch.excursions.daylight.description","iconItemId":"minecraft:sunflower","position":{"x":0,"y":4},"prerequisiteQuestIds":["34FAC7E96152BDF8"],"tasks":[{"id":"27C13E50D8C9246F","type":"MANUAL","count":1,"titleKey":"task.firsttorch.27c13e50d8c9246f.title"}]},{"id":"38D24F61E9DA3570","order":3,"titleKey":"quest.firsttorch.excursions.boat.title","descriptionKey":"quest.firsttorch.excursions.boat.description","iconItemId":"minecraft:oak_boat","position":{"x":2,"y":4},"prerequisiteQuestIds":["16B02D4FC7B8135E"],"tasks":[{"id":"49E35072FAEB4681","type":"INVENTORY_TAG","itemId":"firsttorch:ordinary_boats","count":1,"titleKey":"task.firsttorch.49e35072faeb4681.title"}],"image":{"resource":"firsttorch:textures/questpics/boat_recipe.png","width":1672,"height":941,"altKey":"image.firsttorch.boat_recipe.description"}},{"id":"5AF461830BFC5792","order":4,"titleKey":"quest.firsttorch.excursions.controls.title","descriptionKey":"quest.firsttorch.excursions.controls.description","iconItemId":"minecraft:oak_boat","position":{"x":2,"y":2},"prerequisiteQuestIds":["38D24F61E9DA3570"],"tasks":[{"id":"6B0572941C0D68A3","type":"MANUAL","count":1,"titleKey":"task.firsttorch.6b0572941c0d68a3.title"}],"image":{"resource":"firsttorch:textures/questpics/boat_controls.png","width":1672,"height":941,"altKey":"image.firsttorch.boat_controls.description"}},{"id":"7C1683A52D1E79B4","order":5,"titleKey":"quest.firsttorch.excursions.return.title","descriptionKey":"quest.firsttorch.excursions.return.description","iconItemId":"minecraft:compass","position":{"x":2,"y":0},"prerequisiteQuestIds":["5AF461830BFC5792"],"tasks":[{"id":"0D2794B63E2F8AC5","type":"MANUAL","count":1,"titleKey":"task.firsttorch.0d2794b63e2f8ac5.title"}],"rewards":[{"id":"1E38A5C74F309BD6","type":"EXPERIENCE","amount":5}]}]}
+    ,{"id":"3DFB517A9E06284C","order":17,"titleKey":"chapter.firsttorch.village.title","descriptionKey":"chapter.firsttorch.village.description","iconItemId":"minecraft:bell","quests":[{"id":"2F49B6D81E50AC73","order":0,"titleKey":"quest.firsttorch.village.search.title","descriptionKey":"quest.firsttorch.village.search.description","iconItemId":"minecraft:compass","position":{"x":0,"y":0},"prerequisiteQuestIds":["7C1683A52D1E79B4"],"tasks":[{"id":"305AC7E92F61BD84","type":"MANUAL","count":1,"titleKey":"task.firsttorch.305ac7e92f61bd84.title"}]},{"id":"416BD8FA3072CE95","image":{"resource":"firsttorch:textures/questpics/village_overview.png","width":1672,"height":941,"altKey":"image.firsttorch.village_overview.description"},"order":1,"titleKey":"quest.firsttorch.village.approach.title","descriptionKey":"quest.firsttorch.village.approach.description","iconItemId":"minecraft:bell","position":{"x":0,"y":2},"prerequisiteQuestIds":["2F49B6D81E50AC73"],"tasks":[{"id":"527CE90B4183DFA6","type":"MANUAL","count":1,"titleKey":"task.firsttorch.527ce90b4183dfa6.title"}]},{"id":"638DFA1C5294E0B7","order":2,"titleKey":"quest.firsttorch.village.record.title","descriptionKey":"quest.firsttorch.village.record.description","iconItemId":"minecraft:oak_sign","position":{"x":0,"y":4},"prerequisiteQuestIds":["416BD8FA3072CE95"],"tasks":[{"id":"749E0B2D63A5F1C8","type":"MANUAL","count":1,"titleKey":"task.firsttorch.749e0b2d63a5f1c8.title"}],"rewards":[{"id":"05AF1C3E74B602D9","type":"EXPERIENCE","amount":5}]},{"id":"14C9E72A5B603DF8","order":3,"titleKey":"quest.firsttorch.village.respect.title","descriptionKey":"quest.firsttorch.village.respect.description","iconItemId":"minecraft:iron_golem_spawn_egg","position":{"x":0,"y":6},"prerequisiteQuestIds":["638DFA1C5294E0B7"],"tasks":[{"id":"25DAF83B6C714E09","type":"MANUAL","count":1,"titleKey":"task.firsttorch.25daf83b6c714e09.title"}]}]}
+    ,{"id":"4E0C628BAF17395D","order":18,"titleKey":"chapter.firsttorch.trading.title","descriptionKey":"chapter.firsttorch.trading.description","iconItemId":"minecraft:emerald","quests":[{"id":"36EB094C7D825F1A","order":0,"titleKey":"quest.firsttorch.trading.professions.title","descriptionKey":"quest.firsttorch.trading.professions.description","iconItemId":"minecraft:composter","position":{"x":0,"y":0},"prerequisiteQuestIds":["14C9E72A5B603DF8"],"tasks":[{"id":"47FC1A5D0E936B2C","type":"MANUAL","count":1,"titleKey":"task.firsttorch.47fc1a5d0e936b2c.title"}]},{"id":"580D2B6E1FA47C3D","order":1,"titleKey":"quest.firsttorch.trading.offers.title","descriptionKey":"quest.firsttorch.trading.offers.description","iconItemId":"minecraft:emerald","position":{"x":0,"y":2},"prerequisiteQuestIds":["36EB094C7D825F1A"],"tasks":[{"id":"691E3C7F20B58D4E","type":"MANUAL","count":1,"titleKey":"task.firsttorch.691e3c7f20b58d4e.title"}],"image":{"resource":"firsttorch:textures/questpics/villager_trading.png","width":1672,"height":941,"altKey":"image.firsttorch.villager_trading.description"}},{"id":"7A2F4D801C639E5F","order":2,"titleKey":"quest.firsttorch.trading.trade.title","descriptionKey":"quest.firsttorch.trading.trade.description","iconItemId":"minecraft:emerald","position":{"x":0,"y":4},"prerequisiteQuestIds":["580D2B6E1FA47C3D"],"tasks":[{"id":"0B305E912D74AF60","type":"ADVANCEMENT","advancementId":"minecraft:adventure/trade","criterion":"traded","count":1,"titleKey":"task.firsttorch.0b305e912d74af60.title"}],"rewards":[{"id":"1C416FA23E85B071","type":"ITEM","itemId":"minecraft:torch","amount":4},{"id":"2D5270B34F96C182","type":"EXPERIENCE","amount":5}]},{"id":"4B70A16D3E92C5F8","order":3,"titleKey":"quest.firsttorch.trading.leave.title","descriptionKey":"quest.firsttorch.trading.leave.description","iconItemId":"minecraft:torch","position":{"x":2,"y":4},"prerequisiteQuestIds":["7A2F4D801C639E5F"],"tasks":[{"id":"5C81B27E4FA3D609","type":"MANUAL","count":1,"titleKey":"task.firsttorch.5c81b27e4fa3d609.title"}]},{"id":"6D92C38F50B4E71A","order":4,"titleKey":"quest.firsttorch.trading.return.title","descriptionKey":"quest.firsttorch.trading.return.description","iconItemId":"minecraft:compass","position":{"x":2,"y":2},"prerequisiteQuestIds":["4B70A16D3E92C5F8"],"tasks":[{"id":"7EA3D49061C5F82B","type":"MANUAL","count":1,"titleKey":"task.firsttorch.7ea3d49061c5f82b.title"}]},{"id":"0FB4E5A172D6093C","order":5,"titleKey":"quest.firsttorch.trading.finish.title","descriptionKey":"quest.firsttorch.trading.finish.description","iconItemId":"minecraft:chest","position":{"x":2,"y":0},"prerequisiteQuestIds":["6D92C38F50B4E71A"],"tasks":[{"id":"10C5F6B283E71A4D","type":"MANUAL","count":1,"titleKey":"task.firsttorch.10c5f6b283e71a4d.title"}],"rewards":[{"id":"21D607C394F82B5E","type":"ITEM","itemId":"minecraft:bread","amount":3},{"id":"32E718D4A50F3C6B","type":"EXPERIENCE","amount":5}]}]}
+    ,{"id":"6B3D9F215E8C4A70","order":19,"titleKey":"chapter.firsttorch.deep_mining.title","descriptionKey":"chapter.firsttorch.deep_mining.description","iconItemId":"minecraft:diamond_pickaxe","quests":[{"id":"1C4EA0627FB38D59","order":0,"titleKey":"quest.firsttorch.deep_mining.equipment.title","descriptionKey":"quest.firsttorch.deep_mining.equipment.description","iconItemId":"minecraft:iron_pickaxe","position":{"x":0,"y":0},"prerequisiteQuestIds":["6D91380C6EA4B2F5","3F215C6E03ABD479"],"tasks":[{"id":"2D5FB17380C49E6A","type":"INVENTORY_TAG","itemId":"firsttorch:iron_or_better_pickaxes","count":2,"titleKey":"task.firsttorch.2d5fb17380c49e6a.title"},{"id":"3E60C28491D5AF7B","type":"INVENTORY","itemId":"minecraft:water_bucket","count":1,"titleKey":"task.firsttorch.3e60c28491d5af7b.title"},{"id":"4F71D395A2E6B08C","type":"INVENTORY","itemId":"minecraft:shield","count":1,"titleKey":"task.firsttorch.4f71d395a2e6b08c.title"},{"id":"5082E4A6B3F7C19D","type":"INVENTORY","itemId":"minecraft:torch","count":32,"titleKey":"task.firsttorch.5082e4a6b3f7c19d.title"},{"id":"6193F5B7C408D2AE","type":"INVENTORY_TAG","itemId":"firsttorch:cooked_food","count":8,"titleKey":"task.firsttorch.6193f5b7c408d2ae.title"}],"rewards":[{"id":"4A8C26E0D3F715B9","type":"ITEM","itemId":"minecraft:bread","amount":4}]},{"id":"72A406C8D519E3BF","order":1,"titleKey":"quest.firsttorch.deep_mining.coordinates.title","descriptionKey":"quest.firsttorch.deep_mining.coordinates.description","iconItemId":"minecraft:compass","position":{"x":0,"y":2},"prerequisiteQuestIds":["1C4EA0627FB38D59"],"tasks":[{"id":"03B517D9E62AF4C0","type":"MANUAL","count":1,"titleKey":"task.firsttorch.03b517d9e62af4c0.title"}]},{"id":"14C628EAF73B05D1","order":2,"titleKey":"quest.firsttorch.deep_mining.deepslate.title","descriptionKey":"quest.firsttorch.deep_mining.deepslate.description","iconItemId":"minecraft:cobbled_deepslate","position":{"x":0,"y":4},"prerequisiteQuestIds":["72A406C8D519E3BF"],"tasks":[{"id":"25D739FB084C16E2","type":"INVENTORY","itemId":"minecraft:cobbled_deepslate","count":16,"titleKey":"task.firsttorch.25d739fb084c16e2.title"}],"rewards":[{"id":"5B9D37F1E40826CA","type":"ITEM","itemId":"minecraft:torch","amount":8}]},{"id":"36E840AC195D27F3","order":3,"titleKey":"quest.firsttorch.deep_mining.tunnel.title","descriptionKey":"quest.firsttorch.deep_mining.tunnel.description","iconItemId":"minecraft:deepslate_diamond_ore","position":{"x":2,"y":4},"prerequisiteQuestIds":["14C628EAF73B05D1"],"tasks":[{"id":"47F951BD2A6E3804","type":"MANUAL","count":1,"titleKey":"task.firsttorch.47f951bd2a6e3804.title"}]},{"id":"580A62CE3B7F4915","order":4,"titleKey":"quest.firsttorch.deep_mining.diamonds.title","descriptionKey":"quest.firsttorch.deep_mining.diamonds.description","iconItemId":"minecraft:diamond","position":{"x":2,"y":2},"prerequisiteQuestIds":["36E840AC195D27F3"],"tasks":[{"id":"691B73DF4C805A26","type":"INVENTORY","itemId":"minecraft:diamond","count":3,"titleKey":"task.firsttorch.691b73df4c805a26.title"}],"rewards":[{"id":"6CAE4802F51937DB","type":"EXPERIENCE","amount":5}]},{"id":"7A2C84E05D916B37","order":5,"titleKey":"quest.firsttorch.deep_mining.pickaxe.title","descriptionKey":"quest.firsttorch.deep_mining.pickaxe.description","iconItemId":"minecraft:diamond_pickaxe","position":{"x":2,"y":0},"prerequisiteQuestIds":["580A62CE3B7F4915"],"tasks":[{"id":"0B3D95F16EA27C48","type":"INVENTORY","itemId":"minecraft:diamond_pickaxe","count":1,"titleKey":"task.firsttorch.0b3d95f16ea27c48.title"}],"rewards":[{"id":"7DBF5913062A48EC","type":"ITEM","itemId":"minecraft:golden_apple","amount":1},{"id":"0EC06A24173B59FD","type":"EXPERIENCE","amount":5}]}]}
+    ,{"id":"5F1D739CB0284A6E","order":20,"titleKey":"chapter.firsttorch.enchanting.title","descriptionKey":"chapter.firsttorch.enchanting.description","iconItemId":"minecraft:enchanting_table","quests":[
+      {"id":"1D5FB17380C49E6A","order":0,"titleKey":"quest.firsttorch.enchanting.obsidian.title","descriptionKey":"quest.firsttorch.enchanting.obsidian.description","iconItemId":"minecraft:obsidian","position":{"x":0,"y":2},"prerequisiteQuestIds":["7A2C84E05D916B37"],"tasks":[{"id":"2E60C28491D5AF7B","type":"INVENTORY","itemId":"minecraft:obsidian","count":4,"titleKey":"task.firsttorch.2e60c28491d5af7b.title"}],"rewards":[{"id":"3F71D395A2E6B08C","type":"EXPERIENCE","amount":5}]},
+      {"id":"4082E4A6B3F7C19D","order":1,"titleKey":"quest.firsttorch.enchanting.sugar_cane.title","descriptionKey":"quest.firsttorch.enchanting.sugar_cane.description","iconItemId":"minecraft:sugar_cane","position":{"x":2,"y":0},"prerequisiteQuestIds":["7A2C84E05D916B37"],"tasks":[{"id":"5193F5B7C408D2AE","type":"INVENTORY","itemId":"minecraft:sugar_cane","count":3,"titleKey":"task.firsttorch.5193f5b7c408d2ae.title"}],"rewards":[{"id":"62A406C8D519E3BF","type":"ITEM","itemId":"minecraft:leather","amount":1}]},
+      {"id":"73B517D9E62AF4C0","order":2,"image":{"resource":"firsttorch:textures/questpics/paper_and_book.png","width":1672,"height":941,"altKey":"image.firsttorch.paper_and_book.description"},"titleKey":"quest.firsttorch.enchanting.book.title","descriptionKey":"quest.firsttorch.enchanting.book.description","iconItemId":"minecraft:book","position":{"x":2,"y":2},"prerequisiteQuestIds":["4082E4A6B3F7C19D"],"tasks":[{"id":"04C628EAF73B05D1","type":"INVENTORY","itemId":"minecraft:book","count":1,"titleKey":"task.firsttorch.04c628eaf73b05d1.title"}]},
+      {"id":"15D739FB084C16E2","order":3,"titleKey":"quest.firsttorch.enchanting.lapis.title","descriptionKey":"quest.firsttorch.enchanting.lapis.description","iconItemId":"minecraft:lapis_lazuli","position":{"x":4,"y":2},"prerequisiteQuestIds":["7A2C84E05D916B37"],"tasks":[{"id":"26E840AC195D27F3","type":"INVENTORY","itemId":"minecraft:lapis_lazuli","count":3,"titleKey":"task.firsttorch.26e840ac195d27f3.title"}],"rewards":[{"id":"37F951BD2A6E3804","type":"EXPERIENCE","amount":5}]},
+      {"id":"480A62CE3B7F4915","order":4,"image":{"resource":"firsttorch:textures/questpics/enchanting_table_recipe.png","width":1672,"height":941,"altKey":"image.firsttorch.enchanting_table_recipe.description"},"titleKey":"quest.firsttorch.enchanting.table.title","descriptionKey":"quest.firsttorch.enchanting.table.description","iconItemId":"minecraft:enchanting_table","position":{"x":2,"y":4},"prerequisiteQuestIds":["1D5FB17380C49E6A","73B517D9E62AF4C0","15D739FB084C16E2"],"tasks":[{"id":"591B73DF4C805A26","type":"INVENTORY","itemId":"minecraft:enchanting_table","count":1,"titleKey":"task.firsttorch.591b73df4c805a26.title"}],"rewards":[{"id":"2E60C82491D5AF7B","type":"EXPERIENCE","amount":5}]},
+      {"id":"6A2C84E05D916B37","order":5,"image":{"resource":"firsttorch:textures/questpics/enchanting_interface.png","width":1672,"height":941,"altKey":"image.firsttorch.enchanting_interface.description"},"titleKey":"quest.firsttorch.enchanting.first.title","descriptionKey":"quest.firsttorch.enchanting.first.description","iconItemId":"minecraft:enchanted_book","position":{"x":2,"y":6},"prerequisiteQuestIds":["480A62CE3B7F4915"],"tasks":[{"id":"7B3D95F16EA27C48","type":"ADVANCEMENT","advancementId":"minecraft:story/enchant_item","criterion":"enchanted_item","count":1,"titleKey":"task.firsttorch.7b3d95f16ea27c48.title"}],"rewards":[{"id":"0C4EA6027FB38D59","type":"ITEM","itemId":"minecraft:lapis_lazuli","amount":3},{"id":"1D5FB71380C49E6A","type":"EXPERIENCE","amount":10}]}
+    ]}
+    ,{"id":"607E84ADB1395B7F","order":21,"titleKey":"chapter.firsttorch.library.title","descriptionKey":"chapter.firsttorch.library.description","iconItemId":"minecraft:bookshelf","quests":[
+      {"id":"2E71A5C9D304B86F","order":0,"image":{"resource":"firsttorch:textures/questpics/bookshelf_recipe.png","width":1672,"height":941,"altKey":"image.firsttorch.bookshelf_recipe.description"},"titleKey":"quest.firsttorch.library.first_bookshelf.title","descriptionKey":"quest.firsttorch.library.first_bookshelf.description","iconItemId":"minecraft:bookshelf","position":{"x":0,"y":0},"prerequisiteQuestIds":["6A2C84E05D916B37"],"tasks":[{"id":"51A4D8FC0637EB92","type":"INVENTORY","itemId":"minecraft:bookshelf","count":1,"titleKey":"task.firsttorch.51a4d8fc0637eb92.title"}],"rewards":[{"id":"04D70B2F396A1EC5","type":"ITEM","itemId":"minecraft:book","amount":3}]},
+      {"id":"3F82B6DAE415C970","order":1,"titleKey":"quest.firsttorch.library.complete.title","descriptionKey":"quest.firsttorch.library.complete.description","iconItemId":"minecraft:bookshelf","position":{"x":0,"y":2},"prerequisiteQuestIds":["2E71A5C9D304B86F"],"tasks":[{"id":"62B5E90D1748FCA3","type":"INVENTORY","itemId":"minecraft:bookshelf","count":15,"titleKey":"task.firsttorch.62b5e90d1748fca3.title"}]},
+      {"id":"4093C7EBF526DA81","order":2,"image":{"resource":"firsttorch:textures/questpics/enchanting_bookshelves.png","width":1672,"height":941,"altKey":"image.firsttorch.enchanting_bookshelves.description"},"titleKey":"quest.firsttorch.library.station.title","descriptionKey":"quest.firsttorch.library.station.description","iconItemId":"minecraft:enchanting_table","position":{"x":0,"y":4},"prerequisiteQuestIds":["3F82B6DAE415C970"],"tasks":[{"id":"73C6FA1E28590DB4","type":"MANUAL","count":1,"titleKey":"task.firsttorch.73c6fa1e28590db4.title"}],"rewards":[{"id":"15E81C304A7B2FD6","type":"ITEM","itemId":"minecraft:lapis_lazuli","amount":3},{"id":"26F92D415B8C30E7","type":"EXPERIENCE","amount":10}]}
+    ]}
+    ,{"id":"6138B4E07D952AC6","order":22,"titleKey":"chapter.firsttorch.nether_portal.title","descriptionKey":"chapter.firsttorch.nether_portal.description","iconItemId":"minecraft:flint_and_steel","quests":[
+      {"id":"0249C5F18EA63BD7","order":0,"titleKey":"quest.firsttorch.nether_portal.site.title","descriptionKey":"quest.firsttorch.nether_portal.site.description","iconItemId":"minecraft:obsidian","position":{"x":0,"y":0},"prerequisiteQuestIds":["6A2C84E05D916B37"],"tasks":[{"id":"135AD6029FB74CE8","type":"MANUAL","count":1,"titleKey":"task.firsttorch.135ad6029fb74ce8.title"}]},
+      {"id":"246BE713A0C85DF9","order":1,"titleKey":"quest.firsttorch.nether_portal.flint.title","descriptionKey":"quest.firsttorch.nether_portal.flint.description","iconItemId":"minecraft:flint","position":{"x":0,"y":2},"prerequisiteQuestIds":["0249C5F18EA63BD7"],"tasks":[{"id":"357CF824B1D96E0A","type":"INVENTORY","itemId":"minecraft:flint","count":1,"titleKey":"task.firsttorch.357cf824b1d96e0a.title"}]},
+      {"id":"468D0935C2EA7F1B","order":2,"image":{"resource":"firsttorch:textures/questpics/flint_and_steel.png","width":1672,"height":941,"altKey":"image.firsttorch.flint_and_steel.description"},"titleKey":"quest.firsttorch.nether_portal.flint_and_steel.title","descriptionKey":"quest.firsttorch.nether_portal.flint_and_steel.description","iconItemId":"minecraft:flint_and_steel","position":{"x":0,"y":4},"prerequisiteQuestIds":["246BE713A0C85DF9"],"tasks":[{"id":"579E1A46D3FB802C","type":"INVENTORY","itemId":"minecraft:flint_and_steel","count":1,"titleKey":"task.firsttorch.579e1a46d3fb802c.title"}],"rewards":[{"id":"68AF2B57E40C913D","type":"ITEM","itemId":"minecraft:iron_ingot","amount":1}]},
+      {"id":"79B03C68F51DA24E","order":3,"titleKey":"quest.firsttorch.nether_portal.obsidian.title","descriptionKey":"quest.firsttorch.nether_portal.obsidian.description","iconItemId":"minecraft:obsidian","position":{"x":2,"y":4},"prerequisiteQuestIds":["468D0935C2EA7F1B"],"tasks":[{"id":"0AC14D79062EB35F","type":"INVENTORY","itemId":"minecraft:obsidian","count":10,"titleKey":"task.firsttorch.0ac14d79062eb35f.title"}],"rewards":[{"id":"1BD25E8A173FC460","type":"EXPERIENCE","amount":5}]},
+      {"id":"2CE36F9B2840D571","order":4,"image":{"resource":"firsttorch:textures/questpics/nether_portal_frame.png","width":1672,"height":941,"altKey":"image.firsttorch.nether_portal_frame.description"},"titleKey":"quest.firsttorch.nether_portal.frame.title","descriptionKey":"quest.firsttorch.nether_portal.frame.description","iconItemId":"minecraft:obsidian","position":{"x":2,"y":2},"prerequisiteQuestIds":["79B03C68F51DA24E"],"tasks":[{"id":"3DF470AC3951E682","type":"MANUAL","count":1,"titleKey":"task.firsttorch.3df470ac3951e682.title"}],"rewards":[{"id":"4E0581BD4A62F793","type":"ITEM","itemId":"minecraft:torch","amount":8},{"id":"5F1692CE5B7308A4","type":"EXPERIENCE","amount":5}]}
+    ]}
+    ,{"id":"7249C5F18EA63BD8","order":23,"titleKey":"chapter.firsttorch.nether_equipment.title","descriptionKey":"chapter.firsttorch.nether_equipment.description","iconItemId":"minecraft:golden_helmet","quests":[
+      {"id":"14C1D6E29A5F730B","order":0,"titleKey":"quest.firsttorch.nether_equipment.gold.title","descriptionKey":"quest.firsttorch.nether_equipment.gold.description","iconItemId":"minecraft:gold_ingot","position":{"x":0,"y":0},"prerequisiteQuestIds":["2CE36F9B2840D571"],"tasks":[{"id":"25D2E7F3AB60841C","type":"INVENTORY","itemId":"minecraft:gold_ingot","count":5,"titleKey":"task.firsttorch.25d2e7f3ab60841c.title"}],"rewards":[{"id":"36E3F804BC71952D","type":"ITEM","itemId":"minecraft:coal","amount":4}]},
+      {"id":"47F40915CD82A63E","order":1,"image":{"resource":"firsttorch:textures/questpics/golden_helmet.png","width":1672,"height":941,"altKey":"image.firsttorch.golden_helmet.description"},"titleKey":"quest.firsttorch.nether_equipment.helmet.title","descriptionKey":"quest.firsttorch.nether_equipment.helmet.description","iconItemId":"minecraft:golden_helmet","position":{"x":0,"y":2},"prerequisiteQuestIds":["14C1D6E29A5F730B"],"tasks":[{"id":"58051A26DE93B74F","type":"INVENTORY","itemId":"minecraft:golden_helmet","count":1,"titleKey":"task.firsttorch.58051a26de93b74f.title"},{"id":"69162B37EFA4C850","type":"MANUAL","count":1,"titleKey":"task.firsttorch.69162b37efa4c850.title"}],"rewards":[{"id":"7A273C48F0B5D961","type":"ITEM","itemId":"minecraft:gold_ingot","amount":5},{"id":"01384D59A1C6E072","type":"EXPERIENCE","amount":5}]},
+      {"id":"02495E6AB2D7F183","order":2,"image":{"resource":"firsttorch:textures/questpics/iron_sword.png","width":1672,"height":941,"altKey":"image.firsttorch.iron_sword.description"},"titleKey":"quest.firsttorch.nether_equipment.pack.title","descriptionKey":"quest.firsttorch.nether_equipment.pack.description","iconItemId":"minecraft:iron_sword","position":{"x":0,"y":4},"prerequisiteQuestIds":["47F40915CD82A63E"],"tasks":[{"id":"135A6F7BC3E80294","type":"INVENTORY_TAG","itemId":"firsttorch:iron_or_better_swords","count":1,"titleKey":"task.firsttorch.135a6f7bc3e80294.title"},{"id":"246B708CD4F913A5","type":"INVENTORY_TAG","itemId":"firsttorch:iron_or_better_pickaxes","count":1,"titleKey":"task.firsttorch.246b708cd4f913a5.title"},{"id":"357C819DE50A24B6","type":"INVENTORY","itemId":"minecraft:shield","count":1,"titleKey":"task.firsttorch.357c819de50a24b6.title"},{"id":"468D92AEF61B35C7","type":"INVENTORY","itemId":"minecraft:flint_and_steel","count":1,"titleKey":"task.firsttorch.468d92aef61b35c7.title"},{"id":"579EA3BF072C46D8","type":"INVENTORY","itemId":"minecraft:cobblestone","count":32,"titleKey":"task.firsttorch.579ea3bf072c46d8.title"},{"id":"68AFB4C0183D57E9","type":"INVENTORY","itemId":"minecraft:torch","count":16,"titleKey":"task.firsttorch.68afb4c0183d57e9.title"},{"id":"79B0C5D1294E68FA","type":"INVENTORY_TAG","itemId":"firsttorch:nether_food","count":8,"titleKey":"task.firsttorch.79b0c5d1294e68fa.title"}],"rewards":[{"id":"1AC1D6E23A5F790B","type":"ITEM","itemId":"minecraft:bread","amount":4}]},
+      {"id":"2BD2E7F34B6081AC","order":3,"image":{"resource":"firsttorch:textures/questpics/nether_portal_lit.png","width":1672,"height":941,"altKey":"image.firsttorch.nether_portal_lit.description"},"titleKey":"quest.firsttorch.nether_equipment.activate.title","descriptionKey":"quest.firsttorch.nether_equipment.activate.description","iconItemId":"minecraft:flint_and_steel","position":{"x":2,"y":4},"prerequisiteQuestIds":["02495E6AB2D7F183"],"tasks":[{"id":"3CE3F8045C7192BD","type":"MANUAL","count":1,"titleKey":"task.firsttorch.3ce3f8045c7192bd.title"}],"rewards":[{"id":"4DF409156D82A3CE","type":"EXPERIENCE","amount":5}]},
+      {"id":"5E05A1267B93C84F","order":4,"titleKey":"quest.firsttorch.nether_equipment.secure.title","descriptionKey":"quest.firsttorch.nether_equipment.secure.description","iconItemId":"minecraft:torch","position":{"x":2,"y":2},"prerequisiteQuestIds":["2BD2E7F34B6081AC"],"tasks":[{"id":"6F16B2370CA4D95E","type":"MANUAL","count":1,"titleKey":"task.firsttorch.6f16b2370ca4d95e.title"}],"rewards":[{"id":"7027C3481DB5EA6F","type":"ITEM","itemId":"minecraft:torch","amount":8},{"id":"0138D4592EC6FB70","type":"EXPERIENCE","amount":5}]},
+      {"id":"1249E56A3FD70C81","order":5,"titleKey":"quest.firsttorch.nether_equipment.check.title","descriptionKey":"quest.firsttorch.nether_equipment.check.description","iconItemId":"minecraft:compass","position":{"x":2,"y":0},"prerequisiteQuestIds":["5E05A1267B93C84F"],"tasks":[{"id":"235AF67B40E81D92","type":"MANUAL","count":1,"titleKey":"task.firsttorch.235af67b40e81d92.title"}],"rewards":[{"id":"346B078C51F92EA3","type":"ITEM","itemId":"minecraft:bread","amount":2}]}
+    ]}
+    ,{"id":"735AD6029FB74CE9","order":24,"titleKey":"chapter.firsttorch.nether_arrival.title","descriptionKey":"chapter.firsttorch.nether_arrival.description","iconItemId":"minecraft:obsidian","quests":[
+      {"id":"457C189D620A3FB4","order":0,"titleKey":"quest.firsttorch.nether_arrival.step.title","descriptionKey":"quest.firsttorch.nether_arrival.step.description","iconItemId":"minecraft:netherrack","position":{"x":0,"y":0},"prerequisiteQuestIds":["1249E56A3FD70C81"],"tasks":[{"id":"568D29AE731B40C5","type":"ADVANCEMENT","advancementId":"minecraft:nether/root","criterion":"entered_nether","count":1,"titleKey":"task.firsttorch.568d29ae731b40c5.title"},{"id":"679E3ABF042C51D6","type":"MANUAL","count":1,"titleKey":"task.firsttorch.679e3abf042c51d6.title"}],"rewards":[{"id":"70AF4BC0153D62E7","type":"ITEM","itemId":"minecraft:cobblestone","amount":16},{"id":"01B05CD1264E73F8","type":"EXPERIENCE","amount":5}]},
+      {"id":"12C16D273E94F5A0","order":1,"titleKey":"quest.firsttorch.nether_arrival.look.title","descriptionKey":"quest.firsttorch.nether_arrival.look.description","iconItemId":"minecraft:spyglass","position":{"x":0,"y":2},"prerequisiteQuestIds":["457C189D620A3FB4"],"tasks":[{"id":"23D27E384FA506B1","type":"MANUAL","count":1,"titleKey":"task.firsttorch.23d27e384fa506b1.title"}],"rewards":[{"id":"34E38F4950B617C2","type":"ITEM","itemId":"minecraft:cobblestone","amount":8},{"id":"45F4905A61C728D3","type":"ITEM","itemId":"minecraft:torch","amount":4}]},
+      {"id":"5605A16B72D839E4","order":2,"titleKey":"quest.firsttorch.nether_arrival.shelter.title","descriptionKey":"quest.firsttorch.nether_arrival.shelter.description","iconItemId":"minecraft:cobblestone","position":{"x":2,"y":2},"prerequisiteQuestIds":["12C16D273E94F5A0"],"tasks":[{"id":"6716B27C83E94AF5","type":"MANUAL","count":1,"titleKey":"task.firsttorch.6716b27c83e94af5.title"}],"rewards":[{"id":"7027C38D94FA5B06","type":"ITEM","itemId":"minecraft:cobblestone","amount":32},{"id":"0138D49EA50B6C17","type":"EXPERIENCE","amount":5}]},
+      {"id":"1249E5AFB61C7D28","order":3,"image":{"resource":"firsttorch:textures/questpics/nether_route_marker.png","width":1672,"height":941,"altKey":"image.firsttorch.nether_route_marker.description"},"titleKey":"quest.firsttorch.nether_arrival.return.title","descriptionKey":"quest.firsttorch.nether_arrival.return.description","iconItemId":"minecraft:compass","position":{"x":2,"y":0},"prerequisiteQuestIds":["5605A16B72D839E4"],"tasks":[{"id":"235AF6B0C72D8E39","type":"MANUAL","count":1,"titleKey":"task.firsttorch.235af6b0c72d8e39.title"}],"rewards":[{"id":"346B07C1D83E9F4A","type":"ITEM","itemId":"minecraft:bread","amount":4},{"id":"457C18D2E94FA05B","type":"EXPERIENCE","amount":5}]}
+    ]}
+    ,{"id":"746BE713A0C85DFA","order":25,"titleKey":"chapter.firsttorch.nether_safety.title","descriptionKey":"chapter.firsttorch.nether_safety.description","iconItemId":"minecraft:fire_charge","quests":[
+      {"id":"236B08D1E94FA05C","order":0,"titleKey":"quest.firsttorch.nether_safety.shelter.title","descriptionKey":"quest.firsttorch.nether_safety.shelter.description","iconItemId":"minecraft:golden_helmet","position":{"x":0,"y":0},"prerequisiteQuestIds":["1249E5AFB61C7D28"],"tasks":[{"id":"347C19E2FA50B16D","type":"MANUAL","count":1,"titleKey":"task.firsttorch.347c19e2fa50b16d.title"}]},
+      {"id":"458D2AF30B61C27E","order":1,"image":{"resource":"firsttorch:textures/questpics/piglin_comparison.png","width":1672,"height":941,"altKey":"image.firsttorch.piglin_comparison.description"},"titleKey":"quest.firsttorch.nether_safety.piglins.title","descriptionKey":"quest.firsttorch.nether_safety.piglins.description","iconItemId":"minecraft:gold_ingot","position":{"x":0,"y":2},"prerequisiteQuestIds":["236B08D1E94FA05C"],"tasks":[{"id":"569E3B041C72D38F","type":"MANUAL","count":1,"titleKey":"task.firsttorch.569e3b041c72d38f.title"}],"rewards":[{"id":"21A9E6BFC72D8E3A","type":"ITEM","itemId":"minecraft:torch","amount":4}]},
+      {"id":"670F4C152D83E490","order":2,"titleKey":"quest.firsttorch.nether_safety.hazards.title","descriptionKey":"quest.firsttorch.nether_safety.hazards.description","iconItemId":"minecraft:fire_charge","position":{"x":0,"y":4},"prerequisiteQuestIds":["458D2AF30B61C27E"],"tasks":[{"id":"08105D263E94F5A1","type":"MANUAL","count":1,"titleKey":"task.firsttorch.08105d263e94f5a1.title"}],"rewards":[{"id":"32BAF7C0D83E9F4B","type":"ITEM","itemId":"minecraft:cobblestone","amount":8}]},
+      {"id":"19216E374FA506B2","order":3,"titleKey":"quest.firsttorch.nether_safety.route.title","descriptionKey":"quest.firsttorch.nether_safety.route.description","iconItemId":"minecraft:torch","position":{"x":2,"y":4},"prerequisiteQuestIds":["670F4C152D83E490"],"tasks":[{"id":"2A327F4850B617C3","type":"INVENTORY","itemId":"minecraft:cobblestone","count":6,"titleKey":"task.firsttorch.2a327f4850b617c3.title"},{"id":"3B43805961C728D4","type":"INVENTORY","itemId":"minecraft:torch","count":3,"titleKey":"task.firsttorch.3b43805961c728d4.title"},{"id":"4C54916A72D839E5","type":"MANUAL","count":1,"titleKey":"task.firsttorch.4c54916a72d839e5.title"}],"rewards":[{"id":"43CB08D1E94FA05C","type":"ITEM","itemId":"minecraft:bread","amount":2}]},
+      {"id":"5D65A27B83E94AF6","order":4,"titleKey":"quest.firsttorch.nether_safety.return.title","descriptionKey":"quest.firsttorch.nether_safety.return.description","iconItemId":"minecraft:obsidian","position":{"x":2,"y":2},"prerequisiteQuestIds":["19216E374FA506B2"],"tasks":[{"id":"6E76B38C94FA5B07","type":"MANUAL","count":1,"titleKey":"task.firsttorch.6e76b38c94fa5b07.title"}],"rewards":[{"id":"1098D5AEB61C7D29","type":"EXPERIENCE","amount":10}]}
+    ]}
+    ,{"id":"7249E5AFB61C7D28","order":26,"titleKey":"chapter.firsttorch.piglin_barter.title","descriptionKey":"chapter.firsttorch.piglin_barter.description","iconItemId":"minecraft:gold_ingot","quests":[
+      {"id":"07105D263E94F5A2","order":0,"titleKey":"quest.firsttorch.piglin_barter.intro.title","descriptionKey":"quest.firsttorch.piglin_barter.intro.description","iconItemId":"minecraft:netherrack","position":{"x":0,"y":0},"prerequisiteQuestIds":["5D65A27B83E94AF6"],"tasks":[{"id":"18216E374FA506B3","type":"MANUAL","count":1,"titleKey":"task.firsttorch.18216e374fa506b3.title"}]},
+      {"id":"6F87C49DA50B6C18","order":1,"titleKey":"quest.firsttorch.piglin_barter.gold.title","descriptionKey":"quest.firsttorch.piglin_barter.gold.description","iconItemId":"minecraft:gold_ingot","position":{"x":0,"y":2},"prerequisiteQuestIds":["07105D263E94F5A2"],"tasks":[{"id":"0098D5AEB61C7D29","type":"INVENTORY","itemId":"minecraft:gold_ingot","count":1,"titleKey":"task.firsttorch.0098d5aeb61c7d29.title"}]},
+      {"id":"11A9E6BFC72D8E3A","order":2,"image":{"resource":"firsttorch:textures/questpics/piglin_comparison.png","width":1672,"height":941,"altKey":"image.firsttorch.piglin_comparison.description"},"titleKey":"quest.firsttorch.piglin_barter.place.title","descriptionKey":"quest.firsttorch.piglin_barter.place.description","iconItemId":"minecraft:cobblestone_wall","position":{"x":2,"y":2},"prerequisiteQuestIds":["6F87C49DA50B6C18"],"tasks":[{"id":"22BAF7C0D83E9F4B","type":"MANUAL","count":1,"titleKey":"task.firsttorch.22baf7c0d83e9f4b.title"}]},
+      {"id":"33CB08D1E94FA05C","order":3,"titleKey":"quest.firsttorch.piglin_barter.trade.title","descriptionKey":"quest.firsttorch.piglin_barter.trade.description","iconItemId":"minecraft:ender_pearl","position":{"x":2,"y":0},"prerequisiteQuestIds":["11A9E6BFC72D8E3A"],"tasks":[{"id":"44DC19E2FA50B16D","type":"MANUAL","count":1,"titleKey":"task.firsttorch.44dc19e2fa50b16d.title"}],"rewards":[{"id":"55ED2AF30B61C27E","type":"ITEM","itemId":"minecraft:gold_ingot","amount":1},{"id":"66FE3B041C72D38F","type":"EXPERIENCE","amount":5}]}
+    ]}
+    ,{"id":"757CF824B1D96E0B","order":27,"titleKey":"chapter.firsttorch.nether_resources.title","descriptionKey":"chapter.firsttorch.nether_resources.description","iconItemId":"minecraft:quartz","quests":[
+      {"id":"1C83F0A24D6E917B","order":0,"titleKey":"quest.firsttorch.nether_resources.plan.title","descriptionKey":"quest.firsttorch.nether_resources.plan.description","iconItemId":"minecraft:iron_pickaxe","position":{"x":0,"y":0},"prerequisiteQuestIds":["07105D263E94F5A2"],"tasks":[{"id":"2D94A1B35E7FA28C","type":"MANUAL","count":1,"titleKey":"task.firsttorch.2d94a1b35e7fa28c.title"}]},
+      {"id":"3EA5B2C46F80939D","order":1,"titleKey":"quest.firsttorch.nether_resources.netherrack.title","descriptionKey":"quest.firsttorch.nether_resources.netherrack.description","iconItemId":"minecraft:netherrack","position":{"x":0,"y":2},"prerequisiteQuestIds":["1C83F0A24D6E917B"],"tasks":[{"id":"4FB6C3D57091A4AE","type":"INVENTORY","itemId":"minecraft:netherrack","count":16,"titleKey":"task.firsttorch.4fb6c3d57091a4ae.title"}]},
+      {"id":"50C7D4E681A2B5BF","order":2,"titleKey":"quest.firsttorch.nether_resources.quartz.title","descriptionKey":"quest.firsttorch.nether_resources.quartz.description","iconItemId":"minecraft:quartz","position":{"x":2,"y":2},"prerequisiteQuestIds":["3EA5B2C46F80939D"],"tasks":[{"id":"61D8E5F792B3C6C0","type":"INVENTORY","itemId":"minecraft:quartz","count":4,"titleKey":"task.firsttorch.61d8e5f792b3c6c0.title"}]},
+      {"id":"72E9F608A3C4D7D1","order":3,"titleKey":"quest.firsttorch.nether_resources.return.title","descriptionKey":"quest.firsttorch.nether_resources.return.description","iconItemId":"minecraft:quartz_block","position":{"x":2,"y":0},"prerequisiteQuestIds":["50C7D4E681A2B5BF"],"tasks":[{"id":"03FA0719B4D5E8E2","type":"MANUAL","count":1,"titleKey":"task.firsttorch.03fa0719b4d5e8e2.title"}],"rewards":[{"id":"14AB182AC5E6F9F3","type":"ITEM","itemId":"minecraft:cobblestone","amount":8},{"id":"25BC293BD6F70A04","type":"EXPERIENCE","amount":5}]}
+    ]}
+    ,{"id":"766D0935C2EA7F1C","order":28,"titleKey":"chapter.firsttorch.nether_fortress.title","descriptionKey":"chapter.firsttorch.nether_fortress.description","iconItemId":"minecraft:nether_bricks","quests":[
+      {"id":"78FAD3D980F349BA","order":0,"titleKey":"quest.firsttorch.nether_fortress.equipment.title","descriptionKey":"quest.firsttorch.nether_fortress.equipment.description","iconItemId":"minecraft:shield","position":{"x":0,"y":0},"prerequisiteQuestIds":["07105D263E94F5A2"],"tasks":[{"id":"36AD35CCA4724357","type":"INVENTORY_TAG","itemId":"firsttorch:iron_or_better_swords","count":1,"titleKey":"task.firsttorch.36ad35cca4724357.title"},{"id":"1B63A993ED3C4DB3","type":"INVENTORY_TAG","itemId":"firsttorch:iron_or_better_pickaxes","count":1,"titleKey":"task.firsttorch.1b63a993ed3c4db3.title"},{"id":"3E4AF2D781EC4B57","type":"INVENTORY","itemId":"minecraft:shield","count":1,"titleKey":"task.firsttorch.3e4af2d781ec4b57.title"},{"id":"65C89337665C4E28","type":"INVENTORY","itemId":"minecraft:cobblestone","count":64,"titleKey":"task.firsttorch.65c89337665c4e28.title"},{"id":"21D6CE3AD23A412B","type":"INVENTORY_TAG","itemId":"firsttorch:nether_food","count":16,"titleKey":"task.firsttorch.21d6ce3ad23a412b.title"},{"id":"5583FD1F127A4B12","type":"MANUAL","count":1,"titleKey":"task.firsttorch.5583fd1f127a4b12.title"}]},
+      {"id":"73B2B39D1C674728","order":1,"image":{"resource":"firsttorch:textures/questpics/nether_fortress.png","width":1672,"height":941,"altKey":"image.firsttorch.nether_fortress.description"},"titleKey":"quest.firsttorch.nether_fortress.find.title","descriptionKey":"quest.firsttorch.nether_fortress.find.description","iconItemId":"minecraft:nether_bricks","position":{"x":0,"y":2},"prerequisiteQuestIds":["78FAD3D980F349BA"],"tasks":[{"id":"22D566F202A7429E","type":"MANUAL","count":1,"titleKey":"task.firsttorch.22d566f202a7429e.title"}]},
+      {"id":"3D912A104D4A4E4E","order":2,"titleKey":"quest.firsttorch.nether_fortress.entrance.title","descriptionKey":"quest.firsttorch.nether_fortress.entrance.description","iconItemId":"minecraft:cobblestone","position":{"x":2,"y":2},"prerequisiteQuestIds":["73B2B39D1C674728"],"tasks":[{"id":"0F3B0653610D483B","type":"MANUAL","count":1,"titleKey":"task.firsttorch.0f3b0653610d483b.title"}]},
+      {"id":"676BFD158DEB4F7F","order":3,"image":{"resource":"firsttorch:textures/questpics/fortress_hazards.png","width":1672,"height":941,"altKey":"image.firsttorch.fortress_hazards.description"},"titleKey":"quest.firsttorch.nether_fortress.hazards.title","descriptionKey":"quest.firsttorch.nether_fortress.hazards.description","iconItemId":"minecraft:blaze_spawn_egg","position":{"x":2,"y":0},"prerequisiteQuestIds":["3D912A104D4A4E4E"],"tasks":[{"id":"54A8AA81D49E4187","type":"MANUAL","count":1,"titleKey":"task.firsttorch.54a8aa81d49e4187.title"}]}
+    ]}
+  ]
+}

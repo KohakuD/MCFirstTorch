@@ -30,9 +30,10 @@ final class PreviewDetailsRenderer {
                 58, 29, width - 58, 3, FirstTorchTheme.MUTED);
         label(graphics, "screen.firsttorch.preview.task", 0, 70);
         FirstTorchTheme.inset(graphics, new Rect(0, 84, width, 45));
-        FirstTorchTheme.medallion(graphics, new Rect(8, 95, 20, 20), false, false);
         if (DesignPreview.completed(quest.id())) {
-            graphics.textRenderer().accept(12, 101, color(Component.literal("✓"), FirstTorchTheme.GOLD));
+            FirstTorchTheme.completionBadge(graphics, 10, 97);
+        } else {
+            FirstTorchTheme.medallion(graphics, new Rect(8, 95, 20, 20), false, false);
         }
         wrapped(graphics, font, Component.translatable(quest.descriptionKey()),
                 36, 91, width - 45, 3, FirstTorchTheme.TEXT);

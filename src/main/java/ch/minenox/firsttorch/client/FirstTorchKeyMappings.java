@@ -13,7 +13,7 @@ public final class FirstTorchKeyMappings {
     public static final KeyMapping OPEN_GUIDE = new KeyMapping(
             "key.firsttorch.open_guide",
             InputConstants.Type.KEYSYM,
-            InputConstants.KEY_O,
+            InputConstants.KEY_GRAVE,
             CATEGORY);
 
     private FirstTorchKeyMappings() {

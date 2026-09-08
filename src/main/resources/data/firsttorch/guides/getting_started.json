@@ -15,6 +15,9 @@
           "order": 0,
           "titleKey": "quest.firsttorch.alpha.schema_intro.title",
           "descriptionKey": "quest.firsttorch.alpha.schema_intro.description",
+          "tasks": [
+            {"id": "3A13F17C00000001", "type": "MANUAL", "count": 1}
+          ],
           "position": {
             "x": 0,
             "y": 0
@@ -25,6 +28,13 @@
           "order": 1,
           "titleKey": "quest.firsttorch.alpha.schema_next.title",
           "descriptionKey": "quest.firsttorch.alpha.schema_next.description",
+          "rewards": [
+            {"id": "4A13F17C00000001", "type": "EXPERIENCE", "amount": 15},
+            {"id": "4A13F17C00000002", "type": "ITEM", "itemId": "minecraft:bread", "amount": 1}
+          ],
+          "tasks": [
+            {"id": "3A13F17C00000002", "type": "INVENTORY", "itemId": "minecraft:oak_log", "count": 8}
+          ],
           "position": {
             "x": 2,
             "y": 0
