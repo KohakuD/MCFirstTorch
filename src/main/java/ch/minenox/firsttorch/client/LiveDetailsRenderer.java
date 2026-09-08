@@ -85,8 +85,7 @@ final class LiveDetailsRenderer {
             boolean done = available && progress.state().completedTaskIds().contains(task.id());
             int count = available ? progress.taskCounts().getOrDefault(task.id(), 0) : 0;
             if (done) count = task.count();
-            ItemStack item = task.type() == TaskDefinition.Type.INVENTORY_TAG || task.type() == TaskDefinition.Type.ADVANCEMENT ? QuestIcons.resolve(quest)
-                    : task.itemId() == null ? new ItemStack(Items.BOOK) : item(task.itemId());
+            ItemStack item = QuestIcons.resolveTask(task, quest);
             Component label = taskLabel(task);
             FirstTorchTheme.inset(graphics, card);
             if (done) FirstTorchTheme.completionBadge(graphics, cardX + 7, cardY + 8);
