@@ -2,6 +2,10 @@
 
 ## Baseline
 
+Delivery cadence: approximately three complete chapters per user test batch, not three quests. The pending batch is Pistons, Observers and Automatic Door; adding the third chapter does not accept the first two.
+
+The four-lesson automatic Iron Door uses two adjacent Stone Pressure Plates on a free-standing practice site, not a secure home entrance. Material possession is automatic; building, crossing and safety observations remain manual. Its five-XP reward and book-only trophy do not supply progression items. Existing chapter IDs and player data are preserved.
+
 First Torch targets Minecraft 26.1.2 on NeoForge 26.1.2.84. Dependency versions and CurseForge file IDs are pinned in `manifest.json`.
 
 The repository also contains the initial native NeoForge mod foundation for the 0.13.0 migration. It uses ModDevGradle and Java 25 and intentionally runs without FTB dependencies. The existing pack remains unchanged as the authoritative curriculum and migration source until the native runtime reaches feature parity.

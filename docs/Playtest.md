@@ -1,5 +1,13 @@
 # Playtest log
 
+## Native Redstone three-chapter batch — Automatic Door added
+
+Verification passed: 356 automated tests, native build and retained-pack validation/build. All 54 prior native chapter definitions compare unchanged. The target recipes were inspected; automated content tests cover one-versus-two plates, early inventory recognition without bypassing prerequisites, separate practical confirmations, reward and trophy eligibility.
+
+Pistons and Observers remain pending user acceptance; test them together with Automatic Door. Check both languages and the four new lessons: one Iron Door plus two Stone Pressure Plates, free-standing placement on solid ground, one plate immediately on each side, opening while crossing in both directions and closing after stepping away. Leave room to walk around the door; never use the practice circuit as a home's only exit or mob barrier. Check support/placement and remove stray power if it stays open. Stone plates are living-entity inputs, not dropped-item detectors. Claim five XP once, inspect the book-only trophy, and restart to verify persistence. TEST completion does not verify the actual circuit.
+
+Target Minecraft 26.1.2 recipe resources confirm six Iron Ingots produce three doors and two Stone produce one plate. Physical survival circuit tests and authentic circuit illustrations remain pending. No world or player progress is reset.
+
 ## Native Redstone motion — Pistons and Observers
 
 Verification passed: 353 tests, native build and retained-pack validation/build. Target-game Observer state fixtures verify powered/unpowered output on every direction; the target push limit is twelve. All 52 earlier chapter definitions compare unchanged. This is not a substitute for the physical push/pull/pulse exercises in a running world.

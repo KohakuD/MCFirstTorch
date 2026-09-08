@@ -17,6 +17,16 @@ import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 final class TrophyCatalogTest {
+    @Test void automaticDoorTrophyRequiresEveryPracticeLesson() {
+        var guides = snapshot(chapter("6930C368F51DA24F", 54,
+                "15A0B0C0D0E00001", "15A0B0C0D0E00002", "15A0B0C0D0E00003", "15A0B0C0D0E00004"));
+        var partial = TrophyCatalog.entries(guides, progress("15A0B0C0D0E00001")).getFirst();
+        assertEquals("minecraft:iron_door", partial.iconItemId());
+        assertFalse(partial.earned());
+        assertTrue(TrophyCatalog.entries(guides, progress("15A0B0C0D0E00001", "15A0B0C0D0E00002",
+                "15A0B0C0D0E00003", "15A0B0C0D0E00004")).getFirst().earned());
+    }
+
     @Test void portalBatchAddsThreeIndependentCosmeticMilestones() {
         var guides = snapshot(chapter("757C28E4BF936D0A", 34, "086D39F5C0A47E2B", "6EC39F5B260AD481"),
                 chapter("7AA1D479062EB350", 35, "764B17D3AE825C09"),
