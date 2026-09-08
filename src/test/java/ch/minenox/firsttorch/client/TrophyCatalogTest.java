@@ -203,6 +203,13 @@ final class TrophyCatalogTest {
                 "1000000000000003", "1000000000000004")).stream().allMatch(TrophyCatalog.Entry::earned));
     }
 
+    @Test void optionalMobAndBastionTrophiesAreIndependent() {
+        var guides = snapshot(chapter("702FA5D18C643BE9", 47, "1000000000000011", "1000000000000012"),
+                chapter("63DA6D029FB74CE9", 48, "1000000000000013"));
+        assertEquals(List.of(false, true), TrophyCatalog.entries(guides,
+                progress("1000000000000011", "1000000000000013")).stream().map(TrophyCatalog.Entry::earned).toList());
+    }
+
     private static GuideSnapshot snapshot(ChapterDefinition... chapters) {
         return new GuideSnapshot(List.of(new GuideDefinition(
                 1, COURSE_ID, "guide.test.title", "guide.test.description", List.of(chapters))));

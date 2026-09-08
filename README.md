@@ -13,7 +13,7 @@ The project is deliberately separate from DistinctCraft. DistinctCraft can be in
 - Minecraft: `26.1.2`
 - NeoForge: `26.1.2.84`
 - Languages: English (`en_us`) and German (`de_de`)
-- Current milestone: Elytra flight training and independent exploration in three compact native chapters
+- Current milestone: complete retained-curriculum migration, including optional mob drops and Bastions
 
 The repository now also contains the minimal NeoForge mod foundation planned for 0.13.0. It builds alongside the existing FTB-based pack, which remains the curriculum and migration source until native feature parity is complete.
 

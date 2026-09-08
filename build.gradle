@@ -194,6 +194,10 @@ tasks.named('processResources', ProcessResources).configure {
         include 'assets/firsttorch/textures/questpics/shulker_box_recipe.png'
         include 'assets/firsttorch/textures/questpics/elytra_water_course.png'
         include 'assets/firsttorch/textures/questpics/firework_rocket_recipe.png'
+        include 'assets/firsttorch/textures/questpics/hostile_mob_overview.png'
+        include 'assets/firsttorch/textures/questpics/attack_indicator.png'
+        include 'assets/firsttorch/textures/questpics/bone_meal_recipe.png'
+        include 'assets/firsttorch/textures/questpics/bastion_remnant.png'
     }
 }
 neoForge.ideSyncTask generateModMetadata

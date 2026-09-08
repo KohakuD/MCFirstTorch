@@ -764,9 +764,12 @@ Acceptance convention (2026-09-08): the user confirms that previous "correct/goo
     - [x] In-game acceptance of the earlier Milk Bucket check and revised preparation text (user-confirmed 2026-09-08; existing completed quests remain preserved)
     - [ ] Batch in-game acceptance: seventeen lessons, inventory thresholds, End City detection, separate practical checks, seven image placements, original XP rewards and Elytra home return
     - [x] Continue with the nine Elytra flight lessons and seven final independent-exploration lessons in three compact chapters
-    - [ ] Batch in-game acceptance: sixteen lessons, material/Rocket thresholds, separate flight and safety confirmations, two images, three trophies, XP rewards and independent optional reading
-    - [ ] Migrate the seven optional mob-drop lessons without adding a main-path gate
-    - [ ] Migrate the optional Bastion exploration branch without adding a main-path gate
+    - [x] Batch in-game acceptance: sixteen lessons, material/Rocket thresholds, separate flight and safety confirmations, two images, three trophies, XP rewards and independent optional reading (user-confirmed 2026-09-08)
+    - [x] Migrate the seven optional mob-drop lessons without adding a main-path gate
+    - [x] Migrate the seven optional Bastion exploration lessons without adding a main-path gate
+    - [ ] Batch in-game acceptance: fourteen optional lessons, exact item groups, material thresholds, Bastion detection with separate safety checks, six image placements, two trophies and original rewards
+    - [x] Complete native coverage of all 258 retained quest IDs; remaining parity/release checks stay separate
+    - [ ] Begin the 0.10.0 Redstone content block directly in the independent native mod, followed by 0.11.0 and 0.12.0
 
 The checked schema step provides data only: it does not complete tasks, grant rewards, or turn preview values into player progress.
 

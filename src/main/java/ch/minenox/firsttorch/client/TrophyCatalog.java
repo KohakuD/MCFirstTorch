@@ -58,7 +58,9 @@ public final class TrophyCatalog {
             Map.entry("60A73ADF6C8419B6", new Trophy("end_ship", "minecraft:elytra")),
             Map.entry("61B84BE07D952AC7", new Trophy("flight_basics", "minecraft:elytra")),
             Map.entry("62C95CF18EA63BD8", new Trophy("flight_journey", "minecraft:firework_rocket")),
-            Map.entry("6E095C883A1E5D3D", new Trophy("and_now", "minecraft:compass")));
+            Map.entry("6E095C883A1E5D3D", new Trophy("and_now", "minecraft:compass")),
+            Map.entry("702FA5D18C643BE9", new Trophy("mob_drops", "minecraft:bone")),
+            Map.entry("63DA6D029FB74CE9", new Trophy("bastion", "minecraft:polished_blackstone_bricks")));
 
     private TrophyCatalog() {
     }

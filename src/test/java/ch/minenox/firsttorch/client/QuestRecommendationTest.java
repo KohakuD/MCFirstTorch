@@ -244,6 +244,16 @@ final class QuestRecommendationTest {
         assertEquals("6794EFB18C065B1B", QuestRecommendation.choose(snapshot, progress(done)).questId());
     }
 
+    @Test void optionalMobAndBastionBranchesNeverDisplaceTheReadyFlightCourse() throws Exception {
+        var snapshot = course();
+        Set<String> done = new HashSet<>();
+        snapshot.guides().getFirst().chapters().stream().limit(44).flatMap(c -> c.quests().stream())
+                .forEach(q -> done.add(q.id()));
+        assertEquals("7E16D835774FBB8B", QuestRecommendation.choose(snapshot, progress(done)).questId());
+        assertFalse(done.contains("0D51B7F3AE264C09"));
+        assertFalse(done.contains("0756BFDE228E428E"));
+    }
+
     @Test void endShipEndpointTakesPriorityOverTheOptionalDragonEgg() throws Exception {
         var snapshot = course();
         Set<String> done = new HashSet<>();

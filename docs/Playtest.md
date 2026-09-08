@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-08 — Final retained optional chapters
+
+Automated verification passed: 342 tests, native Mod build, retained-pack validation/build, exact coverage of all 258 source quest IDs and unchanged image dimensions. In-game acceptance remains pending.
+
+New batch: seven mob-drop and seven Bastion quests. Review both languages, six image placements and two compact maps. The attack-indicator illustration/explanation now belongs to the Zombie card; the preceding overview points to it. Check Copper/ordinary Sword acceptance, Gold exclusion, two mixed cooked foods including Kelp, and 16 substantial foods excluding Kelp for Bastions. Verify 63/64 Cobblestone, 2/3 Bone Meal, early sticky item/advancement checks and separate worn-armour/retreat/loot/return confirmations. Genuine Bastion entry must not be confused with Fortress entry or a TEST completion. Rewards remain four Torches, two Bread, five XP and ten XP; claim once and restart to check persistence. These branches must remain optional while normal course recommendations continue. No progress or reward claims were reset.
+
+All 258 retained quest IDs are represented after this batch. User-approved next sequence: Redstone foundations, creature/drop reference, then unusual mechanics. Curriculum coverage does not complete the separate multiplayer, migration and release-readiness checklist.
+
 ## 2026-09-08 — Native flight training and course completion
 
 Milk preparation correction accepted by the user. New batch: five first-flight lessons, four maintenance/travel lessons and seven closing/reference cards. Review both languages, two unchanged half-width images and all three compact maps. Check 63/64 Cobblestone, 7/8 Ladders, ingredients before crafting, 2/3 Rockets and 15/16 Rockets for travel. Item completion must never auto-confirm safe Rocket components, the built practice course, flight/landing or equipment routines. Rocket safety remains a manual check as explicitly described in the lesson. Verify the five original XP payouts (5/5/10/5/10), three independent quest-book trophies, and progress/claims after restart. The six optional reference cards open together after And Now; none requires a structure visit or blocks another card. Development completion accelerates content review but cannot validate the actual practice routine.
