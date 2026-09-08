@@ -1,5 +1,11 @@
 # Playtest log
 
+## 2026-09-09 — Requested creature additions and Turtle icon
+
+Verification passed: 365 automated tests, native build, retained-pack validation/build and target-archive loot/icon checks. All previous 313 quest definitions remain unchanged. Tests cover independent manual reading and expanded/new trophy eligibility; German names were checked against the target language asset. In-game review remains pending.
+
+Pending user review: Goat in Animals, Witch in Overworld monsters, and Breeze/Bogged/Creaking in the new Trial Chambers/Pale Garden chapter. Check both languages, map spacing, five icons and independent manual reading without items or combat. Old reading marks remain; Animals and Overworld reappear as unfinished until their new card is read. Check all three affected book trophies, collapsed chapters and persistence after restart. Also verify the previously corrected Turtle Scute icon; the user explicitly deferred this test. No world or player files are modified. The previous twelve-card batch remains pending explicit acceptance.
+
 ## 2026-09-09 — End, water and special encounters
 
 Verification passed: 362 automated tests, native build, retained-pack validation/build and target-version creature loot checks. All 58 existing chapter definitions compare unchanged; the three new chapters follow them in order. No world or player files were modified. In-game acceptance of these twelve new cards remains pending.

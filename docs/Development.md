@@ -2,7 +2,7 @@
 
 ## Baseline
 
-Delivery cadence: approximately three complete chapters per user test batch, not three quests. The initial creature-reference chapters and expanded animal grid were accepted by the user on 2026-09-09. The pending batch covers End/approach, aquatic life and special encounters.
+Delivery cadence: approximately three complete chapters per user test batch, not three quests. The initial creature-reference chapters and expanded animal grid were accepted by the user on 2026-09-09. End/approach, aquatic life and special encounters remain pending acceptance, together with the requested five-creature extension and deferred Turtle Scute icon check.
 
 The four-lesson automatic Iron Door uses two adjacent Stone Pressure Plates on a free-standing practice site, not a secure home entrance. Material possession is automatic; building, crossing and safety observations remain manual. Its five-XP reward and book-only trophy do not supply progression items. Existing chapter IDs and player data are preserved.
 
@@ -39,6 +39,8 @@ Native guide definitions live under `data/firsttorch/guides/*.json` in server da
 NeoForge play networking synchronises validated definitions and the executing player's live progress on login and datapack reload. Progress changes are sent after server evaluation, including manual confirmations; unchanged observations are not repeatedly transmitted. Both payloads are versioned and bounded. Disconnecting clears both client caches, and a definition reload clears the prior progress until its replacement arrives. Storage or transport failure publishes an unavailable state rather than stale progress. The native screen opens in live mode with server-supplied badges, prerequisite locks and task counts. The independent design preview remains optional and never changes player data.
 
 ## Editing quests
+
+The requested five-creature extension adds Goat to Animals, Witch to Overworld monsters and a new three-card Trial Chambers/Pale Garden chapter for Breeze, Bogged and Creaking. Native totals are 62 chapters, 318 course quests and 405 tasks, with 34 field-guide cards. Every new card depends only on the common course introduction and records reading, not an encounter. Old IDs, positions, progress data and images are preserved. Expanded Animals and Overworld trophy eligibility includes the new card; the new chapter has its own book-only trophy.
 
 The second reference batch adds twelve independently readable cards across End/approach, aquatic life and special encounters (61 chapters, 313 course quests, 400 tasks). The shared course-introduction prerequisite does not require other field-guide or Redstone cards. All three new trophies are book-only; no kill, item collection or reward claim is required. Death loot is distinguished from growth, hive harvest, Frog feeding and carried equipment. The target-loot verifier covers the new conditional data. Existing 58 chapter definitions, progress and 92 image references remain unchanged.
 

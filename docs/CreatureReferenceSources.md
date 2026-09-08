@@ -20,6 +20,18 @@ Counts above describe unmodified ordinary loot tables, not an exhaustive promise
 
 ## Supporting official reading
 
+### Witch, Goat, Trial Chambers and Pale Garden
+
+The 26.1.2 entity loot tables confirm Witch ordinary ingredient selection (Glowstone Dust, Sugar, Spider Eye, Glass Bottle, Gunpowder, Stick) plus a separate unconditional 4–8 Redstone pool before Looting. Breeze Rods require player credit and yield 1–2 before Looting; Heavy Cores are not Breeze death loot. Bogged ordinary Arrow and Bone pools each yield 0–2 before Looting, with a separate player-credited 0–1 Poison Arrow pool. Goat and Creaking have no ordinary death-item pools. The read-only verifier covers these distinctions and checks the six requested/current icon resources, including `turtle_scute`, directly in the target archive.
+
+Target recipes `wind_charge` and `mace` confirm Breeze Rod uses; block tag `snaps_goat_horn` defines eligible ram blocks. The 26.1.2 manifest's asset index 30 resolves the cached German language asset: Böe, Böenrute, Windkugel, Streitkolben, Sumpfskelett, Knarz, Knarzherz, Blasser Garten and Prüfungs-Spawner. Use these official names rather than translating English names literally or confusing spawners with spawn eggs.
+
+- [Mojang: Java Tricky Trials release](https://feedback.minecraft.net/hc/en-us/articles/27547857163917-Minecraft-Java-Edition-1-21-Tricky-Trials) documents Trial Spawners, Breeze movement/projectiles and Bogged poison attacks. These are reading references, not a required Trial Chamber expedition.
+- [Mojang: Java The Garden Awakens release](https://feedback.minecraft.net/hc/en-us/articles/32385811139085-Minecraft-Java-Edition-1-21-4-The-Garden-Awakens) distinguishes naturally heart-linked Creakings from spawn-egg variants, eye-contact freezing, heart destruction and separate Resin/Heart block mechanics. The card does not promise Heart or Resin as mob death loot.
+- [Mojang: The Wild Update Java release](https://www.minecraft.net/en-us/article/the-wild-update-out-today-java) documents living Goat ramming for Horns and using Horns as instruments, not killing Goats for Horn drops.
+
+All five additions remain optional manual reading. No ram, capture, kill, loot collection or night-time Heart search is required. Existing completed reading IDs remain intact; the derived Animals and Overworld trophies require their newly added card as well.
+
 ### End, aquatic and special-encounter batch
 
 Read target entity tables for Enderman, Shulker, Silverfish, Endermite, Squid, Glow Squid, Dolphin, Turtle, Bee, Fox, Frog and Allay. Enderman has 0–1 Pearls plus Looting. Shulker has a single-shell chance (50% without Looting), with a Looting chance increase rather than a multi-shell count function. Neither table has a player-only pool condition. Squid variants have 1–3 corresponding Ink Sacs plus Looting. Dolphin has 0–1 Cod plus Looting and conditional cooking. Turtle ordinary death loot is 0–2 Seagrass plus Looting, with a separate lightning-only Bowl entry; Turtle Scute is not death loot. The other six named tables have no ordinary item pools; carried equipment is separate. The read-only archive verifier covers key conditions.

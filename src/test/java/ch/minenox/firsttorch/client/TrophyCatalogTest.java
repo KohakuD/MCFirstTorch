@@ -17,6 +17,28 @@ import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 final class TrophyCatalogTest {
+    @Test void requestedReadingsExtendOnlyTheirOwnTrophies() throws Exception {
+        try (var input = getClass().getResourceAsStream("/data/firsttorch/guides/course.json")) {
+            var course = ch.minenox.firsttorch.guide.data.GuideJson.read(input);
+            var animals = course.chapters().get(55);
+            var monsters = course.chapters().get(56);
+            var encounters = course.chapters().get(61);
+            var guides = snapshot(chapter("1000000000000001", 0, "3C3122DF5C0EA192"),
+                    animals, monsters, encounters);
+            var previous = java.util.stream.Stream.concat(animals.quests().stream().limit(9),
+                    monsters.quests().stream().limit(4)).map(QuestDefinition::id).toArray(String[]::new);
+            assertEquals(List.of(false, false, false), TrophyCatalog.entries(guides, progress(previous))
+                    .stream().map(TrophyCatalog.Entry::earned).toList());
+            var encounterIds = encounters.quests().stream().map(QuestDefinition::id).toArray(String[]::new);
+            var independent = TrophyCatalog.entries(guides, progress(encounterIds));
+            assertEquals(List.of(false, false, true), independent.stream().map(TrophyCatalog.Entry::earned).toList());
+            assertEquals("minecraft:breeze_rod", independent.getLast().iconItemId());
+            var all = java.util.stream.Stream.of(animals, monsters, encounters)
+                    .flatMap(c -> c.quests().stream()).map(QuestDefinition::id).toArray(String[]::new);
+            assertTrue(TrophyCatalog.entries(guides, progress(all)).stream().allMatch(TrophyCatalog.Entry::earned));
+        }
+    }
+
     @Test void endWaterAndSpecialTrophiesDoNotRequireOtherReferenceChapters() {
         var guides = snapshot(chapter("6D7407AC3951E683", 58, "19A0B0C0D0E00001", "19A0B0C0D0E00004"),
                 chapter("6E8518BD4A62F794", 59, "1AA0B0C0D0E00001", "1AA0B0C0D0E00004"),

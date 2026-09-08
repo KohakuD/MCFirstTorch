@@ -51,5 +51,33 @@ try {
     $turtle = Read-Loot 'turtle'
     Assert-Loot ($turtle.pools[0].entries[0].name -eq 'minecraft:seagrass') 'Turtle ordinary loot changed'
     Assert-Loot (-not ($turtle.pools.entries.name -contains 'minecraft:turtle_scute')) 'Turtle Scute incorrectly treated as death loot'
-    Write-Output 'Target creature loot checks passed, including End, aquatic and special-encounter entries.'
+    foreach ($mob in @('creaking', 'goat')) {
+        Assert-Loot (-not (Read-Loot $mob).pools) "Unexpected natural item drop for $mob"
+    }
+    $witch = Read-Loot 'witch'
+    $redstone = $witch.pools[1].entries[0]
+    Assert-Loot ($redstone.name -eq 'minecraft:redstone') 'Witch guaranteed item changed'
+    Assert-Loot ($redstone.functions[0].count.min -eq 4 -and $redstone.functions[0].count.max -eq 8) 'Witch Redstone range changed'
+    Assert-Loot (-not $witch.pools[1].conditions) 'Witch Redstone is no longer unconditional'
+    $ingredients = @('minecraft:glowstone_dust', 'minecraft:sugar', 'minecraft:spider_eye', 'minecraft:glass_bottle', 'minecraft:gunpowder', 'minecraft:stick')
+    Assert-Loot (-not (Compare-Object $ingredients @($witch.pools[0].entries.name))) 'Witch ingredient selection changed'
+    $breeze = (Read-Loot 'breeze').pools[0]
+    Assert-Loot ($breeze.conditions.condition -contains 'minecraft:killed_by_player') 'Breeze player-credit condition changed'
+    Assert-Loot ($breeze.entries[0].name -eq 'minecraft:breeze_rod') 'Breeze item changed'
+    Assert-Loot ($breeze.entries[0].functions[0].count.min -eq 1 -and $breeze.entries[0].functions[0].count.max -eq 2) 'Breeze Rod base range changed'
+    $bogged = Read-Loot 'bogged'
+    foreach ($index in 0..1) {
+        $entry = $bogged.pools[$index].entries[0]
+        Assert-Loot ($entry.name -eq @('minecraft:arrow', 'minecraft:bone')[$index]) 'Bogged ordinary item changed'
+        Assert-Loot ($entry.functions[0].count.min -eq 0 -and $entry.functions[0].count.max -eq 2) 'Bogged ordinary range changed'
+    }
+    $poison = $bogged.pools[2]
+    Assert-Loot ($poison.conditions.condition -contains 'minecraft:killed_by_player') 'Bogged Poison Arrow player-credit condition changed'
+    Assert-Loot ($poison.entries[0].name -eq 'minecraft:tipped_arrow') 'Bogged special item changed'
+    Assert-Loot ($poison.entries[0].functions[0].count.min -eq 0 -and $poison.entries[0].functions[0].count.max -eq 1) 'Bogged Poison Arrow range changed'
+    Assert-Loot ($poison.entries[0].functions[2].id -eq 'minecraft:poison') 'Bogged arrow potion changed'
+    foreach ($item in @('turtle_scute', 'goat_horn', 'redstone', 'breeze_rod', 'bone', 'creaking_heart')) {
+        Assert-Loot ($null -ne $archive.GetEntry("assets/minecraft/items/$item.json")) "Missing target item icon: $item"
+    }
+    Write-Output 'Target creature loot and requested reference-icon checks passed.'
 } finally { $archive.Dispose() }
