@@ -1,5 +1,11 @@
 # Playtest log
 
+## Native Redstone foundations — first six lessons
+
+Verification: 345 automated tests and native build passed, including compact-map arrow clearance, inventory thresholds, optional dependencies and trophy eligibility. Retained-pack validation/build passed; all earlier 49 native chapters compare unchanged. Target 26.1.2 recipe JSON and RedstoneWireEvaluator/BasePressurePlateBlock code ground the recipes, one-level-per-Dust decay and adjacent Lamp exercise. No in-game circuit verification is claimed.
+
+The user accepted the task-group icon correction. New optional Redstone lessons unlock after the final course introduction, independently of the optional mob/Bastion and exploration cards. Check both languages, small-map layout, 19 versus 20 Dust, Lever/Lamp and Button/Plate possession, and separate manual circuit confirmations. Physically build the isolated Lever–three-Dust–Lamp row; extend to 16 Dust with the Lamp beyond it (off), then shorten to 15 Dust (on). Compare maintained Lever power, a Button pulse, and stepping on/off the Stone Pressure Plate with all other sources removed. Close the quest book to let the world run while observing. Claim both five-XP rewards once, inspect the trophy and restart. TEST completion does not verify a working circuit. Survival verification and authentic circuit illustrations remain pending; no player progress was reset.
+
 ## 2026-09-08 — Final retained optional chapters
 
 Automated verification passed: 342 tests, native Mod build, retained-pack validation/build, exact coverage of all 258 source quest IDs and unchanged image dimensions. In-game acceptance remains pending.

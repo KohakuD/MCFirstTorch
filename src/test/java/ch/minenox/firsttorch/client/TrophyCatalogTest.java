@@ -210,6 +210,14 @@ final class TrophyCatalogTest {
                 progress("1000000000000011", "1000000000000013")).stream().map(TrophyCatalog.Entry::earned).toList());
     }
 
+    @Test void redstoneTrophyRequiresAllSixExercisesWithoutRewardClaims() {
+        String[] ids = java.util.stream.IntStream.rangeClosed(1, 6)
+                .mapToObj(i -> "10A0B0C0D0E0000" + i).toArray(String[]::new);
+        var guides = snapshot(chapter("64EB7E13A0C85DFA", 49, ids));
+        assertFalse(TrophyCatalog.entries(guides, progress(java.util.Arrays.copyOf(ids, 5))).getFirst().earned());
+        assertTrue(TrophyCatalog.entries(guides, progress(ids)).getFirst().earned());
+    }
+
     private static GuideSnapshot snapshot(ChapterDefinition... chapters) {
         return new GuideSnapshot(List.of(new GuideDefinition(
                 1, COURSE_ID, "guide.test.title", "guide.test.description", List.of(chapters))));

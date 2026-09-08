@@ -604,9 +604,12 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 
 ## 0.10.0 — Redstone Foundations
 
-- [ ] Add a bilingual practical chapter that unlocks after the guided course and remains optional
-- [ ] Introduce Redstone Dust through a Lever-controlled Redstone Lamp before combining several components
-- [ ] Teach buttons, Levers, Pressure Plates, signal strength, the fifteen-block range, and visible powered versus unpowered states
+Implementation target: native 0.13.0-alpha.1; retained pack 0.9.1 remains unchanged. This content block is not a separate published release yet.
+
+- [x] Add a bilingual practical chapter that unlocks after the guided course and remains optional
+- [x] Introduce Redstone Dust through a Lever-controlled Redstone Lamp before combining several components
+- [x] Teach buttons, Levers, Pressure Plates, signal strength, the fifteen-block range, and visible powered versus unpowered states
+- [ ] In-game acceptance: six introductory lessons, 19/20 Dust, component possession, switched Lamp, 15/16-Dust boundary, Button/Pressure Plate comparison, XP claims and trophy
 - [ ] Teach Repeaters for extending signals and creating deliberate delay
 - [ ] Teach Comparators through one observable container-fill example
 - [ ] Teach Pistons, Sticky Pistons, Observers, and their direction before using them in a machine
@@ -769,7 +772,9 @@ Acceptance convention (2026-09-08): the user confirms that previous "correct/goo
     - [x] Migrate the seven optional Bastion exploration lessons without adding a main-path gate
     - [ ] Batch in-game acceptance: fourteen optional lessons, exact item groups, material thresholds, Bastion detection with separate safety checks, six image placements, two trophies and original rewards
     - [x] Complete native coverage of all 258 retained quest IDs; remaining parity/release checks stay separate
-    - [ ] Begin the 0.10.0 Redstone content block directly in the independent native mod, followed by 0.11.0 and 0.12.0
+    - [x] Begin the 0.10.0 Redstone content block directly in the independent native mod with six optional foundation lessons
+    - [ ] Continue Redstone components and practical builds, followed by 0.11.0 and 0.12.0
+    - [x] In-game acceptance of task-group icons matching allowed items instead of repeating the quest icon (user-confirmed)
 
 The checked schema step provides data only: it does not complete tasks, grant rewards, or turn preview values into player progress.
 
