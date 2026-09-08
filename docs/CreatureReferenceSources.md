@@ -20,6 +20,16 @@ Counts above describe unmodified ordinary loot tables, not an exhaustive promise
 
 ## Supporting official reading
 
+### End, aquatic and special-encounter batch
+
+Read target entity tables for Enderman, Shulker, Silverfish, Endermite, Squid, Glow Squid, Dolphin, Turtle, Bee, Fox, Frog and Allay. Enderman has 0–1 Pearls plus Looting. Shulker has a single-shell chance (50% without Looting), with a Looting chance increase rather than a multi-shell count function. Neither table has a player-only pool condition. Squid variants have 1–3 corresponding Ink Sacs plus Looting. Dolphin has 0–1 Cod plus Looting and conditional cooking. Turtle ordinary death loot is 0–2 Seagrass plus Looting, with a separate lightning-only Bowl entry; Turtle Scute is not death loot. The other six named tables have no ordinary item pools; carried equipment is separate. The read-only archive verifier covers key conditions.
+
+- [Mojang: Turtle Shell](https://www.minecraft.net/en-us/article/taking-inventory-turtle-shell) distinguishes growing Turtle Scutes from killing Turtles.
+- [Mojang: Meet the Dolphin](https://www.minecraft.net/pl-pl/article/meet-dolphin) explains the need for both water and surface air.
+- [Mojang: Allay introduction](https://www.minecraft.net/en-us/article/minecraft-snapshot-22w13a) documents held-item collection and returning the held item, not mining or item duplication.
+
+The cards are intentionally short references, not instructions to build mob farms or capture rare creatures. Further unusual-mechanic experiments belong to 0.12.0; the remaining Redstone illustration work is not marked complete by this batch.
+
 ### Animal expansion
 
 The same target archive contains `entities/wolf.json`, `cat.json`, `horse.json`, `camel.json` and `axolotl.json`. Wolf, Camel and Axolotl define no ordinary item-drop pools. Cat gives 0–2 String with no Looting increase function; Horse gives 0–2 Leather with Looting increases. Equipment is not part of these ordinary-drop summaries. The verification script now checks these resources too.

@@ -69,7 +69,10 @@ public final class TrophyCatalog {
             Map.entry("6930C368F51DA24F", new Trophy("redstone_door", "minecraft:iron_door")),
             Map.entry("6A41D479062EB350", new Trophy("field_animals", "minecraft:milk_bucket")),
             Map.entry("6B52E58A173FC461", new Trophy("field_overworld", "minecraft:bone")),
-            Map.entry("6C63F69B2840D572", new Trophy("field_nether", "minecraft:blaze_rod")));
+            Map.entry("6C63F69B2840D572", new Trophy("field_nether", "minecraft:blaze_rod")),
+            Map.entry("6D7407AC3951E683", new Trophy("field_end", "minecraft:ender_pearl")),
+            Map.entry("6E8518BD4A62F794", new Trophy("field_water", "minecraft:ink_sac")),
+            Map.entry("6F9629CE5B7308A5", new Trophy("field_special", "minecraft:honeycomb")));
 
     private TrophyCatalog() {
     }

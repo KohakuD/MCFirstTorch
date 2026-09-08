@@ -37,5 +37,19 @@ try {
     Assert-Loot (-not ($cat.functions.function -contains 'minecraft:enchanted_count_increase')) 'Cat Looting rule changed'
     $horse = (Read-Loot 'horse').pools[0].entries[0]
     Assert-Loot ($horse.name -eq 'minecraft:leather' -and $horse.functions[0].count.max -eq 2) 'Horse ordinary loot changed'
-    Write-Output 'Target creature loot checks passed, including Wolf, Cat, Horse, Camel and Axolotl.'
+    foreach ($mob in @('silverfish', 'endermite', 'bee', 'fox', 'frog', 'allay')) {
+        Assert-Loot (-not (Read-Loot $mob).pools) "Unexpected natural item drop for $mob"
+    }
+    $shulker = (Read-Loot 'shulker').pools[0]
+    Assert-Loot ($shulker.entries[0].name -eq 'minecraft:shulker_shell') 'Shulker item changed'
+    Assert-Loot ($shulker.conditions[0].unenchanted_chance -eq 0.5) 'Shulker base chance changed'
+    Assert-Loot (-not $shulker.entries[0].functions) 'Shulker count semantics changed'
+    foreach ($mob in @('squid', 'glow_squid')) {
+        $ink = (Read-Loot $mob).pools[0].entries[0]
+        Assert-Loot ($ink.functions[0].count.min -eq 1 -and $ink.functions[0].count.max -eq 3) "Ink range changed for $mob"
+    }
+    $turtle = Read-Loot 'turtle'
+    Assert-Loot ($turtle.pools[0].entries[0].name -eq 'minecraft:seagrass') 'Turtle ordinary loot changed'
+    Assert-Loot (-not ($turtle.pools.entries.name -contains 'minecraft:turtle_scute')) 'Turtle Scute incorrectly treated as death loot'
+    Write-Output 'Target creature loot checks passed, including End, aquatic and special-encounter entries.'
 } finally { $archive.Dispose() }

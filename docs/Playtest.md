@@ -1,5 +1,11 @@
 # Playtest log
 
+## 2026-09-09 — End, water and special encounters
+
+Verification passed: 362 automated tests, native build, retained-pack validation/build and target-version creature loot checks. All 58 existing chapter definitions compare unchanged; the three new chapters follow them in order. No world or player files were modified. In-game acceptance of these twelve new cards remains pending.
+
+The user accepted the initial reference batch and expanded Animals chapter. New batch: End/approach (Enderman, Shulker, Silverfish, Endermite), aquatic life (Squid, Glow Squid, Dolphin, Turtle) and special encounters (Bee, Fox, Frog, Allay). Review all twelve cards in both languages, independent selection and readable four-node maps. Confirming a card records reading only; no fight, creature transport or collected item is required. Finish any one of the three chapters first and check its independent trophy, collapsed completed chapter and persistence after restart. All earlier player progress is preserved. Redstone circuit images remain pending.
+
 ## 2026-09-09 — Animal reference expanded
 
 Verification passed: 361 automated tests, native build, retained-pack validation/build and the expanded target-loot check. All 57 unrelated chapters are unchanged. The original four animal cards retain IDs, tasks, prerequisites and rewards; only their map positions changed.

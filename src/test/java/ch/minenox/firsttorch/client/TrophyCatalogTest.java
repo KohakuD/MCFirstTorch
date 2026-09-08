@@ -17,6 +17,16 @@ import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 final class TrophyCatalogTest {
+    @Test void endWaterAndSpecialTrophiesDoNotRequireOtherReferenceChapters() {
+        var guides = snapshot(chapter("6D7407AC3951E683", 58, "19A0B0C0D0E00001", "19A0B0C0D0E00004"),
+                chapter("6E8518BD4A62F794", 59, "1AA0B0C0D0E00001", "1AA0B0C0D0E00004"),
+                chapter("6F9629CE5B7308A5", 60, "1BA0B0C0D0E00001", "1BA0B0C0D0E00004"));
+        var entries = TrophyCatalog.entries(guides, progress("1BA0B0C0D0E00001", "1BA0B0C0D0E00004"));
+        assertEquals(List.of(false, false, true), entries.stream().map(TrophyCatalog.Entry::earned).toList());
+        assertEquals(List.of("minecraft:ender_pearl", "minecraft:ink_sac", "minecraft:honeycomb"),
+                entries.stream().map(TrophyCatalog.Entry::iconItemId).toList());
+    }
+
     @Test void expandedAnimalTrophyIncludesNewReadingCardsWithoutErasingOldProgress() {
         String[] ids = java.util.stream.IntStream.rangeClosed(1, 9)
                 .mapToObj(i -> "16A0B0C0D0E0000" + i).toArray(String[]::new);

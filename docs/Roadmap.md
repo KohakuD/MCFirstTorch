@@ -626,19 +626,22 @@ Implementation target remains native 0.13.0-alpha.1. The initial three-chapter b
 
 - [x] Implement initial bilingual farm-animal, common Overworld-monster and Nether-creature reference chapters, with independently readable cards and book-only trophies
 - [x] Check the initial twelve ordinary drop summaries against target 26.1.2 entity loot tables and distinguish the listed special conditions
-- [ ] In-game acceptance: all twelve reading cards, independent selection, both languages, trophy eligibility and restart persistence
+- [x] In-game acceptance: initial twelve reading cards, independent selection, both languages, trophy eligibility and restart persistence (user-confirmed 2026-09-09)
 
 - [x] Rename Farm Animals to Animals and add Wolf/dog companion, Cat, Horse, Camel and Axolotl reference cards; verify target-version availability and ordinary loot
-- [ ] In-game acceptance: expanded nine-card animal grid, new care text in both languages, preserved old readings and updated trophy eligibility (17 reference cards total)
+- [x] In-game acceptance: expanded nine-card animal grid, new care text in both languages, preserved old readings and updated trophy eligibility (user-confirmed 2026-09-09; 17 reference cards)
 
-- [ ] Add a bilingual, non-gating reference chapter separated from the guided course
-- [ ] Group creatures by useful context such as passive animals, common hostile mobs, Nether mobs, End mobs, aquatic mobs, and rare encounters
-- [ ] Give each entry a compact pattern: habitat, behaviour, main danger, common drops, conditional or rare drops, safe approach, and practical use
+- [x] Implement three more four-card reference chapters for End/approach, aquatic life and special encounters (29 cards total)
+- [ ] In-game acceptance: twelve new cards, independent reading, translated safety references, three trophies and restart persistence
+
+- [x] Add bilingual optional reference chapters separate from the guided lesson sequence
+- [x] Group the initial selection by animals, common hostile mobs, Nether mobs, End/approach, aquatic life and special encounters
+- [x] Give each entry a compact pattern: habitat, behaviour, main danger, common drops, conditional or rare drops, safe approach, and practical use
 - [ ] Distinguish guaranteed, chance-based, Looting-affected, player-kill-only, transformation-based, and environment-created drops
 - [ ] Link back to existing full safety lessons instead of duplicating their instructions
-- [ ] Keep reference checkmarks optional and prevent every field-guide card from gating another quest
+- [x] Keep reference checkmarks optional and prevent every field-guide card from gating another quest
 - [ ] Validate all drop facts against the targeted Minecraft version and avoid presenting approximate rates as exact
-- [ ] Start with the creatures already used by the course, then expand by dimension in reviewable batches
+- [x] Start with the creatures already used by the course, then expand by dimension in reviewable batches
 
 ## 0.12.0 — Discoverable Secrets and Unusual Mechanics
 
