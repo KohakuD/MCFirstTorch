@@ -28,5 +28,14 @@ try {
     Assert-Loot ($eye.conditions.condition -contains 'minecraft:killed_by_player') 'Spider Eye player-credit condition changed'
     $disc = (Read-Loot 'creeper').pools[1]
     Assert-Loot ($disc.conditions[0].predicate.type -eq '#minecraft:skeletons') 'Creeper disc attacker condition changed'
-    Write-Output 'Target creature loot checks passed: Blaze, Wither Skeleton, Magma Cube, Spider and Creeper.'
+    foreach ($mob in @('wolf', 'camel', 'axolotl')) {
+        $loot = Read-Loot $mob
+        Assert-Loot (-not $loot.pools) "Unexpected ordinary death loot for $mob"
+    }
+    $cat = (Read-Loot 'cat').pools[0].entries[0]
+    Assert-Loot ($cat.name -eq 'minecraft:string' -and $cat.functions[0].count.max -eq 2) 'Cat ordinary loot changed'
+    Assert-Loot (-not ($cat.functions.function -contains 'minecraft:enchanted_count_increase')) 'Cat Looting rule changed'
+    $horse = (Read-Loot 'horse').pools[0].entries[0]
+    Assert-Loot ($horse.name -eq 'minecraft:leather' -and $horse.functions[0].count.max -eq 2) 'Horse ordinary loot changed'
+    Write-Output 'Target creature loot checks passed, including Wolf, Cat, Horse, Camel and Axolotl.'
 } finally { $archive.Dispose() }

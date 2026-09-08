@@ -628,6 +628,9 @@ Implementation target remains native 0.13.0-alpha.1. The initial three-chapter b
 - [x] Check the initial twelve ordinary drop summaries against target 26.1.2 entity loot tables and distinguish the listed special conditions
 - [ ] In-game acceptance: all twelve reading cards, independent selection, both languages, trophy eligibility and restart persistence
 
+- [x] Rename Farm Animals to Animals and add Wolf/dog companion, Cat, Horse, Camel and Axolotl reference cards; verify target-version availability and ordinary loot
+- [ ] In-game acceptance: expanded nine-card animal grid, new care text in both languages, preserved old readings and updated trophy eligibility (17 reference cards total)
+
 - [ ] Add a bilingual, non-gating reference chapter separated from the guided course
 - [ ] Group creatures by useful context such as passive animals, common hostile mobs, Nether mobs, End mobs, aquatic mobs, and rare encounters
 - [ ] Give each entry a compact pattern: habitat, behaviour, main danger, common drops, conditional or rare drops, safe approach, and practical use

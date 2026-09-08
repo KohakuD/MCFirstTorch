@@ -18,7 +18,7 @@ final class CreatureFieldGuideTest {
         assertEquals(List.of("6A41D479062EB350", "6B52E58A173FC461", "6C63F69B2840D572"),
                 references.stream().map(c -> c.id()).toList());
         for (var chapter : references) {
-            assertEquals(4, chapter.quests().size());
+            assertEquals(chapter.order() == 55 ? 9 : 4, chapter.quests().size());
             for (var quest : chapter.quests()) {
                 assertEquals(List.of(INTRO), quest.prerequisiteQuestIds());
                 assertEquals(1, quest.tasks().size());
@@ -44,6 +44,17 @@ final class CreatureFieldGuideTest {
             assertTrue(confirmed.completedQuestIds().contains(card.id()));
             assertEquals(1, cards.stream().filter(q -> confirmed.completedQuestIds().contains(q.id())).count());
         }
+    }
+
+    @Test void animalExpansionHasFiveCompanionsAndAThreeByThreeMap() throws Exception {
+        var chapter = snapshot().guides().getFirst().chapters().get(55);
+        assertEquals(List.of("minecraft:bone", "minecraft:cod", "minecraft:saddle", "minecraft:cactus", "minecraft:axolotl_bucket"),
+                chapter.quests().subList(4, 9).stream().map(q -> q.iconItemId()).toList());
+        assertEquals(9, chapter.quests().stream().map(q -> q.position()).distinct().count());
+        assertEquals(3, chapter.quests().stream().map(q -> q.position().x()).distinct().count());
+        assertEquals(3, chapter.quests().stream().map(q -> q.position().y()).distinct().count());
+        assertEquals(List.of("16A0B0C0D0E00005", "16A0B0C0D0E00006", "16A0B0C0D0E00007", "16A0B0C0D0E00008", "16A0B0C0D0E00009"),
+                chapter.quests().subList(4, 9).stream().map(q -> q.id()).toList());
     }
 
     private static GuideSnapshot snapshot() throws Exception {

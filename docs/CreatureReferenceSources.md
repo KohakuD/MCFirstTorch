@@ -20,6 +20,18 @@ Counts above describe unmodified ordinary loot tables, not an exhaustive promise
 
 ## Supporting official reading
 
+### Animal expansion
+
+The same target archive contains `entities/wolf.json`, `cat.json`, `horse.json`, `camel.json` and `axolotl.json`. Wolf, Camel and Axolotl define no ordinary item-drop pools. Cat gives 0–2 String with no Looting increase function; Horse gives 0–2 Leather with Looting increases. Equipment is not part of these ordinary-drop summaries. The verification script now checks these resources too.
+
+Target item tags confirm `camel_food` = Cactus, `cat_food` = raw Cod/Salmon and `axolotl_food` = Bucket of Tropical Fish. Do not substitute a loose fish for the Axolotl breeding item. Camel content is present in 26.1.2, not a proposed future-version addition.
+
+- [Mojang: Camel](https://www.minecraft.net/en-us/article/camel) and [Java 1.20 release notes](https://feedback.minecraft.net/hc/en-us/articles/16499677456781-Minecraft-Java-Edition-1-20-Trails-Tales) support two riders, saddles and Cactus feeding.
+- [Mojang: Wolf](https://www.minecraft.net/en-us/article/wolf) supports Bone taming; the companion remains a Wolf, not a separate vanilla Dog species.
+- [Mojang: Cat](https://www.minecraft.net/pl-pl/article/cat) supports the slow raw-fish approach and sitting companion behaviour; Ocelots are separate animals.
+- [Mojang: Meet the Horse](https://www.minecraft.net/en-us/article/meet-horse) supports repeated empty-hand mounting for taming. The card describes ordinary Horses, not undead variants.
+- [Mojang: Bucket of Axolotl](https://www.minecraft.net/pt-br/article/taking-inventory--bucket-axolotl) supports water-bucket transport and aquatic care.
+
 Repeat the key conditional-drop checks with `pwsh ./tools/verify-creature-loot.ps1 -MinecraftJar <path-to-26.1.2-client.jar>`. Vanilla data resources are not exposed on the unit-test runtime classpath, so this explicit archive check is separate from the content tests and does not copy game assets into the repository.
 
 - [Mojang: Cow](https://www.minecraft.net/fr-fr/article/cow) — renewable milk and everyday Cow context.

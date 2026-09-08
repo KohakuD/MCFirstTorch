@@ -17,6 +17,14 @@ import java.util.Set;
 import org.junit.jupiter.api.Test;
 
 final class TrophyCatalogTest {
+    @Test void expandedAnimalTrophyIncludesNewReadingCardsWithoutErasingOldProgress() {
+        String[] ids = java.util.stream.IntStream.rangeClosed(1, 9)
+                .mapToObj(i -> "16A0B0C0D0E0000" + i).toArray(String[]::new);
+        var guides = snapshot(chapter("6A41D479062EB350", 55, ids));
+        assertFalse(TrophyCatalog.entries(guides, progress(java.util.Arrays.copyOf(ids, 4))).getFirst().earned());
+        assertTrue(TrophyCatalog.entries(guides, progress(ids)).getFirst().earned());
+    }
+
     @Test void fieldGuideTrophiesRemainIndependentReadingMilestones() {
         var guides = snapshot(chapter("6A41D479062EB350", 55, "16A0B0C0D0E00001", "16A0B0C0D0E00004"),
                 chapter("6B52E58A173FC461", 56, "17A0B0C0D0E00001", "17A0B0C0D0E00004"),

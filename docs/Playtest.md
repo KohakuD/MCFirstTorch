@@ -1,5 +1,11 @@
 # Playtest log
 
+## 2026-09-09 — Animal reference expanded
+
+Verification passed: 361 automated tests, native build, retained-pack validation/build and the expanded target-loot check. All 57 unrelated chapters are unchanged. The original four animal cards retain IDs, tasks, prerequisites and rewards; only their map positions changed.
+
+User requested Animals rather than Farm Animals, adding Wolf/dog companion, Cat, Horse, Camel and Axolotl. Test all nine animal cards in the 3-by-3 grid and both language versions. Each card must remain independently readable after the common course introduction, without kill/taming/item requirements. Existing four reading checkmarks must survive; the derived trophy now requires the five extra readings too. Check new icons, title, collapsed chapter and restart persistence. This request does not accept the prior twelve-card reference batch. No player files are modified.
+
 ## 2026-09-09 — Initial creature-reference batch
 
 Verification passed: 359 automated tests, native build and retained-pack validation/build. The read-only target-archive check passed for the critical conditional drops. All 55 earlier native chapter definitions compare unchanged; no player files were touched.
