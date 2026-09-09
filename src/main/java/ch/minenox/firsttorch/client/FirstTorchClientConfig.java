@@ -10,6 +10,9 @@ public final class FirstTorchClientConfig {
     public static final ModConfigSpec.BooleanValue ENLARGED_VIEW = BUILDER
             .comment("Enlarge quest-book text and controls by up to 25 percent, limited by available window space.")
             .define("enlargedView", false);
+    public static final ModConfigSpec.BooleanValue QUIET_SURFACES = BUILDER
+            .comment("Replace decorative panel gradients and machining marks with a flat dark surface.")
+            .define("quietSurfaces", false);
     public static final ModConfigSpec SPEC = BUILDER.build();
     private FirstTorchClientConfig() {}
 }

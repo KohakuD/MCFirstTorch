@@ -18,6 +18,11 @@ final class FirstTorchAccessibilityScreen extends AccessibilityOptionsScreen {
                     FirstTorchClientConfig.ENLARGED_VIEW.set(enabled);
                     FirstTorchClientConfig.ENLARGED_VIEW.save();
                 })});
+        this.list.addSmall(new OptionInstance<?>[]{OptionInstance.createBoolean(
+                "options.firsttorch.quietSurfaces", FirstTorchClientConfig.QUIET_SURFACES.get(), enabled -> {
+                    FirstTorchClientConfig.QUIET_SURFACES.set(enabled);
+                    FirstTorchClientConfig.QUIET_SURFACES.save();
+                })});
         super.addOptions();
     }
 }

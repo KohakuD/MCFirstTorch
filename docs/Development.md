@@ -2,6 +2,8 @@
 
 ## Baseline
 
+The opt-in `quietSurfaces` accessibility preference replaces panel gradients and machining marks with flat dark fills. Brass action buttons retain a flat bright fill for their dark labels; selection borders, item icons, medallions and layout are unchanged. It reduces decoration only, not a full high-contrast or reduced-animation mode. Both preferences default off.
+
 Native accessibility now includes an opt-in `enlargedView` client preference alongside chapter fireworks. The quest browser magnifies text, icons and controls together by up to 25 percent using its existing shared render/input transform. Available window space limits zoom to retain a 500 x 320 logical canvas when possible; already-small windows keep their standard scale. Fork/join map eligibility uses the actual node count and row spacing rather than a fixed height cutoff. Defaults remain unchanged. Returning from Accessibility rebuilds the browser with the saved preference. Vanilla options and separate search/reference modals retain Minecraft's GUI scaling; this is not independent text-only scaling or a completed accessibility audit.
 
 Player-isolation regressions exercise UUID-keyed progress updates through native SavedDataStorage reopen cycles and independent world directories. Reward-journal tests cover identical quest IDs in separate player directories, pending/completed states and corruption confined to one journal. These filesystem tests do not instantiate two ServerPlayers or verify network routing, the server journal cache, inventory payout recipients or dedicated-server lifecycle. The multiplayer roadmap checks remain open until those integration scenarios pass.

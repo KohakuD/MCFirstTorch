@@ -109,8 +109,14 @@ final class FirstTorchTheme {
     static void buttonPlate(GuiGraphicsExtractor graphics, Rect rect, boolean highlighted, boolean brass) {
         inset(graphics, rect);
         if (brass) {
-            surface(graphics, rect.x() + 3, rect.y() + 3, rect.right() - 3, rect.bottom() - 3,
-                    highlighted ? 0xFFFFD17A : 0xFFDBAF5D, 0xFF9B671F);
+            if (FirstTorchClientConfig.QUIET_SURFACES.get()) {
+                // Action buttons retain a bright fill behind their dark labels.
+                graphics.fill(rect.x() + 3, rect.y() + 3, rect.right() - 3, rect.bottom() - 3,
+                        highlighted ? 0xFFFFD17A : 0xFFDBAF5D);
+            } else {
+                surface(graphics, rect.x() + 3, rect.y() + 3, rect.right() - 3, rect.bottom() - 3,
+                        highlighted ? 0xFFFFD17A : 0xFFDBAF5D, 0xFF9B671F);
+            }
             bevel(graphics, rect.x() + 1, rect.y() + 1, rect.right() - 1, rect.bottom() - 1,
                     0xFFFFE2A0, 0xFF5F3C14);
         } else if (highlighted) {
@@ -155,6 +161,10 @@ final class FirstTorchTheme {
 
     private static void surface(GuiGraphicsExtractor graphics, int l, int t, int r, int b, int light, int dark) {
         if (r <= l || b <= t) return;
+        if (FirstTorchClientConfig.QUIET_SURFACES.get()) {
+            graphics.fill(l, t, r, b, 0xFF111416);
+            return;
+        }
         for (int y = t; y < b; y += 3) {
             graphics.fill(l, y, r, Math.min(b, y + 3), blend(light, dark, (float) (y - t) / Math.max(1, b - t)));
         }
