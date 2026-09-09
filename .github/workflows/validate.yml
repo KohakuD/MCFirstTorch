@@ -1,10 +1,29 @@
-name: Validate pack
+name: Validate First Torch
 
 on:
   push:
   pull_request:
 
 jobs:
+  native:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+      - name: Set up Java 25
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+      - name: Test and build native mod
+        run: bash ./gradlew test build
+      - name: Check native artifact boundary
+        shell: pwsh
+        run: |
+          ./tools/test-native-jar.ps1
+          $jars = @(Get-ChildItem build/libs/firsttorch-*.jar)
+          if ($jars.Count -ne 1) { throw 'Expected exactly one native mod JAR.' }
+          ./tools/verify-native-jar.ps1 -JarPath $jars[0].FullName
   validate:
     runs-on: ubuntu-latest
     steps:

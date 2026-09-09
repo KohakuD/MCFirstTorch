@@ -1,5 +1,9 @@
 # Playtest log
 
+## 2026-09-09 — Native artifact boundary and CI
+
+Added a separate Java 25 native test/build job to the existing pack workflow. Finished-JAR validation allows only First Torch classes/resources and reviewed metadata; it checks the two declared game/loader dependencies and required language/course files. Six isolated fixtures passed, including rejection of world data, foreign classes, nested JARs, extra dependencies and missing German resources. The current built JAR passed with 243 file entries. Temporary synthetic fixtures were removed. Whitespace checks passed. GitHub execution must be confirmed separately after push; no new game test is needed because no runtime/content code changed.
+
 ## 2026-09-09 — Native installation documentation
 
 The user accepted the Jukebox/brushing hints. README now leads with the independent native mod and its actual build artifact, controls, library and development-only test mode. The previous pack workflow is retained separately in `LegacyPack.md`. Explicitly distinguish installing a native JAR from importing the old FTB ZIP and from migrating FTB progress. Inspected build configuration and built JAR metadata: declared dependencies are Minecraft/NeoForge, with no nested JARs or FTB class packages. This does not claim full release parity or licensing approval. No game files or progress changed; no new playtest required.

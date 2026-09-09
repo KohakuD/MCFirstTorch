@@ -852,6 +852,7 @@ The checked schema step provides data only: it does not complete tasks, grant re
 The minimal NeoForge/IntelliJ build foundation now lives beside the existing FTB-based pack. The checklist remains open until the native runtime implements the required behaviour and passes the full parity playtest.
 
 - [ ] Build a dedicated NeoForge mod that runs without FTB Quests, FTB Library, FTB Teams, FTB Filter System, FTB XMod Compat, or Initially
+  - [x] Add native Java 25 CI build/tests and finished-JAR dependency/content boundary checks with six synthetic regression cases
 - [ ] Keep the curriculum data-driven and maintain every player-facing entry in `en_us` and `de_de`
 - [ ] Provide a native quest and reference interface with chapters, dependency lines, progressive visibility, search, guide images, tasks, manual confirmations, completion states, and claimable rewards
 - [ ] Provide a native first-join welcome flow, an accessible menu entry, a configurable key binding, and a recoverable book or equivalent in-world entry point

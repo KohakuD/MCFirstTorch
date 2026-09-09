@@ -2,6 +2,8 @@
 
 ## Baseline
 
+Native CI runs Java 25 tests/build separately from retained-pack validation. `tools/verify-native-jar.ps1 -JarPath <built.jar>` checks the finished archive against the current package/resource allowlist and Minecraft/NeoForge dependency declarations. It rejects nested JARs, unrelated classes, world/config files, missing required resources and duplicate entries. Six synthetic cases in `test-native-jar.ps1` exercise acceptance and rejection. This is a packaging regression guard, not dependency bytecode analysis, licence approval or multiplayer parity proof. Future legitimate asset formats/dependencies require an explicit allowlist review.
+
 Current entry point: the README describes native JAR installation. `LegacyPack.md` preserves the separate FTB pack workflow. Historical batch notes below describe their state at delivery time, not the current feature limit. Multiplayer, migration and release checks remain open independently of reading acceptance.
 
 Delivery cadence: approximately three complete chapters per user test batch, not three quests. The requested five-creature extension and Turtle Scute icon were accepted by the user on 2026-09-09. The new batch begins optional unusual-mechanic reading: block transformations, name effects and Bees/Honey. Remaining creature-reference cross-links and Redstone illustrations are not completed by this work.
