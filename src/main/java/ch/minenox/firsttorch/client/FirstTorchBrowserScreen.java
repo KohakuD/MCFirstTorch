@@ -803,7 +803,7 @@ class FirstTorchBrowserScreen extends Screen {
     private void drawProgress(GuiGraphicsExtractor graphics, ActiveTextCollector text, Rect top) {
         boolean compact = top.width() < 600;
         int x = top.x() + 11, y = compact ? top.bottom() - 22 : top.y() + 11;
-        int w = compact ? Math.max(40, top.width() / 2 - 25) : 145;
+        int w = compact ? Math.max(40, top.width() / 2 - 105) : 145;
         int completed = trophiesOpen ? (int) trophies.stream().filter(TrophyCatalog.Entry::earned).count()
                 : (int) viewModel.quests().stream().filter(q -> completed(q.id())).count();
         int total = trophiesOpen ? trophies.size() : viewModel.quests().size();

@@ -93,6 +93,31 @@ final class ParallelQuestLayoutTest {
                 LinkedHashMap::new)));
     }
 
+    @Test
+    void enlargedReadingKeepsForkJoinRoutingBelowTheOldHeightCutoff() throws Exception {
+        var quests = courseQuests();
+        for (int[] size : new int[][] {{640, 360}, {800, 600}, {1140, 680}, {1920, 1080}}) {
+            for (boolean enlarged : new boolean[] {false, true}) {
+                var viewport = FirstTorchViewport.fit(size[0], size[1], enlarged);
+                for (boolean reading : new boolean[] {false, true}) {
+                    var map = FirstTorchLayout.calculate(viewport.width(), viewport.height(), reading).questMap();
+                    var panel = reading ? new Rect(map.x(), map.y() + 23, map.width(), map.height() - 23) : map;
+                    assertTrue(ParallelQuestLayout.fits(panel, quests));
+                    var nodes = FirstTorchLayout.questNodes(panel, quests);
+                    assertEquals(ParallelQuestLayout.nodes(panel, quests), nodes);
+                    assertEquals(1, nodes.values().stream().map(Rect::centerX).distinct().count());
+                    assertNoOverlap(nodes);
+                    assertTrue(nodes.values().stream().allMatch(panel::contains));
+                    for (var segment : ParallelQuestLayout.connections(nodes, quests)) {
+                        assertTrue(isOrthogonal(segment));
+                        assertTrue(nodes.values().stream().noneMatch(node -> crossesInterior(segment, node)
+                                && !touchesEndpoint(segment, node)));
+                    }
+                }
+            }
+        }
+    }
+
     private static List<QuestDefinition> courseQuests() throws IOException {
         return load("course").chapters().getFirst().quests();
     }

@@ -1,5 +1,9 @@
 # Playtest log
 
+## 2026-09-09 — Enlarged-view graph regression
+
+User review exposed the Welcome fork/join map falling back to authored positions below a fixed 240-pixel map height. Eligibility now uses actual node count and minimum row spacing; enlarged mode reserves additional reading-toolbar height. The compact header progress bar stops before guide navigation. A regression exercises normal/enlarged overview/reading at four window sizes, checking consistent vertical routing, node bounds, non-overlap and connections outside node interiors. No quest state or dependencies changed. Pending: reopen Welcome with enlarged view enabled and check the map and header; compare overview and reading mode.
+
 ## 2026-09-09 — Optional enlarged quest-browser view
 
 Added an off-by-default client setting under Accessibility in both languages. It enlarges the browser's text, icons and controls together by up to 25 percent; constrained windows reduce or suppress extra zoom. Five added viewport tests protect unchanged defaults, bounded size, small-window fallback and pointer-coordinate conversion. Search/reference modals and vanilla options keep their existing scaling. No quest definitions, server protocol or player progress changed.

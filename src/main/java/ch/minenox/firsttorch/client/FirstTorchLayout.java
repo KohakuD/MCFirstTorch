@@ -65,7 +65,7 @@ public final class FirstTorchLayout {
     }
 
     public static Map<String, Rect> questNodes(Rect panel, List<QuestDefinition> quests) {
-        if (panel.width() >= 110 && panel.height() >= 240 && ParallelQuestLayout.supports(quests)) {
+        if (ParallelQuestLayout.fits(panel, quests)) {
             return ParallelQuestLayout.nodes(panel, quests);
         }
         if (quests.isEmpty()) {

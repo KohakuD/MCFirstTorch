@@ -14,6 +14,12 @@ import java.util.stream.Collectors;
 final class ParallelQuestLayout {
     private ParallelQuestLayout() {}
 
+    static boolean fits(Rect panel, List<QuestDefinition> quests) {
+        // Match the minimum 12-pixel node plus eight-pixel row gap in nodes().
+        // A fixed height cutoff changed the graph topology when browser zoom reduced its canvas.
+        return supports(quests) && panel.width() >= 110 && panel.height() >= 24 + quests.size() * 20;
+    }
+
     static boolean supports(List<QuestDefinition> quests) {
         if (quests.size() < 6 || quests.size() > 10
                 || quests.stream().anyMatch(q -> q.prerequisiteMode() == QuestDefinition.PrerequisiteMode.ANY)) return false;
