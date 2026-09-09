@@ -864,6 +864,8 @@ The minimal NeoForge/IntelliJ build foundation now lives beside the existing FTB
 - [ ] Provide a native first-join welcome flow, an accessible menu entry, a configurable key binding, and a recoverable book or equivalent in-world entry point
 - [ ] Make progress server-authoritative and support single-player, multiplayer teams, reconnects, deaths, backups, and version upgrades safely
 - [ ] Preserve the stable curriculum identifiers and design an explicit migration path for progress created by the FTB-based pack
+  - [x] Document the offline migration design, identity mapping, partial-claim conflicts, transaction safety and required source fixtures in `ProgressMigration.md`
+  - [ ] Verify the pinned FTB save format and implement/test an explicit dry-run adapter before any apply mode
 - [ ] Match the current automatic inventory, advancement, location, and manual-check task behaviour before removing the FTB dependencies
 - [ ] Add accessibility options for text scale, contrast, keyboard navigation, reduced visual clutter, and screen-reader-friendly labels where the Minecraft UI permits them
   - [x] Add an optional enlarged quest-browser view with shared render/input scaling, small-window limits and a persistent bilingual accessibility option
@@ -871,7 +873,7 @@ The minimal NeoForge/IntelliJ build foundation now lives beside the existing FTB
   - [x] Add an optional plain dark panel surface without decorative gradients or machining marks; preserve frames, icons and selection indicators
   - [x] In-game acceptance: plain panels on/off, selected cards and buttons remain distinguishable, preference retained after restart (user-confirmed)
   - [x] Announce quest availability, completion and claimable rewards before lesson text through the native button narrator in both languages
-  - [ ] In-game narrator acceptance: focus open, locked, completed and reward-ready quest nodes; check English and German
+  - [x] In-game narrator acceptance: focus open, locked, completed and reward-ready quest nodes; check English and German (user-confirmed)
 - [ ] Verify asset and library licences, keep Minecraft-derived artwork tied to the targeted game version, and publish source and migration documentation
   - [x] Make native JAR installation the README entry point; separate retained FTB instructions and explicitly warn that FTB progress migration is not implemented
 - [ ] Ship the independent runtime only after a clean-profile parity playtest covers the complete guided route and both languages

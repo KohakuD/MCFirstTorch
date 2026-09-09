@@ -58,6 +58,7 @@ See [Retained pack instructions](docs/LegacyPack.md). Do not import that ZIP whe
 - [Curriculum principles](docs/Curriculum.md)
 - [Roadmap and acceptance status](docs/Roadmap.md)
 - [Playtest log](docs/Playtest.md)
+- [Progress migration design (not yet implemented)](docs/ProgressMigration.md)
 
 Generated builds, worlds, logs and player data do not belong in Git.
 

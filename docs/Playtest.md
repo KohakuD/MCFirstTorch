@@ -1,5 +1,11 @@
 # Playtest log
 
+## 2026-09-09 — Migration design boundary
+
+Quest-state narration is accepted by the user. Documented the offline migration
+design and unresolved source-format, team and partial-reward cases. This delivery
+changes documentation only; no new in-game test or world conversion is required.
+
 ## 2026-09-09 — Quest state narration
 
 Earlier Redstone visibility and plain-panel presentation are accepted by the user. Added bilingual state announcements before quest descriptions when quest nodes receive narrator focus. Shared reward eligibility prevents announcing pending, claimed or locked rewards as available. No definitions, IDs, progress or network changes.

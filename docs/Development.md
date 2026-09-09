@@ -2,6 +2,12 @@
 
 ## Baseline
 
+The offline FTB progress migration design is documented in `ProgressMigration.md`.
+It separates verified native storage behaviour from the still-unverified FTB source
+format and requires a dry-run report, explicit identity mapping and recoverable
+completion/reward transaction before an apply mode can exist. No importer or save
+mutation is provided by this documentation step.
+
 Quest-node narration announces the title, current availability/completion/reward state, then the existing description and image alternative text. Reward readiness uses the shared claim eligibility policy, excluding claimed, pending and prerequisite-locked rewards. No hover tooltips or visual changes are introduced. State selection has unit coverage; actual Minecraft narrator output still needs in-game acceptance.
 
 The opt-in `quietSurfaces` accessibility preference replaces panel gradients and machining marks with flat dark fills. Brass action buttons retain a flat bright fill for their dark labels; selection borders, item icons, medallions and layout are unchanged. It reduces decoration only, not a full high-contrast or reduced-animation mode. Both preferences default off.
