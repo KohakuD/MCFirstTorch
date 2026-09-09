@@ -33,7 +33,7 @@ final class GuideImageLayoutTest {
         try (var input = getClass().getResourceAsStream("/data/firsttorch/guides/course.json")) {
             var images = GuideJson.read(input).chapters().stream().flatMap(c -> c.quests().stream())
                     .map(q -> q.image()).filter(java.util.Objects::nonNull).toList();
-            assertEquals(98, images.size());
+            assertEquals(104, images.size());
             for (var image : images) {
                 String assetPath = "assets/" + image.resource().replace(':', '/');
                 try (var png = getClass().getResourceAsStream("/" + assetPath)) {
@@ -44,6 +44,12 @@ final class GuideImageLayoutTest {
                             "firsttorch:textures/questpics/repeater_direction.png",
                             "firsttorch:textures/questpics/comparator_read.png",
                             "firsttorch:textures/questpics/piston_push.png",
+                            "firsttorch:textures/questpics/repeater_range.png",
+                            "firsttorch:textures/questpics/repeater_delay.png",
+                            "firsttorch:textures/questpics/iron_door_plan.png",
+                            "firsttorch:textures/questpics/redstone_short_line.png",
+                            "firsttorch:textures/questpics/redstone_dust_limit.png",
+                            "firsttorch:textures/questpics/piston_return.png",
                             "firsttorch:textures/questpics/pumpkin_view_capture.png").contains(image.resource())
                             ? "src/main/resources/" : "overrides/resourcepacks/first_torch_guides/";
                     assertArrayEquals(Files.readAllBytes(Path.of(System.getProperty("firsttorch.projectDir"),

@@ -622,7 +622,11 @@ Implementation target: native 0.13.0-alpha.1; retained pack 0.9.1 remains unchan
   - [x] Add an original-texture top-down Observer layout with watching/output face legend and bilingual caption
   - [x] In-game acceptance: Observer layout readability, correct orientation and removal/replacement pulses (user-confirmed)
   - [x] Add top-down direction/read/push plans to the existing Repeater, Comparator and Piston chapters
-  - [ ] In-game acceptance: three new plans, bilingual legends, orientation and readable half-pane presentation
+  - [x] In-game acceptance: three new plans, bilingual legends, orientation and readable half-pane presentation (user-confirmed)
+  - [x] Add Repeater range/delay and two-sided Iron Door schematic guides with bilingual legends
+  - [x] In-game acceptance: condensed Dust ranges, delay comparison and plate/door/plate diagram (user-confirmed)
+  - [x] Add short-wire on/off, 15/16-Dust boundary and normal/sticky Piston settled-state comparisons
+  - [ ] In-game acceptance: the three new A/B comparisons and their captions
 
 ## 0.11.0 — Creature and Drop Field Guide
 

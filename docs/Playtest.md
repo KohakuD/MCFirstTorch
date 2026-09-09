@@ -1,5 +1,21 @@
 # Playtest log
 
+## 2026-09-09 — Basic wire and Piston comparison artwork
+
+User accepted the range/delay/door diagrams. Added short-wire on/off, 15/16-Dust boundary and ordinary/sticky settled-state comparisons with bilingual captions. The limit plan explicitly groups fifteen Dust positions rather than suggesting one block; the Piston plan distinguishes final positions without pretending to render an extended Piston.
+
+Pending in-game: check the three A/B images and their legends in the short-line, basic-range and sticky-pull lessons. Verify readable captions/scrolling and that final block positions are understandable. No progress reset or changed gameplay requirement is introduced. Other circuit artwork remains open.
+
+Verification: all three images were visually inspected outside Minecraft. Native tests/build passed with 104 packaged image placements, bilingual captions and unchanged half-pane sizing. Retained-pack validation/build and whitespace checks passed. Live circuit behaviour was not tested by the agent.
+
+## 2026-09-09 — Range, delay and doorway diagrams
+
+The user accepted the Repeater/Comparator/Piston plans. Three additional illustrations now explain the long Repeater range line, short/long delay settings and two-sided Iron Door practice site. Original model textures are used for visible Repeaters/Lamps; lettered placeholders and condensed Dust groups are explicitly explained in both languages. Visual inspection outside Minecraft checked directions, spacing and labels.
+
+Pending in-game: inspect the range, delay and door-walking lessons. Confirm that the 15-/3-Dust groups are understood as multiple consecutive positions, A/B as settings of one build, and P/T/P as plate/door/plate. Check caption wrapping and scrolling. Existing gameplay requirements and player progress are unchanged; other circuit artwork remains open.
+
+Verification: all 382 native tests/build passed, including 101 packaged image placements and bilingual captions. Retained-pack validation/build and whitespace checks passed. No live circuit test was performed by the agent.
+
 ## 2026-09-09 — Repeater, Comparator and Piston plans
 
 The user accepted the Observer orientation image. Added three direction/layout images to existing lessons, with bilingual legends separating schematic placeholders from original component views. Original lesson instructions, progress and rewards remain unchanged.
