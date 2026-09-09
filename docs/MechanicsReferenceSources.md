@@ -4,6 +4,8 @@ Target: Minecraft Java 26.1.2, native First Torch 0.13.0-alpha.1. The first nine
 
 ## Target data and code
 
+- Interaction batch: `recipe/respawn_anchor.json` specifies six Crying Obsidian around three Glowstone blocks; `dimension_type/the_nether.json` enables `gameplay/respawn_anchor_works`. `RespawnAnchorBlock` accepts `Items.GLOWSTONE`, limits charges to four, and checks the environment attribute before setting spawn or exploding. The reading warns against activation in the Overworld/End and never requires a death test. `recipe/jack_o_lantern.json` places Carved Pumpkin over Torch; `loot_table/carve/pumpkin.json` gives four Seeds. `PumpkinBlock` checks Shears. `EnderMan.isBeingStaredBy` uses the disguise predicate, whose item tag contains Carved Pumpkin. `CauldronInteractions` fills water to level three, permits bucket retrieval only at that level, checks `Potions.WATER` for bottle input and removes a water level on bottle retrieval or dye washing. `cauldron_can_remove_dye` includes Leather Chestplate. These are Java instructions, not Bedrock potion/dyed-water behaviour.
+
 - Discovery batch: target `recipe/brush.json` uses Feather/Copper Ingot/Stick vertically; `recipe/music_disc_5.json` combines nine Disc Fragment 5 items. `entities/creeper.json` selects from `creeper_drop_music_discs` only with an attacker in `skeletons`; the lesson uses a normal Skeleton's final arrow as its concrete example and never requires a combat experiment. `ZombieVillager.mobInteract` checks the ordinary Golden Apple and active Weakness, then starts conversion with 3600–6000 ticks. The lesson says several minutes and keeps the enclosure safe throughout, without promising an exact wall-clock duration. No forced infection or repeated-discount exploit is taught.
 
 - `recipe/sponge.json`: furnace smelting converts Wet Sponge to Sponge. The lesson uses a normal Overworld Furnace and fuel, never a required Nether trip.
@@ -15,6 +17,10 @@ Target: Minecraft Java 26.1.2, native First Torch 0.13.0-alpha.1. The first nine
 The read-only archive checks are repeatable with `pwsh ./tools/verify-mechanics-data.ps1 -MinecraftJar <26.1.2-client.jar>`. They verify recipes, harvest tables and item assets, not live world interactions. Code checks used the target client's unobfuscated classes without modifying or redistributing them.
 
 ## Supporting primary sources
+
+- [Mojang: Cauldron](https://www.minecraft.net/nl-nl/article/cauldron) provides context; edition-specific details are checked against the target Java interactions.
+- [Mojang: Jack o'Lantern](https://www.minecraft.net/en-us/article/block-week--jack-o-lantern) describes carving and lighting; target recipes and carving loot provide exact quantities.
+- [Mojang: Spawning and dying](https://www.minecraft.net/en-us/article/spawning-and-dying) explains Nether anchors, Glowstone charges and respawn safety.
 
 - [Mojang: Brush](https://www.minecraft.net/pl-pl/article/brush) explains fragile suspicious blocks, brushing rather than mining, possible random finds and Brush durability. The cards do not promise a particular rare find.
 - [Mojang: Golden Apple](https://www.minecraft.net/en-us/article/golden-apple) supports Weakness followed by a non-enchanted Golden Apple for Zombie Villager curing.

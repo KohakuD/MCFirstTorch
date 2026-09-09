@@ -1,5 +1,17 @@
 # Playtest log
 
+## 2026-09-09 — Cauldrons, Pumpkins and Respawn Anchors
+
+Verification: 375 tests and native build pass; target mechanics verifier and retained-pack validation/build pass. Previous chapter definitions are unchanged apart from the already accepted archaeology/curing follow-up. German Anchor naming uses the original target language asset (Seelenanker). No player files were touched.
+
+The user accepted the ordered archaeology/curing follow-up and original block comparison. The next batch adds three separate three-step reference chapters with nine manual readings, no item/XP payouts and three book-only trophies. Pending in-game: ordered arrows/confirmation, both languages, Anchor warnings, optional experiment wording, trophies and restart persistence. Existing progress must not be reset.
+
+## 2026-09-09 — Ordered archaeology and curing
+
+Verification: all 373 tests and native build pass, including ordered confirmation gates and packaged image dimensions/translations. Retained-pack build also passes. In-game acceptance remains pending.
+
+User requested two coherent, separate three-step questlines rather than independent cards. Archaeology now progresses from recognition and the original-block comparison to safe brushing and finds; Zombie Villager curing progresses from preparation to treatment and recovery. Music remains independent. Pending: check arrows, attempts to confirm later steps early, normal progression, bilingual image caption and old completions. Reading still suffices; no excavation or cure is required. Image uses target 26.1.2 textures/models and was visually inspected outside the game.
+
 ## 2026-09-09 — Archaeology, music and curing references
 
 Verification: 373 tests and native build pass; target recipe/icon checks and retained-pack validation/build pass. All previous 65 chapter definitions match the pre-batch state. In-game review remains pending.

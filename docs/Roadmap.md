@@ -655,7 +655,11 @@ First implementation batch inside native 0.13.0-alpha.1: three optional three-ca
 - [x] Implement the first nine bilingual cards with independent reading tasks and book-only trophies
 - [x] In-game acceptance: nine mechanics cards separate from the Bee creature reference, exact name spelling, safe optional experiments, three mechanics trophies and persistence (user-confirmed 2026-09-09)
 - [x] Implement three discovery-reference chapters: archaeology, music discs and Zombie Villager curing, with bilingual reading cards and independent trophies
-- [ ] In-game acceptance: nine discovery cards, all three chapter maps/trophies, optional-only completion and persistence
+- [x] In-game acceptance: nine discovery cards, all three chapter maps/trophies, optional-only completion and persistence (user-confirmed 2026-09-09)
+- [x] Order Archaeology and Zombie Villager curing as separate three-step reading chains; add an authentic normal/suspicious Sand and Gravel comparison
+- [x] In-game acceptance: sequential arrows and confirmation gates in both chains, archaeology comparison/caption and preserved existing readings (user-confirmed 2026-09-09)
+- [x] Add three ordered optional reference chapters for Cauldrons, Pumpkin interactions and Respawn Anchor safety, with nine bilingual readings and independent book trophies
+- [ ] In-game acceptance: three interaction chapter chains, clear Java-only Cauldron guidance, Anchor warnings before instructions, three trophies and preserved progress
 
 - [x] Add a bilingual optional reference chapter for useful mechanics that ordinary play rarely explains clearly (first three chapters)
 - [ ] Cover selected transformation mechanics, unusual item interactions, name-dependent behaviours, archaeology rules, music-disc conditions, bee and pollination details, Villager curing, and other high-value discoveries

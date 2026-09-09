@@ -12,6 +12,21 @@ function Assert-Mechanic([bool]$condition, [string]$message) {
     if (-not $condition) { throw $message }
 }
 try {
+    $anchor = Read-GameJson 'data/minecraft/recipe/respawn_anchor.json'
+    Assert-Mechanic (($anchor.pattern -join ',') -eq 'OOO,GGG,OOO' -and $anchor.key.O -eq 'minecraft:crying_obsidian' -and $anchor.key.G -eq 'minecraft:glowstone' -and $anchor.result.id -eq 'minecraft:respawn_anchor') 'Respawn Anchor recipe changed'
+    $nether = Read-GameJson 'data/minecraft/dimension_type/the_nether.json'
+    Assert-Mechanic ($nether.attributes.'minecraft:gameplay/respawn_anchor_works' -eq $true) 'Nether anchor attribute changed'
+    $lantern = Read-GameJson 'data/minecraft/recipe/jack_o_lantern.json'
+    Assert-Mechanic (($lantern.pattern -join ',') -eq 'A,B' -and $lantern.key.A -eq 'minecraft:carved_pumpkin' -and $lantern.key.B -eq 'minecraft:torch' -and $lantern.result.id -eq 'minecraft:jack_o_lantern') 'Jack o Lantern recipe changed'
+    $disguise = Read-GameJson 'data/minecraft/tags/item/gaze_disguise_equipment.json'
+    Assert-Mechanic ($disguise.values -contains 'minecraft:carved_pumpkin') 'Carved Pumpkin gaze disguise changed'
+    $washable = Read-GameJson 'data/minecraft/tags/item/cauldron_can_remove_dye.json'
+    Assert-Mechanic ($washable.values -contains 'minecraft:leather_chestplate') 'Leather armour cauldron washing changed'
+    $seeds = (Read-GameJson 'data/minecraft/loot_table/carve/pumpkin.json').pools[0].entries[0]
+    Assert-Mechanic ($seeds.name -eq 'minecraft:pumpkin_seeds' -and $seeds.functions[0].count -eq 4) 'Pumpkin carving seed yield changed'
+    foreach ($item in @('cauldron', 'water_bucket', 'glass_bottle', 'leather_chestplate', 'brewing_stand', 'pumpkin', 'shears', 'carved_pumpkin', 'jack_o_lantern', 'respawn_anchor', 'crying_obsidian', 'glowstone')) {
+        Assert-Mechanic ($null -ne $archive.GetEntry("assets/minecraft/items/$item.json")) "Missing interaction icon: $item"
+    }
     $brush = Read-GameJson 'data/minecraft/recipe/brush.json'
     Assert-Mechanic ($brush.result.id -eq 'minecraft:brush' -and ($brush.pattern -join ',') -eq 'X,#,I') 'Brush recipe pattern changed'
     Assert-Mechanic ($brush.key.X -eq 'minecraft:feather' -and $brush.key.'#' -eq 'minecraft:copper_ingot' -and $brush.key.I -eq 'minecraft:stick') 'Brush ingredients changed'

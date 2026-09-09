@@ -33,14 +33,16 @@ final class GuideImageLayoutTest {
         try (var input = getClass().getResourceAsStream("/data/firsttorch/guides/course.json")) {
             var images = GuideJson.read(input).chapters().stream().flatMap(c -> c.quests().stream())
                     .map(q -> q.image()).filter(java.util.Objects::nonNull).toList();
-            assertEquals(92, images.size());
+            assertEquals(93, images.size());
             for (var image : images) {
                 String assetPath = "assets/" + image.resource().replace(':', '/');
                 try (var png = getClass().getResourceAsStream("/" + assetPath)) {
                     assertNotNull(png);
                     byte[] bytes = png.readAllBytes();
+                    String sourceRoot = image.resource().equals("firsttorch:textures/questpics/archaeology_comparison.png")
+                            ? "src/main/resources/" : "overrides/resourcepacks/first_torch_guides/";
                     assertArrayEquals(Files.readAllBytes(Path.of(System.getProperty("firsttorch.projectDir"),
-                            "overrides/resourcepacks/first_torch_guides/" + assetPath)), bytes);
+                            sourceRoot + assetPath)), bytes);
                     var decoded = ImageIO.read(new java.io.ByteArrayInputStream(bytes));
                     assertEquals(decoded.getWidth(), image.width());
                     assertEquals(decoded.getHeight(), image.height());
