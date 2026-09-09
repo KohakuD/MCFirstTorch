@@ -1,5 +1,21 @@
 # Playtest log
 
+## 2026-09-10 — Native-only archive cleanup
+
+The owner explicitly cancelled FTB import work. Legacy pack data, tools and import
+research are archived under `archive/ftb-legacy`; earlier migration entries below
+are historical records only, not pending work. Promoted 91 exact guide images into
+native resources, updated image generators and removed the legacy CI/build input.
+Quest definitions, stable IDs, player progress and installed profiles are unchanged.
+
+Verification: clean native build and all 405 tests passed; 111 image placements
+resolve to native source bytes and their declared sizes. Six JAR-boundary fixtures
+and the finished-JAR check passed. The frozen pack's validator also succeeds at its
+archived location; it is not an active CI requirement.
+
+Pending smoke test: open First Torch and inspect an early crafting image and one
+later screenshot. No reset or fresh world is needed.
+
 ## 2026-09-10 — Party transition migration decision
 
 Read-only review of the pinned Quests transition handler found full-data merging

@@ -1,0 +1,903 @@
+# Roadmap
+
+The active milestone is **0.9.1 — Quest Book Onboarding and Progressive Navigation**. Its configuration and bilingual content are implemented. Version **0.2.0** is the latest completed and tested release. The 0.3.0 through 0.9.1 content remains under in-game review. The next planned releases add optional Redstone and reference material, followed by a native First Torch mod without an FTB runtime dependency.
+
+## 0.1.0 — First Safe Night
+
+- [x] Independent repository and reproducible pack manifest
+- [x] FTB Quests JSON5 foundation
+- [x] English and German quest text
+- [x] Guided path: orientation, wood, crafting table, Wooden Shovel, emergency shelter, Bed, then Pickaxe, Stone, Furnace, Chest storage, Torches, permanent shelter, and first-morning check
+- [x] Automated metadata and translation validation
+- [x] Fresh-profile startup test on Minecraft 26.1.2
+- [x] Full quest completion test in English
+- [x] German text and layout review in game
+- [x] Beginner playtest and wording adjustments
+- [ ] First public release archive
+
+### 0.1.1 startup fix
+
+- [x] Remove unused KubeJS integration after its Better Advanced Tooltips dependency crashed during startup
+- [x] Rebuild the minimal pack with only the required FTB quest stack
+- [x] Confirm a clean CurseForge profile reaches the Minecraft title screen
+
+### 0.1.2 quest ID fix
+
+- [x] Confirm a clean CurseForge profile reaches the title screen and creates a world
+- [x] Diagnose unnamed chapters and generic checkmark titles from screenshots
+- [x] Move IDs outside the signed Java `long` range into FTB Quests' supported range
+- [x] Reject out-of-range IDs during validation
+- [x] Add a backed-up in-place updater for development profiles
+- [x] Confirm chapter, quest, and task titles in the updated 0.1.2 profile
+
+### 0.1.3 beginner controls and reliable quantities
+
+- [x] Explain right-hand default, attack, use, breaking, pickup, and inventory movement explicitly
+- [x] Add illustrated guides for breaking a log and crafting planks
+- [x] Require eight Cobblestone and eight Torches with FTB Quests' task-level count field
+- [x] Reject ignored item-stack quantities during validation
+- [x] Extend the safe updater to install and enable only the pack-owned guide images
+- [x] Confirm both illustrations render in the existing profile
+- [x] Confirm the Cobblestone task stays incomplete at 1–7 and completes at 8
+
+### Optional movement-controls refinement
+
+- [x] Add a non-gating branch after the mouse-control lesson
+- [x] Teach jumping onto a full block while explaining that slabs and stairs are climbed without jumping
+- [x] Teach safe sneaking at a low edge, including the slab-and-stair descent exception and its other limits
+- [x] Teach both default sprint inputs, Hunger use, and route safety
+- [x] Finish with one controlled sprint-jump and a small food-and-XP reward
+- [ ] Complete all four exercises once in survival mode and inspect both languages
+
+### 0.1.4 illustrated crafting sequence
+
+- [x] Fix the guide resource-pack metadata for Minecraft 26.1.2's version-pair format
+- [x] Add illustrations for placing the Crafting Table, crafting a Wooden Pickaxe, crafting a Furnace, and making Charcoal
+- [x] Add a Stone Axe lesson after the first Cobblestone so beginners stop breaking wood by hand
+- [x] Show the stick recipe in the Crafting Table's 3 × 3 grid
+- [x] Explain stone collection explicitly as the same interaction loop as collecting wood, with the pickaxe as the key difference
+- [x] Confirm all six illustrations render in the existing profile
+
+### 0.1.5 flexible beginner objectives
+
+- [x] Accept four planks of any vanilla wood type, including mixed stacks
+- [x] Pin FTB Filter System and FTB XMod Compat for item-tag objectives
+- [x] Remove the premature instruction to bring food before food has been taught
+- [x] Document why native CurseForge pack-version display requires a published CurseForge project
+- [x] Confirm the filter modules reach the title screen in the existing profile
+- [x] Confirm the plank task stays incomplete at 1–3 and completes at 4 with mixed wood types
+
+### 0.1.6 gentle rewards
+
+- [x] Explain how to claim rewards before the first reward appears
+- [x] Give two Apples after the controls lesson and two after making Torches
+- [x] Give three Bread as a bridge into the food chapter
+- [x] Give one Lantern as the First Torch completion trophy
+- [x] Validate exact reward items, quantities, and stable reward IDs
+- [x] Confirm all four rewards display and can be claimed exactly once in game
+
+### 0.1.7 reward quantity fix
+
+- [x] Move Apple and Bread quantities to FTB Quests' reward-level `count` field
+- [x] Keep the displayed item stack at one, as required by the 26.1 item reward format
+- [x] Reject ignored quantities inside reward item stacks during validation
+- [x] Confirm a fresh claim grants 2 Apples, 2 Apples, 3 Bread, and 1 Lantern
+
+### First-night safety refinement
+
+- [x] Add an early Wooden Shovel lesson and distinguish soil, stone, and wood tools
+- [x] Branch first-night safety from the Crafting Table so it does not wait for the complete tool route
+- [x] Teach a quick, fully sealed emergency shelter before requiring a lit permanent home
+- [x] Move the three-White-Wool reward and Bed lesson directly behind the emergency shelter
+- [x] Rejoin the route after the learner has both a Bed and a lit shelter with protected storage
+- [x] Add exact-texture guides for the Wooden Shovel recipe and emergency shelter entrance
+- [ ] Complete the revised route once from a fresh survival world and inspect both languages
+
+## 0.2.0 — Becoming Independent
+
+- [x] Hunger, food sources, and safe cooking
+- [x] Health, armour, shields, and avoiding unnecessary fights
+- [x] Mining safely: stairs, light, water, gravel, and getting home
+- [x] Iron tools, bucket, shield, and basic armour
+- [x] Coordinates, landmarks, and a simple home routine
+- [x] Let already-known skills complete without punishment through automatic inventory checks and non-gating practice quests
+
+### Food foundation
+
+- [x] Explain the ten-part Hunger bar, eating control, and sprint threshold without assuming knowledge of game modes
+- [x] Detect the first consumed item automatically through the vanilla Husbandry advancement
+- [x] Keep the eating lesson optional so it does not gate food collection
+- [x] Accept several locally available raw food sources instead of requiring one biome-specific item
+- [x] Illustrate the Furnace flow from raw Beef to cooked Steak
+- [x] Explain the different burn durations of Sticks, wood, Coal, and Charcoal in the first Furnace lesson
+- [x] Explain how high Hunger enables natural health regeneration
+- [x] Warn explicitly about Rotten Flesh, Raw Chicken, Spider Eyes, Poisonous Potatoes, and Pufferfish
+- [x] Require four cooked foods, allowing mixed supported types
+- [x] Add one Apple, one Charcoal, and one Cookie as non-skipping milestone rewards
+- [x] Confirm the new chapter unlocks after the safe-morning quest
+- [x] Confirm both smart filters accept every listed ingredient and reject unrelated food
+- [x] Confirm both new guide images render correctly
+- [x] Complete the food path once in German and inspect it once in English
+
+### Protection foundation
+
+- [x] Explain damage, safe retreat, and recovery before teaching combat equipment
+- [x] Teach the Stone Pickaxe and warn that a Wooden Pickaxe cannot collect Raw Iron
+- [x] Guide the learner from exposed Iron Ore through smelting the first Iron Ingot
+- [x] Show Iron Ore with the live in-game item model so active resource packs are respected
+- [x] Illustrate the exact Shield recipe and its offhand placement with the correct left-mouse control
+- [x] Illustrate all four Armour recipes in one compact, consistent 2 × 2 overview
+- [x] Add a parallel Copper branch that unlocks Armour crafting after either Copper or Iron
+- [x] Keep the Shield lesson exclusive to the Iron branch
+- [x] Explain armour slots without requiring a full set of Iron Armour
+- [x] Teach raising and facing with a Shield, including important limits
+- [x] Make avoiding unnecessary fights an explicit skill
+- [x] Return one Iron Ingot as a small non-skipping milestone reward
+- [x] Introduce small XP-point rewards in the welcome and armour-crafting lessons
+- [x] Confirm the Stone Pickaxe, Raw Iron, Iron Ingot, and Shield item tasks in game
+- [x] Confirm both new guide images render correctly
+- [x] Complete the protection path once in German and inspect it once in English
+
+### Safe mining foundation
+
+- [x] Require two suitable Pickaxes, 16 Torches, and four cooked foods before going deeper
+- [x] Illustrate a walkable staircase and explicitly forbid digging straight down
+- [x] Teach a consistent right-going-in, left-going-home Torch rule
+- [x] Explain falling Gravel and Sand as suffocation hazards
+- [x] Teach retreating and blocking the opening when Water or Lava appears
+- [x] Make returning before supplies run out part of the mining routine
+- [x] Add 10 XP points as a non-skipping safe-return reward
+- [x] Teach Chest crafting and basic item storage before the first longer outing
+- [x] Wrap the chapter into three thematic rows so the full path remains readable on smaller displays
+- [x] Confirm mixed suitable Pickaxes satisfy the two-item preparation task
+- [x] Confirm both mining guide images render correctly
+- [x] Complete the safe-mining path once in German and inspect it once in English
+
+### Finding home foundation
+
+- [x] Keep the topic in a short dedicated chapter instead of extending the already dense mining map
+- [x] Test a visible home landmark from a safe distance
+- [x] Explain X, Y, and Z, including minus signs and laptop function keys
+- [x] Record the real home coordinates outside the world
+- [x] Practise a short daylight return using the landmark first and coordinates as a backup
+- [x] Add an optional first Map and Cartography Table branch without replacing coordinates or the Lodestone path
+- [x] Explain that coordinates point toward the goal but do not guarantee a safe route
+- [x] Add 5 XP points as a non-skipping route-test reward
+- [x] Give one Compass after the tested route without replacing landmarks or coordinates
+- [x] Explain that a normal Compass points to the world spawn, not to a Bed or shelter
+- [x] Teach the Stonecutter and use eight Stone to make Chiseled Stone Bricks efficiently
+- [x] Craft a Lodestone with the current eight-brick and one-Iron recipe
+- [x] Detect binding the rewarded Compass to a Lodestone automatically, then test it from a safe distance
+- [x] Confirm the chapter unlocks after the safe-return quest
+- [x] Check the F3 wording against the Minecraft 26.1.2 debug screen in German and English
+- [x] Complete the practice route once in survival mode
+- [x] Confirm the Stonecutter, eight-brick, Lodestone, and binding steps in survival mode
+- [x] Confirm both new recipe images render correctly
+
+### Iron essentials foundation
+
+- [x] Keep Iron Pickaxe and Bucket training in a short dedicated chapter
+- [x] Unlock the chapter from the first Iron Ingot and add a diamond-shaped in-map link with navigation guidance
+- [x] Require six Iron Ingots without consuming them before the two recipes branch
+- [x] Refer back to the shared Pickaxe shape without repeating already-learned slot instructions
+- [x] Explain that Stone and Copper Pickaxes cannot collect Iron-tier ores such as Diamond Ore
+- [x] Teach the three-Ingot Bucket recipe
+- [x] Require a Water Bucket and practise placing and retrieving a source block safely
+- [x] Teach both 2 × 2 and 1 × 3 infinite Water sources directly after the first Water Bucket exercise
+- [x] Explain diagonal source placement for 2 × 2 and centre-only collection for 1 × 3
+- [x] Add a language-neutral top-down guide made from exact Minecraft 26.1.2 Water and Bucket textures
+- [x] Rejoin both branches in a short safety recap with a 5 XP reward
+- [x] Confirm the six-Ingot task remains incomplete at 1–5 and completes at 6
+- [x] Confirm the Iron Pickaxe, Bucket, and Water Bucket tasks in game
+- [x] Confirm the separate Iron Pickaxe and Bucket recipe images render in their matching quests
+- [x] Practise placing and retrieving Water once in survival mode
+- [ ] Build and collect twice from both infinite Water-source layouts in survival mode
+
+### Bed onboarding refinement
+
+- [x] Grant three White Wool after the emergency-shelter lesson instead of giving a finished Bed
+- [x] Teach the White Bed recipe, placement, sleeping, and the respawn point explicitly
+- [x] Keep the learner responsible for crafting the Wooden Planks and Bed
+- [x] Confirm the three-Wool reward quantity and Bed guide image in game
+- [x] Sleep once and confirm the Bed becomes the player's respawn point
+
+## 0.3.0 — Sustainable Supplies
+
+- [ ] Renewable crops and a dependable food routine
+- [ ] Basic animal care and breeding
+- [ ] Better storage and simple organisation
+- [ ] Renewable materials near home
+
+### First Wheat farm
+
+- [x] Collect three Wheat Seeds from short grass without implying every tuft drops one
+- [x] Craft a Stone Hoe with an exact compact recipe guide
+- [x] Prepare a small watered field beside home and warn against trampling Farmland
+- [x] Illustrate that one central Water block hydrates a 9 × 9 area with up to 80 Farmland blocks
+- [x] Detect planting Wheat automatically through the Vanilla Husbandry advancement
+- [x] Explain growth stages and require three Wheat from mature crops
+- [x] Craft the first home-grown Bread with an exact compact recipe guide
+- [x] Reinforce replanting and keeping spare Seeds as the renewable-resource habit
+- [ ] Confirm the chapter unlocks after the cooked-food reserve
+- [ ] Confirm the three-Seed and three-Wheat quantities in survival mode
+- [ ] Confirm planting completes automatically only after Wheat Seeds are planted
+- [ ] Confirm both recipe images render correctly
+- [ ] Complete the first farm path once in German and inspect it once in English
+
+### Basic animal care
+
+- [x] Require a closed starter pen before any animal is lured home
+- [x] Teach the exact wooden Fence and Fence Gate recipes together
+- [x] Explain matching food for Cows, Sheep, Chickens, and Pigs
+- [x] Allow several common farm-animal choices without requiring a biome-specific species
+- [x] Teach slow, reliable luring and closing the Gate after each animal
+- [x] Detect the first successful breeding automatically through the Vanilla Husbandry advancement
+- [x] Protect the renewable breeding pair and establish a stored-food routine
+- [ ] Confirm mixed wooden Fence types satisfy the 15-Fence task
+- [ ] Confirm a wooden Fence Gate satisfies the Gate task
+- [ ] Confirm the food task accepts each documented food and rejects unrelated items
+- [ ] Confirm breeding completes automatically only after a baby is produced
+- [x] Confirm the combined Fence and Fence Gate recipe image renders correctly
+- [ ] Complete the animal-care path once in German and inspect it once in English
+
+### Simple home storage
+
+- [x] Expand the known Chest recipe into three dedicated storage areas
+- [x] Explain separate Chests and optional Large Chests without forcing one layout
+- [x] Craft three matching Signs and label the storage categories clearly
+- [x] Sort building materials, food and farming supplies, and equipment separately
+- [x] Establish a repeatable unload, refill, and free-inventory-space routine
+- [ ] Confirm the three-Chest quantity in survival mode
+- [ ] Confirm all Vanilla wooden Sign variants satisfy the three-Sign task
+- [ ] Confirm every placed Chest opens with its intended layout
+- [ ] Complete the storage path once in German and inspect it once in English
+
+### Optional Composter sidequest
+
+- [x] Branch from the first planted Wheat without blocking the main farm path
+- [x] Teach crafting seven wooden Slabs and one Composter
+- [x] Accept all Vanilla wooden Slab variants through the shared item tag
+- [x] Provide 32 Wheat Seeds for a robust first composting test without harvesting the young field
+- [x] Explain successful fill feedback, failed fill attempts, maturity, collection, and reuse
+- [x] Reward the completed peaceful Bone Meal loop with 5 XP
+- [ ] Confirm mixed wooden Slabs satisfy the seven-Slab task
+- [ ] Confirm 32 Wheat Seeds plus the learner's ordinary plant leftovers are sufficient in survival play
+- [ ] Complete the sidequest once in German and inspect it once in English
+
+## 0.4.0 — Caves, Diamonds, and Enchanting
+
+### First deep Diamond expedition
+
+- [x] Unlock only after both the Iron essentials and sustainable-storage milestones
+- [x] Require two Iron-or-better Pickaxes, a Water Bucket, a Shield, 32 Torches, and eight cooked foods
+- [x] Teach reading X Y Z coordinates and recording the safe return entrance
+- [x] Reach the Deepslate layer and collect 16 Cobbled Deepslate
+- [x] Explain a practical search depth near Y −53 without promising an immediate find
+- [x] Teach a lit branch tunnel, the existing right-wall Torch rule, and cautious Lava checks
+- [x] Require three Diamonds before crafting the first Diamond Pickaxe
+- [x] Add small supply rewards, 10 total XP, and one Golden Apple for emergencies
+- [x] Add a diamond-shaped chapter link from the sustainable-storage endpoint
+- [ ] Confirm the complete preparation checklist in survival mode
+- [ ] Confirm the chapter remains locked until both prerequisite paths are complete
+- [ ] Confirm Cobbled Deepslate and Diamond quantities complete automatically
+- [ ] Inspect the suggested Y level and safety wording against Minecraft 26.1.2 world generation
+- [ ] Complete the path once in German and inspect it once in English
+
+### Planned 0.4.0 continuations
+
+- [x] Continue from the Diamond Pickaxe through Obsidian, Books, Lapis Lazuli, and the Enchanting Table
+- [x] Split Obsidian, renewable Sugar Cane and Books, and Lapis Lazuli into parallel preparation paths
+- [x] Provide one Leather so the first Book never requires killing a protected breeding animal
+- [x] Rejoin all three material paths before crafting the Enchanting Table
+- [x] Detect the first successful enchantment with the exact Vanilla advancement criterion
+- [x] Explain level requirements separately from the one-to-three levels and Lapis actually consumed
+- [x] Add compact recipe guides for Paper and a Book, the Enchanting Table, and its original target-version interface
+- [x] Explain Cows and Horses as common Leather sources while preserving the final breeding pair
+- [x] Reward the preparation and first enchantment with practical materials and 25 total XP points
+- [ ] Confirm Water converts Lava sources to Obsidian and flowing Lava to Cobblestone as described
+- [ ] Confirm the Sugar Cane, Obsidian, Lapis Lazuli, Book, and Enchanting Table item tasks in survival mode
+- [ ] Confirm the first enchantment completes automatically only after an item is enchanted
+- [ ] Inspect the complete three-way branch in German and English
+- [x] Add the Bookshelf expansion and explain the one-block air gap, 15-shelf maximum, and level-30 offers
+- [ ] Confirm the Bookshelf recipe, 15-item threshold, layout guide, and level-30 offer in survival mode
+- [x] Add an optional safe mob-drop branch covering common hostile-mob drops, including Bones and their Bone Meal use
+- [x] Connect the hostile-mob branch back to the existing peaceful Composter route
+- [ ] Confirm all preparation filters, four drop tasks, recipe images, and both chapter links in survival mode
+- [ ] Complete the Skeleton-to-Bone-Meal path once in German and inspect it once in English
+
+## 0.5.0 — Nether Preparation and First Visit
+
+### Safe portal preparation in the Overworld
+
+- [x] Unlock from the first successful enchantment without requiring the optional 15-Bookshelf expansion or mob-drop paths
+- [x] Explain the Nether's lack of normal daytime, evaporating placed Water, and dangerous Bed behaviour before entry
+- [x] Choose a portal site with clear access, keeping the immediate ignition area free of flammable blocks until activation succeeds
+- [x] Collect Flint from Gravel without standing beneath falling blocks
+- [x] Craft Flint and Steel with an exact target-version recipe guide and refund the Iron Ingot
+- [x] Require ten ordinary Obsidian and distinguish unusable Crying Obsidian
+- [x] Build an unlit minimum 4 × 5 frame with a 2 × 3 opening and optional corners
+- [x] Illustrate the unlit frame and its activated state with matching authentic in-world screenshots
+- [ ] Confirm the Flint, Flint and Steel, and ten-Obsidian item tasks in survival mode
+- [ ] Confirm all five recipe and portal images plus the chapter link in German and English
+- [x] Build and inspect both the unlit and activated frame at a safe Overworld site
+
+### Planned 0.5.0 continuations
+
+- [x] Prepare Nether-specific equipment, including one worn piece of Gold Armour
+- [x] Light the portal only after the equipment check and keep the learner outside
+- [x] Secure the Overworld side and enter only after a final checklist
+- [x] Secure and mark the Nether-side portal before exploring
+- [x] Teach the first short Nether scouting route, Piglin behaviour, Ghasts, fire, Lava, and safe retreat
+- [x] Return through the original portal with the route intact
+
+### What to Do in the Nether chapter foundation
+
+- [x] Separate completed Nether preparation from later activities in a dedicated ninth bilingual chapter
+- [x] Preserve the existing Piglin-barter quest, task, and reward IDs while moving the branch
+- [x] Add a cross-chapter navigation link after the first successful marked return
+- [x] Explain that an adult ordinary Piglin exchanges one Gold Ingot for one random result without a trading menu
+- [x] Keep Gold Armour equipped and use a manual completion check instead of the unsafe no-Gold-Armour Vanilla advancement condition
+- [x] Require a level place, Cobblestone cover, and an intact marked retreat before the first barter
+- [x] Distinguish adult Piglins from babies, Piglin Brutes, and Zombified Piglins as trading partners
+- [x] Illustrate the four Piglin variants with exact target-version textures and translucent rejection marks
+- [x] Return the first Gold Ingot after a completed barter without making the optional branch gate later progress
+- [ ] Complete one safe barter in survival mode and inspect both languages
+- [x] Add a safe first-resources branch without requiring one particular Nether biome
+- [x] Add a prepared Nether Fortress branch for Blazes, Blaze Rods, and Nether Wart
+- [x] Arrange Piglin barter, first resources, and Nether Fortress as three visibly parallel branches
+- [x] Illustrate the Fortress silhouette, its three principal enemies, and a Blaze Spawner with exact target-version assets
+- [x] Add a separate advanced optional Bastion Remnant branch with explicit Piglin Brute and guarded-container rules
+
+## 0.6.0 — Brewing and Potions
+
+### First complete brewing sequence
+
+- [x] Unlock only after the safe Nether Fortress return, without requiring the optional Bastion branch
+- [x] Add a diamond-shaped map link from the Fortress return into the new chapter
+- [x] Preserve exactly one Blaze Rod for the Brewing Stand and process the other into two Blaze Powder
+- [x] Explain Blaze Powder separately as Brewing Stand fuel and as a potion ingredient
+- [x] Craft and place a Brewing Stand with an exact target-version recipe guide using 3D block models
+- [x] Smelt Glass when needed and craft three reusable Glass Bottles with an exact recipe guide
+- [x] Fill three Water Bottles in the Overworld and place all three into the Brewing Stand
+- [x] Brew three Awkward Potions from Nether Wart and detect the first completed brew automatically
+- [x] Brew and drink the first Potion of Strength while explaining its limits
+- [x] Explain Redstone duration, Glowstone strength, and the later Magma-Cream route to Fire Resistance
+- [x] Add exact Minecraft 26.1.2 recipe and Brewing Stand interface images for every new visual step
+- [ ] Confirm the chapter unlocks after the Fortress return but not through the Bastion path
+- [x] Confirm the Blaze Powder, Brewing Stand, Glass Bottle, and first-brew tasks in survival mode
+- [ ] Inspect all five new guide images in English after the completed German review
+- [x] Complete the full first brewing sequence once in survival mode
+
+### Optional Fire Resistance extension
+
+- [x] Keep the branch completely optional and explain that a Potion never replaces ordinary Nether safety
+- [x] Accept Magma Cream from either its shapeless Slimeball-and-Blaze-Powder recipe or a suitable Magma Cube drop
+- [x] Explain Magma Cube splitting, unreliable drops, and a controlled retreat before combat
+- [x] Brew up to three three-minute Potions of Fire Resistance from Awkward Potions and one Magma Cream
+- [x] Use the earned Redstone Dust to extend Fire Resistance from three to eight minutes
+- [x] Warn against deliberate Lava testing and explain the safe response to an accidental fall
+- [x] Add exact recipe and Brewing Stand images for Magma Cream, Fire Resistance, and its extension
+- [ ] Confirm Magma Cream detection and both manual brewing checks in survival mode
+- [ ] Inspect all three new images in German and English
+
+## 0.7.0 — Eyes of Ender and the Stronghold
+
+### Preparing the Eye supply
+
+- [x] Unlock directly from the completed first Strength sequence without requiring optional Fire Resistance
+- [x] Separate Ender Pearl and Blaze Powder gathering into parallel preparation branches
+- [x] Explain safe Enderman shelter combat, random Piglin bartering, and the experienced-Cleric trade as alternative Pearl sources
+- [x] Warn that thrown Ender Pearls deal two and a half hearts of damage and can rarely spawn an Endermite
+- [x] Require sixteen Ender Pearls and sixteen Blaze Powder before crafting sixteen Eyes of Ender
+- [x] Add an exact Minecraft 26.1.2 shapeless recipe guide using the original item textures
+- [x] Explain the twelve portal frames, the twenty-percent Eye break chance, and the rule to pause searching below twelve remaining Eyes
+- [x] Reward two additional Eyes as a search reserve only after the full preparation task is complete
+- [ ] Confirm all three sixteen-item thresholds and reward quantities in survival mode
+- [ ] Inspect the chapter map, recipe image, and full text in German and English
+
+### Planned 0.7.0 continuation
+
+- [x] Prepare a complete Overworld expedition loadout before throwing the first Eye
+- [x] Teach controlled Eye throws, recovery, route notes, and a safe return threshold
+- [x] Locate the Stronghold without unsafe straight-down digging
+- [x] Illustrate rising, forward-leading, and downward-diving Eyes with a language-neutral guide made from exact target-version textures
+- [x] Detect the first Stronghold entry with the exact Vanilla advancement criterion
+- [x] Require a secured entrance, recorded depth, and a successful return to the surface before exploration
+- [x] Split controlled Stronghold exploration into a separate twelfth bilingual chapter
+- [x] Teach a right-wall Torch rule while explaining why loops still require coordinates and junction markers
+- [x] Explain that Stronghold Iron Doors require a short Redstone signal, show the nearby Stone Button, and require two spare Buttons for the return route
+- [x] Add a combined exact-texture guide for the shapeless Stone Button recipe and an Iron Door in its Stronghold wall
+- [x] Explain ordinary dark-room enemies separately from visually indistinguishable infested blocks and Silverfish
+- [x] Keep Stronghold Libraries optional because generation can omit or truncate them
+- [x] Identify the portal room through twelve frames, Lava, and its Silverfish Spawner
+- [x] Secure a retreat, destroy the Spawner, light the room, and control reachable Lava before approaching the frames
+- [x] Count existing and missing Eyes across all twelve frames without inserting any
+- [x] Add exact-texture guides for Silverfish risk, the top-down portal-room arrangement, and empty versus filled frames
+- [x] Return home with the frame count and Eyes stored together before activation
+- [x] Activate the End Portal only after a separate End-expedition checklist
+- [ ] Inspect the Stronghold chapter layout and all three new images in German and English
+- [ ] Complete the marked labyrinth route, Spawner removal, twelve-frame count, and home return in survival mode
+
+## 0.8.0 — Preparing the End Expedition
+
+### Safe activation without entry
+
+- [x] Continue from the completed Stronghold return inside the existing Stronghold chapter
+- [x] Explain that safe return from the End requires defeating the Dragon and distinguish death from a normal return route
+- [x] Explain the Void, exploding Beds, usable Water, Enderman eye contact, and the optional Carved Pumpkin
+- [x] Teach the exact Bow and Arrow recipes and require a first 32-Arrow reserve
+- [x] Reward another 32 Arrows only after the learner prepares the first half personally
+- [x] Require an Iron-or-better Sword and Pickaxe, Shield, Water Bucket, 64 Cobblestone, and 16 cooked foods
+- [x] Require a checked full Iron-or-better Armour set without forcing a long Diamond grind
+- [x] Establish a slept-in Bed and reserve Chest in the Overworld Stronghold retreat room
+- [x] Return over the known marked route and recheck all equipment before touching a frame
+- [x] Remove only the temporary three-by-three centre cover and recount the empty frames
+- [x] Insert the exact required Eyes from a safe outside position and remain outside the active portal
+- [x] Add exact-texture guides for Bow and Arrow crafting and the final Eye placement
+- [ ] Confirm the Bow, 32-Arrow, equipment, block, and food tasks in survival mode
+- [ ] Inspect the extended Stronghold chapter layout and both new guide images in German and English
+- [ ] Activate the portal from outside the frame and confirm that no accidental entry occurs
+- [x] Enter the End only after a separate arrival and Dragon-fight plan
+
+## Pre-1.0 Overworld expansion
+
+The beginner playtest showed that practical Overworld exploration needs its own teaching space before the later End journey. The detailed sequencing, deferred topics, and acceptance criteria live in [Overworld-Roadmap.md](Overworld-Roadmap.md).
+
+- [x] Define a separate, non-gating `What to Do in the Overworld?` curriculum
+- [x] Add an exact-texture visual overview of the four common hostile mobs
+- [x] Teach safe excursion preparation and a tested return routine
+- [x] Teach Boat crafting, controls, recovery, and a short practice trip
+- [x] Introduce Villages, Villagers, professions, workstations, and one simple trade
+- [x] Explain Village safety, Iron Golems, Beds, Bells, farms, and respectful use
+- [x] Return home deliberately and record the Village for a later visit
+- [ ] Complete the entire chapter and both-language visual review in survival mode
+
+## 0.9.0 — The End
+
+### Controlled arrival
+
+- [x] Start a dedicated End chapter large enough to continue through Crystals, the Dragon, return, and later outer-island travel
+- [x] Prepare the first ten seconds before entry with a fixed hotbar and stand-still, Sneak, look-down routine
+- [x] Detect the first real End entry through the exact Vanilla entered-End advancement criterion
+- [x] Explain both an End-Stone-enclosed platform and a platform floating beside the main island
+- [x] Teach a diagonal staircase from an enclosed platform and a crouched two-wide bridge from a floating platform
+- [x] Add a language-neutral top-down arrival guide made from exact Minecraft 26.1.2 block textures
+- [x] Establish a Water retreat on safe End Stone without presenting it as protection from the Dragon or Void
+- [x] Add an optional three-by-three End Stone roof with two-block clearance as a dry Enderman retreat
+- [x] Show its safe centre and exact clearance in a language-neutral guide made from original target-version assets
+- [x] Identify End Crystals, healing beams, Iron Bar cages, Dragon's Breath, the inactive Bedrock exit, and avoidable Endermen before combat
+- [ ] Confirm the entered-End advancement task in survival mode
+- [ ] Inspect the End chapter layout and arrival image in German and English
+- [ ] Complete both arrival responses in controlled test worlds
+- [ ] Build the optional shelter and confirm an Enderman cannot reach the player at its centre
+- [x] Continue with a staged Crystal-removal plan before teaching direct Dragon attacks
+
+### Staged Crystal removal
+
+- [x] Destroy exposed End Crystals individually with fully drawn Bow shots from safe ground
+- [x] Separate every shot with movement, hazard checks, and recovery instead of encouraging rapid fire
+- [x] Require 64 End Stone for Dragon-resistant approaches to the caged Crystals
+- [x] Open one cage side from an attached staircase, descend, and only then shoot from a safe distance
+- [x] Verify all ten pillar tops and the absence of healing beams before regrouping
+- [x] Give exposed Crystals and cages separate language-neutral guides made from exact Minecraft 26.1.2 textures
+- [ ] Confirm the 64-End-Stone task and both manual completion checks in survival mode
+- [ ] Inspect the Crystal guide and full lesson text in German and English
+- [ ] Remove every Crystal once using the staged route and confirm that 16 replacement Arrows are granted
+- [x] Continue with the flying and perched Dragon-fight phases
+
+### Ender Dragon fight
+
+- [x] Teach fully drawn Bow shots from broad inner ground, leading the moving Dragon, and reassessing after every shot
+- [x] Separate Dragon's Breath avoidance, Enderman gaze control, and sideways dodging from the act of aiming
+- [x] Teach that Arrows are ineffective while the Dragon is perched and approach from behind for recovered jumping strikes beneath its tail instead of entering the wing area
+- [x] Require a controlled retreat from the Bedrock centre as soon as the Dragon takes off
+- [x] Explicitly exclude explosive Bed tactics from the beginner route
+- [x] Detect the first real Dragon victory through the exact Vanilla killed-Dragon advancement criterion
+- [x] Add separate language-neutral flight and perched-phase guides made from exact Minecraft 26.1.2 textures
+- [ ] Confirm both manual phase checks and the killed-Dragon advancement task in survival mode
+- [ ] Inspect the two Dragon-fight guides and full lesson text in German and English
+- [ ] Complete the full Crystal-to-Dragon sequence without using a Bed explosion
+- [x] Continue with the opened exit, Dragon Egg, and safe Overworld return
+
+### Victory and return
+
+- [x] Separate post-fight recovery and experience collection from entering the newly opened exit portal
+- [x] Identify the exit surface and unique Dragon Egg before allowing the player to choose what comes next
+- [x] Add the Dragon Egg as a fully optional side branch that never gates the return
+- [x] Teach the Torch retrieval method and detect the collected Egg through its exact Vanilla advancement criterion
+- [x] Explain the End Poem, skippable credits, retained inventory and experience, and the return to a valid respawn point or world spawn
+- [x] Add a top-down exit guide and a three-step Egg guide made from exact Minecraft 26.1.2 textures and the target-version Egg model silhouette
+- [ ] Inspect the post-victory layout, both guide images, and all text in German and English
+- [ ] Collect the Dragon Egg once and confirm its automatic advancement task
+- [ ] Return once with and once without the optional Egg and confirm the manual completion flow
+- [x] Continue with a deliberate second End visit and the route to the outer islands
+
+### Outer-island arrival
+
+- [x] Move every lesson from the second End visit onward into a dedicated `What to Do in the End?` chapter linked from the safe first return
+- [x] Treat the outer islands as a separate expedition after the first safe return instead of extending the Dragon trip indefinitely
+- [x] Require four Ender Pearls for outward travel, return, and two reserves plus 64 End Stone for safe access work
+- [x] Reuse the secured Stronghold, arrival platform, and main-island landmarks during the second End entry
+- [x] Identify the elevated End Gateway and require a crouched staircase, standing area, and guarded edges before throwing
+- [x] Detect the first real Gateway transfer through the exact Vanilla entered-End-Gateway advancement criterion
+- [x] Secure the outer-island arrival before exploration, visibly mark the return Gateway, and record its coordinates
+- [x] Add separate access and arrival guides made from exact Minecraft 26.1.2 textures and align every structure, route, and marker to a shared ground level
+- [ ] Confirm all preparation item tasks and manual safety checks in survival mode
+- [ ] Inspect the Gateway access, arrival images, and full lesson text in German and English
+- [ ] Complete an outward and return Gateway transfer while retaining at least one reserve Pearl
+- [x] Teach safe Chorus Fruit and Chorus Flower harvesting plus one controlled teleport test
+- [x] Teach a two-wide, marked island crossing and require a successful return test before travelling farther
+- [x] Find the first End City systematically, identify its exact-material silhouette, and stop outside until its hazards are taught
+- [x] Prepare a covered staging point with Milk, Water, a Shield, and spare End Stone before entering the city
+- [x] Teach Shulker identification, homing-bullet responses, and Levitation recovery without requiring a deliberate hit
+- [x] Enter one ground-level End City room, handle one Shulker from cover, and return to the staging point
+- [x] Secure and test one tower level at a time with marked covered landings
+- [x] Find and secure one ordinary End City loot room without relying on a particular generated city or chest item
+- [x] Return the first chest contents to the outside staging point before continuing upwards
+- [x] Collect two Shulker Shells through controlled encounters without assuming a drop from every Shulker
+- [x] Craft and safely test the first Shulker Box with an exact-model recipe guide
+- [x] Locate an End Ship and secure a tested ship-facing city position without starting the Void crossing
+- [x] Build and test a fully enclosed two-wide route from the secured city position to the End Ship
+- [x] Board one enclosed ship space and secure the guarded Elytra room before touching the Item Frame
+- [x] Collect the Elytra automatically, keep the Chestplate equipped, and pack the wings without a first flight
+- [x] Retrace the city and Gateway route and return the Elytra safely to the Overworld
+
+### Elytra flight training
+
+- [x] Move the Elytra practice sequence into a dedicated chapter without regenerating existing quest IDs
+- [x] Build a four-block-high guarded Elytra platform over a wide and long unobstructed water landing
+- [x] Complete the first unpowered glide and three repeat glides before introducing propulsion
+- [x] Teach the shapeless three-Rocket recipe with one Paper, one Gunpowder, and no explosive Firework Star
+- [x] Apply exactly one short Rocket boost during an established glide and finish in water
+- [x] Teach Elytra durability, Phantom Membrane repair, Unbreaking, Mending, and safe Chestplate handling
+- [x] Prepare a surveyed 250-to-500-block route with coordinates, emergency landings, and a protected return reserve
+- [x] Practise ending a flight early and restoring armour on safe ground
+- [x] Complete a planned waypoint landing and return flight as the end of the guided course
+- [ ] Inspect both Elytra guides and the complete practice sequence in German and English
+- [ ] Complete the unpowered, one-Rocket, abort, and planned return-flight exercises in survival mode
+
+### Course completion and independent exploration
+
+- [x] Add a final `And Now?` chapter that unlocks after the planned return flight
+- [x] State clearly that the guided course is complete and the player chooses what comes next
+- [x] Keep every exploration card optional and prevent it from gating another lesson
+- [x] Cover Desert Pyramids, Jungle Temples, Trail Ruins, Shipwrecks, Ocean Ruins, Buried Treasure, and Ocean Monuments
+- [x] Cover Pillager Outposts, Woodland Mansions, Trial Chambers, the Ancient City, and the Warden
+- [x] Mention the Wither, Dragon rematches, building, Redstone, farms, exploration, advancements, and multiplayer as possible personal goals
+- [ ] Inspect the final chapter layout and all optional cards in German and English
+
+## 0.9.1 — Quest Book Onboarding and Progressive Navigation
+
+### First contact with the quest book
+
+- [x] Add a dedicated Welcome chapter with separate, compact information quests before movement or survival
+- [x] Explain the quest map, quest windows, dependency lines, automatic tasks, manual checkmarks, required progression, optional branches, completed states, and unclaimed rewards
+- [x] Explain that item tasks normally inspect the inventory and do not consume items unless a lesson states otherwise
+- [x] Explain how to click and claim item or experience rewards and how to recognise an unclaimed reward
+- [x] Explain how to close the book, reopen it, switch chapters, and move around the map
+- [x] Keep every onboarding instruction in `en_us` and `de_de` without assuming previous modpack experience
+- [x] Require every introduction checkmark before revealing `First Steps`
+- [x] Avoid the literal paragraph-sign key label because FTB interprets it as a formatting marker; describe the physical key instead
+- [x] Pause ordinary single-player worlds while the quest book is open and explain that multiplayer and LAN worlds continue running
+- [ ] Inspect the complete introduction and confirm the most relevant available quest is easy to find in both languages
+
+### Reliable first opening
+
+- [x] Give each player one `ftbquests:book` exactly once on their first entry without relying on KubeJS
+- [x] Use the narrowly scoped Initially mod and limit its configuration to one Quest Book in hotbar slot 8
+- [ ] Confirm that right-clicking the Quest Book opens First Torch directly and that the book remains usable after death according to the chosen death behaviour
+- [x] Document the built-in fallback recipe: one Book plus one item from the conventional Stone tag in a shapeless recipe
+- [x] Explain the alternative key binding under Options → Controls → Key Binds → FTB Quests → Quests
+- [x] Mention `§`, below Escape and left of `1` on the project owner's keyboard, as a convenient example while telling players to choose any free key on their own layout
+- [x] Do not overwrite an existing player's controls or force a layout-specific key code
+- [ ] Test first join, repeated join, death, a full inventory, and multiplayer so the book is neither duplicated nor lost unexpectedly
+
+### Progressive chapter visibility
+
+- [x] Hide guided chapter quests until their dependencies are complete by using FTB Quests 26.1.2.7's `hide_quest_until_deps_complete` chapter property
+- [x] Keep `Welcome` visible from the beginning, reveal `First Steps` after onboarding, and show each later guided chapter only when its first lesson becomes startable
+- [x] Reveal optional activity chapters only from their own prerequisites so they do not expose a later required destination
+- [x] Add validation for the visibility property while preserving the established dependency chain from `First Steps` through `And Now?`
+- [ ] Confirm the initial chapter list, every chapter reveal, cross-chapter navigation links, and search behaviour in a fresh survival world
+- [ ] Confirm the visibility change does not hide already completed chapters or damage progress in an existing 0.9.0 world
+- [ ] Record before-and-after screenshots of the chapter list at the start, after the first safe morning, before the Nether, and after course completion
+
+## 0.10.0 — Redstone Foundations
+
+- [x] Offer the optional Redstone branch after Ready for the Depths, before the first Diamond find; retain sequential follow-up chapters and keep the main course independent
+- [x] In-game acceptance of the earlier mining-preparation Redstone reveal (user-confirmed)
+
+Implementation target: native 0.13.0-alpha.1; retained pack 0.9.1 remains unchanged. This content block is not a separate published release yet.
+
+- [x] Add a bilingual practical chapter that unlocks after the guided course and remains optional
+- [x] Introduce Redstone Dust through a Lever-controlled Redstone Lamp before combining several components
+- [x] Teach buttons, Levers, Pressure Plates, signal strength, the fifteen-block range, and visible powered versus unpowered states
+- [x] In-game acceptance: six introductory lessons, 19/20 Dust, component possession, switched Lamp, 15/16-Dust boundary, Button/Pressure Plate comparison, XP claims and trophy (user-confirmed)
+- [x] Teach Repeaters for extending signals and creating deliberate delay
+- [x] Teach Comparators through one observable container-fill example
+- [x] In-game acceptance: eight Repeater/Comparator lessons, direction reversal, range restoration, deliberate delay, single-Chest 0/1/2 output, two rewards and trophies (user-confirmed)
+- [x] Teach Pistons, Sticky Pistons, Observers, and their direction before using them in a machine
+- [x] In-game acceptance: eight Piston/Observer lessons, push versus pull, orientation, observed-block changes, stable versus pulsed signals, XP and trophies (user-confirmed 2026-09-09)
+- [x] Implement small isolated exercises followed by a safe automatic Iron Door and a Comparator status display
+- [x] In-game acceptance: automatic door materials, both travel directions, closing, troubleshooting, XP and trophy (user-confirmed 2026-09-09 with Pistons and Observers)
+- [x] Explain common failure cases such as wrong component direction, missing support blocks, unintended pulses, and machines left running
+- [ ] Use exact Minecraft 26.1.2 textures and models for every circuit guide and verify each circuit in survival mode
+  - [x] Add an original-texture top-down Observer layout with watching/output face legend and bilingual caption
+  - [x] In-game acceptance: Observer layout readability, correct orientation and removal/replacement pulses (user-confirmed)
+  - [x] Add top-down direction/read/push plans to the existing Repeater, Comparator and Piston chapters
+  - [x] In-game acceptance: three new plans, bilingual legends, orientation and readable half-pane presentation (user-confirmed)
+  - [x] Add Repeater range/delay and two-sided Iron Door schematic guides with bilingual legends
+  - [x] In-game acceptance: condensed Dust ranges, delay comparison and plate/door/plate diagram (user-confirmed)
+  - [x] Add short-wire on/off, 15/16-Dust boundary and normal/sticky Piston settled-state comparisons
+  - [x] In-game acceptance: the three new A/B comparisons and their captions (user-confirmed)
+  - [x] Add input behaviour, Comparator 0/64/128 contents and Observer pulse state comparisons with original Lamp textures and bilingual legends
+  - [x] In-game acceptance: input, container-state and pulse comparisons at half-pane width (user-confirmed)
+  - [x] Replace component-letter placeholders throughout existing Redstone diagrams with original item/model icons and connected wire textures; update both caption languages
+  - [x] In-game acceptance: revised component icons, wire visibility and counted wire sections across all eight affected diagrams (user-confirmed)
+  - [x] Cover every practical circuit card with an original-asset build/state illustration, reusing matching layouts on four follow-up cards; add a coverage regression
+  - [x] In-game acceptance: reused Comparator/Observer/Door illustrations and the Door site's next-step preview caption (user-confirmed)
+
+## 0.11.0 — Creature and Drop Field Guide
+
+Implementation target remains native 0.13.0-alpha.1. The initial three-chapter batch covers twelve familiar creatures in optional reference cards after the course introduction. Redstone circuit illustrations remain an explicit 0.10.0 follow-up, not completed by this content work.
+
+- [x] Implement initial bilingual farm-animal, common Overworld-monster and Nether-creature reference chapters, with independently readable cards and book-only trophies
+- [x] Check the initial twelve ordinary drop summaries against target 26.1.2 entity loot tables and distinguish the listed special conditions
+- [x] In-game acceptance: initial twelve reading cards, independent selection, both languages, trophy eligibility and restart persistence (user-confirmed 2026-09-09)
+
+- [x] Rename Farm Animals to Animals and add Wolf/dog companion, Cat, Horse, Camel and Axolotl reference cards; verify target-version availability and ordinary loot
+- [x] In-game acceptance: expanded nine-card animal grid, new care text in both languages, preserved old readings and updated trophy eligibility (user-confirmed 2026-09-09; 17 reference cards)
+
+- [x] Implement three more four-card reference chapters for End/approach, aquatic life and special encounters (29 cards total)
+- [x] Add requested Witch, Breeze, Bogged, Creaking and Goat reading cards; explain Trial Chambers and Pale Garden context without combat requirements (34 reference cards total)
+- [x] In-game acceptance: five requested cards across Animals, Overworld monsters and Trial Chambers/Pale Garden; expanded trophies, preserved readings and Turtle Scute icon (user-confirmed 2026-09-09)
+- [x] Fix the Turtle reference icon to the target-version Turtle Scute item ID instead of the obsolete scute ID
+- [x] Add Rabbit to Animals with target-verified meat, Hide and rare Foot drops
+- [x] In-game acceptance: Rabbit card and extended Animals trophy (user's standing acceptance of delivered batches)
+- [x] In-game acceptance: twelve new cards, independent reading, translated safety references, three trophies and restart persistence (user's standing acceptance of delivered batches)
+
+- [x] Add bilingual optional reference chapters separate from the guided lesson sequence
+- [x] Group the initial selection by animals, common hostile mobs, Nether mobs, End/approach, aquatic life and special encounters
+- [x] Give each entry a compact pattern: habitat, behaviour, main danger, common drops, conditional or rare drops, safe approach, and practical use
+- [ ] Distinguish guaranteed, chance-based, Looting-affected, player-kill-only, transformation-based, and environment-created drops
+  - [x] Review all 35 current bilingual creature cards against documented target loot evidence; ordinary, chance, player-credit and non-death sources remain distinct
+- [x] Link current creature-reference cards to related existing safety/course lessons; retain concise local warnings
+  - [x] Add bilingual, exact-title reading pointers to the twelve End, aquatic and special-encounter cards; broader reference audit remains open
+  - [x] In-game discovery of the updated existing reference chapters (user located them in the archive)
+  - [x] Make twelve reading pointers clickable through stable quest IDs, with session-only nested return navigation and scroll restoration
+  - [x] In-game acceptance: clickable references, archived destinations, return scroll position and disabled unavailable targets (user-confirmed)
+  - [x] Extend clickable references to Animals, Overworld monsters and Nether creatures (20 additional cards)
+  - [x] In-game acceptance: reference links in Animals, Overworld monsters and Nether creatures (user-confirmed)
+  - [x] Add related safety/Pumpkin links to the three Trial Chambers/Pale Garden cards
+- [x] Keep reference checkmarks optional and prevent every field-guide card from gating another quest
+- [ ] Validate all drop facts against the targeted Minecraft version and avoid presenting approximate rates as exact
+  - [x] Extend target-archive regression checks for ordinary animal/Overworld/Nether base counts, conditional meat cooking, Zombie rare-drop gates and Frog-dependent Magma Cube outputs
+- [x] Start with the creatures already used by the course, then expand by dimension in reviewable batches
+
+## 0.12.0 — Discoverable Secrets and Unusual Mechanics
+
+First implementation batch inside native 0.13.0-alpha.1: three optional three-card chapters for block transformations, harmless name effects and Bee Mechanics. At the user's revised request, the creature-reference Bee card and Bee Mechanics chapter are separate again, using their original IDs. Older creature-reference cross-links and Redstone illustrations remain separate open items.
+
+- [x] Implement the first nine bilingual cards with independent reading tasks and book-only trophies
+- [x] In-game acceptance: nine mechanics cards separate from the Bee creature reference, exact name spelling, safe optional experiments, three mechanics trophies and persistence (user-confirmed 2026-09-09)
+- [x] Implement three discovery-reference chapters: archaeology, music discs and Zombie Villager curing, with bilingual reading cards and independent trophies
+- [x] In-game acceptance: nine discovery cards, all three chapter maps/trophies, optional-only completion and persistence (user-confirmed 2026-09-09)
+- [x] Order Archaeology and Zombie Villager curing as separate three-step reading chains; add an authentic normal/suspicious Sand and Gravel comparison
+- [x] In-game acceptance: sequential arrows and confirmation gates in both chains, archaeology comparison/caption and preserved existing readings (user-confirmed 2026-09-09)
+- [x] Add three ordered optional reference chapters for Cauldrons, Pumpkin interactions and Respawn Anchor safety, with nine bilingual readings and independent book trophies
+- [x] In-game acceptance: Cauldron and Respawn Anchor chapters (user-confirmed 2026-09-09)
+- [x] Reorder Pumpkin lessons to carving, headgear, lantern and add the owner's original pumpkin-view screenshot with HUD cleanup
+- [x] In-game acceptance: reordered Pumpkin chain and original screenshot (user accepted)
+
+- [x] Add a bilingual optional reference chapter for useful mechanics that ordinary play rarely explains clearly (first three chapters)
+- [x] Cover selected transformation mechanics, unusual item interactions, name-dependent behaviours, archaeology rules, music-disc conditions, bee and pollination details, Villager curing, and other high-value discoveries
+- [x] Label current mechanics readings as practical reference or optional discovery; appearance/name and music discoveries remain separate optional chapters
+- [x] Give each card a short trigger, observable result, danger note where needed, and one safe experiment
+  - [x] Audit all 27 current cards in both languages; ordered prose may express trigger/result without literal headings, and safe reading comparisons replace hazardous experiments
+  - [x] Add illustration-only archaeology observation and non-activating Anchor comparisons; dangerous experiments remain explicitly unnecessary
+  - [x] In-game acceptance: mechanics category cues and the four added safe reading exercises (user-confirmed)
+- [x] Cross-link the current mechanics reference cards to related creatures, farming and existing course lessons
+  - [x] Link Block Transformations to existing tool/water/bottle lessons and Special Names to animal reference cards
+  - [x] In-game acceptance: nine links across Trial Chambers/Pale Garden, Block Transformations and Special Names (user-confirmed)
+  - [x] Add related course/creature links to Bee Mechanics, Archaeology and Music (nine existing cards)
+  - [x] In-game acceptance: Bee Mechanics, Archaeology and Music reference links (user-confirmed)
+  - [x] Add related links to Zombie Villager Curing, Cauldrons and Pumpkins (nine existing cards)
+  - [x] In-game acceptance: curing, Cauldron and Pumpkin reference links (user-confirmed)
+  - [x] Add the final three Respawn Anchor pointers; all 62 current reference cards have reviewed stable-ID destinations
+  - [x] In-game acceptance: Respawn Anchor links and return navigation (user-confirmed)
+- [ ] Review each entry against the targeted Minecraft version and remove entries that cannot be verified reliably
+  - [x] Verify Jukebox stop/ejection and brushing completion/interruption directly in target bytecode; clarify item pickup and safe brushing resumption in both languages
+  - [x] Reading acceptance: Jukebox pickup/replay and interrupted brushing hints (user-confirmed)
+
+## 0.13.0 — Independent First Torch Mod
+
+This is the active native-mod implementation track. The 0.9.1 milestone above describes the retained FTB pack and its separate content playtest.
+
+Delivery preference (2026-09-08): continue in multi-chapter batches until all retained quests have been migrated. Keep individual chapter maps compact and wait for user acceptance of each delivered batch; do not reset existing progress.
+
+### Native implementation sequence
+
+Acceptance convention (2026-09-08): the user confirms that previous "correct/good, continue" messages mean the delivered changes were tested successfully. All delivered single-player curriculum/UI acceptance items through optional Piglin barter are therefore accepted. This does not claim an independently performed multiplayer, player-isolation or fault-injection campaign; remaining mixed test items below retain those separate checks. Future deliveries await the next user confirmation.
+
+- [x] Independent NeoForge build and validated, synchronised guide definitions
+- [x] Native chapter browser, dependency map, industrial design preview, and reading layout prototype
+- [x] Add a narrated First Torch pause-menu entry without replacing vanilla controls
+- [x] Add a dismissible native first-join introduction with world-owned per-player acknowledgement and remapped-key guidance
+- [x] In-game acceptance of first-join Open/Later/Escape, repeat join and existing saves (user-confirmed 2026-09-08)
+- [ ] Verify first-join behaviour for another player
+- [x] In-game acceptance of pause-menu entry, Escape return, resize and keyboard navigation (user-confirmed 2026-09-08)
+- [x] Validated manual/inventory task and fixed item/experience reward definitions, including bounded network transport
+- [x] Server-authoritative task evaluation and prerequisite gating (alpha session runtime)
+- [x] Add an explicitly enabled local-owner test-completion button without automatic reward payouts
+- [x] In-game acceptance of manual confirmation and inventory thresholds (user-confirmed 2026-09-08)
+- [ ] Verify multiplayer player isolation for task actions
+  - [x] Storage regression: two player UUIDs retain separate histories through updates and two reopen cycles; the same UUID remains independent in two world directories
+- [x] Versioned per-player world persistence with strict loading and native save/reopen tests
+- [x] In-game restart, death and dimension-change persistence acceptance (user-confirmed 2026-09-08)
+- [ ] Verify dedicated multiplayer persistence
+- [x] Synchronise live player progress and task quantities to the client
+- [x] Live completion badges, scrollable task cards and server-checked manual confirmation
+- [x] Add a client-only chapter-completion firework overlay with an accessibility toggle and silent reconnect baseline
+- [x] Add a title-bar trophy collection for the four initial native chapters, derived from saved quest completions without inventory items
+- [x] In-game acceptance of earned/locked trophies, both languages, small-window paging and reconnect persistence (user-confirmed 2026-09-08)
+- [x] In-game acceptance of the chapter firework, disabled effects and non-replaying chapter completions (user-confirmed 2026-09-08)
+- [x] In-game acceptance of live quantities, manual task button, reconnect and preview isolation (user-confirmed 2026-09-08)
+- [x] Server-checked whole-quest reward claiming with inventory preflight and durable no-retry reservations
+- [x] In-game reward acceptance: full inventory, exact XP/items, repeat click and restart (user-confirmed 2026-09-08)
+- [ ] Verify multiplayer player isolation for reward claims
+  - [x] Journal regression: separate player directories can claim the same quest independently across reopen; corruption in one journal does not block the other
+- [x] Migrate and test the first curriculum path before migrating the complete course (user-confirmed 2026-09-08)
+  - [x] Port the eight Welcome lessons with original identifiers, native controls and bilingual text
+  - [x] Review the native introduction in both languages, including its five-XP reward and final prerequisite gate (user-confirmed 2026-09-08)
+  - [x] Continue with First Steps objectives and progressive chapter visibility; no FTB progress import yet (user-confirmed 2026-09-08)
+    - [x] Reveal native chapters from individual quest prerequisites while retaining started/completed chapters and optional branches
+    - [x] Group completed chapters behind an expandable entry, remove chapter numbers and keep archived lessons searchable
+    - [x] Replace chapter page arrows with mouse-wheel scrolling, a draggable scrollbar and keyboard row navigation; preserve search/reference reveal and return position
+    - [x] In-game acceptance: chapter scrolling in both widths, archive expansion, scrollbar drag, keyboard navigation and reference/search return (user-confirmed)
+    - [x] In-game acceptance of progressive chapter visibility, search, saved progress and parallel shelter/tool routes (user-confirmed 2026-09-08)
+    - [x] Port mouse controls and four optional movement exercises with their original prerequisites and rewards
+    - [x] Restore original item icons for all thirteen migrated quests in map and detail views
+    - [x] Render the existing instructional images in the native reading pane (user-confirmed 2026-09-08)
+      - [x] Add optional local PNG illustrations and restore the original attack/break image with bilingual description
+      - [x] Batch-port nine additional original illustrations alongside ten material/tool/shelter lessons
+      - [x] Review all ten native illustrations together: scrolling, aspect ratio, clipping and both languages (user-confirmed 2026-09-08)
+    - [x] Review these five lessons in both languages and verify the Welcome-to-First-Steps gate in game (user-confirmed 2026-09-08)
+    - [x] Add mixed-item tag counting and migrate the planks objective without restricting wood types
+    - [x] In-game acceptance of mixed wood counts, tool/manual combinations, rewards and saved progress (user-confirmed 2026-09-08)
+    - [x] Add exact-criterion/whole-advancement objectives with server observation, gating, persistence and bounded protocol 10
+    - [x] Migrate sleeping, permanent shelter and safe morning with original IDs, rewards and Bed illustration
+    - [x] In-game acceptance of sleep detection, prior vanilla completion, closing gates, Bed image and final rewards (user-confirmed 2026-09-08)
+  - [x] Continue with a compact native food chapter before migrating protection and mining
+    - [x] Port the six food/hunger lessons with original IDs, optional eating, native food tags and original rewards
+    - [x] Include both unchanged food illustrations and a fifth quest-book trophy
+    - [x] In-game acceptance of mixed food quantities, eating detection, images, rewards and saved progress (user-reported)
+  - [x] Continue with small native ore/protection chapters (user-confirmed 2026-09-08)
+    - [x] Port retreat planning, Stone Pickaxe and parallel Iron/Copper routes as six quests with the original recipe illustration
+    - [x] In-game acceptance of the food gate, automatic ore objectives, branches, illustration and sixth trophy (user-reported)
+    - [x] Follow with five Shield and armour lessons, preserving the source's alternative Iron-or-Copper prerequisite
+    - [x] General in-game acceptance of Shield and Armour (user-reported); detailed alternate-path edge cases remain part of full parity testing
+  - [x] Port six Safe Underground lessons with original IDs, equipment thresholds, two illustrations and the ten-XP return reward
+    - [x] In-game acceptance of mixed Pickaxes/food, compact route, illustrations, manual safety exercises and eighth trophy (user-confirmed 2026-09-08)
+  - [x] Port six Iron Essentials lessons with original inventory checks, three illustrations and the five-XP recap
+    - [x] In-game acceptance of early Iron access, six-Ingot threshold, tool/Bucket branches, water-source practice and ninth trophy (user-confirmed 2026-09-08)
+  - [x] Port five Finding Home basics with original manual objectives, five XP and two Compasses
+    - [x] In-game acceptance of coordinates, safe-return gate, reward quantities and tenth trophy (user-confirmed 2026-09-08)
+    - [x] Add four Lodestone lessons with three inventory objectives, automatic binding detection and a manual return test
+    - [x] In-game acceptance of eight Chiseled Stone Bricks, Compass binding, return confirmation, two images and eleventh trophy (user-confirmed 2026-09-08)
+    - [x] Add two optional map lessons in a separate chapter with original images and inventory/manual objectives
+    - [x] In-game acceptance of map detection, Cartography Table practice, both illustrations and twelfth trophy (user-confirmed 2026-09-08)
+  - [x] Add six first-field lessons through Bread with automatic Wheat planting, original rewards and three images
+    - [x] In-game acceptance of three Seeds/Wheat, planting detection, natural-water fallback and thirteenth trophy (user-confirmed 2026-09-08)
+    - [x] Add three optional composting lessons with original seven-Slab objective, 32 Seeds, five XP and a quest-book trophy
+    - [x] In-game acceptance of Slab counting, Composter rewards, manual collection and optional navigation (user-confirmed 2026-09-08)
+    - [x] Add six animal-care lessons with original objectives, breeding detection, rewards and Fence/Gate image
+    - [x] In-game acceptance of mixed Fence/Gate and feed counts, automatic breeding, practical confirmations and fifteenth trophy (user-confirmed 2026-09-08)
+    - [x] Add five storage and organisation lessons with original objectives, rewards and a quest-book trophy
+    - [x] In-game acceptance of Chest/Sign thresholds, practical sorting, three Item Frames, Bundle, five XP and sixteenth trophy (user-confirmed 2026-09-08)
+    - [x] Add six optional excursion/Boat lessons with original equipment checks, two illustrations and five XP
+    - [x] In-game acceptance of the Lodestone/protection gate, equipment thresholds, Boat variants, practice and seventeenth trophy (user-confirmed 2026-09-08)
+    - [x] Add four optional Village exploration lessons, original overview image and five-XP location reward
+    - [x] In-game acceptance of Boat-return entry gate, practical confirmations, overview image and eighteenth trophy (user-confirmed 2026-09-08)
+    - [x] Add six optional profession, trading and return lessons with automatic first-trade detection and original artwork/rewards
+    - [x] In-game acceptance of prior/new trade detection, prerequisites, practical return, rewards and nineteenth trophy (user-confirmed 2026-09-08)
+    - [x] Add six deep-mining lessons through the Diamond Pickaxe with original thresholds and rewards
+    - [x] In-game acceptance of storage/Iron gate, equipment counts, practical tunnel checks, rewards and twentieth trophy (user-confirmed 2026-09-08)
+    - [x] Add six enchanting-foundation lessons with original objectives, three illustrations and rewards
+    - [x] In-game acceptance of parallel ingredients, first-enchantment detection, images, rewards and twenty-first trophy (user-confirmed 2026-09-08)
+    - [x] Add three Bookshelf expansion lessons with original objectives, two images and rewards
+    - [x] In-game acceptance of one/fifteen Bookshelves, manual layout check, pictures and twenty-second trophy (user-confirmed 2026-09-08)
+    - [x] Add five portal-preparation lessons with original gate, objectives, rewards and two pictures
+    - [x] In-game acceptance of Flint, ten normal Obsidian, manual unlit-frame check, images and twenty-third trophy (user-confirmed 2026-09-08)
+    - [x] Add six Gold-equipment and pre-entry lessons with original checks, rewards and three images
+    - [x] In-game acceptance of Gold/helmet, mixed equipment counts, ignition/safety confirmations and twenty-fourth trophy (user-confirmed 2026-09-08)
+    - [x] Add four first-arrival and safe-return Nether lessons with original checks and rewards
+    - [x] In-game acceptance of entry detection, separate safety checks, return rewards and twenty-fifth trophy (user-confirmed 2026-09-08)
+    - [x] Add five Piglin, Ghast and route-marker safety lessons with original objectives and rewards
+    - [x] In-game acceptance of creature guides, six-Cobblestone/three-Torch checks, placement/return confirmations and twenty-sixth trophy (user-confirmed 2026-09-08)
+    - [x] Add the shared Nether-activity introduction and three optional Piglin-barter lessons
+    - [x] In-game acceptance of Gold Ingot detection, safe exchange, random-result independence and twenty-seventh trophy (user-confirmed 2026-09-08)
+    - [x] Add four optional first-Nether-resource lessons directly from the shared introduction
+    - [x] In-game acceptance of sixteen Netherrack/four Quartz, independent branch, manual return and twenty-eighth trophy (user-confirmed 2026-09-08)
+    - [x] Add four Fortress preparation, search, retreat-point and enemy-safety lessons directly from the shared introduction
+    - [x] In-game acceptance of Fortress equipment thresholds, three practical safety checks, illustrations and twenty-ninth trophy (user-confirmed 2026-09-08)
+    - [x] Replace the Fortress schematic with the approved brightened screenshot and add five XP for discovery (user-confirmed 2026-09-08)
+    - [x] Add three Blaze Rod, Nether Wart and safe Fortress return lessons with original thresholds and rewards
+    - [x] In-game acceptance of two Rods, four Wart/four Soul Sand, manual safe return, illustrations and thirtieth trophy (user-confirmed 2026-09-08)
+    - [x] Add and optimise the owner's Nether Wart and Blaze Spawner screenshots (user-confirmed 2026-09-08)
+    - [x] Add seven brewing-foundation lessons through the first Strength Potion, with five original images and rewards
+    - [x] In-game acceptance of brewing inventory thresholds, potion retrieval detection, practical checks, five images and thirty-first trophy (user-confirmed 2026-09-08)
+    - [x] Add four optional Fire Resistance lessons with source objectives, three illustrations and five XP
+    - [x] Add six Eye-supply lessons and six safe Stronghold-search lessons as separate compact chapters
+    - [x] Batch in-game acceptance: sixteen new quests, material thresholds, Stronghold arrival, separate practical checks, five images, three trophies and original rewards (user-confirmed 2026-09-08)
+    - [x] Add sixteen Stronghold interior, portal-room safety and End-preparation quests in three compact chapters, preserving optional Library navigation
+    - [x] Integrate the owner's Iron Door and End Portal captures, mark the Door Button and retain explicit Lava-safety guidance
+    - [x] Batch in-game acceptance: sixteen quests, nine automatic inventory conditions, separate safety/respawn/activation checks, six images including owner captures, three trophies and original rewards (user-confirmed 2026-09-08)
+    - [x] Add nine End-arrival and Crystal-removal quests in two compact chapters before the Dragon fight
+    - [x] Batch in-game acceptance: nine quests, End-entry detection, 64 End Stone, separate cage confirmation, optional roof bypass, five images including the owner's arrival capture, two trophies and original rewards (user-confirmed 2026-09-08)
+    - [x] Add six Dragon fight, victory and safe-return quests, keeping Dragon Egg retrieval optional
+    - [x] In-game acceptance: six lessons, Dragon and Egg detection, optional Egg bypass, four images and chapter trophy (user-confirmed 2026-09-08)
+    - [x] Add five second-visit, Gateway access and safe outer-island arrival lessons
+    - [x] In-game acceptance: five lessons, four-Pearl/64-End-Stone thresholds, Gateway detection, separate safety checks, two images and trophy (user-confirmed 2026-09-08)
+    - [x] Add seventeen Chorus, End City, Shulker and End Ship lessons in three compact chapters with original IDs, rewards, six existing images and three trophies
+    - [x] Require a separate Milk Bucket in second-visit preparation before End entry; retain the later city reminder and explain the Overworld fallback in both languages
+    - [x] In-game acceptance of the earlier Milk Bucket check and revised preparation text (user-confirmed 2026-09-08; existing completed quests remain preserved)
+    - [ ] Batch in-game acceptance: seventeen lessons, inventory thresholds, End City detection, separate practical checks, seven image placements, original XP rewards and Elytra home return
+    - [x] Continue with the nine Elytra flight lessons and seven final independent-exploration lessons in three compact chapters
+    - [x] Batch in-game acceptance: sixteen lessons, material/Rocket thresholds, separate flight and safety confirmations, two images, three trophies, XP rewards and independent optional reading (user-confirmed 2026-09-08)
+    - [x] Migrate the seven optional mob-drop lessons without adding a main-path gate
+    - [x] Migrate the seven optional Bastion exploration lessons without adding a main-path gate
+    - [ ] Batch in-game acceptance: fourteen optional lessons, exact item groups, material thresholds, Bastion detection with separate safety checks, six image placements, two trophies and original rewards
+    - [x] Complete native coverage of all 258 retained quest IDs; remaining parity/release checks stay separate
+    - [x] Begin the 0.10.0 Redstone content block directly in the independent native mod with six optional foundation lessons
+    - [ ] Continue Redstone components and practical builds, followed by 0.11.0 and 0.12.0
+    - [x] In-game acceptance of task-group icons matching allowed items instead of repeating the quest icon (user-confirmed)
+
+The checked schema step provides data only: it does not complete tasks, grant rewards, or turn preview values into player progress.
+
+The minimal NeoForge/IntelliJ build foundation now lives beside the existing FTB-based pack. The checklist remains open until the native runtime implements the required behaviour and passes the full parity playtest.
+
+- [ ] Build a dedicated NeoForge mod that runs without FTB Quests, FTB Library, FTB Teams, FTB Filter System, FTB XMod Compat, or Initially
+  - [x] Add native Java 25 CI build/tests and finished-JAR dependency/content boundary checks with six synthetic regression cases
+  - [x] Confirm the first remote workflow succeeds (GitHub Actions run 34394261061)
+- [ ] Keep the curriculum data-driven and maintain every player-facing entry in `en_us` and `de_de`
+- [ ] Provide a native quest and reference interface with chapters, dependency lines, progressive visibility, search, guide images, tasks, manual confirmations, completion states, and claimable rewards
+- [ ] Provide a native first-join welcome flow, an accessible menu entry, a configurable key binding, and a recoverable book or equivalent in-world entry point
+- [ ] Make progress server-authoritative and support single-player, multiplayer teams, reconnects, deaths, backups, and version upgrades safely
+- [ ] Preserve the stable curriculum identifiers and design an explicit migration path for progress created by the FTB-based pack
+  - [x] Document the offline migration design, identity mapping, partial-claim conflicts, transaction safety and required source fixtures in `ProgressMigration.md`
+  - [x] Inspect the pinned local FTB Quests binary and one read-only save sample; document team storage, decimal IDs, field names and team/player reward-key distinction
+  - [x] Confirm canonical claim-key encoding and add a standalone read-only key inspector with six synthetic precision/validation tests; begin pinned FTB Teams ownership inspection
+  - [x] Audit the pinned Quests party-transition handler; document asymmetric progress/claim merging and the unresolved personal-versus-party import scope
+  - [ ] Owner decision: first importer limited to verified personal progress or also shared party progress
+  - [ ] Verify the pinned FTB save format and implement/test an explicit dry-run adapter before any apply mode
+- [ ] Match the current automatic inventory, advancement, location, and manual-check task behaviour before removing the FTB dependencies
+- [ ] Add accessibility options for text scale, contrast, keyboard navigation, reduced visual clutter, and screen-reader-friendly labels where the Minecraft UI permits them
+  - [x] Add an optional enlarged quest-browser view with shared render/input scaling, small-window limits and a persistent bilingual accessibility option
+  - [x] In-game acceptance: enlarged view including the corrected fork/join layout (user-confirmed)
+  - [x] Add an optional plain dark panel surface without decorative gradients or machining marks; preserve frames, icons and selection indicators
+  - [x] In-game acceptance: plain panels on/off, selected cards and buttons remain distinguishable, preference retained after restart (user-confirmed)
+  - [x] Announce quest availability, completion and claimable rewards before lesson text through the native button narrator in both languages
+  - [x] In-game narrator acceptance: focus open, locked, completed and reward-ready quest nodes; check English and German (user-confirmed)
+- [ ] Verify asset and library licences, keep Minecraft-derived artwork tied to the targeted game version, and publish source and migration documentation
+  - [x] Make native JAR installation the README entry point; separate retained FTB instructions and explicitly warn that FTB progress migration is not implemented
+- [ ] Ship the independent runtime only after a clean-profile parity playtest covers the complete guided route and both languages
+
+## Reference-library organisation
+
+- [x] Evaluate chapter groups or another clear visual separation between `Guided Course` and `Reference Library`
+  - Choose a separate title-bar Book/index instead of changing existing course visibility or archive behaviour
+- [x] Keep the reference library easy to reopen after course completion without crowding the beginner's initial chapter list
+- [x] Add a compact index and consistent icons only after the first field-guide and unusual-mechanics batches establish the final structure
+  - [x] In-game acceptance: Book/index visibility, scrolling and keyboard navigation, completed reference selection, Escape cancel and return to previous lesson in both languages (user-confirmed)
+  - [x] Separate references from the normal course/archive list; shorten both-language titles, use the original Bookshelf header icon and explain the library in Welcome
+  - [x] In-game acceptance: course-only chapter list/archive, Bookshelf icon, shortened library titles and Welcome hint; search/reference access remains intact (user-confirmed)
+  - [x] Refresh Welcome task/reward/opening instructions for advancement detection, early task recording, claim-all chest and pause-menu access
+  - [x] In-game reading acceptance: revised Welcome task, reward and opening cards in both languages (user-confirmed)
+- [x] Treat reference updates as versioned data maintenance whenever Minecraft changes drops, structures, or mechanics
+  - Explicit reviewed-version gate for creature/mechanics archive checks, five failure/success fixtures and documented bilingual upgrade/evidence workflow
+
+## Later milestones
+
+- CurseForge publication: native pack-version display and launcher-managed updates
+
+The Nether remains a continuation beyond the original first 48-hour playable scope.

@@ -3,7 +3,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
-$destination = Join-Path $PSScriptRoot '../overrides/resourcepacks/first_torch_guides/assets/firsttorch/textures/questpics'
+$destination = Join-Path $PSScriptRoot '../src/main/resources/assets/firsttorch/textures/questpics'
 
 # Preserve the original capture pixel-for-pixel except for a neutral instructional overlay.
 $source = Join-Path $ScreenshotDirectory '2026-09-08_17.21.05.png'

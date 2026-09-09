@@ -24,14 +24,3 @@ jobs:
           $jars = @(Get-ChildItem build/libs/firsttorch-*.jar)
           if ($jars.Count -ne 1) { throw 'Expected exactly one native mod JAR.' }
           ./tools/verify-native-jar.ps1 -JarPath $jars[0].FullName
-  validate:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v5
-      - name: Validate First Torch
-        shell: pwsh
-        run: ./tools/validate-pack.ps1
-      - name: Build import archive
-        shell: pwsh
-        run: ./tools/build-pack.ps1

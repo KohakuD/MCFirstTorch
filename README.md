@@ -14,7 +14,7 @@ First Torch is an independent NeoForge mod in active alpha development. It teach
 
 The guided course covers early survival through the Nether, End and independent exploration, with optional Redstone lessons. The separate reference library covers creatures and unusual mechanics. Native features include automatic/manual tasks, rewards, trophies, search, original-game illustrations and returnable reading links.
 
-This is not a publication-ready release. Dedicated multiplayer, full parity, progress migration and release/licensing checks remain open in the [Roadmap](docs/Roadmap.md). See also [Reference verification](docs/ReferenceVerification.md).
+This is not a publication-ready release. Dedicated multiplayer, accessibility and release/licensing checks remain open in the [Roadmap](docs/Roadmap.md). See also [Reference verification](docs/ReferenceVerification.md).
 
 ## Develop in IntelliJ IDEA
 
@@ -40,17 +40,13 @@ Output: `build/libs/firsttorch-0.13.0-alpha.1.jar`.
 4. Start a fresh test world. Open First Torch with the key directly below Escape and left of 1, or through its pause-menu entry. Remap the key in Controls if needed.
 5. Once references unlock, the Bookshelf icon opens the reference library. No physical quest-book item is needed.
 
-Illustrations and translations are included in the native JAR; no separate First Torch guide resource pack is needed. Progress belongs to the world/player, not the JAR. Installing this mod does **not** import FTB Quests progress. Replacing the old pack is not a progress migration.
+Illustrations and translations are included in the native JAR; no separate First Torch guide resource pack is needed. Progress belongs to the world/player, not the JAR.
 
-## Retained FTB pack
+## Historical FTB pack
 
-The older `0.9.1` pack remains in `manifest.json` and `overrides/` as a curriculum/migration source. Its scripts produce a **different artifact**:
+The discontinued FTB-based pack is retained for historical reference under [`archive/ftb-legacy/`](archive/ftb-legacy/). It is not part of the active build, installation process, or development workflow. First Torch does not provide and does not plan an FTB progress importer.
 
-- `tools/build-pack.ps1` → `build/First-Torch-0.9.1.zip` (FTB-based launcher pack)
-- `tools/build-quest-overlay.ps1` → FTB quest overlay, not a native mod
-- `tools/update-instance.ps1` → managed retained-pack paths, not the native JAR
-
-See [Retained pack instructions](docs/LegacyPack.md). Do not import that ZIP when intending to test the independent mod.
+The archive contains a frozen, runnable legacy pack snapshot, including its manifest, overrides, tools, and documentation. It is unsupported and must not be treated as a native release artifact.
 
 ## Development references
 
@@ -58,10 +54,9 @@ See [Retained pack instructions](docs/LegacyPack.md). Do not import that ZIP whe
 - [Curriculum principles](docs/Curriculum.md)
 - [Roadmap and acceptance status](docs/Roadmap.md)
 - [Playtest log](docs/Playtest.md)
-- [Progress migration design (not yet implemented)](docs/ProgressMigration.md)
 
 Generated builds, worlds, logs and player data do not belong in Git.
 
 ## Licence and trademarks
 
-First Torch source content uses the MIT License; see [LICENSE](LICENSE) and [NOTICE.md](NOTICE.md). Release asset/licensing review remains open in the roadmap. Minecraft is a trademark of Microsoft. This project is not affiliated with Mojang Studios, Microsoft, FTB, CurseForge, or NeoForged.
+First Torch source content uses the MIT License; see [LICENSE](LICENSE) and [NOTICE.md](NOTICE.md). Release asset/licensing review remains open in the roadmap. Minecraft is a trademark of Microsoft. This project is not affiliated with Mojang Studios, Microsoft, CurseForge, or NeoForged.

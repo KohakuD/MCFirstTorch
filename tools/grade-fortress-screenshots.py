@@ -3,7 +3,7 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "overrides/resourcepacks/first_torch_guides/assets/firsttorch/textures/questpics"
+OUT = ROOT / "src/main/resources/assets/firsttorch/textures/questpics"
 
 # Source captures are intentionally local, not distributed with the repository.
 for capture, target, gamma in [

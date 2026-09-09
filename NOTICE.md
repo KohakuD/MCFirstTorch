@@ -1,7 +1,7 @@
 # Notices
 
-First Torch contains original configuration, scripts, documentation, and quest text. It does not redistribute Minecraft or third-party mod binaries.
+First Torch contains original source code, documentation, and course text, plus guide illustrations derived from the targeted Minecraft textures, models and owner screenshots. It does not include Minecraft game JARs or third-party mod JARs. Release asset/licensing review remains open.
 
-The exported CurseForge manifest refers launchers to the official project files for FTB Quests, FTB Library, and FTB Teams. Those projects remain subject to their respective authors' licences and terms.
+The active native mod does not include or require FTB software. Historical FTB pack material is preserved separately under `archive/ftb-legacy/` and remains subject to its original third-party licences and terms.
 
-Minecraft is a trademark of Microsoft. First Torch is an independent community project and is not affiliated with Mojang Studios, Microsoft, Feed The Beast, CurseForge, or NeoForged.
+Minecraft is a trademark of Microsoft. First Torch is an independent community project and is not affiliated with Mojang Studios, Microsoft, CurseForge, or NeoForged.

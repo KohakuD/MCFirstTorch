@@ -8,7 +8,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 REFERENCE = ROOT / "tools/artwork/village_overview_reference.png"
 SOURCE = ROOT / "tools/artwork/village_overview_generated.png"
-OUTPUT = ROOT / "overrides/resourcepacks/first_torch_guides/assets/firsttorch/textures/questpics/village_overview.png"
+OUTPUT = ROOT / "src/main/resources/assets/firsttorch/textures/questpics/village_overview.png"
 OUTPUT_SIZE = (1672, 941)
 
 

@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 JAR = Path(r"D:\Minecraft\curseforge\minecraft\Install\versions\26.1.2\26.1.2.jar")
-OUT = Path(__file__).resolve().parents[1] / "overrides/resourcepacks/first_torch_guides/assets/firsttorch/textures/questpics"
+OUT = Path(__file__).resolve().parents[1] / "src/main/resources/assets/firsttorch/textures/questpics"
 W, H = 1672, 941
 
 

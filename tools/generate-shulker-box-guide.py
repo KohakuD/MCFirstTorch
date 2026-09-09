@@ -13,7 +13,7 @@ JAR = Path(os.environ.get(
     r"C:\Games\CurseForge\Minecraft\Install\versions\26.1.2\26.1.2.jar",
 ))
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "overrides/resourcepacks/first_torch_guides/assets/firsttorch/textures/questpics"
+OUT = ROOT / "src/main/resources/assets/firsttorch/textures/questpics"
 W, H = 1672, 941
 
 

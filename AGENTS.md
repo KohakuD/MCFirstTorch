@@ -29,27 +29,24 @@ The active milestone in `docs/Roadmap.md` controls scope and versioning.
 
 - Minecraft: `26.1.2`
 - Loader: NeoForge `26.1.2.84`
-- Quest system: FTB Quests `26.1.2.7`
-- FTB Quests 26.1+ uses JSON5. Do not add or restore legacy SNBT quest definitions.
+- Native runtime: `0.13.0-alpha.1`
+- Java toolchain: `25`
 - Mod JARs, launcher instances, worlds, logs, and player progress never belong in Git.
-- Prefer configuration and quest content over custom Java code. Add KubeJS only when FTB Quests cannot express the behaviour cleanly.
-- KubeJS is intentionally absent from the 0.1.x pack because its Better Advanced Tooltips dependency crashes during NeoForge startup. Reintroduce scripting only after its complete dependency chain passes a clean-profile startup test.
+- Maintain the native Java/datapack implementation; do not add FTB Quests, FTB Library, FTB Teams, KubeJS, or an FTB-progress importer.
 
 ## Workflow and verification
 
 - Keep changes focused on the requested milestone.
-- Use stable 16-character uppercase hexadecimal IDs for FTB quest objects. The first character must be `0` through `7` so the value fits FTB Quests' positive signed Java `long`; never regenerate an existing ID casually.
-- Run `pwsh ./tools/validate-pack.ps1` after pack metadata or quest changes.
-- Run `pwsh ./tools/build-pack.ps1` before handing off an installable build.
+- Preserve stable guide, quest, task, and reward IDs; never regenerate an existing ID casually.
+- Run focused Gradle tests after source or guide-data changes, and `pwsh ./tools/verify-native-jar.ps1 -JarPath <built.jar>` after a production JAR build.
+- Run `.\gradlew.bat test build` before handing off an installable build.
 - Quest images that depict Minecraft items, blocks, entities, or interfaces must use the exact textures and models from the targeted Minecraft version. Never approximate or generatively redraw them. Neutral frames, arrows, labels, and other explanatory overlays may be constructed around the original game assets.
 - In crafting guides, render placeable block ingredients and results with the consistent three-dimensional Minecraft block-model view used by the established guides. Keep these models straight and uniformly aligned. Use flat two-dimensional textures only when the illustration is genuinely a top-down plan, such as an Enchanting Table and Bookshelf layout.
-- Use `tools/update-instance.ps1` for an authorised development-profile update. Keep its managed-path allowlist narrow, create a backup before replacement, and never add saves or player settings to that allowlist.
-- For quest changes, perform a fresh-profile in-game test when possible: load a new world, open the quest book, verify both languages, complete the affected path, and restart once.
+- For guide changes, perform a fresh-profile in-game test when possible: load a new world, open First Torch, verify both languages, complete the affected path, and restart once.
 - Treat the learner's confusion as a product bug: improve the explanation or sequencing rather than assuming prior knowledge.
 
 ## Git and releases
 
-- Do not commit or push unless explicitly requested. Creating the initial repository and push is authorised by the user's project-creation request.
+- The owner has permanently authorised commits and pushes for this project. Save completed, verified work periodically; never include unrelated changes.
 - Never commit generated files under `build/`.
-- Release archives must contain only `manifest.json` and `overrides/` at their root.
-- Pin dependency file IDs for reproducible builds; version updates are deliberate changes with a validation pass.
+- Do not package archived FTB material as part of a native release.

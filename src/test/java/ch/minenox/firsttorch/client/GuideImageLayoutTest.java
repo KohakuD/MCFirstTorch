@@ -54,22 +54,7 @@ final class GuideImageLayoutTest {
                 try (var png = getClass().getResourceAsStream("/" + assetPath)) {
                     assertNotNull(png);
                     byte[] bytes = png.readAllBytes();
-                    String sourceRoot = List.of("firsttorch:textures/questpics/archaeology_comparison.png",
-                            "firsttorch:textures/questpics/observer_orientation.png",
-                            "firsttorch:textures/questpics/repeater_direction.png",
-                            "firsttorch:textures/questpics/comparator_read.png",
-                            "firsttorch:textures/questpics/piston_push.png",
-                            "firsttorch:textures/questpics/repeater_range.png",
-                            "firsttorch:textures/questpics/repeater_delay.png",
-                            "firsttorch:textures/questpics/iron_door_plan.png",
-                            "firsttorch:textures/questpics/redstone_short_line.png",
-                            "firsttorch:textures/questpics/redstone_dust_limit.png",
-                            "firsttorch:textures/questpics/piston_return.png",
-                            "firsttorch:textures/questpics/redstone_inputs.png",
-                            "firsttorch:textures/questpics/comparator_states.png",
-                            "firsttorch:textures/questpics/observer_pulse.png",
-                            "firsttorch:textures/questpics/pumpkin_view_capture.png").contains(image.resource())
-                            ? "src/main/resources/" : "overrides/resourcepacks/first_torch_guides/";
+                    String sourceRoot = "src/main/resources/";
                     assertArrayEquals(Files.readAllBytes(Path.of(System.getProperty("firsttorch.projectDir"),
                             sourceRoot + assetPath)), bytes);
                     var decoded = ImageIO.read(new java.io.ByteArrayInputStream(bytes));

@@ -12,7 +12,7 @@ JAR = Path(os.environ.get(
     "FIRST_TORCH_MINECRAFT_JAR",
     r"C:\Games\CurseForge\Minecraft\Install\versions\26.1.2\26.1.2.jar",
 ))
-OUT = Path(__file__).resolve().parents[1] / "overrides/resourcepacks/first_torch_guides/assets/firsttorch/textures/questpics"
+OUT = Path(__file__).resolve().parents[1] / "src/main/resources/assets/firsttorch/textures/questpics"
 W, H = 1672, 941
 ORANGE = (255, 145, 0, 255)
 
