@@ -1,5 +1,19 @@
 # Playtest log
 
+## 2026-09-09 — Creature reference reading pointers
+
+Verification: all 376 tests and native build pass, including exact destination-title checks in both languages. Target creature-loot verification and retained-pack validation/build pass. No live in-game test was performed for these pointers.
+
+The user accepted the reordered Pumpkin chain and original screenshot. The next focused batch adds exact-title bilingual reading pointers to twelve existing cards in the End, aquatic and special-encounter chapters. These are plain-text navigation hints, not clickable links; the chapter list includes completed chapters, while later course chapters may require progress before appearing. No quest definitions, gates, rewards or player files change in this reference batch.
+
+Pending in-game: review the pointers in all three chapters and both languages, and locate an already completed destination through the Completed group. No creature interaction or progress reset is needed.
+
+## 2026-09-09 — Pumpkin sequence and original screenshot
+
+Verification: all 375 tests and native build pass. Pixel comparison confirms that every pixel outside the two HUD masks is unchanged. Original source capture remains untouched; packaged dimensions and bilingual caption pass resource tests.
+
+The user accepted Cauldrons and Respawn Anchors and clarified the Pumpkin order: carving, wearing, then making the lantern. Existing IDs/completions are preserved while the dependency chain and bilingual transitions change. The owner's pumpkin-overlay capture is included with the hotbar/crosshair masked on black backgrounds; remaining pixels are unchanged. The user subsequently accepted this reordered chapter and screenshot in game.
+
 ## 2026-09-09 — Cauldrons, Pumpkins and Respawn Anchors
 
 Verification: 375 tests and native build pass; target mechanics verifier and retained-pack validation/build pass. Previous chapter definitions are unchanged apart from the already accepted archaeology/curing follow-up. German Anchor naming uses the original target language asset (Seelenanker). No player files were touched.

@@ -644,6 +644,8 @@ Implementation target remains native 0.13.0-alpha.1. The initial three-chapter b
 - [x] Give each entry a compact pattern: habitat, behaviour, main danger, common drops, conditional or rare drops, safe approach, and practical use
 - [ ] Distinguish guaranteed, chance-based, Looting-affected, player-kill-only, transformation-based, and environment-created drops
 - [ ] Link back to existing full safety lessons instead of duplicating their instructions
+  - [x] Add bilingual, exact-title reading pointers to the twelve End, aquatic and special-encounter cards; broader reference audit remains open
+  - [ ] In-game acceptance: reading pointers in these three existing reference chapters
 - [x] Keep reference checkmarks optional and prevent every field-guide card from gating another quest
 - [ ] Validate all drop facts against the targeted Minecraft version and avoid presenting approximate rates as exact
 - [x] Start with the creatures already used by the course, then expand by dimension in reviewable batches
@@ -659,7 +661,9 @@ First implementation batch inside native 0.13.0-alpha.1: three optional three-ca
 - [x] Order Archaeology and Zombie Villager curing as separate three-step reading chains; add an authentic normal/suspicious Sand and Gravel comparison
 - [x] In-game acceptance: sequential arrows and confirmation gates in both chains, archaeology comparison/caption and preserved existing readings (user-confirmed 2026-09-09)
 - [x] Add three ordered optional reference chapters for Cauldrons, Pumpkin interactions and Respawn Anchor safety, with nine bilingual readings and independent book trophies
-- [ ] In-game acceptance: three interaction chapter chains, clear Java-only Cauldron guidance, Anchor warnings before instructions, three trophies and preserved progress
+- [x] In-game acceptance: Cauldron and Respawn Anchor chapters (user-confirmed 2026-09-09)
+- [x] Reorder Pumpkin lessons to carving, headgear, lantern and add the owner's original pumpkin-view screenshot with HUD cleanup
+- [x] In-game acceptance: reordered Pumpkin chain and original screenshot (user accepted)
 
 - [x] Add a bilingual optional reference chapter for useful mechanics that ordinary play rarely explains clearly (first three chapters)
 - [ ] Cover selected transformation mechanics, unusual item interactions, name-dependent behaviours, archaeology rules, music-disc conditions, bee and pollination details, Villager curing, and other high-value discoveries

@@ -15,6 +15,8 @@ import org.junit.jupiter.api.Test;
 final class ItemInteractionsTest {
     private static final String INTRO = "3C3122DF5C0EA192";
     private static final List<String> CHAPTERS = List.of("771425364758697A", "7825364758697A1B", "79364758697A1B2C");
+    private static final List<String> PUMPKIN_QUESTS = List.of("51A0B0C0D0E00001", "51A0B0C0D0E00003", "51A0B0C0D0E00002");
+    private static final List<String> PUMPKIN_TASKS = List.of("61A0B0C0D0E00001", "61A0B0C0D0E00003", "61A0B0C0D0E00002");
 
     @Test void threeSeparateReadingChainsNeverGateEarlierLessons() throws Exception {
         var chapters = snapshot().guides().getFirst().chapters();
@@ -23,16 +25,18 @@ final class ItemInteractionsTest {
         for (int c = 0; c < additions.size(); c++) {
             var cards = additions.get(c).quests();
             assertEquals(3, cards.size());
+            if (c == 1) assertEquals(PUMPKIN_QUESTS, cards.stream().map(card -> card.id()).toList());
+            if (c == 1) assertEquals(PUMPKIN_TASKS, cards.stream().map(card -> card.tasks().getFirst().id()).toList());
             for (int q = 0; q < cards.size(); q++) {
                 var card = cards.get(q);
-                assertEquals("5" + c + "A0B0C0D0E0000" + (q + 1), card.id());
+                if (c != 1) assertEquals("5" + c + "A0B0C0D0E0000" + (q + 1), card.id());
                 assertEquals(List.of(q == 0 ? INTRO : cards.get(q - 1).id()), card.prerequisiteQuestIds());
                 assertEquals(0, card.position().x());
                 assertEquals(q * 2, card.position().y());
                 assertTrue(card.rewards().isEmpty());
                 assertEquals(1, card.tasks().size());
                 var task = card.tasks().getFirst();
-                assertEquals("6" + c + "A0B0C0D0E0000" + (q + 1), task.id());
+                if (c != 1) assertEquals("6" + c + "A0B0C0D0E0000" + (q + 1), task.id());
                 assertEquals(TaskDefinition.Type.MANUAL, task.type());
                 assertEquals(1, task.count());
             }
