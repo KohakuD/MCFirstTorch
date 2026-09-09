@@ -1,5 +1,21 @@
 # Playtest log
 
+## 2026-09-09 — Repeater, Comparator and Piston plans
+
+The user accepted the Observer orientation image. Added three direction/layout images to existing lessons, with bilingual legends separating schematic placeholders from original component views. Original lesson instructions, progress and rewards remain unchanged.
+
+Pending in-game: inspect the Repeater direction, Comparator reading and Piston push images at half-pane width; check direction, numbered positions and captions. If rebuilding the existing exercises, close the book before observing power, container signal or movement. Other circuit illustrations remain open.
+
+Verification: all three generated images were visually inspected. Model-top projection uses negative Z as north before clockwise rotation to east; cells touch without physical gaps. All 382 native tests/build, image packaging/dimensions/captions, retained-pack validation/build and whitespace checks passed. No in-game execution is claimed for this delivery.
+
+## 2026-09-09 — Observer orientation illustration
+
+The user accepted mechanics category cues and safe reading exercises. Added a 1672 × 941 original-asset top-down plan to the Observer watching lesson: contiguous positions 0/1/2 plus watching-face/output-face swatches A/B. Both captions distinguish explanatory arrows from actual wiring. The image was generated and visually inspected outside Minecraft; in-game readability and circuit behaviour remain pending.
+
+Pending: open the Observer watching lesson, read the half-pane image/caption and identify which face touches Cobblestone and which touches the Lamp. If the practice build is available, remove and replace block 0 with the book closed and a dark pause between changes; each change should flash the Lamp. No progression reset is needed.
+
+Verification: all 382 native tests and build passed, including packaged image dimensions, source-byte identity, bilingual caption presence and half-pane sizing. Retained-pack validation/build and whitespace checks passed. Live visual/circuit review remains pending.
+
 ## 2026-09-09 — Remaining reference audit and reading cues
 
 Reviewed the remaining fifteen creature cards and all 27 mechanics readings in both languages against documented target evidence. No further loot-data or documented-mechanics contradiction was identified. Extended target archive checks for five more ordinary item entries, Shulker Looting chance and Turtle lightning loot. Added practical/discovery labels to mechanics descriptions and safe, non-activating reading exercises for archaeology recognition and all three Anchor cards. Runtime, quest definitions and progress remain unchanged.

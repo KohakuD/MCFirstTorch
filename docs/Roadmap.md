@@ -619,6 +619,10 @@ Implementation target: native 0.13.0-alpha.1; retained pack 0.9.1 remains unchan
 - [x] In-game acceptance: automatic door materials, both travel directions, closing, troubleshooting, XP and trophy (user-confirmed 2026-09-09 with Pistons and Observers)
 - [x] Explain common failure cases such as wrong component direction, missing support blocks, unintended pulses, and machines left running
 - [ ] Use exact Minecraft 26.1.2 textures and models for every circuit guide and verify each circuit in survival mode
+  - [x] Add an original-texture top-down Observer layout with watching/output face legend and bilingual caption
+  - [x] In-game acceptance: Observer layout readability, correct orientation and removal/replacement pulses (user-confirmed)
+  - [x] Add top-down direction/read/push plans to the existing Repeater, Comparator and Piston chapters
+  - [ ] In-game acceptance: three new plans, bilingual legends, orientation and readable half-pane presentation
 
 ## 0.11.0 — Creature and Drop Field Guide
 
@@ -677,7 +681,7 @@ First implementation batch inside native 0.13.0-alpha.1: three optional three-ca
 - [x] Label current mechanics readings as practical reference or optional discovery; appearance/name and music discoveries remain separate optional chapters
 - [ ] Give each card a short trigger, observable result, danger note where needed, and one safe experiment
   - [x] Add illustration-only archaeology observation and non-activating Anchor comparisons; dangerous experiments remain explicitly unnecessary
-  - [ ] In-game acceptance: mechanics category cues and the four added safe reading exercises
+  - [x] In-game acceptance: mechanics category cues and the four added safe reading exercises (user-confirmed)
 - [x] Cross-link the current mechanics reference cards to related creatures, farming and existing course lessons
   - [x] Link Block Transformations to existing tool/water/bottle lessons and Special Names to animal reference cards
   - [x] In-game acceptance: nine links across Trial Chambers/Pale Garden, Block Transformations and Special Names (user-confirmed)

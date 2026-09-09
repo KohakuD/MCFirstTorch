@@ -42,6 +42,10 @@ NeoForge play networking synchronises validated definitions and the executing pl
 
 ## Editing quests
 
+The next artwork batch adds three top-down plans to existing Repeater direction, Comparator reading and Piston push lessons. Original target model faces supply the component views; neutral L/C/D cells stand for Lever/Chest/Dust and are explicitly described as schematic placeholders in both languages. Piston's Lever is deliberately omitted from the top view and identified above base 0 in the caption. There are 98 image placements, no new quests and no changed task/reward IDs. Reproduce using `tools/generate-redstone-plans.py --minecraft-jar <26.1.2-client.jar>`.
+
+Observer artwork starts the remaining circuit-guide work. `tools/generate-observer-guide.py --minecraft-jar <26.1.2-client.jar>` resolves the Observer cube's exact face textures and UV reversal from its target model. The plan rotates the upward face to watch west, with touching Cobblestone/Observer/Lamp cells; separate original face swatches identify eyes and output. This is a top-down plan, not an item/crafting render. One image placement is added (95 total); IDs, tasks and progress remain unchanged. Other circuit illustrations and physical verification remain open.
+
 Reference review follow-up: all 27 mechanics descriptions now begin with a bilingual practical/discovery cue. Four reading-only exercises clarify archaeology recognition and Anchor safety. The remaining fifteen creature descriptions were checked against their documented loot evidence; the archive regression now also protects their ordinary ranges, Shulker chance semantics and Turtle lightning loot. No definitions, IDs, rewards or save data change. Visual acceptance of the extra prose remains pending.
 
 The creature archive verifier now covers fourteen ordinary drop entries plus cooking and additional rare/environmental gates. A bilingual Chicken wording correction distinguishes the base meat drop from its cooked form. Existing quest IDs, requirements, rewards, runtime and player progress are untouched. Respawn Anchor reference navigation has been accepted in-game by the user.

@@ -1,4 +1,8 @@
 {
+  "image.firsttorch.repeater_direction.description":"Top-down plan: 0/L = Lever, 1 = Repeater, 2 = Lamp. L is a schematic placeholder. The fixed Repeater Torch points right towards the Lamp; the sliding Torch points towards the Lever. All positions are directly adjacent on solid flooring. Arrows indicate direction, not extra wiring.",
+  "image.firsttorch.comparator_read.description":"Top-down plan: 0/C = single Chest, 1 = Comparator, 2/D and 3/D = one Redstone Dust each, 4 = Lamp. C and D are schematic placeholders. The two rear Torches face the Chest; the single front Torch points right towards the Lamp. No gaps or side inputs; keep the front Torch off in comparison mode.",
+  "image.firsttorch.piston_push.description":"Top-down plan before powering: 0 = retracted Piston, 1 = Cobblestone, 2 = empty space. A shows the original wooden face: it must point horizontally right towards 1. Put the Lever on top of base 0; it is not drawn in the plan. Powering pushes Cobblestone to 2; switching off leaves it there. The arrow is not wiring.",
+  "image.firsttorch.observer_orientation.description":"Top-down plan: 0 = watched Cobblestone, 1 = Observer, 2 = Redstone Lamp. All three touch directly on the same level. A = watching face with eyes, facing block 0; B = red-dot output, facing Lamp 2. The arrows show the direction of detection and output, not extra wiring. The Lamp is shown off.",
   "screen.firsttorch.test.complete": "TEST: Complete",
   "screen.firsttorch.reference.more": "Read more:",
   "screen.firsttorch.reference.back": "Back to previous quest",

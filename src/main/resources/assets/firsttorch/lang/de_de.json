@@ -1,4 +1,8 @@
 {
+  "image.firsttorch.repeater_direction.description":"Draufsicht: 0/L = Hebel, 1 = Verstärker, 2 = Lampe. L ist ein schematischer Platzhalter. Die feste Fackel des Verstärkers zeigt nach rechts zur Lampe, die bewegliche zum Hebel. Alle Positionen liegen direkt nebeneinander auf festem Boden. Pfeile sind Richtungshinweise, keine zusätzliche Leitung.",
+  "image.firsttorch.comparator_read.description":"Draufsicht: 0/C = einzelne Truhe, 1 = Komparator, 2/D und 3/D = je ein Redstone-Staub, 4 = Lampe. C und D sind schematische Platzhalter. Die zwei hinteren Fackeln zeigen zur Truhe; die einzelne vordere nach rechts zur Lampe. Keine Lücken oder seitlichen Eingänge; die vordere Fackel bleibt im Vergleichsmodus aus.",
+  "image.firsttorch.piston_push.description":"Draufsicht vor dem Einschalten: 0 = eingefahrener Kolben, 1 = Bruchstein, 2 = freier Platz. A zeigt die originale Holzfläche: Sie muss waagerecht nach rechts zu 1 zeigen. Der Hebel gehört oben auf die Kolbenbasis 0 und ist im Plan nicht dargestellt. Beim Einschalten wandert der Bruchstein nach 2; beim Ausschalten bleibt er dort. Der Pfeil ist keine Leitung.",
+  "image.firsttorch.observer_orientation.description":"Draufsicht: 0 = beobachteter Bruchstein, 1 = Beobachter, 2 = Redstone-Lampe. Alle drei berühren sich direkt auf gleicher Höhe. A = Augenseite zum Block 0; B = Ausgang mit rotem Punkt zur Lampe 2. Die Pfeile zeigen die Richtung von Erkennung und Ausgabe, keine zusätzliche Leitung. Die Lampe ist ausgeschaltet dargestellt.",
   "screen.firsttorch.test.complete": "TEST: Abschliessen",
   "screen.firsttorch.reference.more": "Mehr dazu:",
   "screen.firsttorch.reference.back": "Zurück zur vorherigen Quest",
