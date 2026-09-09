@@ -1,5 +1,9 @@
 # Playtest log
 
+## 2026-09-09 — Earlier optional Redstone access
+
+Moved only the first Redstone quest's prerequisite from the final independent-exploration introduction to `1C4EA0627FB38D59` (Ready for the Depths). All six Redstone chapters retain their display order and internal/follow-up chain. No mandatory course quest depends on the Redstone branch. Existing completions, IDs, tasks and rewards are unchanged. Added visibility regression coverage before/after the mining-preparation quest. Pending: finish that preparation quest and confirm Redstone Basics appears before finding Diamonds; follow-up chapters should still require their existing Redstone milestones. No reset needed for existing progress.
+
 ## 2026-09-09 — Chapter order follow-up
 
 Moved composting immediately after farming, Iron Essentials after ores, and all six Redstone chapters after Bookshelves. Redstone prerequisites remain after the existing course introduction to independent exploration; earlier display order is not earlier availability. Renamed the Piglin chapter in both languages to Nether Plans and Piglin Bartering and clarified that only its introductory reading gates the Fortress, not the optional barter. Stable IDs, quest prerequisites, tasks and rewards are unchanged. Recommendation tests reflect the new order. Pending: inspect chapter sorting and the renamed Nether chapter in game.

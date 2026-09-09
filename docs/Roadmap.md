@@ -604,6 +604,9 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 
 ## 0.10.0 — Redstone Foundations
 
+- [x] Offer the optional Redstone branch after Ready for the Depths, before the first Diamond find; retain sequential follow-up chapters and keep the main course independent
+- [ ] In-game acceptance of the earlier mining-preparation Redstone reveal
+
 Implementation target: native 0.13.0-alpha.1; retained pack 0.9.1 remains unchanged. This content block is not a separate published release yet.
 
 - [x] Add a bilingual practical chapter that unlocks after the guided course and remains optional
