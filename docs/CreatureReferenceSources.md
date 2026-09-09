@@ -4,6 +4,8 @@ Target: Minecraft Java 26.1.2, bundled native First Torch 0.13.0-alpha.1. This i
 
 ## Authoritative drop data
 
+Rabbit addition: the target `entities/rabbit.json` gives adult Rabbits 0–1 Hide and one Raw Rabbit before Looting, with conditional furnace-smelting and Looting count functions. The separate Foot pool requires player credit: 10% without Looting, then 13/16/19% for levels I/II/III. The archive verifier now checks these distinctions. [Mojang: Rabbit](https://www.minecraft.net/fr-ca/article/rabbit) supports habitat and resource context; [Mojang: Rabbit's Foot](https://www.minecraft.net/pt-pt/article/taking-inventory--rabbit-s-foot) supports the rare-drop chance and Leaping use. The optional reading card requires no capture or kill.
+
 Read directly from the target game artifact: `data/minecraft/loot_table/entities/{cow,sheep,pig,chicken,zombie,skeleton,spider,creeper,blaze,wither_skeleton,ghast,magma_cube}.json`.
 
 - Ordinary adult Cow: 1–3 Beef, 0–2 Leather before Looting. Pig: 1–3 Porkchops. Chicken: one Chicken, 0–2 Feathers. Sheep: 1–2 Mutton, separate colour-specific Wool table only when not sheared. Meat entries have conditional furnace-smelting functions. Living-animal milk, eggs and shearing are not death-loot rewards.

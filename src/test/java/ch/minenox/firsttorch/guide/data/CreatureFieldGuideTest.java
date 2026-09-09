@@ -18,7 +18,7 @@ final class CreatureFieldGuideTest {
         assertEquals(List.of("6A41D479062EB350", "6B52E58A173FC461", "6C63F69B2840D572", "6D7407AC3951E683", "6E8518BD4A62F794", "6F9629CE5B7308A5", "70A7B8C9D0E1F203"),
                 references.stream().map(c -> c.id()).toList());
         for (var chapter : references) {
-            assertEquals(chapter.order() == 55 ? 10 : chapter.order() == 56 ? 5 : chapter.order() == 61 ? 3 : 4, chapter.quests().size());
+            assertEquals(chapter.order() == 55 ? 11 : chapter.order() == 56 ? 5 : chapter.order() == 61 ? 3 : 4, chapter.quests().size());
             for (var quest : chapter.quests()) {
                 assertEquals(List.of(INTRO), quest.prerequisiteQuestIds());
                 assertEquals(1, quest.tasks().size());
@@ -46,11 +46,11 @@ final class CreatureFieldGuideTest {
         }
     }
 
-    @Test void animalExpansionKeepsItsExistingGridAndAppendsGoat() throws Exception {
+    @Test void animalExpansionKeepsItsExistingGridAndAppendsGoatAndRabbit() throws Exception {
         var chapter = snapshot().guides().getFirst().chapters().get(55);
         assertEquals(List.of("minecraft:bone", "minecraft:cod", "minecraft:saddle", "minecraft:cactus", "minecraft:axolotl_bucket"),
                 chapter.quests().subList(4, 9).stream().map(q -> q.iconItemId()).toList());
-        assertEquals(10, chapter.quests().stream().map(q -> q.position()).distinct().count());
+        assertEquals(11, chapter.quests().stream().map(q -> q.position()).distinct().count());
         assertEquals(3, chapter.quests().stream().map(q -> q.position().x()).distinct().count());
         assertEquals(4, chapter.quests().stream().map(q -> q.position().y()).distinct().count());
         assertEquals(List.of("16A0B0C0D0E00005", "16A0B0C0D0E00006", "16A0B0C0D0E00007", "16A0B0C0D0E00008", "16A0B0C0D0E00009"),
@@ -72,5 +72,27 @@ final class CreatureFieldGuideTest {
         try (var input = CreatureFieldGuideTest.class.getResourceAsStream("/data/firsttorch/guides/course.json")) {
             return new GuideSnapshot(List.of(GuideJson.read(input)));
         }
+    }
+
+    @Test void rabbitUsesHideIconAndExtendsOnlyTheAnimalTrophy() throws Exception {
+        var guides = snapshot();
+        var animals = guides.guides().getFirst().chapters().get(55);
+        var rabbit = animals.quests().getLast();
+        assertEquals("16A0B0C0D0E0000B", rabbit.id());
+        assertEquals("minecraft:rabbit_hide", rabbit.iconItemId());
+        var done = animals.quests().subList(0, 10).stream().map(q -> q.id())
+                .collect(java.util.stream.Collectors.toSet());
+        var before = new ProgressState(Set.of(), done);
+        var payload = new ch.minenox.firsttorch.network.ProgressPayload(before, java.util.Map.of(), true);
+        assertFalse(ch.minenox.firsttorch.client.TrophyCatalog.entries(guides, payload).stream()
+                .filter(t -> t.chapterId().equals(animals.id())).findFirst().orElseThrow().earned());
+        done.add(INTRO);
+        var after = TaskEvaluator.confirm(guides, new ProgressState(Set.of(), done), rabbit.id(),
+                rabbit.tasks().getFirst().id(), key -> 0);
+        assertTrue(after.completedQuestIds().containsAll(done));
+        var completed = new ch.minenox.firsttorch.network.ProgressPayload(after, java.util.Map.of(), true);
+        assertTrue(ch.minenox.firsttorch.client.TrophyCatalog.entries(guides, completed).stream()
+                .filter(t -> t.chapterId().equals(animals.id())).findFirst().orElseThrow().earned());
+        assertFalse(guides.guides().getFirst().chapters().stream().anyMatch(c -> c.id().equals("73D0E1F203142536")));
     }
 }

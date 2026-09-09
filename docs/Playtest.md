@@ -1,5 +1,11 @@
 # Playtest log
 
+## 2026-09-09 — Rabbit and consolidated Bee reference
+
+Verification: 370 tests and native build pass. Target Rabbit loot checks and retained-pack validation/build pass. Existing ten animal definitions and all other retained chapter definitions are unchanged. No live in-game test was performed.
+
+Pending in-game review: Rabbit appears as the eleventh Animals card, with a Rabbit Hide icon, bilingual drop distinctions and independent reading confirmation. Existing ten animal readings remain; the derived Animals trophy now also requires Rabbit. Pollination and Honey Bottle/Honeycomb harvesting appear directly in the existing Bee card; its ID and completion remain unchanged. The separate Bee Mechanics chapter/trophy is removed. No player files are modified; old removed-card IDs are not reused. Check the maps and both languages after restart. The previous unusual-mechanics cards remain awaiting user acceptance.
+
 ## 2026-09-09 — First unusual-mechanics batch
 
 Automated verification: all 369 tests and the native mod build pass; retained-pack validation/build pass separately. Target 26.1.2 recipe, harvest and icon checks pass. All 62 previous chapter definitions are structurally unchanged. The course now has 65 chapters, 327 quests and 414 tasks. In-game review of the new cards and physical experiments remains pending.

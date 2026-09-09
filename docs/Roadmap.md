@@ -635,6 +635,8 @@ Implementation target remains native 0.13.0-alpha.1. The initial three-chapter b
 - [x] Add requested Witch, Breeze, Bogged, Creaking and Goat reading cards; explain Trial Chambers and Pale Garden context without combat requirements (34 reference cards total)
 - [x] In-game acceptance: five requested cards across Animals, Overworld monsters and Trial Chambers/Pale Garden; expanded trophies, preserved readings and Turtle Scute icon (user-confirmed 2026-09-09)
 - [x] Fix the Turtle reference icon to the target-version Turtle Scute item ID instead of the obsolete scute ID
+- [x] Add Rabbit to Animals with target-verified meat, Hide and rare Foot drops; merge pollination and honey harvesting into the existing Bee card instead of a separate chapter
+- [ ] In-game acceptance: Rabbit card, extended Animals trophy and consolidated Bee card; separate Bee Mechanics chapter absent
 - [ ] In-game acceptance: twelve new cards, independent reading, translated safety references, three trophies and restart persistence
 
 - [x] Add bilingual optional reference chapters separate from the guided lesson sequence
@@ -648,10 +650,10 @@ Implementation target remains native 0.13.0-alpha.1. The initial three-chapter b
 
 ## 0.12.0 — Discoverable Secrets and Unusual Mechanics
 
-First implementation batch inside native 0.13.0-alpha.1: three optional three-card chapters for block transformations, harmless name effects, and Bees/Honey. Older creature-reference cross-links and Redstone illustrations remain separate open items.
+First implementation batch inside native 0.13.0-alpha.1: two optional three-card chapters for block transformations and harmless name effects. At user request, Bees/Honey content is consolidated in the existing creature-reference Bee card instead of a separate chapter. Older creature-reference cross-links and Redstone illustrations remain separate open items.
 
 - [x] Implement the first nine bilingual cards with independent reading tasks and book-only trophies
-- [ ] In-game acceptance: all nine cards, exact name spelling, safe optional experiments, independent trophies and persistence
+- [ ] In-game acceptance: six remaining mechanics cards and expanded Bee reference, exact name spelling, safe optional experiments, two mechanics trophies and persistence
 
 - [x] Add a bilingual optional reference chapter for useful mechanics that ordinary play rarely explains clearly (first three chapters)
 - [ ] Cover selected transformation mechanics, unusual item interactions, name-dependent behaviours, archaeology rules, music-disc conditions, bee and pollination details, Villager curing, and other high-value discoveries

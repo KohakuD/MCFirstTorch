@@ -13,6 +13,19 @@ function Assert-Loot([bool]$condition, [string]$message) {
     if (-not $condition) { throw $message }
 }
 try {
+    $rabbit = (Read-Loot 'rabbit').pools
+    $hide = $rabbit[0].entries[0]
+    Assert-Loot ($hide.name -eq 'minecraft:rabbit_hide' -and $hide.functions[0].count.min -eq 0 -and $hide.functions[0].count.max -eq 1) 'Rabbit Hide base range changed'
+    $meat = $rabbit[1].entries[0]
+    Assert-Loot ($meat.name -eq 'minecraft:rabbit' -and $meat.functions[0].count -eq 1) 'Rabbit meat base count changed'
+    Assert-Loot ($meat.functions.function -contains 'minecraft:furnace_smelt') 'Rabbit cooking condition removed'
+    foreach ($entry in @($hide, $meat)) {
+        Assert-Loot ($entry.functions.function -contains 'minecraft:enchanted_count_increase') 'Rabbit Looting count function removed'
+    }
+    Assert-Loot ($rabbit[2].entries[0].name -eq 'minecraft:rabbit_foot') 'Rabbit rare drop changed'
+    Assert-Loot ($rabbit[2].conditions.condition -contains 'minecraft:killed_by_player') 'Rabbit Foot player-credit condition changed'
+    $chance = $rabbit[2].conditions | Where-Object { $_.condition -eq 'minecraft:random_chance_with_enchanted_bonus' }
+    Assert-Loot ($chance.unenchanted_chance -eq 0.1 -and $chance.enchanted_chance.base -eq 0.13 -and $chance.enchanted_chance.per_level_above_first -eq 0.03) 'Rabbit Foot chance changed'
     $blaze = (Read-Loot 'blaze').pools[0]
     Assert-Loot ($blaze.conditions[0].condition -eq 'minecraft:killed_by_player') 'Blaze player-credit condition changed'
     Assert-Loot ($blaze.entries[0].name -eq 'minecraft:blaze_rod') 'Blaze item changed'
