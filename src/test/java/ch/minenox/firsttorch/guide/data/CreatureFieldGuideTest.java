@@ -93,6 +93,6 @@ final class CreatureFieldGuideTest {
         var completed = new ch.minenox.firsttorch.network.ProgressPayload(after, java.util.Map.of(), true);
         assertTrue(ch.minenox.firsttorch.client.TrophyCatalog.entries(guides, completed).stream()
                 .filter(t -> t.chapterId().equals(animals.id())).findFirst().orElseThrow().earned());
-        assertFalse(guides.guides().getFirst().chapters().stream().anyMatch(c -> c.id().equals("73D0E1F203142536")));
+        assertTrue(guides.guides().getFirst().chapters().stream().anyMatch(c -> c.id().equals("73D0E1F203142536")));
     }
 }

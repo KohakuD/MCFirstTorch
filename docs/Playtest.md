@@ -1,5 +1,17 @@
 # Playtest log
 
+## 2026-09-09 — Archaeology, music and curing references
+
+Verification: 373 tests and native build pass; target recipe/icon checks and retained-pack validation/build pass. All previous 65 chapter definitions match the pre-batch state. In-game review remains pending.
+
+User accepted the restored separate Bee entries and preceding mechanics batch. New review pending: three chapters with nine independent reading cards covering archaeology, music discs and Zombie Villager curing. Verify English/German text, icons, three book trophies and restart persistence. Do not excavate, stage Creeper combat or cure a Zombie Villager merely to test completion. Existing Rabbit and Bee IDs remain unchanged; no world files are edited.
+
+## 2026-09-09 — Restore separate Bee mechanics
+
+Verification: all 370 tests and native build pass; retained-pack validation/build pass. Restored chapter definitions match the original mechanics batch, with Rabbit retained in Animals. No live in-game test was performed.
+
+User revised the organisation request: restore the original Bee creature card and separate three-card Bee Mechanics chapter/trophy using original IDs. Rabbit remains the eleventh Animals card. Pending in-game review: both Bee entries are separate, all three mechanics cards/trophy appear, and Rabbit remains available. No progress files are changed.
+
 ## 2026-09-09 — Rabbit and consolidated Bee reference
 
 Verification: 370 tests and native build pass. Target Rabbit loot checks and retained-pack validation/build pass. Existing ten animal definitions and all other retained chapter definitions are unchanged. No live in-game test was performed.

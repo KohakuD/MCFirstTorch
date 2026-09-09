@@ -75,7 +75,11 @@ public final class TrophyCatalog {
             Map.entry("6F9629CE5B7308A5", new Trophy("field_special", "minecraft:honeycomb")),
             Map.entry("70A7B8C9D0E1F203", new Trophy("field_chambers_garden", "minecraft:breeze_rod")),
             Map.entry("71B8C9D0E1F20314", new Trophy("mechanics_blocks", "minecraft:white_concrete")),
-            Map.entry("72C9D0E1F2031425", new Trophy("mechanics_names", "minecraft:name_tag")));
+            Map.entry("72C9D0E1F2031425", new Trophy("mechanics_names", "minecraft:name_tag")),
+            Map.entry("73D0E1F203142536", new Trophy("mechanics_bees", "minecraft:honey_bottle")),
+            Map.entry("74E1F20314253647", new Trophy("mechanics_archaeology", "minecraft:brush")),
+            Map.entry("75F2031425364758", new Trophy("mechanics_music", "minecraft:music_disc_cat")),
+            Map.entry("7603142536475869", new Trophy("mechanics_curing", "minecraft:golden_apple")));
 
     private TrophyCatalog() {
     }
