@@ -13,7 +13,8 @@ final class QuestRecommendationTest {
         var snapshot = course();
         Set<String> done = new HashSet<>();
         snapshot.guides().getFirst().chapters().stream().limit(34)
-                .filter(c -> c.order() != 31).flatMap(c -> c.quests().stream()).forEach(q -> done.add(q.id()));
+                .filter(c -> !c.titleKey().equals("chapter.firsttorch.fire_resistance.title"))
+                .flatMap(c -> c.quests().stream()).forEach(q -> done.add(q.id()));
         assertEquals("086D39F5C0A47E2B", QuestRecommendation.choose(snapshot, progress(done)).questId());
         snapshot.guides().getFirst().chapters().get(34).quests().stream().limit(4).forEach(q -> done.add(q.id()));
         assertEquals("10E5B17D482CF6A3", QuestRecommendation.choose(snapshot, progress(done)).questId());
@@ -282,7 +283,7 @@ final class QuestRecommendationTest {
                 .forEach(q -> done.add(q.id()));
         assertEquals("3C3122DF5C0EA192", QuestRecommendation.choose(snapshot, progress(done)).questId());
         done.add("3C3122DF5C0EA192");
-        assertEquals("2350AB7D48C217D7", QuestRecommendation.choose(snapshot, progress(done)).questId());
+        assertEquals("10A0B0C0D0E00001", QuestRecommendation.choose(snapshot, progress(done)).questId());
     }
 
     @Test void completedIronAndMiningRecommendFindingHome() throws Exception {
@@ -319,13 +320,17 @@ final class QuestRecommendationTest {
         assertEquals("2E17C9A40D638BF5", QuestRecommendation.choose(snapshot, progress(done)).questId());
     }
 
-    @Test void ironRouteRecommendsShieldWithoutRequiringCopper() throws Exception {
+    @Test void ironRouteRecommendsIronHelpersThenShieldWithoutRequiringCopper() throws Exception {
         var snapshot = course();
         Set<String> done = new HashSet<>();
         completeSupplies(snapshot, done);
         snapshot.guides().getFirst().chapters().stream().limit(6).flatMap(c -> c.quests().stream())
                 .filter(q -> !Set.of("4A28C6E10D735BF9", "6C4AE8F31D957B20").contains(q.id()))
                 .forEach(q -> done.add(q.id()));
+        assertEquals("27A9D4E60B835CF1", QuestRecommendation.choose(snapshot, progress(done)).questId());
+        snapshot.guides().getFirst().chapters().stream()
+                .filter(c -> c.titleKey().equals("chapter.firsttorch.iron_essentials.title"))
+                .flatMap(c -> c.quests().stream()).forEach(q -> done.add(q.id()));
         assertEquals("4D92C7A10E638BF5", QuestRecommendation.choose(snapshot, progress(done)).questId());
         done.add("4D92C7A10E638BF5");
         assertEquals("18A6D3F90C754BE2", QuestRecommendation.choose(snapshot, progress(done)).questId());

@@ -16,7 +16,7 @@ final class RedstoneBasicsTest {
         var chapters = snapshot().guides().getFirst().chapters();
         var chapter = chapters.get(49);
         assertEquals("64EB7E13A0C85DFA", chapter.id());
-        assertEquals(49, chapter.order());
+        assertEquals(22, chapter.order());
         assertEquals(6, chapter.quests().size());
         for (int i = 0; i < 6; i++) {
             assertEquals(quest(i + 1), chapter.quests().get(i).id());

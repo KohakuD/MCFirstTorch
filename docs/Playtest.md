@@ -1,5 +1,9 @@
 # Playtest log
 
+## 2026-09-09 — Chapter order follow-up
+
+Moved composting immediately after farming, Iron Essentials after ores, and all six Redstone chapters after Bookshelves. Redstone prerequisites remain after the existing course introduction to independent exploration; earlier display order is not earlier availability. Renamed the Piglin chapter in both languages to Nether Plans and Piglin Bartering and clarified that only its introductory reading gates the Fortress, not the optional barter. Stable IDs, quest prerequisites, tasks and rewards are unchanged. Recommendation tests reflect the new order. Pending: inspect chapter sorting and the renamed Nether chapter in game.
+
 ## 2026-09-09 — Early chapter display order
 
 User requested farming, animal care, storage and composting directly after food, ahead of ores, and Iron Essentials before Safe Mining. Changed only eleven chapter order values; stable IDs, prerequisites, quests, tasks and rewards remain unchanged. Chapters still appear when their own prerequisites allow them, rather than unlocking in display order. Regenerated the chapter reference image with updated numbers. Pending: inspect early chapter sorting in game; no progress reset required.
