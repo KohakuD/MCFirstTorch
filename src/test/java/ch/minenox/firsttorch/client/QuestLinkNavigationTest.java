@@ -65,4 +65,24 @@ final class QuestLinkNavigationTest {
         history.clear();
         assertFalse(history.hasBack());
     }
+
+    @Test void toastRabbitReferenceRoundTripRestoresBothReadingPositions() throws Exception {
+        var snapshot = snapshot();
+        var progress = complete(snapshot);
+        var toast = QuestLinkNavigation.destination(snapshot, progress, "1EA0B0C0D0E00003").orElseThrow();
+        var rabbitLink = QuestReferenceLinks.forQuest(toast.questId()).getFirst();
+        assertEquals("16A0B0C0D0E0000B", rabbitLink.questId());
+        var rabbit = QuestLinkNavigation.destination(snapshot, progress, rabbitLink.questId()).orElseThrow();
+        var names = QuestLinkNavigation.destination(snapshot, progress,
+                QuestReferenceLinks.forQuest(rabbit.questId()).getFirst().questId()).orElseThrow();
+        assertEquals(toast.chapterId(), names.chapterId());
+        var history = new QuestLinkNavigation();
+        var original = new QuestLinkNavigation.Location(toast, 150, true, true, 9);
+        var intermediate = new QuestLinkNavigation.Location(rabbit, 240, true, true, 8);
+        history.push(original);
+        history.push(intermediate);
+        assertEquals(intermediate, history.back(snapshot, progress).orElseThrow());
+        assertEquals(original, history.back(snapshot, progress).orElseThrow());
+        assertFalse(history.hasBack());
+    }
 }

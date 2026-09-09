@@ -1,8 +1,24 @@
 # Playtest log
 
+## 2026-09-09 — Encounters, transformations and names links
+
+Verification: 380 tests and native build pass, including all 41 catalogue source cards and the real Toast/Rabbit/names return sequence. Exact practical destination titles were checked against the German course strings. Retained-pack validation/build pass. Live in-game review of this batch remains pending.
+
+The user accepted the Animals/Overworld/Nether link batch. Nine further existing cards now link to related safety, Pumpkin headgear, water/Bottle/Furnace and animal lessons. Jeb and Toast point directly to the Sheep and Rabbit cards, rather than the start of Animals. Existing completion states and all gameplay definitions remain untouched. The name/Rabbit references also provide a real nested-link return path.
+
+Pending in-game: review the three existing chapters Trial Chambers/Pale Garden, Block Transformations and Special Names (including the Completed archive). Try Toast → Rabbit → Special Names and return twice, checking both reading positions. Check that block guides land on the relevant practical lesson. No experiment, item collection or reset is required.
+
+## 2026-09-09 — Animal, Overworld and Nether reference links
+
+Verification: all 379 tests and native build pass. The expanded regression validates all 32 source cards, every destination ID and bilingual chapter label, and duplicate destinations. All twelve prior catalogue entries remain unchanged. Target creature-loot verification and retained-pack validation/build pass. No live in-game check was performed for this batch.
+
+The user accepted clickable references and return navigation. The next batch extends the existing catalogue to twenty cards in three existing chapters: Animals, Overworld monsters and Nether creatures. Old prose pointers are replaced by gold destination buttons; creature facts, quest definitions, rewards and player data are unchanged. Completed chapters remain in the archive rather than becoming new quests.
+
+Pending in-game: review the destinations in these three chapters, including Rabbit and Witch, and return to the original reading position. No new completion or creature interaction is needed.
+
 ## 2026-09-09 — Clickable quest references and return navigation
 
-Verification: 379 automated tests and native build pass, including stable reference destinations, bilingual labels, visibility protection, nested history and exact reading-location restoration. Retained-pack validation/build pass. In-game rendering and input checks remain pending with the user.
+Verification: 379 automated tests and native build pass, including stable reference destinations, bilingual labels, visibility protection, nested history and exact reading-location restoration. Retained-pack validation/build pass. The user subsequently confirmed all in-game checks as correct.
 
 The user located the updated archived chapters and requested direct links. Twelve bundled references now target fixed quest IDs, using the destination chapter title as the bilingual button label. Links appear below the description; a footer return button restores the prior selection, detail scroll, reading layout and chapter-list position. Completed targets remain reachable. Hidden or missing targets cannot be opened by a link and do not unlock anything. History is session-only and supports nested jumps; definition replacement and preview switching clear it. No quest completions, rewards, protocol or player files are changed.
 

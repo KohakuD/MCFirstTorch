@@ -647,7 +647,10 @@ Implementation target remains native 0.13.0-alpha.1. The initial three-chapter b
   - [x] Add bilingual, exact-title reading pointers to the twelve End, aquatic and special-encounter cards; broader reference audit remains open
   - [x] In-game discovery of the updated existing reference chapters (user located them in the archive)
   - [x] Make twelve reading pointers clickable through stable quest IDs, with session-only nested return navigation and scroll restoration
-  - [ ] In-game acceptance: clickable references, archived destinations, return scroll position and disabled unavailable targets
+  - [x] In-game acceptance: clickable references, archived destinations, return scroll position and disabled unavailable targets (user-confirmed)
+  - [x] Extend clickable references to Animals, Overworld monsters and Nether creatures (20 additional cards)
+  - [x] In-game acceptance: reference links in Animals, Overworld monsters and Nether creatures (user-confirmed)
+  - [x] Add related safety/Pumpkin links to the three Trial Chambers/Pale Garden cards
 - [x] Keep reference checkmarks optional and prevent every field-guide card from gating another quest
 - [ ] Validate all drop facts against the targeted Minecraft version and avoid presenting approximate rates as exact
 - [x] Start with the creatures already used by the course, then expand by dimension in reviewable batches
@@ -672,6 +675,8 @@ First implementation batch inside native 0.13.0-alpha.1: three optional three-ca
 - [ ] Separate practical hints from deliberate surprises so the reference remains useful without spoiling every discovery
 - [ ] Give each card a short trigger, observable result, danger note where needed, and one safe experiment
 - [ ] Cross-link mechanics to Redstone, structures, creatures, farming, or existing course lessons when that reduces duplication
+  - [x] Link Block Transformations to existing tool/water/bottle lessons and Special Names to animal reference cards
+  - [ ] In-game acceptance: nine links across Trial Chambers/Pale Garden, Block Transformations and Special Names
 - [ ] Review each entry against the targeted Minecraft version and remove entries that cannot be verified reliably
 
 ## 0.13.0 — Independent First Torch Mod
