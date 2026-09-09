@@ -2,6 +2,8 @@
 
 ## Baseline
 
+Current entry point: the README describes native JAR installation. `LegacyPack.md` preserves the separate FTB pack workflow. Historical batch notes below describe their state at delivery time, not the current feature limit. Multiplayer, migration and release checks remain open independently of reading acceptance.
+
 Delivery cadence: approximately three complete chapters per user test batch, not three quests. The requested five-creature extension and Turtle Scute icon were accepted by the user on 2026-09-09. The new batch begins optional unusual-mechanic reading: block transformations, name effects and Bees/Honey. Remaining creature-reference cross-links and Redstone illustrations are not completed by this work.
 
 The four-lesson automatic Iron Door uses two adjacent Stone Pressure Plates on a free-standing practice site, not a secure home entrance. Material possession is automatic; building, crossing and safety observations remain manual. Its five-XP reward and book-only trophy do not supply progression items. Existing chapter IDs and player data are preserved.

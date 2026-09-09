@@ -1,5 +1,9 @@
 # Playtest log
 
+## 2026-09-09 — Native installation documentation
+
+The user accepted the Jukebox/brushing hints. README now leads with the independent native mod and its actual build artifact, controls, library and development-only test mode. The previous pack workflow is retained separately in `LegacyPack.md`. Explicitly distinguish installing a native JAR from importing the old FTB ZIP and from migrating FTB progress. Inspected build configuration and built JAR metadata: declared dependencies are Minecraft/NeoForge, with no nested JARs or FTB class packages. This does not claim full release parity or licensing approval. No game files or progress changed; no new playtest required.
+
 ## 2026-09-09 — Jukebox and archaeology behaviour clarification
 
 Reviewed target Jukebox playback/ejection and BrushableBlock completion/reset methods. Added bilingual hints to collect/reinsert an ejected disc and resume brushing safely after an interruption decreases progress. No task, reward, ID or saved progress changed. Pending: read the two updated library cards; no new expedition, reset or risky experiment is required.

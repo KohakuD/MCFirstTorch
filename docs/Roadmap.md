@@ -704,7 +704,7 @@ First implementation batch inside native 0.13.0-alpha.1: three optional three-ca
   - [x] In-game acceptance: Respawn Anchor links and return navigation (user-confirmed)
 - [ ] Review each entry against the targeted Minecraft version and remove entries that cannot be verified reliably
   - [x] Verify Jukebox stop/ejection and brushing completion/interruption directly in target bytecode; clarify item pickup and safe brushing resumption in both languages
-  - [ ] Reading acceptance: Jukebox pickup/replay and interrupted brushing hints
+  - [x] Reading acceptance: Jukebox pickup/replay and interrupted brushing hints (user-confirmed)
 
 ## 0.13.0 — Independent First Torch Mod
 
@@ -860,6 +860,7 @@ The minimal NeoForge/IntelliJ build foundation now lives beside the existing FTB
 - [ ] Match the current automatic inventory, advancement, location, and manual-check task behaviour before removing the FTB dependencies
 - [ ] Add accessibility options for text scale, contrast, keyboard navigation, reduced visual clutter, and screen-reader-friendly labels where the Minecraft UI permits them
 - [ ] Verify asset and library licences, keep Minecraft-derived artwork tied to the targeted game version, and publish source and migration documentation
+  - [x] Make native JAR installation the README entry point; separate retained FTB instructions and explicitly warn that FTB progress migration is not implemented
 - [ ] Ship the independent runtime only after a clean-profile parity playtest covers the complete guided route and both languages
 
 ## Reference-library organisation
