@@ -17,6 +17,8 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.client.gui.ActiveTextCollector;
 import net.minecraft.client.input.MouseButtonEvent;
+import net.minecraft.client.input.KeyEvent;
+import org.lwjgl.glfw.GLFW;
 import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.Screen;
@@ -46,7 +48,14 @@ class FirstTorchBrowserScreen extends Screen {
     private List<TrophyCatalog.Entry> trophies = List.of();
     private String selectedTrophy;
     private boolean completedExpanded;
-    private int chapterPage;
+    private int chapterFirstRow;
+    private int chapterRowCount;
+    private int chapterCapacity = 1;
+    private boolean revealChapter = true;
+    private boolean draggingChapters;
+    private double chapterDragOffset;
+    private double chapterWheelRemainder;
+    private final java.util.ArrayList<FirstTorchButton> chapterButtons = new java.util.ArrayList<>();
     private boolean recommendOnOpen = true;
     private final QuestLinkNavigation linkNavigation = new QuestLinkNavigation();
     private final java.util.ArrayList<FirstTorchButton> referenceButtons = new java.util.ArrayList<>();
@@ -60,7 +69,12 @@ class FirstTorchBrowserScreen extends Screen {
     protected void init() {
         super.init();
         referenceButtons.clear();
-        if (observedSnapshot != ClientGuideCache.snapshot()) linkNavigation.clear();
+        chapterButtons.clear();
+        if (observedSnapshot != ClientGuideCache.snapshot()) {
+            linkNavigation.clear();
+            chapterFirstRow = 0;
+            revealChapter = true;
+        }
         observedSnapshot = ClientGuideCache.snapshot();
         observedProgress = ClientProgressCache.snapshot();
         GuideSnapshot displayed = usesPreview() ? DesignPreview.snapshot() : observedSnapshot;
@@ -68,6 +82,7 @@ class FirstTorchBrowserScreen extends Screen {
             selection = QuestRecommendation.choose(observedSnapshot, observedProgress);
             reading = selection.questId() != null;
             recommendOnOpen = false;
+            revealChapter = true;
             completedExpanded = selection.questId() != null && completed(selection.questId());
         }
         if (usesPreview() && !DesignPreview.isPreview(selection.guideId())) {
@@ -76,7 +91,9 @@ class FirstTorchBrowserScreen extends Screen {
         viewModel = usesPreview() ? GuideBrowserViewModel.resolve(displayed, selection)
                 : GuideBrowserViewModel.resolve(displayed, selection, observedProgress);
         selection = viewModel.selection();
-        viewport = FirstTorchViewport.fit(width, height);
+        FirstTorchViewport resizedViewport = FirstTorchViewport.fit(width, height);
+        if (!viewport.equals(resizedViewport)) revealChapter = true;
+        viewport = resizedViewport;
         layout = FirstTorchLayout.calculate(viewport.width(), viewport.height(), reading && !trophiesOpen);
         Rect map = layout.questMap();
         Rect nodeArea = reading ? new Rect(map.x(), map.y() + 23, map.width(), map.height() - 23) : map;
@@ -143,19 +160,14 @@ class FirstTorchBrowserScreen extends Screen {
     private void followReference(String questId) {
         var destination = QuestLinkNavigation.destination(observedSnapshot, observedProgress, questId);
         if (destination.isEmpty() || destination.get().equals(selection)) return;
-        linkNavigation.push(new QuestLinkNavigation.Location(selection, detailsScroll, reading, completedExpanded, chapterPage));
+        linkNavigation.push(new QuestLinkNavigation.Location(selection, detailsScroll, reading, completedExpanded, chapterFirstRow));
         selection = destination.get();
         reading = true;
         trophiesOpen = false;
         detailsScroll = 0;
         completedExpanded = true;
-        chapterPage = 0;
-        rebuildWidgets();
-        var rows = ChapterArchive.rows(viewModel.chapters(), this::completed, completedExpanded);
-        int index = 0;
-        while (index < rows.size() && !viewModel.chapter().equals(rows.get(index).chapter())) index++;
-        int cardHeight = Math.max(23, Math.min(42, layout.chapters().height() / 7));
-        chapterPage = index / Math.max(1, (layout.chapters().height() - 51) / (cardHeight + 5));
+        chapterFirstRow = 0;
+        revealChapter = true;
         rebuildWidgets();
     }
 
@@ -165,7 +177,8 @@ class FirstTorchBrowserScreen extends Screen {
             detailsScroll = location.scroll();
             reading = location.reading();
             completedExpanded = location.completedExpanded();
-            chapterPage = location.chapterPage();
+            chapterFirstRow = location.chapterFirstRow();
+            revealChapter = false;
             trophiesOpen = false;
         });
         rebuildWidgets();
@@ -259,6 +272,8 @@ class FirstTorchBrowserScreen extends Screen {
         detailsScroll = 0;
         reading = false;
         previewChoice = !preview();
+        chapterFirstRow = 0;
+        revealChapter = true;
         selection = Selection.EMPTY;
         query = "";
         searchEmpty = false;
@@ -278,11 +293,7 @@ class FirstTorchBrowserScreen extends Screen {
                 if (Component.translatable(quest.titleKey()).getString().toLowerCase(Locale.ROOT).contains(needle)) {
                     selection = new Selection(selection.guideId(), chapter.id(), quest.id());
                     if (ChapterArchive.completed(chapter, this::completed)) completedExpanded = true;
-                    var navigationRows = ChapterArchive.rows(viewModel.chapters(), this::completed, completedExpanded);
-                    int rowIndex = 0;
-                    while (rowIndex < navigationRows.size() && !chapter.equals(navigationRows.get(rowIndex).chapter())) rowIndex++;
-                    int cardHeight = Math.max(23, Math.min(42, layout.chapters().height() / 7));
-                    chapterPage = rowIndex / Math.max(1, (layout.chapters().height() - 51) / (cardHeight + 5));
+                    revealChapter = true;
                     searchEmpty = false;
                     break search;
                 }
@@ -361,6 +372,7 @@ class FirstTorchBrowserScreen extends Screen {
         drawText(graphics);
         positionReferenceButtons();
         super.extractRenderState(graphics, (int) viewport.localX(mouseX), (int) viewport.localY(mouseY), partialTick);
+        drawChapterScrollbar(graphics);
         if (!preview()) ChapterFirework.draw(graphics, font, viewport.width(), viewport.height());
         graphics.pose().popMatrix();
     }
@@ -371,16 +383,35 @@ class FirstTorchBrowserScreen extends Screen {
 
     @Override
     public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
+        var local = localEvent(event);
+        Rect track = chapterTrack();
+        if (event.button() == GLFW.GLFW_MOUSE_BUTTON_LEFT && chapterRowCount > chapterCapacity
+                && contains(track, local.x(), local.y())) {
+            int top = ChapterScroll.thumbTop(track.y(), track.height(), chapterRowCount, chapterCapacity, chapterFirstRow);
+            int height = ChapterScroll.thumbHeight(track.height(), chapterRowCount, chapterCapacity);
+            chapterDragOffset = local.y() >= top && local.y() < top + height ? local.y() - top : height / 2.0;
+            draggingChapters = true;
+            dragChapters(local.y());
+            return true;
+        }
         return super.mouseClicked(localEvent(event), doubleClick);
     }
 
     @Override
     public boolean mouseReleased(MouseButtonEvent event) {
+        if (draggingChapters && event.button() == GLFW.GLFW_MOUSE_BUTTON_LEFT) {
+            draggingChapters = false;
+            return true;
+        }
         return super.mouseReleased(localEvent(event));
     }
 
     @Override
     public boolean mouseDragged(MouseButtonEvent event, double dx, double dy) {
+        if (draggingChapters) {
+            dragChapters(viewport.localY(event.y()));
+            return true;
+        }
         return super.mouseDragged(localEvent(event), dx / viewport.scale(), dy / viewport.scale());
     }
 
@@ -388,6 +419,13 @@ class FirstTorchBrowserScreen extends Screen {
     public boolean mouseScrolled(double x, double y, double scrollX, double scrollY) {
         Rect panel = layout.details();
         double localX = viewport.localX(x), localY = viewport.localY(y);
+        if (contains(layout.chapters(), localX, localY)) {
+            chapterWheelRemainder -= scrollY;
+            int rows = (int) chapterWheelRemainder;
+            chapterWheelRemainder -= rows;
+            scrollChapters(chapterFirstRow + rows);
+            return true;
+        }
         if ((trophiesOpen || !preview()) && localX >= panel.x() && localX < panel.right()
                 && localY >= panel.y() && localY < panel.bottom()) {
             detailsScroll = Math.max(0, Math.min(detailsMaxScroll, detailsScroll - (int) (scrollY * 20)));
@@ -419,7 +457,8 @@ class FirstTorchBrowserScreen extends Screen {
 
     private void switchGuide(int delta) {
         completedExpanded = false;
-        chapterPage = 0;
+        chapterFirstRow = 0;
+        revealChapter = true;
         reading = false;
         int size = viewModel.guides().size();
         if (size == 0) return;
@@ -427,53 +466,111 @@ class FirstTorchBrowserScreen extends Screen {
         rebuildWidgets();
     }
 
+    private static boolean contains(Rect bounds, double x, double y) {
+        return x >= bounds.x() && x < bounds.right() && y >= bounds.y() && y < bounds.bottom();
+    }
+
+    private Rect chapterTrack() {
+        Rect panel = layout.chapters();
+        return new Rect(panel.right() - 13, panel.y() + 9, 6, Math.max(1, panel.height() - 18));
+    }
+
+    private void drawChapterScrollbar(GuiGraphicsExtractor graphics) {
+        if (chapterRowCount <= chapterCapacity) return;
+        Rect track = chapterTrack();
+        graphics.fill(track.x(), track.y(), track.right(), track.bottom(), 0xFF111415);
+        int top = ChapterScroll.thumbTop(track.y(), track.height(), chapterRowCount, chapterCapacity, chapterFirstRow);
+        int height = ChapterScroll.thumbHeight(track.height(), chapterRowCount, chapterCapacity);
+        graphics.fill(track.x(), top, track.right(), top + height, FirstTorchTheme.AMBER);
+        graphics.fill(track.x() + 1, top + 1, track.right() - 1, top + height - 1, 0xFF9D793C);
+    }
+
+    private void dragChapters(double y) {
+        Rect track = chapterTrack();
+        scrollChapters(ChapterScroll.fromThumb((int) Math.round(y - chapterDragOffset),
+                track.y(), track.height(), chapterRowCount, chapterCapacity));
+    }
+
+    private void scrollChapters(int first) {
+        int clamped = ChapterScroll.clamp(first, chapterRowCount, chapterCapacity);
+        if (clamped == chapterFirstRow) return;
+        boolean chapterFocused = chapterButtons.contains(getFocused());
+        chapterFirstRow = clamped;
+        revealChapter = false;
+        rebuildWidgets();
+        if (chapterFocused && !chapterButtons.isEmpty()) setFocused(chapterButtons.getFirst());
+    }
+
+    @Override
+    public boolean keyPressed(KeyEvent event) {
+        if (chapterButtons.contains(getFocused())) {
+            int first = switch (event.key()) {
+                case GLFW.GLFW_KEY_PAGE_UP -> chapterFirstRow - chapterCapacity;
+                case GLFW.GLFW_KEY_PAGE_DOWN -> chapterFirstRow + chapterCapacity;
+                case GLFW.GLFW_KEY_HOME -> 0;
+                case GLFW.GLFW_KEY_END -> chapterRowCount;
+                default -> -1;
+            };
+            if (event.key() == GLFW.GLFW_KEY_PAGE_UP || first >= 0) {
+                scrollChapters(first);
+                return true;
+            }
+        }
+        return super.keyPressed(event);
+    }
+
+    private void addChapterButton(FirstTorchButton card) {
+        chapterButtons.add(card);
+        addRenderableWidget(card);
+    }
+
     private void addChapterButtons() {
-        if (viewModel.chapters().isEmpty()) return;
+        chapterRowCount = 0;
+        if (viewModel.chapters().isEmpty()) {
+            chapterFirstRow = 0;
+            return;
+        }
         Rect panel = layout.chapters();
         int cardHeight = Math.max(23, Math.min(42, panel.height() / 7));
-        int visibleCount = Math.max(1, (panel.height() - 51) / (cardHeight + 5));
+        chapterCapacity = ChapterScroll.capacity(panel.height(), cardHeight);
         var rows = ChapterArchive.rows(viewModel.chapters(), this::completed, completedExpanded);
-        int pageStart = Math.min(chapterPage, (rows.size() - 1) / visibleCount) * visibleCount;
-        int pageEnd = Math.min(rows.size(), pageStart + visibleCount);
+        chapterRowCount = rows.size();
+        chapterFirstRow = ChapterScroll.clamp(chapterFirstRow, chapterRowCount, chapterCapacity);
+        if (revealChapter) {
+            for (int index = 0; index < rows.size(); index++) {
+                if (viewModel.chapter() != null && viewModel.chapter().equals(rows.get(index).chapter())) {
+                    chapterFirstRow = ChapterScroll.reveal(chapterFirstRow, index, chapterRowCount, chapterCapacity);
+                    break;
+                }
+            }
+            revealChapter = false;
+        }
+        int end = Math.min(rows.size(), chapterFirstRow + chapterCapacity);
+        int cardWidth = panel.width() - (chapterRowCount > chapterCapacity ? 24 : 14);
         int y = panel.y() + 9;
-        for (int index = pageStart; index < pageEnd; index++) {
+        for (int index = chapterFirstRow; index < end; index++) {
             var row = rows.get(index);
             if (row.heading()) {
                 Component archive = Component.translatable("screen.firsttorch.chapter.completed", row.completedCount());
-                addRenderableWidget(button(panel.x() + 7, y, panel.width() - 14, cardHeight, archive,
-                        ignored -> { completedExpanded = !completedExpanded; rebuildWidgets(); },
+                addChapterButton(button(panel.x() + 7, y, cardWidth, cardHeight, archive,
+                        ignored -> { completedExpanded = !completedExpanded; chapterFirstRow = 0; rebuildWidgets(); },
                         archive.copy().append(". ").append(Component.translatable(completedExpanded
-                                ? "screen.firsttorch.chapter.collapse" : "screen.firsttorch.chapter.expand")),
+                                ? "screen.firsttorch.chapter.collapse" : "screen.firsttorch.chapter.expand"))
+                                .append(". ").append(Component.translatable("screen.firsttorch.chapter.scroll")),
                         null, FirstTorchButton.Kind.ARCHIVE, completedExpanded));
-                y += cardHeight + 5;
-                continue;
+            } else {
+                ChapterDefinition chapter = row.chapter();
+                Component label = cardWidth >= 100 ? Component.translatable(chapter.titleKey()) : Component.empty();
+                FirstTorchButton card = button(panel.x() + 7, y, cardWidth, cardHeight, label,
+                        ignored -> selectChapter(chapter.id()),
+                        Component.translatable("screen.firsttorch.chapter.narration", Component.translatable(chapter.titleKey()))
+                                .append(". ").append(Component.translatable("screen.firsttorch.chapter.scroll")),
+                        null, FirstTorchButton.Kind.CARD, !trophiesOpen && chapter.id().equals(selection.chapterId()));
+                if (preview()) card.preview(icon(chapter.id()), false, false);
+                else card.preview(QuestIcons.resolveItem(chapter.iconItemId()), false, false);
+                addChapterButton(card);
             }
-            ChapterDefinition chapter = row.chapter();
-            Component label = panel.width() - 14 >= 100 ? Component.translatable(chapter.titleKey()) : Component.empty();
-            FirstTorchButton card = button(panel.x() + 7, y, panel.width() - 14, cardHeight, label,
-                    ignored -> selectChapter(chapter.id()),
-                    Component.translatable("screen.firsttorch.chapter.narration", Component.translatable(chapter.titleKey())),
-                    null,
-                    FirstTorchButton.Kind.CARD, !trophiesOpen && chapter.id().equals(selection.chapterId()));
-            if (preview()) card.preview(icon(chapter.id()), false, false);
-            else card.preview(QuestIcons.resolveItem(chapter.iconItemId()), false, false);
-            addRenderableWidget(card);
             y += cardHeight + 5;
-        }
-        if (rows.size() > visibleCount) {
-            Component previousLabel = Component.translatable("screen.firsttorch.chapter.previous_page");
-            Component nextLabel = Component.translatable("screen.firsttorch.chapter.next_page");
-            int pageButtonWidth = Math.min(20, Math.max(8, (panel.width() - 18) / 2));
-            FirstTorchButton previous = button(panel.x() + 7, panel.bottom() - 23, pageButtonWidth, 16,
-                    Component.literal("↑"), ignored -> { chapterPage = Math.max(0, pageStart / visibleCount - 1); rebuildWidgets(); },
-                    previousLabel, Tooltip.create(previousLabel), FirstTorchButton.Kind.NAVIGATION, false);
-            FirstTorchButton next = button(panel.right() - 7 - pageButtonWidth, panel.bottom() - 23, pageButtonWidth, 16,
-                    Component.literal("↓"), ignored -> { chapterPage = pageStart / visibleCount + 1; rebuildWidgets(); },
-                    nextLabel, Tooltip.create(nextLabel), FirstTorchButton.Kind.NAVIGATION, false);
-            previous.active = pageStart > 0;
-            next.active = pageEnd < rows.size();
-            addRenderableWidget(previous);
-            addRenderableWidget(next);
         }
     }
 

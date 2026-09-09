@@ -1,5 +1,21 @@
 # Playtest log
 
+## 2026-09-09 — Complete practical Redstone image placement
+
+The user accepted chapter scrolling. Four existing follow-up cards now reuse matching original-asset diagrams: Comparator display, Observer changes, Door site and Door safe finish. All seventeen practical circuit cards now have illustrations; material-only cards and generic bench preparation are excluded intentionally. The Door-site caption explicitly leaves the plates for the next lesson. No objectives, rewards or saved progress change.
+
+Pending in-game: inspect the four placements in the three chapters, especially the Door preview wording. Existing circuits need not be rebuilt for this visual check. This closes image placement coverage, not a fresh full survival playthrough.
+
+Verification: all 389 native tests and the mod build passed. Retained-pack validation/build and whitespace checks passed. The new coverage test checks seventeen practical cards across six chapters; image packaging checks cover 111 placements.
+
+## 2026-09-09 — Scrollable chapter navigation
+
+The user accepted the original-component artwork revision. Replaced chapter page arrows with whole-row scrolling, an amber draggable scrollbar and focused-card Page Up/Down/Home/End controls. Scroll offset is clamped to current visible/archive rows, and navigation targets are revealed without changing quest selection while browsing. Reference history now stores a row offset rather than a page number. No gameplay or persisted data changes.
+
+Pending in-game: scroll a long expanded chapter archive with wheel and thumb, in overview and compact reading widths; collapse/expand the archive; search for a distant chapter; follow a reference and return to the old scroll position. Try keyboard paging on a focused chapter card. The detail pane must keep its independent scrolling and chapter scrolling must not select quests automatically. Guide/trophy paging is not part of this change.
+
+Verification: all 388 native tests and build passed, including five new scroll-geometry tests and existing reference-history tests. A separate code review found no concrete event/rebuild/navigation defect. Retained-pack validation/build and whitespace checks passed. Live UI interaction remains pending.
+
 ## 2026-09-09 — Original components instead of letter placeholders
 
 At the user's request, replaced component letters across all eight affected Redstone diagrams: Repeater direction/range/delay, Comparator reading, short wire, wire limit, input comparison and Iron Door. The other five current Redstone images already contain original components or comparison/state labels, so no component substitution is needed there. Original models/textures replace Lever/Chest/Button/Plate/Door letters; straight Dust uses original wire texture and power tint. Counted wire symbols are explicitly not to scale. Comparison letters and position numbers remain intentionally.

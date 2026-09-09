@@ -8,7 +8,7 @@ import java.util.Optional;
 
 /** Session-only reading history. Following a reference never changes progress or visibility. */
 final class QuestLinkNavigation {
-    record Location(Selection selection, int scroll, boolean reading, boolean completedExpanded, int chapterPage) {}
+    record Location(Selection selection, int scroll, boolean reading, boolean completedExpanded, int chapterFirstRow) {}
     private final ArrayDeque<Location> history = new ArrayDeque<>();
 
     static Optional<Selection> destination(GuideSnapshot snapshot, ProgressPayload progress, String questId) {

@@ -48,7 +48,7 @@ final class GuideImageLayoutTest {
         try (var input = getClass().getResourceAsStream("/data/firsttorch/guides/course.json")) {
             var images = GuideJson.read(input).chapters().stream().flatMap(c -> c.quests().stream())
                     .map(q -> q.image()).filter(java.util.Objects::nonNull).toList();
-            assertEquals(107, images.size());
+            assertEquals(111, images.size());
             for (var image : images) {
                 String assetPath = "assets/" + image.resource().replace(':', '/');
                 try (var png = getClass().getResourceAsStream("/" + assetPath)) {

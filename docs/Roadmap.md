@@ -628,9 +628,11 @@ Implementation target: native 0.13.0-alpha.1; retained pack 0.9.1 remains unchan
   - [x] Add short-wire on/off, 15/16-Dust boundary and normal/sticky Piston settled-state comparisons
   - [x] In-game acceptance: the three new A/B comparisons and their captions (user-confirmed)
   - [x] Add input behaviour, Comparator 0/64/128 contents and Observer pulse state comparisons with original Lamp textures and bilingual legends
-  - [ ] In-game acceptance: input, container-state and pulse comparisons at half-pane width
+  - [x] In-game acceptance: input, container-state and pulse comparisons at half-pane width (user-confirmed)
   - [x] Replace component-letter placeholders throughout existing Redstone diagrams with original item/model icons and connected wire textures; update both caption languages
-  - [ ] In-game acceptance: revised component icons, wire visibility and counted wire sections across all eight affected diagrams
+  - [x] In-game acceptance: revised component icons, wire visibility and counted wire sections across all eight affected diagrams (user-confirmed)
+  - [x] Cover every practical circuit card with an original-asset build/state illustration, reusing matching layouts on four follow-up cards; add a coverage regression
+  - [ ] In-game acceptance: reused Comparator/Observer/Door illustrations and the Door site's next-step preview caption
 
 ## 0.11.0 — Creature and Drop Field Guide
 
@@ -742,6 +744,8 @@ Acceptance convention (2026-09-08): the user confirms that previous "correct/goo
   - [x] Continue with First Steps objectives and progressive chapter visibility; no FTB progress import yet (user-confirmed 2026-09-08)
     - [x] Reveal native chapters from individual quest prerequisites while retaining started/completed chapters and optional branches
     - [x] Group completed chapters behind an expandable entry, remove chapter numbers and keep archived lessons searchable
+    - [x] Replace chapter page arrows with mouse-wheel scrolling, a draggable scrollbar and keyboard row navigation; preserve search/reference reveal and return position
+    - [x] In-game acceptance: chapter scrolling in both widths, archive expansion, scrollbar drag, keyboard navigation and reference/search return (user-confirmed)
     - [x] In-game acceptance of progressive chapter visibility, search, saved progress and parallel shelter/tool routes (user-confirmed 2026-09-08)
     - [x] Port mouse controls and four optional movement exercises with their original prerequisites and rewards
     - [x] Restore original item icons for all thirteen migrated quests in map and detail views
