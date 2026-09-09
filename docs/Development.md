@@ -42,6 +42,10 @@ NeoForge play networking synchronises validated definitions and the executing pl
 
 ## Editing quests
 
+Curing, Cauldrons and Pumpkins add nine linked cards (59 in total). Pumpkin headgear links to both Enderman and Creaking references, keeping their different behaviour discoverable. Related brewing, Village, water, Sheep and lighting lessons provide context without adding cure/experiment requirements. No quest or progress definitions change.
+
+Bee Mechanics, Archaeology and Music now provide related course/creature links on nine existing cards (50 linked source cards in total). Destinations support crop care, bottles, Bee safety, excursion planning, Copper processing, storage and Creeper information. No new lessons, gameplay requirements or player-state changes are introduced.
+
 The next navigation-only reference batch covers Trial Chambers/Pale Garden, Block Transformations and Special Names. Nine additional cards bring the catalogue to 41 linked cards across nine chapters. Some destinations are specific lessons within a chapter (Pumpkin headgear, water/Bottle/Furnace practice, Sheep and Rabbit), while the label still identifies the destination chapter. Existing server gates and progress are unchanged.
 
 Reference-link expansion: the existing Animals, Overworld monsters and Nether creatures chapters now use the same clickable catalogue and return history as the End/aquatic/special batch. All 32 cards across these six chapters have stable-ID destinations; the broader reference and mechanics cross-link audit remains open. This is navigation-only content maintenance, with no new quests, progression gates or reward changes.

@@ -10,8 +10,17 @@ import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 
 final class ReferencePointersTest {
+    @Test void pumpkinHeadgearReferencesBothRelevantCreatures() {
+        assertEquals(Set.of("19A0B0C0D0E00001", "1CA0B0C0D0E00003"),
+                QuestReferenceLinks.forQuest("51A0B0C0D0E00003").stream()
+                        .map(QuestReferenceLinks.Link::questId).collect(Collectors.toSet()));
+        assertEquals("51A0B0C0D0E00003", QuestReferenceLinks.forQuest("1CA0B0C0D0E00003").getFirst().questId());
+    }
+
     private static final Set<String> CHAPTER_KEYS = Set.of("field_animals", "field_overworld", "field_nether",
-            "field_end", "field_water", "field_special", "field_chambers_garden", "mechanics_blocks", "mechanics_names");
+            "field_end", "field_water", "field_special", "field_chambers_garden", "mechanics_blocks", "mechanics_names",
+            "mechanics_bees", "mechanics_archaeology", "mechanics_music",
+            "mechanics_curing", "mechanics_cauldrons", "mechanics_pumpkins");
 
     @Test void referenceLinksTargetExistingQuestsAndTheirChapterTitlesInBothLanguages() throws Exception {
         try (var input = getClass().getResourceAsStream("/data/firsttorch/guides/course.json")) {
@@ -19,7 +28,7 @@ final class ReferencePointersTest {
             var sources = chapters.stream().filter(c -> CHAPTER_KEYS.stream()
                     .anyMatch(key -> c.titleKey().equals("chapter.firsttorch." + key + ".title")))
                     .flatMap(c -> c.quests().stream()).map(q -> q.id()).collect(Collectors.toSet());
-            assertEquals(41, sources.size());
+            assertEquals(59, sources.size());
             try (var catalog = getClass().getResourceAsStream("/assets/firsttorch/quest_links.json")) {
                 assertNotNull(catalog);
                 var entries = JsonParser.parseReader(new InputStreamReader(catalog, StandardCharsets.UTF_8)).getAsJsonObject();

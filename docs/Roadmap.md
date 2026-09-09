@@ -676,7 +676,11 @@ First implementation batch inside native 0.13.0-alpha.1: three optional three-ca
 - [ ] Give each card a short trigger, observable result, danger note where needed, and one safe experiment
 - [ ] Cross-link mechanics to Redstone, structures, creatures, farming, or existing course lessons when that reduces duplication
   - [x] Link Block Transformations to existing tool/water/bottle lessons and Special Names to animal reference cards
-  - [ ] In-game acceptance: nine links across Trial Chambers/Pale Garden, Block Transformations and Special Names
+  - [x] In-game acceptance: nine links across Trial Chambers/Pale Garden, Block Transformations and Special Names (user-confirmed)
+  - [x] Add related course/creature links to Bee Mechanics, Archaeology and Music (nine existing cards)
+  - [x] In-game acceptance: Bee Mechanics, Archaeology and Music reference links (user-confirmed)
+  - [x] Add related links to Zombie Villager Curing, Cauldrons and Pumpkins (nine existing cards)
+  - [ ] In-game acceptance: curing, Cauldron and Pumpkin reference links
 - [ ] Review each entry against the targeted Minecraft version and remove entries that cannot be verified reliably
 
 ## 0.13.0 — Independent First Torch Mod

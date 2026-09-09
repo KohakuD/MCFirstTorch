@@ -1,5 +1,21 @@
 # Playtest log
 
+## 2026-09-09 — Curing, Cauldron and Pumpkin links
+
+Verification: all 381 tests and native build pass. The catalogue regression validates all 59 linked cards; a dedicated test protects both Pumpkin creature destinations and the Creaking return link. Retained-pack validation/build pass. In-game acceptance of this batch remains pending.
+
+The user accepted the Bee/archaeology/music link batch. Nine existing cards now link to related Village/brewing, water/Bottle, Sheep and lighting lessons. Pumpkin headgear has separate Enderman and Creaking destinations; the latter already links back to headgear, so the return history can be checked without changing completion. Original reading chains, text, rewards and saved progress are unchanged.
+
+Pending in-game: inspect these three archived/current chapters, follow links and return. In particular, check both headgear destinations and Creaking → headgear → back. No cure, washing, carving or dangerous encounter is required.
+
+## 2026-09-09 — Bee, archaeology and music references
+
+Verification: all 380 tests and native build pass. The reference regression checks all 50 source cards and their bilingual destination labels. All 41 prior catalogue entries are unchanged. Target mechanics-data verification and retained-pack validation/build pass. In-game review of this batch remains pending.
+
+The user accepted the encounter/transformation/name links. Nine cards in the existing Bee Mechanics, Archaeology and Music chapters now link to related course or creature information. The Honey Bottle card provides both bottle preparation and the Bee reference. Original text, task definitions, dependency chains, rewards and progress remain unchanged.
+
+Pending in-game: open these three chapters (also available from the Completed archive), check destination lessons and use return navigation. In particular, try Honey Bottle → Bee → Bee Mechanics and return twice, and Music Disc/Creeper → Creeper. No harvest, excavation, combat or progress reset is needed.
+
 ## 2026-09-09 — Encounters, transformations and names links
 
 Verification: 380 tests and native build pass, including all 41 catalogue source cards and the real Toast/Rabbit/names return sequence. Exact practical destination titles were checked against the German course strings. Retained-pack validation/build pass. Live in-game review of this batch remains pending.
