@@ -13,10 +13,13 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
 - [x] English and German player-facing text, original-version Minecraft assets, and native JAR boundary verification
 - [x] Accessibility foundations: keyboard navigation, enlarged native browser view, quiet surfaces, and quest-node narration
 - [x] Single-player content and interface acceptance across the completed guided path and reference-library organisation
+- [x] Native-only archive cleanup: clean build, all guide images sourced natively, early recipe and later screenshot accepted in game
 
 ### Open acceptance and release work
 
 - [ ] Dedicated-server and multiplayer acceptance: independent player progress, reward recipients, reconnects, disconnect/reload handling, and server lifecycle
+  - [x] Native storage regressions for welcome acknowledgements across two players, two reopen cycles, separate worlds and independent quest storage
+  - [ ] Two-client smoke test: independent welcomes, manual tasks and reward claims; reconnect both players (see `MultiplayerAcceptance.md`)
 - [ ] Multiplayer safety review for backups, deaths, version upgrades, and any future team semantics
 - [x] User acceptance of the delivered End City/End Ship and optional mob-drop/Bastion content; separate clean-profile survival verification remains below
 - [ ] Complete Redstone practical-build and illustration acceptance in both languages

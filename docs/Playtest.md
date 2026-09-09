@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-10 — Welcome storage isolation
+
+The user accepted both native image smoke checks after archive cleanup. Added three
+native SavedDataStorage tests for separate player acknowledgements across two reopen
+cycles, distinct worlds and coexistence with quest progress. These exercise real
+temporary storage, not ServerPlayer connections, welcome packet routing or payout
+recipients. Two-client multiplayer acceptance remains open.
+
 ## 2026-09-10 — Native-only archive cleanup
 
 The owner explicitly cancelled FTB import work. Legacy pack data, tools and import
