@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-09 — Compact reference index
+
+Added a title-bar Book below the conditional reward chest. It opens an industrial modal with original chapter icons and translated titles for visible field-guide/mechanics chapters, including completed entries. No unavailable chapter is introduced. Selection rechecks visibility and stores the previous browser location in the existing return stack. No tasks, rewards, definitions or progress changed.
+
+Pending in-game: open the Book with unlocked references; scroll and use keyboard navigation; select an archived chapter, read a card and return to the prior lesson; cancel with Escape without changing selection. Check both languages and small-window layout. Before references unlock, the Book must be absent. The reward chest must remain independently visible only when claims exist.
+
+Verification: 391 native tests and mod build passed; retained-pack validation/build and whitespace checks passed. Two index tests cover all sixteen chapters/62 cards, ordering and exclusion of chapters outside the supplied visible list. Live modal interaction remains pending.
+
 ## 2026-09-09 — Mechanics instructional-structure audit
 
 Read all 27 mechanics descriptions in both languages and recorded the trigger/result/safety/optional-observation coverage by chapter in `MechanicsReferenceSources.md`. Closed the selected-topic coverage and instructional-structure roadmap items, not the separate full target-version behaviour audit. Corrected German Jukebox grammar and English Pumpkin carving-step wording. No task, reward, ID, image or progress changes. No new interaction playtest is required for these wording corrections.

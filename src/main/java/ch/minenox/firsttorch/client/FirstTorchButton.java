@@ -11,7 +11,7 @@ import net.minecraft.world.item.Items;
 
 /** Custom appearance with native button input and narration, without hover tooltips. */
 final class FirstTorchButton extends Button {
-    enum Kind { CARD, PAUSE_ENTRY, MEDALLION, FOOTER, NAVIGATION, TROPHY, ARCHIVE, SEARCH, ACCESSIBILITY, SETTINGS, CLAIM_ALL }
+    enum Kind { CARD, PAUSE_ENTRY, MEDALLION, FOOTER, NAVIGATION, TROPHY, ARCHIVE, SEARCH, ACCESSIBILITY, SETTINGS, CLAIM_ALL, REFERENCE_INDEX }
 
     private ItemStack lessonIcon = new ItemStack(Items.BOOK);
     private boolean completed;
@@ -54,6 +54,8 @@ final class FirstTorchButton extends Button {
         }
         if (kind == Kind.SEARCH || kind == Kind.ACCESSIBILITY || kind == Kind.SETTINGS) {
             FirstTorchTheme.headerIcon(graphics, bounds.centerX() - 6, bounds.centerY() - 6, kind);
+        } else if (kind == Kind.REFERENCE_INDEX) {
+            graphics.item(lessonIcon, bounds.centerX() - 8, bounds.centerY() - 8);
         } else if (kind == Kind.ARCHIVE) {
             FirstTorchTheme.completionBadge(graphics, getX() + 5, bounds.centerY() - 8);
             if (getWidth() >= 100) text.acceptScrollingWithDefaultCenter(label,

@@ -319,6 +319,14 @@ class FirstTorchBrowserScreen extends Screen {
         int size = 20;
         int x = bar.right() - 2 * size - 13;
         int y = bar.y() + 7;
+        var references = ReferenceIndex.chapters(viewModel.chapters());
+        if (!preview() && !references.isEmpty()) {
+            Component indexLabel = Component.translatable("screen.firsttorch.reference.index");
+            addRenderableWidget(button(x - size - 5, y + size + 4, size, size, Component.empty(),
+                    ignored -> minecraft.setScreenAndShow(new FirstTorchReferenceScreen(this, references, this::openReferenceChapter)),
+                    indexLabel, null, FirstTorchButton.Kind.REFERENCE_INDEX, false)
+                    .preview(new ItemStack(Items.BOOK), false, false));
+        }
         if (hasClaimableRewards()) {
             Component claimAll = Component.translatable("screen.firsttorch.reward.claim_all");
             addRenderableWidget(button(x - size - 5, y, size, size, Component.empty(),
@@ -346,6 +354,16 @@ class FirstTorchBrowserScreen extends Screen {
                 Component.translatable("screen.firsttorch.preview.toggle"),
                 Tooltip.create(Component.translatable("screen.firsttorch.preview.toggle")),
                 FirstTorchButton.Kind.SETTINGS, preview()));
+    }
+
+    private void openReferenceChapter(String chapterId) {
+        // Re-check after modal time: a server reload may have replaced the visible catalogue.
+        rebuildWidgets();
+        if (ReferenceIndex.chapters(viewModel.chapters()).stream().noneMatch(c -> c.id().equals(chapterId))) return;
+        linkNavigation.push(new QuestLinkNavigation.Location(selection, detailsScroll, reading, completedExpanded, chapterFirstRow));
+        completedExpanded = true;
+        revealChapter = true;
+        selectChapter(chapterId);
     }
 
     private ItemStack icon(String objectId) {
