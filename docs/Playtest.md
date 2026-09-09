@@ -1,5 +1,9 @@
 # Playtest log
 
+## 2026-09-09 — Guard the reference verification baseline
+
+Welcome wording accepted by the user. Added an explicit Minecraft 26.1.2 version gate before creature/mechanics archive verification and documented deliberate reference maintenance across upgrades. Five fixture tests passed (correct, wrong, missing ID, malformed JSON, missing entry); both verifiers also passed with the real target archive. Fixture files were removed after testing. No game code, assets, quests or saved progress changed; no in-game test is needed.
+
 ## 2026-09-09 — Refresh stale native Welcome instructions
 
 The user accepted course/library separation. Updated three bilingual Welcome cards: tasks now describe automatic advancement observation and early task recording without bypassing prerequisites; rewards explain the conditional claim-all chest; opening explains the pause-menu alternative without requiring an inventory book. Removed obsolete alpha limitations. Existing proof actions remain equivalent, with no definition, ID, reward or progress changes.

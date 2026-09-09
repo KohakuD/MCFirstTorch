@@ -30,3 +30,16 @@ pwsh ./tools/verify-mechanics-data.ps1 -MinecraftJar <target-client.jar>
 ```
 
 Do not copy the game archive, worlds or player progress into Git.
+
+## Versioned reference maintenance
+
+Both PowerShell archive verifiers call `assert-reference-game-version.ps1` before reading facts. Its explicitly reviewed baseline is 26.1.2; it does not silently follow `gradle.properties`. Missing, malformed or mismatched version metadata fails closed. This is an accidental-version guard, not cryptographic archive authentication. Run `pwsh ./tools/test-reference-game-version.ps1` for five isolated positive/negative fixture checks.
+
+For a deliberate Minecraft upgrade:
+
+1. Preserve chapter/quest/task IDs and existing progress; do not regenerate the catalogue.
+2. Review changed loot tables, recipes, tags, relevant behaviour code, structures and original artwork models against the new target. Update both languages together and record evidence in the source-review documents.
+3. Update the reviewed baseline only after that comparison, then run both archive verifiers, artwork checks, native tests/build and pack validation.
+4. Add focused in-game acceptance entries for changed instructions or behaviour. A new game version does not inherit old physical verification automatically.
+
+This workflow does not close the remaining factual or survival verification listed above.

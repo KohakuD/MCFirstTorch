@@ -1,6 +1,7 @@
 param([Parameter(Mandatory = $true)][string]$MinecraftJar)
 
 $ErrorActionPreference = 'Stop'
+& (Join-Path $PSScriptRoot 'assert-reference-game-version.ps1') -MinecraftJar $MinecraftJar
 $archive = [IO.Compression.ZipFile]::OpenRead((Resolve-Path -LiteralPath $MinecraftJar).Path)
 function Read-GameJson([string]$path) {
     $entry = $archive.GetEntry($path)

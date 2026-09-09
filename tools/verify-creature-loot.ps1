@@ -1,6 +1,7 @@
 param([Parameter(Mandatory = $true)][string]$MinecraftJar)
 
 $ErrorActionPreference = 'Stop'
+& (Join-Path $PSScriptRoot 'assert-reference-game-version.ps1') -MinecraftJar $MinecraftJar
 # Read the user's target game archive; never redistribute its loot tables.
 $archive = [IO.Compression.ZipFile]::OpenRead((Resolve-Path -LiteralPath $MinecraftJar).Path)
 function Read-Loot([string]$mob) {
