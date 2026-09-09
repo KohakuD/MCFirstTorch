@@ -1,5 +1,11 @@
 # Playtest log
 
+## 2026-09-09 — Separate library from course chapters
+
+The user accepted the initial index and requested library-only reference chapters. The course column/archive now filters out field-guide and mechanics chapters while keeping them in the visible catalogue for search, links and index access. All sixteen chapter prefixes are removed in both languages. Welcome overview introduces the library, and the header uses Minecraft's original 3D Bookshelf item model. Existing progress, rewards and IDs are unchanged.
+
+Native tests/build passed, including reference/course partition and completed-archive exclusion assertions. Pending in-game: course-only chapter/archive display, Bookshelf icon, short library titles, Welcome wording and continued search/link/return access to reference entries.
+
 ## 2026-09-09 — Compact reference index
 
 Added a title-bar Book below the conditional reward chest. It opens an industrial modal with original chapter icons and translated titles for visible field-guide/mechanics chapters, including completed entries. No unavailable chapter is introduced. Selection rechecks visibility and stores the previous browser location in the existing return stack. No tasks, rewards, definitions or progress changed.

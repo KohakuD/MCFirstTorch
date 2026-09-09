@@ -866,7 +866,9 @@ The minimal NeoForge/IntelliJ build foundation now lives beside the existing FTB
   - Choose a separate title-bar Book/index instead of changing existing course visibility or archive behaviour
 - [x] Keep the reference library easy to reopen after course completion without crowding the beginner's initial chapter list
 - [x] Add a compact index and consistent icons only after the first field-guide and unusual-mechanics batches establish the final structure
-  - [ ] In-game acceptance: Book/index visibility, scrolling and keyboard navigation, completed reference selection, Escape cancel and return to previous lesson in both languages
+  - [x] In-game acceptance: Book/index visibility, scrolling and keyboard navigation, completed reference selection, Escape cancel and return to previous lesson in both languages (user-confirmed)
+  - [x] Separate references from the normal course/archive list; shorten both-language titles, use the original Bookshelf header icon and explain the library in Welcome
+  - [ ] In-game acceptance: course-only chapter list/archive, Bookshelf icon, shortened library titles and Welcome hint; search/reference access remains intact
 - [ ] Treat reference updates as versioned data maintenance whenever Minecraft changes drops, structures, or mechanics
 
 ## Later milestones

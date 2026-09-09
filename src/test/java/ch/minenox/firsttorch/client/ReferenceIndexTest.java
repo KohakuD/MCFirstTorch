@@ -15,6 +15,12 @@ final class ReferenceIndexTest {
             assertEquals(7, indexed.stream().filter(c -> c.titleKey().contains(".field_")).count());
             assertEquals(9, indexed.stream().filter(c -> c.titleKey().contains(".mechanics_")).count());
             assertEquals(indexed, chapters.stream().filter(indexed::contains).toList());
+            var course = ReferenceIndex.courseChapters(chapters);
+            assertEquals(chapters.size(), course.size() + indexed.size());
+            assertTrue(course.stream().noneMatch(indexed::contains));
+            assertEquals(course, chapters.stream().filter(c -> !indexed.contains(c)).toList());
+            assertTrue(ChapterArchive.rows(course, id -> true, true).stream()
+                    .filter(row -> !row.heading()).noneMatch(row -> indexed.contains(row.chapter())));
         }
     }
 

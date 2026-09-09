@@ -325,7 +325,7 @@ class FirstTorchBrowserScreen extends Screen {
             addRenderableWidget(button(x - size - 5, y + size + 4, size, size, Component.empty(),
                     ignored -> minecraft.setScreenAndShow(new FirstTorchReferenceScreen(this, references, this::openReferenceChapter)),
                     indexLabel, null, FirstTorchButton.Kind.REFERENCE_INDEX, false)
-                    .preview(new ItemStack(Items.BOOK), false, false));
+                    .preview(new ItemStack(Items.BOOKSHELF), false, false));
         }
         if (hasClaimableRewards()) {
             Component claimAll = Component.translatable("screen.firsttorch.reward.claim_all");
@@ -551,7 +551,7 @@ class FirstTorchBrowserScreen extends Screen {
         Rect panel = layout.chapters();
         int cardHeight = Math.max(23, Math.min(42, panel.height() / 7));
         chapterCapacity = ChapterScroll.capacity(panel.height(), cardHeight);
-        var rows = ChapterArchive.rows(viewModel.chapters(), this::completed, completedExpanded);
+        var rows = ChapterArchive.rows(ReferenceIndex.courseChapters(viewModel.chapters()), this::completed, completedExpanded);
         chapterRowCount = rows.size();
         chapterFirstRow = ChapterScroll.clamp(chapterFirstRow, chapterRowCount, chapterCapacity);
         if (revealChapter) {
