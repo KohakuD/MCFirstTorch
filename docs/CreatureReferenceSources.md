@@ -4,6 +4,10 @@ Target: Minecraft Java 26.1.2, bundled native First Torch 0.13.0-alpha.1. This i
 
 ## Authoritative drop data
 
+Follow-up audit (2026-09-09): the remaining fifteen End/aquatic/special/Trial/Pale Garden cards have no identified contradiction with the reviewed target loot data in either language. The verifier additionally checks Enderman, Dolphin, Turtle and both Squid base drops, Shulker's chance-only Looting progression and Turtle's lightning-only Bowl gate. Habitat and live behaviour are not established by loot JSON; broader behavioural verification remains open.
+
+Regression expansion (2026-09-09): `verify-creature-loot.ps1` now checks fourteen ordinary item entries by item identity, base range (including Chicken's implicit count of one), ungated single pool roll and Looting enchantment. It also checks conditional burning-animal cooking, the Zombie Iron/Carrot/Potato player-credit/chance gates, Magma Cream's Frog exclusion and all three Frog-variant/Froglight mappings. These archive assertions do not prove adult-only entity behaviour, equipment drops, live interactions or every prose statement; the broader audit remains open.
+
 Rabbit addition: the target `entities/rabbit.json` gives adult Rabbits 0–1 Hide and one Raw Rabbit before Looting, with conditional furnace-smelting and Looting count functions. The separate Foot pool requires player credit: 10% without Looting, then 13/16/19% for levels I/II/III. The archive verifier now checks these distinctions. [Mojang: Rabbit](https://www.minecraft.net/fr-ca/article/rabbit) supports habitat and resource context; [Mojang: Rabbit's Foot](https://www.minecraft.net/pt-pt/article/taking-inventory--rabbit-s-foot) supports the rare-drop chance and Leaping use. The optional reading card requires no capture or kill.
 
 Read directly from the target game artifact: `data/minecraft/loot_table/entities/{cow,sheep,pig,chicken,zombie,skeleton,spider,creeper,blaze,wither_skeleton,ghast,magma_cube}.json`.

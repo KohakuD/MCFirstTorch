@@ -20,7 +20,7 @@ final class ReferencePointersTest {
     private static final Set<String> CHAPTER_KEYS = Set.of("field_animals", "field_overworld", "field_nether",
             "field_end", "field_water", "field_special", "field_chambers_garden", "mechanics_blocks", "mechanics_names",
             "mechanics_bees", "mechanics_archaeology", "mechanics_music",
-            "mechanics_curing", "mechanics_cauldrons", "mechanics_pumpkins");
+            "mechanics_curing", "mechanics_cauldrons", "mechanics_pumpkins", "mechanics_anchor");
 
     @Test void referenceLinksTargetExistingQuestsAndTheirChapterTitlesInBothLanguages() throws Exception {
         try (var input = getClass().getResourceAsStream("/data/firsttorch/guides/course.json")) {
@@ -28,7 +28,11 @@ final class ReferencePointersTest {
             var sources = chapters.stream().filter(c -> CHAPTER_KEYS.stream()
                     .anyMatch(key -> c.titleKey().equals("chapter.firsttorch." + key + ".title")))
                     .flatMap(c -> c.quests().stream()).map(q -> q.id()).collect(Collectors.toSet());
-            assertEquals(59, sources.size());
+            assertEquals(62, sources.size());
+            var allReferenceSources = chapters.stream().filter(c -> c.titleKey().startsWith("chapter.firsttorch.field_")
+                    || c.titleKey().startsWith("chapter.firsttorch.mechanics_"))
+                    .flatMap(c -> c.quests().stream()).map(q -> q.id()).collect(Collectors.toSet());
+            assertEquals(allReferenceSources, sources, "Review references when adding another library chapter");
             try (var catalog = getClass().getResourceAsStream("/assets/firsttorch/quest_links.json")) {
                 assertNotNull(catalog);
                 var entries = JsonParser.parseReader(new InputStreamReader(catalog, StandardCharsets.UTF_8)).getAsJsonObject();

@@ -643,7 +643,8 @@ Implementation target remains native 0.13.0-alpha.1. The initial three-chapter b
 - [x] Group the initial selection by animals, common hostile mobs, Nether mobs, End/approach, aquatic life and special encounters
 - [x] Give each entry a compact pattern: habitat, behaviour, main danger, common drops, conditional or rare drops, safe approach, and practical use
 - [ ] Distinguish guaranteed, chance-based, Looting-affected, player-kill-only, transformation-based, and environment-created drops
-- [ ] Link back to existing full safety lessons instead of duplicating their instructions
+  - [x] Review all 35 current bilingual creature cards against documented target loot evidence; ordinary, chance, player-credit and non-death sources remain distinct
+- [x] Link current creature-reference cards to related existing safety/course lessons; retain concise local warnings
   - [x] Add bilingual, exact-title reading pointers to the twelve End, aquatic and special-encounter cards; broader reference audit remains open
   - [x] In-game discovery of the updated existing reference chapters (user located them in the archive)
   - [x] Make twelve reading pointers clickable through stable quest IDs, with session-only nested return navigation and scroll restoration
@@ -653,6 +654,7 @@ Implementation target remains native 0.13.0-alpha.1. The initial three-chapter b
   - [x] Add related safety/Pumpkin links to the three Trial Chambers/Pale Garden cards
 - [x] Keep reference checkmarks optional and prevent every field-guide card from gating another quest
 - [ ] Validate all drop facts against the targeted Minecraft version and avoid presenting approximate rates as exact
+  - [x] Extend target-archive regression checks for ordinary animal/Overworld/Nether base counts, conditional meat cooking, Zombie rare-drop gates and Frog-dependent Magma Cube outputs
 - [x] Start with the creatures already used by the course, then expand by dimension in reviewable batches
 
 ## 0.12.0 — Discoverable Secrets and Unusual Mechanics
@@ -672,15 +674,19 @@ First implementation batch inside native 0.13.0-alpha.1: three optional three-ca
 
 - [x] Add a bilingual optional reference chapter for useful mechanics that ordinary play rarely explains clearly (first three chapters)
 - [ ] Cover selected transformation mechanics, unusual item interactions, name-dependent behaviours, archaeology rules, music-disc conditions, bee and pollination details, Villager curing, and other high-value discoveries
-- [ ] Separate practical hints from deliberate surprises so the reference remains useful without spoiling every discovery
+- [x] Label current mechanics readings as practical reference or optional discovery; appearance/name and music discoveries remain separate optional chapters
 - [ ] Give each card a short trigger, observable result, danger note where needed, and one safe experiment
-- [ ] Cross-link mechanics to Redstone, structures, creatures, farming, or existing course lessons when that reduces duplication
+  - [x] Add illustration-only archaeology observation and non-activating Anchor comparisons; dangerous experiments remain explicitly unnecessary
+  - [ ] In-game acceptance: mechanics category cues and the four added safe reading exercises
+- [x] Cross-link the current mechanics reference cards to related creatures, farming and existing course lessons
   - [x] Link Block Transformations to existing tool/water/bottle lessons and Special Names to animal reference cards
   - [x] In-game acceptance: nine links across Trial Chambers/Pale Garden, Block Transformations and Special Names (user-confirmed)
   - [x] Add related course/creature links to Bee Mechanics, Archaeology and Music (nine existing cards)
   - [x] In-game acceptance: Bee Mechanics, Archaeology and Music reference links (user-confirmed)
   - [x] Add related links to Zombie Villager Curing, Cauldrons and Pumpkins (nine existing cards)
-  - [ ] In-game acceptance: curing, Cauldron and Pumpkin reference links
+  - [x] In-game acceptance: curing, Cauldron and Pumpkin reference links (user-confirmed)
+  - [x] Add the final three Respawn Anchor pointers; all 62 current reference cards have reviewed stable-ID destinations
+  - [x] In-game acceptance: Respawn Anchor links and return navigation (user-confirmed)
 - [ ] Review each entry against the targeted Minecraft version and remove entries that cannot be verified reliably
 
 ## 0.13.0 — Independent First Torch Mod

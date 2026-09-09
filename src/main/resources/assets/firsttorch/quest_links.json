@@ -57,5 +57,8 @@
   "50A0B0C0D0E00003": [{"questId": "50A0B0C0D0E00001", "titleKey": "chapter.firsttorch.mechanics_cauldrons.title"}],
   "51A0B0C0D0E00001": [{"questId": "16A0B0C0D0E00002", "titleKey": "chapter.firsttorch.field_animals.title"}],
   "51A0B0C0D0E00002": [{"questId": "7E42ACD50863F19B", "titleKey": "chapter.firsttorch.safe_home.title"}],
-  "51A0B0C0D0E00003": [{"questId": "19A0B0C0D0E00001", "titleKey": "chapter.firsttorch.field_end.title"}, {"questId": "1CA0B0C0D0E00003", "titleKey": "chapter.firsttorch.field_chambers_garden.title"}]
+  "51A0B0C0D0E00003": [{"questId": "19A0B0C0D0E00001", "titleKey": "chapter.firsttorch.field_end.title"}, {"questId": "1CA0B0C0D0E00003", "titleKey": "chapter.firsttorch.field_chambers_garden.title"}],
+  "52A0B0C0D0E00001": [{"questId": "33CB08D1E94FA05C", "titleKey": "chapter.firsttorch.piglin_barter.title"}],
+  "52A0B0C0D0E00002": [{"questId": "236B08D1E94FA05C", "titleKey": "chapter.firsttorch.nether_safety.title"}],
+  "52A0B0C0D0E00003": [{"questId": "3286E0194CA735DF", "titleKey": "chapter.firsttorch.first_shelter.title"}]
 }

@@ -42,6 +42,12 @@ NeoForge play networking synchronises validated definitions and the executing pl
 
 ## Editing quests
 
+Reference review follow-up: all 27 mechanics descriptions now begin with a bilingual practical/discovery cue. Four reading-only exercises clarify archaeology recognition and Anchor safety. The remaining fifteen creature descriptions were checked against their documented loot evidence; the archive regression now also protects their ordinary ranges, Shulker chance semantics and Turtle lightning loot. No definitions, IDs, rewards or save data change. Visual acceptance of the extra prose remains pending.
+
+The creature archive verifier now covers fourteen ordinary drop entries plus cooking and additional rare/environmental gates. A bilingual Chicken wording correction distinguishes the base meat drop from its cooked form. Existing quest IDs, requirements, rewards, runtime and player progress are untouched. Respawn Anchor reference navigation has been accepted in-game by the user.
+
+The initial reference-link rollout is complete: all 62 current creature/mechanics cards across 16 chapters have catalogue entries, including the final three Respawn Anchor cards. Tests compare the catalogue against every field/mechanics chapter so a new chapter prompts a fresh link review. This closes navigation coverage only, not the separate facts, circuit artwork, multiplayer or release checks.
+
 Curing, Cauldrons and Pumpkins add nine linked cards (59 in total). Pumpkin headgear links to both Enderman and Creaking references, keeping their different behaviour discoverable. Related brewing, Village, water, Sheep and lighting lessons provide context without adding cure/experiment requirements. No quest or progress definitions change.
 
 Bee Mechanics, Archaeology and Music now provide related course/creature links on nine existing cards (50 linked source cards in total). Destinations support crop care, bottles, Bee safety, excursion planning, Copper processing, storage and Creeper information. No new lessons, gameplay requirements or player-state changes are introduced.

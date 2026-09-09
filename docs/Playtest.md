@@ -1,5 +1,27 @@
 # Playtest log
 
+## 2026-09-09 — Remaining reference audit and reading cues
+
+Reviewed the remaining fifteen creature cards and all 27 mechanics readings in both languages against documented target evidence. No further loot-data or documented-mechanics contradiction was identified. Extended target archive checks for five more ordinary item entries, Shulker Looting chance and Turtle lightning loot. Added practical/discovery labels to mechanics descriptions and safe, non-activating reading exercises for archaeology recognition and all three Anchor cards. Runtime, quest definitions and progress remain unchanged.
+
+Pending in-game: sample a practical mechanics card and a name/music discovery; check the archaeology comparison exercise and three Anchor comparisons for readable wrapping, scrolling and reachable confirmation/reference buttons. No new world, encounter, crafting, activation or death is required. Physical Redstone circuit verification and artwork remain separate open work.
+
+Verification: native tests/build, both target-archive verifiers, retained-pack validation/build and whitespace checks passed. The new regression checks all 27 bilingual category cues and the safe reading prompts; this does not replace visual acceptance.
+
+## 2026-09-09 — Creature drop regression expansion
+
+The user accepted the final Respawn Anchor links and return navigation. Extended the read-only target-JAR verifier for ordinary animal/Overworld/Nether counts, conditional meat cooking, Zombie rare-drop gates and Frog-dependent Magma Cube outputs. The expanded verifier passes against Minecraft 26.1.2. No new game behaviour or player-state changes are introduced; no repeat in-game test is required for these script assertions. Full prose/interaction coverage remains a separate roadmap item.
+
+Reviewed the twenty Animals/Overworld/Nether reference descriptions in both languages against the documented sources and target loot tables. Corrected Chicken's unconditional raw-meat wording: fire can yield cooked meat. No other concrete loot-data contradictions were identified in this bounded review. Optional visual check: the Chicken reading card in either language; no kill or progress reset needed.
+
+## 2026-09-09 — Final Respawn Anchor references
+
+Verification: all 381 tests and native build pass. Catalogue coverage now matches every one of the 62 current reference quests; all 59 previous entries remain unchanged. The Bed destination explicitly explains the respawn point in its existing text. Target mechanics checks and retained-pack validation/build pass. Live review remains pending.
+
+The user accepted the curing/Cauldron/Pumpkin links. The three existing Respawn Anchor readings now link to bartering, safe Nether arrival and the Overworld Bed lesson. All 62 current library cards have reference destinations; this does not declare the entire reference/release roadmap complete. No original lesson text, progression, rewards or player files are changed.
+
+Pending in-game: follow all three Anchor links and return to the reading position. No crafting, charging, spawn change or death test is needed.
+
 ## 2026-09-09 — Curing, Cauldron and Pumpkin links
 
 Verification: all 381 tests and native build pass. The catalogue regression validates all 59 linked cards; a dedicated test protects both Pumpkin creature destinations and the Creaking return link. Retained-pack validation/build pass. In-game acceptance of this batch remains pending.
