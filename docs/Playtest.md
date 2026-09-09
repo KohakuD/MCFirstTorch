@@ -1,5 +1,14 @@
 # Playtest log
 
+## 2026-09-10 — Native storage and lifecycle safety review
+
+Reviewed UUID identity, historical completion retention, supported schemas and
+reward reservations. Added journal-copy and unsupported-header regressions; the
+focused reward/progress/welcome tests passed. Documented whole-world backups and
+the lack of an atomic journal/player-save transaction in `ProgressSafety.md`.
+Death/respawn, interrupted welcome and whole-world recovery remain manual checks.
+No runtime, guide content or existing world files changed.
+
 ## 2026-09-10 — Dedicated-server acceptance waived
 
 The owner explicitly requested skipping dedicated-server testing as irrelevant to

@@ -72,6 +72,42 @@ final class RewardJournalTest {
         assertTrue(reopened.ids(RewardJournal.Phase.PENDING).isEmpty());
     }
 
+    @Test void copiedJournalPreservesCompletedAndInterruptedClaims() throws Exception {
+        Path source = directory.resolve("source");
+        Path restored = directory.resolve("restored");
+        String interrupted = "2000000000000002";
+        RewardJournal original = new RewardJournal(source);
+        assertTrue(original.reserve(QUEST, REWARDS));
+        original.complete(QUEST);
+        assertTrue(original.reserve(interrupted, REWARDS));
+
+        Files.createDirectories(restored);
+        try (var files = Files.list(source)) {
+            for (Path file : files.toList()) {
+                Files.copy(file, restored.resolve(file.getFileName()));
+            }
+        }
+        RewardJournal copy = new RewardJournal(restored);
+        assertTrue(copy.available());
+        assertEquals(Set.of(QUEST), copy.ids(RewardJournal.Phase.COMPLETE));
+        assertEquals(Set.of(interrupted), copy.ids(RewardJournal.Phase.PENDING));
+        assertFalse(copy.reserve(QUEST, REWARDS));
+        assertFalse(copy.reserve(interrupted, REWARDS));
+        assertEquals(Set.of(interrupted), new RewardJournal(source).ids(RewardJournal.Phase.PENDING));
+    }
+
+    @Test void unsupportedJournalVersionIsPreservedAndBlocksClaims() throws Exception {
+        RewardJournal journal = new RewardJournal(directory);
+        assertTrue(journal.reserve(QUEST, REWARDS));
+        Path file = directory.resolve(QUEST + ".claim");
+        String future = Files.readString(file).replace("FIRST_TORCH_CLAIM_1", "FIRST_TORCH_CLAIM_2");
+        Files.writeString(file, future);
+        RewardJournal reopened = new RewardJournal(directory);
+        assertFalse(reopened.available());
+        assertThrows(java.io.IOException.class, () -> reopened.reserve("2000000000000002", REWARDS));
+        assertEquals(future, Files.readString(file));
+    }
+
     @Test void corruptedRecordIsPreservedAndBlocksNewReservations() throws Exception {
         Path file = directory.resolve(QUEST + ".claim");
         Files.writeString(file, "broken");

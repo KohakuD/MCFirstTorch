@@ -46,6 +46,9 @@ Guide definitions are datapack resources under `data/firsttorch/guides/`. Reload
 
 Progress is server-authoritative and keyed to the player. Definitions and the executing player's live progress are synchronised on login and reload. Storage or transport failures must present an unavailable state rather than stale progress. Preserve stable guide, quest, task, and reward identifiers: existing worlds may contain their completion and reward state.
 
+See [Progress safety](ProgressSafety.md) for the stopped-world backup boundary,
+upgrade constraints, reward crash limitations and pending respawn checks.
+
 Automatic inventory, advancement, and location objectives are observations; manual confirmations remain explicit learner actions. A task may be observed before prerequisites unlock, but a quest completes only when its requirements and prerequisite quests are satisfied. Rewards remain separately claimable under the shared eligibility policy.
 
 ## Interface and accessibility
