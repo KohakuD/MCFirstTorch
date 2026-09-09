@@ -91,7 +91,7 @@ class FirstTorchBrowserScreen extends Screen {
         viewModel = usesPreview() ? GuideBrowserViewModel.resolve(displayed, selection)
                 : GuideBrowserViewModel.resolve(displayed, selection, observedProgress);
         selection = viewModel.selection();
-        FirstTorchViewport resizedViewport = FirstTorchViewport.fit(width, height);
+        FirstTorchViewport resizedViewport = FirstTorchViewport.fit(width, height, FirstTorchClientConfig.ENLARGED_VIEW.get());
         if (!viewport.equals(resizedViewport)) revealChapter = true;
         viewport = resizedViewport;
         layout = FirstTorchLayout.calculate(viewport.width(), viewport.height(), reading && !trophiesOpen);

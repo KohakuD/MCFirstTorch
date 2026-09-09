@@ -13,6 +13,10 @@ final class FirstTorchAccessibilityScreen extends AccessibilityOptionsScreen {
                 "options.firsttorch.chapterFireworks", FirstTorchClientConfig.CHAPTER_FIREWORKS.get(), enabled -> {
                     FirstTorchClientConfig.CHAPTER_FIREWORKS.set(enabled);
                     FirstTorchClientConfig.CHAPTER_FIREWORKS.save();
+                }), OptionInstance.createBoolean(
+                "options.firsttorch.enlargedView", FirstTorchClientConfig.ENLARGED_VIEW.get(), enabled -> {
+                    FirstTorchClientConfig.ENLARGED_VIEW.set(enabled);
+                    FirstTorchClientConfig.ENLARGED_VIEW.save();
                 })});
         super.addOptions();
     }

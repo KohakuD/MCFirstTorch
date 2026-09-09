@@ -863,6 +863,8 @@ The minimal NeoForge/IntelliJ build foundation now lives beside the existing FTB
 - [ ] Preserve the stable curriculum identifiers and design an explicit migration path for progress created by the FTB-based pack
 - [ ] Match the current automatic inventory, advancement, location, and manual-check task behaviour before removing the FTB dependencies
 - [ ] Add accessibility options for text scale, contrast, keyboard navigation, reduced visual clutter, and screen-reader-friendly labels where the Minecraft UI permits them
+  - [x] Add an optional enlarged quest-browser view with shared render/input scaling, small-window limits and a persistent bilingual accessibility option
+  - [ ] In-game acceptance: toggle larger view, return to the same lesson, scroll/click in both browser layouts, resize, disable and reopen after restart
 - [ ] Verify asset and library licences, keep Minecraft-derived artwork tied to the targeted game version, and publish source and migration documentation
   - [x] Make native JAR installation the README entry point; separate retained FTB instructions and explicitly warn that FTB progress migration is not implemented
 - [ ] Ship the independent runtime only after a clean-profile parity playtest covers the complete guided route and both languages

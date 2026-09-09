@@ -1,5 +1,11 @@
 # Playtest log
 
+## 2026-09-09 — Optional enlarged quest-browser view
+
+Added an off-by-default client setting under Accessibility in both languages. It enlarges the browser's text, icons and controls together by up to 25 percent; constrained windows reduce or suppress extra zoom. Five added viewport tests protect unchanged defaults, bounded size, small-window fallback and pointer-coordinate conversion. Search/reference modals and vanilla options keep their existing scaling. No quest definitions, server protocol or player progress changed.
+
+Pending in-game: enable the larger view via the person icon, return to a long lesson and check text, scrolling, chapter selection and task/reward buttons. Check overview and expanded reading layouts, reduce the window size, then turn the setting off to restore the original view. Restart once to verify the chosen preference persists. No progress reset is needed. Full contrast/text-only scaling and screen-reader acceptance remain separate roadmap work.
+
 ## 2026-09-09 — Player storage isolation regressions
 
 Added four automated tests using temporary directories only: two players completing the same task/quest IDs independently, one player's later history update surviving two reopen cycles without affecting the other, one UUID in separate world directories, and separate reward journals retaining independent claims even when one journal is corrupt. These verify storage components, not live player-action/network/payout routing. No real world, player progress or runtime code changed.
