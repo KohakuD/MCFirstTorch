@@ -1,9 +1,10 @@
 # Two-client native smoke test
 
-Status: partially accepted on 2026-09-10. The user confirmed independent welcomes
-and separate quest progress with two accounts using the supplied native test JAR.
-Host type was not specified. Reward recipients, duplicate-claim prevention,
-reconnect/restart persistence and claim-all isolation remain unconfirmed.
+Status: LAN smoke test accepted on 2026-09-10 for `0.13.0-alpha.1`. After clarifying
+the earlier test report, the user explicitly started a LAN session and confirmed
+all requested checks as correct: independent welcomes and quest progress, reward
+recipient and claim-all isolation, duplicate-claim prevention, and reconnect/restart
+persistence. Dedicated-server acceptance remains open.
 Storage tests are not a substitute for this network/player test.
 
 Use a disposable world and two distinct player accounts, both with the same native

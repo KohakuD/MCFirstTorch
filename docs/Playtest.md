@@ -1,5 +1,15 @@
 # Playtest log
 
+## 2026-09-10 — Full LAN smoke acceptance
+
+The user clarified that the earlier report did not establish a LAN test, then
+explicitly started a LAN session and confirmed all requested checks as correct.
+The supplied `0.13.0-alpha.1` build passed separate welcomes and quest progress,
+player-specific rewards including claim-all, duplicate-claim prevention and
+reconnect/host-restart persistence. This supersedes the earlier partial report
+below. Dedicated-server and broader fault/reload/death checks remain open.
+Only acceptance documentation changed; no runtime or player data was modified.
+
 ## 2026-09-10 — Two-account welcome and progress acceptance
 
 The user confirmed independent welcomes and separate quest progress after receiving
