@@ -1,5 +1,12 @@
 # Playtest log
 
+## 2026-09-10 — Party transition migration decision
+
+Read-only review of the pinned Quests transition handler found full-data merging
+for a non-owner personal-to-party join but claim-only merging for party-to-personal
+leave in that handler. Documented the exact conditions and limitations. Import scope
+now awaits the owner's decision; no runtime or world changes and no new game test.
+
 ## 2026-09-10 — Migration key inspection
 
 Added a standalone standard-library Python key inspector, not a save importer.

@@ -867,6 +867,8 @@ The minimal NeoForge/IntelliJ build foundation now lives beside the existing FTB
   - [x] Document the offline migration design, identity mapping, partial-claim conflicts, transaction safety and required source fixtures in `ProgressMigration.md`
   - [x] Inspect the pinned local FTB Quests binary and one read-only save sample; document team storage, decimal IDs, field names and team/player reward-key distinction
   - [x] Confirm canonical claim-key encoding and add a standalone read-only key inspector with six synthetic precision/validation tests; begin pinned FTB Teams ownership inspection
+  - [x] Audit the pinned Quests party-transition handler; document asymmetric progress/claim merging and the unresolved personal-versus-party import scope
+  - [ ] Owner decision: first importer limited to verified personal progress or also shared party progress
   - [ ] Verify the pinned FTB save format and implement/test an explicit dry-run adapter before any apply mode
 - [ ] Match the current automatic inventory, advancement, location, and manual-check task behaviour before removing the FTB dependencies
 - [ ] Add accessibility options for text scale, contrast, keyboard navigation, reduced visual clutter, and screen-reader-friendly labels where the Minecraft UI permits them

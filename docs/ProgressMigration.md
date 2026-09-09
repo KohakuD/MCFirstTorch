@@ -84,6 +84,33 @@ Thus a player-name field or personal-team filename is insufficient proof of the
 active progress owner. Exact rank filtering, conflicting memberships and party
 join/leave progress transfer still require code review and controlled fixtures.
 
+### Party transition audit and scope decision (2026-09-10)
+
+The pinned Quests binary's `FTBQuestsEventHandler.playerChangedTeam` delegates to
+`ServerQuestFile.playerChangedTeam`. When the previous team is personal, the new
+team is a party and the player is not its owner, the latter calls
+`newData.mergeData(previousData)`. That method processes task progress, started and
+completed maps, claims and per-player data. The owner case does not enter this
+branch; party creation must be reviewed separately before generalising it.
+
+For a party-to-personal transition, this handler calls only
+`newData.mergeClaimedRewards(previousData)`, not `mergeData`. It then synchronises
+team data. This is bytecode-path evidence, not a controlled join/leave playtest or
+a claim that no other event handler can affect state.
+
+The retained book sets `default_reward_team: false`; this default does not remove
+the need to inspect per-reward overrides and historical claim records.
+
+**Owner decision pending:** should the first supported importer be limited to
+verified personal progress, or also assign shared party progress to native players?
+The recommended first scope is personal progress only, explicitly rejecting active
+party sources and unresolved membership/history rather than importing stale personal
+files. Shared-progress import needs a policy for recipients, personal versus shared
+claims and existing native progress. It must not be enabled by inferring ownership
+from the party owner's UUID. Native shared team progression remains a separate feature.
+
+No apply mode or automatic party-to-player mapping has been implemented.
+
 ## First supported scope
 
 Target the retained First Torch 0.9.1 definitions and the pinned FTB versions only.
