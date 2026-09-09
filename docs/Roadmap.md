@@ -865,6 +865,7 @@ The minimal NeoForge/IntelliJ build foundation now lives beside the existing FTB
 - [ ] Make progress server-authoritative and support single-player, multiplayer teams, reconnects, deaths, backups, and version upgrades safely
 - [ ] Preserve the stable curriculum identifiers and design an explicit migration path for progress created by the FTB-based pack
   - [x] Document the offline migration design, identity mapping, partial-claim conflicts, transaction safety and required source fixtures in `ProgressMigration.md`
+  - [x] Inspect the pinned local FTB Quests binary and one read-only save sample; document team storage, decimal IDs, field names and team/player reward-key distinction
   - [ ] Verify the pinned FTB save format and implement/test an explicit dry-run adapter before any apply mode
 - [ ] Match the current automatic inventory, advancement, location, and manual-check task behaviour before removing the FTB dependencies
 - [ ] Add accessibility options for text scale, contrast, keyboard navigation, reduced visual clutter, and screen-reader-friendly labels where the Minecraft UI permits them

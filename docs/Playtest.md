@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-09 — Pinned FTB storage inspection
+
+Read-only bytecode inspection of FTB Quests 26.1.2.7 and one retained-profile save
+confirmed JSON5 team progress, exact decimal long IDs and separate team/player
+reward keys. Evidence and binary hash are recorded in `ProgressMigration.md`.
+No saves, player identities or binary files were added to Git. No game was started
+and no importer was implemented; controlled source fixtures remain open.
+
 ## 2026-09-09 — Migration design boundary
 
 Quest-state narration is accepted by the user. Documented the offline migration

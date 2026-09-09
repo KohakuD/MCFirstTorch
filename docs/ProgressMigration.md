@@ -18,9 +18,38 @@ FTB migration. Do not run a migration against the owner's current native test wo
   reward being claimed cannot simply become a native unclaimed quest.
 - Native progress is per player; shared native team progress is not implemented.
 
-These facts are established by the current repository, not by an inspection of an
-FTB player-save format. The retained JSON5 files are lesson definitions, not proof
-of where or how the pinned FTB version stores player/team progress or reward claims.
+These native facts are established by the current repository. The initial pinned
+FTB inspection below adds source-format evidence, but not full migration validation.
+The retained quest-definition JSON5 files are not player progress.
+
+## Pinned FTB inspection (2026-09-09)
+
+Read-only inspection used the locally installed `ftb-quests-neoforge-26.1.2.7.jar`:
+SHA-256 `2A45C5E220885CC5D0EE757BC8BEDC3B6AF6B82015DD851BA5C0027CF3ACD32B`.
+`javap -p -c -classpath <jar> <class>` inspected these classes without running
+Minecraft or loading the mod. One existing retained-profile progress file was read
+to corroborate the representation; no player identifiers or save contents are
+copied into Git. This sample is not a controlled test fixture.
+
+| Evidence | Confirmed behaviour |
+| --- | --- |
+| `ServerQuestFile` static initialiser; `TeamData.saveIfChanged` | World-relative `ftbquests` directory; team UUID determines the file. The observed file has a dashed UUID filename and `.json5` extension. |
+| `TeamData.toJson` | Writes version `1`, undashed team `uuid`, `name`, `lock`, `rewards_blocked`, `task_progress`, `started`, `completed`, `repeatable`, `completion_count`, `claimed_rewards`, `player_data`. |
+| `FTBQCodecs` static initialiser | Progress/start/completion/repeatable maps use long keys and long values; completion counts use long keys and integer values. |
+| Existing sample | Task and completion map keys are decimal strings, not the hexadecimal IDs used in native definitions. Preserve exact 64-bit integers; never convert through floating-point numbers. |
+| `TeamData.getCompletedTime` / `getRewardClaimTime` | Completion/claim timestamps are distinct from task quantities. Claim time zero is treated as absent. |
+| `QuestKey.forReward` | Team rewards use the nil UUID in their claim key; other rewards use the supplied player UUID. The key's ID is the reward ID, not the quest ID. |
+| `QuestKey.fromString` | Reads an undashed UUID from the first 32 characters and an object code beginning at character 33. A strict adapter must also verify the separator and canonical code format before accepting a key. |
+
+The compressed JSON codec operations are logical serialization choices, not evidence
+that the `.json5` file is a compressed binary archive. The sample is ordinary text.
+Do not treat every entry in `completed` as a quest: classify IDs against definitions;
+the data model records completion of quest objects, not just native quest records.
+
+Remaining source work: inspect FTB Teams ownership/membership persistence, canonical
+claim-key encoding, definition reward flags and load/error behaviour. Then generate
+the controlled fixtures below. In particular, a nil-UUID team claim must not be
+mistaken for an unknown player or automatically copied to every target player.
 
 ## First supported scope
 
