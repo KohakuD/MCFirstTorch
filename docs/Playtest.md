@@ -1,5 +1,21 @@
 # Playtest log
 
+## 2026-09-09 — Original components instead of letter placeholders
+
+At the user's request, replaced component letters across all eight affected Redstone diagrams: Repeater direction/range/delay, Comparator reading, short wire, wire limit, input comparison and Iron Door. The other five current Redstone images already contain original components or comparison/state labels, so no component substitution is needed there. Original models/textures replace Lever/Chest/Button/Plate/Door letters; straight Dust uses original wire texture and power tint. Counted wire symbols are explicitly not to scale. Comparison letters and position numbers remain intentionally.
+
+Pending in-game: inspect recognisability and half-pane readability across the eight revised diagrams, especially the Lever, Plate, continuous wire and ×15/×3 quantities. The preceding container/pulse state-image acceptance also remains open. No reset or replay of completed tasks is necessary. Quest/task/reward data and player files are untouched.
+
+Verification: all eight revised images inspected outside Minecraft; five component icons and all sixteen wire strengths passed the artwork verifier (edge continuity, colour progression and cache isolation). All 383 native tests/build, retained-pack validation/build and whitespace checks passed. Image placement count remains 107. Live visual acceptance remains pending.
+
+## 2026-09-09 — Input, container and pulse state diagrams
+
+The user accepted the basic wire/range/Piston comparisons. Three additional state diagrams explain the existing input comparison, 0/64/128-Cobblestone Chest checks and single Observer pulse. Both captions and letters distinguish repeated states from a physical building plan. Artwork uses original target Lamp/Cobblestone textures with neutral annotations. No tasks, rewards or saved progress are changed.
+
+Pending in-game: inspect these three illustrations and captions at half-pane width in both languages. In particular, distinguish a manually switched-off Lever from an automatically ending Button pulse, and read the three Chest quantities. This is image acceptance, not a claim that every survival circuit has been freshly retested.
+
+Verification: all 382 native tests and build passed, including 107 image placements, packaged dimensions and bilingual captions. Retained-pack validation/build and whitespace checks passed. A structural comparison against HEAD confirmed that course definitions are unchanged apart from image fields. All three PNGs were visually inspected outside Minecraft.
+
 ## 2026-09-09 — Basic wire and Piston comparison artwork
 
 User accepted the range/delay/door diagrams. Added short-wire on/off, 15/16-Dust boundary and ordinary/sticky settled-state comparisons with bilingual captions. The limit plan explicitly groups fifteen Dust positions rather than suggesting one block; the Piston plan distinguishes final positions without pretending to render an extended Piston.

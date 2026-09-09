@@ -27,15 +27,15 @@ def main():
         normal = PLANS.model_top(archive, "piston").transpose(Image.Transpose.ROTATE_270)
         sticky = PLANS.model_top(archive, "sticky_piston").transpose(Image.Transpose.ROTATE_270)
         image = PLANS.background()
-        FOLLOWUP.row(image, ["L", "D", "D", "D", off], ["0", "1", "2", "3", "4"], 145, 180)
-        FOLLOWUP.row(image, ["L", "D", "D", "D", on], ["0", "1", "2", "3", "4"], 565, 180)
+        FOLLOWUP.row(image, ["L", "D", "D", "D", off], ["0", "1", "2", "3", "4"], 145, 180, archive=archive)
+        FOLLOWUP.row(image, ["L", "D:15", "D:14", "D:13", on], ["0", "1", "2", "3", "4"], 565, 180, archive=archive)
         letter(image, 205, "A")
         letter(image, 625, "B")
         image.save(PLANS.OUT / "redstone_short_line.png", optimize=True)
 
         image = PLANS.background()
-        FOLLOWUP.row(image, ["L", "D x15", "D", off], ["0", "1-15", "16", "17"], 145, 200)
-        FOLLOWUP.row(image, ["L", "D x15", on, ""], ["0", "1-15", "16", "17"], 565, 200)
+        FOLLOWUP.row(image, ["L", "D x15:15", "D", off], ["0", "1-15", "16", "17"], 145, 200, archive=archive)
+        FOLLOWUP.row(image, ["L", "D x15:15", on, ""], ["0", "1-15", "16", "17"], 565, 200, archive=archive)
         letter(image, 205, "A")
         letter(image, 625, "B")
         image.save(PLANS.OUT / "redstone_dust_limit.png", optimize=True)
@@ -43,8 +43,8 @@ def main():
         # Both rows show the final, unpowered/retracted state after one slow
         # on/off operation, never an approximation of the extended model.
         image = PLANS.background()
-        FOLLOWUP.row(image, [normal, "", stone], ["0", "1", "2"], 145, 180, show_arrow=False)
-        FOLLOWUP.row(image, [sticky, stone, ""], ["0", "1", "2"], 565, 180, show_arrow=False)
+        FOLLOWUP.row(image, [normal, "", stone], ["0", "1", "2"], 145, 180, show_arrow=False, archive=archive)
+        FOLLOWUP.row(image, [sticky, stone, ""], ["0", "1", "2"], 565, 180, show_arrow=False, archive=archive)
         letter(image, 205, "A")
         letter(image, 625, "B")
         # The matching front faces identify A/B; horizontal top views alone

@@ -12,6 +12,21 @@ import javax.imageio.ImageIO;
 import org.junit.jupiter.api.Test;
 
 final class GuideImageLayoutTest {
+    @Test void redstoneCaptionsNoLongerDescribeLetterComponents() throws Exception {
+        for (String locale : List.of("en_us", "de_de")) {
+            try (var input = getClass().getResourceAsStream("/assets/firsttorch/lang/" + locale + ".json")) {
+                var keys = JsonParser.parseReader(new InputStreamReader(input, StandardCharsets.UTF_8)).getAsJsonObject();
+                for (String name : List.of("redstone_inputs", "redstone_short_line", "redstone_dust_limit",
+                        "repeater_range", "repeater_delay", "iron_door_plan", "repeater_direction", "comparator_read")) {
+                    String caption = keys.get("image.firsttorch." + name + ".description").getAsString();
+                    for (String obsolete : List.of("0/L", "0/C", "/D", "D x15", "P =", "T =", "L =", "C = single", "placeholder", "Platzhalter")) {
+                        assertFalse(caption.contains(obsolete), name + ": " + obsolete);
+                    }
+                }
+            }
+        }
+    }
+
     @Test void imagesUseHalfThePaneWidthAndRemainCentred() {
         for (int available : new int[]{1, 120, 251, 420, 600}) {
             var bounds = GuideImageLayout.bounds(10, -30, available, 1672, 941);
@@ -33,7 +48,7 @@ final class GuideImageLayoutTest {
         try (var input = getClass().getResourceAsStream("/data/firsttorch/guides/course.json")) {
             var images = GuideJson.read(input).chapters().stream().flatMap(c -> c.quests().stream())
                     .map(q -> q.image()).filter(java.util.Objects::nonNull).toList();
-            assertEquals(104, images.size());
+            assertEquals(107, images.size());
             for (var image : images) {
                 String assetPath = "assets/" + image.resource().replace(':', '/');
                 try (var png = getClass().getResourceAsStream("/" + assetPath)) {
@@ -50,6 +65,9 @@ final class GuideImageLayoutTest {
                             "firsttorch:textures/questpics/redstone_short_line.png",
                             "firsttorch:textures/questpics/redstone_dust_limit.png",
                             "firsttorch:textures/questpics/piston_return.png",
+                            "firsttorch:textures/questpics/redstone_inputs.png",
+                            "firsttorch:textures/questpics/comparator_states.png",
+                            "firsttorch:textures/questpics/observer_pulse.png",
                             "firsttorch:textures/questpics/pumpkin_view_capture.png").contains(image.resource())
                             ? "src/main/resources/" : "overrides/resourcepacks/first_torch_guides/";
                     assertArrayEquals(Files.readAllBytes(Path.of(System.getProperty("firsttorch.projectDir"),

@@ -1,10 +1,11 @@
 """Render the three Redstone lesson plans from Minecraft 26.1.2 model assets.
 
-The plans deliberately leave Lever, Chest and Redstone Dust as neutral labelled
-cells.  They are lesson positions, not substitute drawings of game assets.
+Components use original game icons; wire uses the target straight-line texture.
+Isometric icons identify components inside the top-down position grid.
 """
 
 import argparse
+import importlib.util
 import json
 from io import BytesIO
 from pathlib import Path
@@ -18,6 +19,9 @@ OUT = ROOT / "src/main/resources/assets/firsttorch/textures/questpics"
 W, H = 1672, 941
 GOLD = (245, 191, 83, 255)
 LINE = (118, 121, 122, 255)
+SPEC = importlib.util.spec_from_file_location("redstone_components", ROOT / "tools/redstone_components.py")
+COMPONENTS = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(COMPONENTS)
 
 
 def asset(archive, path):
@@ -106,12 +110,37 @@ def arrow(draw, left, y, width):
 
 
 def neutral_cell(image, x, y, size, letter):
+    assert letter == "", "Component letters must never be rendered"
     draw = ImageDraw.Draw(image)
     draw.rectangle((x, y, x + size, y + size), fill=(38, 40, 41, 255), outline=LINE, width=5)
     draw.rectangle((x + 13, y + 13, x + size - 13, y + size - 13), outline=(77, 80, 81, 255), width=3)
     draw.ellipse((x + size // 2 - 45, y + size // 2 - 45,
                   x + size // 2 + 45, y + size // 2 + 45), outline=GOLD, width=5)
     draw.text((x + size // 2, y + size // 2 - 4), letter, font=font(50), anchor="mm", fill=GOLD)
+
+
+def component_cell(archive, image, x, y, size, value):
+    """Draw original component icons or a continuous east-west wire section."""
+    if value == "":
+        neutral_cell(image, x, y, size, value)
+        return
+    draw = ImageDraw.Draw(image)
+    draw.rectangle((x, y, x + size, y + size), fill=(38, 40, 41), outline=LINE, width=3)
+    if value.startswith("D"):
+        notation, _, strength = value.partition(":")
+        power = int(strength) if strength else 0
+        count = int(notation.split("x")[1]) if "x" in notation else 1
+        # A counted line symbol represents the whole grouped section. Do not
+        # squeeze fifteen textures into one tile: that creates unreadable noise.
+        tile = COMPONENTS.wire(archive, power=power, size=size)
+        image.alpha_composite(tile, (x, y))
+        if count > 1:
+            draw.text((x + size // 2, y + size - 25), "×" + str(count), font=font(34), anchor="mm", fill=GOLD)
+    else:
+        kind = {"L": "lever", "C": "chest", "B": "stone_button",
+                "P": "stone_pressure_plate", "T": "iron_door"}[value]
+        icon = COMPONENTS.component(archive, kind, size=size - 24)
+        image.alpha_composite(icon, (x + (size - icon.width) // 2, y + (size - icon.height) // 2))
 
 
 def plan(archive, output, cells, arrows=()):
@@ -130,7 +159,7 @@ def plan(archive, output, cells, arrows=()):
             image.alpha_composite(texture, (x, top))
             draw.rectangle((x, top, x + size, top + size), outline=(12, 13, 14, 255), width=4)
         else:
-            neutral_cell(image, x, top, size, value)
+            component_cell(archive, image, x, top, size, value)
     for index in arrows:
         x = left + index * (size + gap) + size // 3
         arrow(draw, x, top + size + 68, size)

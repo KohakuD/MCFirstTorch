@@ -11,18 +11,14 @@ PLANS = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(PLANS)
 
 
-def row(image, cells, labels, top, size, show_arrow=True):
+def row(image, cells, labels, top, size, show_arrow=True, *, archive):
     draw = ImageDraw.Draw(image)
     left = (PLANS.W - len(cells) * size) // 2
     for index, (cell, label) in enumerate(zip(cells, labels, strict=True)):
         x = left + index * size
         PLANS.label(draw, x + size // 2, top - 64, label)
         if isinstance(cell, str):
-            if len(cell) > 1:
-                draw.rectangle((x, top, x + size, top + size), fill=(38, 40, 41), outline=PLANS.LINE, width=5)
-                draw.text((x + size // 2, top + size // 2), cell, font=PLANS.font(48), anchor="mm", fill=PLANS.GOLD)
-            else:
-                PLANS.neutral_cell(image, x, top, size, cell)
+            PLANS.component_cell(archive, image, x, top, size, cell)
         else:
             image.alpha_composite(cell.resize((size, size), Image.Resampling.NEAREST), (x, top))
             draw.rectangle((x, top, x + size, top + size), outline=(12, 13, 14), width=4)
@@ -39,8 +35,8 @@ def main():
         long = PLANS.model_top(archive, "repeater_4tick").transpose(Image.Transpose.ROTATE_270)
         lamp = PLANS.asset(archive, "assets/minecraft/textures/block/redstone_lamp.png")
         image = PLANS.background()
-        row(image, ["L", short, short, lamp], ["0", "1", "2", "3"], 135, 180)
-        row(image, ["L", long, long, lamp], ["0", "1", "2", "3"], 565, 180)
+        row(image, ["L", short, short, lamp], ["0", "1", "2", "3"], 135, 180, archive=archive)
+        row(image, ["L", long, long, lamp], ["0", "1", "2", "3"], 565, 180, archive=archive)
         draw = ImageDraw.Draw(image)
         draw.text((180, 205), "A", font=PLANS.font(56), fill=PLANS.GOLD)
         draw.text((180, 635), "B", font=PLANS.font(56), fill=PLANS.GOLD)
@@ -49,12 +45,12 @@ def main():
         image = PLANS.background()
         # D groups are explicitly condensed, not single world positions.
         row(image, ["L", "D x15", short, "D x3", lamp],
-            ["0", "1-15", "16", "17-19", "20"], 285, 220)
+            ["0", "1-15", "16", "17-19", "20"], 285, 220, archive=archive)
         image.save(PLANS.OUT / "repeater_range.png", optimize=True)
 
         image = PLANS.background()
-        # P/T are neutral symbols: the caption defines plate/door/plate.
-        row(image, ["P", "T", "P"], ["0", "1", "2"], 290, 240)
+        # Original icons identify the three floor positions, not perspective.
+        row(image, ["P", "T", "P"], ["0", "1", "2"], 290, 240, archive=archive)
         draw = ImageDraw.Draw(image)
         # A second mirrored arrow indicates the return walk, not wiring.
         arrow_layer = Image.new("RGBA", image.size)

@@ -626,7 +626,11 @@ Implementation target: native 0.13.0-alpha.1; retained pack 0.9.1 remains unchan
   - [x] Add Repeater range/delay and two-sided Iron Door schematic guides with bilingual legends
   - [x] In-game acceptance: condensed Dust ranges, delay comparison and plate/door/plate diagram (user-confirmed)
   - [x] Add short-wire on/off, 15/16-Dust boundary and normal/sticky Piston settled-state comparisons
-  - [ ] In-game acceptance: the three new A/B comparisons and their captions
+  - [x] In-game acceptance: the three new A/B comparisons and their captions (user-confirmed)
+  - [x] Add input behaviour, Comparator 0/64/128 contents and Observer pulse state comparisons with original Lamp textures and bilingual legends
+  - [ ] In-game acceptance: input, container-state and pulse comparisons at half-pane width
+  - [x] Replace component-letter placeholders throughout existing Redstone diagrams with original item/model icons and connected wire textures; update both caption languages
+  - [ ] In-game acceptance: revised component icons, wire visibility and counted wire sections across all eight affected diagrams
 
 ## 0.11.0 — Creature and Drop Field Guide
 
