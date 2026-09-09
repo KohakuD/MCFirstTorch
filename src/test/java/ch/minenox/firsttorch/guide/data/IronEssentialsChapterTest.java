@@ -19,7 +19,7 @@ final class IronEssentialsChapterTest {
     @Test void preservesSourceIdentifiersGraphAndReward() throws Exception {
         var chapter = snapshot().guides().getFirst().chapters().get(8);
         assertEquals("4C86EA031D9F5B72", chapter.id());
-        assertEquals(8, chapter.order());
+        assertEquals(11, chapter.order());
         assertEquals("minecraft:water_bucket", chapter.iconItemId());
         assertEquals(QUESTS, chapter.quests().stream().map(q -> q.id()).toList());
         assertEquals(TASKS, chapter.quests().stream().flatMap(q -> q.tasks().stream()).map(t -> t.id()).toList());

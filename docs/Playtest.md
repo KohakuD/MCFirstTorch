@@ -1,5 +1,9 @@
 # Playtest log
 
+## 2026-09-09 — Early chapter display order
+
+User requested farming, animal care, storage and composting directly after food, ahead of ores, and Iron Essentials before Safe Mining. Changed only eleven chapter order values; stable IDs, prerequisites, quests, tasks and rewards remain unchanged. Chapters still appear when their own prerequisites allow them, rather than unlocking in display order. Regenerated the chapter reference image with updated numbers. Pending: inspect early chapter sorting in game; no progress reset required.
+
 ## 2026-09-09 — Optional plain panels
 
 The user accepted enlarged-view routing after the height-cutoff fix. Added the bilingual, persistent `quietSurfaces` option under Accessibility: flat dark reading/panel surfaces without decorative gradients or scratches. Brass action buttons keep bright fills and dark text. No quest data or progress changes.

@@ -17,7 +17,7 @@ final class MapsChapterTest {
         var guide = snapshot().guides().getFirst();
         var chapter = guide.chapters().get(11);
         assertEquals("7FB91D365AC2840E", chapter.id());
-        assertEquals(11, chapter.order());
+        assertEquals(15, chapter.order());
         assertEquals("minecraft:filled_map", chapter.iconItemId());
         assertEquals(QUESTS, chapter.quests().stream().map(q -> q.id()).toList());
         assertEquals(TASKS, chapter.quests().stream().flatMap(q -> q.tasks().stream()).map(t -> t.id()).toList());

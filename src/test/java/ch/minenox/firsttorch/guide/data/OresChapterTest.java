@@ -21,7 +21,7 @@ final class OresChapterTest {
         var guide = course();
         var chapter = guide.chapters().get(5);
         assertEquals("3B75D9F21C8E406A", chapter.id());
-        assertEquals(5, chapter.order());
+        assertEquals(9, chapter.order());
         assertEquals("minecraft:iron_ore", chapter.iconItemId());
         assertEquals(QUEST_IDS, chapter.quests().stream().map(q -> q.id()).toList());
         assertEquals(TASK_IDS, chapter.quests().stream().map(q -> q.tasks().getFirst().id()).toList());

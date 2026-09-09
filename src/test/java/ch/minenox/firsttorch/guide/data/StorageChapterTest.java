@@ -16,7 +16,7 @@ final class StorageChapterTest {
     @Test void preservesSourceIdsChainThresholdsAndRewards() throws Exception {
         var chapter = snapshot().guides().getFirst().chapters().get(15);
         assertEquals("2CEA40698DF5173B", chapter.id());
-        assertEquals(15, chapter.order());
+        assertEquals(7, chapter.order());
         assertEquals(QUESTS, chapter.quests().stream().map(q -> q.id()).toList());
         assertEquals(List.of("42F68D51B39E074C"), chapter.quests().getFirst().prerequisiteQuestIds());
         for (int i = 1; i < QUESTS.size(); i++) assertEquals(List.of(QUESTS.get(i - 1)), chapter.quests().get(i).prerequisiteQuestIds());

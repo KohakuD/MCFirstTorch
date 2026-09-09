@@ -20,7 +20,7 @@ final class ProtectionChapterTest {
     @Test void preservesTheBoundedProtectionLessonsAndSourceObjectives() throws Exception {
         var chapter = course().chapters().get(6);
         assertEquals("4C86EA032D9F517B", chapter.id());
-        assertEquals(6, chapter.order());
+        assertEquals(10, chapter.order());
         assertEquals("minecraft:shield", chapter.iconItemId());
         assertEquals(QUEST_IDS, chapter.quests().stream().map(q -> q.id()).toList());
         assertEquals(TASK_IDS, chapter.quests().stream().map(q -> q.tasks().getFirst().id()).toList());

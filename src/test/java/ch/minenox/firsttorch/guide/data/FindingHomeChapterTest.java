@@ -19,7 +19,7 @@ final class FindingHomeChapterTest {
     @Test void preservesTheFiveSourceLessonsChainAndRewards() throws Exception {
         var chapter = snapshot().guides().getFirst().chapters().get(9);
         assertEquals("3B75D9F20C8E4A61", chapter.id());
-        assertEquals(9, chapter.order());
+        assertEquals(13, chapter.order());
         assertEquals("minecraft:compass", chapter.iconItemId());
         assertEquals(QUESTS, chapter.quests().stream().map(q -> q.id()).toList());
         assertEquals(TASKS, chapter.quests().stream().map(q -> q.tasks().getFirst().id()).toList());

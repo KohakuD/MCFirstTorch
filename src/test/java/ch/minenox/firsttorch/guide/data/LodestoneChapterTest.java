@@ -19,7 +19,7 @@ final class LodestoneChapterTest {
     @Test void preservesSourceIdsCountsChainAndReward() throws Exception {
         var chapter = snapshot().guides().getFirst().chapters().get(10);
         assertEquals("6EA80C254FB1739D", chapter.id());
-        assertEquals(10, chapter.order());
+        assertEquals(14, chapter.order());
         assertEquals("minecraft:lodestone", chapter.iconItemId());
         assertEquals(QUESTS, chapter.quests().stream().map(q -> q.id()).toList());
         assertEquals(TASKS, chapter.quests().stream().flatMap(q -> q.tasks().stream()).map(t -> t.id()).toList());
