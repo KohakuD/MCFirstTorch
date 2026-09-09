@@ -1,6 +1,10 @@
 # Two-client native smoke test
 
-Status: pending. Storage tests are not a substitute for this network/player test.
+Status: partially accepted on 2026-09-10. The user confirmed independent welcomes
+and separate quest progress with two accounts using the supplied native test JAR.
+Host type was not specified. Reward recipients, duplicate-claim prevention,
+reconnect/restart persistence and claim-all isolation remain unconfirmed.
+Storage tests are not a substitute for this network/player test.
 
 Use a disposable world and two distinct player accounts, both with the same native
 First Torch build, Minecraft 26.1.2 and NeoForge 26.1.2.84. Do not reset the owner's

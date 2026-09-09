@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-10 — Two-account welcome and progress acceptance
+
+The user confirmed independent welcomes and separate quest progress after receiving
+the native `0.13.0-alpha.1` JAR for the laptop. Host type was not specified. This
+acceptance does not yet cover reward recipients, duplicate claims, reconnect/restart
+persistence, claim-all isolation or dedicated-server lifecycle. No player data or
+runtime code changed.
+
 ## 2026-09-10 — Welcome storage isolation
 
 The user accepted both native image smoke checks after archive cleanup. Added three
