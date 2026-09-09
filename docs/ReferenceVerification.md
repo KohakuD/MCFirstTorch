@@ -16,7 +16,7 @@ The broad milestone checkboxes deliberately remain open where the evidence is na
 
 1. Redstone survival reproduction: explicitly record each illustrated circuit built from its current instructions in survival, including direction, wire range, delay, container state and pulse observations. Reading acceptance is not automatically proof of each physical build.
 2. Creature facts: close the remaining behavioural and special-source claims beyond loot-table assertions (living interactions, equipment, transformations and environmental conditions). Preserve the distinction between source review and observed encounters.
-3. Mechanics: finish the per-card trigger/result/danger/safe-experiment audit and any target-code checks not covered by the archive scripts. A safe reading or linked illustration is a valid alternative to dangerous experiments; never require Anchor explosions, forced infection or death tests.
+3. Mechanics: finish any target-code checks not covered by the archive scripts. The 27-card bilingual trigger/result/danger/safe-experiment audit is complete; see `MechanicsReferenceSources.md`. Never require Anchor explosions, forced infection or death tests.
 
 No additional reading playtest is required solely for this documentation reconciliation. Subsequent changes to player-facing instructions need their own focused acceptance.
 

@@ -687,9 +687,10 @@ First implementation batch inside native 0.13.0-alpha.1: three optional three-ca
 - [x] In-game acceptance: reordered Pumpkin chain and original screenshot (user accepted)
 
 - [x] Add a bilingual optional reference chapter for useful mechanics that ordinary play rarely explains clearly (first three chapters)
-- [ ] Cover selected transformation mechanics, unusual item interactions, name-dependent behaviours, archaeology rules, music-disc conditions, bee and pollination details, Villager curing, and other high-value discoveries
+- [x] Cover selected transformation mechanics, unusual item interactions, name-dependent behaviours, archaeology rules, music-disc conditions, bee and pollination details, Villager curing, and other high-value discoveries
 - [x] Label current mechanics readings as practical reference or optional discovery; appearance/name and music discoveries remain separate optional chapters
-- [ ] Give each card a short trigger, observable result, danger note where needed, and one safe experiment
+- [x] Give each card a short trigger, observable result, danger note where needed, and one safe experiment
+  - [x] Audit all 27 current cards in both languages; ordered prose may express trigger/result without literal headings, and safe reading comparisons replace hazardous experiments
   - [x] Add illustration-only archaeology observation and non-activating Anchor comparisons; dangerous experiments remain explicitly unnecessary
   - [x] In-game acceptance: mechanics category cues and the four added safe reading exercises (user-confirmed)
 - [x] Cross-link the current mechanics reference cards to related creatures, farming and existing course lessons

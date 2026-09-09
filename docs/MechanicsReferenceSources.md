@@ -4,6 +4,24 @@ Target: Minecraft Java 26.1.2, native First Torch 0.13.0-alpha.1. The first nine
 
 ## Target data and code
 
+### Completed bilingual instructional-structure audit (2026-09-09)
+
+All 27 current descriptions were read in English and German. Each has a trigger or preparation, an observable result, a relevant safety limitation and an optional experiment or safe observation. The table records the actual observation route, not a claim that the interaction was performed. Sequential Archaeology, Cauldron and Pumpkin prose does not need extra repeated headings.
+
+| Chapter (three cards each) | Trigger/result coverage | Safe optional observations |
+| --- | --- | --- |
+| Block transformations | Water contact to Concrete; Water Bottle to Mud; Furnace drying | One powder comparison; one Dirt block; shallow-water Sponge and Furnace |
+| Special names | Exact Anvil names and their cosmetic outcomes | Calm home animal; Sheep colour cycle; safely enclosed Rabbit |
+| Bee mechanics | Pollen and crops; full hive with Bottle or Shears | Watch an open flight path; protected single harvests without breaking the hive |
+| Archaeology | Recognise suspicious texture; Brush until extraction; interpret random find | Compare the original illustration; brush only an already safe site; inspect an existing find |
+| Music | Jukebox playback; Skeleton final hit; nine Disc 5 fragments | Home playback; inspect an owned disc without staging combat; view recipe |
+| Curing | Safe containment; Weakness then ordinary Golden Apple; delayed recovery | Identify an already contained patient; compare apples; listen safely, never force infection |
+| Cauldrons | Bucket fill; single bottle levels; dye removal | Home fill; remove/return one bottle; wash only unwanted colour |
+| Pumpkins | Carve; wear with limits; craft light | One home Pumpkin; inspect head-slot item without Endermen; view/craft recipe |
+| Respawn Anchors | Recipe; Nether charge/spawn; charge consumption | Compare described recipe; distinguish Glowstone block from Dust; recall linked Bed lesson, no activation/death test |
+
+Minor wording corrections: German Jukebox gender, and English Jack o'Lantern refers to the carving step rather than a crafting recipe for carving. No new gameplay claim, objective or reward was introduced. Broader target-code verification remains separate.
+
 Reading audit (2026-09-09): all 27 bilingual mechanics cards were compared with the evidence recorded below, with no new factual contradiction identified. Practical versus optional-discovery cues now introduce each card. Archaeology starts with a safe comparison of the existing illustration; Anchor cards offer inventory/recipe/linked-lesson checks without activation, travel or death. These are deliberately safe reading exercises, not claims of completed physical tests. The archive verifier still does not cover every interaction.
 
 - Interaction batch: `recipe/respawn_anchor.json` specifies six Crying Obsidian around three Glowstone blocks; `dimension_type/the_nether.json` enables `gameplay/respawn_anchor_works`. `RespawnAnchorBlock` accepts `Items.GLOWSTONE`, limits charges to four, and checks the environment attribute before setting spawn or exploding. The reading warns against activation in the Overworld/End and never requires a death test. `recipe/jack_o_lantern.json` places Carved Pumpkin over Torch; `loot_table/carve/pumpkin.json` gives four Seeds. `PumpkinBlock` checks Shears. `EnderMan.isBeingStaredBy` uses the disguise predicate, whose item tag contains Carved Pumpkin. `CauldronInteractions` fills water to level three, permits bucket retrieval only at that level, checks `Potions.WATER` for bottle input and removes a water level on bottle retrieval or dye washing. `cauldron_can_remove_dye` includes Leather Chestplate. These are Java instructions, not Bedrock potion/dyed-water behaviour.

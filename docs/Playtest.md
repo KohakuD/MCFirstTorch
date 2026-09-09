@@ -1,5 +1,11 @@
 # Playtest log
 
+## 2026-09-09 — Mechanics instructional-structure audit
+
+Read all 27 mechanics descriptions in both languages and recorded the trigger/result/safety/optional-observation coverage by chapter in `MechanicsReferenceSources.md`. Closed the selected-topic coverage and instructional-structure roadmap items, not the separate full target-version behaviour audit. Corrected German Jukebox grammar and English Pumpkin carving-step wording. No task, reward, ID, image or progress changes. No new interaction playtest is required for these wording corrections.
+
+Verification: native tests/build and retained-pack validation/build passed; whitespace check passed.
+
 ## 2026-09-09 — Reference verification reconciliation
 
 The user accepted the four reused Redstone image placements and renewed standing push authorization. Reconciled the remaining Rabbit and twelve-card reading acceptance entries with the user's explicit standing confirmation of previous delivered batches. Both target-archive verification scripts passed again. `ReferenceVerification.md` separates accepted reading/UI work from physical circuit and behaviour verification; no broad survival or interaction test is claimed. This documentation-only batch changes no gameplay or player data and requires no new in-game test.
