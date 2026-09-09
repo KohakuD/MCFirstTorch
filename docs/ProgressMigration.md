@@ -46,10 +46,43 @@ that the `.json5` file is a compressed binary archive. The sample is ordinary te
 Do not treat every entry in `completed` as a quest: classify IDs against definitions;
 the data model records completion of quest objects, not just native quest records.
 
-Remaining source work: inspect FTB Teams ownership/membership persistence, canonical
-claim-key encoding, definition reward flags and load/error behaviour. Then generate
+Remaining source work: finish FTB Teams ownership/membership persistence checks,
+definition reward flags and load/error behaviour. Then generate
 the controlled fixtures below. In particular, a nil-UUID team claim must not be
 mistaken for an unknown player or automatically copied to every target player.
+
+### Key conversion and team follow-up (2026-09-10)
+
+`QuestKey`'s string-concatenation recipe confirms a colon separator.
+`QuestObjectBase.getCodeString(long)` uses `%016X`. The canonical claim key is
+therefore an undashed lowercase UUID, colon and 16-character uppercase reward code.
+
+`tools/ftb_progress_keys.py` implements only this key inspection and exact decimal
+object-ID conversion using Python's standard library. It accepts explicit strings,
+prints JSON to stdout and has no filesystem read/write or import operation.
+Noncanonical keys and IDs outside the native signed-long range are rejected rather
+than silently repaired. A decoded key does not prove membership or reward eligibility.
+Object IDs still need classification against the definitions, including reserved IDs.
+
+```powershell
+python -B tools/ftb_progress_keys.py decimal-id 9007199254740993
+python -B tools/ftb_progress_keys.py claim-key 00000000000000000000000000000000:10A0B0C0D0E00001
+python -B -m unittest discover -s tools -p test_ftb_progress_keys.py
+```
+
+Six synthetic tests cover precision beyond 2^53, signed-long boundaries, malformed
+input, personal claims and nil-UUID team claims. They do not validate a JSON5 reader
+or a complete source save. No complete migration dry-run report exists yet.
+
+The locally inspected `ftb-teams-neoforge-26.1.2.4.jar` has SHA-256
+`7A467DF980BBB9D051CCB6AA96D40548E776886BD9DC8D5B2684CD5FFAC76F0C`.
+`TeamManagerImpl` uses the world-relative `ftbteams` resource. `AbstractTeam.toJson`
+includes `id`, `type` and `ranks`. `PlayerTeam` adds `player_name` and maintains an
+effective team separately; `TeamManagerImpl.loadAllTeams` calls `setEffectiveTeam`
+after loading teams and known players. `AbstractTeamBase.getMembers` uses ranks.
+Thus a player-name field or personal-team filename is insufficient proof of the
+active progress owner. Exact rank filtering, conflicting memberships and party
+join/leave progress transfer still require code review and controlled fixtures.
 
 ## First supported scope
 

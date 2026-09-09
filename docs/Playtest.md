@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-10 — Migration key inspection
+
+Added a standalone standard-library Python key inspector, not a save importer.
+Six synthetic tests pass, including an ID above floating-point integer precision,
+range rejection and personal/team reward claims. Continued read-only FTB Teams
+inspection; active-team resolution remains a source-fixture gate. No runtime,
+quest definitions or player files changed. No in-game test required.
+
 ## 2026-09-09 — Pinned FTB storage inspection
 
 Read-only bytecode inspection of FTB Quests 26.1.2.7 and one retained-profile save
