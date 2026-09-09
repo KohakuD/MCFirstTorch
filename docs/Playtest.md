@@ -1,5 +1,9 @@
 # Playtest log
 
+## 2026-09-09 — Reference verification reconciliation
+
+The user accepted the four reused Redstone image placements and renewed standing push authorization. Reconciled the remaining Rabbit and twelve-card reading acceptance entries with the user's explicit standing confirmation of previous delivered batches. Both target-archive verification scripts passed again. `ReferenceVerification.md` separates accepted reading/UI work from physical circuit and behaviour verification; no broad survival or interaction test is claimed. This documentation-only batch changes no gameplay or player data and requires no new in-game test.
+
 ## 2026-09-09 — Complete practical Redstone image placement
 
 The user accepted chapter scrolling. Four existing follow-up cards now reuse matching original-asset diagrams: Comparator display, Observer changes, Door site and Door safe finish. All seventeen practical circuit cards now have illustrations; material-only cards and generic bench preparation are excluded intentionally. The Door-site caption explicitly leaves the plates for the next lesson. No objectives, rewards or saved progress change.

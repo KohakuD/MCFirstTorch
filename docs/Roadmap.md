@@ -632,7 +632,7 @@ Implementation target: native 0.13.0-alpha.1; retained pack 0.9.1 remains unchan
   - [x] Replace component-letter placeholders throughout existing Redstone diagrams with original item/model icons and connected wire textures; update both caption languages
   - [x] In-game acceptance: revised component icons, wire visibility and counted wire sections across all eight affected diagrams (user-confirmed)
   - [x] Cover every practical circuit card with an original-asset build/state illustration, reusing matching layouts on four follow-up cards; add a coverage regression
-  - [ ] In-game acceptance: reused Comparator/Observer/Door illustrations and the Door site's next-step preview caption
+  - [x] In-game acceptance: reused Comparator/Observer/Door illustrations and the Door site's next-step preview caption (user-confirmed)
 
 ## 0.11.0 — Creature and Drop Field Guide
 
@@ -650,8 +650,8 @@ Implementation target remains native 0.13.0-alpha.1. The initial three-chapter b
 - [x] In-game acceptance: five requested cards across Animals, Overworld monsters and Trial Chambers/Pale Garden; expanded trophies, preserved readings and Turtle Scute icon (user-confirmed 2026-09-09)
 - [x] Fix the Turtle reference icon to the target-version Turtle Scute item ID instead of the obsolete scute ID
 - [x] Add Rabbit to Animals with target-verified meat, Hide and rare Foot drops
-- [ ] In-game acceptance: Rabbit card and extended Animals trophy
-- [ ] In-game acceptance: twelve new cards, independent reading, translated safety references, three trophies and restart persistence
+- [x] In-game acceptance: Rabbit card and extended Animals trophy (user's standing acceptance of delivered batches)
+- [x] In-game acceptance: twelve new cards, independent reading, translated safety references, three trophies and restart persistence (user's standing acceptance of delivered batches)
 
 - [x] Add bilingual optional reference chapters separate from the guided lesson sequence
 - [x] Group the initial selection by animals, common hostile mobs, Nether mobs, End/approach, aquatic life and special encounters
