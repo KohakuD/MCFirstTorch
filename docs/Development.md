@@ -2,6 +2,8 @@
 
 ## Baseline
 
+Quest-node narration announces the title, current availability/completion/reward state, then the existing description and image alternative text. Reward readiness uses the shared claim eligibility policy, excluding claimed, pending and prerequisite-locked rewards. No hover tooltips or visual changes are introduced. State selection has unit coverage; actual Minecraft narrator output still needs in-game acceptance.
+
 The opt-in `quietSurfaces` accessibility preference replaces panel gradients and machining marks with flat dark fills. Brass action buttons retain a flat bright fill for their dark labels; selection borders, item icons, medallions and layout are unchanged. It reduces decoration only, not a full high-contrast or reduced-animation mode. Both preferences default off.
 
 Native accessibility now includes an opt-in `enlargedView` client preference alongside chapter fireworks. The quest browser magnifies text, icons and controls together by up to 25 percent using its existing shared render/input transform. Available window space limits zoom to retain a 500 x 320 logical canvas when possible; already-small windows keep their standard scale. Fork/join map eligibility uses the actual node count and row spacing rather than a fixed height cutoff. Defaults remain unchanged. Returning from Accessibility rebuilds the browser with the saved preference. Vanilla options and separate search/reference modals retain Minecraft's GUI scaling; this is not independent text-only scaling or a completed accessibility audit.

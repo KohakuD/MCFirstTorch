@@ -1,4 +1,10 @@
 {
+  "screen.firsttorch.narration.unavailable": "Fortschritt noch nicht verfügbar",
+  "screen.firsttorch.narration.locked": "Gesperrt. Schliesse zuerst die vorausgesetzten Quests ab",
+  "screen.firsttorch.narration.completed_locked": "Abgeschlossen. Vorausgesetzte Quests sind noch offen",
+  "screen.firsttorch.narration.reward": "Abgeschlossen. Belohnungen können abgeholt werden",
+  "screen.firsttorch.narration.completed": "Abgeschlossen",
+  "screen.firsttorch.narration.open": "Verfügbar. Noch nicht abgeschlossen",
   "screen.firsttorch.reference.index": "Nachschlagebibliothek",
   "image.firsttorch.iron_door_site.description": "Vorschau des fertigen Übungsaufbaus. In DIESER Lektion platzierst du nur die Eisentür an Position 1 und lässt 0 und 2 frei; die beiden abgebildeten Steindruckplatten kommen erst in der nächsten Lektion dazu. Original-Icons bezeichnen die Positionen, nicht den Blickwinkel. Halte den Boden massiv, zwei Blöcke Höhe frei und einen offenen Weg zum Herumgehen. Die Pfeile zeigen den späteren Hin- und Rückweg. Dies ist kein sicherer Hauseingang.",
   "screen.firsttorch.chapter.scroll":"Scrolle die Kapitel mit Mausrad oder Scrollbalken. Bei fokussiertem Kapitel funktionieren Bild auf, Bild ab, Pos1 und Ende.",

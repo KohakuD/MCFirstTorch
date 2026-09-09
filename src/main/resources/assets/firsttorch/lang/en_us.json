@@ -1,4 +1,10 @@
 {
+  "screen.firsttorch.narration.unavailable": "Progress not yet available",
+  "screen.firsttorch.narration.locked": "Locked. Complete the prerequisite quests first",
+  "screen.firsttorch.narration.completed_locked": "Completed. Prerequisite quests are still incomplete",
+  "screen.firsttorch.narration.reward": "Completed. Rewards ready to claim",
+  "screen.firsttorch.narration.completed": "Completed",
+  "screen.firsttorch.narration.open": "Available. Not yet completed",
   "screen.firsttorch.reference.index": "Reference library",
   "image.firsttorch.iron_door_site.description": "Preview of the finished practice layout. In THIS lesson, place only the Iron Door at position 1 and leave space at 0 and 2; add the two pictured Stone Pressure Plates in the next lesson. Original icons identify positions, not the viewing angle. Keep solid flooring, two clear blocks of height and an open walk-around route. The arrows show the future outward and return walks. This is not a secure home entrance.",
   "screen.firsttorch.chapter.scroll":"Scroll chapters with the mouse wheel or scrollbar. With a chapter focused, use Page Up, Page Down, Home or End.",

@@ -605,7 +605,7 @@ The beginner playtest showed that practical Overworld exploration needs its own 
 ## 0.10.0 — Redstone Foundations
 
 - [x] Offer the optional Redstone branch after Ready for the Depths, before the first Diamond find; retain sequential follow-up chapters and keep the main course independent
-- [ ] In-game acceptance of the earlier mining-preparation Redstone reveal
+- [x] In-game acceptance of the earlier mining-preparation Redstone reveal (user-confirmed)
 
 Implementation target: native 0.13.0-alpha.1; retained pack 0.9.1 remains unchanged. This content block is not a separate published release yet.
 
@@ -869,7 +869,9 @@ The minimal NeoForge/IntelliJ build foundation now lives beside the existing FTB
   - [x] Add an optional enlarged quest-browser view with shared render/input scaling, small-window limits and a persistent bilingual accessibility option
   - [x] In-game acceptance: enlarged view including the corrected fork/join layout (user-confirmed)
   - [x] Add an optional plain dark panel surface without decorative gradients or machining marks; preserve frames, icons and selection indicators
-  - [ ] In-game acceptance: plain panels on/off, selected cards and buttons remain distinguishable, preference retained after restart
+  - [x] In-game acceptance: plain panels on/off, selected cards and buttons remain distinguishable, preference retained after restart (user-confirmed)
+  - [x] Announce quest availability, completion and claimable rewards before lesson text through the native button narrator in both languages
+  - [ ] In-game narrator acceptance: focus open, locked, completed and reward-ready quest nodes; check English and German
 - [ ] Verify asset and library licences, keep Minecraft-derived artwork tied to the targeted game version, and publish source and migration documentation
   - [x] Make native JAR installation the README entry point; separate retained FTB instructions and explicitly warn that FTB progress migration is not implemented
 - [ ] Ship the independent runtime only after a clean-profile parity playtest covers the complete guided route and both languages

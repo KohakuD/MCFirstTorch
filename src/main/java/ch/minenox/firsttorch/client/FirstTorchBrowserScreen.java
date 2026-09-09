@@ -601,11 +601,18 @@ class FirstTorchBrowserScreen extends Screen {
     }
 
     private void addQuestButtons() {
+        var claimable = !preview() && liveAvailable()
+                ? ch.minenox.firsttorch.guide.progress.ClaimableRewards.ids(observedSnapshot,
+                        observedProgress.state(), observedProgress.claimedQuestIds(), observedProgress.pendingQuestIds())
+                : java.util.List.<String>of();
         for (int index = 0; index < viewModel.quests().size(); index++) {
             QuestDefinition quest = viewModel.quests().get(index);
             Rect bounds = questNodes.get(quest.id());
             if (bounds == null) continue;
             var narration = Component.translatable(quest.titleKey()).append(". ")
+                    .append(Component.translatable(QuestNarrationState.key(preview() || liveAvailable(),
+                            !quest.prerequisitesMet(this::completed), completed(quest.id()), claimable.contains(quest.id()))))
+                    .append(". ")
                     .append(Component.translatable(quest.descriptionKey()));
             if (quest.image() != null) narration.append(". ").append(Component.translatable(quest.image().altKey()));
             FirstTorchButton node = button(bounds.x(), bounds.y(), bounds.width(), bounds.height(),

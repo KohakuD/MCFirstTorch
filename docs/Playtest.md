@@ -1,5 +1,11 @@
 # Playtest log
 
+## 2026-09-09 — Quest state narration
+
+Earlier Redstone visibility and plain-panel presentation are accepted by the user. Added bilingual state announcements before quest descriptions when quest nodes receive narrator focus. Shared reward eligibility prevents announcing pending, claimed or locked rewards as available. No definitions, IDs, progress or network changes.
+
+Pending: enable Minecraft's UI narrator and Tab to open, locked, completed and reward-ready quest nodes in both languages. Confirm the title and state precede the lesson description, and claiming a reward removes the reward-ready announcement. No progress reset is needed.
+
 ## 2026-09-09 — Earlier optional Redstone access
 
 Moved only the first Redstone quest's prerequisite from the final independent-exploration introduction to `1C4EA0627FB38D59` (Ready for the Depths). All six Redstone chapters retain their display order and internal/follow-up chain. No mandatory course quest depends on the Redstone branch. Existing completions, IDs, tasks and rewards are unchanged. Added visibility regression coverage before/after the mining-preparation quest. Pending: finish that preparation quest and confirm Redstone Basics appears before finding Diamonds; follow-up chapters should still require their existing Redstone milestones. No reset needed for existing progress.
