@@ -26,6 +26,41 @@ final class RewardJournalTest {
         assertTrue(reopened.ids(RewardJournal.Phase.COMPLETE).isEmpty());
     }
 
+    @Test void sameQuestCanBeClaimedIndependentlyInPlayerJournals() throws Exception {
+        Path firstPath = directory.resolve(java.util.UUID.randomUUID().toString());
+        Path secondPath = directory.resolve(java.util.UUID.randomUUID().toString());
+        RewardJournal first = new RewardJournal(firstPath);
+        RewardJournal second = new RewardJournal(secondPath);
+        assertTrue(first.reserve(QUEST, REWARDS));
+        first.complete(QUEST);
+        assertTrue(second.ids(RewardJournal.Phase.COMPLETE).isEmpty());
+        assertTrue(second.reserve(QUEST, REWARDS));
+
+        RewardJournal reopenedFirst = new RewardJournal(firstPath);
+        RewardJournal reopenedSecond = new RewardJournal(secondPath);
+        assertEquals(Set.of(QUEST), reopenedFirst.ids(RewardJournal.Phase.COMPLETE));
+        assertEquals(Set.of(QUEST), reopenedSecond.ids(RewardJournal.Phase.PENDING));
+        assertTrue(reopenedSecond.ids(RewardJournal.Phase.COMPLETE).isEmpty());
+        reopenedSecond.complete(QUEST);
+        assertEquals(Set.of(QUEST), new RewardJournal(secondPath).ids(RewardJournal.Phase.COMPLETE));
+        assertFalse(new RewardJournal(firstPath).reserve(QUEST, REWARDS));
+        assertFalse(new RewardJournal(secondPath).reserve(QUEST, REWARDS));
+    }
+
+    @Test void corruptPlayerJournalDoesNotBlockAnotherPlayersClaims() throws Exception {
+        Path brokenPath = directory.resolve(java.util.UUID.randomUUID().toString());
+        Path healthyPath = directory.resolve(java.util.UUID.randomUUID().toString());
+        Files.createDirectories(brokenPath);
+        Files.writeString(brokenPath.resolve(QUEST + ".claim"), "broken");
+        assertFalse(new RewardJournal(brokenPath).available());
+        RewardJournal healthy = new RewardJournal(healthyPath);
+        assertTrue(healthy.available());
+        assertTrue(healthy.reserve(QUEST, REWARDS));
+        healthy.complete(QUEST);
+        assertEquals(Set.of(QUEST), new RewardJournal(healthyPath).ids(RewardJournal.Phase.COMPLETE));
+        assertEquals("broken", Files.readString(brokenPath.resolve(QUEST + ".claim")));
+    }
+
     @Test void completionSurvivesReopenAndNewRewardsDoNotReopenQuest() throws Exception {
         RewardJournal journal = new RewardJournal(directory);
         assertTrue(journal.reserve(QUEST, REWARDS));

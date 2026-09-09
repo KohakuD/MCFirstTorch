@@ -2,6 +2,8 @@
 
 ## Baseline
 
+Player-isolation regressions exercise UUID-keyed progress updates through native SavedDataStorage reopen cycles and independent world directories. Reward-journal tests cover identical quest IDs in separate player directories, pending/completed states and corruption confined to one journal. These filesystem tests do not instantiate two ServerPlayers or verify network routing, the server journal cache, inventory payout recipients or dedicated-server lifecycle. The multiplayer roadmap checks remain open until those integration scenarios pass.
+
 Native CI runs Java 25 tests/build separately from retained-pack validation. `tools/verify-native-jar.ps1 -JarPath <built.jar>` checks the finished archive against the current package/resource allowlist and Minecraft/NeoForge dependency declarations. It rejects nested JARs, unrelated classes, world/config files, missing required resources and duplicate entries. Six synthetic cases in `test-native-jar.ps1` exercise acceptance and rejection. This is a packaging regression guard, not dependency bytecode analysis, licence approval or multiplayer parity proof. Future legitimate asset formats/dependencies require an explicit allowlist review.
 
 Current entry point: the README describes native JAR installation. `LegacyPack.md` preserves the separate FTB pack workflow. Historical batch notes below describe their state at delivery time, not the current feature limit. Multiplayer, migration and release checks remain open independently of reading acceptance.

@@ -728,6 +728,7 @@ Acceptance convention (2026-09-08): the user confirms that previous "correct/goo
 - [x] Add an explicitly enabled local-owner test-completion button without automatic reward payouts
 - [x] In-game acceptance of manual confirmation and inventory thresholds (user-confirmed 2026-09-08)
 - [ ] Verify multiplayer player isolation for task actions
+  - [x] Storage regression: two player UUIDs retain separate histories through updates and two reopen cycles; the same UUID remains independent in two world directories
 - [x] Versioned per-player world persistence with strict loading and native save/reopen tests
 - [x] In-game restart, death and dimension-change persistence acceptance (user-confirmed 2026-09-08)
 - [ ] Verify dedicated multiplayer persistence
@@ -741,6 +742,7 @@ Acceptance convention (2026-09-08): the user confirms that previous "correct/goo
 - [x] Server-checked whole-quest reward claiming with inventory preflight and durable no-retry reservations
 - [x] In-game reward acceptance: full inventory, exact XP/items, repeat click and restart (user-confirmed 2026-09-08)
 - [ ] Verify multiplayer player isolation for reward claims
+  - [x] Journal regression: separate player directories can claim the same quest independently across reopen; corruption in one journal does not block the other
 - [x] Migrate and test the first curriculum path before migrating the complete course (user-confirmed 2026-09-08)
   - [x] Port the eight Welcome lessons with original identifiers, native controls and bilingual text
   - [x] Review the native introduction in both languages, including its five-XP reward and final prerequisite gate (user-confirmed 2026-09-08)
@@ -853,6 +855,7 @@ The minimal NeoForge/IntelliJ build foundation now lives beside the existing FTB
 
 - [ ] Build a dedicated NeoForge mod that runs without FTB Quests, FTB Library, FTB Teams, FTB Filter System, FTB XMod Compat, or Initially
   - [x] Add native Java 25 CI build/tests and finished-JAR dependency/content boundary checks with six synthetic regression cases
+  - [x] Confirm the first remote workflow succeeds (GitHub Actions run 34394261061)
 - [ ] Keep the curriculum data-driven and maintain every player-facing entry in `en_us` and `de_de`
 - [ ] Provide a native quest and reference interface with chapters, dependency lines, progressive visibility, search, guide images, tasks, manual confirmations, completion states, and claimable rewards
 - [ ] Provide a native first-join welcome flow, an accessible menu entry, a configurable key binding, and a recoverable book or equivalent in-world entry point

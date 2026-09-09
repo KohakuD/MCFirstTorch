@@ -1,8 +1,22 @@
 # Playtest log
 
+## 2026-09-09 — Player storage isolation regressions
+
+Added four automated tests using temporary directories only: two players completing the same task/quest IDs independently, one player's later history update surviving two reopen cycles without affecting the other, one UUID in separate world directories, and separate reward journals retaining independent claims even when one journal is corrupt. These verify storage components, not live player-action/network/payout routing. No real world, player progress or runtime code changed.
+
+Next integration test requires two distinct player accounts on a disposable dedicated test world with the same native build. Do not reset the existing single-player world:
+
+1. Join as A and B. Each should receive their own first-join prompt; dismissing A's prompt must not dismiss B's. Reconnect each once to check it does not repeat.
+2. A confirms a Welcome task while B leaves it open. Check each quest book and completion notification. Then B completes the same task independently.
+3. A claims its reward; check exact XP/item changes on A only. B must still be able to claim its own reward once. Include claim-all with more than one eligible reward and verify neither recipient receives duplicate payouts.
+4. Reach an automatic inventory objective on both accounts; give the required items only to A. Check counts/completion remain separate. Repeat with B.
+5. Leave different progress and unclaimed rewards on A/B, stop the server normally, restart and reconnect in reverse order. Verify both histories and claim states are retained independently.
+
+Verification: all 395 native tests and the build pass; whitespace checks pass. Pending: this two-player dedicated-server acceptance. Local-owner development test completion is not evidence for automatic objectives or remote-player permissions.
+
 ## 2026-09-09 — Native artifact boundary and CI
 
-Added a separate Java 25 native test/build job to the existing pack workflow. Finished-JAR validation allows only First Torch classes/resources and reviewed metadata; it checks the two declared game/loader dependencies and required language/course files. Six isolated fixtures passed, including rejection of world data, foreign classes, nested JARs, extra dependencies and missing German resources. The current built JAR passed with 243 file entries. Temporary synthetic fixtures were removed. Whitespace checks passed. GitHub execution must be confirmed separately after push; no new game test is needed because no runtime/content code changed.
+Added a separate Java 25 native test/build job to the existing pack workflow. Finished-JAR validation allows only First Torch classes/resources and reviewed metadata; it checks the two declared game/loader dependencies and required language/course files. Six isolated fixtures passed, including rejection of world data, foreign classes, nested JARs, extra dependencies and missing German resources. The current built JAR passed with 243 file entries. Temporary synthetic fixtures were removed. Whitespace checks passed. Remote execution subsequently passed: [GitHub Actions run 34394261061](https://github.com/KohakuD/MCFirstTorch/actions/runs/34394261061). No new game test is needed because no runtime/content code changed.
 
 ## 2026-09-09 — Native installation documentation
 
