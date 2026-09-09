@@ -868,7 +868,9 @@ The minimal NeoForge/IntelliJ build foundation now lives beside the existing FTB
 - [x] Add a compact index and consistent icons only after the first field-guide and unusual-mechanics batches establish the final structure
   - [x] In-game acceptance: Book/index visibility, scrolling and keyboard navigation, completed reference selection, Escape cancel and return to previous lesson in both languages (user-confirmed)
   - [x] Separate references from the normal course/archive list; shorten both-language titles, use the original Bookshelf header icon and explain the library in Welcome
-  - [ ] In-game acceptance: course-only chapter list/archive, Bookshelf icon, shortened library titles and Welcome hint; search/reference access remains intact
+  - [x] In-game acceptance: course-only chapter list/archive, Bookshelf icon, shortened library titles and Welcome hint; search/reference access remains intact (user-confirmed)
+  - [x] Refresh Welcome task/reward/opening instructions for advancement detection, early task recording, claim-all chest and pause-menu access
+  - [ ] In-game reading acceptance: revised Welcome task, reward and opening cards in both languages
 - [ ] Treat reference updates as versioned data maintenance whenever Minecraft changes drops, structures, or mechanics
 
 ## Later milestones

@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-09 — Refresh stale native Welcome instructions
+
+The user accepted course/library separation. Updated three bilingual Welcome cards: tasks now describe automatic advancement observation and early task recording without bypassing prerequisites; rewards explain the conditional claim-all chest; opening explains the pause-menu alternative without requiring an inventory book. Removed obsolete alpha limitations. Existing proof actions remain equivalent, with no definition, ID, reward or progress changes.
+
+Pending in-game: read the three revised cards in both languages for clarity and layout. Previously completed tasks need not be reset or repeated.
+
+Verification: native tests/build, retained-pack validation/build and whitespace checks passed.
+
 ## 2026-09-09 — Separate library from course chapters
 
 The user accepted the initial index and requested library-only reference chapters. The course column/archive now filters out field-guide and mechanics chapters while keeping them in the visible catalogue for search, links and index access. All sixteen chapter prefixes are removed in both languages. Welcome overview introduces the library, and the header uses Minecraft's original 3D Bookshelf item model. Existing progress, rewards and IDs are unchanged.
