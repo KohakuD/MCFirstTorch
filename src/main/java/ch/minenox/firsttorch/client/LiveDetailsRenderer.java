@@ -40,6 +40,10 @@ final class LiveDetailsRenderer {
             y = text(graphics, font, title, x, y, w, FirstTorchTheme.TEXT) + 8;
         }
         y = text(graphics, font, Component.translatable(quest.descriptionKey()), x, y, w, FirstTorchTheme.MUTED) + 12;
+        if (!QuestReferenceLinks.forQuest(quest.id()).isEmpty()) {
+            y = text(graphics, font, Component.translatable("screen.firsttorch.reference.more"), x, y, w, FirstTorchTheme.GOLD) + 4;
+            y += QuestReferenceLinks.forQuest(quest.id()).size() * 24;
+        }
         if (quest.image() != null) {
             var illustration = quest.image();
             var resource = Identifier.parse(illustration.resource());
@@ -126,6 +130,17 @@ final class LiveDetailsRenderer {
         if (task.type() == TaskDefinition.Type.INVENTORY_TAG) return Component.translatableWithFallback(
                 "task.firsttorch.tag." + task.itemId().replace(':', '.').replace('/', '.'), "#" + task.itemId());
         return item(task.itemId()).getHoverName();
+    }
+
+    /** Shared text metrics keep clickable controls aligned with the scrolled content. */
+    static int referenceTop(Font font, Rect panel, QuestDefinition quest) {
+        int w = Math.max(1, panel.width() - 20);
+        int y = panel.y() + 10;
+        Component title = Component.translatable(quest.titleKey()).withStyle(s -> s.withBold(true));
+        y += w >= 150 ? Math.max(55, 18 + font.split(title, w - 55).size() * 10)
+                : font.split(title, w).size() * 10 + 8;
+        y += font.split(Component.translatable(quest.descriptionKey()), w).size() * 10 + 12;
+        return y + font.split(Component.translatable("screen.firsttorch.reference.more"), w).size() * 10 + 4;
     }
 
     private static ItemStack item(String id) {

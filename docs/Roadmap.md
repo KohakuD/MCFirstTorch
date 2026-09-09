@@ -645,7 +645,9 @@ Implementation target remains native 0.13.0-alpha.1. The initial three-chapter b
 - [ ] Distinguish guaranteed, chance-based, Looting-affected, player-kill-only, transformation-based, and environment-created drops
 - [ ] Link back to existing full safety lessons instead of duplicating their instructions
   - [x] Add bilingual, exact-title reading pointers to the twelve End, aquatic and special-encounter cards; broader reference audit remains open
-  - [ ] In-game acceptance: reading pointers in these three existing reference chapters
+  - [x] In-game discovery of the updated existing reference chapters (user located them in the archive)
+  - [x] Make twelve reading pointers clickable through stable quest IDs, with session-only nested return navigation and scroll restoration
+  - [ ] In-game acceptance: clickable references, archived destinations, return scroll position and disabled unavailable targets
 - [x] Keep reference checkmarks optional and prevent every field-guide card from gating another quest
 - [ ] Validate all drop facts against the targeted Minecraft version and avoid presenting approximate rates as exact
 - [x] Start with the creatures already used by the course, then expand by dimension in reviewable batches

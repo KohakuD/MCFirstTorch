@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-09 — Clickable quest references and return navigation
+
+Verification: 379 automated tests and native build pass, including stable reference destinations, bilingual labels, visibility protection, nested history and exact reading-location restoration. Retained-pack validation/build pass. In-game rendering and input checks remain pending with the user.
+
+The user located the updated archived chapters and requested direct links. Twelve bundled references now target fixed quest IDs, using the destination chapter title as the bilingual button label. Links appear below the description; a footer return button restores the prior selection, detail scroll, reading layout and chapter-list position. Completed targets remain reachable. Hidden or missing targets cannot be opened by a link and do not unlock anything. History is session-only and supports nested jumps; definition replacement and preview switching clear it. No quest completions, rewards, protocol or player files are changed.
+
+Pending in-game: open Silverfish → Inside the Stronghold from the completed archive, return to the same reading position, review long labels and keyboard activation in both languages, and verify an unavailable destination remains disabled. Check narrow and wide layouts, scrolling past the links, and ordinary task/reward controls.
+
 ## 2026-09-09 — Creature reference reading pointers
 
 Verification: all 376 tests and native build pass, including exact destination-title checks in both languages. Target creature-loot verification and retained-pack validation/build pass. No live in-game test was performed for these pointers.

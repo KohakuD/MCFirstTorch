@@ -48,6 +48,8 @@ class FirstTorchBrowserScreen extends Screen {
     private boolean completedExpanded;
     private int chapterPage;
     private boolean recommendOnOpen = true;
+    private final QuestLinkNavigation linkNavigation = new QuestLinkNavigation();
+    private final java.util.ArrayList<FirstTorchButton> referenceButtons = new java.util.ArrayList<>();
 
     FirstTorchBrowserScreen(Screen parent) {
         super(Component.translatable("screen.firsttorch.title"));
@@ -57,6 +59,8 @@ class FirstTorchBrowserScreen extends Screen {
     @Override
     protected void init() {
         super.init();
+        referenceButtons.clear();
+        if (observedSnapshot != ClientGuideCache.snapshot()) linkNavigation.clear();
         observedSnapshot = ClientGuideCache.snapshot();
         observedProgress = ClientProgressCache.snapshot();
         GuideSnapshot displayed = usesPreview() ? DesignPreview.snapshot() : observedSnapshot;
@@ -90,6 +94,7 @@ class FirstTorchBrowserScreen extends Screen {
             addManualConfirmation();
             addRewardClaim();
             addTestCompletion();
+            addReferenceButtons();
         }
         if (reading && !trophiesOpen) {
             Component overview = Component.translatable("screen.firsttorch.overview");
@@ -97,6 +102,73 @@ class FirstTorchBrowserScreen extends Screen {
                     overview, ignored -> { reading = false; rebuildWidgets(); }, overview,
                     Tooltip.create(overview), FirstTorchButton.Kind.NAVIGATION, false));
         }
+        if (!preview() && !trophiesOpen && linkNavigation.hasBack()) {
+            Rect footer = layout.footer();
+            Component back = Component.translatable("screen.firsttorch.reference.back");
+            int backWidth = Math.min(210, footer.width() - 16);
+            addRenderableWidget(button(footer.right() - backWidth - 8, footer.y() + 2, backWidth,
+                    footer.height() - 4, back, ignored -> returnFromReference(), back, null,
+                    FirstTorchButton.Kind.NAVIGATION, true));
+        }
+    }
+
+    private void addReferenceButtons() {
+        if (preview() || viewModel.quest() == null) return;
+        Rect panel = layout.details();
+        for (var link : QuestReferenceLinks.forQuest(viewModel.quest().id())) {
+            boolean available = QuestLinkNavigation.destination(observedSnapshot, observedProgress, link.questId()).isPresent();
+            Component label = Component.literal("› ").append(Component.translatable(link.titleKey()));
+            if (!available) label = label.copy().append(" — ").append(Component.translatable("screen.firsttorch.reference.unavailable"));
+            var control = button(panel.x() + 10, 0, Math.max(1, panel.width() - 20), 18,
+                    label, ignored -> followReference(link.questId()), label, null, FirstTorchButton.Kind.NAVIGATION, true);
+            control.active = available;
+            referenceButtons.add(control);
+            addRenderableWidget(control);
+        }
+        positionReferenceButtons();
+    }
+
+    private void positionReferenceButtons() {
+        if (referenceButtons.isEmpty() || viewModel.quest() == null) return;
+        Rect panel = layout.details();
+        int y = LiveDetailsRenderer.referenceTop(font, panel, viewModel.quest()) - detailsScroll;
+        for (var control : referenceButtons) {
+            control.setY(y);
+            control.visible = y >= panel.y() + 10 && y + control.getHeight() <= panel.bottom() - 34;
+            if (!control.visible && control.isFocused()) setFocused(null);
+            y += 24;
+        }
+    }
+
+    private void followReference(String questId) {
+        var destination = QuestLinkNavigation.destination(observedSnapshot, observedProgress, questId);
+        if (destination.isEmpty() || destination.get().equals(selection)) return;
+        linkNavigation.push(new QuestLinkNavigation.Location(selection, detailsScroll, reading, completedExpanded, chapterPage));
+        selection = destination.get();
+        reading = true;
+        trophiesOpen = false;
+        detailsScroll = 0;
+        completedExpanded = true;
+        chapterPage = 0;
+        rebuildWidgets();
+        var rows = ChapterArchive.rows(viewModel.chapters(), this::completed, completedExpanded);
+        int index = 0;
+        while (index < rows.size() && !viewModel.chapter().equals(rows.get(index).chapter())) index++;
+        int cardHeight = Math.max(23, Math.min(42, layout.chapters().height() / 7));
+        chapterPage = index / Math.max(1, (layout.chapters().height() - 51) / (cardHeight + 5));
+        rebuildWidgets();
+    }
+
+    private void returnFromReference() {
+        linkNavigation.back(observedSnapshot, observedProgress).ifPresent(location -> {
+            selection = location.selection();
+            detailsScroll = location.scroll();
+            reading = location.reading();
+            completedExpanded = location.completedExpanded();
+            chapterPage = location.chapterPage();
+            trophiesOpen = false;
+        });
+        rebuildWidgets();
     }
 
     @Override
@@ -182,6 +254,7 @@ class FirstTorchBrowserScreen extends Screen {
     }
 
     private void togglePreview() {
+        linkNavigation.clear();
         trophiesOpen = false;
         detailsScroll = 0;
         reading = false;
@@ -286,6 +359,7 @@ class FirstTorchBrowserScreen extends Screen {
         FirstTorchTheme.frame(graphics, layout.footer(), false);
         if (!trophiesOpen) drawConnections(graphics);
         drawText(graphics);
+        positionReferenceButtons();
         super.extractRenderState(graphics, (int) viewport.localX(mouseX), (int) viewport.localY(mouseY), partialTick);
         if (!preview()) ChapterFirework.draw(graphics, font, viewport.width(), viewport.height());
         graphics.pose().popMatrix();
@@ -317,6 +391,7 @@ class FirstTorchBrowserScreen extends Screen {
         if ((trophiesOpen || !preview()) && localX >= panel.x() && localX < panel.right()
                 && localY >= panel.y() && localY < panel.bottom()) {
             detailsScroll = Math.max(0, Math.min(detailsMaxScroll, detailsScroll - (int) (scrollY * 20)));
+            positionReferenceButtons();
             return true;
         }
         return super.mouseScrolled(viewport.localX(x), viewport.localY(y), scrollX, scrollY);
@@ -576,7 +651,8 @@ class FirstTorchBrowserScreen extends Screen {
         if (trophiesOpen) hint = Component.translatable("screen.firsttorch.trophies.back");
         if (preview()) hint = Component.translatable("screen.firsttorch.preview").append("  ·  ").append(hint);
         text.acceptScrollingWithDefaultCenter(colored(hint, FirstTorchTheme.MUTED),
-                footer.x() + 8, footer.right() - 8, footer.y() + 3, footer.bottom() - 3);
+                footer.x() + 8, footer.right() - 8 - (!preview() && !trophiesOpen && linkNavigation.hasBack()
+                        ? Math.min(210, footer.width() - 16) + 8 : 0), footer.y() + 3, footer.bottom() - 3);
     }
 
     private void drawMasthead(GuiGraphicsExtractor graphics, Rect top) {

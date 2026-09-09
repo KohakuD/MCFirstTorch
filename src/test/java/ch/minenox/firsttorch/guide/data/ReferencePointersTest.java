@@ -1,45 +1,45 @@
 package ch.minenox.firsttorch.guide.data;
 
 import static org.junit.jupiter.api.Assertions.*;
+import ch.minenox.firsttorch.client.QuestReferenceLinks;
 import com.google.gson.JsonParser;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 
 final class ReferencePointersTest {
-    private static final Map<String, String> TARGETS = Map.ofEntries(
-            Map.entry("field_end.enderman", "ender_eyes"),
-            Map.entry("field_end.shulker", "shulker_city"),
-            Map.entry("field_end.silverfish", "stronghold_interior"),
-            Map.entry("field_end.endermite", "ender_eyes"),
-            Map.entry("field_water.squid", "excursions"),
-            Map.entry("field_water.glow_squid", "mining"),
-            Map.entry("field_water.dolphin", "excursions"),
-            Map.entry("field_water.turtle", "animal_care"),
-            Map.entry("field_special.bee", "mechanics_bees"),
-            Map.entry("field_special.fox", "animal_care"),
-            Map.entry("field_special.frog", "nether_resources"),
-            Map.entry("field_special.allay", "excursions"));
+    private static final Set<String> SOURCES = Set.of(
+            "19A0B0C0D0E00001", "19A0B0C0D0E00002", "19A0B0C0D0E00003", "19A0B0C0D0E00004",
+            "1AA0B0C0D0E00001", "1AA0B0C0D0E00002", "1AA0B0C0D0E00003", "1AA0B0C0D0E00004",
+            "1BA0B0C0D0E00001", "1BA0B0C0D0E00002", "1BA0B0C0D0E00003", "1BA0B0C0D0E00004");
 
-    @Test void pointersNameExistingChaptersExactlyInBothLanguages() throws Exception {
+    @Test void referenceLinksTargetExistingQuestsAndTheirChapterTitlesInBothLanguages() throws Exception {
         try (var input = getClass().getResourceAsStream("/data/firsttorch/guides/course.json")) {
             var chapters = GuideJson.read(input).chapters();
-            var titles = chapters.stream().map(c -> c.titleKey()).collect(Collectors.toSet());
-            var descriptions = chapters.stream().flatMap(c -> c.quests().stream())
-                    .map(q -> q.descriptionKey()).collect(Collectors.toSet());
+            var quests = chapters.stream().flatMap(c -> c.quests().stream())
+                    .collect(Collectors.toMap(q -> q.id(), q -> q));
+            var chapterTitlesByQuestId = chapters.stream().flatMap(chapter -> chapter.quests().stream()
+                    .map(quest -> java.util.Map.entry(quest.id(), chapter.titleKey())))
+                    .collect(Collectors.toMap(java.util.Map.Entry::getKey, java.util.Map.Entry::getValue));
+            assertEquals(SOURCES, SOURCES.stream().filter(source -> !QuestReferenceLinks.forQuest(source).isEmpty())
+                    .collect(Collectors.toSet()));
             for (var locale : new String[] {"en_us", "de_de"}) {
                 try (var lang = getClass().getResourceAsStream("/assets/firsttorch/lang/" + locale + ".json")) {
                     assertNotNull(lang);
                     var strings = JsonParser.parseReader(new InputStreamReader(lang, StandardCharsets.UTF_8)).getAsJsonObject();
-                    for (var pointer : TARGETS.entrySet()) {
-                        var source = "quest.firsttorch." + pointer.getKey() + ".description";
-                        var target = "chapter.firsttorch." + pointer.getValue() + ".title";
-                        assertTrue(descriptions.contains(source), source);
-                        assertTrue(titles.contains(target), target);
-                        assertTrue(strings.get(source).getAsString().contains(strings.get(target).getAsString()),
-                                locale + ": " + source + " -> " + target);
+                    for (var source : SOURCES) {
+                        assertTrue(quests.containsKey(source), source);
+                        var prose = strings.get(quests.get(source).descriptionKey()).getAsString();
+                        assertFalse(prose.contains("Read more:") || prose.contains("Mehr dazu:"),
+                                "Do not duplicate the clickable reference in plain prose: " + source);
+                        for (var link : QuestReferenceLinks.forQuest(source)) {
+                            assertTrue(quests.containsKey(link.questId()), link.questId());
+                            assertEquals(chapterTitlesByQuestId.get(link.questId()), link.titleKey(),
+                                    source + " -> " + link.questId());
+                            assertTrue(strings.has(link.titleKey()), locale + ": " + link.titleKey());
+                        }
                     }
                 }
             }
