@@ -1,5 +1,12 @@
 # Playtest log
 
+## 2026-09-10 — Dedicated-server acceptance waived
+
+The owner explicitly requested skipping dedicated-server testing as irrelevant to
+their use. Removed it from current required acceptance gates without marking it
+passed or claiming dedicated-server compatibility. LAN acceptance remains valid;
+broader multiplayer safety checks are unchanged. Documentation only.
+
 ## 2026-09-10 — Full LAN smoke acceptance
 
 The user clarified that the earlier report did not establish a LAN test, then

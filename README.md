@@ -14,7 +14,7 @@ First Torch is an independent NeoForge mod in active alpha development. It teach
 
 The guided course covers early survival through the Nether, End and independent exploration, with optional Redstone lessons. The separate reference library covers creatures and unusual mechanics. Native features include automatic/manual tasks, rewards, trophies, search, original-game illustrations and returnable reading links.
 
-This is not a publication-ready release. Dedicated multiplayer, accessibility and release/licensing checks remain open in the [Roadmap](docs/Roadmap.md). See also [Reference verification](docs/ReferenceVerification.md).
+This is not a publication-ready release. Multiplayer safety, accessibility and release/licensing checks remain open in the [Roadmap](docs/Roadmap.md). LAN multiplayer smoke tests are accepted; dedicated-server testing is explicitly out of the current acceptance scope and dedicated-server operation remains unverified. See also [Reference verification](docs/ReferenceVerification.md).
 
 ## Develop in IntelliJ IDEA
 

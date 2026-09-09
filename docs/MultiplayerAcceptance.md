@@ -4,7 +4,9 @@ Status: LAN smoke test accepted on 2026-09-10 for `0.13.0-alpha.1`. After clarif
 the earlier test report, the user explicitly started a LAN session and confirmed
 all requested checks as correct: independent welcomes and quest progress, reward
 recipient and claim-all isolation, duplicate-claim prevention, and reconnect/restart
-persistence. Dedicated-server acceptance remains open.
+persistence. The owner explicitly waived dedicated-server acceptance on 2026-09-10
+as irrelevant to the current scope. Dedicated-server operation is unverified,
+not accepted by implication from the LAN result.
 Storage tests are not a substitute for this network/player test.
 
 Use a disposable world and two distinct player accounts, both with the same native
@@ -28,5 +30,5 @@ Do not use the development force-completion control for this test.
 
 Record build, LAN/dedicated host, both outcomes and any console/log errors. Report
 UUIDs privately only if diagnosis needs them; never commit player saves or logs.
-Dedicated-server startup/restart and broader fault/reload/death tests remain separate
-release gates even if the LAN smoke test passes.
+Dedicated-server startup/restart testing is waived for the current scope. Broader
+fault/reload/death checks remain separate from the accepted LAN smoke test.

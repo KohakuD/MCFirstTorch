@@ -17,10 +17,10 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
 
 ### Open acceptance and release work
 
-- [ ] Dedicated-server and multiplayer acceptance: independent player progress, reward recipients, reconnects, disconnect/reload handling, and server lifecycle
+- [x] LAN multiplayer acceptance: independent player progress, reward recipients and reconnect/host-restart persistence
   - [x] Native storage regressions for welcome acknowledgements across two players, two reopen cycles, separate worlds and independent quest storage
   - [x] Two-account LAN smoke test: independent welcomes and quest progress, reward recipients, duplicate claims, reconnect/restart persistence and claim-all isolation confirmed by the user (see `MultiplayerAcceptance.md`)
-  - [ ] Dedicated-server two-client acceptance and server lifecycle checks; LAN acceptance does not replace this gate
+  - Dedicated-server two-client acceptance and lifecycle checks are explicitly waived by the owner (2026-09-10), not passed; dedicated-server operation remains unverified and is not a release gate for the current scope
 - [ ] Multiplayer safety review for backups, deaths, version upgrades, and any future team semantics
 - [x] User acceptance of the delivered End City/End Ship and optional mob-drop/Bastion content; separate clean-profile survival verification remains below
 - [ ] Complete Redstone practical-build and illustration acceptance in both languages
