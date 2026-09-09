@@ -703,6 +703,8 @@ First implementation batch inside native 0.13.0-alpha.1: three optional three-ca
   - [x] Add the final three Respawn Anchor pointers; all 62 current reference cards have reviewed stable-ID destinations
   - [x] In-game acceptance: Respawn Anchor links and return navigation (user-confirmed)
 - [ ] Review each entry against the targeted Minecraft version and remove entries that cannot be verified reliably
+  - [x] Verify Jukebox stop/ejection and brushing completion/interruption directly in target bytecode; clarify item pickup and safe brushing resumption in both languages
+  - [ ] Reading acceptance: Jukebox pickup/replay and interrupted brushing hints
 
 ## 0.13.0 — Independent First Torch Mod
 

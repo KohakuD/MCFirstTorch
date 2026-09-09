@@ -1,5 +1,11 @@
 # Playtest log
 
+## 2026-09-09 — Jukebox and archaeology behaviour clarification
+
+Reviewed target Jukebox playback/ejection and BrushableBlock completion/reset methods. Added bilingual hints to collect/reinsert an ejected disc and resume brushing safely after an interruption decreases progress. No task, reward, ID or saved progress changed. Pending: read the two updated library cards; no new expedition, reset or risky experiment is required.
+
+Verification: native tests/build, retained-pack validation/build and whitespace checks passed.
+
 ## 2026-09-09 — Guard the reference verification baseline
 
 Welcome wording accepted by the user. Added an explicit Minecraft 26.1.2 version gate before creature/mechanics archive verification and documented deliberate reference maintenance across upgrades. Five fixture tests passed (correct, wrong, missing ID, malformed JSON, missing entry); both verifiers also passed with the real target archive. Fixture files were removed after testing. No game code, assets, quests or saved progress changed; no in-game test is needed.

@@ -4,6 +4,12 @@ Target: Minecraft Java 26.1.2, native First Torch 0.13.0-alpha.1. The first nine
 
 ## Target data and code
 
+### Jukebox and brushing code follow-up (2026-09-09)
+
+Read the original 26.1.2 client methods with `javap -c -p`. `JukeboxSongPlayer.tick` calls `stop` when `JukeboxSong.hasFinished` succeeds, rather than restarting the song. `JukeboxBlock.useWithoutItem` calls `JukeboxBlockEntity.popOutTheItem`, which removes the stored stack and creates a copy as an ItemEntity with pickup delay. The card now explicitly tells the learner to collect and reinsert that disc.
+
+`BrushableBlockEntity.brush` increments accepted strokes until completion; `brushingCompleted` drops content and replaces the block using `BrushableBlock.getTurnsInto`. `checkReset` decreases accumulated progress after an interruption. The card now explains safe resumption instead of mining a seemingly stalled block. `BrushableBlock.tick` starts a falling block with drops disabled when its support is absent. These checks support the existing warnings; they do not constitute a physical ruin excavation test or verify every site loot possibility.
+
 ### Completed bilingual instructional-structure audit (2026-09-09)
 
 All 27 current descriptions were read in English and German. Each has a trigger or preparation, an observable result, a relevant safety limitation and an optional experiment or safe observation. The table records the actual observation route, not a claim that the interaction was performed. Sequential Archaeology, Cauldron and Pumpkin prose does not need extra repeated headings.
