@@ -1,7 +1,9 @@
 # Native accessibility acceptance
 
-Status: source review complete for search, reference index and native buttons;
-in-game keyboard/narrator acceptance pending for `0.13.0-alpha.1`.
+Status: the user accepted the requested bilingual keyboard/narrator smoke checks
+on 2026-09-10 for `0.13.0-alpha.1`: navigation, no-results feedback, reference paging,
+and entering/returning from trophies and settings. Broader quest-state narration
+and enlarged/quiet-mode combinations below are not implied by that shorter test.
 
 Buttons inherit native input and narration and draw hover/focus using the same
 visible selection treatment. Search initially focuses its EditBox, accepts Enter,

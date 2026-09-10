@@ -32,8 +32,11 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
 - [x] User acceptance of the delivered End City/End Ship and optional mob-drop/Bastion content; separate clean-profile survival verification remains below
 - [ ] Complete Redstone practical-build and illustration acceptance in both languages
 - [ ] Accessibility acceptance beyond the existing foundations, including narrator behaviour and keyboard-only navigation in all relevant native surfaces
-  - Search now narrates no results immediately without losing input focus; combined keyboard/narrator checklist in `AccessibilityAcceptance.md`
+  - [x] User accepted bilingual keyboard/narrator smoke checks for navigation, search feedback, reference paging, trophies and settings
+  - [ ] Remaining quest-state narration and enlarged/quiet-mode combinations in `AccessibilityAcceptance.md`
 - [ ] Verify licences for native libraries and release assets; retain Minecraft-derived artwork only for the reviewed target version
+  - [x] Native build/dependency inventory and official Minecraft terms reviewed; no bundled third-party libraries
+  - [ ] Per-image permissions/provenance and publication approach for 106 raster illustrations; see `ReleaseLicensing.md` (runtime-rendering proposal awaits owner decision)
 - [ ] Clean-profile release acceptance: fresh install, complete guided route, both languages, restart persistence, and native JAR verification
 - [ ] Decide publication and launcher-update workflow for the native mod
 

@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-10 — Accessibility smoke accepted and release asset inventory
+
+The user accepted the requested bilingual keyboard/narrator smoke test. Recorded
+the boundary separately from broader accessibility combinations. Reviewed build
+dependencies, 106 native PNGs and official Minecraft terms; clarified MIT scope in
+NOTICE. Publication asset clearance remains open, with a runtime-rendering proposal
+awaiting owner approval. No illustrations, runtime behaviour or player data changed.
+
 ## 2026-09-10 — Reload accepted and search narration feedback
 
 The user accepted the normal reload checklist. The scoped progress-safety review
