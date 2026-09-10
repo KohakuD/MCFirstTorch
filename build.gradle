@@ -122,6 +122,8 @@ neoForge.ideSyncTask generateModMetadata
 
 tasks.named('jar', Jar).configure {
     from('LICENSE') { into 'META-INF' }
+    from('LICENSE-CODE') { into 'META-INF' }
+    from('LICENSE-ASSETS.md') { into 'META-INF' }
     from('NOTICE.md') { into 'META-INF' }
 }
 

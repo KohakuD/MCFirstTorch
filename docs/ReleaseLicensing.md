@@ -5,7 +5,8 @@ risk assessment, not a legal clearance or a finding of infringement.
 
 ## Inventory
 
-- Original First Torch Java, course text and documentation: repository MIT licence.
+- Original First Torch Java, course text and documentation: MIT in LICENSE-CODE.
+- Original visual contributions: CC BY 4.0 in LICENSE-ASSETS.md, approved by the owner on 2026-09-10 to match DistinctCraft and Living Paths. Minecraft and other third-party content is expressly excluded. Existing grants for earlier versions remain unaffected.
 - Build configuration declares JUnit/Gson as test dependencies; no extra production
   library is bundled. The JAR boundary verifier allows only First Torch classes and
   resources plus metadata, LICENSE and NOTICE. It rejects nested JARs and foreign

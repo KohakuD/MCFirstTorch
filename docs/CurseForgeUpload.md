@@ -6,6 +6,10 @@ files or changes the project page itself.
 
 ## Upload file
 
+CurseForge project ID: `1689817` (created; moderation pending).
+Choose **Custom License** and use the repository `LICENSE` text. Code and text
+use MIT; original visual assets use CC BY 4.0, with Minecraft content excluded.
+
 Project logo: `src/main/resources/assets/firsttorch/branding/logo.png`.
 The owner-approved voxel logo is also embedded in the mod metadata for the Mods screen.
 

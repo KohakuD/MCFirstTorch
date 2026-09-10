@@ -2,7 +2,8 @@
 
 First Torch contains original source code, documentation, and course text, plus guide illustrations derived from the targeted Minecraft textures, models and owner screenshots. It does not include Minecraft game JARs or third-party mod JARs. Release asset/licensing review remains open.
 
-The MIT licence applies to original First Torch work, not to underlying Minecraft
+The MIT licence applies to First Torch code and text. CC BY 4.0 applies to original
+First Torch visual assets. Neither licence applies to underlying Minecraft
 textures, models or other third-party content. Those rights remain with their
 respective owners; inclusion in this repository does not relicense them under MIT.
 See `docs/ReleaseLicensing.md` in the source repository for the review boundary.

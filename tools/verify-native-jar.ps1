@@ -5,12 +5,12 @@ $archive = [IO.Compression.ZipFile]::OpenRead((Resolve-Path -LiteralPath $JarPat
 try {
     $names = @($archive.Entries | Where-Object { $_.Name } | ForEach-Object { $_.FullName })
     foreach ($name in $names) {
-        if ($name -match '(^|/)\.\.(/|$)|\\' -or $name -notmatch '^(ch/minenox/firsttorch/.+\.class|assets/firsttorch/.+\.(json|png)|data/firsttorch/.+\.json|META-INF/(MANIFEST\.MF|neoforge\.mods\.toml|LICENSE|NOTICE\.md))$') {
+        if ($name -match '(^|/)\.\.(/|$)|\\' -or $name -notmatch '^(ch/minenox/firsttorch/.+\.class|assets/firsttorch/.+\.(json|png)|data/firsttorch/.+\.json|META-INF/(MANIFEST\.MF|neoforge\.mods\.toml|LICENSE|LICENSE-CODE|LICENSE-ASSETS\.md|NOTICE\.md))$') {
             throw "Unexpected native JAR content: $name"
         }
     }
     if (@($names | Sort-Object -Unique).Count -ne $names.Count) { throw 'Duplicate native JAR entries.' }
-    foreach ($required in @('META-INF/neoforge.mods.toml', 'META-INF/LICENSE', 'META-INF/NOTICE.md',
+    foreach ($required in @('META-INF/neoforge.mods.toml', 'META-INF/LICENSE', 'META-INF/LICENSE-CODE', 'META-INF/LICENSE-ASSETS.md', 'META-INF/NOTICE.md',
         'assets/firsttorch/lang/en_us.json', 'assets/firsttorch/lang/de_de.json', 'data/firsttorch/guides/course.json')) {
         if ($names -cnotcontains $required) { throw "Missing native JAR resource: $required" }
     }

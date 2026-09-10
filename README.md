@@ -70,4 +70,4 @@ Generated builds, worlds, logs and player data do not belong in Git.
 
 ## Licence and trademarks
 
-First Torch source content uses the MIT License; see [LICENSE](LICENSE) and [NOTICE.md](NOTICE.md). Minecraft is a trademark of Microsoft. This project is not affiliated with Mojang Studios, Microsoft, CurseForge, or NeoForged.
+First Torch code and text use [MIT](LICENSE-CODE); original visual assets use [CC BY 4.0](LICENSE-ASSETS.md). See [LICENSE](LICENSE) and [NOTICE.md](NOTICE.md) for scope and third-party exclusions. Minecraft is a trademark of Microsoft. This project is not affiliated with Mojang Studios, Microsoft, CurseForge, or NeoForged.
