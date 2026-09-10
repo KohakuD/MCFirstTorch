@@ -4,6 +4,20 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 final class LiveOverworldScenesTest {
+    @Test void staircaseLeavesJumpingHeadroomAboveEveryStep() {
+        var blocks = LiveOverworldScenes.find("firsttorch:textures/questpics/safe_staircase.png")
+                .operations().stream().filter(LiveScene.Texture.class::isInstance)
+                .map(LiveScene.Texture.class::cast).filter(t -> t.x() >= 318).toList();
+        for (int col = 1; col <= 6; col++) {
+            int x = 318 + col * 33;
+            for (int row = Math.max(0, col - 2); row <= col; row++) {
+                int y = 24 + row * 30;
+                assertFalse(blocks.stream().anyMatch(t -> t.x() == x && t.y() == y), "Headroom at " + col + "/" + row);
+            }
+            int floorY = 24 + (col + 1) * 30;
+            assertTrue(blocks.stream().anyMatch(t -> t.x() == x && t.y() == floorY), "Step floor retained");
+        }
+    }
     @Test void allRemainingDiagramResourcesHaveLiveScenesAndNoRasterCopies() {
         assertEquals(20, LiveOverworldScenes.resources().size());
         for (String resource : LiveOverworldScenes.resources()) {

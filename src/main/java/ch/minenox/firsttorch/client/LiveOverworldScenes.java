@@ -208,10 +208,10 @@ final class LiveOverworldScenes {
     }
     private static LiveScene staircase() {
         var b = scene(true);
-        // Both panels are side cutaways; the safe shaft has a two-block-high staircase.
+        // Three air blocks per step leave headroom while jumping onto the next full block.
         for (int panel = 0; panel < 2; panel++) for (int row = 0; row < 9; row++) for (int col = 0; col < 8; col++) {
             boolean air = panel == 0 ? col == 3 && row < 5 || col >= 3 && col <= 6 && row >= 5 && row <= 7
-                    : col >= 1 && col <= 6 && (row == col || row == col - 1);
+                    : col >= 1 && col <= 6 && row >= col - 2 && row <= col;
             if (!air) tile(b, row == 0 ? "dirt" : "stone", 18 + panel * 300 + col * 33, 24 + row * 30, 33);
         }
         tile(b, "stone", 117, 144, 33);

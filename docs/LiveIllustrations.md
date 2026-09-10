@@ -216,10 +216,13 @@ against the installed 26.1.2 JAR; none were missing. Regression tests cover scen
 catalog coverage, both languages, dimensions/UVs, Redstone states and important
 End safety geometry. The test emits build/reports/live-scenes.json for asset audit.
 
-## Combined visual acceptance (pending)
+## Combined visual acceptance
 
-Batches 1 through 11 remain accepted. Cartography and this collective migration
-await the owner's in-game review; automated checks are not visual acceptance.
+The owner accepted the collective review except the safe-staircase cutaway.
+Its right-hand tunnel now removes one additional ceiling block above every step,
+leaving three air blocks for jumping uphill. A regression checks clearance and
+retained step floors. Only this corrected illustration needs a visual recheck.
+The previous collective review checklist is retained below for reference.
 Restart the IntelliJ client and browse the course and reference illustrations:
 
 - Crafting, brewing, smelting and cartography: original item models and readable panels.
