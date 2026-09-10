@@ -33,12 +33,14 @@ JAR is included or because the source code is MIT. A per-image provenance and
 permitted-use review remains required. Recipe/circuit images assembled offline from
 game assets warrant separate attention from screenshots.
 
-Proposed engineering approach, awaiting owner approval: render recipe/circuit
+Engineering approach approved by the owner on 2026-09-10: render recipe/circuit
 illustrations from the player's installed Minecraft resources at runtime and ship
 original layout data, preserving the original visual style. This reduces bundled
 game-derived raster data but does not itself establish compliance for every asset.
 Review gameplay screenshots, public branding, contact information and disclaimer
 separately before publishing. Do not remove existing illustrations without approval.
 
-No external publication, monetization enrolment, asset removal or renderer migration
-was performed by this review. Recheck official terms when preparing the actual release.
+No external publication or monetization enrolment was performed. Runtime migration
+has started with ten recipes; see `LiveIllustrations.md`. Historical counts above
+describe the reviewed source collection, not the reduced release payload. Recheck
+official terms when preparing the actual release.

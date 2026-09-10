@@ -52,6 +52,9 @@ final class GuideImageLayoutTest {
             for (var image : images) {
                 String assetPath = "assets/" + image.resource().replace(':', '/');
                 try (var png = getClass().getResourceAsStream("/" + assetPath)) {
+                    if (LiveRecipeCatalog.find(image.resource()) != null) {
+                        assertNull(png, "Live recipe must not package its old raster: " + image.resource());
+                    } else {
                     assertNotNull(png);
                     byte[] bytes = png.readAllBytes();
                     String sourceRoot = "src/main/resources/";
@@ -60,6 +63,7 @@ final class GuideImageLayoutTest {
                     var decoded = ImageIO.read(new java.io.ByteArrayInputStream(bytes));
                     assertEquals(decoded.getWidth(), image.width());
                     assertEquals(decoded.getHeight(), image.height());
+                    }
                 }
                 for (String locale : List.of("en_us", "de_de")) {
                     try (var lang = getClass().getResourceAsStream("/assets/firsttorch/lang/" + locale + ".json")) {

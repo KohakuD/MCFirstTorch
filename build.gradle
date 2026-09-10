@@ -104,6 +104,13 @@ var generateModMetadata = tasks.register('generateModMetadata', ProcessResources
 }
 
 sourceSets.main.resources.srcDir generateModMetadata
+// Migrated illustrations use runtime item models. Keep historical PNGs out of all packaged resources.
+tasks.named('processResources', ProcessResources).configure {
+    ['wooden_pickaxe', 'wooden_shovel', 'stone_pickaxe', 'stone_axe', 'iron_pickaxe',
+     'iron_sword', 'furnace', 'chest', 'bucket', 'golden_helmet'].each { name ->
+        exclude "assets/firsttorch/textures/questpics/${name}.png"
+    }
+}
 // All curriculum artwork is owned by the native resources; archives are never build inputs.
 neoForge.ideSyncTask generateModMetadata
 

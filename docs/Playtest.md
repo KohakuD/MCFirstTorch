@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-10 — First runtime recipe illustration batch
+
+Implemented ten single-output recipe diagrams with native item/block rendering and
+original frame/arrow code. Excluded migrated PNGs from processed resources, retaining
+source comparisons. Quest IDs, captions, progress, icons and screenshots unchanged.
+Recipe layouts checked against target-game recipe JSON; packaging/catalog tests added.
+Shared renderer visual acceptance is pending before migrating further image families.
+
 ## 2026-09-10 — Accessibility smoke accepted and release asset inventory
 
 The user accepted the requested bilingual keyboard/narrator smoke test. Recorded
