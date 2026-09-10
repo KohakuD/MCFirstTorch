@@ -1,5 +1,7 @@
 # First Torch
 
+<img src="src/main/resources/assets/firsttorch/branding/logo.png" alt="First Torch voxel logo: a torch and an ascending path towards mastery" width="320">
+
 **A patient, step-by-step Minecraft survival course inside the game.**
 
 First Torch is an independent NeoForge mod in beta. It teaches what to do, why it matters, and how to practise safely. Its native runtime does not require FTB Quests, FTB Library, FTB Teams, their filter modules, Initially, or DistinctCraft.

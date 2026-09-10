@@ -6,6 +6,9 @@ files or changes the project page itself.
 
 ## Upload file
 
+Project logo: `src/main/resources/assets/firsttorch/branding/logo.png`.
+The owner-approved voxel logo is also embedded in the mod metadata for the Mods screen.
+
 Upload only:
 
 `build/libs/firsttorch-0.13.0-beta.1.jar`

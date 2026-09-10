@@ -63,7 +63,11 @@ not a legal clearance. Other capture provenance and public branding remain open.
 ## Release-page requirements
 
 The clean-profile test was accepted on 2026-09-10. Before a public upload, the
-owner selected the CurseForge Beta file type and must supply the public repository
-and contact-form URLs for the listing. The prepared bilingual description contains
+owner selected the CurseForge Beta file type. The public repository and shared English
+contact form are linked in the listing. The owner-approved voxel logo was created
+with the built-in image generation tool on 2026-09-10 and is packaged as
+`assets/firsttorch/branding/logo.png`; it is branding, not a lesson illustration.
+Its concept is a central torch and an ascending voxel path from beginner to mastery.
+The prepared bilingual description contains
 the required non-official Minecraft disclaimer. See `CurseForgeUpload.md`; do not
 treat this engineering checklist as legal advice or substitute it for a final owner review.
