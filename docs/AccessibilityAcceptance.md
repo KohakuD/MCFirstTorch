@@ -2,8 +2,10 @@
 
 Status: the user accepted the requested bilingual keyboard/narrator smoke checks
 on 2026-09-10 for `0.13.0-alpha.1`: navigation, no-results feedback, reference paging,
-and entering/returning from trophies and settings. Broader quest-state narration
-and enlarged/quiet-mode combinations below are not implied by that shorter test.
+and entering/returning from trophies and settings. The subsequent focused test of
+open/locked/completed quest narration and enlarged/quiet-mode combinations was
+also accepted in German and English. The documented acceptance scope is complete;
+this is not a claim of universal accessibility across all systems.
 
 Buttons inherit native input and narration and draw hover/focus using the same
 visible selection treatment. Search initially focuses its EditBox, accepts Enter,

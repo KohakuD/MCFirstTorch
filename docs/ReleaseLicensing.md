@@ -45,3 +45,17 @@ has completed all 91 assembled illustrations, with visual acceptance recorded in
 `LiveIllustrations.md`. The release retains 15 gameplay captures. Historical counts above
 describe the reviewed source collection, not the reduced release payload. Recheck
 official terms when preparing the actual release.
+
+## Provenance correction: Village overview
+
+The 15 retained raster resources must not all be described as unmodified gameplay
+captures. `tools/generate-overworld-village-guide.py` installs
+`tools/artwork/village_overview_generated.png`, not the preserved original
+`tools/artwork/village_overview_reference.png`. The playtest log records the prior
+approval of this screenshot-derived generated illustration. Its visual acceptance
+does not make it an exact capture or settle publication rights.
+
+The original screenshot remains available and was inspected. Recommend replacing
+the generated variant with an original-pixel crop (avoiding HUD/hand), subject to
+owner approval of changing the previously selected picture. No image replaced in
+this provenance review. Other capture provenance and public branding remain open.

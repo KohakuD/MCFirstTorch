@@ -31,9 +31,9 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
   - [x] Normal in-game `/reload` accepted; abrupt-save recovery remains an explicitly unverified limitation (see `ProgressSafety.md`)
 - [x] User acceptance of the delivered End City/End Ship and optional mob-drop/Bastion content; separate clean-profile survival verification remains below
 - [ ] Complete Redstone practical-build and illustration acceptance in both languages
-- [ ] Accessibility acceptance beyond the existing foundations, including narrator behaviour and keyboard-only navigation in all relevant native surfaces
+- [x] Accessibility acceptance for the documented native surfaces and tested configurations
   - [x] User accepted bilingual keyboard/narrator smoke checks for navigation, search feedback, reference paging, trophies and settings
-  - [ ] Remaining quest-state narration and enlarged/quiet-mode combinations in `AccessibilityAcceptance.md`
+  - [x] User accepted open/locked/completed quest narration and enlarged/quiet-mode combinations in German and English; see `AccessibilityAcceptance.md`
 - [ ] Verify licences for native libraries and release assets; retain Minecraft-derived artwork only for the reviewed target version
   - [x] Native build/dependency inventory and official Minecraft terms reviewed; no bundled third-party libraries
   - [x] Runtime illustration visual acceptance: all 91 assembled diagrams render from installed assets; 15 captures unchanged. Owner accepted the collective review and the corrected three-air-block staircase headroom; see `LiveIllustrations.md`.
