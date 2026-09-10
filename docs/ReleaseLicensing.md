@@ -55,7 +55,7 @@ captures. `tools/generate-overworld-village-guide.py` installs
 approval of this screenshot-derived generated illustration. Its visual acceptance
 does not make it an exact capture or settle publication rights.
 
-The original screenshot remains available and was inspected. Recommend replacing
-the generated variant with an original-pixel crop (avoiding HUD/hand), subject to
-owner approval of changing the previously selected picture. No image replaced in
-this provenance review. Other capture provenance and public branding remain open.
+The original screenshot remains available and was inspected. The owner explicitly
+selected the UI-free generated variant over an original-pixel crop with the hotbar
+and player hand, so no replacement is planned. This is a presentation decision,
+not a legal clearance. Other capture provenance and public branding remain open.
