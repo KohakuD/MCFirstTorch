@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-10 — Enchanting interface
+
+Migrated the numbered enchanting interface to installed vanilla GUI/sprites and
+native items. Slot/offer positions and texture dimensions checked against 26.1.2.
+Compact layout, numbered regions and raster-exclusion regressions added; full
+test/build passed. Visual acceptance pending in both browser sizes and scrolling.
+Archaeology acceptance remains pending. Captions and player progress unchanged.
+
 ## 2026-09-10 — Archaeology comparison
 
 The user accepted the small crafting grid. The four archaeology comparison blocks

@@ -161,6 +161,20 @@ Pending visual check: Archaeology's block comparison, normal/enlarged and while
 scrolling. Compare each ordinary block to its suspicious neighbour; check all four
 numbers and the caption. No changes to lessons, screenshots or progress.
 
+## Batch 11: enchanting interface
+
+The numbered enchanting illustration uses the installed 26.1.2 GUI texture,
+offer/level sprites and native Iron Pickaxe/Lapis Lazuli items. Verified input
+coordinates (15,47 and 35,47), offer rows (60,14 plus 19 per row), texture sizes
+and numbered bilingual caption against the original game source/assets. Offers
+remain schematic: no invented enchantment names or guaranteed costs. The single
+surface stays compact, with overlays outside the slots. No quest/progress changes.
+The old raster is excluded; total migrated illustrations: 42. Build/tests passed.
+
+Pending visual check: enchanting interface, normal/enlarged and while scrolling;
+check labels 1 (item), 2 (lapis) and 3 (all three offers). Archaeology acceptance
+is still pending; the latest continuation was not an explicit test confirmation.
+
 ## Remaining batches
 
 - Mixed-material and multiple-output recipes, smelting and brewing diagrams.
@@ -169,5 +183,5 @@ numbers and the caption. No changes to lessons, screenshots or progress.
 - Screenshots and public branding: separate provenance/permissions review, not an
   automatic replacement. No generative redraw of Minecraft assets.
 
-Batches 1 through 9 are accepted; batch 10 requires block-comparison visual acceptance.
+Batches 1 through 9 are accepted; batches 10–11 require visual acceptance.
 Remaining diagram families are not yet migrated.

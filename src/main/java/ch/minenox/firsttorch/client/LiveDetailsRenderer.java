@@ -51,7 +51,11 @@ final class LiveDetailsRenderer {
             var liveBrewing = LiveBrewingCatalog.find(illustration.resource());
             var livePair = LiveRecipePanels.find(illustration.resource());
             var liveSmelting = LiveSmeltingCatalog.find(illustration.resource());
-            if (LiveBlockComparison.supports(illustration.resource())) {
+            if (LiveEnchantingLayout.supports(illustration.resource())) {
+                var bounds = LiveEnchantingLayout.bounds(x, y, w);
+                LiveEnchantingRenderer.draw(graphics, bounds);
+                y = bounds.bottom() + 5;
+            } else if (LiveBlockComparison.supports(illustration.resource())) {
                 var bounds = LiveBlockComparison.bounds(x, y, w);
                 LiveBlockComparisonRenderer.draw(graphics, bounds);
                 y = bounds.bottom() + 5;
