@@ -42,6 +42,13 @@ Output: `build/libs/firsttorch-0.13.0-beta.1.jar`.
 
 Illustrations and translations are included in the native JAR; no separate First Torch guide resource pack is needed. Progress belongs to the world/player, not the JAR.
 
+## Support and contact
+
+Send feedback, bug reports, questions, or ideas through the English
+[KohakuD Mod Contact & Feedback form](https://docs.google.com/forms/d/e/1FAIpQLSee3Rtf4uvSOGDUpd_bGpUMKWNM90tvHh15vOi5UA3tLneGuA/viewform?usp=publish-editor).
+The form also supports DistinctCraft and Living Paths. Voluntary support is
+available through [Buy Me a Coffee](https://buymeacoffee.com/KohakuD).
+
 ## Historical FTB pack
 
 The discontinued FTB-based pack is retained for historical reference under [`archive/ftb-legacy/`](archive/ftb-legacy/). It is not part of the active build, installation process, or development workflow. First Torch does not provide and does not plan an FTB progress importer.

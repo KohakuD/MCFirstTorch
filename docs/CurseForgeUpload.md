@@ -41,7 +41,7 @@ Feedback and bug reports: GitHub Issues at **OWNER MUST INSERT THE PUBLIC REPOSI
 
 Voluntary support: [Buy Me a Coffee](https://buymeacoffee.com/KohakuD).
 
-Contact: **OWNER MUST INSERT A PUBLIC CONTACT-FORM URL HERE**.
+Contact: [KohakuD Mod Contact & Feedback](https://docs.google.com/forms/d/e/1FAIpQLSee3Rtf4uvSOGDUpd_bGpUMKWNM90tvHh15vOi5UA3tLneGuA/viewform?usp=publish-editor).
 
 ### Deutsch
 
@@ -63,7 +63,7 @@ Fehler und Rückmeldungen: GitHub Issues unter **HIER MUSS DIE ÖFFENTLICHE REPO
 
 Freiwillige Unterstützung: [Buy Me a Coffee](https://buymeacoffee.com/KohakuD).
 
-Kontakt: **HIER MUSS DIE URL ZUM ÖFFENTLICHEN KONTAKTFORMULAR EINGEFÜGT WERDEN**.
+Kontakt: [KohakuD Mod Contact & Feedback](https://docs.google.com/forms/d/e/1FAIpQLSee3Rtf4uvSOGDUpd_bGpUMKWNM90tvHh15vOi5UA3tLneGuA/viewform?usp=publish-editor).
 
 ## Pre-upload checks completed
 
@@ -77,7 +77,7 @@ Kontakt: **HIER MUSS DIE URL ZUM ÖFFENTLICHEN KONTAKTFORMULAR EINGEFÜGT WERDEN
 
 ## Owner decisions still required before publishing
 
-1. Supply the public repository and contact-form URLs for the project page. Do not invent them.
+1. Supply the public repository URL for the project page. Do not invent it.
 2. Review the final listing, screenshots and disclaimer against the current
    Minecraft Usage Guidelines and CurseForge submission form immediately before
    upload. This project documentation is an engineering record, not legal advice.
