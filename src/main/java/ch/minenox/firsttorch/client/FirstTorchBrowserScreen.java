@@ -297,7 +297,7 @@ class FirstTorchBrowserScreen extends Screen {
         var references = ReferenceIndex.chapters(viewModel.chapters());
         if (!preview() && !references.isEmpty()) {
             Component indexLabel = Component.translatable("screen.firsttorch.reference.index");
-            addRenderableWidget(button(x - size - 5, y + size + 4, size, size, Component.empty(),
+            addRenderableWidget(button(x, y + size + 4, size, size, Component.empty(),
                     ignored -> minecraft.setScreenAndShow(new FirstTorchReferenceScreen(this, references, this::openReferenceChapter)),
                     indexLabel, null, FirstTorchButton.Kind.REFERENCE_INDEX, false)
                     .preview(new ItemStack(Items.BOOKSHELF), false, false));
@@ -321,7 +321,7 @@ class FirstTorchBrowserScreen extends Screen {
         addRenderableWidget(button(x + size + 4, y, size, size, Component.empty(),
                 ignored -> { trophiesOpen = !trophiesOpen; detailsScroll = 0; rebuildWidgets(); },
                 collectionLabel, null, FirstTorchButton.Kind.TROPHY, trophiesOpen));
-        addRenderableWidget(button(x, y + size + 4, size, size, Component.empty(),
+        addRenderableWidget(button(x + size + 4, y + size + 4, size, size, Component.empty(),
                 ignored -> minecraft.setScreenAndShow(new FirstTorchAccessibilityScreen(this, minecraft.options)),
                 access, null, FirstTorchButton.Kind.ACCESSIBILITY, false));
     }
