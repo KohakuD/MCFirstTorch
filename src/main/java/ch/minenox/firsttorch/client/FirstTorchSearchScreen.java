@@ -83,6 +83,12 @@ final class FirstTorchSearchScreen extends Screen {
         closeToParent();
     }
 
+    @Override
+    public Component getNarrationMessage() {
+        return noResults ? super.getNarrationMessage().copy().append(". ")
+                .append(Component.translatable("screen.firsttorch.search.none")) : super.getNarrationMessage();
+    }
+
     private void submit() {
         noResults = !search.test(query);
         if (!noResults) {
@@ -90,6 +96,7 @@ final class FirstTorchSearchScreen extends Screen {
             return;
         }
         setFocused(input);
+        triggerImmediateNarration(false);
     }
 
     private void closeToParent() {

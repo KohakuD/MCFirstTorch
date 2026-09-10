@@ -1,5 +1,14 @@
 # Playtest log
 
+## 2026-09-10 — Reload accepted and search narration feedback
+
+The user accepted the normal reload checklist. The scoped progress-safety review
+is complete with abrupt-save recovery explicitly unverified. Reviewed keyboard
+paths in search, reference index and option widgets. Added immediate screen
+narration of unsuccessful search results while retaining input focus; existing
+bilingual no-results text is reused. Combined accessibility acceptance is recorded
+in `AccessibilityAcceptance.md` and remains pending in game.
+
 ## 2026-09-10 — Interrupted welcome accepted and reload failure coverage
 
 The user confirmed the interrupted-welcome test after respawn, Later and reconnect.

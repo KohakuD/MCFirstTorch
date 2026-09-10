@@ -21,17 +21,18 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
   - [x] Native storage regressions for welcome acknowledgements across two players, two reopen cycles, separate worlds and independent quest storage
   - [x] Two-account LAN smoke test: independent welcomes and quest progress, reward recipients, duplicate claims, reconnect/restart persistence and claim-all isolation confirmed by the user (see `MultiplayerAcceptance.md`)
   - Dedicated-server two-client acceptance and lifecycle checks are explicitly waived by the owner (2026-09-10), not passed; dedicated-server operation remains unverified and is not a release gate for the current scope
-- [ ] Multiplayer safety review for backups, deaths, version upgrades, and any future team semantics
+- [x] Multiplayer safety review for backups, deaths, version upgrades, and any future team semantics (known crash limitations documented, not a crash-recovery guarantee)
   - [x] Storage/identity source review and backup/upgrade policy documented in `ProgressSafety.md`; journal copy and unsupported-version regressions passed
   - [x] In-game death/respawn acceptance: completion and reward states retained, other player unchanged, reconnect and acknowledged welcome correct
   - [x] Synthetic closed-storage snapshot recovery: native progress, welcome and reward journals restored together without later-state merging
   - [x] User acceptance of clean-save whole-world copy: quest state, inventory, XP and claim protection retained
   - [x] Interrupted-welcome in-game acceptance: after respawn, choosing Later persists acknowledgement across reconnect
   - [x] Reload-listener regression: malformed/unreadable resources preserve the last published snapshot, followed by successful recovery
-  - [ ] Normal in-game `/reload` acceptance; abrupt-save recovery remains an explicitly unverified limitation (see `ProgressSafety.md`)
+  - [x] Normal in-game `/reload` accepted; abrupt-save recovery remains an explicitly unverified limitation (see `ProgressSafety.md`)
 - [x] User acceptance of the delivered End City/End Ship and optional mob-drop/Bastion content; separate clean-profile survival verification remains below
 - [ ] Complete Redstone practical-build and illustration acceptance in both languages
 - [ ] Accessibility acceptance beyond the existing foundations, including narrator behaviour and keyboard-only navigation in all relevant native surfaces
+  - Search now narrates no results immediately without losing input focus; combined keyboard/narrator checklist in `AccessibilityAcceptance.md`
 - [ ] Verify licences for native libraries and release assets; retain Minecraft-derived artwork only for the reviewed target version
 - [ ] Clean-profile release acceptance: fresh install, complete guided route, both languages, restart persistence, and native JAR verification
 - [ ] Decide publication and launcher-update workflow for the native mod

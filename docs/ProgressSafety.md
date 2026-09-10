@@ -84,7 +84,7 @@ preparation also leaves it untouched until apply publishes the complete result.
 The test restores the previous singleton state afterwards. This tests the listener,
 not the complete Minecraft reload scheduler or client network delivery.
 
-Pending in-game check: in a disposable cheats-enabled test world, note a completed
+Accepted by the user on 2026-09-10: in a disposable cheats-enabled test world, note a completed
 quest/claimed reward and one unfinished quest, then run `/reload`. Reopen First
 Torch and verify both states and claim protection remain correct, the welcome does
 not repeat, and the unfinished quest can still be completed normally. If using LAN,
