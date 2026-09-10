@@ -218,10 +218,10 @@ End safety geometry. The test emits build/reports/live-scenes.json for asset aud
 
 ## Combined visual acceptance
 
-The owner accepted the collective review except the safe-staircase cutaway.
-Its right-hand tunnel now removes one additional ceiling block above every step,
-leaving three air blocks for jumping uphill. A regression checks clearance and
-retained step floors. Only this corrected illustration needs a visual recheck.
+The owner accepted the collective review and subsequently the corrected
+safe-staircase cutaway. Its right-hand tunnel removes one additional ceiling block
+above every step, leaving three air blocks for jumping uphill. A regression checks
+clearance and retained step floors. Illustration visual acceptance is complete.
 The previous collective review checklist is retained below for reference.
 Restart the IntelliJ client and browse the course and reference illustrations:
 
