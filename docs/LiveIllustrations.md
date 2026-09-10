@@ -61,8 +61,14 @@ First Torch Client uses these changes without copying a JAR. No progress reset.
 Migrated Fence/Gate, Paper/Map and Bow/Arrows as ordered pairs of live crafting
 diagrams. Each retains both recipes, native models and result counts (three fences,
 three paper, four arrows). Layouts/results were checked against the original 26.1.2
-recipe JSON. Panels retain their aspect ratio inside the existing half-pane image
-footprint. The three raster composites are excluded; total migrated images: 29.
+recipe JSON. Following user feedback, pairs use the full reading-column width with
+height derived from the two panels, without a padded outer frame. Each individual
+panel retains its aspect ratio. The three raster composites are excluded; total
+migrated images: 29.
+
+Standing layout rule for future migrations: multi-panel illustrations use the full
+reading-column width and tightly fitted height; single illustrations and screenshots
+remain compact. Do not squeeze multiple recipes into the half-width default.
 
 Pending visual check: compare Fence/Gate and Paper/Map in normal/enlarged view and
 while scrolling. Both panels and output amounts must remain readable. No reset.

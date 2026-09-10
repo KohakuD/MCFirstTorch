@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-10 — Wider paired recipes
+
+User screenshots showed that all three recipe pairs were too small. Pairs now use
+the full reading-column width and omit the empty outer frame. Added width/aspect
+and tight-height regression coverage and a standing rule for future multi-panel
+guides. Visual acceptance of the widened pairs remains pending; singles, screenshots
+and player progress are unchanged.
+
 ## 2026-09-10 — Paired runtime recipes
 
 The user accepted the brewing interfaces. Migrated Fence/Gate, Paper/Map and

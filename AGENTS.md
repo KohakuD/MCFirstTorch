@@ -44,6 +44,7 @@ The active milestone in `docs/Roadmap.md` controls scope and versioning.
 - In crafting guides, render placeable block ingredients and results with the consistent three-dimensional Minecraft block-model view used by the established guides. Keep these models straight and uniformly aligned. Use flat two-dimensional textures only when the illustration is genuinely a top-down plan, such as an Enchanting Table and Bookshelf layout.
 - For guide changes, perform a fresh-profile in-game test when possible: load a new world, open First Torch, verify both languages, complete the affected path, and restart once.
 - Treat the learner's confusion as a product bug: improve the explanation or sequencing rather than assuming prior knowledge.
+- Multi-panel recipe illustrations must use the full reading-column width, preserve each panel's aspect ratio, and avoid empty outer-frame padding. Keep single illustrations compact; do not apply the half-width default to recipe pairs or future multi-panel guides.
 
 ## Git and releases
 

@@ -44,6 +44,20 @@ final class GuideImageLayoutTest {
         }
     }
 
+    @Test void pairedRecipesUseFullWidthWithoutVerticalPadding() {
+        for (int width : new int[]{120, 251, 420, 600}) {
+            var bounds = GuideImageLayout.pairedBounds(10, -30, width);
+            int cellWidth = GuideImageLayout.pairedCellWidth(width);
+            assertEquals(10, bounds.x());
+            assertEquals(-30, bounds.y());
+            assertEquals(width, bounds.width());
+            assertTrue(width - 2 * cellWidth >= 4);
+            assertTrue(width - 2 * cellWidth <= 5);
+            assertEquals(GuideImageLayout.height(cellWidth, 300, 169), bounds.height());
+            assertTrue(Math.abs(bounds.height() - cellWidth * 169.0 / 300) <= 1);
+        }
+    }
+
     @Test void packagesUnchangedSourceArtworkWithCorrectDimensionsAndTranslations() throws Exception {
         try (var input = getClass().getResourceAsStream("/data/firsttorch/guides/course.json")) {
             var images = GuideJson.read(input).chapters().stream().flatMap(c -> c.quests().stream())

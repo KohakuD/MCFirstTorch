@@ -8,8 +8,7 @@ final class LiveRecipeRenderer {
 
     static void drawPair(GuiGraphicsExtractor graphics, FirstTorchLayout.Rect bounds,
             java.util.List<LiveRecipeCatalog.Recipe> recipes) {
-        FirstTorchTheme.frame(graphics, bounds, false);
-        int cellWidth = Math.max(1, (bounds.width() - 4) / 2);
+        int cellWidth = GuideImageLayout.pairedCellWidth(bounds.width());
         int cellHeight = Math.max(1, Math.min(bounds.height(), Math.round(cellWidth * 169F / 300F)));
         int y = bounds.y() + (bounds.height() - cellHeight) / 2;
         draw(graphics, new FirstTorchLayout.Rect(bounds.x(), y, cellWidth, cellHeight), recipes.get(0));
