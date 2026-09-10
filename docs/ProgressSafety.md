@@ -64,12 +64,17 @@ Accepted by the user on 2026-09-10, using the requested in-game checklist:
    An acknowledged welcome must not reappear.
 
 An unacknowledged welcome interrupted by death remains an additional edge case:
-the client normally retains its pending prompt, but no respawn-specific re-offer
-exists. This needs a separate interruption test, not an assumed pass.
+the client retains its pending prompt and waits until the replacement player is
+alive, 40 ticks old and no other screen is open. A regression covers that client
+state sequence. The server now binds offer authorization to the connection, which
+Minecraft retains across respawn, rather than the replaced ServerPlayer object.
+This fixes rejected post-respawn acknowledgements; an in-game interruption check
+remains pending. No extra offer packet is needed for a pending client prompt.
 
-Broader interrupted-save/reload and actual whole-world restore tests remain open.
+Broader interrupted-save/reload tests remain open. The user accepted the actual
+clean-save whole-world copy check on 2026-09-10.
 
-## Pending whole-world copy check
+## Accepted whole-world copy check
 
 Use only a disposable test world. Complete a quest, claim its reward, then note the
 quest state, inventory and XP. Save and close Minecraft completely. Copy the entire

@@ -1,5 +1,14 @@
 # Playtest log
 
+## 2026-09-10 — World-copy acceptance and interrupted-welcome fix
+
+The user accepted the clean-save whole-world copy checklist, including inventory,
+XP and duplicate-claim protection. Further source review found welcome offers were
+authorized by ServerPlayer object, while respawn replaces that object. Changed the
+guard to the retained server connection so a pending introduction can be acknowledged
+after respawn. Added a client prompt regression for death, blocked screens and
+replacement-player ticks. The interrupted-welcome in-game check remains pending.
+
 ## 2026-09-10 — Respawn accepted and snapshot recovery regression
 
 The user accepted the requested death/respawn and reconnect checklist. Added a

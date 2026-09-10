@@ -6,18 +6,20 @@ import java.util.Map;
 import java.util.Set;
 import java.util.WeakHashMap;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.network.ServerGamePacketListenerImpl;
 import net.neoforged.neoforge.network.PacketDistributor;
 
 /** Sends one welcome offer per connection and records only a server-authorized acknowledgement. */
 public final class ServerWelcomeService {
     public static final ServerWelcomeService INSTANCE = new ServerWelcomeService();
-    private final Map<ServerPlayer, Boolean> offeredThisSession = new WeakHashMap<>();
+    // Respawn replaces ServerPlayer but retains its connection; acknowledgement must remain authorized.
+    private final Map<ServerGamePacketListenerImpl, Boolean> offeredThisSession = new WeakHashMap<>();
 
     private ServerWelcomeService() {}
 
     public void offer(ServerPlayer player) {
         var snapshot = ServerGuideRepository.INSTANCE.snapshot();
-        if (snapshot.guides().isEmpty() || offeredThisSession.containsKey(player)) return;
+        if (snapshot.guides().isEmpty() || offeredThisSession.containsKey(player.connection)) return;
         var server = player.level().getServer();
         var welcomes = ServerWelcomeRepository.get(server);
         if (welcomes.isAcknowledged(player.getUUID())) return;
@@ -30,11 +32,11 @@ public final class ServerWelcomeService {
             return;
         }
         PacketDistributor.sendToPlayer(player, WelcomePayload.INSTANCE);
-        offeredThisSession.put(player, true);
+        offeredThisSession.put(player.connection, true);
     }
 
     public void acknowledge(ServerPlayer player) {
-        if (!offeredThisSession.containsKey(player)) return;
+        if (!offeredThisSession.containsKey(player.connection)) return;
         try {
             ServerWelcomeRepository.get(player.level().getServer()).acknowledge(player.getUUID());
         } catch (IllegalStateException ignored) {
