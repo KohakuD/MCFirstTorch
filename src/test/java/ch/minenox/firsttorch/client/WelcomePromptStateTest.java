@@ -4,6 +4,13 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 final class WelcomePromptStateTest {
+    @Test void openingTheBookBeforeThePromptMustNotAcknowledgeIt() {
+        var state = new WelcomePromptState();
+        state.request();
+        assertFalse(state.ready(true, false, 100));
+        assertTrue(state.pending());
+        assertTrue(state.ready(true, true, 101));
+    }
     @Test void pendingWelcomeWaitsThroughDeathAndRespawnUntilDismissed() {
         var state = new WelcomePromptState();
         state.request();

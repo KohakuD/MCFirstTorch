@@ -37,7 +37,6 @@ class FirstTorchBrowserScreen extends Screen {
     private GuideBrowserViewModel viewModel = GuideBrowserViewModel.resolve(GuideSnapshot.EMPTY, Selection.EMPTY);
     private ScreenLayout layout = FirstTorchLayout.calculate(320, 240);
     private Map<String, Rect> questNodes = Map.of();
-    private Boolean previewChoice;
     private String query = "";
     private boolean searchEmpty;
     private boolean reading;
@@ -77,19 +76,15 @@ class FirstTorchBrowserScreen extends Screen {
         }
         observedSnapshot = ClientGuideCache.snapshot();
         observedProgress = ClientProgressCache.snapshot();
-        GuideSnapshot displayed = usesPreview() ? DesignPreview.snapshot() : observedSnapshot;
-        if (!usesPreview() && recommendOnOpen && liveAvailable() && !observedSnapshot.guides().isEmpty()) {
+        GuideSnapshot displayed = observedSnapshot;
+        if (recommendOnOpen && liveAvailable() && !observedSnapshot.guides().isEmpty()) {
             selection = QuestRecommendation.choose(observedSnapshot, observedProgress);
             reading = selection.questId() != null;
             recommendOnOpen = false;
             revealChapter = true;
             completedExpanded = selection.questId() != null && completed(selection.questId());
         }
-        if (usesPreview() && !DesignPreview.isPreview(selection.guideId())) {
-            selection = new Selection("0D15000000000001", null, "2D15000000000004");
-        }
-        viewModel = usesPreview() ? GuideBrowserViewModel.resolve(displayed, selection)
-                : GuideBrowserViewModel.resolve(displayed, selection, observedProgress);
+        viewModel = GuideBrowserViewModel.resolve(displayed, selection, observedProgress);
         selection = viewModel.selection();
         FirstTorchViewport resizedViewport = FirstTorchViewport.fit(width, height, FirstTorchClientConfig.ENLARGED_VIEW.get());
         if (!viewport.equals(resizedViewport)) revealChapter = true;
@@ -191,11 +186,6 @@ class FirstTorchBrowserScreen extends Screen {
         }
     }
 
-    private boolean usesPreview() {
-        if (previewChoice != null) return previewChoice;
-        return false;
-    }
-
     private boolean liveAvailable() {
         return observedProgress != null && observedProgress.available();
     }
@@ -265,20 +255,6 @@ class FirstTorchBrowserScreen extends Screen {
         return viewModel.guide() != null && DesignPreview.isPreview(viewModel.guide().id());
     }
 
-    private void togglePreview() {
-        linkNavigation.clear();
-        trophiesOpen = false;
-        detailsScroll = 0;
-        reading = false;
-        previewChoice = !preview();
-        chapterFirstRow = 0;
-        revealChapter = true;
-        selection = Selection.EMPTY;
-        query = "";
-        searchEmpty = false;
-        rebuildWidgets();
-    }
-
     private boolean search(String query) {
         // Refresh visibility on submission, not on every edit in the modal.
         rebuildWidgets();
@@ -307,7 +283,7 @@ class FirstTorchBrowserScreen extends Screen {
     }
 
     private boolean hasClaimableRewards() {
-        return !usesPreview() && liveAvailable()
+        return liveAvailable()
                 && !ch.minenox.firsttorch.guide.progress.ClaimableRewards.ids(observedSnapshot,
                         observedProgress.state(), observedProgress.claimedQuestIds(),
                         observedProgress.pendingQuestIds()).isEmpty();
@@ -348,11 +324,6 @@ class FirstTorchBrowserScreen extends Screen {
         addRenderableWidget(button(x, y + size + 4, size, size, Component.empty(),
                 ignored -> minecraft.setScreenAndShow(new FirstTorchAccessibilityScreen(this, minecraft.options)),
                 access, null, FirstTorchButton.Kind.ACCESSIBILITY, false));
-        addRenderableWidget(button(x + size + 4, y + size + 4, size, size,
-                Component.empty(), ignored -> togglePreview(),
-                Component.translatable("screen.firsttorch.preview.toggle"),
-                Tooltip.create(Component.translatable("screen.firsttorch.preview.toggle")),
-                FirstTorchButton.Kind.SETTINGS, preview()));
     }
 
     private void openReferenceChapter(String chapterId) {

@@ -1,6 +1,6 @@
 # Roadmap
 
-## Active milestone: 0.13.0-beta.1 — Native course and reference library
+## Active milestone: 0.13.0-beta.2 — Native course and reference library
 
 First Torch is now developed only as a native NeoForge mod for Minecraft Java `26.1.2` on NeoForge `26.1.2.84`, using Java `25`. The retired FTB pack, its migration discussions, and its historical plans are archived in [`../archive/ftb-legacy/`](../archive/ftb-legacy/). They do not define active scope.
 
@@ -43,7 +43,9 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
 - [x] Public repository, shared English contact form, support links and owner-approved voxel logo integrated
 - [ ] Publish the beta: complete the remaining asset review, review final listing/screenshots/disclaimer, then upload the production JAR. Upload material is in `CurseForgeUpload.md`.
   - [x] Owner-authorised beta upload completed on 2026-09-10: project `1689817`, file `8851077`, Java 25 and English changelog included; automatic publication after approval selected
-  - [ ] CurseForge moderation approval and public availability; upload returned **Baking**, not an approval
+  - Beta.1 file `8851077` archived by the owner after release-blocking preview/test-control reports; do not publish it
+  - [ ] Beta.2 in-game regression: no design-preview switch, no test completion (including IntelliJ), welcome shown after closing an early-opened questbook
+  - [ ] Submit the corrected beta after regression acceptance, then confirm moderation approval and public availability
 
 ## Scope rules
 

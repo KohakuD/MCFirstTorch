@@ -16,9 +16,7 @@ final class FirstTorchWelcome {
         var progress = ClientProgressCache.snapshot();
         boolean ready = minecraft.player != null && minecraft.level != null && minecraft.player.isAlive()
                 && progress != null && progress.available() && !ClientGuideCache.snapshot().guides().isEmpty();
-        if (ready && minecraft.screen instanceof FirstTorchBrowserScreen) {
-            acknowledge(); // The player has already found the book without the introduction.
-        } else if (STATE.ready(ready, minecraft.screen == null, minecraft.player == null ? 0 : minecraft.player.tickCount)) {
+        if (STATE.ready(ready, minecraft.screen == null, minecraft.player == null ? 0 : minecraft.player.tickCount)) {
             minecraft.setScreenAndShow(new FirstTorchWelcomeScreen());
         }
     }

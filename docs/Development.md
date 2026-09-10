@@ -2,7 +2,7 @@
 
 ## Active baseline
 
-First Torch is a native NeoForge mod. The active target is Minecraft Java `26.1.2`, NeoForge `26.1.2.84`, Java `25`, and First Torch `0.13.0-beta.1`.
+First Torch is a native NeoForge mod. The active target is Minecraft Java `26.1.2`, NeoForge `26.1.2.84`, Java `25`, and First Torch `0.13.0-beta.2`.
 
 The runtime is independent of FTB Quests, FTB Library, FTB Teams, Initially, KubeJS, and their companion modules. Do not add those dependencies or an FTB-progress importer. Historical FTB pack material is isolated in [`../archive/ftb-legacy/`](../archive/ftb-legacy/) and is not part of normal development.
 
@@ -33,7 +33,7 @@ For an installable native JAR:
 
 ```powershell
 .\gradlew.bat test build
-pwsh .\tools\verify-native-jar.ps1 -JarPath .\build\libs\firsttorch-0.13.0-beta.1.jar
+pwsh .\tools\verify-native-jar.ps1 -JarPath .\build\libs\firsttorch-0.13.0-beta.2.jar
 ```
 
 `verify-native-jar.ps1` enforces the native package and resource boundary. It rejects nested JARs, unexpected classes, world/config data, duplicate entries, and missing required resources. It is a packaging check, not proof of dependency licensing, accessibility, or multiplayer parity.

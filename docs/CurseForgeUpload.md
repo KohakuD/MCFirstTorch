@@ -6,6 +6,12 @@ files or changes the project page itself.
 
 ## Upload file
 
+**Publication on hold:** the owner archived file `8851077` after finding the
+design-preview switch and development test controls. The replacement is
+`build/libs/firsttorch-0.13.0-beta.2.jar`; it also fixes premature welcome
+acknowledgement. Do not re-upload until the three in-game regressions are accepted.
+The beta.1 submission details below are historical, not a publishable recommendation.
+
 CurseForge project ID: `1689817` (created; moderation pending).
 Beta file `8851077` was uploaded successfully on 2026-09-10. The observed file
 status was **Baking**; this is processing, not publication approval. Automatic

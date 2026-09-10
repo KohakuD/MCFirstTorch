@@ -30,7 +30,6 @@ neoForge {
             client()
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
             systemProperty 'firsttorch.devWindowLayout', 'left_two_thirds'
-            systemProperty 'firsttorch.testMode', 'true'
         }
 
         server {

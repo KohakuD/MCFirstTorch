@@ -8,7 +8,7 @@ First Torch is an independent NeoForge mod in beta. It teaches what to do, why i
 
 ## Current target
 
-- Native mod: `0.13.0-beta.1`
+- Native mod: `0.13.0-beta.2`
 - Minecraft Java: `26.1.2`
 - Tested NeoForge: `26.1.2.84`
 - Java toolchain: `25`
@@ -26,7 +26,7 @@ Import this repository as a Gradle project and use **First Torch Client**, or ru
 .\gradlew.bat runClient
 ```
 
-The development run enables the local-owner test-completion control and left-two-thirds window layout. These are run-configuration properties, not defaults enabled by installing the JAR normally. Test completion does not prove automatic objectives work in survival.
+The development run enables the left-two-thirds window layout. Design-preview switching and test-completion bypasses are retired, including in development launches.
 
 ## Build and install the native beta
 
@@ -34,7 +34,7 @@ The development run enables the local-owner test-completion control and left-two
 .\gradlew.bat test build
 ```
 
-Output: `build/libs/firsttorch-0.13.0-beta.1.jar`.
+Output: `build/libs/firsttorch-0.13.0-beta.2.jar`.
 
 1. Use a separate Minecraft **26.1.2** profile with NeoForge **26.1.2.84** and a compatible Java 25 runtime.
 2. Close Minecraft. Back up existing test worlds before changing installed mods.

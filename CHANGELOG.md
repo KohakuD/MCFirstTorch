@@ -2,6 +2,12 @@
 
 All notable player-facing changes are documented here.
 
+## 0.13.0-beta.2 — 2026-09-10
+
+- Remove the design-preview switch from the questbook header.
+- Disable test completion and its server command, even with old development launch properties.
+- Keep the welcome prompt pending when the questbook is opened before the introduction.
+
 ## 0.13.0-beta.1 — 2026-09-10
 
 ### Added
