@@ -79,7 +79,8 @@ final class GuideImageLayoutTest {
                 String assetPath = "assets/" + image.resource().replace(':', '/');
                 try (var png = getClass().getResourceAsStream("/" + assetPath)) {
                     if (LiveRecipeCatalog.find(image.resource()) != null || LiveBrewingCatalog.find(image.resource()) != null
-                            || LiveRecipePanels.find(image.resource()) != null || LiveSmeltingCatalog.find(image.resource()) != null) {
+                            || LiveRecipePanels.find(image.resource()) != null || LiveSmeltingCatalog.find(image.resource()) != null
+                            || LiveHandCraftingLayout.supports(image.resource())) {
                         assertNull(png, "Live recipe must not package its old raster: " + image.resource());
                     } else {
                     assertNotNull(png);

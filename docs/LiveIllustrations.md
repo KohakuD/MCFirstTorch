@@ -131,9 +131,22 @@ smelting recipes were checked in the original recipe JSON. Their old rasters are
 excluded; total migrated illustrations: 39 (28 crafting, 4 brewing, 5 recipe-panel
 composites, 2 smelting composites). Captions and quest/progress data are unchanged.
 
-Pending visual check: Charcoal and Cooking Food in normal/enlarged view and while
+Batch 8 accepted by the user: Charcoal and Cooking Food in normal/enlarged view and while
 scrolling. Check ingredient/fuel/output placement, both steps and the collection
 arrow. No reset is needed.
+
+## Batch 9: small crafting grid and collection
+
+Log to Planks now uses native block models in an original explanatory 2x2 grid,
+followed by a highlighted collection step. Both panels use full reading width;
+the four-Plank output count is shown at the result and inventory example. The
+original 26.1.2 Oak Planks recipe confirms one Oak Log produces four Planks.
+No workbench-sized 3x3 grid is substituted for the player's small crafting grid.
+The old raster is excluded; total migrated illustrations: 40. The mixed scene in
+Place Crafting Table is deliberately unchanged and remains a separate migration.
+
+Pending visual check: Log to Planks, normal/enlarged and while scrolling. Check the
+four small-grid slots, count four and highlighted inventory destination. No reset.
 
 ## Remaining batches
 
@@ -143,5 +156,5 @@ arrow. No reset is needed.
 - Screenshots and public branding: separate provenance/permissions review, not an
   automatic replacement. No generative redraw of Minecraft assets.
 
-Batches 1 through 7 are accepted; batch 8 requires furnace visual acceptance.
+Batches 1 through 8 are accepted; batch 9 requires small-grid visual acceptance.
 Remaining diagram families are not yet migrated.

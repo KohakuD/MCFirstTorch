@@ -51,7 +51,11 @@ final class LiveDetailsRenderer {
             var liveBrewing = LiveBrewingCatalog.find(illustration.resource());
             var livePair = LiveRecipePanels.find(illustration.resource());
             var liveSmelting = LiveSmeltingCatalog.find(illustration.resource());
-            if (liveRecipe != null) {
+            if (LiveHandCraftingLayout.supports(illustration.resource())) {
+                var bounds = LiveHandCraftingLayout.bounds(x, y, w);
+                LiveHandCraftingRenderer.draw(graphics, bounds);
+                y = bounds.bottom() + 5;
+            } else if (liveRecipe != null) {
                 var bounds = GuideImageLayout.bounds(x, y, w, illustration.width(), illustration.height());
                 LiveRecipeRenderer.draw(graphics, bounds, liveRecipe);
                 y = bounds.bottom() + 5;

@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-10 — Small crafting grid
+
+The user accepted furnace diagrams. Log to Planks now uses native block models,
+retaining the small 2x2 grid, four-Plank output and second collection panel in full
+width. The original Oak Planks recipe was verified. Grid bounds, output count and
+raster exclusion have regression coverage. Visual acceptance remains pending;
+the placement scene, quest data and player progress are unchanged.
+
 ## 2026-09-10 — Furnace diagrams
 
 The user accepted the four-panel armour overview. Charcoal and Cooking Food now

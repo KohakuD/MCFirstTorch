@@ -54,7 +54,7 @@ final class LiveRecipeRenderer {
         graphics.pose().popMatrix();
     }
 
-    private static void slot(GuiGraphicsExtractor graphics, int x, int y, String item) {
+    static void slot(GuiGraphicsExtractor graphics, int x, int y, String item) {
         graphics.fill(x, y, x + 42, y + 42, FirstTorchTheme.BACKGROUND);
         graphics.outline(x, y, 42, 42, FirstTorchTheme.MUTED);
         if (item.isEmpty()) return;
