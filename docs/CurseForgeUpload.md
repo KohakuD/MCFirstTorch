@@ -7,6 +7,11 @@ files or changes the project page itself.
 ## Upload file
 
 CurseForge project ID: `1689817` (created; moderation pending).
+Beta file `8851077` was uploaded successfully on 2026-09-10. The observed file
+status was **Baking**; this is processing, not publication approval. Automatic
+publication after approval is selected. Metadata: Client, NeoForge, Minecraft
+26.1.2, Java 25, Beta, with an English Markdown changelog.
+Author status: https://authors.curseforge.com/#/projects/1689817/files/8851077
 Choose **Custom License** and use the repository `LICENSE` text. Code and text
 use MIT; original visual assets use CC BY 4.0, with Minecraft content excluded.
 
@@ -18,8 +23,8 @@ Upload only:
 `build/libs/firsttorch-0.13.0-beta.1.jar`
 
 Select **Minecraft 26.1.2** and **NeoForge**. Use the **Beta** file type. Beta
-files are eligible for normal CurseForge app synchronisation; Alpha files require
-users to opt in.
+files require the Beta files filter or a direct project link according to the
+upload form. New projects remain unavailable until moderator approval.
 
 Do not upload a development run directory, a world, `options.txt`, a resource pack,
 the historical FTB archive, a Minecraft JAR or a NeoForge JAR.

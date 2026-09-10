@@ -42,6 +42,8 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
 - [x] Clean-profile release acceptance: fresh install, early guided-route smoke test, both languages, restart persistence, and native JAR verification; owner accepted on 2026-09-10, checklist in `CleanProfileAcceptance.md`
 - [x] Public repository, shared English contact form, support links and owner-approved voxel logo integrated
 - [ ] Publish the beta: complete the remaining asset review, review final listing/screenshots/disclaimer, then upload the production JAR. Upload material is in `CurseForgeUpload.md`.
+  - [x] Owner-authorised beta upload completed on 2026-09-10: project `1689817`, file `8851077`, Java 25 and English changelog included; automatic publication after approval selected
+  - [ ] CurseForge moderation approval and public availability; upload returned **Baking**, not an approval
 
 ## Scope rules
 
