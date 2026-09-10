@@ -41,6 +41,6 @@ Review gameplay screenshots, public branding, contact information and disclaimer
 separately before publishing. Do not remove existing illustrations without approval.
 
 No external publication or monetization enrolment was performed. Runtime migration
-has reached 36 illustrations; see `LiveIllustrations.md`. Historical counts above
+has reached 37 illustrations; see `LiveIllustrations.md`. Historical counts above
 describe the reviewed source collection, not the reduced release payload. Recheck
 official terms when preparing the actual release.

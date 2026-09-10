@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-10 — Four-panel armour overview
+
+The user accepted counted shapeless recipes. Migrated all four Copper Armour
+recipes to a full-width two-by-two native layout. Original recipe patterns and
+materials were verified; geometry and catalog tests cover the new second row and
+existing pairs. The armour PNG is excluded from resources. Four-panel visual
+acceptance remains pending; quest definitions and player progress are unchanged.
+
 ## 2026-09-10 — Counted shapeless recipes
 
 The user accepted utility recipes. Paper/Book and short Firework Rockets now use

@@ -58,6 +58,18 @@ final class GuideImageLayoutTest {
         }
     }
 
+    @Test void fourRecipesHaveTwoFullWidthRows() {
+        for (int width : new int[]{120, 251, 420, 600}) {
+            var pair = GuideImageLayout.pairedBounds(10, -30, width);
+            var four = GuideImageLayout.panelBounds(10, -30, width, 4);
+            assertEquals(width, four.width());
+            assertEquals(pair.height() * 2 + 4, four.height());
+            assertEquals(pair.x(), four.x());
+            assertEquals(pair.y(), four.y());
+        }
+        assertThrows(IllegalArgumentException.class, () -> GuideImageLayout.panelBounds(0, 0, 300, 5));
+    }
+
     @Test void packagesUnchangedSourceArtworkWithCorrectDimensionsAndTranslations() throws Exception {
         try (var input = getClass().getResourceAsStream("/data/firsttorch/guides/course.json")) {
             var images = GuideJson.read(input).chapters().stream().flatMap(c -> c.quests().stream())
@@ -67,7 +79,7 @@ final class GuideImageLayoutTest {
                 String assetPath = "assets/" + image.resource().replace(':', '/');
                 try (var png = getClass().getResourceAsStream("/" + assetPath)) {
                     if (LiveRecipeCatalog.find(image.resource()) != null || LiveBrewingCatalog.find(image.resource()) != null
-                            || LiveRecipePairs.find(image.resource()) != null) {
+                            || LiveRecipePanels.find(image.resource()) != null) {
                         assertNull(png, "Live recipe must not package its old raster: " + image.resource());
                     } else {
                     assertNotNull(png);

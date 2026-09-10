@@ -6,13 +6,15 @@ import net.minecraft.client.gui.GuiGraphicsExtractor;
 final class LiveRecipeRenderer {
     private LiveRecipeRenderer() {}
 
-    static void drawPair(GuiGraphicsExtractor graphics, FirstTorchLayout.Rect bounds,
+    static void drawPanels(GuiGraphicsExtractor graphics, FirstTorchLayout.Rect bounds,
             java.util.List<LiveRecipeCatalog.Recipe> recipes) {
         int cellWidth = GuideImageLayout.pairedCellWidth(bounds.width());
-        int cellHeight = Math.max(1, Math.min(bounds.height(), Math.round(cellWidth * 169F / 300F)));
-        int y = bounds.y() + (bounds.height() - cellHeight) / 2;
-        draw(graphics, new FirstTorchLayout.Rect(bounds.x(), y, cellWidth, cellHeight), recipes.get(0));
-        draw(graphics, new FirstTorchLayout.Rect(bounds.right() - cellWidth, y, cellWidth, cellHeight), recipes.get(1));
+        int cellHeight = GuideImageLayout.height(cellWidth, 300, 169);
+        for (int index = 0; index < recipes.size(); index++) {
+            int x = index % 2 == 0 ? bounds.x() : bounds.right() - cellWidth;
+            int y = bounds.y() + index / 2 * (cellHeight + 4);
+            draw(graphics, new FirstTorchLayout.Rect(x, y, cellWidth, cellHeight), recipes.get(index));
+        }
     }
 
     static void draw(GuiGraphicsExtractor graphics, FirstTorchLayout.Rect bounds, LiveRecipeCatalog.Recipe recipe) {

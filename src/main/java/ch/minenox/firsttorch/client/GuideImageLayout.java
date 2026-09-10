@@ -8,8 +8,14 @@ final class GuideImageLayout {
     }
 
     static FirstTorchLayout.Rect pairedBounds(int x, int y, int availableWidth) {
+        return panelBounds(x, y, availableWidth, 2);
+    }
+
+    static FirstTorchLayout.Rect panelBounds(int x, int y, int availableWidth, int count) {
+        if (count < 2 || count > 4) throw new IllegalArgumentException("Expected two to four recipe panels");
+        int rows = (count + 1) / 2;
         return new FirstTorchLayout.Rect(x, y, Math.max(1, availableWidth),
-                height(pairedCellWidth(availableWidth), 300, 169));
+                rows * height(pairedCellWidth(availableWidth), 300, 169) + (rows - 1) * 4);
     }
 
     static FirstTorchLayout.Rect bounds(int x, int y, int availableWidth, int sourceWidth, int sourceHeight) {

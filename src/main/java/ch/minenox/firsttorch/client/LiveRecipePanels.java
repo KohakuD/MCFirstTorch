@@ -3,9 +3,14 @@ package ch.minenox.firsttorch.client;
 import java.util.List;
 import java.util.Map;
 
-/** Two related recipes retain their left-to-right reading order. */
-final class LiveRecipePairs {
+/** Related recipes retain their reading order in a two-column layout. */
+final class LiveRecipePanels {
     private static final Map<String, List<LiveRecipeCatalog.Recipe>> PAIRS = Map.of(
+            path("armour_recipes"), List.of(
+                    armour("copper_helmet", "CCC", "C C", "   "),
+                    armour("copper_chestplate", "C C", "CCC", "CCC"),
+                    armour("copper_leggings", "CCC", "C C", "C C"),
+                    armour("copper_boots", "   ", "C C", "C C")),
             path("fence_and_gate"), List.of(
                     recipe("oak_fence", 3, "oak_planks", "stick", "oak_planks", "oak_planks", "stick", "oak_planks", "", "", ""),
                     recipe("oak_fence_gate", 1, "stick", "oak_planks", "stick", "stick", "oak_planks", "stick", "", "", "")),
@@ -20,7 +25,11 @@ final class LiveRecipePairs {
                     recipe("bow", 1, "", "stick", "string", "stick", "", "string", "", "stick", "string"),
                     recipe("arrow", 4, "", "flint", "", "", "stick", "", "", "feather", "")));
 
-    private LiveRecipePairs() {}
+    private LiveRecipePanels() {}
+    private static LiveRecipeCatalog.Recipe armour(String output, String... rows) {
+        return recipe(output, 1, String.join("", rows).chars()
+                .mapToObj(c -> c == 'C' ? "copper_ingot" : "").toArray(String[]::new));
+    }
     static List<LiveRecipeCatalog.Recipe> find(String resource) { return PAIRS.get(resource); }
     static java.util.Set<String> resources() { return PAIRS.keySet(); }
     private static String path(String name) { return "firsttorch:textures/questpics/" + name + ".png"; }

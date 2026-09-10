@@ -101,9 +101,23 @@ its cached game implementation (one fuel gives flight duration one; no stars mea
 no explosions). The two raster composites are excluded from processed resources.
 Total migrated illustrations: 36 (28 single crafting, 4 brewing, 4 paired).
 
-Pending visual check: Paper/Book (full width and three-Paper count), short Rockets
+Batch 6 accepted by the user: Paper/Book (full width and three-Paper count), short Rockets
 (three outputs), and Eye of Ender as an existing shapeless regression. Check normal
 and enlarged view while scrolling. No quest, caption or progress changes.
+
+## Batch 7: four-panel armour recipes
+
+Migrated the Copper Helmet, Chestplate, Leggings and Boots overview as four native
+recipes, preserving its material and reading order. The shared multi-panel renderer
+now supports two rows of two recipes at full reading-column width. Each cell keeps
+the accepted recipe aspect ratio and no padded outer frame is added. Existing pairs
+retain their single-row layout. Verified all four recipes against original 26.1.2
+recipe JSON (5/8/7/4 Copper Ingots). The old armour raster is excluded from resources.
+Total migrated illustrations: 37 (28 single crafting, 4 brewing, 5 multi-panel).
+
+Pending visual check: the armour overview in normal/enlarged view and while
+scrolling; all four outputs must remain readable, with captions below the second
+row. Compare Paper/Book as a two-panel regression. No progress reset or quest changes.
 
 ## Remaining batches
 
@@ -113,5 +127,5 @@ and enlarged view while scrolling. No quest, caption or progress changes.
 - Screenshots and public branding: separate provenance/permissions review, not an
   automatic replacement. No generative redraw of Minecraft assets.
 
-Batches 1 through 5 are accepted; batch 6 requires shapeless-recipe visual acceptance.
+Batches 1 through 6 are accepted; batch 7 requires four-panel visual acceptance.
 Remaining diagram families are not yet migrated.

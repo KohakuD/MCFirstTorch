@@ -49,14 +49,14 @@ final class LiveDetailsRenderer {
             var resource = Identifier.parse(illustration.resource());
             var liveRecipe = LiveRecipeCatalog.find(illustration.resource());
             var liveBrewing = LiveBrewingCatalog.find(illustration.resource());
-            var livePair = LiveRecipePairs.find(illustration.resource());
+            var livePair = LiveRecipePanels.find(illustration.resource());
             if (liveRecipe != null) {
                 var bounds = GuideImageLayout.bounds(x, y, w, illustration.width(), illustration.height());
                 LiveRecipeRenderer.draw(graphics, bounds, liveRecipe);
                 y = bounds.bottom() + 5;
             } else if (livePair != null) {
-                var bounds = GuideImageLayout.pairedBounds(x, y, w);
-                LiveRecipeRenderer.drawPair(graphics, bounds, livePair);
+                var bounds = GuideImageLayout.panelBounds(x, y, w, livePair.size());
+                LiveRecipeRenderer.drawPanels(graphics, bounds, livePair);
                 y = bounds.bottom() + 5;
             } else if (liveBrewing != null) {
                 var bounds = GuideImageLayout.bounds(x, y, w, illustration.width(), illustration.height());
