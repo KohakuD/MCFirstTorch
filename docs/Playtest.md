@@ -1,5 +1,14 @@
 # Playtest log
 
+## 2026-09-10 — Respawn accepted and snapshot recovery regression
+
+The user accepted the requested death/respawn and reconnect checklist. Added a
+closed-storage recovery test combining native progress, welcome and reward journals
+for two synthetic players: backup, later live changes, restore and independent
+continuation. Focused storage/journal tests passed. Real-world inventory/XP recovery
+and the unacknowledged-welcome interruption edge remain unverified. Existing worlds
+and runtime code were not changed.
+
 ## 2026-09-10 — Native storage and lifecycle safety review
 
 Reviewed UUID identity, historical completion retention, supported schemas and

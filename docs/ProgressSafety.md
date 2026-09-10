@@ -25,6 +25,13 @@ to retry an uncertain payout. Whole-world backups are the recovery boundary.
 Automated journal-copy coverage verifies completed and pending records survive a
 copy and still block repeats. It does not simulate full-world crash recovery.
 
+`NativeSnapshotRecoveryTest` additionally closes real SavedDataStorage containing
+two players' progress/welcome data, copies it together with both reward journals,
+advances the original, and restores the earlier snapshot into another directory.
+Old progress, acknowledgement and completed/pending claim states remain coherent;
+later live-world changes do not leak in. Continuing the restored copy does not alter
+the backup. This uses synthetic native data, not actual player inventory/XP saves.
+
 ## Version changes and identity
 
 - Keep stable quest/task/reward IDs. `ServerProgressRepository.remember` retains
@@ -47,7 +54,7 @@ respawn handler; allow about one second for the new entity's first refresh.
 Completed observations remain completed; ordinary Minecraft item/XP loss is not
 undone by First Torch and does not make an already claimed reward claimable again.
 
-Pending in-game acceptance, using a disposable world (no reset of the main world):
+Accepted by the user on 2026-09-10, using the requested in-game checklist:
 
 1. Complete one quest and claim its reward; complete another but leave its reward
    unclaimed. Note both states and, in LAN, the second player's state.
@@ -61,3 +68,15 @@ the client normally retains its pending prompt, but no respawn-specific re-offer
 exists. This needs a separate interruption test, not an assumed pass.
 
 Broader interrupted-save/reload and actual whole-world restore tests remain open.
+
+## Pending whole-world copy check
+
+Use only a disposable test world. Complete a quest, claim its reward, then note the
+quest state, inventory and XP. Save and close Minecraft completely. Copy the entire
+test-world directory to a separate backup location and then copy that backup into
+a new sibling directory under `saves` (never overwrite an existing world).
+Keep the backup unopened. Start Minecraft and open the copied world; both worlds
+may initially share a display name, so use the world-folder identity to distinguish
+them. Confirm quest state, inventory and XP match the snapshot, and the previously
+claimed reward cannot be claimed again. No progress reset or new JAR is required.
+This verifies clean-save recovery, not sudden power-loss recovery.
