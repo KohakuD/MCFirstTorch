@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-10 — Redstone practical acceptance
+
+The owner accepted the six optional Redstone chapters after practical testing in
+German and English: signal range/input, Repeater direction/range/delay, Comparator
+container signal, Piston/Sticky Piston movement, Observer pulse orientation and
+two-sided Iron Door operation. The documented manual observations remain separate
+from automatic material tasks. No progression IDs, rewards or player data changed.
+
 ## 2026-09-10 — Cartography illustration
 
 User accepted archaeology and enchanting visuals. Cartography now uses four equal

@@ -30,8 +30,8 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
   - [x] Reload-listener regression: malformed/unreadable resources preserve the last published snapshot, followed by successful recovery
   - [x] Normal in-game `/reload` accepted; abrupt-save recovery remains an explicitly unverified limitation (see `ProgressSafety.md`)
 - [x] User acceptance of the delivered End City/End Ship and optional mob-drop/Bastion content; separate clean-profile survival verification remains below
-- [ ] Complete Redstone practical-build acceptance in both languages
-  - [x] Redstone diagrams and target-version technical regressions passed; the six-chapter practical checklist is in `RedstoneAcceptance.md`
+- [x] Redstone practical-build acceptance in both languages
+  - [x] User accepted the six-chapter practical pass; diagrams and target-version technical regressions passed; see `RedstoneAcceptance.md`
 - [x] Accessibility acceptance for the documented native surfaces and tested configurations
   - [x] User accepted bilingual keyboard/narrator smoke checks for navigation, search feedback, reference paging, trophies and settings
   - [x] User accepted open/locked/completed quest narration and enlarged/quiet-mode combinations in German and English; see `AccessibilityAcceptance.md`
@@ -39,7 +39,7 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
   - [x] Native build/dependency inventory and official Minecraft terms reviewed; no bundled third-party libraries
   - [x] Runtime illustration visual acceptance: all 91 assembled diagrams render from installed assets; 14 captures remain unchanged and one owner-approved UI-free village screenshot derivative remains packaged. Owner accepted the collective review and the corrected three-air-block staircase headroom; see `LiveIllustrations.md`.
   - [ ] Remaining image permissions/provenance and screenshot/public-branding review; see `ReleaseLicensing.md`
-- [ ] Clean-profile release acceptance: fresh install, complete guided route, both languages, restart persistence, and native JAR verification
+- [ ] Clean-profile release acceptance: fresh install, early guided-route smoke test, both languages, restart persistence, and native JAR verification; checklist in `CleanProfileAcceptance.md`
 - [ ] Decide publication and launcher-update workflow for the native mod
 
 ## Scope rules
