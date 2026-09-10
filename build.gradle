@@ -114,7 +114,8 @@ tasks.named('processResources', ProcessResources).configure {
      'awkward_potion_brewing', 'strength_potion_brewing', 'fire_resistance_brewing',
      'long_fire_resistance_brewing', 'fence_and_gate', 'map_recipe', 'bow_and_arrows',
      'boat_recipe', 'stone_hoe', 'bed', 'stonecutter', 'lodestone',
-     'paper_and_book', 'firework_rocket_recipe', 'armour_recipes', 'charcoal', 'cooking_food', 'log_to_planks'].each { name ->
+     'paper_and_book', 'firework_rocket_recipe', 'armour_recipes', 'charcoal', 'cooking_food', 'log_to_planks',
+     'archaeology_comparison'].each { name ->
         exclude "assets/firsttorch/textures/questpics/${name}.png"
     }
 }

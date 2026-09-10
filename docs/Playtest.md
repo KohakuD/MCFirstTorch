@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-10 — Archaeology comparison
+
+The user accepted the small crafting grid. The four archaeology comparison blocks
+now use native item models at equal scale in a full-width layout. Verified all
+four model references in the original target-game item definitions, including
+unbrushed suspicious states. Numbering and bilingual caption are unchanged.
+Layout/order and raster-exclusion tests added; visual acceptance remains pending.
+
 ## 2026-09-10 — Small crafting grid
 
 The user accepted furnace diagrams. Log to Planks now uses native block models,

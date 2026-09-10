@@ -145,8 +145,21 @@ No workbench-sized 3x3 grid is substituted for the player's small crafting grid.
 The old raster is excluded; total migrated illustrations: 40. The mixed scene in
 Place Crafting Table is deliberately unchanged and remains a separate migration.
 
-Pending visual check: Log to Planks, normal/enlarged and while scrolling. Check the
+Batch 9 accepted by the user: Log to Planks, normal/enlarged and while scrolling. Check the
 four small-grid slots, count four and highlighted inventory destination. No reset.
+
+## Batch 10: archaeology block comparison
+
+The Sand/Suspicious Sand and Gravel/Suspicious Gravel comparison now uses installed
+block-item models. Verified the original 26.1.2 item definitions point to Sand,
+Suspicious Sand 0, Gravel and Suspicious Gravel 0 respectively: the unbrushed states
+named in the existing bilingual caption. Preserved numbers 1–4 and reading order.
+Four equal panels use full reading width and identical model scale/orientation.
+The raster comparison is excluded; total migrated illustrations: 41.
+
+Pending visual check: Archaeology's block comparison, normal/enlarged and while
+scrolling. Compare each ordinary block to its suspicious neighbour; check all four
+numbers and the caption. No changes to lessons, screenshots or progress.
 
 ## Remaining batches
 
@@ -156,5 +169,5 @@ four small-grid slots, count four and highlighted inventory destination. No rese
 - Screenshots and public branding: separate provenance/permissions review, not an
   automatic replacement. No generative redraw of Minecraft assets.
 
-Batches 1 through 8 are accepted; batch 9 requires small-grid visual acceptance.
+Batches 1 through 9 are accepted; batch 10 requires block-comparison visual acceptance.
 Remaining diagram families are not yet migrated.
