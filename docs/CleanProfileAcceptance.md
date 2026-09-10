@@ -1,6 +1,6 @@
 # Clean-profile release acceptance
 
-This is the final local release smoke test for `0.13.0-alpha.1`. It verifies a
+This was the final local release smoke test for `0.13.0-alpha.1`. It verifies a
 fresh installation, not an upgrade and not a replacement for the intentionally
 waived dedicated-server test.
 
@@ -30,3 +30,5 @@ waived dedicated-server test.
 
 The development-only completion control is absent from an installed JAR. This is
 expected. Do not use a test world or a copied save as proof of a clean profile.
+
+Status: accepted by the owner on 2026-09-10.

@@ -39,8 +39,8 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
   - [x] Native build/dependency inventory and official Minecraft terms reviewed; no bundled third-party libraries
   - [x] Runtime illustration visual acceptance: all 91 assembled diagrams render from installed assets; 14 captures remain unchanged and one owner-approved UI-free village screenshot derivative remains packaged. Owner accepted the collective review and the corrected three-air-block staircase headroom; see `LiveIllustrations.md`.
   - [ ] Remaining image permissions/provenance and screenshot/public-branding review; see `ReleaseLicensing.md`
-- [ ] Clean-profile release acceptance: fresh install, early guided-route smoke test, both languages, restart persistence, and native JAR verification; checklist in `CleanProfileAcceptance.md`
-- [ ] Decide publication and launcher-update workflow for the native mod
+- [x] Clean-profile release acceptance: fresh install, early guided-route smoke test, both languages, restart persistence, and native JAR verification; owner accepted on 2026-09-10, checklist in `CleanProfileAcceptance.md`
+- [ ] Decide publication and launcher-update workflow for the native mod; upload material and owner decisions in `CurseForgeUpload.md`
 
 ## Scope rules
 

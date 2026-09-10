@@ -59,3 +59,11 @@ The original screenshot remains available and was inspected. The owner explicitl
 selected the UI-free generated variant over an original-pixel crop with the hotbar
 and player hand, so no replacement is planned. This is a presentation decision,
 not a legal clearance. Other capture provenance and public branding remain open.
+
+## Release-page requirements
+
+The clean-profile test was accepted on 2026-09-10. Before a public upload, the
+owner must choose the CurseForge Alpha/Beta file type and supply a public contact
+method for the listing. The prepared bilingual description contains the required
+non-official Minecraft disclaimer. See `CurseForgeUpload.md`; do not treat this
+engineering checklist as legal advice or substitute it for a final owner review.
