@@ -103,7 +103,6 @@ class FirstTorchBrowserScreen extends Screen {
             selectedTrophy = trophies.isEmpty() ? null : trophies.getFirst().chapterId();
         }
         addHeaderControls();
-        if (!trophiesOpen) addGuideNavigation();
         addChapterButtons();
         if (trophiesOpen) addTrophyButtons();
         else {
@@ -460,30 +459,6 @@ class FirstTorchBrowserScreen extends Screen {
                 ignored -> narration.copy(), tooltip, kind, selected);
     }
 
-    private void addGuideNavigation() {
-        if (viewModel.guides().size() < 2) return;
-        Rect bar = layout.topBar();
-        Component previous = Component.translatable("screen.firsttorch.guide.previous");
-        Component next = Component.translatable("screen.firsttorch.guide.next");
-        addRenderableWidget(button(bar.centerX() - 86, bar.bottom() - 20, 20, 15,
-                Component.literal("‹"), ignored -> switchGuide(-1), previous, Tooltip.create(previous),
-                FirstTorchButton.Kind.NAVIGATION, false));
-        addRenderableWidget(button(bar.centerX() + 66, bar.bottom() - 20, 20, 15,
-                Component.literal("›"), ignored -> switchGuide(1), next, Tooltip.create(next),
-                FirstTorchButton.Kind.NAVIGATION, false));
-    }
-
-    private void switchGuide(int delta) {
-        completedExpanded = false;
-        chapterFirstRow = 0;
-        revealChapter = true;
-        reading = false;
-        int size = viewModel.guides().size();
-        if (size == 0) return;
-        selection = new Selection(viewModel.guides().get(Math.floorMod(viewModel.guideIndex() + delta, size)).id(), null, null);
-        rebuildWidgets();
-    }
-
     private static boolean contains(Rect bounds, double x, double y) {
         return x >= bounds.x() && x < bounds.right() && y >= bounds.y() && y < bounds.bottom();
     }
@@ -743,16 +718,6 @@ class FirstTorchBrowserScreen extends Screen {
         Rect top = layout.topBar();
         drawMasthead(graphics, top);
         ActiveTextCollector text = graphics.textRenderer();
-        Component guideLabel = viewModel.guide() == null
-                ? Component.translatable("screen.firsttorch.status.empty")
-                : Component.translatable(viewModel.guide().titleKey());
-        if (viewModel.guides().size() > 1) {
-            guideLabel = Component.translatable("screen.firsttorch.guide.page",
-                    viewModel.guideIndex() + 1, viewModel.guides().size(), guideLabel);
-        }
-        if (trophiesOpen) guideLabel = Component.translatable("screen.firsttorch.trophies");
-        if (top.width() >= 600) text.acceptScrollingWithDefaultCenter(colored(guideLabel, FirstTorchTheme.MUTED),
-                top.centerX() - 61, top.centerX() + 61, top.bottom() - 20, top.bottom() - 5);
         drawProgress(graphics, text, top);
         if (trophiesOpen) {
             Rect panel = layout.questMap();

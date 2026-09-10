@@ -1,6 +1,6 @@
 # Roadmap
 
-## Active milestone: 0.13.0-alpha.1 — Native course and reference library
+## Active milestone: 0.13.0-beta.1 — Native course and reference library
 
 First Torch is now developed only as a native NeoForge mod for Minecraft Java `26.1.2` on NeoForge `26.1.2.84`, using Java `25`. The retired FTB pack, its migration discussions, and its historical plans are archived in [`../archive/ftb-legacy/`](../archive/ftb-legacy/). They do not define active scope.
 
@@ -40,7 +40,7 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
   - [x] Runtime illustration visual acceptance: all 91 assembled diagrams render from installed assets; 14 captures remain unchanged and one owner-approved UI-free village screenshot derivative remains packaged. Owner accepted the collective review and the corrected three-air-block staircase headroom; see `LiveIllustrations.md`.
   - [ ] Remaining image permissions/provenance and screenshot/public-branding review; see `ReleaseLicensing.md`
 - [x] Clean-profile release acceptance: fresh install, early guided-route smoke test, both languages, restart persistence, and native JAR verification; owner accepted on 2026-09-10, checklist in `CleanProfileAcceptance.md`
-- [ ] Decide publication and launcher-update workflow for the native mod; upload material and owner decisions in `CurseForgeUpload.md`
+- [ ] Publish the beta: add the final public repository and contact-form links, review final listing/screenshots/disclaimer, then upload the production JAR. Upload material is in `CurseForgeUpload.md`.
 
 ## Scope rules
 

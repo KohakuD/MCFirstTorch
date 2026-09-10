@@ -2,11 +2,11 @@
 
 **A patient, step-by-step Minecraft survival course inside the game.**
 
-First Torch is an independent NeoForge mod in active alpha development. It teaches what to do, why it matters, and how to practise safely. Its native runtime does not require FTB Quests, FTB Library, FTB Teams, their filter modules, Initially, or DistinctCraft.
+First Torch is an independent NeoForge mod in beta. It teaches what to do, why it matters, and how to practise safely. Its native runtime does not require FTB Quests, FTB Library, FTB Teams, their filter modules, Initially, or DistinctCraft.
 
 ## Current target
 
-- Native mod: `0.13.0-alpha.1`
+- Native mod: `0.13.0-beta.1`
 - Minecraft Java: `26.1.2`
 - Tested NeoForge: `26.1.2.84`
 - Java toolchain: `25`
@@ -14,7 +14,7 @@ First Torch is an independent NeoForge mod in active alpha development. It teach
 
 The guided course covers early survival through the Nether, End and independent exploration, with optional Redstone lessons. The separate reference library covers creatures and unusual mechanics. Native features include automatic/manual tasks, rewards, trophies, search, original-game illustrations and returnable reading links.
 
-This is not a publication-ready release. Multiplayer safety, accessibility and release/licensing checks remain open in the [Roadmap](docs/Roadmap.md). LAN multiplayer smoke tests are accepted; dedicated-server testing is explicitly out of the current acceptance scope and dedicated-server operation remains unverified. See also [Reference verification](docs/ReferenceVerification.md).
+LAN multiplayer smoke tests are accepted; dedicated-server testing is explicitly out of the current scope and dedicated-server operation remains unverified. See the concise [changelog](CHANGELOG.md), [release upload notes](docs/CurseForgeUpload.md), and [licensing review](docs/ReleaseLicensing.md).
 
 ## Develop in IntelliJ IDEA
 
@@ -26,13 +26,13 @@ Import this repository as a Gradle project and use **First Torch Client**, or ru
 
 The development run enables the local-owner test-completion control and left-two-thirds window layout. These are run-configuration properties, not defaults enabled by installing the JAR normally. Test completion does not prove automatic objectives work in survival.
 
-## Build and install the native alpha
+## Build and install the native beta
 
 ```powershell
 .\gradlew.bat test build
 ```
 
-Output: `build/libs/firsttorch-0.13.0-alpha.1.jar`.
+Output: `build/libs/firsttorch-0.13.0-beta.1.jar`.
 
 1. Use a separate Minecraft **26.1.2** profile with NeoForge **26.1.2.84** and a compatible Java 25 runtime.
 2. Close Minecraft. Back up existing test worlds before changing installed mods.
@@ -52,11 +52,11 @@ The archive contains a frozen, runnable legacy pack snapshot, including its mani
 
 - [Development workflow](docs/Development.md)
 - [Curriculum principles](docs/Curriculum.md)
-- [Roadmap and acceptance status](docs/Roadmap.md)
-- [Playtest log](docs/Playtest.md)
+- [Roadmap](docs/Roadmap.md)
+- [Changelog](CHANGELOG.md)
 
 Generated builds, worlds, logs and player data do not belong in Git.
 
 ## Licence and trademarks
 
-First Torch source content uses the MIT License; see [LICENSE](LICENSE) and [NOTICE.md](NOTICE.md). Release asset/licensing review remains open in the roadmap. Minecraft is a trademark of Microsoft. This project is not affiliated with Mojang Studios, Microsoft, CurseForge, or NeoForged.
+First Torch source content uses the MIT License; see [LICENSE](LICENSE) and [NOTICE.md](NOTICE.md). Minecraft is a trademark of Microsoft. This project is not affiliated with Mojang Studios, Microsoft, CurseForge, or NeoForged.

@@ -1,6 +1,6 @@
 # Native release licensing review
 
-Reviewed 2026-09-10 for `0.13.0-alpha.1`. This is a technical inventory and release
+Reviewed 2026-09-10 for `0.13.0-beta.1`. This is a technical inventory and release
 risk assessment, not a legal clearance or a finding of infringement.
 
 ## Inventory
@@ -63,7 +63,7 @@ not a legal clearance. Other capture provenance and public branding remain open.
 ## Release-page requirements
 
 The clean-profile test was accepted on 2026-09-10. Before a public upload, the
-owner must choose the CurseForge Alpha/Beta file type and supply a public contact
-method for the listing. The prepared bilingual description contains the required
-non-official Minecraft disclaimer. See `CurseForgeUpload.md`; do not treat this
-engineering checklist as legal advice or substitute it for a final owner review.
+owner selected the CurseForge Beta file type and must supply the public repository
+and contact-form URLs for the listing. The prepared bilingual description contains
+the required non-official Minecraft disclaimer. See `CurseForgeUpload.md`; do not
+treat this engineering checklist as legal advice or substitute it for a final owner review.
