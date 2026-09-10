@@ -37,7 +37,7 @@ this release JAR.
 NOT AN OFFICIAL MINECRAFT MOD. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR
 MICROSOFT.
 
-Feedback and bug reports: GitHub Issues at **OWNER MUST INSERT THE PUBLIC REPOSITORY URL HERE**.
+Feedback and bug reports: [GitHub Issues](https://github.com/KohakuD/MCFirstTorch/issues).
 
 Voluntary support: [Buy Me a Coffee](https://buymeacoffee.com/KohakuD).
 
@@ -59,7 +59,7 @@ den Eintrag im Pausemenü. Die Entwicklungs-Testabschlüsse sind nicht im Releas
 NOT AN OFFICIAL MINECRAFT MOD. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR
 MICROSOFT.
 
-Fehler und Rückmeldungen: GitHub Issues unter **HIER MUSS DIE ÖFFENTLICHE REPOSITORY-URL EINGEFÜGT WERDEN**.
+Fehler und Rückmeldungen: [GitHub Issues](https://github.com/KohakuD/MCFirstTorch/issues).
 
 Freiwillige Unterstützung: [Buy Me a Coffee](https://buymeacoffee.com/KohakuD).
 
@@ -77,8 +77,7 @@ Kontakt: [KohakuD Mod Contact & Feedback](https://docs.google.com/forms/d/e/1FAI
 
 ## Owner decisions still required before publishing
 
-1. Supply the public repository URL for the project page. Do not invent it.
-2. Review the final listing, screenshots and disclaimer against the current
+1. Review the final listing, screenshots and disclaimer against the current
    Minecraft Usage Guidelines and CurseForge submission form immediately before
    upload. This project documentation is an engineering record, not legal advice.
 

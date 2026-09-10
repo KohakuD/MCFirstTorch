@@ -48,6 +48,8 @@ Send feedback, bug reports, questions, or ideas through the English
 [KohakuD Mod Contact & Feedback form](https://docs.google.com/forms/d/e/1FAIpQLSee3Rtf4uvSOGDUpd_bGpUMKWNM90tvHh15vOi5UA3tLneGuA/viewform?usp=publish-editor).
 The form also supports DistinctCraft and Living Paths. Voluntary support is
 available through [Buy Me a Coffee](https://buymeacoffee.com/KohakuD).
+Technical issues can also be reported through
+[GitHub Issues](https://github.com/KohakuD/MCFirstTorch/issues).
 
 ## Historical FTB pack
 
