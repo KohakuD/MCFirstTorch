@@ -70,8 +70,22 @@ Standing layout rule for future migrations: multi-panel illustrations use the fu
 reading-column width and tightly fitted height; single illustrations and screenshots
 remain compact. Do not squeeze multiple recipes into the half-width default.
 
-Pending visual check: compare Fence/Gate and Paper/Map in normal/enlarged view and
-while scrolling. Both panels and output amounts must remain readable. No reset.
+Batch 4 accepted by the user after the full-width correction, including the paired
+panels and their readability.
+
+## Batch 5: utility crafting diagrams
+
+Added Bed, Boat, Stone Hoe, Lodestone and Stonecutter using the existing native
+single-recipe renderer. Preserved the previous ingredient placement (including
+bottom-aligned two-row recipes), representative materials and single output counts.
+All five recipes were verified against the original 26.1.2 client recipe JSON;
+Lodestone uses an iron ingot, not the obsolete Netherite recipe. Their PNGs remain
+in source for comparison but are excluded from processed resources.
+Total migrated illustrations: 34 (27 single crafting, 4 brewing, 3 paired).
+
+Pending visual check: inspect Bed, Boat and Stonecutter in normal/enlarged view and
+while scrolling. Native block models and result models must fit their slots.
+Quest definitions, captions and player progress remain unchanged. No reset.
 
 ## Remaining batches
 
@@ -81,5 +95,5 @@ while scrolling. Both panels and output amounts must remain readable. No reset.
 - Screenshots and public branding: separate provenance/permissions review, not an
   automatic replacement. No generative redraw of Minecraft assets.
 
-Batches 1 through 3 are accepted; batch 4 requires paired-layout visual acceptance.
+Batches 1 through 4 are accepted; batch 5 requires utility-recipe visual acceptance.
 Remaining diagram families are not yet migrated.

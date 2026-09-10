@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-10 — Utility recipe batch
+
+The user accepted the wider paired recipes. Migrated Bed, Boat, Stone Hoe,
+Lodestone and Stonecutter to the native recipe renderer, with recipe data checked
+against the installed 26.1.2 archive. Added exact ingredient/result coverage and
+excluded all five old rasters from processed resources. Utility-recipe visual
+acceptance remains pending; captions, quests and progress are unchanged.
+
 ## 2026-09-10 — Wider paired recipes
 
 User screenshots showed that all three recipe pairs were too small. Pairs now use

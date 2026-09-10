@@ -36,7 +36,7 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
   - [ ] Remaining quest-state narration and enlarged/quiet-mode combinations in `AccessibilityAcceptance.md`
 - [ ] Verify licences for native libraries and release assets; retain Minecraft-derived artwork only for the reviewed target version
   - [x] Native build/dependency inventory and official Minecraft terms reviewed; no bundled third-party libraries
-  - [ ] Runtime illustration migration: 29 diagrams (22 crafting, 4 brewing, 3 paired) render from installed assets and exclude their PNGs; batches 1–3 accepted, paired visuals pending in `LiveIllustrations.md`
+  - [ ] Runtime illustration migration: 34 diagrams (27 crafting, 4 brewing, 3 paired) render from installed assets and exclude their PNGs; batches 1–4 accepted, utility-recipe visuals pending in `LiveIllustrations.md`
   - [ ] Remaining image permissions/provenance and screenshot/public-branding review; see `ReleaseLicensing.md`
 - [ ] Clean-profile release acceptance: fresh install, complete guided route, both languages, restart persistence, and native JAR verification
 - [ ] Decide publication and launcher-update workflow for the native mod

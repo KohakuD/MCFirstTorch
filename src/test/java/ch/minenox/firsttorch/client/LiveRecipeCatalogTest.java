@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 final class LiveRecipeCatalogTest {
     @Test void migratedRecipesUseNineSlotsAndDoNotShipRasterCopies() {
-        assertEquals(22, LiveRecipeCatalog.resources().size());
+        assertEquals(27, LiveRecipeCatalog.resources().size());
         for (String resource : LiveRecipeCatalog.resources()) {
             var recipe = LiveRecipeCatalog.find(resource);
             assertEquals(9, recipe.ingredients().size());
@@ -30,6 +30,25 @@ final class LiveRecipeCatalogTest {
 
     private static LiveRecipeCatalog.Recipe recipe(String name) {
         return LiveRecipeCatalog.find("firsttorch:textures/questpics/" + name + ".png");
+    }
+
+    @Test void utilityRecipesMatchOriginalLayouts() {
+        assertEquals(java.util.List.of("", "", "", "minecraft:oak_planks", "", "minecraft:oak_planks",
+                "minecraft:oak_planks", "minecraft:oak_planks", "minecraft:oak_planks"), recipe("boat_recipe").ingredients());
+        assertEquals(java.util.List.of("minecraft:cobblestone", "minecraft:cobblestone", "",
+                "", "minecraft:stick", "", "", "minecraft:stick", ""), recipe("stone_hoe").ingredients());
+        assertEquals(java.util.List.of("", "", "", "minecraft:white_wool", "minecraft:white_wool", "minecraft:white_wool",
+                "minecraft:oak_planks", "minecraft:oak_planks", "minecraft:oak_planks"), recipe("bed").ingredients());
+        assertEquals(java.util.List.of("", "", "", "", "minecraft:iron_ingot", "",
+                "minecraft:stone", "minecraft:stone", "minecraft:stone"), recipe("stonecutter").ingredients());
+        assertEquals("minecraft:iron_ingot", recipe("lodestone").ingredients().get(4));
+        assertEquals(8, recipe("lodestone").ingredients().stream().filter("minecraft:chiseled_stone_bricks"::equals).count());
+        for (var entry : java.util.Map.of("boat_recipe", "oak_boat", "stone_hoe", "stone_hoe",
+                "bed", "white_bed", "stonecutter", "stonecutter", "lodestone", "lodestone").entrySet()) {
+            assertEquals("minecraft:" + entry.getValue(), recipe(entry.getKey()).result());
+            assertEquals(1, recipe(entry.getKey()).count());
+            assertFalse(recipe(entry.getKey()).shapeless());
+        }
     }
 
     @Test void mixedAndMultipleOutputRecipesPreserveTheirMeaning() {

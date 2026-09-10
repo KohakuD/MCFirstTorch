@@ -35,7 +35,15 @@ final class LiveRecipeCatalog {
             loose("bone_meal_recipe", "bone_meal", 3, "bone"),
             loose("ender_eye_recipe", "ender_eye", 1, "ender_pearl", "blaze_powder"),
             loose("flint_and_steel", "flint_and_steel", 1, "iron_ingot", "flint"),
-            loose("magma_cream_recipe", "magma_cream", 1, "blaze_powder", "slime_ball"));
+            loose("magma_cream_recipe", "magma_cream", 1, "blaze_powder", "slime_ball"),
+            entry("boat_recipe", "oak_planks", "   ", "P P", "PPP", "oak_boat"),
+            entry("stone_hoe", "cobblestone", "PP ", " S ", " S ", "stone_hoe"),
+            grid("bed", "white_bed", 1, "", "", "", "white_wool", "white_wool", "white_wool",
+                    "oak_planks", "oak_planks", "oak_planks"),
+            grid("stonecutter", "stonecutter", 1, "", "", "", "", "iron_ingot", "", "stone", "stone", "stone"),
+            grid("lodestone", "lodestone", 1, "chiseled_stone_bricks", "chiseled_stone_bricks", "chiseled_stone_bricks",
+                    "chiseled_stone_bricks", "iron_ingot", "chiseled_stone_bricks",
+                    "chiseled_stone_bricks", "chiseled_stone_bricks", "chiseled_stone_bricks"));
 
     private LiveRecipeCatalog() {}
 
