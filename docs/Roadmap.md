@@ -44,7 +44,7 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
 - [ ] Publish the beta: complete the remaining asset review, review final listing/screenshots/disclaimer, then upload the production JAR. Upload material is in `CurseForgeUpload.md`.
   - [x] Owner-authorised beta upload completed on 2026-09-10: project `1689817`, file `8851077`, Java 25 and English changelog included; automatic publication after approval selected
   - Beta.1 file `8851077` archived by the owner after release-blocking preview/test-control reports; do not publish it
-  - [ ] Beta.2 in-game regression: no design-preview switch, no test completion (including IntelliJ), welcome shown after closing an early-opened questbook
+  - [x] Beta.2 in-game regression accepted by the owner on 2026-09-10: design-preview switch and test completion absent, welcome displayed in a new world
   - [ ] Submit the corrected beta after regression acceptance, then confirm moderation approval and public availability
 
 ## Scope rules
