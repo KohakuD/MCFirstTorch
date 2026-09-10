@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-10 — Mixed-material and shapeless runtime recipes
+
+The user accepted the first live-recipe renderer batch. Migrated another twelve
+images using original target-game recipe data, adding explicit multiple-result
+counts and a plus-sign composition for shapeless recipes. All 22 migrated rasters
+are excluded from processed resources. New mixed/count/shapeless visual checks
+remain pending; quest definitions, player progress and screenshots are unchanged.
+
 ## 2026-09-10 — First runtime recipe illustration batch
 
 Implemented ten single-output recipe diagrams with native item/block rendering and

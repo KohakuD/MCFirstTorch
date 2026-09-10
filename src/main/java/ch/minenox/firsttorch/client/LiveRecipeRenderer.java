@@ -11,8 +11,20 @@ final class LiveRecipeRenderer {
         graphics.pose().translate(bounds.x(), bounds.y());
         graphics.pose().scale(bounds.width() / 300F, bounds.height() / 169F);
         FirstTorchTheme.frame(graphics, new FirstTorchLayout.Rect(0, 0, 300, 169), false);
-        for (int index = 0; index < 9; index++) {
-            slot(graphics, 22 + index % 3 * 44, 18 + index / 3 * 44, recipe.ingredients().get(index));
+        if (recipe.shapeless()) {
+            var items = recipe.ingredients().stream().filter(id -> !id.isEmpty()).toList();
+            for (int index = 0; index < items.size(); index++) {
+                int x = items.size() == 1 ? 66 : 32 + index * 74;
+                slot(graphics, x, 62, items.get(index));
+                if (index > 0) {
+                    graphics.fill(x - 23, 80, x - 9, 83, FirstTorchTheme.MUTED);
+                    graphics.fill(x - 18, 75, x - 15, 89, FirstTorchTheme.MUTED);
+                }
+            }
+        } else {
+            for (int index = 0; index < 9; index++) {
+                slot(graphics, 22 + index % 3 * 44, 18 + index / 3 * 44, recipe.ingredients().get(index));
+            }
         }
         // Own geometric arrow, not a copied Minecraft GUI sprite.
         graphics.fill(165, 78, 202, 87, FirstTorchTheme.MUTED);
@@ -20,6 +32,10 @@ final class LiveRecipeRenderer {
             graphics.fill(195 + step, 70 + step, 196 + step, 95 - step, FirstTorchTheme.MUTED);
         }
         slot(graphics, 230, 62, recipe.result());
+        if (recipe.count() > 1) {
+            graphics.textRenderer().acceptScrollingWithDefaultCenter(
+                    net.minecraft.network.chat.Component.literal("× " + recipe.count()), 226, 276, 111, 125);
+        }
         graphics.pose().popMatrix();
     }
 

@@ -107,7 +107,10 @@ sourceSets.main.resources.srcDir generateModMetadata
 // Migrated illustrations use runtime item models. Keep historical PNGs out of all packaged resources.
 tasks.named('processResources', ProcessResources).configure {
     ['wooden_pickaxe', 'wooden_shovel', 'stone_pickaxe', 'stone_axe', 'iron_pickaxe',
-     'iron_sword', 'furnace', 'chest', 'bucket', 'golden_helmet'].each { name ->
+     'iron_sword', 'furnace', 'chest', 'bucket', 'golden_helmet',
+     'shield', 'bookshelf_recipe', 'bread', 'shulker_box_recipe', 'brewing_stand_recipe',
+     'glass_bottle_recipe', 'enchanting_table_recipe', 'blaze_powder_recipe', 'bone_meal_recipe',
+     'ender_eye_recipe', 'flint_and_steel', 'magma_cream_recipe'].each { name ->
         exclude "assets/firsttorch/textures/questpics/${name}.png"
     }
 }

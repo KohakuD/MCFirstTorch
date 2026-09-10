@@ -22,9 +22,23 @@ require each migrated raster to be absent and all remaining images to retain the
 source bytes/dimensions and translated captions. New catalog entries must have a
 matching build exclusion. This does not clear remaining assets for publication.
 
-Pending visual check: inspect wooden/iron pickaxe, furnace/chest and bucket in
+Batch 1 accepted by the user. Its visual checklist: inspect wooden/iron pickaxe, furnace/chest and bucket in
 normal/enlarged view, scroll past them and confirm no missing-image message, clipping
 or stretched item models. Compare the unchanged fortress screenshot too. No reset.
+
+## Batch 2: mixed ingredients and output amounts
+
+Added shield, bookshelf, bread, Shulker Box, Brewing Stand, Glass Bottle, Enchanting
+Table, Blaze Powder, Bone Meal, Eye of Ender, Flint and Steel, and Magma Cream.
+There are now 22 runtime illustrations; all corresponding PNGs are excluded from
+processed resources. Recipes were checked against the original 26.1.2 client recipe
+JSON. Three Glass Bottles, two Blaze Powder and three Bone Meal are explicitly
+labelled. Shapeless recipes use ingredient slots joined by plus signs, not a fixed
+crafting-grid arrangement. Native item/block rendering remains unchanged.
+
+Pending visual check for this batch: shield (mixed grid), Glass Bottle (x3), Blaze
+Powder (x2) and Eye of Ender (two shapeless ingredients). Check normal/enlarged view
+and scrolling. Existing screenshots and captions remain unchanged.
 
 ## Remaining batches
 
@@ -34,5 +48,5 @@ or stretched item models. Compare the unchanged fortress screenshot too. No rese
 - Screenshots and public branding: separate provenance/permissions review, not an
   automatic replacement. No generative redraw of Minecraft assets.
 
-Complete the visual acceptance of the shared renderer before migrating the remaining
-diagrams. The current change is the first batch, not completion of the migration.
+Batch 1 is accepted; batch 2 introduces new amount/shapeless presentation requiring
+visual acceptance. Remaining diagram families are not yet migrated.

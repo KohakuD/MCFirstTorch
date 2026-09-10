@@ -5,8 +5,11 @@ import java.util.Map;
 
 /** Original layout data only; item models and textures are supplied by Minecraft at render time. */
 final class LiveRecipeCatalog {
-    record Recipe(List<String> ingredients, String result) {
-        Recipe { ingredients = List.copyOf(ingredients); }
+    record Recipe(List<String> ingredients, String result, int count, boolean shapeless) {
+        Recipe {
+            ingredients = List.copyOf(ingredients);
+            if (ingredients.size() != 9 || count < 1 || count > 64) throw new IllegalArgumentException("Invalid recipe layout");
+        }
     }
     private static final Map<String, Recipe> RECIPES = Map.ofEntries(
             entry("wooden_pickaxe", "oak_planks", "PPP", " S ", " S ", "wooden_pickaxe"),
@@ -18,7 +21,21 @@ final class LiveRecipeCatalog {
             entry("furnace", "cobblestone", "PPP", "P P", "PPP", "furnace"),
             entry("chest", "oak_planks", "PPP", "P P", "PPP", "chest"),
             entry("bucket", "iron_ingot", "P P", " P ", "   ", "bucket"),
-            entry("golden_helmet", "gold_ingot", "PPP", "P P", "   ", "golden_helmet"));
+            entry("golden_helmet", "gold_ingot", "PPP", "P P", "   ", "golden_helmet"),
+            grid("shield", "shield", 1, "oak_planks", "iron_ingot", "oak_planks",
+                    "oak_planks", "oak_planks", "oak_planks", "", "oak_planks", ""),
+            grid("bookshelf_recipe", "bookshelf", 1,
+                    "oak_planks", "oak_planks", "oak_planks", "book", "book", "book", "oak_planks", "oak_planks", "oak_planks"),
+            grid("bread", "bread", 1, "", "", "", "wheat", "wheat", "wheat", "", "", ""),
+            grid("shulker_box_recipe", "shulker_box", 1, "", "shulker_shell", "", "", "chest", "", "", "shulker_shell", ""),
+            grid("brewing_stand_recipe", "brewing_stand", 1, "", "blaze_rod", "", "cobblestone", "cobblestone", "cobblestone", "", "", ""),
+            grid("glass_bottle_recipe", "glass_bottle", 3, "glass", "", "glass", "", "glass", "", "", "", ""),
+            grid("enchanting_table_recipe", "enchanting_table", 1, "", "book", "", "diamond", "obsidian", "diamond", "obsidian", "obsidian", "obsidian"),
+            loose("blaze_powder_recipe", "blaze_powder", 2, "blaze_rod"),
+            loose("bone_meal_recipe", "bone_meal", 3, "bone"),
+            loose("ender_eye_recipe", "ender_eye", 1, "ender_pearl", "blaze_powder"),
+            loose("flint_and_steel", "flint_and_steel", 1, "iron_ingot", "flint"),
+            loose("magma_cream_recipe", "magma_cream", 1, "blaze_powder", "slime_ball"));
 
     private LiveRecipeCatalog() {}
 
@@ -33,6 +50,23 @@ final class LiveRecipeCatalog {
             default -> "";
         }).toList();
         return Map.entry("firsttorch:textures/questpics/" + name + ".png",
-                new Recipe(slots, "minecraft:" + result));
+                new Recipe(slots, "minecraft:" + result, 1, false));
+    }
+
+    private static Map.Entry<String, Recipe> grid(String name, String result, int count, String... slots) {
+        return recipe(name, result, count, false, slots);
+    }
+
+    private static Map.Entry<String, Recipe> loose(String name, String result, int count, String... items) {
+        String[] slots = new String[9];
+        java.util.Arrays.fill(slots, "");
+        System.arraycopy(items, 0, slots, 0, items.length);
+        return recipe(name, result, count, true, slots);
+    }
+
+    private static Map.Entry<String, Recipe> recipe(String name, String result, int count, boolean shapeless, String... slots) {
+        return Map.entry("firsttorch:textures/questpics/" + name + ".png", new Recipe(
+                java.util.Arrays.stream(slots).map(id -> id.isEmpty() ? "" : "minecraft:" + id).toList(),
+                "minecraft:" + result, count, shapeless));
     }
 }
