@@ -83,9 +83,27 @@ Lodestone uses an iron ingot, not the obsolete Netherite recipe. Their PNGs rema
 in source for comparison but are excluded from processed resources.
 Total migrated illustrations: 34 (27 single crafting, 4 brewing, 3 paired).
 
-Pending visual check: inspect Bed, Boat and Stonecutter in normal/enlarged view and
-while scrolling. Native block models and result models must fit their slots.
+Batch 5 accepted by the user: Bed, Boat and Stonecutter in normal/enlarged view and
+while scrolling, including native block and result models.
 Quest definitions, captions and player progress remain unchanged. No reset.
+
+## Batch 6: paper-based shapeless recipes
+
+Migrated Paper/Book as a full-width pair and short Firework Rockets as a compact
+single diagram. Shapeless ingredients are grouped in first-occurrence order with
+explicit counts: three Paper plus one Leather, rather than a misleading fixed grid.
+The existing two-input shapeless recipes keep their layout. Paper still shows its
+required row of three Sugar Cane and output count three; Rockets show Paper plus
+one Gunpowder and output count three, without a Firework Star.
+
+Verified original 26.1.2 paper/book recipe JSON and the special rocket recipe plus
+its cached game implementation (one fuel gives flight duration one; no stars means
+no explosions). The two raster composites are excluded from processed resources.
+Total migrated illustrations: 36 (28 single crafting, 4 brewing, 4 paired).
+
+Pending visual check: Paper/Book (full width and three-Paper count), short Rockets
+(three outputs), and Eye of Ender as an existing shapeless regression. Check normal
+and enlarged view while scrolling. No quest, caption or progress changes.
 
 ## Remaining batches
 
@@ -95,5 +113,5 @@ Quest definitions, captions and player progress remain unchanged. No reset.
 - Screenshots and public branding: separate provenance/permissions review, not an
   automatic replacement. No generative redraw of Minecraft assets.
 
-Batches 1 through 4 are accepted; batch 5 requires utility-recipe visual acceptance.
+Batches 1 through 5 are accepted; batch 6 requires shapeless-recipe visual acceptance.
 Remaining diagram families are not yet migrated.

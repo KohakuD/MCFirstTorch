@@ -12,6 +12,10 @@ final class LiveRecipePairs {
             path("map_recipe"), List.of(
                     recipe("paper", 3, "", "", "", "sugar_cane", "sugar_cane", "sugar_cane", "", "", ""),
                     recipe("map", 1, "paper", "paper", "paper", "paper", "compass", "paper", "paper", "paper", "paper")),
+            path("paper_and_book"), List.of(
+                    recipe("paper", 3, "", "", "", "sugar_cane", "sugar_cane", "sugar_cane", "", "", ""),
+                    new LiveRecipeCatalog.Recipe(List.of("minecraft:paper", "minecraft:paper", "minecraft:paper",
+                            "minecraft:leather", "", "", "", "", ""), "minecraft:book", 1, true)),
             path("bow_and_arrows"), List.of(
                     recipe("bow", 1, "", "stick", "string", "stick", "", "string", "", "stick", "string"),
                     recipe("arrow", 4, "", "flint", "", "", "stick", "", "", "feather", "")));

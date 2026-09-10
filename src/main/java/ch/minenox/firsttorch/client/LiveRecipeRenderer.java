@@ -21,10 +21,14 @@ final class LiveRecipeRenderer {
         graphics.pose().scale(bounds.width() / 300F, bounds.height() / 169F);
         FirstTorchTheme.frame(graphics, new FirstTorchLayout.Rect(0, 0, 300, 169), false);
         if (recipe.shapeless()) {
-            var items = recipe.ingredients().stream().filter(id -> !id.isEmpty()).toList();
+            var items = recipe.groupedIngredients();
             for (int index = 0; index < items.size(); index++) {
                 int x = items.size() == 1 ? 66 : 32 + index * 74;
-                slot(graphics, x, 62, items.get(index));
+                slot(graphics, x, 62, items.get(index).item());
+                if (items.get(index).count() > 1) {
+                    graphics.textRenderer().acceptScrollingWithDefaultCenter(
+                            net.minecraft.network.chat.Component.literal("× " + items.get(index).count()), x - 4, x + 46, 111, 125);
+                }
                 if (index > 0) {
                     graphics.fill(x - 23, 80, x - 9, 83, FirstTorchTheme.MUTED);
                     graphics.fill(x - 18, 75, x - 15, 89, FirstTorchTheme.MUTED);

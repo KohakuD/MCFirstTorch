@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 final class LiveRecipeCatalogTest {
     @Test void migratedRecipesUseNineSlotsAndDoNotShipRasterCopies() {
-        assertEquals(27, LiveRecipeCatalog.resources().size());
+        assertEquals(28, LiveRecipeCatalog.resources().size());
         for (String resource : LiveRecipeCatalog.resources()) {
             var recipe = LiveRecipeCatalog.find(resource);
             assertEquals(9, recipe.ingredients().size());
@@ -52,6 +52,12 @@ final class LiveRecipeCatalogTest {
     }
 
     @Test void mixedAndMultipleOutputRecipesPreserveTheirMeaning() {
+        var rocket = recipe("firework_rocket_recipe");
+        assertEquals("minecraft:firework_rocket", rocket.result());
+        assertEquals(3, rocket.count());
+        assertTrue(rocket.shapeless());
+        assertEquals(java.util.List.of(new LiveRecipeCatalog.Ingredient("minecraft:paper", 1),
+                new LiveRecipeCatalog.Ingredient("minecraft:gunpowder", 1)), rocket.groupedIngredients());
         assertEquals(6, recipe("shield").ingredients().stream().filter("minecraft:oak_planks"::equals).count());
         assertEquals("minecraft:iron_ingot", recipe("shield").ingredients().get(1));
         assertEquals(3, recipe("glass_bottle_recipe").count());
@@ -63,7 +69,7 @@ final class LiveRecipeCatalogTest {
                 recipe("ender_eye_recipe").ingredients().stream().filter(id -> !id.isEmpty()).toList());
         for (String resource : LiveRecipeCatalog.resources()) {
             var value = LiveRecipeCatalog.find(resource);
-            if (value.shapeless()) assertTrue(value.ingredients().stream().filter(id -> !id.isEmpty()).count() <= 2);
+            if (value.shapeless()) assertTrue(value.groupedIngredients().size() <= 2);
         }
     }
 }

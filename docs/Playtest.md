@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-10 — Counted shapeless recipes
+
+The user accepted utility recipes. Paper/Book and short Firework Rockets now use
+native rendering, with repeated shapeless ingredients grouped and counted rather
+than shown in a fixed grid. Paper/Book uses the accepted full-width pair layout.
+Original recipe data and special rocket assembly were checked. Visual acceptance
+of ingredient counts and output counts remains pending; player state is unchanged.
+
 ## 2026-09-10 — Utility recipe batch
 
 The user accepted the wider paired recipes. Migrated Bed, Boat, Stone Hoe,

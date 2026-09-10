@@ -5,10 +5,17 @@ import java.util.Map;
 
 /** Original layout data only; item models and textures are supplied by Minecraft at render time. */
 final class LiveRecipeCatalog {
+    record Ingredient(String item, int count) {}
     record Recipe(List<String> ingredients, String result, int count, boolean shapeless) {
         Recipe {
             ingredients = List.copyOf(ingredients);
             if (ingredients.size() != 9 || count < 1 || count > 64) throw new IllegalArgumentException("Invalid recipe layout");
+        }
+
+        List<Ingredient> groupedIngredients() {
+            var counts = new java.util.LinkedHashMap<String, Integer>();
+            ingredients.stream().filter(id -> !id.isEmpty()).forEach(id -> counts.merge(id, 1, Integer::sum));
+            return counts.entrySet().stream().map(entry -> new Ingredient(entry.getKey(), entry.getValue())).toList();
         }
     }
     private static final Map<String, Recipe> RECIPES = Map.ofEntries(
@@ -36,6 +43,7 @@ final class LiveRecipeCatalog {
             loose("ender_eye_recipe", "ender_eye", 1, "ender_pearl", "blaze_powder"),
             loose("flint_and_steel", "flint_and_steel", 1, "iron_ingot", "flint"),
             loose("magma_cream_recipe", "magma_cream", 1, "blaze_powder", "slime_ball"),
+            loose("firework_rocket_recipe", "firework_rocket", 3, "paper", "gunpowder"),
             entry("boat_recipe", "oak_planks", "   ", "P P", "PPP", "oak_boat"),
             entry("stone_hoe", "cobblestone", "PP ", " S ", " S ", "stone_hoe"),
             grid("bed", "white_bed", 1, "", "", "", "white_wool", "white_wool", "white_wool",
