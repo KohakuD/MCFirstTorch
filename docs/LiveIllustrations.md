@@ -36,9 +36,25 @@ JSON. Three Glass Bottles, two Blaze Powder and three Bone Meal are explicitly
 labelled. Shapeless recipes use ingredient slots joined by plus signs, not a fixed
 crafting-grid arrangement. Native item/block rendering remains unchanged.
 
-Pending visual check for this batch: shield (mixed grid), Glass Bottle (x3), Blaze
+Batch 2 accepted by the user. Its visual checklist: shield (mixed grid), Glass Bottle (x3), Blaze
 Powder (x2) and Eye of Ender (two shapeless ingredients). Check normal/enlarged view
 and scrolling. Existing screenshots and captions remain unchanged.
+
+## Batch 3: brewing interface illustrations
+
+Four brewing steps now reference the installed game's brewing GUI/fuel sprite and
+render actual Potion item stacks with PotionContents: Water plus Nether Wart,
+Awkward plus Blaze Powder, Awkward plus Magma Cream, and Fire Resistance plus
+Redstone. They show the loaded stand before conversion, as the previous generation
+script did; no fabricated output colour or altered lesson sequence is introduced.
+The 256x256 GUI crop and 18x4 fuel sprite dimensions were checked in the original
+26.1.2 client archive. The old four raster composites are excluded from resources.
+Total migrated illustrations: 26 (22 crafting, 4 brewing).
+
+Pending visual acceptance: inspect the Awkward and extended Fire Resistance guides.
+Check that the three bottles and ingredient occupy their slots, the fuel bar is
+visible and scrolling/enlarged view do not clip the interface. IntelliJ's restarted
+First Torch Client uses these changes without copying a JAR. No progress reset.
 
 ## Remaining batches
 
@@ -48,5 +64,5 @@ and scrolling. Existing screenshots and captions remain unchanged.
 - Screenshots and public branding: separate provenance/permissions review, not an
   automatic replacement. No generative redraw of Minecraft assets.
 
-Batch 1 is accepted; batch 2 introduces new amount/shapeless presentation requiring
-visual acceptance. Remaining diagram families are not yet migrated.
+Batches 1 and 2 are accepted; batch 3 requires brewing-interface visual acceptance.
+Remaining diagram families are not yet migrated.

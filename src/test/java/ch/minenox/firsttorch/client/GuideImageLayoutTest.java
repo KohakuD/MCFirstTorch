@@ -52,7 +52,7 @@ final class GuideImageLayoutTest {
             for (var image : images) {
                 String assetPath = "assets/" + image.resource().replace(':', '/');
                 try (var png = getClass().getResourceAsStream("/" + assetPath)) {
-                    if (LiveRecipeCatalog.find(image.resource()) != null) {
+                    if (LiveRecipeCatalog.find(image.resource()) != null || LiveBrewingCatalog.find(image.resource()) != null) {
                         assertNull(png, "Live recipe must not package its old raster: " + image.resource());
                     } else {
                     assertNotNull(png);

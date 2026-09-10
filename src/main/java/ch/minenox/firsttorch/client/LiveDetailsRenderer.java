@@ -48,9 +48,14 @@ final class LiveDetailsRenderer {
             var illustration = quest.image();
             var resource = Identifier.parse(illustration.resource());
             var liveRecipe = LiveRecipeCatalog.find(illustration.resource());
+            var liveBrewing = LiveBrewingCatalog.find(illustration.resource());
             if (liveRecipe != null) {
                 var bounds = GuideImageLayout.bounds(x, y, w, illustration.width(), illustration.height());
                 LiveRecipeRenderer.draw(graphics, bounds, liveRecipe);
+                y = bounds.bottom() + 5;
+            } else if (liveBrewing != null) {
+                var bounds = GuideImageLayout.bounds(x, y, w, illustration.width(), illustration.height());
+                LiveBrewingRenderer.draw(graphics, bounds, liveBrewing);
                 y = bounds.bottom() + 5;
             } else if (net.minecraft.client.Minecraft.getInstance().getResourceManager().getResource(resource).isPresent()) {
                 var bounds = GuideImageLayout.bounds(x, y, w, illustration.width(), illustration.height());

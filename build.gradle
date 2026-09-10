@@ -110,7 +110,9 @@ tasks.named('processResources', ProcessResources).configure {
      'iron_sword', 'furnace', 'chest', 'bucket', 'golden_helmet',
      'shield', 'bookshelf_recipe', 'bread', 'shulker_box_recipe', 'brewing_stand_recipe',
      'glass_bottle_recipe', 'enchanting_table_recipe', 'blaze_powder_recipe', 'bone_meal_recipe',
-     'ender_eye_recipe', 'flint_and_steel', 'magma_cream_recipe'].each { name ->
+     'ender_eye_recipe', 'flint_and_steel', 'magma_cream_recipe',
+     'awkward_potion_brewing', 'strength_potion_brewing', 'fire_resistance_brewing',
+     'long_fire_resistance_brewing'].each { name ->
         exclude "assets/firsttorch/textures/questpics/${name}.png"
     }
 }

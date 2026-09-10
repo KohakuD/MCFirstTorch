@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-10 — Runtime brewing interface batch
+
+The user accepted mixed/shapeless recipes. Replaced four brewing composites with
+references to installed vanilla GUI/fuel assets and native potion item rendering.
+Kept the original loaded-input state, slot positions and captions. Verified original
+GUI dimensions; catalog and raster-exclusion tests pass with the full build.
+Brewing visual acceptance remains pending. Screenshots, icons and progress unchanged.
+
 ## 2026-09-10 — Mixed-material and shapeless runtime recipes
 
 The user accepted the first live-recipe renderer batch. Migrated another twelve
