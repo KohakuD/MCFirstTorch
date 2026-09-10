@@ -51,10 +51,21 @@ The 256x256 GUI crop and 18x4 fuel sprite dimensions were checked in the origina
 26.1.2 client archive. The old four raster composites are excluded from resources.
 Total migrated illustrations: 26 (22 crafting, 4 brewing).
 
-Pending visual acceptance: inspect the Awkward and extended Fire Resistance guides.
+Batch 3 accepted by the user. Its visual checklist: inspect the Awkward and extended Fire Resistance guides.
 Check that the three bottles and ingredient occupy their slots, the fuel bar is
 visible and scrolling/enlarged view do not clip the interface. IntelliJ's restarted
 First Torch Client uses these changes without copying a JAR. No progress reset.
+
+## Batch 4: paired recipe diagrams
+
+Migrated Fence/Gate, Paper/Map and Bow/Arrows as ordered pairs of live crafting
+diagrams. Each retains both recipes, native models and result counts (three fences,
+three paper, four arrows). Layouts/results were checked against the original 26.1.2
+recipe JSON. Panels retain their aspect ratio inside the existing half-pane image
+footprint. The three raster composites are excluded; total migrated images: 29.
+
+Pending visual check: compare Fence/Gate and Paper/Map in normal/enlarged view and
+while scrolling. Both panels and output amounts must remain readable. No reset.
 
 ## Remaining batches
 
@@ -64,5 +75,5 @@ First Torch Client uses these changes without copying a JAR. No progress reset.
 - Screenshots and public branding: separate provenance/permissions review, not an
   automatic replacement. No generative redraw of Minecraft assets.
 
-Batches 1 and 2 are accepted; batch 3 requires brewing-interface visual acceptance.
+Batches 1 through 3 are accepted; batch 4 requires paired-layout visual acceptance.
 Remaining diagram families are not yet migrated.

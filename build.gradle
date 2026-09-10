@@ -112,7 +112,7 @@ tasks.named('processResources', ProcessResources).configure {
      'glass_bottle_recipe', 'enchanting_table_recipe', 'blaze_powder_recipe', 'bone_meal_recipe',
      'ender_eye_recipe', 'flint_and_steel', 'magma_cream_recipe',
      'awkward_potion_brewing', 'strength_potion_brewing', 'fire_resistance_brewing',
-     'long_fire_resistance_brewing'].each { name ->
+     'long_fire_resistance_brewing', 'fence_and_gate', 'map_recipe', 'bow_and_arrows'].each { name ->
         exclude "assets/firsttorch/textures/questpics/${name}.png"
     }
 }

@@ -1,5 +1,12 @@
 # Playtest log
 
+## 2026-09-10 — Paired runtime recipes
+
+The user accepted the brewing interfaces. Migrated Fence/Gate, Paper/Map and
+Bow/Arrows while retaining both panels and original recipe order. Verified six
+recipes against target-game JSON and added pair/count/exclusion coverage. Paired
+layout visual acceptance remains pending; screenshots and player state unchanged.
+
 ## 2026-09-10 — Runtime brewing interface batch
 
 The user accepted mixed/shapeless recipes. Replaced four brewing composites with
