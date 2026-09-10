@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-10 — Interrupted welcome accepted and reload failure coverage
+
+The user confirmed the interrupted-welcome test after respawn, Later and reconnect.
+Added direct GuideReloadListener prepare/apply regression coverage for malformed
+JSON, read failure and subsequent valid recovery. Focused listener/resource-loader
+and reward-journal tests passed. Normal in-game reload/network acceptance remains
+pending; sudden-crash recovery is not claimed. No runtime or player files changed.
+
 ## 2026-09-10 — World-copy acceptance and interrupted-welcome fix
 
 The user accepted the clean-save whole-world copy checklist, including inventory,

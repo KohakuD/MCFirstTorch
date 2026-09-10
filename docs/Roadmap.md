@@ -26,7 +26,9 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
   - [x] In-game death/respawn acceptance: completion and reward states retained, other player unchanged, reconnect and acknowledged welcome correct
   - [x] Synthetic closed-storage snapshot recovery: native progress, welcome and reward journals restored together without later-state merging
   - [x] User acceptance of clean-save whole-world copy: quest state, inventory, XP and claim protection retained
-  - [ ] Interrupted-welcome acceptance after connection-scoped acknowledgement fix; broader interrupted-save/reload checks remain (see `ProgressSafety.md`)
+  - [x] Interrupted-welcome in-game acceptance: after respawn, choosing Later persists acknowledgement across reconnect
+  - [x] Reload-listener regression: malformed/unreadable resources preserve the last published snapshot, followed by successful recovery
+  - [ ] Normal in-game `/reload` acceptance; abrupt-save recovery remains an explicitly unverified limitation (see `ProgressSafety.md`)
 - [x] User acceptance of the delivered End City/End Ship and optional mob-drop/Bastion content; separate clean-profile survival verification remains below
 - [ ] Complete Redstone practical-build and illustration acceptance in both languages
 - [ ] Accessibility acceptance beyond the existing foundations, including narrator behaviour and keyboard-only navigation in all relevant native surfaces

@@ -68,11 +68,28 @@ the client retains its pending prompt and waits until the replacement player is
 alive, 40 ticks old and no other screen is open. A regression covers that client
 state sequence. The server now binds offer authorization to the connection, which
 Minecraft retains across respawn, rather than the replaced ServerPlayer object.
-This fixes rejected post-respawn acknowledgements; an in-game interruption check
-remains pending. No extra offer packet is needed for a pending client prompt.
+This fixes rejected post-respawn acknowledgements. The user accepted the in-game
+interruption check on 2026-09-10: choosing Later after respawn prevents a repeated
+welcome on reconnect. No extra offer packet is needed for a pending client prompt.
 
-Broader interrupted-save/reload tests remain open. The user accepted the actual
+Abrupt-save recovery remains unverified. The user accepted the actual
 clean-save whole-world copy check on 2026-09-10.
+
+## Reload failure and recovery
+
+`GuideReloadListenerTest` exercises the actual listener's prepare/apply boundary
+with synthetic ResourceManager responses: malformed JSON and an IOException each
+abort preparation without replacing the published snapshot. A following valid
+preparation also leaves it untouched until apply publishes the complete result.
+The test restores the previous singleton state afterwards. This tests the listener,
+not the complete Minecraft reload scheduler or client network delivery.
+
+Pending in-game check: in a disposable cheats-enabled test world, note a completed
+quest/claimed reward and one unfinished quest, then run `/reload`. Reopen First
+Torch and verify both states and claim protection remain correct, the welcome does
+not repeat, and the unfinished quest can still be completed normally. If using LAN,
+verify both players retain their own states. No intentionally corrupt files or
+abrupt process termination are required.
 
 ## Accepted whole-world copy check
 
