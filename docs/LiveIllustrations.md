@@ -157,9 +157,8 @@ named in the existing bilingual caption. Preserved numbers 1–4 and reading ord
 Four equal panels use full reading width and identical model scale/orientation.
 The raster comparison is excluded; total migrated illustrations: 41.
 
-Pending visual check: Archaeology's block comparison, normal/enlarged and while
-scrolling. Compare each ordinary block to its suspicious neighbour; check all four
-numbers and the caption. No changes to lessons, screenshots or progress.
+Batch 10 accepted by the user: Archaeology's block comparison, numbers and caption.
+No changes to lessons, screenshots or progress.
 
 ## Batch 11: enchanting interface
 
@@ -171,9 +170,21 @@ remain schematic: no invented enchantment names or guaranteed costs. The single
 surface stays compact, with overlays outside the slots. No quest/progress changes.
 The old raster is excluded; total migrated illustrations: 42. Build/tests passed.
 
-Pending visual check: enchanting interface, normal/enlarged and while scrolling;
-check labels 1 (item), 2 (lapis) and 3 (all three offers). Archaeology acceptance
-is still pending; the latest continuation was not an explicit test confirmation.
+Batch 11 accepted by the user: enchanting interface and its three numbered regions.
+
+## Batch 12: cartography table
+
+Four equal full-width panels show the crafting recipe, scaling, copying and locking.
+Native item rendering replaces the raster and uses the actual Glass Pane item, not
+a glass-block texture. Verified the recipe (two Paper, four Planks) and operations
+against the 26.1.2 recipe JSON and CartographyTableMenu. Copying produces two maps;
+scaling and locking produce one. Bilingual labels identify each operation without
+inventing a map preview or treating these operations as workbench recipes.
+All four panels retain the established 300:169 ratio without an empty outer frame.
+Total migrated illustrations: 43. Quest IDs, progress and existing caption unchanged.
+
+Pending visual check: cartography illustration, all four panels and labels in both
+languages, normal/enlarged and while scrolling. No progress reset needed.
 
 ## Remaining batches
 
@@ -183,5 +194,5 @@ is still pending; the latest continuation was not an explicit test confirmation.
 - Screenshots and public branding: separate provenance/permissions review, not an
   automatic replacement. No generative redraw of Minecraft assets.
 
-Batches 1 through 9 are accepted; batches 10–11 require visual acceptance.
+Batches 1 through 11 are accepted; batch 12 requires visual acceptance.
 Remaining diagram families are not yet migrated.

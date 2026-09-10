@@ -1,4 +1,8 @@
 {
+  "image.firsttorch.cartography.craft": "Crafting table: make a cartography table",
+  "image.firsttorch.cartography.scale": "Cartography table: zoom out",
+  "image.firsttorch.cartography.copy": "Cartography table: copy map",
+  "image.firsttorch.cartography.lock": "Cartography table: lock map",
   "screen.firsttorch.narration.unavailable": "Progress not yet available",
   "screen.firsttorch.narration.locked": "Locked. Complete the prerequisite quests first",
   "screen.firsttorch.narration.completed_locked": "Completed. Prerequisite quests are still incomplete",

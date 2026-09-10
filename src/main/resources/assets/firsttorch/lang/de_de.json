@@ -1,4 +1,8 @@
 {
+  "image.firsttorch.cartography.craft": "Werkbank: Kartentisch herstellen",
+  "image.firsttorch.cartography.scale": "Kartentisch: Karte vergrössern",
+  "image.firsttorch.cartography.copy": "Kartentisch: Karte kopieren",
+  "image.firsttorch.cartography.lock": "Kartentisch: Karte sperren",
   "screen.firsttorch.narration.unavailable": "Fortschritt noch nicht verfügbar",
   "screen.firsttorch.narration.locked": "Gesperrt. Schliesse zuerst die vorausgesetzten Quests ab",
   "screen.firsttorch.narration.completed_locked": "Abgeschlossen. Vorausgesetzte Quests sind noch offen",

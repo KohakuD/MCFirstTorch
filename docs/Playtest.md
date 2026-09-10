@@ -1,5 +1,14 @@
 # Playtest log
 
+## 2026-09-10 — Cartography illustration
+
+User accepted archaeology and enchanting visuals. Cartography now uses four equal
+native-item panels: crafting, scaling, copying (two maps) and locking (Glass Pane).
+Original recipe and menu rules verified against 26.1.2. Bilingual operation labels
+distinguish workbench crafting from cartography-table use. Recipe/count/layout and
+raster-exclusion regressions added. Visual acceptance remains pending in both
+languages/browser sizes and while scrolling. No player progress changes.
+
 ## 2026-09-10 — Enchanting interface
 
 Migrated the numbered enchanting interface to installed vanilla GUI/sprites and
