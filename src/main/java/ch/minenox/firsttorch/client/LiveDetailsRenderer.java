@@ -50,6 +50,7 @@ final class LiveDetailsRenderer {
             var liveRecipe = LiveRecipeCatalog.find(illustration.resource());
             var liveBrewing = LiveBrewingCatalog.find(illustration.resource());
             var livePair = LiveRecipePanels.find(illustration.resource());
+            var liveSmelting = LiveSmeltingCatalog.find(illustration.resource());
             if (liveRecipe != null) {
                 var bounds = GuideImageLayout.bounds(x, y, w, illustration.width(), illustration.height());
                 LiveRecipeRenderer.draw(graphics, bounds, liveRecipe);
@@ -57,6 +58,10 @@ final class LiveDetailsRenderer {
             } else if (livePair != null) {
                 var bounds = GuideImageLayout.panelBounds(x, y, w, livePair.size());
                 LiveRecipeRenderer.drawPanels(graphics, bounds, livePair);
+                y = bounds.bottom() + 5;
+            } else if (liveSmelting != null) {
+                var bounds = LiveSmeltingCatalog.bounds(x, y, w);
+                LiveSmeltingRenderer.draw(graphics, bounds, liveSmelting);
                 y = bounds.bottom() + 5;
             } else if (liveBrewing != null) {
                 var bounds = GuideImageLayout.bounds(x, y, w, illustration.width(), illustration.height());

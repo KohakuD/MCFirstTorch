@@ -1,5 +1,13 @@
 # Playtest log
 
+## 2026-09-10 — Furnace diagrams
+
+The user accepted the four-panel armour overview. Charcoal and Cooking Food now
+reference installed furnace GUI sprites and native models, retaining two steps and
+the result-collection overlay at full width. Original assets, menu coordinates and
+smelting recipes were verified. Added catalog, packaging and aspect-ratio tests.
+Furnace visual acceptance remains pending; quest/player state is unchanged.
+
 ## 2026-09-10 — Four-panel armour overview
 
 The user accepted counted shapeless recipes. Migrated all four Copper Armour

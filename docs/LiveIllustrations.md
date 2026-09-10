@@ -115,9 +115,25 @@ retain their single-row layout. Verified all four recipes against original 26.1.
 recipe JSON (5/8/7/4 Copper Ingots). The old armour raster is excluded from resources.
 Total migrated illustrations: 37 (28 single crafting, 4 brewing, 5 multi-panel).
 
-Pending visual check: the armour overview in normal/enlarged view and while
+Batch 7 accepted by the user: the armour overview in normal/enlarged view and while
 scrolling; all four outputs must remain readable, with captions below the second
 row. Compare Paper/Book as a two-panel regression. No progress reset or quest changes.
+
+## Batch 8: smelting and collecting
+
+Charcoal and Cooking Food now render two original furnace interfaces side by side
+at full reading width. Input, representative fuel and output use native item models;
+the second panel retains a highlighted result-to-inventory teaching arrow and result
+example. These are explanatory diagrams, not live inventory state. Original GUI
+dimensions (256x256; displayed 176x166), fire/arrow sprites and all item positions
+were checked against 26.1.2 assets and menu/screen source. Charcoal and cooked beef
+smelting recipes were checked in the original recipe JSON. Their old rasters are
+excluded; total migrated illustrations: 39 (28 crafting, 4 brewing, 5 recipe-panel
+composites, 2 smelting composites). Captions and quest/progress data are unchanged.
+
+Pending visual check: Charcoal and Cooking Food in normal/enlarged view and while
+scrolling. Check ingredient/fuel/output placement, both steps and the collection
+arrow. No reset is needed.
 
 ## Remaining batches
 
@@ -127,5 +143,5 @@ row. Compare Paper/Book as a two-panel regression. No progress reset or quest ch
 - Screenshots and public branding: separate provenance/permissions review, not an
   automatic replacement. No generative redraw of Minecraft assets.
 
-Batches 1 through 6 are accepted; batch 7 requires four-panel visual acceptance.
+Batches 1 through 7 are accepted; batch 8 requires furnace visual acceptance.
 Remaining diagram families are not yet migrated.
