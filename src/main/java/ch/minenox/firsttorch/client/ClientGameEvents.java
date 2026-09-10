@@ -55,6 +55,7 @@ public final class ClientGameEvents {
 
     @SubscribeEvent
     public static void onLoggingOut(ClientPlayerNetworkEvent.LoggingOut event) {
+        LiveSceneRenderer.clear();
         FirstTorchWelcome.clear();
         ClientGuideCache.clear();
         ClientProgressCache.clear();

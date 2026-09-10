@@ -51,7 +51,12 @@ final class LiveDetailsRenderer {
             var liveBrewing = LiveBrewingCatalog.find(illustration.resource());
             var livePair = LiveRecipePanels.find(illustration.resource());
             var liveSmelting = LiveSmeltingCatalog.find(illustration.resource());
-            if (LiveCartographyLayout.supports(illustration.resource())) {
+            var liveScene = LiveSceneCatalog.find(illustration.resource());
+            if (liveScene != null) {
+                var bounds = liveScene.bounds(x, y, w);
+                LiveSceneRenderer.draw(graphics, bounds, liveScene);
+                y = bounds.bottom() + 5;
+            } else if (LiveCartographyLayout.supports(illustration.resource())) {
                 var bounds = LiveCartographyLayout.bounds(x, y, w);
                 LiveCartographyRenderer.draw(graphics, bounds);
                 y = bounds.bottom() + 5;

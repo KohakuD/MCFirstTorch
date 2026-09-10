@@ -81,7 +81,8 @@ final class GuideImageLayoutTest {
                     if (LiveRecipeCatalog.find(image.resource()) != null || LiveBrewingCatalog.find(image.resource()) != null
                             || LiveRecipePanels.find(image.resource()) != null || LiveSmeltingCatalog.find(image.resource()) != null
                             || LiveHandCraftingLayout.supports(image.resource()) || LiveBlockComparison.supports(image.resource())
-                            || LiveEnchantingLayout.supports(image.resource()) || LiveCartographyLayout.supports(image.resource())) {
+                            || LiveEnchantingLayout.supports(image.resource()) || LiveCartographyLayout.supports(image.resource())
+                            || LiveSceneCatalog.find(image.resource()) != null) {
                         assertNull(png, "Live recipe must not package its old raster: " + image.resource());
                     } else {
                     assertNotNull(png);

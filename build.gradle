@@ -106,17 +106,15 @@ var generateModMetadata = tasks.register('generateModMetadata', ProcessResources
 sourceSets.main.resources.srcDir generateModMetadata
 // Migrated illustrations use runtime item models. Keep historical PNGs out of all packaged resources.
 tasks.named('processResources', ProcessResources).configure {
-    ['wooden_pickaxe', 'wooden_shovel', 'stone_pickaxe', 'stone_axe', 'iron_pickaxe',
-     'iron_sword', 'furnace', 'chest', 'bucket', 'golden_helmet',
-     'shield', 'bookshelf_recipe', 'bread', 'shulker_box_recipe', 'brewing_stand_recipe',
-     'glass_bottle_recipe', 'enchanting_table_recipe', 'blaze_powder_recipe', 'bone_meal_recipe',
-     'ender_eye_recipe', 'flint_and_steel', 'magma_cream_recipe',
-     'awkward_potion_brewing', 'strength_potion_brewing', 'fire_resistance_brewing',
-     'long_fire_resistance_brewing', 'fence_and_gate', 'map_recipe', 'bow_and_arrows',
-     'boat_recipe', 'stone_hoe', 'bed', 'stonecutter', 'lodestone',
-     'paper_and_book', 'firework_rocket_recipe', 'armour_recipes', 'charcoal', 'cooking_food', 'log_to_planks',
-     'archaeology_comparison', 'enchanting_interface', 'cartography_table_guide'].each { name ->
-        exclude "assets/firsttorch/textures/questpics/${name}.png"
+    // Gameplay captures retain their approved pixels. All assembled diagrams render live.
+    def captures = ['blaze_spawner.png', 'end_arrival_platform_capture.png',
+                    'end_portal_active_capture.png', 'end_portal_room_capture.png',
+                    'nether_fortress.png', 'nether_wart_garden.png', 'pumpkin_view_capture.png',
+                    'stronghold_iron_door_capture.png', 'village_overview.png',
+                    'end_battlefield.png', 'end_city_search.png', 'end_exit_portal.png',
+                    'end_gateway_access.png', 'end_island_crossing.png', 'chorus_harvest.png']
+    filesMatching('assets/firsttorch/textures/questpics/*.png') {
+        if (!captures.contains(name)) exclude()
     }
 }
 // All curriculum artwork is owned by the native resources; archives are never build inputs.

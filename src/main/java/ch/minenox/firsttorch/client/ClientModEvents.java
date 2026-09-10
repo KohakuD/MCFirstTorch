@@ -16,6 +16,12 @@ public final class ClientModEvents {
     }
 
     @SubscribeEvent
+    public static void registerSceneReload(net.neoforged.neoforge.client.event.AddClientReloadListenersEvent event) {
+        event.addListener(net.minecraft.resources.Identifier.fromNamespaceAndPath(FirstTorch.MOD_ID, "live_scenes"),
+                (net.minecraft.server.packs.resources.ResourceManagerReloadListener) manager -> LiveSceneRenderer.clear());
+    }
+
+    @SubscribeEvent
     public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
         FirstTorchKeyMappings.register(event);
     }

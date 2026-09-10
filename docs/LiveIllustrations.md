@@ -186,13 +186,48 @@ Total migrated illustrations: 43. Quest IDs, progress and existing caption uncha
 Pending visual check: cartography illustration, all four panels and labels in both
 languages, normal/enlarged and while scrolling. No progress reset needed.
 
-## Remaining batches
+## Collective migration: remaining instructional scenes
 
-- Mixed-material and multiple-output recipes, smelting and brewing diagrams.
-- Redstone circuits, directional models, wire lines and state diagrams.
-- Other assembled instructional layouts, classified from their generation sources.
-- Screenshots and public branding: separate provenance/permissions review, not an
-  automatic replacement. No generative redraw of Minecraft assets.
+At the owner's request, all remaining assembled diagrams were migrated together
+for one collective playtest, rather than further individual-image handoffs.
+The 48 new scenes comprise 13 Redstone plans, 20 Overworld/Nether instructional
+layouts, 14 End diagrams and one Bastion layout. Together with the previous 43,
+all 91 assembled illustrations now render from installed Minecraft assets.
 
-Batches 1 through 11 are accepted; batch 12 requires visual acceptance.
-Remaining diagram families are not yet migrated.
+The shared scene renderer uses native items, detached entity previews, original
+texture crops and directional top faces resolved from installed block models.
+Redstone wire uses the original dust textures and Minecraft's per-power tint.
+Reload and logout clear cached models. No entities are spawned into the world.
+Explanatory labels are maintained in both languages. Plans retain safety geometry,
+numbered sequences and the corresponding existing captions. Multi-panel scenes
+use full reading width; single scenes remain compact.
+
+Fifteen approved gameplay captures remain byte-identical. This includes the six
+End captures without a capture suffix: battlefield, city search, exit portal,
+gateway access, island crossing and chorus harvest. Historical diagram PNGs remain
+in source for comparison but are excluded from packaged resources. The 106 unique
+image resources still serve the same 111 course placements. No quest, task, reward
+or progress IDs changed. Screenshot/branding provenance review remains separate;
+this work does not itself clear publication permissions.
+
+Verification: 457 tests passed, full production build and native-JAR boundary check
+passed. All explicit scene texture, item-definition and model resources were checked
+against the installed 26.1.2 JAR; none were missing. Regression tests cover scene
+catalog coverage, both languages, dimensions/UVs, Redstone states and important
+End safety geometry. The test emits build/reports/live-scenes.json for asset audit.
+
+## Combined visual acceptance (pending)
+
+Batches 1 through 11 remain accepted. Cartography and this collective migration
+await the owner's in-game review; automated checks are not visual acceptance.
+Restart the IntelliJ client and browse the course and reference illustrations:
+
+- Crafting, brewing, smelting and cartography: original item models and readable panels.
+- Movement, hunger, boats, shelter, farming, enchanting, trading and Nether diagrams:
+  labels, native entity previews and spatial explanations.
+- Redstone: wire lines/brightness, repeater/comparator direction and observer faces.
+- End: portal frames, crystal removal, roof clearance, dragon previews, egg steps,
+  chorus/shulker safety and Elytra course; real screenshots must remain unchanged.
+- Check normal/enlarged layouts and scrolling; sample both languages and resource reload.
+
+No new world, completion reset or reward replay is needed for this visual review.
