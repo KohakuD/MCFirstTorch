@@ -136,6 +136,7 @@ tasks.withType(JavaCompile).configureEach {
 
 tasks.withType(Test).configureEach {
     useJUnitPlatform()
+    systemProperty 'firsttorch.captureSourceDir', rootProject.file('src/main/resources').absolutePath
     def vanillaData = layout.buildDirectory.file('moddev/artifacts/neoforge-21.1.248-client-extra-aka-minecraft-resources.jar')
     inputs.file(vanillaData)
     systemProperty 'firsttorch.vanillaDataJar', vanillaData.get().asFile.absolutePath
@@ -144,11 +145,20 @@ tasks.withType(Test).configureEach {
 tasks.named('check').configure { dependsOn ':core:check' }
 base { archivesName = "${rootProject.mod_id}-mc1.21.1" }
 
-// Apply reviewed target overrides exactly once; do not ship unverified newer captures.
+// Apply target overrides once and retain the owner-approved shared captures.
+def captures = ['blaze_spawner.png', 'end_arrival_platform_capture.png',
+                    'end_portal_active_capture.png', 'end_portal_room_capture.png',
+                    'nether_fortress.png', 'nether_wart_garden.png', 'pumpkin_view_capture.png',
+                    'stronghold_iron_door_capture.png', 'village_overview.png',
+                    'end_battlefield.png', 'end_city_search.png', 'end_exit_portal.png',
+                    'end_gateway_access.png', 'end_island_crossing.png', 'chorus_harvest.png']
+
 def targetResourceDirectory = file('src/main/resources')
 var syncTargetResources = tasks.register('syncTargetResources', Sync) {
     from('../../src/main/resources') {
-        exclude 'assets/firsttorch/textures/questpics/**'
+        filesMatching('assets/firsttorch/textures/questpics/**') {
+            if (!captures.contains(name)) exclude()
+        }
         exclude { details -> new File(targetResourceDirectory, details.relativePath.toString()).isFile() }
     }
     from('src/main/resources')

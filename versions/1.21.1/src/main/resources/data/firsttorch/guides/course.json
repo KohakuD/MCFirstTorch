@@ -2760,6 +2760,12 @@
         },
         {
           "id": "416BD8FA3072CE95",
+          "image": {
+            "resource": "firsttorch:textures/questpics/village_overview.png",
+            "width": 1672,
+            "height": 941,
+            "altKey": "image.firsttorch.village_overview.description"
+          },
           "order": 1,
           "titleKey": "quest.firsttorch.village.approach.title",
           "descriptionKey": "quest.firsttorch.village.approach.description",
@@ -4596,6 +4602,12 @@
         },
         {
           "id": "73B2B39D1C674728",
+          "image": {
+            "resource": "firsttorch:textures/questpics/nether_fortress.png",
+            "width": 2277,
+            "height": 1353,
+            "altKey": "image.firsttorch.nether_fortress.description"
+          },
           "order": 1,
           "titleKey": "quest.firsttorch.nether_fortress.find.title",
           "descriptionKey": "quest.firsttorch.nether_fortress.find.description",
@@ -4684,6 +4696,12 @@
       "quests": [
         {
           "id": "5B0F14AD63E74BD3",
+          "image": {
+            "resource": "firsttorch:textures/questpics/blaze_spawner.png",
+            "width": 2277,
+            "height": 1353,
+            "altKey": "image.firsttorch.blaze_spawner.description"
+          },
           "order": 0,
           "titleKey": "quest.firsttorch.fortress_return.blaze_rods.title",
           "descriptionKey": "quest.firsttorch.fortress_return.blaze_rods.description",
@@ -4707,6 +4725,12 @@
         },
         {
           "id": "15F17869891E4CE0",
+          "image": {
+            "resource": "firsttorch:textures/questpics/nether_wart_garden.png",
+            "width": 2277,
+            "height": 1353,
+            "altKey": "image.firsttorch.nether_wart_garden.description"
+          },
           "order": 1,
           "titleKey": "quest.firsttorch.fortress_return.wart.title",
           "descriptionKey": "quest.firsttorch.fortress_return.wart.description",
@@ -5485,6 +5509,12 @@
         },
         {
           "id": "3C906D28F3D7A15E",
+          "image": {
+            "resource": "firsttorch:textures/questpics/stronghold_iron_door_capture.png",
+            "width": 2277,
+            "height": 1353,
+            "altKey": "image.firsttorch.stronghold_iron_door_capture.description"
+          },
           "order": 2,
           "titleKey": "quest.firsttorch.interior.doors.title",
           "descriptionKey": "quest.firsttorch.interior.doors.description",
@@ -5567,6 +5597,12 @@
       "quests": [
         {
           "id": "10E5B17D482CF6A3",
+          "image": {
+            "resource": "firsttorch:textures/questpics/end_portal_room_capture.png",
+            "width": 2277,
+            "height": 1353,
+            "altKey": "image.firsttorch.end_portal_room_capture.description"
+          },
           "order": 0,
           "titleKey": "quest.firsttorch.portal.find.title",
           "descriptionKey": "quest.firsttorch.portal.find.description",
@@ -5892,6 +5928,12 @@
         },
         {
           "id": "6F54A06C371BF6A3",
+          "image": {
+            "resource": "firsttorch:textures/questpics/end_portal_active_capture.png",
+            "width": 2277,
+            "height": 1353,
+            "altKey": "image.firsttorch.end_portal_active_capture.description"
+          },
           "order": 6,
           "titleKey": "quest.firsttorch.end_prep.activate.title",
           "descriptionKey": "quest.firsttorch.end_prep.activate.description",
@@ -5976,6 +6018,12 @@
         },
         {
           "id": "2C81D39F6A4E29E7",
+          "image": {
+            "resource": "firsttorch:textures/questpics/end_arrival_platform_capture.png",
+            "width": 2277,
+            "height": 1353,
+            "altKey": "image.firsttorch.end_arrival_platform.description"
+          },
           "order": 2,
           "titleKey": "quest.firsttorch.end.2c81d39f6a4e29e7.title",
           "descriptionKey": "quest.firsttorch.end.2c81d39f6a4e29e7.description",
@@ -6061,6 +6109,12 @@
         },
         {
           "id": "4EA3F5B18C604B09",
+          "image": {
+            "resource": "firsttorch:textures/questpics/end_battlefield.png",
+            "width": 3440,
+            "height": 1369,
+            "altKey": "image.firsttorch.end_battlefield.description"
+          },
           "order": 5,
           "titleKey": "quest.firsttorch.end.4ea3f5b18c604b09.title",
           "descriptionKey": "quest.firsttorch.end.4ea3f5b18c604b09.description",
@@ -6279,6 +6333,12 @@
         },
         {
           "id": "013E8F5B26A0F5B5",
+          "image": {
+            "resource": "firsttorch:textures/questpics/end_exit_portal.png",
+            "width": 3440,
+            "height": 1369,
+            "altKey": "image.firsttorch.end_exit_portal.description"
+          },
           "order": 3,
           "titleKey": "quest.firsttorch.end.013e8f5b26a0f5b5.title",
           "descriptionKey": "quest.firsttorch.end.013e8f5b26a0f5b5.description",
@@ -6427,6 +6487,12 @@
         },
         {
           "id": "5DFA4517E26CB171",
+          "image": {
+            "resource": "firsttorch:textures/questpics/end_gateway_access.png",
+            "width": 3440,
+            "height": 1421,
+            "altKey": "image.firsttorch.end_gateway_access.description"
+          },
           "order": 2,
           "titleKey": "quest.firsttorch.outer.5dfa4517e26cb171.title",
           "descriptionKey": "quest.firsttorch.outer.5dfa4517e26cb171.description",
@@ -6510,6 +6576,12 @@
       "quests": [
         {
           "id": "435FA7C29D816E3B",
+          "image": {
+            "resource": "firsttorch:textures/questpics/chorus_harvest.png",
+            "width": 3440,
+            "height": 1369,
+            "altKey": "image.firsttorch.chorus_harvest.description"
+          },
           "order": 0,
           "titleKey": "quest.firsttorch.outer.435fa7c29d816e3b.title",
           "descriptionKey": "quest.firsttorch.outer.435fa7c29d816e3b.description",
@@ -6575,6 +6647,12 @@
         },
         {
           "id": "1A8C05F7D3E692B1",
+          "image": {
+            "resource": "firsttorch:textures/questpics/end_island_crossing.png",
+            "width": 3440,
+            "height": 1369,
+            "altKey": "image.firsttorch.end_island_crossing.description"
+          },
           "order": 2,
           "titleKey": "quest.firsttorch.outer.1a8c05f7d3e692b1.title",
           "descriptionKey": "quest.firsttorch.outer.1a8c05f7d3e692b1.description",
@@ -6618,6 +6696,12 @@
         },
         {
           "id": "6FD15A4C283BE706",
+          "image": {
+            "resource": "firsttorch:textures/questpics/end_city_search.png",
+            "width": 3440,
+            "height": 1369,
+            "altKey": "image.firsttorch.end_city_search.description"
+          },
           "order": 3,
           "titleKey": "quest.firsttorch.outer.6fd15a4c283be706.title",
           "descriptionKey": "quest.firsttorch.outer.6fd15a4c283be706.description",
@@ -6925,6 +7009,12 @@
       "quests": [
         {
           "id": "78C3992F3DF1AAB1",
+          "image": {
+            "resource": "firsttorch:textures/questpics/end_city_search.png",
+            "width": 3440,
+            "height": 1369,
+            "altKey": "image.firsttorch.end_city_search.description"
+          },
           "order": 0,
           "titleKey": "quest.firsttorch.outer.78c3992f3df1aab1.title",
           "descriptionKey": "quest.firsttorch.outer.78c3992f3df1aab1.description",
@@ -10263,6 +10353,12 @@
         },
         {
           "id": "51A0B0C0D0E00003",
+          "image": {
+            "resource": "firsttorch:textures/questpics/pumpkin_view_capture.png",
+            "width": 2277,
+            "height": 1353,
+            "altKey": "image.firsttorch.pumpkin_view_capture.description"
+          },
           "order": 1,
           "titleKey": "quest.firsttorch.mechanics_pumpkins.limits.title",
           "descriptionKey": "quest.firsttorch.mechanics_pumpkins.limits.description",

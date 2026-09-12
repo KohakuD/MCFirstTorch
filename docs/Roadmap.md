@@ -63,12 +63,14 @@ Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then 
 - [x] Establish one repository and IntelliJ Gradle project with a Java 21 `:core` module and the existing Java 25 / `26.1.2` runtime. Future Minecraft targets get separate native modules; core classes are merged directly into each native JAR.
 - [x] Provide separate dependencies, toolchains, run profiles, test directories and clearly labelled JARs for the implemented Minecraft targets. Share compatible logic, guide data and translations without forcing incompatible runtime code into a common module.
 - [ ] Backport the native runtime and review every lesson against `1.21.1` mechanics, recipes, objectives and available content. Maintain English and German together and use exact target-version game assets.
-  - [x] Adapt known incompatible items, Iron armour, Netherite lodestone and optional excursion prerequisites in both languages; omit unverified newer captures. Full mechanics/visual acceptance remains open.
+  - [x] Adapt known incompatible items, Iron armour, Netherite lodestone and optional excursion prerequisites in both languages; include the owner-approved shared captures unchanged. Full mechanics/visual acceptance remains open.
   - [x] Validate crafting diagrams against original 1.21.1 recipes; validate course icons, inventory/tag objectives, item rewards and advancement criteria against native target data and default feature flags.
 - [x] Record initial content availability and meaningful lesson differences between `1.21.1` and `26.1.2` as the basis for later comparisons; see `EditionDifferences.md`. Minecraft version order is independent of the date a First Torch backport is published.
 - [ ] Validate and release the `1.21.1` edition before proceeding to the `26.2` port. A mod backport does not imply support for downgrading existing Minecraft worlds or importing progress across versions.
 
-  - [x] Owner confirmed early 1.21.1 quest completion, reward collection and progress after restart. Both-language visual acceptance and remaining captures are still open.
+  - [x] Owner confirmed early 1.21.1 quest completion, reward collection and progress after restart. Both-language UI/rendering acceptance remains open.
+
+  - [x] Owner confirmed that the existing fifteen screenshots fit 1.21.1 and 26.2; restored all sixteen backport image references and verified byte-identical packaging.
 
 ### Phase 2: Minecraft 26.2 edition
 

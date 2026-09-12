@@ -99,7 +99,7 @@ Native adapter verification passed on 2026-09-12: 16 tests under Minecraft 1.21.
 
 The initial 1.21.1 target now has course, bilingual language, reference-link and affected item-tag overlays, plus target recipe catalogs. They implement Iron armour, the Netherite lodestone recipe and original Nether advancement, an optional lodestone branch, ordinary Chest rewards, and exclusion of unavailable Creaking/Pale Oak/Copper equipment content. The target resource JAR confirms the lodestone recipe, advancement criterion, Iron armour models and guarded Piglin block tag. These checks are narrower than whole-course or visual acceptance.
 
-The target course omits 16 references to the following 15 unverified 26.1.2 capture files. Their explanatory lesson text remains; the old captures must not be packaged in the 1.21.1 artifact. Fresh target captures and bilingual visual acceptance remain open:
+The owner confirmed that the following 15 existing screenshots also fit 1.21.1 and 26.2. All 16 backport image references are restored and the files are packaged unchanged. Replacement screenshots are no longer required:
 
 - `416BD8FA3072CE95`: `village_overview.png`
 - `73B2B39D1C674728`: `nether_fortress.png`
@@ -118,16 +118,16 @@ The target course omits 16 references to the following 15 unverified 26.1.2 capt
 - `78C3992F3DF1AAB1`: `end_city_search.png`
 - `51A0B0C0D0E00003`: `pumpkin_view_capture.png`
 
-Runtime-rendered diagrams use the target game assets, but their layout and appearance still require in-game acceptance. No capture was relabelled as verified 1.21.1 artwork.
+Runtime-rendered diagrams use the target game assets, but their layout and appearance still require in-game acceptance. Screenshot reuse is based on the owner's explicit cross-version confirmation.
 
-## Installable alpha verification (2026-09-12)
+## Initial installable alpha verification (before screenshot approval)
 
 - Full `.\gradlew.bat test build` passed: 416 Minecraft 26.1.2 tests, 44 shared-core tests and 176 Minecraft 1.21.1 tests (636 total), without failures, errors or skips.
 - All seven packaging fixtures passed. Both native artifacts passed the unchanged boundary verifier: 197 entries for 26.1.2 and 187 for 1.21.1.
 - The 1.21.1 curriculum contains 345 quests and 95 image references. A target regression requires every retained image to have a native renderer and a nonblank caption in both languages, with no old raster packaged. The 26.1.2 capture regression remains unchanged in its original suite.
 - `:mc1211:runClient` started with the real production mod, Java 21, NeoForge 21.1.248 and native resources initialized. Automated Windows UI control failed before any input because its sandbox helper could not initialize, so there is no claimed visual or fresh-world gameplay acceptance.
 - Reload Gradle in IntelliJ, select **First Torch Client 1.21.1**, and start a fresh test world. Verify welcome, pause-menu/key access, both languages, first manual/automatic quests, reward delivery, enlarged-view clipping, search/reference/trophy screens, and restart persistence. Restart an already-running development client after pulling the final renderer changes.
-- This alpha does not yet implement the 26.2 edition or returning-learner baseline/version filter. Known missing capture replacements and complete target-mechanics review remain release work.
+- This alpha does not yet implement the 26.2 edition or returning-learner baseline/version filter. At that checkpoint, capture approval and complete target-mechanics review remained open; capture approval has since been received.
 
 ## Native content compatibility gate
 
@@ -144,3 +144,7 @@ The owner confirmed the requested early gameplay smoke test: first quests, colle
 Native compatibility tests now also cover both furnace diagrams against original smelting data, sufficient fuel time for the illustrated input, and all four brewing steps through Minecraft's PotionBrewing implementation. Each brewing result must be the intended ordinary potion, including the extended Fire Resistance variant. Full-world timing, actual brewing interactions, cartography operations and rendering remain separate acceptance work.
 
 The initial availability and substantive-change inventory is recorded in [EditionDifferences.md](EditionDifferences.md). It separates genuinely revised lessons from reward/icon substitutions, adapter changes and missing captures; it does not enable a comparison filter yet.
+
+## Shared screenshot approval
+
+The owner explicitly approved reuse of the existing screenshots for Minecraft 1.21.1 and 26.2. The backport now includes all 15 original files at 16 quest references, yielding 111 total image references. Automated checks require byte-for-byte identity with the shared source, matching dimensions, and nonblank bilingual captions. Runtime-rendered illustrations still use the installed target assets. The future 26.2 build should use the same approved screenshot set; its runtime port is not implemented by this change.

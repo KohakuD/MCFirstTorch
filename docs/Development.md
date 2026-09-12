@@ -51,7 +51,7 @@ The root mod declares both source sets for development launches and includes cor
 
 The existing **First Torch Client** configuration explicitly launches `:runClient` (26.1.2). **First Torch Client 1.21.1** launches `:mc1211:runClient`, using Java 21 / NeoForge 21.1.248 and the separate `versions/1.21.1/run/client` directory. Always qualify runtime tasks so Gradle does not launch both editions. A separate `:mc1211:runServer` profile uses `run/server`; dedicated-server acceptance remains unverified.
 
-The 1.21.1 module now includes a production entry, client payload handling, native UI/rendering, storage/rewards and adapted bilingual resources. Tests use the real production mod metadata through the native NeoForge JUnit launcher. `syncTargetResources` merges shared resources and explicit target overrides, excluding unverified 26.1.2 captures. Compatible client logic is selected explicitly alongside compatible server classes; target adapters stay in `versions/1.21.1/src/main/java`.
+The 1.21.1 module now includes a production entry, client payload handling, native UI/rendering, storage/rewards and adapted bilingual resources. Tests use the real production mod metadata through the native NeoForge JUnit launcher. `syncTargetResources` merges shared resources and explicit target overrides, including the fifteen owner-approved shared captures unchanged. Compatible client logic is selected explicitly alongside compatible server classes; target adapters stay in `versions/1.21.1/src/main/java`.
 
 Run `.\gradlew.bat test build`, then verify both native JARs:
 

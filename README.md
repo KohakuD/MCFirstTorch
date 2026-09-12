@@ -38,7 +38,7 @@ The development run enables the left-two-thirds window layout. Design-preview sw
 
 Outputs: `build/libs/firsttorch-mc26.1.2-0.14.0-alpha.1.jar` and `versions/1.21.1/build/libs/firsttorch-mc1.21.1-0.14.0-alpha.1.jar`.
 
-For the backport, select **First Torch Client 1.21.1** in IntelliJ or run `.\gradlew.bat :mc1211:runClient`. Its isolated profile is `versions/1.21.1/run/client`. For a launcher installation, use the **1.21.1 JAR**, NeoForge **21.1.248** and Java **21** in a separate 1.21.1 profile, then follow steps 2–5 below. Use a fresh world; this does not downgrade worlds. Fifteen newer-version captures are omitted until target-specific replacements are reviewed.
+For the backport, select **First Torch Client 1.21.1** in IntelliJ or run `.\gradlew.bat :mc1211:runClient`. Its isolated profile is `versions/1.21.1/run/client`. For a launcher installation, use the **1.21.1 JAR**, NeoForge **21.1.248** and Java **21** in a separate 1.21.1 profile, then follow steps 2–5 below. Use a fresh world; this does not downgrade worlds. The fifteen existing screenshots are included unchanged; the owner confirmed that they also fit 1.21.1 and 26.2.
 
 1. Use a separate Minecraft **26.1.2** profile with NeoForge **26.1.2.84** and a compatible Java 25 runtime.
 2. Close Minecraft. Back up existing test worlds before changing installed mods.

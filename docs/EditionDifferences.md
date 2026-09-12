@@ -26,7 +26,7 @@ The shared Trial Chambers chapter `70A7B8C9D0E1F203` retains Breeze and Bogged i
 - `1A62D8E30C745BF9`, `49CBF6082DA57E13`, `34FAC7E96152BDF8`: Copper tool references and expanded item tags support the equipment changes. Decide whether to link these as context when designing the comparison view; they do not teach an entirely new mining or packing system.
 - `0BED012A8146C359`: the Lodestone advancement changes from `minecraft:nether/use_lodestone` to `minecraft:adventure/use_lodestone`. The observation adapter change alone is not a new learner action.
 - `6D91380C6EA4B2F5`: an ordinary Chest replaces the newer Bundle reward in the backport while retaining reward ID `5AEFB70D418269C3`. A reward substitution alone must not re-complete the quest or grant an extra claim.
-- Bundle-to-Chest icons, removal of a Creaking reference link, changed chapter/trophy captions, explicit version wording in the Shulker explanation (`6FEC02D106FBA924`) and omitted unverified captures are presentation/compatibility differences, not novelty events.
+- Bundle-to-Chest icons, removal of a Creaking reference link, changed chapter/trophy captions, explicit version wording in the Shulker explanation (`6FEC02D106FBA924`) and screenshot reuse are presentation/compatibility differences, not novelty events.
 - `0B875B8819CB3C72`: the newer Shulker Box explanation also warns that a Copper Chest cannot substitute for an ordinary Chest. The actual crafting recipe is unchanged.
 
 ## Remaining implementation
