@@ -1,6 +1,6 @@
 # Roadmap
 
-## Active milestone: 0.13.0-beta.2 — Native course and reference library
+## Previous release baseline: 0.13.0-beta.2 — Native course and reference library
 
 First Torch is now developed only as a native NeoForge mod for Minecraft Java `26.1.2` on NeoForge `26.1.2.84`, using Java `25`. The retired FTB pack, its migration discussions, and its historical plans are archived in [`../archive/ftb-legacy/`](../archive/ftb-legacy/). They do not define active scope.
 
@@ -47,15 +47,18 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
   - [x] Beta.2 in-game regression accepted by the owner on 2026-09-10: design-preview switch and test completion absent, welcome displayed in a new world
   - [ ] Submit the corrected beta after regression acceptance, then confirm moderation approval and public availability
 
-## Planned milestone: 0.14.0 — Multiple Minecraft versions and returning learners
+## Active milestone: 0.14.0 — Multiple Minecraft versions and returning learners
 
-Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then add `26.2`, and build a reusable version-comparison view for returning learners. This is a planned First Torch release, not an implemented compatibility claim or a change to the active `0.13.0-beta.2` runtime. Existing release acceptance work above remains open as recorded.
+Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then add `26.2`, and build a reusable version-comparison view for returning learners. Development has started as `0.14.0-alpha.1`; the playable runtime still targets `26.1.2` only. The previous baseline is preserved at commit `029e8c4`. Existing release acceptance work above remains open as recorded.
 
 ### Phase 1: Shared foundation and Minecraft 1.21.1 backport
 
-- [ ] Preserve the verified `26.1.2` baseline and its stable guide, quest, task and reward IDs.
-- [ ] Assess native API, loader, Java toolchain and data/resource-format differences before choosing the build structure.
-- [ ] Keep one First Torch repository and aim for one IntelliJ Gradle project with shared content and version-specific modules or builds. Separate IntelliJ projects are not required; select the exact Gradle arrangement after the compatibility assessment.
+- [x] Preserve the verified `26.1.2` baseline and its stable guide, quest, task and reward IDs. Baseline test/build passed before the module split; guide content and IDs are unchanged.
+- [ ] Complete the native API, loader and data/resource-format port assessment.
+  - [x] Extract and test shared guide/parsing/validation/progression code on Java 21; retain Minecraft integration tests in the runtime module.
+  - [x] Record initial API and content blockers, including the early lodestone progression issue, in `Backport1211.md`.
+  - [ ] Compile and validate the native adapters against the selected 1.21.1 NeoForge toolchain.
+- [x] Establish one repository and IntelliJ Gradle project with a Java 21 `:core` module and the existing Java 25 / `26.1.2` runtime. Future Minecraft targets get separate native modules; core classes are merged directly into each native JAR.
 - [ ] Provide separate dependencies, toolchains, run profiles, test directories and clearly labelled JARs for each Minecraft target. Share compatible logic, guide data and translations without forcing incompatible runtime code into a common module.
 - [ ] Backport the native runtime and review every lesson against `1.21.1` mechanics, recipes, objectives and available content. Maintain English and German together and use exact target-version game assets.
 - [ ] Record content availability and meaningful lesson differences between `1.21.1` and `26.1.2` as the basis for later comparisons. Minecraft version order is independent of the date a First Torch backport is published.

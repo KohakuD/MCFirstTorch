@@ -2,6 +2,12 @@
 
 All notable player-facing changes are documented here.
 
+## 0.14.0-alpha.1 — Unreleased
+
+- Begin the multi-version milestone with a shared Java 21 quest core; the playable edition remains Minecraft 26.1.2.
+- Include the Minecraft target in native artifact filenames. Quest content, stable IDs and progress semantics are unchanged.
+- Minecraft 1.21.1 runtime/content adaptation and the returning-learner version filter remain in development and are not included yet.
+
 ## 0.13.0-beta.2 — 2026-09-10
 
 - Align accessibility at the bottom right of the header, with the unlocked reference library immediately to its left.

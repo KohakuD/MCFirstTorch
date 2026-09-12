@@ -1,0 +1,36 @@
+plugins {
+    id 'java-library'
+}
+
+group = rootProject.mod_group_id
+version = rootProject.mod_version
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+repositories {
+    mavenCentral()
+}
+
+// Gson is supplied by Minecraft. Keep the shared core compatible with 1.21.1's version.
+dependencies {
+    compileOnly 'com.google.code.gson:gson:2.10.1'
+    testImplementation 'com.google.code.gson:gson:2.10.1'
+    testImplementation platform('org.junit:junit-bom:5.11.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+// These fixtures test existing quest semantics; they do not declare 1.21.1 content support.
+sourceSets.test.resources {
+    srcDir '../src/main/resources'
+    include 'data/firsttorch/guides/*.json'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+}
+
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}

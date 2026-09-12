@@ -9,11 +9,14 @@ tasks.named('wrapper', Wrapper).configure {
     distributionType = Wrapper.DistributionType.BIN
 }
 
+// The core has no Minecraft dependency and is also compiled/tested on Java 21.
+evaluationDependsOn(':core')
+
 version = mod_version
 group = mod_group_id
 
 base {
-    archivesName = mod_id
+    archivesName = "${mod_id}-mc${minecraft_version}"
 }
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
@@ -59,6 +62,7 @@ neoForge {
     mods {
         "${mod_id}" {
             sourceSet(sourceSets.main)
+            sourceSet(project(':core').sourceSets.main)
         }
     }
 
@@ -73,10 +77,16 @@ configurations {
 }
 
 dependencies {
+    // These are our own bundled classes, not an external published dependency.
+    implementation project(':core').sourceSets.main.output
     testImplementation platform('org.junit:junit-bom:5.11.4')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation 'com.google.code.gson:gson:2.13.2'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+tasks.named('check').configure {
+    dependsOn ':core:check'
 }
 
 tasks.withType(Test).configureEach {
@@ -120,6 +130,8 @@ tasks.named('processResources', ProcessResources).configure {
 neoForge.ideSyncTask generateModMetadata
 
 tasks.named('jar', Jar).configure {
+    // Merge our own core classes directly; native releases never contain nested JARs.
+    from project(':core').sourceSets.main.output
     from('LICENSE') { into 'META-INF' }
     from('LICENSE-CODE') { into 'META-INF' }
     from('LICENSE-ASSETS.md') { into 'META-INF' }

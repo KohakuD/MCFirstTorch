@@ -4,11 +4,11 @@
 
 **A patient, step-by-step Minecraft survival course inside the game.**
 
-First Torch is an independent NeoForge mod in beta. It teaches what to do, why it matters, and how to practise safely. Its native runtime does not require FTB Quests, FTB Library, FTB Teams, their filter modules, Initially, or DistinctCraft.
+First Torch is an independent NeoForge mod. The next development milestone is 0.14.0; the previous release line is 0.13.0-beta.2. It teaches what to do, why it matters, and how to practise safely. Its native runtime does not require FTB Quests, FTB Library, FTB Teams, their filter modules, Initially, or DistinctCraft.
 
 ## Current target
 
-- Native mod: `0.13.0-beta.2`
+- Native mod: `0.14.0-alpha.1`
 - Minecraft Java: `26.1.2`
 - Tested NeoForge: `26.1.2.84`
 - Java toolchain: `25`
@@ -17,6 +17,8 @@ First Torch is an independent NeoForge mod in beta. It teaches what to do, why i
 The guided course covers early survival through the Nether, End and independent exploration, with optional Redstone lessons. The separate reference library covers creatures and unusual mechanics. Native features include automatic/manual tasks, rewards, trophies, search, original-game illustrations and returnable reading links.
 
 LAN multiplayer smoke tests are accepted; dedicated-server testing is explicitly out of the current scope and dedicated-server operation remains unverified. See the concise [changelog](CHANGELOG.md), [release upload notes](docs/CurseForgeUpload.md), and [licensing review](docs/ReleaseLicensing.md).
+
+The shared quest core now targets Java 21 in preparation for Minecraft 1.21.1. The playable runtime still targets **26.1.2 only**; this development build is not a completed 1.21.1 backport. See [the backport assessment](docs/Backport1211.md).
 
 ## Develop in IntelliJ IDEA
 
@@ -28,13 +30,13 @@ Import this repository as a Gradle project and use **First Torch Client**, or ru
 
 The development run enables the left-two-thirds window layout. Design-preview switching and test-completion bypasses are retired, including in development launches.
 
-## Build and install the native beta
+## Build and install the native development version
 
 ```powershell
 .\gradlew.bat test build
 ```
 
-Output: `build/libs/firsttorch-0.13.0-beta.2.jar`.
+Output: `build/libs/firsttorch-mc26.1.2-0.14.0-alpha.1.jar`.
 
 1. Use a separate Minecraft **26.1.2** profile with NeoForge **26.1.2.84** and a compatible Java 25 runtime.
 2. Close Minecraft. Back up existing test worlds before changing installed mods.

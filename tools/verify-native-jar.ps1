@@ -11,7 +11,9 @@ try {
     }
     if (@($names | Sort-Object -Unique).Count -ne $names.Count) { throw 'Duplicate native JAR entries.' }
     foreach ($required in @('META-INF/neoforge.mods.toml', 'META-INF/LICENSE', 'META-INF/LICENSE-CODE', 'META-INF/LICENSE-ASSETS.md', 'META-INF/NOTICE.md',
-        'assets/firsttorch/lang/en_us.json', 'assets/firsttorch/lang/de_de.json', 'data/firsttorch/guides/course.json')) {
+        'assets/firsttorch/lang/en_us.json', 'assets/firsttorch/lang/de_de.json', 'data/firsttorch/guides/course.json',
+        'ch/minenox/firsttorch/guide/GuideSnapshot.class', 'ch/minenox/firsttorch/guide/data/GuideJson.class',
+        'ch/minenox/firsttorch/guide/progress/TaskEvaluator.class')) {
         if ($names -cnotcontains $required) { throw "Missing native JAR resource: $required" }
     }
     if (-not @($names | Where-Object { $_ -cmatch '^ch/minenox/firsttorch/.+\.class$' }).Count) { throw 'No First Torch classes packaged.' }

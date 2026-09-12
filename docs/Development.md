@@ -2,14 +2,16 @@
 
 ## Active baseline
 
-First Torch is a native NeoForge mod. The active target is Minecraft Java `26.1.2`, NeoForge `26.1.2.84`, Java `25`, and First Torch `0.13.0-beta.2`.
+First Torch is a native NeoForge mod. The active target is Minecraft Java `26.1.2`, NeoForge `26.1.2.84`, Java `25`, and First Torch `0.14.0-alpha.1`.
 
 The runtime is independent of FTB Quests, FTB Library, FTB Teams, Initially, KubeJS, and their companion modules. Do not add those dependencies or an FTB-progress importer. Historical FTB pack material is isolated in [`../archive/ftb-legacy/`](../archive/ftb-legacy/) and is not part of normal development.
 
 ## Repository layout
 
 - `build.gradle`, `settings.gradle`, `gradle.properties`: native NeoForge build
-- `src/main/java/`: native runtime and client interface
+- `core/src/main/java/`: Minecraft-independent guide model, parsing, validation and progression rules (Java 21)
+- `core/src/test/java/`: shared quest-rule tests on Java 21 with Gson 2.10.1
+- `src/main/java/`: Minecraft 26.1.2 native runtime and client interface (Java 25)
 - `src/main/resources/data/firsttorch/guides/`: server guide definitions
 - `src/main/resources/assets/firsttorch/`: translations, icons, and guide illustrations
 - `src/main/templates/`: generated NeoForge metadata templates
@@ -33,12 +35,22 @@ For an installable native JAR:
 
 ```powershell
 .\gradlew.bat test build
-pwsh .\tools\verify-native-jar.ps1 -JarPath .\build\libs\firsttorch-0.13.0-beta.2.jar
+pwsh .\tools\verify-native-jar.ps1 -JarPath .\build\libs\firsttorch-mc26.1.2-0.14.0-alpha.1.jar
 ```
 
 `verify-native-jar.ps1` enforces the native package and resource boundary. It rejects nested JARs, unexpected classes, world/config data, duplicate entries, and missing required resources. It is a packaging check, not proof of dependency licensing, accessibility, or multiplayer parity.
 
 After guide, translation, progression, or interface changes, use a fresh test world where practical. Check English and German, automatic and manual task completion, prerequisite gating, rewards, persistence after restart, and the affected reading/image layout. Development-only completion controls do not prove that automatic objectives work in survival.
+
+## Multiple-version development
+
+Open the repository root once in IntelliJ and reload Gradle after pulling the module split. The root project remains the Minecraft `26.1.2` runtime; `:core` is a plain Java library, not a separately installed mod. Gradle selects Java 21 for the shared core and Java 25 for the current runtime. No per-Minecraft IntelliJ project is required.
+
+The root mod declares both source sets for development launches and includes core classes directly in its JAR. Do not install the core JAR, add a nested library JAR, or duplicate shared sources into each target. The root `check` task depends on `:core:check`, so both `test build` and an explicit `:build` retain the shared-rule gate. Use `:core:test` for changes confined to pure quest logic; use the Minecraft test suite for runtime integrations.
+
+The existing `First Torch Client` run configuration still launches `26.1.2`. Dedicated `1.21.1` dependencies, source adapters, run profiles and resources will be added during the actual runtime port. Until then, there is no installable `1.21.1` artifact. See [Backport1211.md](Backport1211.md) for the API/content assessment and pending acceptance.
+
+Artifacts now include their Minecraft target in the filename. First Torch release numbers and Minecraft version numbers remain separate; publishing a backport later does not change Minecraft version ordering.
 
 ## Native guide and progress model
 
