@@ -70,5 +70,9 @@
 "2A12100000000005": [{"questId": "0BF75245596E6948", "titleKey": "chapter.firsttorch.and_now.title"}],
 "2A12100000000006": [{"questId": "0BF75245596E6948", "titleKey": "chapter.firsttorch.and_now.title"}],
 "2A12100000000007": [{"questId": "0BF75245596E6948", "titleKey": "chapter.firsttorch.and_now.title"}],
-"2A12100000000008": [{"questId": "0BF75245596E6948", "titleKey": "chapter.firsttorch.and_now.title"}]
+"2A12100000000008": [{"questId": "0BF75245596E6948", "titleKey": "chapter.firsttorch.and_now.title"}],
+"2A12100000000009": [{"questId": "0A6417D3BE825CF9", "titleKey": "chapter.firsttorch.brewing.title"}],
+"2A1210000000000A": [{"questId": "0A6417D3BE825CF9", "titleKey": "chapter.firsttorch.brewing.title"}],
+"2A1210000000000B": [{"questId": "0A6417D3BE825CF9", "titleKey": "chapter.firsttorch.brewing.title"}],
+"2A1210000000000C": [{"questId": "0A6417D3BE825CF9", "titleKey": "chapter.firsttorch.brewing.title"}]
 }

@@ -13,7 +13,7 @@ class TrickyTrialsReferencesTest {
         var guide = GuideJson.read(getClass().getResourceAsStream("/data/firsttorch/guides/course.json"));
         var chapter = guide.chapters().stream().filter(c -> c.id().equals("7A12100000000001"))
                 .findFirst().orElseThrow();
-        assertEquals(6, chapter.quests().size());
+        assertEquals(10, chapter.quests().size());
         var crafter = guide.chapters().stream().filter(c -> c.id().equals("7A12100000000002"))
                 .findFirst().orElseThrow();
         assertEquals("chapter.firsttorch.redstone_crafter.title", crafter.titleKey());
@@ -35,5 +35,23 @@ class TrickyTrialsReferencesTest {
         }
         for (var old : guide.chapters()) if (!old.id().equals(chapter.id()))
             for (var quest : old.quests()) assertTrue(quest.prerequisiteQuestIds().stream().noneMatch(ids::contains));
+    }
+    @Test void hazardousPotionReadingsNeedNoBrewingDamageOrCombat() {
+        var guide = GuideJson.read(getClass().getResourceAsStream("/data/firsttorch/guides/course.json"));
+        var snapshot = new GuideSnapshot(List.of(guide));
+        var cards = guide.chapters().stream().flatMap(c -> c.quests().stream())
+                .filter(q -> List.of("2A12100000000009", "2A1210000000000A",
+                        "2A1210000000000B", "2A1210000000000C").contains(q.id())).toList();
+        assertEquals(4, cards.size());
+        var ready = new ch.minenox.firsttorch.guide.progress.ProgressState(
+                java.util.Set.of(), java.util.Set.of("3C3122DF5C0EA192"));
+        var supplied = ch.minenox.firsttorch.guide.progress.TaskEvaluator.evaluate(snapshot, ready, key -> 999);
+        for (var card : cards) {
+            assertFalse(supplied.completedQuestIds().contains(card.id()));
+            var confirmed = ch.minenox.firsttorch.guide.progress.TaskEvaluator.confirm(
+                    snapshot, ready, card.id(), card.tasks().getFirst().id(), key -> 0);
+            assertTrue(confirmed.completedQuestIds().contains(card.id()));
+            assertEquals(1, cards.stream().filter(q -> confirmed.completedQuestIds().contains(q.id())).count());
+        }
     }
 }

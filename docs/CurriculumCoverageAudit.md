@@ -54,7 +54,7 @@ Status: **taught** means an actionable explanation exists; **partial** means a m
 | 1.21 | Ominous Bottle, raid/trial effects, Ominous Vault | Partial: `5AFE972108C13B48` warns against drinking near a Village | Explain intentional activation, consequences and safe alternatives |
 | 1.21 | Heavy Core, Mace and its enchantments | Partial: Breeze card only names materials | Add acquisition, crafting and safe combat explanation |
 | 1.21 | Wind Charges and Breeze Rods | Partial: Breeze reference, no operational lesson | Explain use and fall/knockback risk |
-| 1.21 | New potion effects | Missing dedicated Weaving/Oozing/Infestation/Wind Charging guidance | Review brewing and hazardous effect interactions |
+| 1.21 | New potion effects | Four bilingual optional Trials cards implemented, with brewing links and safe effect explanations | In-game reading/layout acceptance pending |
 | 1.21 | Breeze and Bogged | Existing creature safety references | Retain; link expanded Trial lessons |
 | 1.21 | Tuff/Copper block additions and collectibles | No systematic coverage | Group practical block uses; collections remain optional |
 | 1.21.2 | Bundle | Partial: reward in `6D91380C6EA4B2F5`, one sentence on storage | Teach recipe, capacity and inserting/selecting/removing contents |
@@ -112,3 +112,9 @@ Crafter, Mace and Wind Charge recipes were read from each target's original clie
 History records these as Minecraft 1.21 features. A shared test runs in all three modules to ensure they are present yet absent from the post-1.21.1 novelty view; existing prerequisites and rewards are preserved. This does not yet implement a separate 'newly authored First Torch lessons' view. The six reference cards appear under Trials / Pruefungen; the two Crafter lessons appear in the normal course under Redstone: The Crafter / Redstone: Der Werker. Quest and task IDs, completed progress and Minecraft introduction dates remain unchanged by the move.
 
 Manual bilingual game acceptance remains open. The four potion-effect lessons and the other audit blocks remain unimplemented; this batch is not a declaration that all 1.21 content is complete. The published 1.21.1 Beta is unchanged; the locally rebuilt artifact is a development test state requiring a new release version before any follow-up publication.
+
+## Third implementation batch — 1.21 potion effects
+
+The Trials reference chapter now includes four independent reading cards: Weaving, Oozing, Infestation and Wind Charging. Quests `2A12100000000009`–`2A1210000000000C` and matching `3A121...` tasks are included in all three targets. They explain Awkward Potion ingredients, effect triggers, retreat decisions and Milk clearing useful effects too. No damage, death, brewing or drinking is required for completion. Reading links lead back to the existing Brewing chapter.
+
+The official 1.21 status-effect notes and cached native PotionBrewing sources agree on Cobweb, Slime Block, Stone and Breeze Rod inputs. German potion/effect names were checked against cached native language assets. Existing lessons and progress IDs remain intact; comparison history dates the four additions to Minecraft 1.21, excluding them from changes since 1.21.1. Automated checks cover independent manual completion, translations, links and all target builds; in-game layout acceptance remains pending.

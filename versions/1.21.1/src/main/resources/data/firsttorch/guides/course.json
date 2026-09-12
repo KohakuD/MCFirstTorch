@@ -10669,6 +10669,94 @@
           "prerequisiteQuestIds": [
             "3C3122DF5C0EA192"
           ]
+        },
+        {
+          "id": "2A12100000000009",
+          "order": 6,
+          "titleKey": "quest.firsttorch.mechanics_trials.weaving.title",
+          "descriptionKey": "quest.firsttorch.mechanics_trials.weaving.description",
+          "iconItemId": "minecraft:cobweb",
+          "tasks": [
+            {
+              "id": "3A12100000000009",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a12100000000009.title"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 12
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
+        },
+        {
+          "id": "2A1210000000000A",
+          "order": 7,
+          "titleKey": "quest.firsttorch.mechanics_trials.oozing.title",
+          "descriptionKey": "quest.firsttorch.mechanics_trials.oozing.description",
+          "iconItemId": "minecraft:slime_block",
+          "tasks": [
+            {
+              "id": "3A1210000000000A",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a1210000000000a.title"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 14
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
+        },
+        {
+          "id": "2A1210000000000B",
+          "order": 8,
+          "titleKey": "quest.firsttorch.mechanics_trials.infested.title",
+          "descriptionKey": "quest.firsttorch.mechanics_trials.infested.description",
+          "iconItemId": "minecraft:stone",
+          "tasks": [
+            {
+              "id": "3A1210000000000B",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a1210000000000b.title"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 16
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
+        },
+        {
+          "id": "2A1210000000000C",
+          "order": 9,
+          "titleKey": "quest.firsttorch.mechanics_trials.wind_charged.title",
+          "descriptionKey": "quest.firsttorch.mechanics_trials.wind_charged.description",
+          "iconItemId": "minecraft:breeze_rod",
+          "tasks": [
+            {
+              "id": "3A1210000000000C",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a1210000000000c.title"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 18
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
         }
       ]
     }
