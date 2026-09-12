@@ -136,6 +136,9 @@ tasks.withType(JavaCompile).configureEach {
 
 tasks.withType(Test).configureEach {
     useJUnitPlatform()
+    def vanillaData = layout.buildDirectory.file('moddev/artifacts/neoforge-21.1.248-client-extra-aka-minecraft-resources.jar')
+    inputs.file(vanillaData)
+    systemProperty 'firsttorch.vanillaDataJar', vanillaData.get().asFile.absolutePath
 }
 
 tasks.named('check').configure { dependsOn ':core:check' }

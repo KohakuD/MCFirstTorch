@@ -64,6 +64,7 @@ Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then 
 - [x] Provide separate dependencies, toolchains, run profiles, test directories and clearly labelled JARs for the implemented Minecraft targets. Share compatible logic, guide data and translations without forcing incompatible runtime code into a common module.
 - [ ] Backport the native runtime and review every lesson against `1.21.1` mechanics, recipes, objectives and available content. Maintain English and German together and use exact target-version game assets.
   - [x] Adapt known incompatible items, Iron armour, Netherite lodestone and optional excursion prerequisites in both languages; omit unverified newer captures. Full mechanics/visual acceptance remains open.
+  - [x] Validate crafting diagrams against original 1.21.1 recipes; validate course icons, inventory/tag objectives, item rewards and advancement criteria against native target data and default feature flags.
 - [ ] Record content availability and meaningful lesson differences between `1.21.1` and `26.1.2` as the basis for later comparisons. Minecraft version order is independent of the date a First Torch backport is published.
 - [ ] Validate and release the `1.21.1` edition before proceeding to the `26.2` port. A mod backport does not imply support for downgrading existing Minecraft worlds or importing progress across versions.
 

@@ -122,9 +122,17 @@ Runtime-rendered diagrams use the target game assets, but their layout and appea
 
 ## Installable alpha verification (2026-09-12)
 
-- Full `.gradlew.bat test build` passed: 416 Minecraft 26.1.2 tests, 44 shared-core tests and 176 Minecraft 1.21.1 tests (636 total), without failures, errors or skips.
+- Full `.\gradlew.bat test build` passed: 416 Minecraft 26.1.2 tests, 44 shared-core tests and 176 Minecraft 1.21.1 tests (636 total), without failures, errors or skips.
 - All seven packaging fixtures passed. Both native artifacts passed the unchanged boundary verifier: 197 entries for 26.1.2 and 187 for 1.21.1.
 - The 1.21.1 curriculum contains 345 quests and 95 image references. A target regression requires every retained image to have a native renderer and a nonblank caption in both languages, with no old raster packaged. The 26.1.2 capture regression remains unchanged in its original suite.
 - `:mc1211:runClient` started with the real production mod, Java 21, NeoForge 21.1.248 and native resources initialized. Automated Windows UI control failed before any input because its sandbox helper could not initialize, so there is no claimed visual or fresh-world gameplay acceptance.
 - Reload Gradle in IntelliJ, select **First Torch Client 1.21.1**, and start a fresh test world. Verify welcome, pause-menu/key access, both languages, first manual/automatic quests, reward delivery, enlarged-view clipping, search/reference/trophy screens, and restart persistence. Restart an already-running development client after pulling the final renderer changes.
 - This alpha does not yet implement the 26.2 edition or returning-learner baseline/version filter. Known missing capture replacements and complete target-mechanics review remain release work.
+
+## Native content compatibility gate
+
+The target now checks its crafting catalogs directly against the original 1.21.1 recipe and item-tag data produced by ModDevGradle. The check includes shaped placement (with valid translations/mirroring), shapeless ingredient counts, nested tag membership and output amounts. It also covers the hand-crafting plank step and crafting the Cartography Table. The special flight-one rocket is matched and assembled by Minecraft's own Java recipe, including its three-item output and absence of explosion stars.
+
+Every course chapter/quest icon, inventory objective and item reward resolves to a real item enabled by the default feature flags. Inventory tags and their nested members resolve, and all advancement objectives reference an existing advancement and criterion in the original target data. These are automated compatibility gates, not checks of every prose claim, smelting/brewing behaviour, cartography operations, visual layout or survival progression.
+
+The local play log additionally confirms guide loading, an integrated 1.21.1 world start, player login and clean save/shutdown. This supports runtime integration but does not establish welcome, quest/reward or restart-persistence acceptance. No worlds were changed by this audit.
