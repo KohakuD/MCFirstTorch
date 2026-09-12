@@ -11,3 +11,6 @@ plugins {
 rootProject.name = 'firsttorch'
 
 include 'core'
+
+include 'mc1211'
+project(':mc1211').projectDir = file('versions/1.21.1')

@@ -57,7 +57,8 @@ Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then 
 - [ ] Complete the native API, loader and data/resource-format port assessment.
   - [x] Extract and test shared guide/parsing/validation/progression code on Java 21; retain Minecraft integration tests in the runtime module.
   - [x] Record initial API and content blockers, including the early lodestone progression issue, in `Backport1211.md`.
-  - [ ] Compile and validate the native adapters against the selected 1.21.1 NeoForge toolchain.
+  - [x] Add the isolated `:mc1211` verification module, pinned to Java 21 / NeoForge 21.1.248, and compile the first native progress/welcome data adapters.
+  - [ ] Finish the remaining native adapters, client/runtime integration and target-specific resources.
 - [x] Establish one repository and IntelliJ Gradle project with a Java 21 `:core` module and the existing Java 25 / `26.1.2` runtime. Future Minecraft targets get separate native modules; core classes are merged directly into each native JAR.
 - [ ] Provide separate dependencies, toolchains, run profiles, test directories and clearly labelled JARs for each Minecraft target. Share compatible logic, guide data and translations without forcing incompatible runtime code into a common module.
 - [ ] Backport the native runtime and review every lesson against `1.21.1` mechanics, recipes, objectives and available content. Maintain English and German together and use exact target-version game assets.

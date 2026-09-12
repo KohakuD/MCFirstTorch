@@ -86,7 +86,7 @@ dependencies {
 }
 
 tasks.named('check').configure {
-    dependsOn ':core:check'
+    dependsOn ':core:check', ':mc1211:check'
 }
 
 tasks.withType(Test).configureEach {

@@ -1,0 +1,40 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev'
+}
+
+evaluationDependsOn(':core')
+group = rootProject.mod_group_id
+version = rootProject.mod_version
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+neoForge {
+    version = '21.1.248'
+    addModdingDependenciesTo sourceSets.test
+}
+
+dependencies {
+    implementation project(':core').sourceSets.main.output
+    testImplementation platform('org.junit:junit-bom:5.11.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+// Exercise the same data-contract regressions against the older Minecraft classes.
+sourceSets.test.java {
+    srcDir '../../src/test/java'
+    include '**/WorldProgressDataTest.java', '**/WorldWelcomeDataTest.java', '**/*SavedDataAdapterTest.java'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = 21
+}
+
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+}
+
+tasks.named('check').configure { dependsOn ':core:check' }
+// This target is under construction. Do not produce a misleading installable mod.
+tasks.named('jar').configure { enabled = false }

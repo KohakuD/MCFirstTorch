@@ -5,6 +5,7 @@ All notable player-facing changes are documented here.
 ## 0.14.0-alpha.1 — Unreleased
 
 - Begin the multi-version milestone with a shared Java 21 quest core; the playable edition remains Minecraft 26.1.2.
+- Add native 1.21.1 progress/welcome storage adapters and a separate Java 21 verification module; this is not an installable backport yet.
 - Include the Minecraft target in native artifact filenames. Quest content, stable IDs and progress semantics are unchanged.
 - Minecraft 1.21.1 runtime/content adaptation and the returning-learner version filter remain in development and are not included yet.
 

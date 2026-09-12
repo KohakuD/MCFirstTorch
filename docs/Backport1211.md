@@ -6,7 +6,7 @@ Assessment date: 2026-09-12. This document records the first bounded compatibili
 
 The root Gradle project remains the native Minecraft 26.1.2 / NeoForge 26.1.2.84 / Java 25 target. The new `core` Java-library module uses Java 21 and compiles against Gson 2.10.1, supplied by Minecraft at runtime. It shares only the Minecraft-independent guide model, snapshots, JSON parsing/resource-loading abstraction, validation, progress evaluation and reward-eligibility logic. Existing guide definitions used as core test fixtures still describe the 26.1.2 course.
 
-Minecraft-dependent storage, events, networking, client screens, rendering, game observations and reward execution remain in the root runtime. The core extraction does not provide an installable 1.21.1 mod, a compatible 1.21.1 curriculum, or target-version asset verification. The actual 1.21.1 runtime and its build/run configuration are pending. Keep one repository and IntelliJ Gradle project; introduce a separate target module after the native adapter assessment.
+Minecraft-dependent storage, events, networking, client screens, rendering, game observations and reward execution remain in the root runtime. The core extraction does not provide an installable 1.21.1 mod, a compatible 1.21.1 curriculum, or target-version asset verification. The separate `:mc1211` module under `versions/1.21.1` now pins Java 21 and NeoForge 21.1.248. It compiles native progress/welcome storage adapters and runs the same data-contract tests against 1.21.1. Client/network/lifecycle integration, target curriculum and run profiles are still pending; JAR generation remains disabled. All modules stay in one IntelliJ Gradle project.
 
 ## Content adaptation matrix
 
@@ -45,7 +45,8 @@ This is a proposal, not an implemented or tested progression decision. Verify ch
 
 These are pending investigation areas, not verified API replacements or compatibility guarantees:
 
-- [ ] Select and pin the 1.21.1 NeoForge version, Java 21 toolchain, metadata and data/resource-pack formats. Give the target separate run directories and clearly labelled artifacts.
+- [x] Pin the 1.21.1 verification module to NeoForge 21.1.248 and Java 21, with isolated build/test outputs.
+- [ ] Complete mod metadata, data/resource-pack formats, run profiles and installable artifact configuration.
 - [ ] Audit `Identifier` usages against 1.21.1 `ResourceLocation`, including constructors/factories, registry access and serialization. Compile every native call against the selected target rather than relying on name substitution.
 - [ ] Adapt `SavedData` creation/loading/saving, NBT and registry lookup signatures. Verify welcome acknowledgement, player progress, reward journal persistence, unavailable-state handling and restart behaviour. Do not assume save-format or cross-version world compatibility.
 - [ ] Check NeoForge event classes, registration and lifecycle ordering for reload, login, respawn, disconnect, tick and client setup. Preserve server-authoritative observations and per-player state.
@@ -67,6 +68,16 @@ No Minecraft launch or world manipulation was performed for this assessment. A m
 - Native verification passed for `firsttorch-mc26.1.2-0.14.0-alpha.1.jar` (197 entries); all 24 compiled core class files are included directly, with no nested JAR or new mod dependency.
 - Development launch preparation and its task graph were checked. Maven and Gradle publication metadata were generated locally and contain no separately required core artifact; nothing was published to a package registry.
 - No in-game test has been performed for the module split. Before accepting the development build, reload Gradle in IntelliJ, launch the existing 26.1.2 client, then check welcome, quest completion, rewards, both languages and restart persistence in a fresh test world.
+
+## Native storage implementation
+
+The backport adapters retain schema version 1 and the existing validation rules. Their native `SavedData.save` and `load` methods use the same codecs through NBT; unsupported or incomplete documents fail loading rather than exposing partial state. The shared regression tests are compiled directly from the original test sources, without weakening the 26.1.2 expectations.
+
+The 1.21.1 repositories use the Overworld `DimensionDataStorage`, with legal filenames `firsttorch_progress.dat` and `firsttorch_welcome.dat`. They keep progress and welcome acknowledgement separate, retain historical IDs and protect unreadable existing files from replacement. These are files inside a 1.21.1 world's data directory, not a cross-version world or progress importer. Automated storage tests use temporary directories only.
+
+The earlier GitHub failure for `029e8c4` was in the obsolete valid packaging fixture (`Unexpected boundary result: valid`), after a successful build. The fixture correction already shipped in `0ddd4c5`, whose [GitHub validation passed](https://github.com/KohakuD/MCFirstTorch/actions/runs/34700571311). CI now explicitly provisions both Java 21 and Java 25, and the root build gate also requires the native backport tests.
+
+Native adapter verification passed on 2026-09-12: 16 tests under Minecraft 1.21.1, plus the existing 44 core and 416 Minecraft 26.1.2 tests (476 total). The full `test build`, seven packaging fixtures and the 26.1.2 native JAR verification passed. No in-game launch or installed world was used for this adapter-only step.
 
 ## Official sources
 

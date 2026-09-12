@@ -30,7 +30,7 @@ The active milestone in `docs/Roadmap.md` controls scope and versioning.
 - Minecraft: `26.1.2`
 - Loader: NeoForge `26.1.2.84`
 - Native runtime: `0.14.0-alpha.1` (development; playable target remains 26.1.2)
-- Java toolchain: `25` for the current Minecraft runtime; `21` for the shared `core` module
+- Java toolchain: `25` for the current Minecraft runtime; `21` for the shared `core` and `mc1211` verification modules
 - Mod JARs, launcher instances, worlds, logs, and player progress never belong in Git.
 - Maintain the native Java/datapack implementation; do not add FTB Quests, FTB Library, FTB Teams, KubeJS, or an FTB-progress importer.
 

@@ -12,6 +12,7 @@ The runtime is independent of FTB Quests, FTB Library, FTB Teams, Initially, Kub
 - `core/src/main/java/`: Minecraft-independent guide model, parsing, validation and progression rules (Java 21)
 - `core/src/test/java/`: shared quest-rule tests on Java 21 with Gson 2.10.1
 - `src/main/java/`: Minecraft 26.1.2 native runtime and client interface (Java 25)
+- `versions/1.21.1/`: native Java 21 / NeoForge 21.1.248 backport adapters and tests (`:mc1211`, no installable artifact yet)
 - `src/main/resources/data/firsttorch/guides/`: server guide definitions
 - `src/main/resources/assets/firsttorch/`: translations, icons, and guide illustrations
 - `src/main/templates/`: generated NeoForge metadata templates
@@ -46,9 +47,9 @@ After guide, translation, progression, or interface changes, use a fresh test wo
 
 Open the repository root once in IntelliJ and reload Gradle after pulling the module split. The root project remains the Minecraft `26.1.2` runtime; `:core` is a plain Java library, not a separately installed mod. Gradle selects Java 21 for the shared core and Java 25 for the current runtime. No per-Minecraft IntelliJ project is required.
 
-The root mod declares both source sets for development launches and includes core classes directly in its JAR. Do not install the core JAR, add a nested library JAR, or duplicate shared sources into each target. The root `check` task depends on `:core:check`, so both `test build` and an explicit `:build` retain the shared-rule gate. Use `:core:test` for changes confined to pure quest logic; use the Minecraft test suite for runtime integrations.
+The root mod declares both source sets for development launches and includes core classes directly in its JAR. Do not install the core JAR, add a nested library JAR, or duplicate shared sources into each target. The root `check` task depends on `:core:check` and `:mc1211:check`, so both `test build` and an explicit `:build` retain the shared-rule gate. Use `:core:test` for changes confined to pure quest logic; use the Minecraft test suite for runtime integrations.
 
-The existing `First Torch Client` run configuration still launches `26.1.2`. Dedicated `1.21.1` dependencies, source adapters, run profiles and resources will be added during the actual runtime port. Until then, there is no installable `1.21.1` artifact. See [Backport1211.md](Backport1211.md) for the API/content assessment and pending acceptance.
+The existing `First Torch Client` run configuration still launches `26.1.2`. The `:mc1211` module now pins NeoForge `21.1.248` and Java 21 and implements the first native progress/welcome storage adapters. Run `./gradlew :mc1211:test` (Windows: `.\gradlew.bat :mc1211:test`) for the shared data-contract and target-specific storage tests. The module has no mod entry point, client run configuration or target curriculum yet; JAR generation is disabled until the native runtime is complete. There is no installable `1.21.1` artifact. See [Backport1211.md](Backport1211.md) for the API/content assessment and pending acceptance.
 
 Artifacts now include their Minecraft target in the filename. First Torch release numbers and Minecraft version numbers remain separate; publishing a backport later does not change Minecraft version ordering.
 

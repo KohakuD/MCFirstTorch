@@ -18,7 +18,7 @@ The guided course covers early survival through the Nether, End and independent 
 
 LAN multiplayer smoke tests are accepted; dedicated-server testing is explicitly out of the current scope and dedicated-server operation remains unverified. See the concise [changelog](CHANGELOG.md), [release upload notes](docs/CurseForgeUpload.md), and [licensing review](docs/ReleaseLicensing.md).
 
-The shared quest core now targets Java 21 in preparation for Minecraft 1.21.1. The playable runtime still targets **26.1.2 only**; this development build is not a completed 1.21.1 backport. See [the backport assessment](docs/Backport1211.md).
+The shared quest core and a separate 1.21.1 storage-verification module now target Java 21. The playable runtime still targets **26.1.2 only**; this development build is not a completed 1.21.1 backport. See [the backport assessment](docs/Backport1211.md).
 
 ## Develop in IntelliJ IDEA
 
