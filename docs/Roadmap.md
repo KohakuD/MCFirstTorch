@@ -78,10 +78,10 @@ Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then 
 
 - [x] Record official prerequisites and implement an initial isolated `:mc262` native build. Java 25 / NeoForge 26.2.0.86, five client adapters, all 417 reused target tests and package verification pass. Owner accepted the requested bilingual gameplay/UI smoke checks after the metadata correction. Target content review remains open. See `Port262.md`.
 
-- [ ] Port the native runtime, dependencies and resources to `26.2` while preserving support for the earlier targets.
+- [x] Port the native runtime, dependencies and resources to `26.2` while preserving support for the earlier targets.
 - [ ] Review the Minecraft changes since `26.1.2`, add new lessons and update affected existing lessons in both languages.
-  - [x] Add five optional bilingual Sulfur Caves cards, links and a reading trophy. New-card game acceptance and Friends List guidance remain open.
-- [ ] Extend the content-availability and change history with `26.2`; distinguish newly introduced lessons from substantive revisions and exclude cosmetic wording fixes from the novelty filter.
+  - [x] Add five optional bilingual Sulfur Caves cards, links and a reading trophy. Friends List guidance is implemented; new-card game acceptance remains open.
+- [x] Extend the content-availability and change history with `26.2`; distinguish newly introduced lessons from substantive revisions and exclude cosmetic wording fixes from the novelty filter.
 
 ### Phase 3: Returning-learner welcome and version comparison
 
@@ -91,7 +91,7 @@ Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then 
 - [x] "No" opens all quests. "Yes" asks which earlier supported version the learner knows and opens the relevant new and revised lessons since that baseline.
 - [x] Detect the running Minecraft target and maintain a bundled, explicitly ordered catalogue of published First Torch Minecraft editions. Offer only valid earlier comparison baselines; future targets such as `26.3` become available after their edition is implemented and published. An online catalogue refresh is optional future work, not required for this milestone.
 - [x] Store per-lesson version history and target availability. Comparing `1.21.1` with `26.2` includes relevant changes from both `26.1.2` and `26.2`, shows each quest once and uses the lesson valid for the running target. Later targets extend the same model.
-- [x] Add an accessible top-right icon with bilingual tooltip, clear active state and keyboard/narrator support to change the baseline or return to all quests. Persist the selection per player.
+- [x] Add an accessible top-right icon with a bilingual accessible label, clear active state and keyboard/narrator support (popup tooltips remain disabled consistently with the existing interface) to change the baseline or return to all quests. Persist the selection per player.
 - [x] Keep a single authoritative quest/reward progress state across views. Selecting prior knowledge must not complete hidden quests, grant rewards or import progress.
 - [x] Define and test prerequisite access so returning learners can use the selected lessons without hidden prerequisite dead ends or silently bypassed reward rules. Provide links to required background lessons, hide empty chapters, scope counters clearly and explain empty comparison results.
 
@@ -105,7 +105,9 @@ Implementation and automated checks do not replace the bilingual in-game accepta
 
 ### Acceptance
 
-- [ ] Run focused source/data tests, the full test/build gate and native JAR verification for each installable target artifact.
+Release drafts and remaining manual checks: [26.1.2 and 26.2 preparation](releases/0.14.0-next-editions.md).
+
+- [x] Run focused source/data tests, the full test/build gate and native JAR verification for each installable target artifact. Latest code baseline: `13cf4bc`, 1,077 tests, no failures/errors/skips; all three JAR boundary checks passed.
 - [ ] Test each target with fresh profiles in English and German: welcome choices, baseline selection, cumulative comparison results, all-quests switching, prerequisite access, tasks, rewards and persistence after restart.
 - [ ] Verify that each target packages only compatible content and original target-version assets, and that normal `26.1.2` behaviour remains intact.
 

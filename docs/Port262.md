@@ -1,6 +1,6 @@
 # Minecraft 26.2 port preparation
 
-The first native 26.2 development build is implemented; curriculum additions and game acceptance remain in progress. The owner confirmed the 1.21.1 Beta upload on 2026-09-12 and authorised starting this phase.
+The native 26.2 port, five Sulfur reference cards, Friends List guidance and returning-learner comparison are implemented. Initial gameplay and the creature-preview fix are owner-accepted; final comparison and new-card acceptance remain open. See [current release preparation](releases/0.14.0-next-editions.md). The dated sections below retain the implementation history. The owner confirmed the 1.21.1 Beta upload on 2026-09-12 and authorised starting this phase.
 
 ## Verified target
 

@@ -7,10 +7,16 @@ All notable player-facing changes are documented here.
 - Fix the 1.21.1 pause-menu entry appearing below the menu: ignore the title when identifying button rows, retaining collision-safe placement in small windows.
 
 - Add a first installable Minecraft 1.21.1 development edition alongside 26.1.2, with separate IntelliJ profiles and target-labelled JARs sharing a Java 21 quest core.
-- Port the native browser, original-game renderers, networking, tasks, rewards and persistence to NeoForge 21.1.248 / Java 21. In-game acceptance is still pending.
+- Port the native browser, original-game renderers, networking, tasks, rewards and persistence to NeoForge 21.1.248 / Java 21. The owner accepted the named bilingual UI and early gameplay checks and confirmed the 1.21.1 Beta upload.
 - Adapt both languages for Iron armour, available items and Netherite lodestones. Ordinary excursions no longer require the advanced lodestone branch. Preserve IDs for retained concepts and rewards; exclude the unavailable Creaking reference.
 - Include all fifteen shared screenshots in the backport unchanged, following owner confirmation of suitability for 1.21.1 and 26.2. Native recipe models remain available.
-- The 26.2 edition and returning-learner version filter remain planned and are not included yet.
+- Add the Minecraft 26.2 edition on NeoForge 26.2.0.86 / Java 25, with a wide mod-list banner and corrected loader metadata.
+- Add five bilingual Sulfur Caves reference cards, their reading links and trophy on 26.2; extend the reading introduction with Friends List guidance.
+- Add a returning-learner welcome and Clock button on 26.1.2 and 26.2. Choose an earlier Minecraft edition to read cumulative new and revised lessons, with a concrete explanation of each change.
+- Keep comparison search and chapter counters scoped to the displayed lessons. Open prerequisite background cards with a return path; switching views never completes quests or grants rewards.
+- Remember the comparison baseline locally per player and Minecraft target. The 1.21.1 edition has no earlier comparison baseline.
+- Fix the blank comparison icon and a 26.2 creature-preview crash. Remove obsolete native-alpha wording from player-facing introductions in all targets.
+- Final comparison and new-card in-game acceptance remains open; these development builds have not been published as the next 26.1.2/26.2 release.
 ## 0.13.0-beta.2 — 2026-09-10
 
 - Align accessibility at the bottom right of the header, with the unlocked reference library immediately to its left.

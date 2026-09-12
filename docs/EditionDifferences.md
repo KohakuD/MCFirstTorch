@@ -1,6 +1,6 @@
 # Edition differences
 
-Initial comparison: Minecraft 1.21.1 to 26.1.2. Minecraft target order is independent of First Torch publication dates. This is a reviewed seed for the returning-learner history, not an implemented filter or a claim that every Minecraft change has a lesson.
+Initial comparison: Minecraft 1.21.1 to 26.1.2. Minecraft target order is independent of First Torch publication dates. This is a reviewed seed for the returning-learner history, not a claim that every Minecraft change has a lesson.
 
 ## Availability
 
@@ -29,9 +29,9 @@ The shared Trial Chambers chapter `70A7B8C9D0E1F203` retains Breeze and Bogged i
 - Bundle-to-Chest icons, removal of a Creaking reference link, changed chapter/trophy captions, explicit version wording in the Shulker explanation (`6FEC02D106FBA924`) and screenshot reuse are presentation/compatibility differences, not novelty events.
 - `0B875B8819CB3C72`: the newer Shulker Box explanation also warns that a Copper Chest cannot substitute for an ordinary Chest. The actual crafting recipe is unchanged.
 
-## Remaining implementation
+## Comparison policy
 
-Translate this record into explicit per-lesson target availability and substantive revision metadata when implementing the version filter. Do not derive novelty from arbitrary JSON/text diffs, modified dates, screenshots or reward changes. The cumulative 1.21.1-to-26.2 view will combine these reviewed changes with the separately reviewed 26.2 additions, deduplicate quest IDs, and retain one progress/reward state.
+This record is implemented in the explicit per-lesson history and target availability used by the version filter. Do not derive novelty from arbitrary JSON/text diffs, modified dates, screenshots or reward changes. The cumulative 1.21.1-to-26.2 view will combine these reviewed changes with the separately reviewed 26.2 additions, deduplicate quest IDs, and retain one progress/reward state.
 ## Minecraft 26.2 additions
 
 The optional Sulfur Caves reference chapter `7A26200000000001` introduces five genuinely new lessons, available only in 26.2:
@@ -44,15 +44,15 @@ The optional Sulfur Caves reference chapter `7A26200000000001` introduces five g
 | `2A26200000000004` | Caution around absorbed Sulfur Cube blocks |
 | `2A26200000000005` | Optional Sulfur/Cinnabar building materials |
 
-These are reading confirmations, not completed physical experiments. Each unlocks after the existing reference introduction; none gates existing course quests or grants items. The future 1.21.1-to-26.2 comparison includes these IDs alongside the substantive 26.1.2 revisions above. The comparison filter itself is not yet implemented.
+These are reading confirmations, not completed physical experiments. Each unlocks after the existing reference introduction; none gates existing course quests or grants items. The future 1.21.1-to-26.2 comparison includes these IDs alongside the substantive 26.1.2 revisions above. The comparison filter is implemented; final in-game acceptance remains pending.
 
 The existing reading introduction `32B4C6D8E0F21357` gains substantive 26.2 Friends List guidance (menu/default key/settings and personal quest progress). Record it as a revised lesson for the future comparison, not a new quest ID.
 
 ## Implemented comparison core
 
-`FirstTorchEditionHistory` records the reviewed semantic changes in the shared Java 21 core. `EditionHistory` uses explicit Minecraft ordering, accepts publication eligibility from the future runtime catalogue, intersects changes with the loaded target quests, deduplicates repeated revisions, and returns separate changed/context ID sets. Prerequisite closure includes ALL/ANY alternatives as navigable background; it never grants completion or rewards. No filtered GuideSnapshot is constructed, so original validation and server eligibility remain intact.
+`FirstTorchEditionHistory` records the reviewed semantic changes in the shared Java 21 core. `EditionHistory` uses explicit Minecraft ordering, accepts publication eligibility from the bundled runtime catalogue, intersects changes with the loaded target quests, deduplicates repeated revisions, and returns separate changed/context ID sets. Prerequisite closure includes ALL/ANY alternatives as navigable background; it never grants completion or rewards. No filtered GuideSnapshot is constructed, so original validation and server eligibility remain intact.
 
-The tested 1.21.1-to-26.2 selection contains 13 changed lessons; 26.1.2-to-26.2 contains six (five sulfur cards plus the revised reading introduction). Recipe/route context, reward substitutions and cosmetic fixes do not count as new lessons. UI integration, current-target detection, published baseline catalogue, per-player preference storage and accessible prerequisite navigation remain outstanding.
+The tested 1.21.1-to-26.2 selection contains 13 changed lessons; 26.1.2-to-26.2 contains six (five sulfur cards plus the revised reading introduction). Recipe/route context, reward substitutions and cosmetic fixes do not count as new lessons. UI integration, current-target detection, the bundled baseline catalogue, local per-player preference storage and prerequisite navigation are implemented. Final bilingual in-game acceptance remains outstanding.
 
 ## Comparison presentation correction
 
