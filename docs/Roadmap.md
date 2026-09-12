@@ -163,3 +163,7 @@ For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb
 - [x] Owner accepted the animal additions and plant readings in game.
 - [x] Add seven 1.21.6 travel readings: Dried Ghast, growth/care, Harness, flight/landing, Leads, Saddle and Locator Bar.
 - [ ] Accept the travel block in both languages; continue with Copper sorting and Shelf coverage.
+
+- [x] Owner accepted the Ghast and transport block.
+- [x] Add five Copper sorting/Shelf references in 26.1.2/26.2, dated to 1.21.9.
+- [ ] Accept Copper sorting/Shelf readings in game; continue with 1.21.11 mounts and Spear coverage.
