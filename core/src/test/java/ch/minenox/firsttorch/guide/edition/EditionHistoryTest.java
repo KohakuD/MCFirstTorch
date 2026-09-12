@@ -52,6 +52,20 @@ final class EditionHistoryTest {
         assertThrows(IllegalArgumentException.class, () -> history.compare("a", "a", snapshot()));
         assertThrows(IllegalArgumentException.class, () -> history.compare("unknown", "b", snapshot()));
     }
+    @Test void realHistoryUsesMinecraftIntroductionRatherThanFirstTorchTargetLabel() {
+        var ids = List.of("1CA0B0C0D0E00003", "38D24F61E9DA3570", "59CBED086F24A137", "4BBE2FCA33A44E31");
+        var quests = ids.stream().map(id -> new QuestDefinition(id, ids.indexOf(id), "q.title", "q.desc",
+                new QuestPosition(ids.indexOf(id), 0), List.<String>of())).toList();
+        var snapshot = new GuideSnapshot(List.of(new GuideDefinition(1, "2000000000000001", "guide.title", "guide.desc",
+                List.of(new ChapterDefinition("3000000000000001", 0, "chapter.title", "chapter.desc", quests)))));
+        var history = FirstTorchEditionHistory.create();
+        assertEquals(Set.copyOf(ids), history.compare("1.21.1", "26.1.2", snapshot).changedQuestIds());
+        assertEquals(Set.of("59CBED086F24A137", "4BBE2FCA33A44E31"),
+                history.compare("1.21.4", "26.1.2", snapshot).changedQuestIds());
+        assertEquals(Set.of("4BBE2FCA33A44E31"), history.compare("1.21.5", "26.1.2", snapshot).changedQuestIds());
+        assertTrue(history.compare("1.21.9", "26.1.2", snapshot).changedQuestIds().isEmpty());
+    }
+
     private static GuideSnapshot snapshot() {
         var quests = List.of(new QuestDefinition(A, 0, "q.a", "q.a.desc", new QuestPosition(0, 0), List.of()),
                 new QuestDefinition(B, 1, "q.b", "q.b.desc", new QuestPosition(1, 0), List.of(A)),

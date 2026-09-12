@@ -128,4 +128,6 @@ For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb
 ### Coverage remediation progress — 2026-09-13
 
 - [x] Add the first four 26.1 reference lessons in 26.1.2/26.2: Golden Dandelion, Name Tag crafting, direct Stonecutter recipes and Copper trumpet sounds. Native recipe checks and comparison exclusion tests are included.
-- [ ] Verify this batch in German and English in game. Remaining coverage work and release hold remain in CurriculumCoverageAudit.md.
+- [x] Owner accepted all four 26.1 cards as working and correct on 2026-09-13. Remaining coverage work and release hold remain in CurriculumCoverageAudit.md.
+- [x] Inventory major gameplay additions across 1.21–26.2, distinguish missing teaching from mentions, and define ordered remediation blocks. Detailed authoring review remains per block.
+- [x] Attribute existing history events to their actual Minecraft releases (1.21.4/1.21.5/1.21.9), independently of supported First Torch targets.
