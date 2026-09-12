@@ -18,7 +18,7 @@ final class LiveDetailsRenderer {
     private LiveDetailsRenderer() {}
 
     static int draw(GuiGraphicsExtractor graphics, Font font, Rect panel, QuestDefinition quest,
-            ProgressPayload progress, int scroll, int referenceCount) {
+            ProgressPayload progress, int scroll, int referenceCount, Component description) {
         if (quest == null) return 0;
         int x = panel.x() + 10, w = Math.max(1, panel.width() - 20);
         int top = panel.y() + 10, bottom = panel.bottom() - 34;
@@ -39,7 +39,7 @@ final class LiveDetailsRenderer {
         } else {
             y = text(graphics, font, title, x, y, w, FirstTorchTheme.TEXT) + 8;
         }
-        y = text(graphics, font, Component.translatable(quest.descriptionKey()), x, y, w, FirstTorchTheme.MUTED) + 12;
+        y = text(graphics, font, description, x, y, w, FirstTorchTheme.MUTED) + 12;
         if (referenceCount > 0) {
             y = text(graphics, font, Component.translatable("screen.firsttorch.reference.more"), x, y, w, FirstTorchTheme.GOLD) + 4;
             y += referenceCount * 24;
@@ -174,13 +174,13 @@ final class LiveDetailsRenderer {
     }
 
     /** Shared text metrics keep clickable controls aligned with the scrolled content. */
-    static int referenceTop(Font font, Rect panel, QuestDefinition quest) {
+    static int referenceTop(Font font, Rect panel, QuestDefinition quest, Component description) {
         int w = Math.max(1, panel.width() - 20);
         int y = panel.y() + 10;
         Component title = Component.translatable(quest.titleKey()).withStyle(s -> s.withBold(true));
         y += w >= 150 ? Math.max(55, 18 + font.split(title, w - 55).size() * 10)
                 : font.split(title, w).size() * 10 + 8;
-        y += font.split(Component.translatable(quest.descriptionKey()), w).size() * 10 + 12;
+        y += font.split(description, w).size() * 10 + 12;
         return y + font.split(Component.translatable("screen.firsttorch.reference.more"), w).size() * 10 + 4;
     }
 

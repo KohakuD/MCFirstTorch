@@ -193,10 +193,17 @@ class FirstTorchBrowserScreen extends Screen {
         positionReferenceButtons();
     }
 
+    private Component lessonDescription() {
+        if (viewModel.quest() == null) return Component.empty();
+        Component original = Component.translatable(viewModel.quest().descriptionKey());
+        String key = baseline == null ? null : EditionLessonChanges.key(viewModel.quest().id());
+        return key == null ? original : Component.translatable(key).append("\n\n").append(original);
+    }
+
     private void positionReferenceButtons() {
         if (referenceButtons.isEmpty() || viewModel.quest() == null) return;
         Rect panel = layout.details();
-        int y = LiveDetailsRenderer.referenceTop(font, panel, viewModel.quest()) - detailsScroll;
+        int y = LiveDetailsRenderer.referenceTop(font, panel, viewModel.quest(), lessonDescription()) - detailsScroll;
         for (var control : referenceButtons) {
             control.setY(y);
             control.visible = y >= panel.y() + 10 && y + control.getHeight() <= panel.bottom() - 34;
@@ -354,7 +361,7 @@ class FirstTorchBrowserScreen extends Screen {
                     : Component.translatable("screen.firsttorch.edition.active", baseline);
             addRenderableWidget(button(x - size - 5, y + size + 4, size, size, Component.empty(),
                     ignored -> openEditionChoice(), label, Tooltip.create(label),
-                    FirstTorchButton.Kind.NAVIGATION, baseline != null)
+                    FirstTorchButton.Kind.REFERENCE_INDEX, baseline != null)
                     .preview(new ItemStack(Items.CLOCK), false, false));
         }
         var references = ReferenceIndex.chapters(viewModel.chapters());
@@ -764,7 +771,7 @@ class FirstTorchBrowserScreen extends Screen {
         else if (viewModel.guide() == null) drawEmptyState(text);
         else if (preview()) PreviewDetailsRenderer.draw(graphics, font, layout.details(), viewModel.quest());
         else {
-            detailsMaxScroll = LiveDetailsRenderer.draw(graphics, font, layout.details(), viewModel.quest(), observedProgress, detailsScroll, referenceButtons.size());
+            detailsMaxScroll = LiveDetailsRenderer.draw(graphics, font, layout.details(), viewModel.quest(), observedProgress, detailsScroll, referenceButtons.size(), lessonDescription());
             detailsScroll = Math.min(detailsScroll, detailsMaxScroll);
         }
         Rect footer = layout.footer();

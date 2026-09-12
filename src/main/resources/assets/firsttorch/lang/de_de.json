@@ -734,5 +734,12 @@
   "screen.firsttorch.edition.background_link": "Vorwissen: %s",
   "screen.firsttorch.edition.chapter": "Gefiltertes Kapitel",
   "screen.firsttorch.edition.empty": "Hier gibt es keine geänderten Lektionen",
-  "screen.firsttorch.edition.empty_hint": "Wähle über das Uhr-Symbol eine andere Version oder zeige alle Quests an."
+  "screen.firsttorch.edition.empty_hint": "Wähle über das Uhr-Symbol eine andere Version oder zeige alle Quests an.",
+  "screen.firsttorch.edition.change.copper": "Geändert: Kupfer ist jetzt eine weitere Möglichkeit für frühe Rüstung. Die grundlegende Ausrüstungslektion kennst du bereits; neu ist die Materialwahl.",
+  "screen.firsttorch.edition.change.lodestone": "Geändertes Rezept: Den Leitstein gab es bereits in 1.21.1. Er benötigt jetzt einen Eisenbarren statt eines Netheritbarrens. Die acht gemeißelten Steinziegel und seine Verwendung mit einem Kompass bleiben gleich.",
+  "screen.firsttorch.edition.change.boat": "Zusätzliches Material: Boote gab es bereits in 1.21.1. Blasseiche ist jetzt eine weitere Holzart dafür. Die grundlegende Herstellung und Steuerung bleiben gleich.",
+  "screen.firsttorch.edition.change.bastion": "Ergänzter Sicherheitshinweis: Bastionen und die Piglin-Regeln gab es bereits in 1.21.1. Kupfertruhen kommen als bewachte Behälter hinzu; die Bastionserkundung selbst ist keine neue Mechanik.",
+  "screen.firsttorch.edition.change.friends": "Ergänzte Erklärung: Die Leseeinführung erklärt jetzt auch die in 26.2 hinzugefügte Freundesliste. Die grundlegende Bedienung von First Torch bleibt gleich.",
+  "screen.firsttorch.edition.change.creaking": "Neu seit 1.21.1: Diese Karte erklärt den Knarz und seine Verbindung zum Blassen Garten.",
+  "screen.firsttorch.edition.change.sulfur": "Neu in 26.2: Diese Karte erklärt einen Teil der neuen Schwefelhöhlen-Inhalte."
 }

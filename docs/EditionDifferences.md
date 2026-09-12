@@ -53,3 +53,9 @@ The existing reading introduction `32B4C6D8E0F21357` gains substantive 26.2 Frie
 `FirstTorchEditionHistory` records the reviewed semantic changes in the shared Java 21 core. `EditionHistory` uses explicit Minecraft ordering, accepts publication eligibility from the future runtime catalogue, intersects changes with the loaded target quests, deduplicates repeated revisions, and returns separate changed/context ID sets. Prerequisite closure includes ALL/ANY alternatives as navigable background; it never grants completion or rewards. No filtered GuideSnapshot is constructed, so original validation and server eligibility remain intact.
 
 The tested 1.21.1-to-26.2 selection contains 13 changed lessons; 26.1.2-to-26.2 contains six (five sulfur cards plus the revised reading introduction). Recipe/route context, reward substitutions and cosmetic fixes do not count as new lessons. UI integration, current-target detection, published baseline catalogue, per-player preference storage and accessible prerequisite navigation remain outstanding.
+
+## Comparison presentation correction
+
+The owner reported a blank comparison button and retained lessons appearing to be newly introduced. The header now uses the item-rendering button path for its Clock icon. Each selected lesson has a bilingual change summary before its full explanation: Boats identify only the additional Pale Oak material, Bastion advice identifies Copper Chests, and the Lodestone identifies Iron replacing Netherite. Other selected cards likewise distinguish additions from revisions. Normal and background views keep their original descriptions. Reference-button positioning uses the same composed description as rendering to preserve scrolling alignment.
+
+The selection remains new **and revised** lessons, not just newly introduced Minecraft objects. Manual verification of the Clock and change-summary layout in both languages remains pending.

@@ -1704,5 +1704,12 @@
   "screen.firsttorch.edition.background_link": "Background: %s",
   "screen.firsttorch.edition.chapter": "Filtered chapter",
   "screen.firsttorch.edition.empty": "No changed lessons here",
-  "screen.firsttorch.edition.empty_hint": "Use the clock icon to select another version or show all quests."
+  "screen.firsttorch.edition.empty_hint": "Use the clock icon to select another version or show all quests.",
+  "screen.firsttorch.edition.change.copper": "Changed: Copper is now another option for early armour. The basic equipment lesson is already familiar; the material option is new.",
+  "screen.firsttorch.edition.change.lodestone": "Changed recipe: The Lodestone already existed in 1.21.1. It now uses an Iron Ingot instead of a Netherite Ingot; the eight Chiseled Stone Bricks and its use with a Compass stay the same.",
+  "screen.firsttorch.edition.change.boat": "Additional material: Boats already existed in 1.21.1. Pale Oak is now another wood option. The basic crafting and steering instructions remain the same.",
+  "screen.firsttorch.edition.change.bastion": "Updated safety advice: Bastions and Piglin rules already existed in 1.21.1. Copper Chests are an additional guarded container; this is not a new Bastion exploration mechanic.",
+  "screen.firsttorch.edition.change.friends": "Updated guidance: The reading introduction now also explains the Friends List added in 26.2. The basic use of First Torch remains the same.",
+  "screen.firsttorch.edition.change.creaking": "New since 1.21.1: This card introduces the Creaking and its connection to the Pale Garden.",
+  "screen.firsttorch.edition.change.sulfur": "New in 26.2: This card explains part of the Sulfur Caves content."
 }
