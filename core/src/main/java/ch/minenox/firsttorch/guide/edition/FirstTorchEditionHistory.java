@@ -11,7 +11,8 @@ public final class FirstTorchEditionHistory {
         var changes = new ArrayList<EditionHistory.Change>();
         for (int i = 1; i <= 12; i++)
             changes.add(new EditionHistory.Change("2A121000000000%02X".formatted(i), "1.21", NEW));
-        changes.add(new EditionHistory.Change("1CA0B0C0D0E00003", "1.21.4", NEW));
+        for (int i = 3; i <= 7; i++)
+            changes.add(new EditionHistory.Change("1CA0B0C0D0E000%02X".formatted(i), "1.21.4", NEW));
         changes.add(new EditionHistory.Change("38D24F61E9DA3570", "1.21.4", REVISED));
         changes.add(new EditionHistory.Change("59CBED086F24A137", "1.21.5", REVISED));
         for (var id : List.of("4A28C6E10D735BF9", "6C4AE8F31D957B20", "18A6D3F90C754BE2", "4BBE2FCA33A44E31"))

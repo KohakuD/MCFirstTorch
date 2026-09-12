@@ -137,3 +137,7 @@ For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb
 - [ ] Accept the expanded Trials block in game in both languages; complete the later-update blocks before release.
 
 - [x] Separate Pale Garden from Trial Chamber references, move Breeze/Bogged without changing quest IDs, and group Trial Chamber cards into four compact thematic rows.
+
+- [x] Owner accepted the separated categories and compact Trial Chamber layout.
+- [x] Add four Pale Garden readings (wood/moss, Heart, Resin, Eyeblossoms) in 26.1.2/26.2, dated to Minecraft 1.21.4.
+- [ ] Accept the expanded Pale Garden readings in game; Bundle coverage remains next.
