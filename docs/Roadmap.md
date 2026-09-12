@@ -141,3 +141,7 @@ For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb
 - [x] Owner accepted the separated categories and compact Trial Chamber layout.
 - [x] Add four Pale Garden readings (wood/moss, Heart, Resin, Eyeblossoms) in 26.1.2/26.2, dated to Minecraft 1.21.4.
 - [ ] Accept the expanded Pale Garden readings in game; Bundle coverage remains next.
+
+- [x] Owner accepted the expanded Pale Garden readings.
+- [x] Add optional Bundle capacity and inventory-control lessons after the storage routine in 26.1.2/26.2; preserve the existing reward and date comparison entries to 1.21.2.
+- [ ] Accept Bundle controls and layout in game; continue with the 1.21.5 animal/plant block.

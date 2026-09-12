@@ -17,16 +17,16 @@ final class StorageChapterTest {
         var chapter = snapshot().guides().getFirst().chapters().get(15);
         assertEquals("2CEA40698DF5173B", chapter.id());
         assertEquals(8, chapter.order());
-        assertEquals(QUESTS, chapter.quests().stream().map(q -> q.id()).toList());
+        assertEquals(QUESTS, chapter.quests().subList(0, 5).stream().map(q -> q.id()).toList());
         assertEquals(List.of("42F68D51B39E074C"), chapter.quests().getFirst().prerequisiteQuestIds());
         for (int i = 1; i < QUESTS.size(); i++) assertEquals(List.of(QUESTS.get(i - 1)), chapter.quests().get(i).prerequisiteQuestIds());
         assertEquals(List.of(TaskDefinition.Type.INVENTORY, TaskDefinition.Type.MANUAL, TaskDefinition.Type.INVENTORY_TAG,
-                TaskDefinition.Type.MANUAL, TaskDefinition.Type.MANUAL), chapter.quests().stream().map(q -> q.tasks().getFirst().type()).toList());
+                TaskDefinition.Type.MANUAL, TaskDefinition.Type.MANUAL), chapter.quests().subList(0, 5).stream().map(q -> q.tasks().getFirst().type()).toList());
         assertEquals(3, chapter.quests().getFirst().tasks().getFirst().count());
         assertEquals(3, chapter.quests().get(2).tasks().getFirst().count());
         assertEquals(3, chapter.quests().get(1).rewards().getFirst().amount());
-        assertEquals(1, chapter.quests().getLast().rewards().getFirst().amount());
-        assertEquals(5, chapter.quests().getLast().rewards().get(1).amount());
+        assertEquals(1, chapter.quests().get(4).rewards().getFirst().amount());
+        assertEquals(5, chapter.quests().get(4).rewards().get(1).amount());
     }
 
     @Test void inventoryThresholdsAreAutomaticButStoragePracticeIsNot() throws Exception {

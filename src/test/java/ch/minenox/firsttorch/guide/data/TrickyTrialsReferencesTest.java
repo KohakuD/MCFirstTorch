@@ -80,4 +80,27 @@ class TrickyTrialsReferencesTest {
             assertTrue(card.rewards().isEmpty());
         }
     }
+    @Test void bundlePracticeIsOptionalAndNotProvenByPossession() {
+        var guide = GuideJson.read(getClass().getResourceAsStream("/data/firsttorch/guides/course.json"));
+        var snapshot = new GuideSnapshot(List.of(guide));
+        var all = guide.chapters().stream().flatMap(c -> c.quests().stream()).toList();
+        var cards = all.stream().filter(q -> q.id().startsWith("2A2120000000000")).toList();
+        boolean modern = all.stream().anyMatch(q -> q.id().equals("1CA0B0C0D0E00003"));
+        assertEquals(modern ? 2 : 0, cards.size());
+        if (!modern) return;
+        assertEquals(List.of("6D91380C6EA4B2F5"), cards.getFirst().prerequisiteQuestIds());
+        assertEquals(List.of(cards.getFirst().id()), cards.getLast().prerequisiteQuestIds());
+        var ready = new ch.minenox.firsttorch.guide.progress.ProgressState(
+                java.util.Set.of(), java.util.Set.of("6D91380C6EA4B2F5", cards.getFirst().id()));
+        var supplied = ch.minenox.firsttorch.guide.progress.TaskEvaluator.evaluate(snapshot, ready, key -> 999);
+        assertFalse(supplied.completedQuestIds().contains(cards.getLast().id()));
+        var done = ch.minenox.firsttorch.guide.progress.TaskEvaluator.confirm(snapshot, ready,
+                cards.getLast().id(), cards.getLast().tasks().getFirst().id(), key -> 0);
+        assertTrue(done.completedQuestIds().contains(cards.getLast().id()));
+        assertTrue(cards.stream().allMatch(q -> q.rewards().isEmpty()));
+        var ids = cards.stream().map(q -> q.id()).collect(Collectors.toSet());
+        var history = FirstTorchEditionHistory.create();
+        assertTrue(history.compare("1.21.1", "26.1.2", snapshot).changedQuestIds().containsAll(ids));
+        assertTrue(history.compare("26.1.2", "26.2", snapshot).changedQuestIds().stream().noneMatch(ids::contains));
+    }
 }

@@ -128,3 +128,9 @@ Chapter `70A7B8C9D0E1F203` is now Pale Garden, retaining the Creaking card in 26
 ## Pale Garden expansion
 
 Four independent bilingual readings extend the preserved Creaking card to a five-card compact grid: wood/moss, Creaking Heart, Resin and Eyeblossoms. Quest IDs `1CA0B0C0D0E00004`–`07` and task IDs `2CA0B0C0D0E00004`–`07` are present only in 26.1.2/26.2, with history attributed to Minecraft 1.21.4. All cards link back to Creaking safety and require reading only. Native target JAR recipes verified the Heart's vertical log/resin/log pattern, nine-clump storage block and clump smelting. The official 1.21.4 release notes supply the biome, Heart, moss and flower behaviour. Layout/reading acceptance remains open; the owner accepted the preceding category split and Trial Chamber grid.
+
+## Bundle teaching
+
+Two optional Storage lessons (`2A21200000000001`/`02`, tasks `3A21200000000001`/`02`) follow the existing return-home routine in 26.1.2/26.2. They teach the string-over-leather recipe, shared stack capacity and a safe two-material inventory exercise. Original storage rewards and prerequisite IDs remain intact; later course chapters do not depend on the extension. The chapter uses a compact three-column grid. These lessons are absent in 1.21.1 and dated to Minecraft 1.21.2 for cumulative comparison.
+
+Recipe data was read from both target client JARs. Cached native BundleItem source verifies insertion by primary click with a carried item and extraction by secondary click with an empty cursor; instructions deliberately specify that the Bundle stays in its inventory slot. Existing reward possession cannot auto-complete the manual practice. Owner acceptance of the preceding Pale Garden block is recorded; Bundle controls/layout still need in-game acceptance.
