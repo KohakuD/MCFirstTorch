@@ -32,3 +32,16 @@ The shared Trial Chambers chapter `70A7B8C9D0E1F203` retains Breeze and Bogged i
 ## Remaining implementation
 
 Translate this record into explicit per-lesson target availability and substantive revision metadata when implementing the version filter. Do not derive novelty from arbitrary JSON/text diffs, modified dates, screenshots or reward changes. The cumulative 1.21.1-to-26.2 view will combine these reviewed changes with the separately reviewed 26.2 additions, deduplicate quest IDs, and retain one progress/reward state.
+## Minecraft 26.2 additions
+
+The optional Sulfur Caves reference chapter `7A26200000000001` introduces five genuinely new lessons, available only in 26.2:
+
+| Quest ID | Topic |
+| --- | --- |
+| `2A26200000000001` | Recognising Sulfur Caves and preserving an exit |
+| `2A26200000000002` | Avoiding sulfur gas and geysers |
+| `2A26200000000003` | Hanging Sulfur Spike hazards |
+| `2A26200000000004` | Caution around absorbed Sulfur Cube blocks |
+| `2A26200000000005` | Optional Sulfur/Cinnabar building materials |
+
+These are reading confirmations, not completed physical experiments. Each unlocks after the existing reference introduction; none gates existing course quests or grants items. The future 1.21.1-to-26.2 comparison includes these IDs alongside the substantive 26.1.2 revisions above. The comparison filter itself is not yet implemented.

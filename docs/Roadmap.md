@@ -80,6 +80,7 @@ Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then 
 
 - [ ] Port the native runtime, dependencies and resources to `26.2` while preserving support for the earlier targets.
 - [ ] Review the Minecraft changes since `26.1.2`, add new lessons and update affected existing lessons in both languages.
+  - [x] Add five optional bilingual Sulfur Caves cards, links and a reading trophy. New-card game acceptance and Friends List guidance remain open.
 - [ ] Extend the content-availability and change history with `26.2`; distinguish newly introduced lessons from substantive revisions and exclude cosmetic wording fixes from the novelty filter.
 
 ### Phase 3: Returning-learner welcome and version comparison

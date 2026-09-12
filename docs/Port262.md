@@ -21,7 +21,7 @@ The first native 26.2 development build is implemented; curriculum additions and
 The release adds Sulfur Caves, Sulfur Cubes, Sulfur/Cinnabar blocks and sulfur hazards, plus a Friends List. These justify investigating a safe cave-exploration branch, a creature reference and revised multiplayer guidance. This is a curriculum proposal, not a complete feature inventory or approved quest text. Confirm mechanics, original assets and translated in-game names before authoring the lessons.
 
 Record new and substantively revised lesson IDs in the edition history. Cosmetic changes, renderer adaptations, reward substitutions and screenshot reuse must not populate the returning-learner filter. The future cumulative view must retain one authoritative progress/reward state.
-## Initial native port — 2026-09-12
+## Initial native port â€” 2026-09-12
 
 The isolated `:mc262` module uses Java 25 and NeoForge `26.2.0.86`. Candidate `.87` fails while recompiling Minecraft (`HolderSet.contents` access mismatch), before compiling First Torch; `.86` passes. The pin records the tested version, not a claim that no newer release exists.
 
@@ -38,3 +38,9 @@ The owner reported the loader warning about deprecated `logoFile`. The 26.2 meta
 The owner confirmed that all requested initial 26.2 smoke checks work after the metadata correction (2026-09-12): welcome/pause entry, early quest and reward flow, illustrations and enlarged view in German and English. The mod-list screenshot additionally confirms the client running in a world. New 26.2 lessons, exhaustive mechanics review and returning-learner comparison remain separate work.
 
 The mod-details header now has a separate wide First Torch banner via `bannerFile`, while `iconFile` retains the square list icon. NeoForge fits this header within 250 x 50 GUI pixels, so the banner uses a compact horizontal wordmark. Restart the client to reload mod metadata and verify the header in the mod list.
+
+## Sulfur reference batch
+
+The owner accepted the banner. Five bilingual safety cards now form a target-only reference chapter with native item icons, mining-context links and a reading trophy. Names were checked against installed 26.2 English/German language assets. Mechanics were reviewed against official 26.2 notes and Vanilla sources/data. All earlier 71 chapters remain equal after parsing; no old quest gains a prerequisite.
+
+Full test/build and all three JAR verifiers pass. Target tests retain explicit expanded counts; earlier target expectations are unchanged. In-game acceptance of the five new cards, links and trophy remains pending. Friends List guidance and returning-learner filtering remain open.

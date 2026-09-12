@@ -51,7 +51,14 @@ var syncSharedSources = tasks.register('syncSharedSources', Sync) {
     into layout.buildDirectory.dir('generated/sources/shared')
 }
 sourceSets.main.java.srcDir syncSharedSources
-sourceSets.test.java.srcDir '../../src/test/java'
+def targetTestDirectory = file('src/test/java')
+var syncSharedTests = tasks.register('syncSharedTests', Sync) {
+    from('../../src/test/java') {
+        exclude { details -> new File(targetTestDirectory, details.relativePath.toString()).isFile() }
+    }
+    into layout.buildDirectory.dir('generated/sources/sharedTests')
+}
+sourceSets.test.java.srcDir syncSharedTests
 
 def targetResourceDirectory = file('src/main/resources')
 var syncTargetResources = tasks.register('syncTargetResources', Sync) {
