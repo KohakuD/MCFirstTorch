@@ -119,6 +119,9 @@ final class LiveSceneRenderer {
             var parts = id.split("#", 2);
             var type = BuiltInRegistries.ENTITY_TYPE.getValue(Identifier.parse(parts[0]));
             var model = type == null ? null : type.create(minecraft.level, EntitySpawnReason.LOAD);
+            // ClientLevel leaves new entities at ID zero until a spawn packet arrives.
+            // These cached models never join the world, so assign local render-only IDs.
+            if (model != null) model.setId(-1 - MODELS.size());
             if (parts.length == 2 && parts[1].equals("baby") && model instanceof net.minecraft.world.entity.monster.piglin.Piglin piglin) piglin.setBaby(true);
             return model;
         });

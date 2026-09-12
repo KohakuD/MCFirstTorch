@@ -44,3 +44,7 @@ The mod-details header now has a separate wide First Torch banner via `bannerFil
 The owner accepted the banner. Five bilingual safety cards now form a target-only reference chapter with native item icons, mining-context links and a reading trophy. Names were checked against installed 26.2 English/German language assets. Mechanics were reviewed against official 26.2 notes and Vanilla sources/data. All earlier 71 chapters remain equal after parsing; no old quest gains a prerequisite.
 
 Full test/build and all three JAR verifiers pass. Target tests retain explicit expanded counts; earlier target expectations are unchanged. In-game acceptance of the five new cards, links and trophy remains pending. Friends List guidance and returning-learner filtering remain open.
+
+## Entity preview crash fix
+
+The owner reported a 26.2 client crash on 2026-09-12 at 22:39 while rendering a Piglin illustration. The stack trace reaches Entity.getId through ItemModelResolver and LivingEntityRenderer: the unspawned client preview has ID zero. Cached preview models now receive distinct negative render-only IDs before state extraction, without being added to the world. Full test/build and JAR verification pass; reopening the affected Piglin scene remains the required in-game regression. The crash shutdown log reports all dimensions saved; this is not an independent save-integrity check.
