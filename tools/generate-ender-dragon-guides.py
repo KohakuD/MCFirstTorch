@@ -8,7 +8,7 @@ from PIL import Image, ImageDraw
 
 
 JAR = Path(r"D:\Minecraft\curseforge\minecraft\Install\versions\26.1.2\26.1.2.jar")
-OUT = Path(__file__).resolve().parents[1] / "src/main/resources/assets/firsttorch/textures/questpics"
+OUT = Path(__file__).resolve().parents[1] / "archive/native-illustrations/questpics"
 W, H = 1672, 941
 ORANGE = (255, 137, 0, 255)
 RED = (225, 48, 48, 255)

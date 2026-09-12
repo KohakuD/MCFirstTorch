@@ -47,7 +47,7 @@ def main():
                                    fill=(27, 29, 30), outline=(98, 100, 98), width=3)
             image.alpha_composite(cube, (left + (720 - cube.width) // 2, top + 36))
             draw.text((left + 28, top + 18), str(index + 1), font=font, fill=(241, 187, 82))
-    output = ROOT / "src/main/resources/assets/firsttorch/textures/questpics/archaeology_comparison.png"
+    output = ROOT / "archive/native-illustrations/questpics/archaeology_comparison.png"
     output.parent.mkdir(parents=True, exist_ok=True)
     image.save(output, optimize=True)
     print(output)

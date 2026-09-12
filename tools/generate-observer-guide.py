@@ -57,7 +57,7 @@ def main():
             image.alpha_composite(face(name).resize((210, 210), Image.Resampling.NEAREST), (x, 640))
             draw.text((x + 105, 570), label, font=font, anchor="mt", fill=(245, 191, 83))
         draw.line((200, 530, 1472, 530), fill=(100, 100, 96), width=3)
-    output = ROOT / "src/main/resources/assets/firsttorch/textures/questpics/observer_orientation.png"
+    output = ROOT / "archive/native-illustrations/questpics/observer_orientation.png"
     image.save(output, optimize=True)
     print(output)
 

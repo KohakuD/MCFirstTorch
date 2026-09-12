@@ -234,3 +234,8 @@ Restart the IntelliJ client and browse the course and reference illustrations:
 - Check normal/enlarged layouts and scrolling; sample both languages and resource reload.
 
 No new world, completion reset or reward replay is needed for this visual review.
+
+
+## Archive cleanup
+
+The 91 superseded PNGs now live in [archive/native-illustrations](../archive/native-illustrations/README.md), outside packaged resources. Only the fifteen active screenshots remain in the source questpics directory. Historical diagram generators write to the archive; screenshot preparation tools retain their active destinations. Stable image identifiers still select native renderers. Every moved file retained its SHA-256 hash.
