@@ -20,6 +20,9 @@ public final class FirstTorchEditionHistory {
                 "2A26200000000004", "2A26200000000005"))
             changes.add(new EditionHistory.Change(id, "26.2", NEW));
         changes.add(new EditionHistory.Change("32B4C6D8E0F21357", "26.2", REVISED));
-        return new EditionHistory(List.of("1.21.1", "26.1.2", "26.2"), changes);
+        for (var id : List.of("2A26100000000001", "2A26100000000002", "2A26100000000003", "2A26100000000004"))
+            changes.add(new EditionHistory.Change(id, "26.1", NEW));
+        return new EditionHistory(List.of("1.21", "1.21.1", "1.21.2", "1.21.4", "1.21.5",
+                "1.21.6", "1.21.9", "1.21.11", "26.1", "26.1.2", "26.2"), changes);
     }
 }

@@ -124,3 +124,8 @@ Release drafts and remaining manual checks: [26.1.2 and 26.2 preparation](releas
 ## Historical record
 
 For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb-legacy/). Its historical Roadmap, Development notes, and Curriculum snapshot are retained there for provenance only.
+
+### Coverage remediation progress — 2026-09-13
+
+- [x] Add the first four 26.1 reference lessons in 26.1.2/26.2: Golden Dandelion, Name Tag crafting, direct Stonecutter recipes and Copper trumpet sounds. Native recipe checks and comparison exclusion tests are included.
+- [ ] Verify this batch in German and English in game. Remaining coverage work and release hold remain in CurriculumCoverageAudit.md.

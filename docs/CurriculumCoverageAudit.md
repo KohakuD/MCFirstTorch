@@ -32,3 +32,11 @@ Keep the selectable catalogue limited to implemented First Torch editions; recor
 ## Release gate
 
 Pause final release versioning/uploads for 26.1.2 and 26.2. Retain the accepted UI tests as evidence for existing behavior. Complete the coverage audit, implement bilingual lessons with stable IDs and native target assets, update semantic history/coverage tests, then repeat tests for affected paths. Existing 1.21.1 uploads are unchanged; any additional 1.21 material requires a separately versioned follow-up release.
+
+## First implementation batch — 26.1 everyday mechanics
+
+Four bilingual optional reading cards now cover Golden Dandelion growth control (including reversal and excluded babies), craftable Name Tags, direct Stonecutter options and Copper trumpet sounds. These use native item icons, no synthetic lesson artwork, no item rewards and the existing reference unlock. Golden Dandelion and Name Tag recipes were checked against both cached native 26.1.2 and 26.2 recipe files. The first uses eight Gold Nuggets surrounding a Dandelion; the second uses diagonal Paper and a metal Nugget.
+
+Chapter `7A26100000000001`, quests `2A26100000000001`–`2A26100000000004`, tasks `3A26100000000001`–`3A26100000000004`. Available in 26.1.2/26.2 only. Explicit intermediate Minecraft ordering now permits a 26.1 history event without offering unimplemented First Torch versions in the baseline menu. Tests prove these cards appear after 1.21.1/1.21.11 but not after 26.1.2. The provisional changed-card counts are now 11 (1.21.1 → 26.1.2), 17 (1.21.1 → 26.2), and six (26.1.2 → 26.2).
+
+This batch is implemented, not manually accepted. The wider audit and the owner's other missing topics remain open. Initial additional search also found no Locator Bar or leash guidance, and no named Spear/Lunge, Zombie Horse or Camel Husk coverage; review against full release notes before authoring. Ordinary Saddle or Bundle mentions must be checked for actual instruction rather than counted as complete coverage.

@@ -10501,9 +10501,106 @@
       ]
     },
     {
+      "id": "7A26100000000001",
+      "iconItemId": "minecraft:golden_dandelion",
+      "order": 71,
+      "titleKey": "chapter.firsttorch.mechanics_tiny.title",
+      "descriptionKey": "chapter.firsttorch.mechanics_tiny.description",
+      "quests": [
+        {
+          "id": "2A26100000000001",
+          "order": 0,
+          "titleKey": "quest.firsttorch.mechanics_tiny.dandelion.title",
+          "descriptionKey": "quest.firsttorch.mechanics_tiny.dandelion.description",
+          "iconItemId": "minecraft:golden_dandelion",
+          "tasks": [
+            {
+              "id": "3A26100000000001",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a26100000000001.title"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
+        },
+        {
+          "id": "2A26100000000002",
+          "order": 1,
+          "titleKey": "quest.firsttorch.mechanics_tiny.name_tag.title",
+          "descriptionKey": "quest.firsttorch.mechanics_tiny.name_tag.description",
+          "iconItemId": "minecraft:name_tag",
+          "tasks": [
+            {
+              "id": "3A26100000000002",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a26100000000002.title"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 2
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
+        },
+        {
+          "id": "2A26100000000003",
+          "order": 2,
+          "titleKey": "quest.firsttorch.mechanics_tiny.stonecutter.title",
+          "descriptionKey": "quest.firsttorch.mechanics_tiny.stonecutter.description",
+          "iconItemId": "minecraft:stonecutter",
+          "tasks": [
+            {
+              "id": "3A26100000000003",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a26100000000003.title"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 4
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
+        },
+        {
+          "id": "2A26100000000004",
+          "order": 3,
+          "titleKey": "quest.firsttorch.mechanics_tiny.trumpet.title",
+          "descriptionKey": "quest.firsttorch.mechanics_tiny.trumpet.description",
+          "iconItemId": "minecraft:note_block",
+          "tasks": [
+            {
+              "id": "3A26100000000004",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a26100000000004.title"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 6
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
+        }
+      ]
+    },
+    {
       "id": "7A26200000000001",
       "iconItemId": "minecraft:sulfur",
-      "order": 71,
+      "order": 72,
       "titleKey": "chapter.firsttorch.mechanics_sulfur.title",
       "descriptionKey": "chapter.firsttorch.mechanics_sulfur.description",
       "quests": [
