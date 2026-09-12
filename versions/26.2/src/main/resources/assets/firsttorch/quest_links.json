@@ -454,5 +454,12 @@
 "2A21500000000001": [{"questId": "3286E0194CA735DF", "titleKey": "chapter.firsttorch.first_shelter.title"}],
 "2A21500000000002": [{"questId": "3286E0194CA735DF", "titleKey": "chapter.firsttorch.first_shelter.title"}],
 "2A21500000000003": [{"questId": "3286E0194CA735DF", "titleKey": "chapter.firsttorch.first_shelter.title"}],
-"2A21500000000004": [{"questId": "3286E0194CA735DF", "titleKey": "chapter.firsttorch.first_shelter.title"}]
+"2A21500000000004": [{"questId": "3286E0194CA735DF", "titleKey": "chapter.firsttorch.first_shelter.title"}],
+"2A21600000000001": [{"questId": "236B08D1E94FA05C", "titleKey": "chapter.firsttorch.nether_safety.title"}],
+"2A21600000000002": [{"questId": "2A21600000000001", "titleKey": "chapter.firsttorch.field_travel.title"}],
+"2A21600000000003": [{"questId": "2A21600000000002", "titleKey": "chapter.firsttorch.field_travel.title"}],
+"2A21600000000004": [{"questId": "2A21600000000003", "titleKey": "chapter.firsttorch.field_travel.title"}],
+"2A21600000000005": [{"questId": "2A21600000000004", "titleKey": "chapter.firsttorch.field_travel.title"}],
+"2A21600000000006": [{"questId": "16A0B0C0D0E00007", "titleKey": "chapter.firsttorch.field_animals.title"}],
+"2A21600000000007": [{"questId": "3286E0194CA735DF", "titleKey": "chapter.firsttorch.first_shelter.title"}]
 }

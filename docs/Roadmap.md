@@ -161,4 +161,5 @@ For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb
 - [x] Owner accepted the Bundle chapter S-layout.
 - [x] Extend Cow/Pig/Chicken/Sheep references for 1.21.5 and add four compact plant cards in 26.1.2/26.2, with explicit comparison reasons for existing animals.
 - [x] Owner accepted the animal additions and plant readings in game.
-- [ ] Continue with the 1.21.6 travel block.
+- [x] Add seven 1.21.6 travel readings: Dried Ghast, growth/care, Harness, flight/landing, Leads, Saddle and Locator Bar.
+- [ ] Accept the travel block in both languages; continue with Copper sorting and Shelf coverage.

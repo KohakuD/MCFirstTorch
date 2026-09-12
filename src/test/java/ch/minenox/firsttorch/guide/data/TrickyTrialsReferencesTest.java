@@ -103,4 +103,23 @@ class TrickyTrialsReferencesTest {
         assertTrue(history.compare("1.21.1", "26.1.2", snapshot).changedQuestIds().containsAll(ids));
         assertTrue(history.compare("26.1.2", "26.2", snapshot).changedQuestIds().stream().noneMatch(ids::contains));
     }
+    @Test void travelReadingsAreTargetSpecificAndNeverRequireRiskyPractice() {
+        var guide = GuideJson.read(getClass().getResourceAsStream("/data/firsttorch/guides/course.json"));
+        var snapshot = new GuideSnapshot(List.of(guide));
+        var all = guide.chapters().stream().flatMap(c -> c.quests().stream()).toList();
+        var cards = all.stream().filter(q -> q.id().startsWith("2A2160000000000")).toList();
+        boolean modern = all.stream().anyMatch(q -> q.id().equals("1CA0B0C0D0E00003"));
+        assertEquals(modern ? 7 : 0, cards.size());
+        if (!modern) return;
+        var ids = cards.stream().map(q -> q.id()).collect(Collectors.toSet());
+        var history = FirstTorchEditionHistory.create();
+        assertTrue(history.compare("1.21.1", "26.1.2", snapshot).changedQuestIds().containsAll(ids));
+        assertTrue(history.compare("26.1.2", "26.2", snapshot).changedQuestIds().stream().noneMatch(ids::contains));
+        assertEquals(7, cards.stream().map(q -> q.position()).distinct().count());
+        for (var card : cards) {
+            assertEquals(List.of("3C3122DF5C0EA192"), card.prerequisiteQuestIds());
+            assertEquals(TaskDefinition.Type.MANUAL, card.tasks().getFirst().type());
+            assertTrue(card.rewards().isEmpty());
+        }
+    }
 }
