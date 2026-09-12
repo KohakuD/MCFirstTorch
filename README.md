@@ -18,7 +18,7 @@ The guided course covers early survival through the Nether, End and independent 
 
 LAN multiplayer smoke tests are accepted; dedicated-server testing is explicitly out of the current scope and dedicated-server operation remains unverified. See the concise [changelog](CHANGELOG.md), [release upload notes](docs/CurseForgeUpload.md), and [licensing review](docs/ReleaseLicensing.md).
 
-A first installable **1.21.1 development edition** is now available with NeoForge **21.1.248** and Java **21**. It includes the native browser and an adapted bilingual curriculum; full in-game acceptance remains pending. The returning-learner version filter is not implemented yet. See [the backport assessment](docs/Backport1211.md).
+The **1.21.1 Beta 0.14.0-beta.1** is prepared for publication with NeoForge **21.1.248** and Java **21**. It includes the native browser and an adapted bilingual curriculum; the owner accepted early quests, rewards, restart persistence and the named bilingual UI checks. The returning-learner version filter is not implemented yet. See [the backport assessment](docs/Backport1211.md).
 
 ## Develop in IntelliJ IDEA
 
@@ -36,7 +36,7 @@ The development run enables the left-two-thirds window layout. Design-preview sw
 .\gradlew.bat test build
 ```
 
-Outputs: `build/libs/firsttorch-mc26.1.2-0.14.0-alpha.1.jar` and `versions/1.21.1/build/libs/firsttorch-mc1.21.1-0.14.0-alpha.1.jar`.
+Outputs: `build/libs/firsttorch-mc26.1.2-0.14.0-alpha.1.jar` and `versions/1.21.1/build/libs/firsttorch-mc1.21.1-0.14.0-beta.1.jar`.
 
 For the backport, select **First Torch Client 1.21.1** in IntelliJ or run `.\gradlew.bat :mc1211:runClient`. Its isolated profile is `versions/1.21.1/run/client`. For a launcher installation, use the **1.21.1 JAR**, NeoForge **21.1.248** and Java **21** in a separate 1.21.1 profile, then follow steps 2–5 below. Use a fresh world; this does not downgrade worlds. The fifteen existing screenshots are included unchanged; the owner confirmed that they also fit 1.21.1 and 26.2.
 

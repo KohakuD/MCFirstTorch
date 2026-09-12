@@ -5,7 +5,7 @@ plugins {
 
 evaluationDependsOn(':core')
 group = rootProject.mod_group_id
-version = rootProject.mod_version
+version = '0.14.0-beta.1'
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 neoForge {
@@ -168,7 +168,7 @@ sourceSets.main.resources.setSrcDirs([syncTargetResources])
 
 var generateModMetadata = tasks.register('generateModMetadata', ProcessResources) {
     var properties = [mod_id: rootProject.mod_id, mod_name: rootProject.mod_name,
-        mod_license: rootProject.mod_license, mod_version: rootProject.mod_version,
+        mod_license: rootProject.mod_license, mod_version: project.version,
         mod_authors: rootProject.mod_authors, mod_description: rootProject.mod_description]
     inputs.properties properties
     expand properties

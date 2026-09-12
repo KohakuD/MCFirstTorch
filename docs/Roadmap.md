@@ -72,6 +72,8 @@ Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then 
 
   - [x] Owner confirmed that the existing fifteen screenshots fit 1.21.1 and 26.2; restored all sixteen backport image references and verified byte-identical packaging.
 
+- [x] Prepare the independently versioned 1.21.1 `0.14.0-beta.1` release and English upload material; see `releases/1.21.1-0.14.0-beta.1.md`. Owner authorised publication first. Upload/public availability remain pending; browser automation is technically unavailable.
+
 ### Phase 2: Minecraft 26.2 edition
 
 - [x] Record the initial official runtime/content prerequisites in `Port262.md`; no 26.2 implementation or publication is claimed.

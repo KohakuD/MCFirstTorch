@@ -72,3 +72,11 @@ Its concept is a central torch and an ascending voxel path from beginner to mast
 The prepared bilingual description contains
 the required non-official Minecraft disclaimer. See `CurseForgeUpload.md`; do not
 treat this engineering checklist as legal advice or substitute it for a final owner review.
+
+## 1.21.1 Beta preparation — 2026-09-12
+
+The EULA and Usage Guidelines linked above were consulted again for this release. The screenshot permission and distinction between original mod work and underlying Minecraft content remain relevant. This review does not grant rights to Minecraft content or turn the generated village derivative into an exact gameplay capture.
+
+The current packaged inventory is fifteen course rasters plus the original branding logo. The ninety-one retired offline diagrams are archived outside runtime resources. Native illustrations use installed game resources. Both JAR boundary checks pass; no game JAR, foreign classes, nested dependency JAR or historical FTB material is packaged. The owner approved reuse of the fifteen course images for 1.21.1 and 26.2; the village provenance exception above remains explicit. Original-asset licensing continues to exclude underlying Minecraft content.
+
+The existing prepared listing has project/contact links and the non-official disclaimer. A live check of the actual CurseForge listing and submission remains pending because browser automation cannot initialise. No new publication or platform approval is asserted. This is the current technical review record; historical open items above must not be read as proof that a live listing was checked.

@@ -1,5 +1,7 @@
 # CurseForge upload preparation
 
+Current upload: [Minecraft 1.21.1 / 0.14.0-beta.1](releases/1.21.1-0.14.0-beta.1.md). The instructions below describe the older 26.1.2 release. Do not use its JAR or Java version for the backport.
+
 Prepared for First Torch `0.13.0-beta.1` on Minecraft `26.1.2` / NeoForge
 `26.1.2.84`. This document prepares a manual CurseForge upload; it never uploads
 files or changes the project page itself.

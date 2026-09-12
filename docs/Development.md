@@ -57,10 +57,10 @@ Run `.\gradlew.bat test build`, then verify both native JARs:
 
 ```powershell
 pwsh .\tools\verify-native-jar.ps1 -JarPath .\build\libs\firsttorch-mc26.1.2-0.14.0-alpha.1.jar
-pwsh .\tools\verify-native-jar.ps1 -JarPath .\versions\1.21.1\build\libs\firsttorch-mc1.21.1-0.14.0-alpha.1.jar
+pwsh .\tools\verify-native-jar.ps1 -JarPath .\versions\1.21.1\build\libs\firsttorch-mc1.21.1-0.14.0-beta.1.jar
 ```
 
-The 1.21.1 client has passed a startup smoke check; fresh-world welcome, both languages, progression, reward delivery, rendering and restart persistence still require manual acceptance. See [Backport1211.md](Backport1211.md). The version-comparison filter remains future milestone work.
+The owner accepted early quests, rewards, restart persistence, enlarged view, search, references and trophies in both languages for 1.21.1. This is not exhaustive whole-course or multiplayer acceptance. The target release version is set independently in its build.gradle; generated mod metadata uses that same project.version. See [Backport1211.md](Backport1211.md). The version-comparison filter remains future milestone work.
 Artifacts now include their Minecraft target in the filename. First Torch release numbers and Minecraft version numbers remain separate; publishing a backport later does not change Minecraft version ordering.
 
 ## Native guide and progress model
