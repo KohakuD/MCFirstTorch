@@ -32,3 +32,5 @@ Full `test build` passed: 417 tests on 26.1.2, 44 core tests, 182 on 1.21.1 and 
 The client startup reached native mod/resource and texture-atlas initialization using its separate `versions/26.2/run/client` profile. This is startup evidence, not visual acceptance. The owner has been asked to test a fresh world, welcome, pause access, first quest/reward, illustrations and enlarged view in both languages. Vulkan, multiplayer, whole-course mechanics and changed native model behaviour remain unverified.
 
 Use `:mc262:runClient` or the **First Torch Client 26.2** IntelliJ configuration. Artifact: `versions/26.2/build/libs/firsttorch-mc26.2-0.14.0-alpha.1.jar`. Do not install it into a different Minecraft target or treat it as the finished 26.2 release.
+
+The owner reported the loader warning about deprecated `logoFile`. The 26.2 metadata now uses `iconFile` for the existing square logo through a target-local template. Earlier targets retain their compatible metadata. A client restart is required to re-read this metadata.

@@ -71,7 +71,7 @@ var generateModMetadata = tasks.register('generateModMetadata', ProcessResources
         minecraft_version: '26.2', minecraft_version_range: '[26.2]', neo_version: '26.2.0.86']
     inputs.properties properties
     expand properties
-    from '../../src/main/templates'
+    from 'src/main/templates'
     into layout.buildDirectory.dir('generated/resources/modMetadata')
 }
 sourceSets.main.resources.srcDir generateModMetadata
