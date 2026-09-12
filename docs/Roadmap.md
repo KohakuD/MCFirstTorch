@@ -49,7 +49,7 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
 
 ## Active milestone: 0.14.0 — Multiple Minecraft versions and returning learners
 
-Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then add `26.2`, and build a reusable version-comparison view for returning learners. Development has started as `0.14.0-alpha.1`; both `26.1.2` and an initial installable `1.21.1` edition now build; the latter still requires in-game acceptance. The previous baseline is preserved at commit `029e8c4`. Existing release acceptance work above remains open as recorded.
+Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then add `26.2`, and build a reusable version-comparison view for returning learners. Development has started as `0.14.0-alpha.1`; both `26.1.2` and an initial installable `1.21.1` edition now build; the latter has owner-confirmed early gameplay and bilingual UI acceptance; the public release remains pending. The previous baseline is preserved at commit `029e8c4`. Existing release acceptance work above remains open as recorded.
 
 ### Phase 1: Shared foundation and Minecraft 1.21.1 backport
 
@@ -68,11 +68,13 @@ Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then 
 - [x] Record initial content availability and meaningful lesson differences between `1.21.1` and `26.1.2` as the basis for later comparisons; see `EditionDifferences.md`. Minecraft version order is independent of the date a First Torch backport is published.
 - [ ] Validate and release the `1.21.1` edition before proceeding to the `26.2` port. A mod backport does not imply support for downgrading existing Minecraft worlds or importing progress across versions.
 
-  - [x] Owner confirmed early 1.21.1 quest completion, reward collection and progress after restart. Both-language UI/rendering acceptance remains open.
+  - [x] Owner confirmed early 1.21.1 quest completion, reward collection and progress after restart. Enlarged view, search, references and trophies are also owner-confirmed in German and English.
 
   - [x] Owner confirmed that the existing fifteen screenshots fit 1.21.1 and 26.2; restored all sixteen backport image references and verified byte-identical packaging.
 
 ### Phase 2: Minecraft 26.2 edition
+
+- [x] Record the initial official runtime/content prerequisites in `Port262.md`; no 26.2 implementation or publication is claimed.
 
 - [ ] Port the native runtime, dependencies and resources to `26.2` while preserving support for the earlier targets.
 - [ ] Review the Minecraft changes since `26.1.2`, add new lessons and update affected existing lessons in both languages.

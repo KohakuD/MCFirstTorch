@@ -148,3 +148,8 @@ The initial availability and substantive-change inventory is recorded in [Editio
 ## Shared screenshot approval
 
 The owner explicitly approved reuse of the existing screenshots for Minecraft 1.21.1 and 26.2. The backport now includes all 15 original files at 16 quest references, yielding 111 total image references. Automated checks require byte-for-byte identity with the shared source, matching dimensions, and nonblank bilingual captions. Runtime-rendered illustrations still use the installed target assets. The future 26.2 build should use the same approved screenshot set; its runtime port is not implemented by this change.
+
+
+## Bilingual UI acceptance
+
+The owner explicitly confirmed that enlarged view, search, references and trophies were tested in Minecraft 1.21.1 in both German and English and worked correctly. Together with the earlier early-quest/reward/restart confirmation and screenshot approval, these named acceptance checks are complete. This does not assert exhaustive survival verification of every lesson or a public release. No additional agent-driven UI interaction occurred: the computer-use helper remained unavailable.
