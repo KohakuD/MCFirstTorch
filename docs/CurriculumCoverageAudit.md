@@ -134,3 +134,9 @@ Four independent bilingual readings extend the preserved Creaking card to a five
 Two optional Storage lessons (`2A21200000000001`/`02`, tasks `3A21200000000001`/`02`) follow the existing return-home routine in 26.1.2/26.2. They teach the string-over-leather recipe, shared stack capacity and a safe two-material inventory exercise. Original storage rewards and prerequisite IDs remain intact; later course chapters do not depend on the extension. The chapter uses a compact three-column grid. These lessons are absent in 1.21.1 and dated to Minecraft 1.21.2 for cumulative comparison.
 
 Recipe data was read from both target client JARs. Cached native BundleItem source verifies insertion by primary click with a carried item and extraction by secondary click with an empty cursor; instructions deliberately specify that the Bundle stays in its inventory slot. Existing reward possession cannot auto-complete the manual practice. Owner acceptance of the preceding Pale Garden block is recorded; Bundle controls/layout still need in-game acceptance.
+
+## Spring to Life teaching
+
+The existing Cow, Pig, Chicken and Sheep cards now explain the 1.21.5 variants, inherited appearances, coloured eggs and biome-dependent wool frequencies. Their IDs are preserved and their comparison events are revisions, with bilingual change summaries. The 1.21.1 text remains unchanged.
+
+New reference chapter `7A21500000000001` groups four independent readings in a two-by-two grid: Wildflowers, Leaf Litter, Bush/Firefly Bush, and Dry Grass/Cactus Flower. Quests `2A21500000000001`–`04` and tasks `3A21500000000001`–`04` require reading only and link to shelter preparation. They are present in 26.1.2/26.2, dated to 1.21.5 and excluded from changes since 26.1.2. Official 1.21.5 release notes supplied the mechanics; native German language assets supplied plant names. In-game acceptance is pending. The preceding Bundle layout was accepted by the owner.

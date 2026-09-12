@@ -11129,6 +11129,103 @@
           ]
         }
       ]
+    },
+    {
+      "id": "7A21500000000001",
+      "iconItemId": "minecraft:wildflowers",
+      "order": 75,
+      "titleKey": "chapter.firsttorch.field_plants.title",
+      "descriptionKey": "chapter.firsttorch.field_plants.description",
+      "quests": [
+        {
+          "id": "2A21500000000001",
+          "order": 0,
+          "titleKey": "quest.firsttorch.field_plants.wildflowers.title",
+          "descriptionKey": "quest.firsttorch.field_plants.wildflowers.description",
+          "iconItemId": "minecraft:wildflowers",
+          "tasks": [
+            {
+              "id": "3A21500000000001",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a21500000000001.title"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
+        },
+        {
+          "id": "2A21500000000002",
+          "order": 1,
+          "titleKey": "quest.firsttorch.field_plants.leaf_litter.title",
+          "descriptionKey": "quest.firsttorch.field_plants.leaf_litter.description",
+          "iconItemId": "minecraft:leaf_litter",
+          "tasks": [
+            {
+              "id": "3A21500000000002",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a21500000000002.title"
+            }
+          ],
+          "position": {
+            "x": 2,
+            "y": 0
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
+        },
+        {
+          "id": "2A21500000000003",
+          "order": 2,
+          "titleKey": "quest.firsttorch.field_plants.firefly_bush.title",
+          "descriptionKey": "quest.firsttorch.field_plants.firefly_bush.description",
+          "iconItemId": "minecraft:firefly_bush",
+          "tasks": [
+            {
+              "id": "3A21500000000003",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a21500000000003.title"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 2
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
+        },
+        {
+          "id": "2A21500000000004",
+          "order": 3,
+          "titleKey": "quest.firsttorch.field_plants.cactus_flower.title",
+          "descriptionKey": "quest.firsttorch.field_plants.cactus_flower.description",
+          "iconItemId": "minecraft:cactus_flower",
+          "tasks": [
+            {
+              "id": "3A21500000000004",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a21500000000004.title"
+            }
+          ],
+          "position": {
+            "x": 2,
+            "y": 2
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
+        }
+      ]
     }
   ]
 }

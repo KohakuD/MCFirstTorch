@@ -145,3 +145,7 @@ For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb
 - [x] Owner accepted the expanded Pale Garden readings.
 - [x] Add optional Bundle capacity and inventory-control lessons after the storage routine in 26.1.2/26.2; preserve the existing reward and date comparison entries to 1.21.2.
 - [ ] Accept Bundle controls and layout in game; continue with the 1.21.5 animal/plant block.
+
+- [x] Owner accepted the Bundle chapter S-layout.
+- [x] Extend Cow/Pig/Chicken/Sheep references for 1.21.5 and add four compact plant cards in 26.1.2/26.2, with explicit comparison reasons for existing animals.
+- [ ] Accept the animal additions and plant readings in game; continue with the 1.21.6 travel block.

@@ -22,7 +22,7 @@ final class SulfurReferencesTest {
             assertEquals(Set.of("32B4C6D8E0F21357", "2A26200000000001", "2A26200000000002",
                     "2A26200000000003", "2A26200000000004", "2A26200000000005"), recent.changedQuestIds());
             var cumulative = history.compare("1.21.1", "26.2", snapshot);
-            assertEquals(23, cumulative.changedQuestIds().size());
+            assertEquals(31, cumulative.changedQuestIds().size());
             assertTrue(cumulative.changedQuestIds().containsAll(recent.changedQuestIds()));
             assertTrue(cumulative.changedQuestIds().contains("59CBED086F24A137"));
             assertFalse(cumulative.changedQuestIds().contains("6D91380C6EA4B2F5"));
@@ -36,9 +36,16 @@ final class SulfurReferencesTest {
              var target = getClass().getResourceAsStream("/data/firsttorch/guides/course.json")) {
             var baseline = GuideJson.read(source);
             var edition = GuideJson.read(target);
-            assertEquals(baseline.chapters(), edition.chapters().subList(0, baseline.chapters().size()));
+            var shared = edition.chapters().stream().filter(c -> !c.id().equals("7A26200000000001")).toList();
+            assertEquals(baseline.chapters().stream().map(c -> c.id()).toList(), shared.stream().map(c -> c.id()).toList());
+            for (int i = 0; i < shared.size(); i++) {
+                assertEquals(baseline.chapters().get(i).quests(), shared.get(i).quests());
+                assertEquals(baseline.chapters().get(i).titleKey(), shared.get(i).titleKey());
+                assertEquals(baseline.chapters().get(i).descriptionKey(), shared.get(i).descriptionKey());
+                assertEquals(baseline.chapters().get(i).iconItemId(), shared.get(i).iconItemId());
+            }
             assertDoesNotThrow(() -> new GuideSnapshot(List.of(edition)));
-            var chapter = edition.chapters().getLast();
+            var chapter = edition.chapters().stream().filter(c -> c.id().equals("7A26200000000001")).findFirst().orElseThrow();
             assertEquals("7A26200000000001", chapter.id());
             assertEquals(5, chapter.quests().size());
             var added = chapter.quests().stream().map(q -> q.id()).collect(Collectors.toSet());

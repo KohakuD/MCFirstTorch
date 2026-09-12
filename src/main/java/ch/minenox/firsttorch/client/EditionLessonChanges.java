@@ -5,6 +5,10 @@ import java.util.Map;
 /** Explains why an existing card appears in a comparison, without changing its identity. */
 final class EditionLessonChanges {
     private static final Map<String, String> REASONS = Map.ofEntries(
+            Map.entry("16A0B0C0D0E00001", "farm"),
+            Map.entry("16A0B0C0D0E00002", "sheep"),
+            Map.entry("16A0B0C0D0E00003", "farm"),
+            Map.entry("16A0B0C0D0E00004", "eggs"),
             Map.entry("2A26100000000001", "tiny"),
             Map.entry("2A26100000000002", "tiny"),
             Map.entry("2A26100000000003", "tiny"),

@@ -10,9 +10,9 @@ final class ReferenceIndexTest {
         try (var input = getClass().getResourceAsStream("/data/firsttorch/guides/course.json")) {
             var chapters = GuideJson.read(input).chapters();
             var indexed = ReferenceIndex.chapters(chapters);
-            assertEquals(18, indexed.size());
-            assertEquals(80, indexed.stream().mapToInt(c -> c.quests().size()).sum());
-            assertEquals(7, indexed.stream().filter(c -> c.titleKey().contains(".field_")).count());
+            assertEquals(19, indexed.size());
+            assertEquals(84, indexed.stream().mapToInt(c -> c.quests().size()).sum());
+            assertEquals(8, indexed.stream().filter(c -> c.titleKey().contains(".field_")).count());
             assertEquals(11, indexed.stream().filter(c -> c.titleKey().contains(".mechanics_")).count());
             assertEquals(indexed, chapters.stream().filter(indexed::contains).toList());
             var course = ReferenceIndex.courseChapters(chapters);

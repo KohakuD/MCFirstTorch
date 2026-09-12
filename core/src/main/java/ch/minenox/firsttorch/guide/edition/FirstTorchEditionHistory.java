@@ -13,6 +13,10 @@ public final class FirstTorchEditionHistory {
             changes.add(new EditionHistory.Change("2A121000000000%02X".formatted(i), "1.21", NEW));
         for (var id : List.of("2A21200000000001", "2A21200000000002"))
             changes.add(new EditionHistory.Change(id, "1.21.2", NEW));
+        for (int i = 1; i <= 4; i++) {
+            changes.add(new EditionHistory.Change("2A2150000000000" + i, "1.21.5", NEW));
+            changes.add(new EditionHistory.Change("16A0B0C0D0E0000" + i, "1.21.5", REVISED));
+        }
         for (int i = 3; i <= 7; i++)
             changes.add(new EditionHistory.Change("1CA0B0C0D0E000%02X".formatted(i), "1.21.4", NEW));
         changes.add(new EditionHistory.Change("38D24F61E9DA3570", "1.21.4", REVISED));
