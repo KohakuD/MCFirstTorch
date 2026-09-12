@@ -47,6 +47,42 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
   - [x] Beta.2 in-game regression accepted by the owner on 2026-09-10: design-preview switch and test completion absent, welcome displayed in a new world
   - [ ] Submit the corrected beta after regression acceptance, then confirm moderation approval and public availability
 
+## Planned milestone: 0.14.0 — Multiple Minecraft versions and returning learners
+
+Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then add `26.2`, and build a reusable version-comparison view for returning learners. This is a planned First Torch release, not an implemented compatibility claim or a change to the active `0.13.0-beta.2` runtime. Existing release acceptance work above remains open as recorded.
+
+### Phase 1: Shared foundation and Minecraft 1.21.1 backport
+
+- [ ] Preserve the verified `26.1.2` baseline and its stable guide, quest, task and reward IDs.
+- [ ] Assess native API, loader, Java toolchain and data/resource-format differences before choosing the build structure.
+- [ ] Keep one First Torch repository and aim for one IntelliJ Gradle project with shared content and version-specific modules or builds. Separate IntelliJ projects are not required; select the exact Gradle arrangement after the compatibility assessment.
+- [ ] Provide separate dependencies, toolchains, run profiles, test directories and clearly labelled JARs for each Minecraft target. Share compatible logic, guide data and translations without forcing incompatible runtime code into a common module.
+- [ ] Backport the native runtime and review every lesson against `1.21.1` mechanics, recipes, objectives and available content. Maintain English and German together and use exact target-version game assets.
+- [ ] Record content availability and meaningful lesson differences between `1.21.1` and `26.1.2` as the basis for later comparisons. Minecraft version order is independent of the date a First Torch backport is published.
+- [ ] Validate and release the `1.21.1` edition before proceeding to the `26.2` port. A mod backport does not imply support for downgrading existing Minecraft worlds or importing progress across versions.
+
+### Phase 2: Minecraft 26.2 edition
+
+- [ ] Port the native runtime, dependencies and resources to `26.2` while preserving support for the earlier targets.
+- [ ] Review the Minecraft changes since `26.1.2`, add new lessons and update affected existing lessons in both languages.
+- [ ] Extend the content-availability and change history with `26.2`; distinguish newly introduced lessons from substantive revisions and exclude cosmetic wording fixes from the novelty filter.
+
+### Phase 3: Returning-learner welcome and version comparison
+
+- [ ] Add a bilingual welcome question: "Do you already know First Torch from an earlier Minecraft version?" / "Kennst du First Torch bereits aus einer früheren Minecraft-Version?"
+- [ ] "No" opens all quests. "Yes" asks which earlier supported version the learner knows and opens the relevant new and revised lessons since that baseline.
+- [ ] Detect the running Minecraft target and maintain a bundled, explicitly ordered catalogue of published First Torch Minecraft editions. Offer only valid earlier comparison baselines; future targets such as `26.3` become available after their edition is implemented and published. An online catalogue refresh is optional future work, not required for this milestone.
+- [ ] Store per-lesson version history and target availability. Comparing `1.21.1` with `26.2` includes relevant changes from both `26.1.2` and `26.2`, shows each quest once and uses the lesson valid for the running target. Later targets extend the same model.
+- [ ] Add an accessible top-right icon with bilingual tooltip, clear active state and keyboard/narrator support to change the baseline or return to all quests. Persist the selection per player.
+- [ ] Keep a single authoritative quest/reward progress state across views. Selecting prior knowledge must not complete hidden quests, grant rewards or import progress.
+- [ ] Define and test prerequisite access so returning learners can use the selected lessons without hidden prerequisite dead ends or silently bypassed reward rules. Provide links to required background lessons, hide empty chapters, scope counters clearly and explain empty comparison results.
+
+### Acceptance
+
+- [ ] Run focused source/data tests, the full test/build gate and native JAR verification for each installable target artifact.
+- [ ] Test each target with fresh profiles in English and German: welcome choices, baseline selection, cumulative comparison results, all-quests switching, prerequisite access, tasks, rewards and persistence after restart.
+- [ ] Verify that each target packages only compatible content and original target-version assets, and that normal `26.1.2` behaviour remains intact.
+
 ## Scope rules
 
 - The active runtime remains native-only. FTB Quests, FTB Library, FTB Teams, Initially, KubeJS, and related pack tooling are out of scope.
