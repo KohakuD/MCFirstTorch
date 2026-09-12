@@ -133,6 +133,14 @@ Runtime-rendered diagrams use the target game assets, but their layout and appea
 
 The target now checks its crafting catalogs directly against the original 1.21.1 recipe and item-tag data produced by ModDevGradle. The check includes shaped placement (with valid translations/mirroring), shapeless ingredient counts, nested tag membership and output amounts. It also covers the hand-crafting plank step and crafting the Cartography Table. The special flight-one rocket is matched and assembled by Minecraft's own Java recipe, including its three-item output and absence of explosion stars.
 
-Every course chapter/quest icon, inventory objective and item reward resolves to a real item enabled by the default feature flags. Inventory tags and their nested members resolve, and all advancement objectives reference an existing advancement and criterion in the original target data. These are automated compatibility gates, not checks of every prose claim, smelting/brewing behaviour, cartography operations, visual layout or survival progression.
+Every course chapter/quest icon, inventory objective and item reward resolves to a real item enabled by the default feature flags. Inventory tags and their nested members resolve, and all advancement objectives reference an existing advancement and criterion in the original target data. These are automated compatibility gates, not checks of every prose claim, all processing behaviour, cartography operations, visual layout or survival progression.
 
 The local play log additionally confirms guide loading, an integrated 1.21.1 world start, player login and clean save/shutdown. This supports runtime integration but does not establish welcome, quest/reward or restart-persistence acceptance. No worlds were changed by this audit.
+
+## Further acceptance and native processing checks
+
+The owner confirmed the requested early gameplay smoke test: first quests, collecting rewards and retained progress after restart. This confirmation does not establish both-language visual coverage, every lesson or complete multiplayer acceptance.
+
+Native compatibility tests now also cover both furnace diagrams against original smelting data, sufficient fuel time for the illustrated input, and all four brewing steps through Minecraft's PotionBrewing implementation. Each brewing result must be the intended ordinary potion, including the extended Fire Resistance variant. Full-world timing, actual brewing interactions, cartography operations and rendering remain separate acceptance work.
+
+The initial availability and substantive-change inventory is recorded in [EditionDifferences.md](EditionDifferences.md). It separates genuinely revised lessons from reward/icon substitutions, adapter changes and missing captures; it does not enable a comparison filter yet.

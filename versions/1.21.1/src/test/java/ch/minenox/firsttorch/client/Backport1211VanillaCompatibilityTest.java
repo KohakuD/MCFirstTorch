@@ -101,6 +101,48 @@ final class Backport1211VanillaCompatibilityTest {
         }
     }
 
+    @Test void furnaceDiagramsUseMatchingRecipesAndEnoughFuel() throws Exception {
+        var fuels = new HashMap<String, Integer>();
+        net.minecraft.world.level.block.entity.AbstractFurnaceBlockEntity.buildFuels((entry, ticks) ->
+                entry.map(item -> fuels.put(net.minecraft.core.registries.BuiltInRegistries.ITEM.getKey(item).toString(), ticks),
+                        tag -> fuels.put("#" + tag.location(), ticks)));
+        for (var resource : LiveSmeltingCatalog.resources()) {
+            var diagram = LiveSmeltingCatalog.find(resource);
+            var recipe = json("/data/minecraft/recipe/" + diagram.result().substring(10) + ".json");
+            assertEquals("minecraft:smelting", recipe.get("type").getAsString());
+            assertTrue(accepts(recipe.get("ingredient"), diagram.input()), resource);
+            assertEquals(diagram.result(), recipe.getAsJsonObject("result").get("id").getAsString());
+            int burnTime = 0;
+            for (var fuel : fuels.entrySet()) {
+                if (fuel.getKey().equals(diagram.fuel()) || fuel.getKey().startsWith("#")
+                        && tagContains(fuel.getKey().substring(1), diagram.fuel(), new HashSet<>()))
+                    burnTime = Math.max(burnTime, fuel.getValue());
+            }
+            assertTrue(burnTime >= recipe.get("cookingtime").getAsInt(), "Insufficient fuel: " + resource);
+        }
+    }
+
+    @Test void brewingDiagramsProduceTheIntendedNativePotions() {
+        var expected = Map.of("awkward_potion_brewing", "awkward", "strength_potion_brewing", "strength",
+                "fire_resistance_brewing", "fire_resistance", "long_fire_resistance_brewing", "long_fire_resistance");
+        var brewing = net.minecraft.world.item.alchemy.PotionBrewing.bootstrap(net.minecraft.world.flag.FeatureFlags.DEFAULT_FLAGS);
+        for (var resource : LiveBrewingCatalog.resources()) {
+            var step = LiveBrewingCatalog.find(resource);
+            var inputPotion = net.minecraft.core.registries.BuiltInRegistries.POTION.getHolder(
+                    net.minecraft.resources.ResourceLocation.withDefaultNamespace(step.inputPotion())).orElseThrow();
+            var bottle = net.minecraft.world.item.alchemy.PotionContents.createItemStack(net.minecraft.world.item.Items.POTION, inputPotion);
+            var ingredient = new net.minecraft.world.item.ItemStack(net.minecraft.core.registries.BuiltInRegistries.ITEM.get(
+                    net.minecraft.resources.ResourceLocation.parse(step.ingredient())));
+            assertTrue(brewing.hasMix(bottle, ingredient), resource);
+            var output = brewing.mix(ingredient, bottle);
+            assertTrue(output.is(net.minecraft.world.item.Items.POTION), resource);
+            var result = output.get(net.minecraft.core.component.DataComponents.POTION_CONTENTS).potion().orElseThrow();
+            String name = resource.substring(resource.lastIndexOf('/') + 1, resource.length() - 4);
+            assertNotNull(expected.get(name), resource);
+            assertEquals("minecraft:" + expected.get(name), result.unwrapKey().orElseThrow().location().toString(), resource);
+        }
+    }
+
     private void requireItem(String id) {
         var key = net.minecraft.resources.ResourceLocation.parse(id);
         var registry = net.minecraft.core.registries.BuiltInRegistries.ITEM;
