@@ -1,6 +1,6 @@
 # Minecraft 26.2 port preparation
 
-This is the prerequisite assessment for the next roadmap phase, not an implemented or released 26.2 edition. The 1.21.1 public release remains pending under the existing phase order.
+The first native 26.2 development build is implemented; curriculum additions and game acceptance remain in progress. The owner confirmed the 1.21.1 Beta upload on 2026-09-12 and authorised starting this phase.
 
 ## Verified target
 
@@ -21,3 +21,14 @@ This is the prerequisite assessment for the next roadmap phase, not an implement
 The release adds Sulfur Caves, Sulfur Cubes, Sulfur/Cinnabar blocks and sulfur hazards, plus a Friends List. These justify investigating a safe cave-exploration branch, a creature reference and revised multiplayer guidance. This is a curriculum proposal, not a complete feature inventory or approved quest text. Confirm mechanics, original assets and translated in-game names before authoring the lessons.
 
 Record new and substantively revised lesson IDs in the edition history. Cosmetic changes, renderer adaptations, reward substitutions and screenshot reuse must not populate the returning-learner filter. The future cumulative view must retain one authoritative progress/reward state.
+## Initial native port — 2026-09-12
+
+The isolated `:mc262` module uses Java 25 and NeoForge `26.2.0.86`. Candidate `.87` fails while recompiling Minecraft (`HolderSet.contents` access mismatch), before compiling First Torch; `.86` passes. The pin records the tested version, not a claim that no newer release exists.
+
+Compatible root sources compile against the actual 26.2 API. Five explicit client adapters cover the moved GUI screen/toast accessors and the native `Model.Simple` player preview, following Vanilla PlayerSkinWidget. The shared core is merged directly into the target JAR. Existing guide IDs, bilingual resources and the fifteen approved rasters are reused. No new 26.2 lessons or comparison filter are included yet.
+
+Full `test build` passed: 417 tests on 26.1.2, 44 core tests, 182 on 1.21.1 and 417 on 26.2 (1,060 total, no failures, errors or skips). All seven packaging fixtures and all three native JAR boundary checks passed. CI now includes the third artifact. Live-scene report output is isolated per target to avoid concurrent writes.
+
+The client startup reached native mod/resource and texture-atlas initialization using its separate `versions/26.2/run/client` profile. This is startup evidence, not visual acceptance. The owner has been asked to test a fresh world, welcome, pause access, first quest/reward, illustrations and enlarged view in both languages. Vulkan, multiplayer, whole-course mechanics and changed native model behaviour remain unverified.
+
+Use `:mc262:runClient` or the **First Torch Client 26.2** IntelliJ configuration. Artifact: `versions/26.2/build/libs/firsttorch-mc26.2-0.14.0-alpha.1.jar`. Do not install it into a different Minecraft target or treat it as the finished 26.2 release.

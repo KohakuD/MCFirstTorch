@@ -86,7 +86,8 @@ final class LiveSceneCatalogTest {
             description.add("operations", operations);
             manifest.add(id, description);
         }
-        Path output = Path.of(System.getProperty("firsttorch.projectDir"), "build", "reports", "live-scenes.json");
+        Path output = Path.of(System.getProperty("firsttorch.reportDir",
+                Path.of(System.getProperty("firsttorch.projectDir"), "build", "reports").toString()), "live-scenes.json");
         Files.createDirectories(output.getParent());
         Files.writeString(output, gson.toJson(manifest), StandardCharsets.UTF_8);
         assertEquals(LiveSceneCatalog.scenes().size(), manifest.size());

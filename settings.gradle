@@ -14,3 +14,6 @@ include 'core'
 
 include 'mc1211'
 project(':mc1211').projectDir = file('versions/1.21.1')
+
+include 'mc262'
+project(':mc262').projectDir = file('versions/26.2')

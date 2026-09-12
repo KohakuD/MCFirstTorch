@@ -30,3 +30,7 @@ jobs:
           $backportJars = @(Get-ChildItem versions/1.21.1/build/libs/firsttorch-*.jar)
           if ($backportJars.Count -ne 1) { throw 'Expected exactly one 1.21.1 native mod JAR.' }
           ./tools/verify-native-jar.ps1 -JarPath $backportJars[0].FullName
+
+          $portJars = @(Get-ChildItem versions/26.2/build/libs/firsttorch-*.jar)
+          if ($portJars.Count -ne 1) { throw 'Expected exactly one 26.2 native mod JAR.' }
+          ./tools/verify-native-jar.ps1 -JarPath $portJars[0].FullName

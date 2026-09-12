@@ -87,3 +87,7 @@ Minecraft-derived images must use exact assets from the targeted Minecraft versi
 Never copy player data into the repository. Do not make a release or test workflow modify saves without explicit user authorisation and a recoverable backup. The historical archive is read-only reference material: changes to active native content must not recreate an active FTB workflow.
 
 Compatible runtime sources and shared tests for 1.21.1 are selected explicitly in its Gradle build and copied under its generated build directory. Edit the original shared files, never generated copies. Keep version-dependent adapters under the target source directory and preserve the full baseline test expectations.
+
+## Minecraft 26.2 development target
+
+`:mc262` uses Java 25 / NeoForge 26.2.0.86 with an isolated run profile and `First Torch Client 26.2` IntelliJ configuration. Root `check` and the CI artifact gate now include all three targets. Run `:mc262:runClient`; the labelled JAR is `versions/26.2/build/libs/firsttorch-mc26.2-0.14.0-alpha.1.jar`. Shared source compatibility is enforced by target compilation; local adapters override only incompatible classes. Read `Port262.md` for the tested dependency pin and remaining acceptance/content work.

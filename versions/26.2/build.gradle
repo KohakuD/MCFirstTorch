@@ -1,0 +1,103 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev'
+}
+
+evaluationDependsOn(':core')
+group = rootProject.mod_group_id
+version = '0.14.0-alpha.1'
+base { archivesName = "${rootProject.mod_id}-mc26.2" }
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+neoForge {
+    version = '26.2.0.86'
+    runs {
+        client {
+            client()
+            gameDirectory = file('run/client')
+            systemProperty 'firsttorch.devWindowLayout', 'left_two_thirds'
+        }
+        server {
+            server()
+            gameDirectory = file('run/server')
+            programArgument '--nogui'
+        }
+    }
+    mods {
+        firsttorch {
+            sourceSet sourceSets.main
+            sourceSet project(':core').sourceSets.main
+        }
+    }
+    unitTest {
+        enable()
+        testedMod = mods.firsttorch
+    }
+}
+
+dependencies {
+    implementation project(':core').sourceSets.main.output
+    testImplementation platform('org.junit:junit-bom:5.11.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+// Compile shared sources against the target API; explicit local adapters override them.
+def adapterDirectory = file('src/main/java')
+var syncSharedSources = tasks.register('syncSharedSources', Sync) {
+    from('../../src/main/java') {
+        exclude { details -> new File(adapterDirectory, details.relativePath.toString()).isFile() }
+    }
+    into layout.buildDirectory.dir('generated/sources/shared')
+}
+sourceSets.main.java.srcDir syncSharedSources
+sourceSets.test.java.srcDir '../../src/test/java'
+
+def targetResourceDirectory = file('src/main/resources')
+var syncTargetResources = tasks.register('syncTargetResources', Sync) {
+    from('../../src/main/resources') {
+        exclude { details -> new File(targetResourceDirectory, details.relativePath.toString()).isFile() }
+    }
+    from('src/main/resources')
+    into layout.buildDirectory.dir('generated/resources/target')
+}
+sourceSets.main.resources.setSrcDirs([syncTargetResources])
+sourceSets.test.resources.srcDir '../../src/test/resources'
+
+var generateModMetadata = tasks.register('generateModMetadata', ProcessResources) {
+    var properties = [mod_id: rootProject.mod_id, mod_name: rootProject.mod_name,
+        mod_license: rootProject.mod_license, mod_version: project.version,
+        mod_authors: rootProject.mod_authors, mod_description: rootProject.mod_description,
+        minecraft_version: '26.2', minecraft_version_range: '[26.2]', neo_version: '26.2.0.86']
+    inputs.properties properties
+    expand properties
+    from '../../src/main/templates'
+    into layout.buildDirectory.dir('generated/resources/modMetadata')
+}
+sourceSets.main.resources.srcDir generateModMetadata
+neoForge.ideSyncTask generateModMetadata
+
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+    systemProperty 'firsttorch.projectDir', rootProject.projectDir.absolutePath
+    systemProperty 'firsttorch.reportDir', layout.buildDirectory.dir('reports').get().asFile.absolutePath
+}
+tasks.named('check').configure { dependsOn ':core:check' }
+tasks.named('jar', Jar).configure {
+    from project(':core').sourceSets.main.output
+    from(['../../LICENSE', '../../LICENSE-CODE', '../../LICENSE-ASSETS.md', '../../NOTICE.md']) { into 'META-INF' }
+}
+
+// Keep the same approved raster allowlist as the established edition.
+tasks.named('processResources', ProcessResources).configure {
+    def captures = ['blaze_spawner.png', 'end_arrival_platform_capture.png',
+                    'end_portal_active_capture.png', 'end_portal_room_capture.png',
+                    'nether_fortress.png', 'nether_wart_garden.png', 'pumpkin_view_capture.png',
+                    'stronghold_iron_door_capture.png', 'village_overview.png',
+                    'end_battlefield.png', 'end_city_search.png', 'end_exit_portal.png',
+                    'end_gateway_access.png', 'end_island_crossing.png', 'chorus_harvest.png']
+    filesMatching('assets/firsttorch/textures/questpics/*.png') {
+        if (!captures.contains(name)) exclude()
+    }
+}

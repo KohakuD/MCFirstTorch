@@ -49,7 +49,7 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
 
 ## Active milestone: 0.14.0 — Multiple Minecraft versions and returning learners
 
-Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then add `26.2`, and build a reusable version-comparison view for returning learners. Development has started as `0.14.0-alpha.1`; both `26.1.2` and an initial installable `1.21.1` edition now build; the latter has owner-confirmed early gameplay and bilingual UI acceptance; the public release remains pending. The previous baseline is preserved at commit `029e8c4`. Existing release acceptance work above remains open as recorded.
+Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then add `26.2`, and build a reusable version-comparison view for returning learners. Development has started as `0.14.0-alpha.1`; both `26.1.2` and an initial installable `1.21.1` edition now build; the latter has owner-confirmed early gameplay and bilingual UI acceptance; the owner confirmed the 1.21.1 Beta upload on 2026-09-12. The previous baseline is preserved at commit `029e8c4`. Existing release acceptance work above remains open as recorded.
 
 ### Phase 1: Shared foundation and Minecraft 1.21.1 backport
 
@@ -72,11 +72,11 @@ Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then 
 
   - [x] Owner confirmed that the existing fifteen screenshots fit 1.21.1 and 26.2; restored all sixteen backport image references and verified byte-identical packaging.
 
-- [x] Prepare the independently versioned 1.21.1 `0.14.0-beta.1` release and English upload material; see `releases/1.21.1-0.14.0-beta.1.md`. Owner authorised publication first. Upload/public availability remain pending; browser automation is technically unavailable.
+- [x] Prepare the independently versioned 1.21.1 `0.14.0-beta.1` release and English upload material; see `releases/1.21.1-0.14.0-beta.1.md`. Owner authorised publication first. Owner confirmed upload on 2026-09-12 and authorised proceeding to 26.2; moderation/public availability have not been independently verified.
 
 ### Phase 2: Minecraft 26.2 edition
 
-- [x] Record the initial official runtime/content prerequisites in `Port262.md`; no 26.2 implementation or publication is claimed.
+- [x] Record official prerequisites and implement an initial isolated `:mc262` native build. Java 25 / NeoForge 26.2.0.86, five client adapters, all 417 reused target tests and package verification pass. Startup reached resource initialization; gameplay acceptance and target content review remain open. See `Port262.md`.
 
 - [ ] Port the native runtime, dependencies and resources to `26.2` while preserving support for the earlier targets.
 - [ ] Review the Minecraft changes since `26.1.2`, add new lessons and update affected existing lessons in both languages.
