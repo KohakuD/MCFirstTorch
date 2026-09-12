@@ -76,7 +76,7 @@ Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then 
 
 ### Phase 2: Minecraft 26.2 edition
 
-- [x] Record official prerequisites and implement an initial isolated `:mc262` native build. Java 25 / NeoForge 26.2.0.86, five client adapters, all 417 reused target tests and package verification pass. Startup reached resource initialization; gameplay acceptance and target content review remain open. See `Port262.md`.
+- [x] Record official prerequisites and implement an initial isolated `:mc262` native build. Java 25 / NeoForge 26.2.0.86, five client adapters, all 417 reused target tests and package verification pass. Owner accepted the requested bilingual gameplay/UI smoke checks after the metadata correction. Target content review remains open. See `Port262.md`.
 
 - [ ] Port the native runtime, dependencies and resources to `26.2` while preserving support for the earlier targets.
 - [ ] Review the Minecraft changes since `26.1.2`, add new lessons and update affected existing lessons in both languages.

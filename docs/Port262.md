@@ -34,3 +34,7 @@ The client startup reached native mod/resource and texture-atlas initialization 
 Use `:mc262:runClient` or the **First Torch Client 26.2** IntelliJ configuration. Artifact: `versions/26.2/build/libs/firsttorch-mc26.2-0.14.0-alpha.1.jar`. Do not install it into a different Minecraft target or treat it as the finished 26.2 release.
 
 The owner reported the loader warning about deprecated `logoFile`. The 26.2 metadata now uses `iconFile` for the existing square logo through a target-local template. Earlier targets retain their compatible metadata. A client restart is required to re-read this metadata.
+
+The owner confirmed that all requested initial 26.2 smoke checks work after the metadata correction (2026-09-12): welcome/pause entry, early quest and reward flow, illustrations and enlarged view in German and English. The mod-list screenshot additionally confirms the client running in a world. New 26.2 lessons, exhaustive mechanics review and returning-learner comparison remain separate work.
+
+The mod-details header now has a separate wide First Torch banner via `bannerFile`, while `iconFile` retains the square list icon. NeoForge fits this header within 250 x 50 GUI pixels, so the banner uses a compact horizontal wordmark. Restart the client to reload mod metadata and verify the header in the mod list.
