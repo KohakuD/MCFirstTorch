@@ -4,9 +4,11 @@ Assessment date: 2026-09-12. This document records the first bounded compatibili
 
 ## Current implementation boundary
 
-The root Gradle project remains the native Minecraft 26.1.2 / NeoForge 26.1.2.84 / Java 25 target. The new `core` Java-library module uses Java 21 and compiles against Gson 2.10.1, supplied by Minecraft at runtime. It shares only the Minecraft-independent guide model, snapshots, JSON parsing/resource-loading abstraction, validation, progress evaluation and reward-eligibility logic. Existing guide definitions used as core test fixtures still describe the 26.1.2 course.
+The playable root project remains Minecraft 26.1.2 / NeoForge 26.1.2.84 / Java 25. The `core` module provides the Java 21 guide model, validation and progression rules.
 
-Minecraft-dependent storage, events, networking, client screens, rendering, game observations and reward execution remain in the root runtime. The core extraction does not provide an installable 1.21.1 mod, a compatible 1.21.1 curriculum, or target-version asset verification. The separate `:mc1211` module under `versions/1.21.1` now pins Java 21 and NeoForge 21.1.248. It compiles native progress/welcome storage adapters and runs the same data-contract tests against 1.21.1. Client/network/lifecycle integration, target curriculum and run profiles are still pending; JAR generation remains disabled. All modules stay in one IntelliJ Gradle project.
+The separate `:mc1211` module under `versions/1.21.1` pins Java 21 and NeoForge 21.1.248. It now compiles native progress/welcome storage, reward execution, task/command handlers, datapack reload/sync handlers and the five network payload/codec classes. Compatible journal, observation and welcome-service sources are reused through an explicit generated-source allowlist, not maintained as forked copies. Shared test sources likewise run against both targets.
+
+The native NeoForge JUnit launcher supplies the required registry context for ItemStack tests. Its tiny mod entry and metadata exist only under `src/test`; they provide no gameplay bypass and must never be packaged. Network handler registration, the production entry point, client UI, target curriculum/assets and run profiles remain pending. JAR generation is disabled: this is still a verification target, not an installable 1.21.1 mod. Passing adapter tests does not establish live server/client integration or actual player reward delivery.
 
 ## Content adaptation matrix
 
@@ -78,6 +80,14 @@ The 1.21.1 repositories use the Overworld `DimensionDataStorage`, with legal fil
 The earlier GitHub failure for `029e8c4` was in the obsolete valid packaging fixture (`Unexpected boundary result: valid`), after a successful build. The fixture correction already shipped in `0ddd4c5`, whose [GitHub validation passed](https://github.com/KohakuD/MCFirstTorch/actions/runs/34700571311). CI now explicitly provisions both Java 21 and Java 25, and the root build gate also requires the native backport tests.
 
 Native adapter verification passed on 2026-09-12: 16 tests under Minecraft 1.21.1, plus the existing 44 core and 416 Minecraft 26.1.2 tests (476 total). The full `test build`, seven packaging fixtures and the 26.1.2 native JAR verification passed. No in-game launch or installed world was used for this adapter-only step.
+
+## Reward, server and protocol implementation
+
+- The durable `RewardJournal`, bulk-claim policy, inventory counting, progress observation, advancement observation, server guide repository and welcome service are shared from the original sources through `syncSharedRuntimeSources`. Only the explicitly listed compatible files are copied to the target build directory.
+- Native adapters use the 1.21.1 `ResourceLocation`, item registry and world-data paths. Reservation precedes item/XP mutation; an interrupted reservation remains blocked instead of automatically retrying payment. The reward journal lives at `data/firsttorch/reward_claims/<UUID>` inside the target world.
+- The 1.21.1 reload handler uses `AddReloadListenerEvent`. A failed guide preparation retains the last valid snapshot, with recovery checked after a subsequent valid reload.
+- Guide snapshots, progress, welcome and welcome acknowledgement retain their existing payload IDs, validation and protocol version `12`. Codec tests exercise valid round trips and malformed data; the actual client-handler registration is not implemented yet.
+- Sixty-two 1.21.1 tests pass, including 46 added checks beyond the storage checkpoint. Tests cover reservation/completion reopen, corrupt journals, independent players, inventory planning/stack limits, bulk-claim selection, reload failure recovery and wire validation. Actual running-server command/tick/payout acceptance remains pending.
 
 ## Official sources
 

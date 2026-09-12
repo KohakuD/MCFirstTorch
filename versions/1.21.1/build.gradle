@@ -10,7 +10,16 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 neoForge {
     version = '21.1.248'
-    addModdingDependenciesTo sourceSets.test
+    mods {
+        firsttorch {
+            sourceSet sourceSets.main
+            sourceSet project(':core').sourceSets.main
+        }
+    }
+    unitTest {
+        enable()
+        testedMod = mods.firsttorch
+    }
 }
 
 dependencies {
@@ -20,11 +29,33 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-// Exercise the same data-contract regressions against the older Minecraft classes.
-sourceSets.test.java {
-    srcDir '../../src/test/java'
-    include '**/WorldProgressDataTest.java', '**/WorldWelcomeDataTest.java', '**/*SavedDataAdapterTest.java'
+// Copy only explicitly reviewed compatible sources; generated files never enter Git.
+var syncSharedRuntimeSources = tasks.register('syncSharedRuntimeSources', Sync) {
+    from('../../src/main/java') {
+        include 'ch/minenox/firsttorch/guide/server/RewardJournal.java'
+        include 'ch/minenox/firsttorch/guide/server/AdvancementObservation.java'
+        include 'ch/minenox/firsttorch/guide/server/BulkRewardClaims.java'
+        include 'ch/minenox/firsttorch/guide/server/InventoryCounts.java'
+        include 'ch/minenox/firsttorch/guide/server/ServerGuideRepository.java'
+        include 'ch/minenox/firsttorch/guide/server/ProgressObservation.java'
+        include 'ch/minenox/firsttorch/guide/server/ServerWelcomeService.java'
+    }
+    into layout.buildDirectory.dir('generated/sources/sharedRuntime')
 }
+sourceSets.main.java.srcDir syncSharedRuntimeSources
+
+// The same regressions exercise both Minecraft targets, without duplicating maintained tests.
+var syncSharedTestSources = tasks.register('syncSharedTestSources', Sync) {
+    from('../../src/test/java') {
+        include 'ch/minenox/firsttorch/network/*Test.java'
+        include '**/WorldProgressDataTest.java', '**/WorldWelcomeDataTest.java'
+        include '**/RewardJournalTest.java', '**/BulkRewardClaimsTest.java'
+        include '**/ProgressObservationTest.java', '**/InventoryTagObservationTest.java'
+        include '**/AdvancementObservationTest.java', '**/ServerWelcomeServiceTest.java'
+    }
+    into layout.buildDirectory.dir('generated/sources/sharedTests')
+}
+sourceSets.test.java.srcDir syncSharedTestSources
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
