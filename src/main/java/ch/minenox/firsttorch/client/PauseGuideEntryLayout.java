@@ -11,7 +11,8 @@ final class PauseGuideEntryLayout {
     static Optional<Rect> find(int width, int height, List<Rect> occupied) {
         if (width < 220 || height < 64) return Optional.empty();
         int x = (width - 204) / 2;
-        var menuRows = occupied.stream().filter(rect -> rect.width() >= 180
+        // 1.21.1 exposes its full-screen, nine-pixel title as a widget too.
+        var menuRows = occupied.stream().filter(rect -> rect.height() >= 20 && rect.width() >= 180
                 && Math.abs(rect.centerX() - width / 2) <= 4).toList();
         if (menuRows.isEmpty()) return Optional.empty();
         int first = menuRows.stream().mapToInt(Rect::y).min().orElseThrow();

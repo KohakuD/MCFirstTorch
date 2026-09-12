@@ -15,6 +15,18 @@ final class PauseGuideEntryLayoutTest {
         }
     }
 
+    @Test void fullWidthTitleDoesNotBecomeTheFirstMenuRow() {
+        for (int height : new int[]{240, 360, 480}) {
+            int firstRow = (height - 190) / 4 + 50;
+            var title = new Rect(0, 40, 640, 9);
+            var menu = new Rect(218, firstRow, 204, 140);
+            var result = PauseGuideEntryLayout.find(640, height, List.of(title, menu)).orElseThrow();
+            // The smallest viewport has insufficient room between title and menu.
+            assertEquals(height == 240 ? menu.bottom() + 4 : firstRow - 24, result.y());
+            assertTrue(result.y() >= title.bottom() + 3);
+        }
+    }
+
     @Test void avoidsExistingControlsAndDoesNotForceAnOverlappingButton() {
         Rect result = PauseGuideEntryLayout.find(320, 240, List.of(new Rect(58, 60, 204, 140),
                 new Rect(130, 40, 60, 9))).orElseThrow();

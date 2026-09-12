@@ -4,6 +4,8 @@ All notable player-facing changes are documented here.
 
 ## 0.14.0-alpha.1 — Unreleased
 
+- Fix the 1.21.1 pause-menu entry appearing below the menu: ignore the title when identifying button rows, retaining collision-safe placement in small windows.
+
 - Add a first installable Minecraft 1.21.1 development edition alongside 26.1.2, with separate IntelliJ profiles and target-labelled JARs sharing a Java 21 quest core.
 - Port the native browser, original-game renderers, networking, tasks, rewards and persistence to NeoForge 21.1.248 / Java 21. In-game acceptance is still pending.
 - Adapt both languages for Iron armour, available items and Netherite lodestones. Ordinary excursions no longer require the advanced lodestone branch. Preserve IDs for retained concepts and rewards; exclude the unavailable Creaking reference.
