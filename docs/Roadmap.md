@@ -132,5 +132,5 @@ For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb
 - [x] Inventory major gameplay additions across 1.21–26.2, distinguish missing teaching from mentions, and define ordered remediation blocks. Detailed authoring review remains per block.
 - [x] Attribute existing history events to their actual Minecraft releases (1.21.4/1.21.5/1.21.9), independently of supported First Torch targets.
 
-- [x] Add eight shared 1.21 reference lessons for Crafter, Trial Spawners/Vaults, ominous events, Mace and Wind Charges; keep them out of post-1.21.1 novelty results.
+- [x] Add eight shared 1.21 lessons: two optional Crafter lessons in Redstone and six Trials reference cards for Trial Spawners/Vaults, ominous events, Mace and Wind Charges; keep them out of post-1.21.1 novelty results.
 - [ ] Accept this block in game in both languages; complete the missing potion-effect and later-update blocks before release.

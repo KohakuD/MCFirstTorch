@@ -10,8 +10,10 @@ final class RedstoneArtworkCoverageTest {
         try (var input = getClass().getResourceAsStream("/data/firsttorch/guides/course.json")) {
             var chapters = GuideJson.read(input).chapters().stream()
                     .filter(c -> c.titleKey().startsWith("chapter.firsttorch.redstone_")).toList();
-            assertEquals(6, chapters.size());
-            var setupOnly = Set.of("quest.firsttorch.redstone_basics.bench.title");
+            assertEquals(7, chapters.size());
+            // The relocated Crafter cards confirm reading, not a built circuit.
+            var setupOnly = Set.of("quest.firsttorch.redstone_basics.bench.title",
+                    "quest.firsttorch.redstone_crafter.crafter.title", "quest.firsttorch.redstone_crafter.pulse.title");
             int illustrated = 0;
             for (var chapter : chapters) {
                 for (var quest : chapter.quests()) {

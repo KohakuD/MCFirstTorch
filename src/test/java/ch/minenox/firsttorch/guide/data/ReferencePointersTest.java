@@ -28,7 +28,7 @@ final class ReferencePointersTest {
             var sources = chapters.stream().filter(c -> CHAPTER_KEYS.stream()
                     .anyMatch(key -> c.titleKey().equals("chapter.firsttorch." + key + ".title")))
                     .flatMap(c -> c.quests().stream()).map(q -> q.id()).collect(Collectors.toSet());
-            assertEquals(74, sources.size());
+            assertEquals(72, sources.size());
             var allReferenceSources = chapters.stream().filter(c -> c.titleKey().startsWith("chapter.firsttorch.field_")
                     || c.titleKey().startsWith("chapter.firsttorch.mechanics_"))
                     .flatMap(c -> c.quests().stream()).map(q -> q.id()).collect(Collectors.toSet());

@@ -11,7 +11,7 @@ final class ReferenceIndexTest {
             var chapters = GuideJson.read(input).chapters();
             var indexed = ReferenceIndex.chapters(chapters);
             assertEquals(18, indexed.size());
-            assertEquals(74, indexed.stream().mapToInt(c -> c.quests().size()).sum());
+            assertEquals(72, indexed.stream().mapToInt(c -> c.quests().size()).sum());
             assertEquals(7, indexed.stream().filter(c -> c.titleKey().contains(".field_")).count());
             assertEquals(11, indexed.stream().filter(c -> c.titleKey().contains(".mechanics_")).count());
             assertEquals(indexed, chapters.stream().filter(indexed::contains).toList());

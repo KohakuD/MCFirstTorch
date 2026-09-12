@@ -18,7 +18,7 @@ final class CreatureFieldGuideTest {
         assertEquals(List.of("6A41D479062EB350", "6B52E58A173FC461", "6C63F69B2840D572", "6D7407AC3951E683", "6E8518BD4A62F794", "6F9629CE5B7308A5", "70A7B8C9D0E1F203"),
                 references.stream().map(c -> c.id()).toList());
         for (var chapter : references) {
-            assertEquals(chapter.order() == 55 ? 11 : chapter.order() == 56 ? 5 : chapter.order() == 61 ? 3 : 4, chapter.quests().size());
+            assertEquals(chapter.id().equals("6A41D479062EB350") ? 11 : chapter.id().equals("6B52E58A173FC461") ? 5 : chapter.id().equals("70A7B8C9D0E1F203") ? 3 : 4, chapter.quests().size());
             for (var quest : chapter.quests()) {
                 assertEquals(List.of(INTRO), quest.prerequisiteQuestIds());
                 assertEquals(1, quest.tasks().size());

@@ -3546,7 +3546,7 @@
     },
     {
       "id": "6138B4E07D952AC6",
-      "order": 28,
+      "order": 29,
       "titleKey": "chapter.firsttorch.nether_portal.title",
       "descriptionKey": "chapter.firsttorch.nether_portal.description",
       "iconItemId": "minecraft:flint_and_steel",
@@ -3708,7 +3708,7 @@
     },
     {
       "id": "7249C5F18EA63BD8",
-      "order": 29,
+      "order": 30,
       "titleKey": "chapter.firsttorch.nether_equipment.title",
       "descriptionKey": "chapter.firsttorch.nether_equipment.description",
       "iconItemId": "minecraft:golden_helmet",
@@ -3975,7 +3975,7 @@
     },
     {
       "id": "735AD6029FB74CE9",
-      "order": 30,
+      "order": 31,
       "titleKey": "chapter.firsttorch.nether_arrival.title",
       "descriptionKey": "chapter.firsttorch.nether_arrival.description",
       "iconItemId": "minecraft:obsidian",
@@ -4139,7 +4139,7 @@
     },
     {
       "id": "746BE713A0C85DFA",
-      "order": 31,
+      "order": 32,
       "titleKey": "chapter.firsttorch.nether_safety.title",
       "descriptionKey": "chapter.firsttorch.nether_safety.description",
       "iconItemId": "minecraft:fire_charge",
@@ -4309,7 +4309,7 @@
     },
     {
       "id": "7249E5AFB61C7D28",
-      "order": 32,
+      "order": 33,
       "titleKey": "chapter.firsttorch.piglin_barter.title",
       "descriptionKey": "chapter.firsttorch.piglin_barter.description",
       "iconItemId": "minecraft:gold_ingot",
@@ -4426,7 +4426,7 @@
     },
     {
       "id": "757CF824B1D96E0B",
-      "order": 33,
+      "order": 34,
       "titleKey": "chapter.firsttorch.nether_resources.title",
       "descriptionKey": "chapter.firsttorch.nether_resources.description",
       "iconItemId": "minecraft:quartz",
@@ -4538,7 +4538,7 @@
     },
     {
       "id": "766D0935C2EA7F1C",
-      "order": 34,
+      "order": 35,
       "titleKey": "chapter.firsttorch.nether_fortress.title",
       "descriptionKey": "chapter.firsttorch.nether_fortress.description",
       "iconItemId": "minecraft:nether_bricks",
@@ -4689,7 +4689,7 @@
     },
     {
       "id": "777EA146D3FB802D",
-      "order": 35,
+      "order": 36,
       "titleKey": "chapter.firsttorch.fortress_return.title",
       "descriptionKey": "chapter.firsttorch.fortress_return.description",
       "iconItemId": "minecraft:brewing_stand",
@@ -4798,7 +4798,7 @@
     },
     {
       "id": "735A06C29D714BE8",
-      "order": 36,
+      "order": 37,
       "titleKey": "chapter.firsttorch.brewing.title",
       "descriptionKey": "chapter.firsttorch.brewing.description",
       "iconItemId": "minecraft:brewing_stand",
@@ -5009,7 +5009,7 @@
     },
     {
       "id": "788FB257E40C913E",
-      "order": 37,
+      "order": 38,
       "titleKey": "chapter.firsttorch.fire_resistance.title",
       "descriptionKey": "chapter.firsttorch.fire_resistance.description",
       "iconItemId": "minecraft:fire_charge",
@@ -5132,7 +5132,7 @@
     },
     {
       "id": "746B17D3AE825CF0",
-      "order": 38,
+      "order": 39,
       "titleKey": "chapter.firsttorch.ender_eyes.title",
       "descriptionKey": "chapter.firsttorch.ender_eyes.description",
       "iconItemId": "minecraft:ender_eye",
@@ -5296,7 +5296,7 @@
     },
     {
       "id": "7990C368F51DA24F",
-      "order": 39,
+      "order": 40,
       "titleKey": "chapter.firsttorch.stronghold_search.title",
       "descriptionKey": "chapter.firsttorch.stronghold_search.description",
       "iconItemId": "minecraft:compass",
@@ -5459,7 +5459,7 @@
     {
       "id": "757C28E4BF936D0A",
       "iconItemId": "minecraft:stone_bricks",
-      "order": 40,
+      "order": 41,
       "titleKey": "chapter.firsttorch.stronghold_interior.title",
       "descriptionKey": "chapter.firsttorch.stronghold_interior.description",
       "quests": [
@@ -5591,7 +5591,7 @@
     {
       "id": "7AA1D479062EB350",
       "iconItemId": "minecraft:end_portal_frame",
-      "order": 41,
+      "order": 42,
       "titleKey": "chapter.firsttorch.portal_room.title",
       "descriptionKey": "chapter.firsttorch.portal_room.description",
       "quests": [
@@ -5713,7 +5713,7 @@
     {
       "id": "7BB2E58A173FC461",
       "iconItemId": "minecraft:ender_eye",
-      "order": 42,
+      "order": 43,
       "titleKey": "chapter.firsttorch.end_preparation.title",
       "descriptionKey": "chapter.firsttorch.end_preparation.description",
       "quests": [
@@ -5966,7 +5966,7 @@
     {
       "id": "779E4A06D1B58F4E",
       "iconItemId": "minecraft:end_stone",
-      "order": 43,
+      "order": 44,
       "titleKey": "chapter.firsttorch.end_arrival.title",
       "descriptionKey": "chapter.firsttorch.end_arrival.description",
       "quests": [
@@ -6140,7 +6140,7 @@
     {
       "id": "7CC3F69B2840D572",
       "iconItemId": "minecraft:end_crystal",
-      "order": 44,
+      "order": 45,
       "titleKey": "chapter.firsttorch.crystal_removal.title",
       "descriptionKey": "chapter.firsttorch.crystal_removal.description",
       "quests": [
@@ -6246,7 +6246,7 @@
     },
     {
       "id": "7DD407AC3951E683",
-      "order": 45,
+      "order": 46,
       "iconItemId": "minecraft:dragon_head",
       "titleKey": "chapter.firsttorch.dragon_victory.title",
       "descriptionKey": "chapter.firsttorch.dragon_victory.description",
@@ -6415,7 +6415,7 @@
     },
     {
       "id": "78AF5B17E2C6904D",
-      "order": 46,
+      "order": 47,
       "iconItemId": "minecraft:ender_pearl",
       "titleKey": "chapter.firsttorch.outer_arrival.title",
       "descriptionKey": "chapter.firsttorch.outer_arrival.description",
@@ -6569,7 +6569,7 @@
     },
     {
       "id": "7EE518BD4A62F794",
-      "order": 47,
+      "order": 48,
       "iconItemId": "minecraft:chorus_flower",
       "titleKey": "chapter.firsttorch.chorus_city.title",
       "descriptionKey": "chapter.firsttorch.chorus_city.description",
@@ -6741,7 +6741,7 @@
     },
     {
       "id": "7FF629CE5B7308A5",
-      "order": 48,
+      "order": 49,
       "iconItemId": "minecraft:shulker_shell",
       "titleKey": "chapter.firsttorch.shulker_city.title",
       "descriptionKey": "chapter.firsttorch.shulker_city.description",
@@ -7002,7 +7002,7 @@
     },
     {
       "id": "60A73ADF6C8419B6",
-      "order": 49,
+      "order": 50,
       "iconItemId": "minecraft:elytra",
       "titleKey": "chapter.firsttorch.end_ship.title",
       "descriptionKey": "chapter.firsttorch.end_ship.description",
@@ -7190,7 +7190,7 @@
     },
     {
       "id": "61B84BE07D952AC7",
-      "order": 50,
+      "order": 51,
       "iconItemId": "minecraft:elytra",
       "titleKey": "chapter.firsttorch.flight_basics.title",
       "descriptionKey": "chapter.firsttorch.flight_basics.description",
@@ -7391,7 +7391,7 @@
     },
     {
       "id": "62C95CF18EA63BD8",
-      "order": 51,
+      "order": 52,
       "iconItemId": "minecraft:firework_rocket",
       "titleKey": "chapter.firsttorch.flight_journey.title",
       "descriptionKey": "chapter.firsttorch.flight_journey.description",
@@ -7530,7 +7530,7 @@
     },
     {
       "id": "6E095C883A1E5D3D",
-      "order": 52,
+      "order": 53,
       "iconItemId": "minecraft:compass",
       "titleKey": "chapter.firsttorch.and_now.title",
       "descriptionKey": "chapter.firsttorch.and_now.description",
@@ -7694,7 +7694,7 @@
     {
       "id": "702FA5D18C643BE9",
       "iconItemId": "minecraft:bone",
-      "order": 53,
+      "order": 54,
       "titleKey": "chapter.firsttorch.mob_drops.title",
       "descriptionKey": "chapter.firsttorch.mob_drops.description",
       "quests": [
@@ -7924,7 +7924,7 @@
     {
       "id": "63DA6D029FB74CE9",
       "iconItemId": "minecraft:polished_blackstone_bricks",
-      "order": 54,
+      "order": 55,
       "titleKey": "chapter.firsttorch.bastion.title",
       "descriptionKey": "chapter.firsttorch.bastion.description",
       "quests": [
@@ -8983,7 +8983,7 @@
     {
       "id": "6A41D479062EB350",
       "iconItemId": "minecraft:milk_bucket",
-      "order": 55,
+      "order": 56,
       "titleKey": "chapter.firsttorch.field_animals.title",
       "descriptionKey": "chapter.firsttorch.field_animals.description",
       "quests": [
@@ -9234,7 +9234,7 @@
     {
       "id": "6B52E58A173FC461",
       "iconItemId": "minecraft:bone",
-      "order": 56,
+      "order": 57,
       "titleKey": "chapter.firsttorch.field_overworld.title",
       "descriptionKey": "chapter.firsttorch.field_overworld.description",
       "quests": [
@@ -9353,7 +9353,7 @@
     {
       "id": "6C63F69B2840D572",
       "iconItemId": "minecraft:blaze_rod",
-      "order": 57,
+      "order": 58,
       "titleKey": "chapter.firsttorch.field_nether.title",
       "descriptionKey": "chapter.firsttorch.field_nether.description",
       "quests": [
@@ -9450,7 +9450,7 @@
     {
       "id": "6D7407AC3951E683",
       "iconItemId": "minecraft:ender_pearl",
-      "order": 58,
+      "order": 59,
       "titleKey": "chapter.firsttorch.field_end.title",
       "descriptionKey": "chapter.firsttorch.field_end.description",
       "quests": [
@@ -9547,7 +9547,7 @@
     {
       "id": "6E8518BD4A62F794",
       "iconItemId": "minecraft:ink_sac",
-      "order": 59,
+      "order": 60,
       "titleKey": "chapter.firsttorch.field_water.title",
       "descriptionKey": "chapter.firsttorch.field_water.description",
       "quests": [
@@ -9644,7 +9644,7 @@
     {
       "id": "6F9629CE5B7308A5",
       "iconItemId": "minecraft:honeycomb",
-      "order": 60,
+      "order": 61,
       "titleKey": "chapter.firsttorch.field_special.title",
       "descriptionKey": "chapter.firsttorch.field_special.description",
       "quests": [
@@ -9741,7 +9741,7 @@
     {
       "id": "70A7B8C9D0E1F203",
       "iconItemId": "minecraft:breeze_rod",
-      "order": 61,
+      "order": 62,
       "titleKey": "chapter.firsttorch.field_chambers_garden.title",
       "descriptionKey": "chapter.firsttorch.field_chambers_garden.description",
       "quests": [
@@ -9794,7 +9794,7 @@
     {
       "id": "71B8C9D0E1F20314",
       "iconItemId": "minecraft:white_concrete",
-      "order": 62,
+      "order": 63,
       "titleKey": "chapter.firsttorch.mechanics_blocks.title",
       "descriptionKey": "chapter.firsttorch.mechanics_blocks.description",
       "quests": [
@@ -9869,7 +9869,7 @@
     {
       "id": "72C9D0E1F2031425",
       "iconItemId": "minecraft:name_tag",
-      "order": 63,
+      "order": 64,
       "titleKey": "chapter.firsttorch.mechanics_names.title",
       "descriptionKey": "chapter.firsttorch.mechanics_names.description",
       "quests": [
@@ -9944,7 +9944,7 @@
     {
       "id": "73D0E1F203142536",
       "iconItemId": "minecraft:honey_bottle",
-      "order": 64,
+      "order": 65,
       "titleKey": "chapter.firsttorch.mechanics_bees.title",
       "descriptionKey": "chapter.firsttorch.mechanics_bees.description",
       "quests": [
@@ -10019,7 +10019,7 @@
     {
       "id": "74E1F20314253647",
       "iconItemId": "minecraft:brush",
-      "order": 65,
+      "order": 66,
       "titleKey": "chapter.firsttorch.mechanics_archaeology.title",
       "descriptionKey": "chapter.firsttorch.mechanics_archaeology.description",
       "quests": [
@@ -10100,7 +10100,7 @@
     {
       "id": "75F2031425364758",
       "iconItemId": "minecraft:music_disc_cat",
-      "order": 66,
+      "order": 67,
       "titleKey": "chapter.firsttorch.mechanics_music.title",
       "descriptionKey": "chapter.firsttorch.mechanics_music.description",
       "quests": [
@@ -10175,7 +10175,7 @@
     {
       "id": "7603142536475869",
       "iconItemId": "minecraft:golden_apple",
-      "order": 67,
+      "order": 68,
       "titleKey": "chapter.firsttorch.mechanics_curing.title",
       "descriptionKey": "chapter.firsttorch.mechanics_curing.description",
       "quests": [
@@ -10250,7 +10250,7 @@
     {
       "id": "771425364758697A",
       "iconItemId": "minecraft:cauldron",
-      "order": 68,
+      "order": 69,
       "titleKey": "chapter.firsttorch.mechanics_cauldrons.title",
       "descriptionKey": "chapter.firsttorch.mechanics_cauldrons.description",
       "quests": [
@@ -10325,7 +10325,7 @@
     {
       "id": "7825364758697A1B",
       "iconItemId": "minecraft:carved_pumpkin",
-      "order": 69,
+      "order": 70,
       "titleKey": "chapter.firsttorch.mechanics_pumpkins.title",
       "descriptionKey": "chapter.firsttorch.mechanics_pumpkins.description",
       "quests": [
@@ -10406,7 +10406,7 @@
     {
       "id": "79364758697A1B2C",
       "iconItemId": "minecraft:respawn_anchor",
-      "order": 70,
+      "order": 71,
       "titleKey": "chapter.firsttorch.mechanics_anchor.title",
       "descriptionKey": "chapter.firsttorch.mechanics_anchor.description",
       "quests": [
@@ -10478,190 +10478,199 @@
         }
       ]
     },
-{
-  "id": "7A12100000000001",
-  "iconItemId": "minecraft:crafter",
-  "order": 71,
-  "titleKey": "chapter.firsttorch.mechanics_trials.title",
-  "descriptionKey": "chapter.firsttorch.mechanics_trials.description",
-  "quests": [
     {
-      "id": "2A12100000000001",
-      "order": 0,
-      "titleKey": "quest.firsttorch.mechanics_trials.crafter.title",
-      "descriptionKey": "quest.firsttorch.mechanics_trials.crafter.description",
+      "id": "7A12100000000002",
       "iconItemId": "minecraft:crafter",
-      "tasks": [
+      "order": 28,
+      "titleKey": "chapter.firsttorch.redstone_crafter.title",
+      "descriptionKey": "chapter.firsttorch.redstone_crafter.description",
+      "quests": [
         {
-          "id": "3A12100000000001",
-          "type": "MANUAL",
-          "count": 1,
-          "titleKey": "task.firsttorch.3a12100000000001.title"
+          "id": "2A12100000000001",
+          "order": 0,
+          "titleKey": "quest.firsttorch.redstone_crafter.crafter.title",
+          "descriptionKey": "quest.firsttorch.redstone_crafter.crafter.description",
+          "iconItemId": "minecraft:crafter",
+          "tasks": [
+            {
+              "id": "3A12100000000001",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a12100000000001.title"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "prerequisiteQuestIds": [
+            "10A0B0C0D0E00006"
+          ]
+        },
+        {
+          "id": "2A12100000000002",
+          "order": 1,
+          "titleKey": "quest.firsttorch.redstone_crafter.pulse.title",
+          "descriptionKey": "quest.firsttorch.redstone_crafter.pulse.description",
+          "iconItemId": "minecraft:oak_button",
+          "tasks": [
+            {
+              "id": "3A12100000000002",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a12100000000002.title"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 2
+          },
+          "prerequisiteQuestIds": [
+            "2A12100000000001"
+          ]
         }
-      ],
-      "position": {
-        "x": 0,
-        "y": 0
-      },
-      "prerequisiteQuestIds": [
-        "3C3122DF5C0EA192"
       ]
     },
     {
-      "id": "2A12100000000002",
-      "order": 1,
-      "titleKey": "quest.firsttorch.mechanics_trials.pulse.title",
-      "descriptionKey": "quest.firsttorch.mechanics_trials.pulse.description",
-      "iconItemId": "minecraft:oak_button",
-      "tasks": [
-        {
-          "id": "3A12100000000002",
-          "type": "MANUAL",
-          "count": 1,
-          "titleKey": "task.firsttorch.3a12100000000002.title"
-        }
-      ],
-      "position": {
-        "x": 0,
-        "y": 2
-      },
-      "prerequisiteQuestIds": [
-        "3C3122DF5C0EA192"
-      ]
-    },
-    {
-      "id": "2A12100000000003",
-      "order": 2,
-      "titleKey": "quest.firsttorch.mechanics_trials.spawner.title",
-      "descriptionKey": "quest.firsttorch.mechanics_trials.spawner.description",
-      "iconItemId": "minecraft:trial_spawner",
-      "tasks": [
-        {
-          "id": "3A12100000000003",
-          "type": "MANUAL",
-          "count": 1,
-          "titleKey": "task.firsttorch.3a12100000000003.title"
-        }
-      ],
-      "position": {
-        "x": 0,
-        "y": 4
-      },
-      "prerequisiteQuestIds": [
-        "3C3122DF5C0EA192"
-      ]
-    },
-    {
-      "id": "2A12100000000004",
-      "order": 3,
-      "titleKey": "quest.firsttorch.mechanics_trials.vault.title",
-      "descriptionKey": "quest.firsttorch.mechanics_trials.vault.description",
+      "id": "7A12100000000001",
       "iconItemId": "minecraft:trial_key",
-      "tasks": [
+      "order": 72,
+      "titleKey": "chapter.firsttorch.mechanics_trials.title",
+      "descriptionKey": "chapter.firsttorch.mechanics_trials.description",
+      "quests": [
         {
-          "id": "3A12100000000004",
-          "type": "MANUAL",
-          "count": 1,
-          "titleKey": "task.firsttorch.3a12100000000004.title"
-        }
-      ],
-      "position": {
-        "x": 0,
-        "y": 6
-      },
-      "prerequisiteQuestIds": [
-        "3C3122DF5C0EA192"
-      ]
-    },
-    {
-      "id": "2A12100000000005",
-      "order": 4,
-      "titleKey": "quest.firsttorch.mechanics_trials.omen.title",
-      "descriptionKey": "quest.firsttorch.mechanics_trials.omen.description",
-      "iconItemId": "minecraft:ominous_bottle",
-      "tasks": [
+          "id": "2A12100000000003",
+          "order": 0,
+          "titleKey": "quest.firsttorch.mechanics_trials.spawner.title",
+          "descriptionKey": "quest.firsttorch.mechanics_trials.spawner.description",
+          "iconItemId": "minecraft:trial_spawner",
+          "tasks": [
+            {
+              "id": "3A12100000000003",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a12100000000003.title"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
+        },
         {
-          "id": "3A12100000000005",
-          "type": "MANUAL",
-          "count": 1,
-          "titleKey": "task.firsttorch.3a12100000000005.title"
-        }
-      ],
-      "position": {
-        "x": 0,
-        "y": 8
-      },
-      "prerequisiteQuestIds": [
-        "3C3122DF5C0EA192"
-      ]
-    },
-    {
-      "id": "2A12100000000006",
-      "order": 5,
-      "titleKey": "quest.firsttorch.mechanics_trials.mace.title",
-      "descriptionKey": "quest.firsttorch.mechanics_trials.mace.description",
-      "iconItemId": "minecraft:heavy_core",
-      "tasks": [
+          "id": "2A12100000000004",
+          "order": 1,
+          "titleKey": "quest.firsttorch.mechanics_trials.vault.title",
+          "descriptionKey": "quest.firsttorch.mechanics_trials.vault.description",
+          "iconItemId": "minecraft:trial_key",
+          "tasks": [
+            {
+              "id": "3A12100000000004",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a12100000000004.title"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 2
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
+        },
         {
-          "id": "3A12100000000006",
-          "type": "MANUAL",
-          "count": 1,
-          "titleKey": "task.firsttorch.3a12100000000006.title"
-        }
-      ],
-      "position": {
-        "x": 0,
-        "y": 10
-      },
-      "prerequisiteQuestIds": [
-        "3C3122DF5C0EA192"
-      ]
-    },
-    {
-      "id": "2A12100000000007",
-      "order": 6,
-      "titleKey": "quest.firsttorch.mechanics_trials.enchantments.title",
-      "descriptionKey": "quest.firsttorch.mechanics_trials.enchantments.description",
-      "iconItemId": "minecraft:enchanted_book",
-      "tasks": [
+          "id": "2A12100000000005",
+          "order": 2,
+          "titleKey": "quest.firsttorch.mechanics_trials.omen.title",
+          "descriptionKey": "quest.firsttorch.mechanics_trials.omen.description",
+          "iconItemId": "minecraft:ominous_bottle",
+          "tasks": [
+            {
+              "id": "3A12100000000005",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a12100000000005.title"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 4
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
+        },
         {
-          "id": "3A12100000000007",
-          "type": "MANUAL",
-          "count": 1,
-          "titleKey": "task.firsttorch.3a12100000000007.title"
-        }
-      ],
-      "position": {
-        "x": 0,
-        "y": 12
-      },
-      "prerequisiteQuestIds": [
-        "3C3122DF5C0EA192"
-      ]
-    },
-    {
-      "id": "2A12100000000008",
-      "order": 7,
-      "titleKey": "quest.firsttorch.mechanics_trials.wind.title",
-      "descriptionKey": "quest.firsttorch.mechanics_trials.wind.description",
-      "iconItemId": "minecraft:wind_charge",
-      "tasks": [
+          "id": "2A12100000000006",
+          "order": 3,
+          "titleKey": "quest.firsttorch.mechanics_trials.mace.title",
+          "descriptionKey": "quest.firsttorch.mechanics_trials.mace.description",
+          "iconItemId": "minecraft:heavy_core",
+          "tasks": [
+            {
+              "id": "3A12100000000006",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a12100000000006.title"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 6
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
+        },
         {
-          "id": "3A12100000000008",
-          "type": "MANUAL",
-          "count": 1,
-          "titleKey": "task.firsttorch.3a12100000000008.title"
+          "id": "2A12100000000007",
+          "order": 4,
+          "titleKey": "quest.firsttorch.mechanics_trials.enchantments.title",
+          "descriptionKey": "quest.firsttorch.mechanics_trials.enchantments.description",
+          "iconItemId": "minecraft:enchanted_book",
+          "tasks": [
+            {
+              "id": "3A12100000000007",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a12100000000007.title"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 8
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
+        },
+        {
+          "id": "2A12100000000008",
+          "order": 5,
+          "titleKey": "quest.firsttorch.mechanics_trials.wind.title",
+          "descriptionKey": "quest.firsttorch.mechanics_trials.wind.description",
+          "iconItemId": "minecraft:wind_charge",
+          "tasks": [
+            {
+              "id": "3A12100000000008",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.3a12100000000008.title"
+            }
+          ],
+          "position": {
+            "x": 0,
+            "y": 10
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
         }
-      ],
-      "position": {
-        "x": 0,
-        "y": 14
-      },
-      "prerequisiteQuestIds": [
-        "3C3122DF5C0EA192"
       ]
     }
-  ]
-}
   ]
 }

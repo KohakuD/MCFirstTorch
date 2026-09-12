@@ -13,7 +13,15 @@ class TrickyTrialsReferencesTest {
         var guide = GuideJson.read(getClass().getResourceAsStream("/data/firsttorch/guides/course.json"));
         var chapter = guide.chapters().stream().filter(c -> c.id().equals("7A12100000000001"))
                 .findFirst().orElseThrow();
-        assertEquals(8, chapter.quests().size());
+        assertEquals(6, chapter.quests().size());
+        var crafter = guide.chapters().stream().filter(c -> c.id().equals("7A12100000000002"))
+                .findFirst().orElseThrow();
+        assertEquals("chapter.firsttorch.redstone_crafter.title", crafter.titleKey());
+        assertEquals(List.of("2A12100000000001", "2A12100000000002"),
+                crafter.quests().stream().map(q -> q.id()).toList());
+        assertEquals(List.of("10A0B0C0D0E00006"), crafter.quests().getFirst().prerequisiteQuestIds());
+        assertEquals(List.of("2A12100000000001"), crafter.quests().getLast().prerequisiteQuestIds());
+        assertTrue(crafter.quests().stream().allMatch(q -> q.rewards().isEmpty()));
         var ids = chapter.quests().stream().map(q -> q.id()).collect(Collectors.toSet());
         var history = FirstTorchEditionHistory.create();
         var snapshot = new GuideSnapshot(List.of(guide));
