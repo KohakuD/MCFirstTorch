@@ -85,6 +85,8 @@ Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then 
 
 ### Phase 3: Returning-learner welcome and version comparison
 
+- [x] Implement and test the read-only shared comparison core with explicit Minecraft order, cumulative semantic changes, target availability from loaded quests and separate prerequisite context. User interface and persistence are not wired yet.
+
 - [ ] Add a bilingual welcome question: "Do you already know First Torch from an earlier Minecraft version?" / "Kennst du First Torch bereits aus einer früheren Minecraft-Version?"
 - [ ] "No" opens all quests. "Yes" asks which earlier supported version the learner knows and opens the relevant new and revised lessons since that baseline.
 - [ ] Detect the running Minecraft target and maintain a bundled, explicitly ordered catalogue of published First Torch Minecraft editions. Offer only valid earlier comparison baselines; future targets such as `26.3` become available after their edition is implemented and published. An online catalogue refresh is optional future work, not required for this milestone.

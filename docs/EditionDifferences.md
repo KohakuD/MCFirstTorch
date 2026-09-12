@@ -47,3 +47,9 @@ The optional Sulfur Caves reference chapter `7A26200000000001` introduces five g
 These are reading confirmations, not completed physical experiments. Each unlocks after the existing reference introduction; none gates existing course quests or grants items. The future 1.21.1-to-26.2 comparison includes these IDs alongside the substantive 26.1.2 revisions above. The comparison filter itself is not yet implemented.
 
 The existing reading introduction `32B4C6D8E0F21357` gains substantive 26.2 Friends List guidance (menu/default key/settings and personal quest progress). Record it as a revised lesson for the future comparison, not a new quest ID.
+
+## Implemented comparison core
+
+`FirstTorchEditionHistory` records the reviewed semantic changes in the shared Java 21 core. `EditionHistory` uses explicit Minecraft ordering, accepts publication eligibility from the future runtime catalogue, intersects changes with the loaded target quests, deduplicates repeated revisions, and returns separate changed/context ID sets. Prerequisite closure includes ALL/ANY alternatives as navigable background; it never grants completion or rewards. No filtered GuideSnapshot is constructed, so original validation and server eligibility remain intact.
+
+The tested 1.21.1-to-26.2 selection contains 13 changed lessons; 26.1.2-to-26.2 contains six (five sulfur cards plus the revised reading introduction). Recipe/route context, reward substitutions and cosmetic fixes do not count as new lessons. UI integration, current-target detection, published baseline catalogue, per-player preference storage and accessible prerequisite navigation remain outstanding.
