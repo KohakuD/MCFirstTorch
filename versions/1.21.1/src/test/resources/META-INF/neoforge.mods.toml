@@ -1,9 +1,0 @@
-modLoader="javafml"
-loaderVersion="[4,)"
-license="MIT"
-
-[[mods]]
-modId="firsttorch"
-version="0.0.0-test"
-displayName="First Torch native adapter tests"
-description="Test-only loader fixture. Never packaged in a First Torch release."

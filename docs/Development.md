@@ -12,7 +12,7 @@ The runtime is independent of FTB Quests, FTB Library, FTB Teams, Initially, Kub
 - `core/src/main/java/`: Minecraft-independent guide model, parsing, validation and progression rules (Java 21)
 - `core/src/test/java/`: shared quest-rule tests on Java 21 with Gson 2.10.1
 - `src/main/java/`: Minecraft 26.1.2 native runtime and client interface (Java 25)
-- `versions/1.21.1/`: native Java 21 / NeoForge 21.1.248 backport adapters and tests (`:mc1211`, no installable artifact yet)
+- `versions/1.21.1/`: native Java 21 / NeoForge 21.1.248 backport adapters and tests (`:mc1211`, installable development edition)
 - `src/main/resources/data/firsttorch/guides/`: server guide definitions
 - `src/main/resources/assets/firsttorch/`: translations, icons, and guide illustrations
 - `src/main/templates/`: generated NeoForge metadata templates
@@ -29,7 +29,7 @@ Never commit mod JARs, worlds, logs, player progress, or generated build output.
 Use Java 25. For local development, import the repository as a Gradle project and launch **First Torch Client**, or run:
 
 ```powershell
-.\gradlew.bat runClient
+.\gradlew.bat :runClient
 ```
 
 For an installable native JAR:
@@ -45,12 +45,22 @@ After guide, translation, progression, or interface changes, use a fresh test wo
 
 ## Multiple-version development
 
-Open the repository root once in IntelliJ and reload Gradle after pulling the module split. The root project remains the Minecraft `26.1.2` runtime; `:core` is a plain Java library, not a separately installed mod. Gradle selects Java 21 for the shared core and Java 25 for the current runtime. No per-Minecraft IntelliJ project is required.
+Open the repository root once in IntelliJ and reload Gradle after pulling the module split. The root project remains the Minecraft `26.1.2` runtime; `:core` is a plain Java library, not a separately installed mod. Gradle selects Java 21 for the shared core and 1.21.1, and Java 25 for 26.1.2. No per-Minecraft IntelliJ project is required.
 
 The root mod declares both source sets for development launches and includes core classes directly in its JAR. Do not install the core JAR, add a nested library JAR, or duplicate shared sources into each target. The root `check` task depends on `:core:check` and `:mc1211:check`, so both `test build` and an explicit `:build` retain the shared-rule gate. Use `:core:test` for changes confined to pure quest logic; use the Minecraft test suite for runtime integrations.
 
-The existing `First Torch Client` run configuration still launches `26.1.2`. The `:mc1211` module now pins NeoForge `21.1.248` and Java 21 and implements native storage/reward/server adapters and payload codecs. Run `./gradlew :mc1211:test` (Windows: `.\gradlew.bat :mc1211:test`) for the shared data-contract and target-specific storage tests. A test-only mod fixture enables the native NeoForge JUnit registry context. The module has no production mod entry point, client handlers/UI, client run configuration or target curriculum yet; JAR generation is disabled until the native runtime is complete. There is no installable `1.21.1` artifact. See [Backport1211.md](Backport1211.md) for the API/content assessment and pending acceptance.
+The existing **First Torch Client** configuration explicitly launches `:runClient` (26.1.2). **First Torch Client 1.21.1** launches `:mc1211:runClient`, using Java 21 / NeoForge 21.1.248 and the separate `versions/1.21.1/run/client` directory. Always qualify runtime tasks so Gradle does not launch both editions. A separate `:mc1211:runServer` profile uses `run/server`; dedicated-server acceptance remains unverified.
 
+The 1.21.1 module now includes a production entry, client payload handling, native UI/rendering, storage/rewards and adapted bilingual resources. Tests use the real production mod metadata through the native NeoForge JUnit launcher. `syncTargetResources` merges shared resources and explicit target overrides, excluding unverified 26.1.2 captures. Compatible client logic is selected explicitly alongside compatible server classes; target adapters stay in `versions/1.21.1/src/main/java`.
+
+Run `.\gradlew.bat test build`, then verify both native JARs:
+
+```powershell
+pwsh .\tools\verify-native-jar.ps1 -JarPath .\build\libs\firsttorch-mc26.1.2-0.14.0-alpha.1.jar
+pwsh .\tools\verify-native-jar.ps1 -JarPath .\versions\1.21.1\build\libs\firsttorch-mc1.21.1-0.14.0-alpha.1.jar
+```
+
+The 1.21.1 client has passed a startup smoke check; fresh-world welcome, both languages, progression, reward delivery, rendering and restart persistence still require manual acceptance. See [Backport1211.md](Backport1211.md). The version-comparison filter remains future milestone work.
 Artifacts now include their Minecraft target in the filename. First Torch release numbers and Minecraft version numbers remain separate; publishing a backport later does not change Minecraft version ordering.
 
 ## Native guide and progress model

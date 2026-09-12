@@ -4,11 +4,11 @@ All notable player-facing changes are documented here.
 
 ## 0.14.0-alpha.1 — Unreleased
 
-- Begin the multi-version milestone with a shared Java 21 quest core; the playable edition remains Minecraft 26.1.2.
-- Add native 1.21.1 storage, reward/server adapters and protocol codecs and a separate Java 21 verification module; this is not an installable backport yet.
-- Include the Minecraft target in native artifact filenames. Quest content, stable IDs and progress semantics are unchanged.
-- Minecraft 1.21.1 runtime/content adaptation and the returning-learner version filter remain in development and are not included yet.
-
+- Add a first installable Minecraft 1.21.1 development edition alongside 26.1.2, with separate IntelliJ profiles and target-labelled JARs sharing a Java 21 quest core.
+- Port the native browser, original-game renderers, networking, tasks, rewards and persistence to NeoForge 21.1.248 / Java 21. In-game acceptance is still pending.
+- Adapt both languages for Iron armour, available items and Netherite lodestones. Ordinary excursions no longer require the advanced lodestone branch. Preserve IDs for retained concepts and rewards; exclude the unavailable Creaking reference.
+- Omit fifteen unverified newer-version captures in the backport until target-specific replacements are accepted. Native recipe models remain available.
+- The 26.2 edition and returning-learner version filter remain planned and are not included yet.
 ## 0.13.0-beta.2 — 2026-09-10
 
 - Align accessibility at the bottom right of the header, with the unlocked reference library immediately to its left.

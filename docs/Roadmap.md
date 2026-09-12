@@ -49,7 +49,7 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
 
 ## Active milestone: 0.14.0 — Multiple Minecraft versions and returning learners
 
-Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then add `26.2`, and build a reusable version-comparison view for returning learners. Development has started as `0.14.0-alpha.1`; the playable runtime still targets `26.1.2` only. The previous baseline is preserved at commit `029e8c4`. Existing release acceptance work above remains open as recorded.
+Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then add `26.2`, and build a reusable version-comparison view for returning learners. Development has started as `0.14.0-alpha.1`; both `26.1.2` and an initial installable `1.21.1` edition now build; the latter still requires in-game acceptance. The previous baseline is preserved at commit `029e8c4`. Existing release acceptance work above remains open as recorded.
 
 ### Phase 1: Shared foundation and Minecraft 1.21.1 backport
 
@@ -59,10 +59,11 @@ Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then 
   - [x] Record initial API and content blockers, including the early lodestone progression issue, in `Backport1211.md`.
   - [x] Add the isolated `:mc1211` verification module, pinned to Java 21 / NeoForge 21.1.248, and compile the first native progress/welcome data adapters.
   - [x] Compile reward, task/command, reload/sync and payload adapters; reuse compatible journal/observation/service sources and validate the target through native NeoForge JUnit.
-  - [ ] Finish production entry/client-handler registration, client UI, live runtime integration and target-specific resources.
+  - [x] Implement production entry/client-handler registration, native client UI/renderers and initial target-specific resources; compile/test and client startup checks pass. Live gameplay acceptance remains below.
 - [x] Establish one repository and IntelliJ Gradle project with a Java 21 `:core` module and the existing Java 25 / `26.1.2` runtime. Future Minecraft targets get separate native modules; core classes are merged directly into each native JAR.
-- [ ] Provide separate dependencies, toolchains, run profiles, test directories and clearly labelled JARs for each Minecraft target. Share compatible logic, guide data and translations without forcing incompatible runtime code into a common module.
+- [x] Provide separate dependencies, toolchains, run profiles, test directories and clearly labelled JARs for the implemented Minecraft targets. Share compatible logic, guide data and translations without forcing incompatible runtime code into a common module.
 - [ ] Backport the native runtime and review every lesson against `1.21.1` mechanics, recipes, objectives and available content. Maintain English and German together and use exact target-version game assets.
+  - [x] Adapt known incompatible items, Iron armour, Netherite lodestone and optional excursion prerequisites in both languages; omit unverified newer captures. Full mechanics/visual acceptance remains open.
 - [ ] Record content availability and meaningful lesson differences between `1.21.1` and `26.1.2` as the basis for later comparisons. Minecraft version order is independent of the date a First Torch backport is published.
 - [ ] Validate and release the `1.21.1` edition before proceeding to the `26.2` port. A mod backport does not imply support for downgrading existing Minecraft worlds or importing progress across versions.
 

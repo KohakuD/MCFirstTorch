@@ -1,0 +1,382 @@
+{
+  "19A0B0C0D0E00001": [
+    {
+      "questId": "0C7539E5BF936D1A",
+      "titleKey": "chapter.firsttorch.ender_eyes.title"
+    }
+  ],
+  "19A0B0C0D0E00002": [
+    {
+      "questId": "58A57A615D0EF444",
+      "titleKey": "chapter.firsttorch.shulker_city.title"
+    }
+  ],
+  "19A0B0C0D0E00003": [
+    {
+      "questId": "086D39F5C0A47E2B",
+      "titleKey": "chapter.firsttorch.stronghold_interior.title"
+    }
+  ],
+  "19A0B0C0D0E00004": [
+    {
+      "questId": "0C7539E5BF936D1A",
+      "titleKey": "chapter.firsttorch.ender_eyes.title"
+    }
+  ],
+  "1AA0B0C0D0E00001": [
+    {
+      "questId": "12E8A5C74F309BD6",
+      "titleKey": "chapter.firsttorch.excursions.title"
+    }
+  ],
+  "1AA0B0C0D0E00002": [
+    {
+      "questId": "1A62D8E30C745BF9",
+      "titleKey": "chapter.firsttorch.mining.title"
+    }
+  ],
+  "1AA0B0C0D0E00003": [
+    {
+      "questId": "12E8A5C74F309BD6",
+      "titleKey": "chapter.firsttorch.excursions.title"
+    }
+  ],
+  "1AA0B0C0D0E00004": [
+    {
+      "questId": "174BD2A608E35C91",
+      "titleKey": "chapter.firsttorch.animal_care.title"
+    }
+  ],
+  "1BA0B0C0D0E00001": [
+    {
+      "questId": "1FA0B0C0D0E00001",
+      "titleKey": "chapter.firsttorch.mechanics_bees.title"
+    }
+  ],
+  "1BA0B0C0D0E00002": [
+    {
+      "questId": "174BD2A608E35C91",
+      "titleKey": "chapter.firsttorch.animal_care.title"
+    }
+  ],
+  "1BA0B0C0D0E00003": [
+    {
+      "questId": "1C83F0A24D6E917B",
+      "titleKey": "chapter.firsttorch.nether_resources.title"
+    }
+  ],
+  "1BA0B0C0D0E00004": [
+    {
+      "questId": "12E8A5C74F309BD6",
+      "titleKey": "chapter.firsttorch.excursions.title"
+    }
+  ],
+  "16A0B0C0D0E00001": [
+    {
+      "questId": "174BD2A608E35C91",
+      "titleKey": "chapter.firsttorch.animal_care.title"
+    }
+  ],
+  "16A0B0C0D0E00002": [
+    {
+      "questId": "174BD2A608E35C91",
+      "titleKey": "chapter.firsttorch.animal_care.title"
+    }
+  ],
+  "16A0B0C0D0E00003": [
+    {
+      "questId": "174BD2A608E35C91",
+      "titleKey": "chapter.firsttorch.animal_care.title"
+    }
+  ],
+  "16A0B0C0D0E00004": [
+    {
+      "questId": "174BD2A608E35C91",
+      "titleKey": "chapter.firsttorch.animal_care.title"
+    }
+  ],
+  "16A0B0C0D0E00005": [
+    {
+      "questId": "174BD2A608E35C91",
+      "titleKey": "chapter.firsttorch.animal_care.title"
+    }
+  ],
+  "16A0B0C0D0E00006": [
+    {
+      "questId": "2F49B6D81E50AC73",
+      "titleKey": "chapter.firsttorch.village.title"
+    }
+  ],
+  "16A0B0C0D0E00007": [
+    {
+      "questId": "12E8A5C74F309BD6",
+      "titleKey": "chapter.firsttorch.excursions.title"
+    }
+  ],
+  "16A0B0C0D0E00008": [
+    {
+      "questId": "27A9D4E60B835CF1",
+      "titleKey": "chapter.firsttorch.iron_essentials.title"
+    }
+  ],
+  "16A0B0C0D0E00009": [
+    {
+      "questId": "12E8A5C74F309BD6",
+      "titleKey": "chapter.firsttorch.excursions.title"
+    }
+  ],
+  "16A0B0C0D0E0000A": [
+    {
+      "questId": "12E8A5C74F309BD6",
+      "titleKey": "chapter.firsttorch.excursions.title"
+    }
+  ],
+  "16A0B0C0D0E0000B": [
+    {
+      "questId": "1EA0B0C0D0E00001",
+      "titleKey": "chapter.firsttorch.mechanics_names.title"
+    }
+  ],
+  "17A0B0C0D0E00001": [
+    {
+      "questId": "0D51B7F3AE264C09",
+      "titleKey": "chapter.firsttorch.mob_drops.title"
+    }
+  ],
+  "17A0B0C0D0E00002": [
+    {
+      "questId": "0D51B7F3AE264C09",
+      "titleKey": "chapter.firsttorch.mob_drops.title"
+    }
+  ],
+  "17A0B0C0D0E00003": [
+    {
+      "questId": "0D51B7F3AE264C09",
+      "titleKey": "chapter.firsttorch.mob_drops.title"
+    }
+  ],
+  "17A0B0C0D0E00004": [
+    {
+      "questId": "0D51B7F3AE264C09",
+      "titleKey": "chapter.firsttorch.mob_drops.title"
+    }
+  ],
+  "17A0B0C0D0E00005": [
+    {
+      "questId": "0D51B7F3AE264C09",
+      "titleKey": "chapter.firsttorch.mob_drops.title"
+    }
+  ],
+  "18A0B0C0D0E00001": [
+    {
+      "questId": "78FAD3D980F349BA",
+      "titleKey": "chapter.firsttorch.nether_fortress.title"
+    },
+    {
+      "questId": "0A6417D3BE825CF9",
+      "titleKey": "chapter.firsttorch.brewing.title"
+    }
+  ],
+  "18A0B0C0D0E00002": [
+    {
+      "questId": "78FAD3D980F349BA",
+      "titleKey": "chapter.firsttorch.nether_fortress.title"
+    }
+  ],
+  "18A0B0C0D0E00003": [
+    {
+      "questId": "236B08D1E94FA05C",
+      "titleKey": "chapter.firsttorch.nether_safety.title"
+    }
+  ],
+  "18A0B0C0D0E00004": [
+    {
+      "questId": "78FAD3D980F349BA",
+      "titleKey": "chapter.firsttorch.nether_fortress.title"
+    }
+  ],
+  "1CA0B0C0D0E00001": [
+    {
+      "questId": "4D92C7A10E638BF5",
+      "titleKey": "chapter.firsttorch.protection.title"
+    }
+  ],
+  "1CA0B0C0D0E00002": [
+    {
+      "questId": "4D92C7A10E638BF5",
+      "titleKey": "chapter.firsttorch.protection.title"
+    }
+  ],
+  "1CA0B0C0D0E00003": [
+    {
+      "questId": "51A0B0C0D0E00003",
+      "titleKey": "chapter.firsttorch.mechanics_pumpkins.title"
+    }
+  ],
+  "1DA0B0C0D0E00001": [
+    {
+      "questId": "1D0F3A4C61E9B257",
+      "titleKey": "chapter.firsttorch.iron_essentials.title"
+    }
+  ],
+  "1DA0B0C0D0E00002": [
+    {
+      "questId": "60CA7D3914E8B25F",
+      "titleKey": "chapter.firsttorch.brewing.title"
+    }
+  ],
+  "1DA0B0C0D0E00003": [
+    {
+      "questId": "5C208AB3E641DF79",
+      "titleKey": "chapter.firsttorch.safe_home.title"
+    }
+  ],
+  "1EA0B0C0D0E00001": [
+    {
+      "questId": "174BD2A608E35C91",
+      "titleKey": "chapter.firsttorch.animal_care.title"
+    }
+  ],
+  "1EA0B0C0D0E00002": [
+    {
+      "questId": "16A0B0C0D0E00002",
+      "titleKey": "chapter.firsttorch.field_animals.title"
+    }
+  ],
+  "1EA0B0C0D0E00003": [
+    {
+      "questId": "16A0B0C0D0E0000B",
+      "titleKey": "chapter.firsttorch.field_animals.title"
+    }
+  ],
+  "1FA0B0C0D0E00001": [
+    {
+      "questId": "04CA602D95FB137E",
+      "titleKey": "chapter.firsttorch.farming.title"
+    }
+  ],
+  "1FA0B0C0D0E00002": [
+    {
+      "questId": "60CA7D3914E8B25F",
+      "titleKey": "chapter.firsttorch.brewing.title"
+    },
+    {
+      "questId": "1BA0B0C0D0E00001",
+      "titleKey": "chapter.firsttorch.field_special.title"
+    }
+  ],
+  "1FA0B0C0D0E00003": [
+    {
+      "questId": "1BA0B0C0D0E00001",
+      "titleKey": "chapter.firsttorch.field_special.title"
+    }
+  ],
+  "4DA0B0C0D0E00001": [
+    {
+      "questId": "12E8A5C74F309BD6",
+      "titleKey": "chapter.firsttorch.excursions.title"
+    }
+  ],
+  "4DA0B0C0D0E00002": [
+    {
+      "questId": "6C4AE8F31D957B20",
+      "titleKey": "chapter.firsttorch.ores.title"
+    }
+  ],
+  "4DA0B0C0D0E00003": [
+    {
+      "questId": "4B7F16EA4C8290D3",
+      "titleKey": "chapter.firsttorch.storage.title"
+    }
+  ],
+  "4EA0B0C0D0E00001": [
+    {
+      "questId": "6D91380C6EA4B2F5",
+      "titleKey": "chapter.firsttorch.storage.title"
+    }
+  ],
+  "4EA0B0C0D0E00002": [
+    {
+      "questId": "17A0B0C0D0E00004",
+      "titleKey": "chapter.firsttorch.field_overworld.title"
+    }
+  ],
+  "4EA0B0C0D0E00003": [
+    {
+      "questId": "4B7F16EA4C8290D3",
+      "titleKey": "chapter.firsttorch.storage.title"
+    }
+  ],
+  "4FA0B0C0D0E00001": [
+    {
+      "questId": "2F49B6D81E50AC73",
+      "titleKey": "chapter.firsttorch.village.title"
+    }
+  ],
+  "4FA0B0C0D0E00002": [
+    {
+      "questId": "4EA85B17F2C6903D",
+      "titleKey": "chapter.firsttorch.brewing.title"
+    }
+  ],
+  "4FA0B0C0D0E00003": [
+    {
+      "questId": "36EB094C7D825F1A",
+      "titleKey": "chapter.firsttorch.trading.title"
+    }
+  ],
+  "50A0B0C0D0E00001": [
+    {
+      "questId": "1D0F3A4C61E9B257",
+      "titleKey": "chapter.firsttorch.iron_essentials.title"
+    }
+  ],
+  "50A0B0C0D0E00002": [
+    {
+      "questId": "60CA7D3914E8B25F",
+      "titleKey": "chapter.firsttorch.brewing.title"
+    }
+  ],
+  "50A0B0C0D0E00003": [
+    {
+      "questId": "50A0B0C0D0E00001",
+      "titleKey": "chapter.firsttorch.mechanics_cauldrons.title"
+    }
+  ],
+  "51A0B0C0D0E00001": [
+    {
+      "questId": "16A0B0C0D0E00002",
+      "titleKey": "chapter.firsttorch.field_animals.title"
+    }
+  ],
+  "51A0B0C0D0E00002": [
+    {
+      "questId": "7E42ACD50863F19B",
+      "titleKey": "chapter.firsttorch.safe_home.title"
+    }
+  ],
+  "51A0B0C0D0E00003": [
+    {
+      "questId": "19A0B0C0D0E00001",
+      "titleKey": "chapter.firsttorch.field_end.title"
+    }
+  ],
+  "52A0B0C0D0E00001": [
+    {
+      "questId": "33CB08D1E94FA05C",
+      "titleKey": "chapter.firsttorch.piglin_barter.title"
+    }
+  ],
+  "52A0B0C0D0E00002": [
+    {
+      "questId": "236B08D1E94FA05C",
+      "titleKey": "chapter.firsttorch.nether_safety.title"
+    }
+  ],
+  "52A0B0C0D0E00003": [
+    {
+      "questId": "3286E0194CA735DF",
+      "titleKey": "chapter.firsttorch.first_shelter.title"
+    }
+  ]
+}

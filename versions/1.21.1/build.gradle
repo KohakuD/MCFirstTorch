@@ -10,6 +10,18 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 neoForge {
     version = '21.1.248'
+    runs {
+        client {
+            client()
+            gameDirectory = file('run/client')
+            systemProperty 'firsttorch.devWindowLayout', 'left_two_thirds'
+        }
+        server {
+            server()
+            gameDirectory = file('run/server')
+            programArgument '--nogui'
+        }
+    }
     mods {
         firsttorch {
             sourceSet sourceSets.main
@@ -23,6 +35,7 @@ neoForge {
 }
 
 dependencies {
+    compileOnly 'org.jspecify:jspecify:1.0.0'
     implementation project(':core').sourceSets.main.output
     testImplementation platform('org.junit:junit-bom:5.11.4')
     testImplementation 'org.junit.jupiter:junit-jupiter'
@@ -32,6 +45,46 @@ dependencies {
 // Copy only explicitly reviewed compatible sources; generated files never enter Git.
 var syncSharedRuntimeSources = tasks.register('syncSharedRuntimeSources', Sync) {
     from('../../src/main/java') {
+        include 'ch/minenox/firsttorch/client/AutomaticQuestCompletionTracker.java'
+        include 'ch/minenox/firsttorch/client/ChapterArchive.java'
+        include 'ch/minenox/firsttorch/client/ChapterCompletionTracker.java'
+        include 'ch/minenox/firsttorch/client/ChapterScroll.java'
+        include 'ch/minenox/firsttorch/client/ChapterVisibility.java'
+        include 'ch/minenox/firsttorch/client/ClientGuideCache.java'
+        include 'ch/minenox/firsttorch/client/ClientProgressCache.java'
+        include 'ch/minenox/firsttorch/client/DesignPreview.java'
+        include 'ch/minenox/firsttorch/client/DevelopmentWindowLayout.java'
+        include 'ch/minenox/firsttorch/client/ExperienceRewardSound.java'
+        include 'ch/minenox/firsttorch/client/FirstTorchLayout.java'
+        include 'ch/minenox/firsttorch/client/FirstTorchViewport.java'
+        include 'ch/minenox/firsttorch/client/GuideBrowserViewModel.java'
+        include 'ch/minenox/firsttorch/client/GuideImageLayout.java'
+        include 'ch/minenox/firsttorch/client/LiveBastionScene.java'
+        include 'ch/minenox/firsttorch/client/LiveBlockComparison.java'
+        include 'ch/minenox/firsttorch/client/LiveBrewingCatalog.java'
+        include 'ch/minenox/firsttorch/client/LiveCartographyLayout.java'
+        include 'ch/minenox/firsttorch/client/LiveEnchantingLayout.java'
+        include 'ch/minenox/firsttorch/client/LiveEndScenes.java'
+        include 'ch/minenox/firsttorch/client/LiveHandCraftingLayout.java'
+        include 'ch/minenox/firsttorch/client/LiveOverworldScenes.java'
+        include 'ch/minenox/firsttorch/client/LiveRedstoneScenes.java'
+        include 'ch/minenox/firsttorch/client/LiveScene.java'
+        include 'ch/minenox/firsttorch/client/LiveSceneCatalog.java'
+        include 'ch/minenox/firsttorch/client/LiveSmeltingCatalog.java'
+        include 'ch/minenox/firsttorch/client/ParallelQuestLayout.java'
+        include 'ch/minenox/firsttorch/client/PauseGuideEntryLayout.java'
+        include 'ch/minenox/firsttorch/client/QuestLinkNavigation.java'
+        include 'ch/minenox/firsttorch/client/QuestNarrationState.java'
+        include 'ch/minenox/firsttorch/client/QuestRecommendation.java'
+        include 'ch/minenox/firsttorch/client/QuestReferenceLinks.java'
+        include 'ch/minenox/firsttorch/client/ReferenceIndex.java'
+        include 'ch/minenox/firsttorch/client/TaskGridLayout.java'
+        include 'ch/minenox/firsttorch/client/TrophyCatalog.java'
+        include 'ch/minenox/firsttorch/client/TrophyCollectionLayout.java'
+        include 'ch/minenox/firsttorch/client/WelcomePromptState.java'
+        include 'ch/minenox/firsttorch/client/FirstTorchScreen.java'
+        include 'ch/minenox/firsttorch/client/FirstTorchClientConfig.java'
+        include 'ch/minenox/firsttorch/FirstTorch.java'
         include 'ch/minenox/firsttorch/guide/server/RewardJournal.java'
         include 'ch/minenox/firsttorch/guide/server/AdvancementObservation.java'
         include 'ch/minenox/firsttorch/guide/server/BulkRewardClaims.java'
@@ -47,6 +100,25 @@ sourceSets.main.java.srcDir syncSharedRuntimeSources
 // The same regressions exercise both Minecraft targets, without duplicating maintained tests.
 var syncSharedTestSources = tasks.register('syncSharedTestSources', Sync) {
     from('../../src/test/java') {
+        include 'ch/minenox/firsttorch/client/AutomaticQuestCompletionTrackerTest.java'
+        include 'ch/minenox/firsttorch/client/ChapterArchiveTest.java'
+        include 'ch/minenox/firsttorch/client/ChapterCompletionTrackerTest.java'
+        include 'ch/minenox/firsttorch/client/ChapterScrollTest.java'
+        include 'ch/minenox/firsttorch/client/ChapterVisibilityTest.java'
+        include 'ch/minenox/firsttorch/client/ClientGuideCacheTest.java'
+        include 'ch/minenox/firsttorch/client/DevelopmentWindowLayoutTest.java'
+        include 'ch/minenox/firsttorch/client/ExperienceRewardSoundTest.java'
+        include 'ch/minenox/firsttorch/client/FirstTorchLayoutTest.java'
+        include 'ch/minenox/firsttorch/client/FirstTorchViewportTest.java'
+        include 'ch/minenox/firsttorch/client/GuideBrowserViewModelTest.java'
+        include 'ch/minenox/firsttorch/client/ParallelQuestLayoutTest.java'
+        include 'ch/minenox/firsttorch/client/PauseGuideEntryLayoutTest.java'
+        include 'ch/minenox/firsttorch/client/QuestLinkNavigationTest.java'
+        include 'ch/minenox/firsttorch/client/QuestNarrationStateTest.java'
+        include 'ch/minenox/firsttorch/client/QuestRecommendationTest.java'
+        include 'ch/minenox/firsttorch/client/TaskGridLayoutTest.java'
+        include 'ch/minenox/firsttorch/client/TrophyCollectionLayoutTest.java'
+        include 'ch/minenox/firsttorch/client/WelcomePromptStateTest.java'
         include 'ch/minenox/firsttorch/network/*Test.java'
         include '**/WorldProgressDataTest.java', '**/WorldWelcomeDataTest.java'
         include '**/RewardJournalTest.java', '**/BulkRewardClaimsTest.java'
@@ -67,5 +139,33 @@ tasks.withType(Test).configureEach {
 }
 
 tasks.named('check').configure { dependsOn ':core:check' }
-// This target is under construction. Do not produce a misleading installable mod.
-tasks.named('jar').configure { enabled = false }
+base { archivesName = "${rootProject.mod_id}-mc1.21.1" }
+
+// Apply reviewed target overrides exactly once; do not ship unverified newer captures.
+def targetResourceDirectory = file('src/main/resources')
+var syncTargetResources = tasks.register('syncTargetResources', Sync) {
+    from('../../src/main/resources') {
+        exclude 'assets/firsttorch/textures/questpics/**'
+        exclude { details -> new File(targetResourceDirectory, details.relativePath.toString()).isFile() }
+    }
+    from('src/main/resources')
+    into layout.buildDirectory.dir('generated/resources/target')
+}
+sourceSets.main.resources.setSrcDirs([syncTargetResources])
+
+var generateModMetadata = tasks.register('generateModMetadata', ProcessResources) {
+    var properties = [mod_id: rootProject.mod_id, mod_name: rootProject.mod_name,
+        mod_license: rootProject.mod_license, mod_version: rootProject.mod_version,
+        mod_authors: rootProject.mod_authors, mod_description: rootProject.mod_description]
+    inputs.properties properties
+    expand properties
+    from 'src/main/templates'
+    into layout.buildDirectory.dir('generated/resources/modMetadata')
+}
+sourceSets.main.resources.srcDir generateModMetadata
+neoForge.ideSyncTask generateModMetadata
+
+tasks.named('jar', Jar).configure {
+    from project(':core').sourceSets.main.output
+    from(['../../LICENSE', '../../LICENSE-CODE', '../../LICENSE-ASSETS.md', '../../NOTICE.md']) { into 'META-INF' }
+}
