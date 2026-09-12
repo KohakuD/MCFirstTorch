@@ -48,3 +48,7 @@ Full test/build and all three JAR verifiers pass. Target tests retain explicit e
 ## Entity preview crash fix
 
 The owner reported a 26.2 client crash on 2026-09-12 at 22:39 while rendering a Piglin illustration. The stack trace reaches Entity.getId through ItemModelResolver and LivingEntityRenderer: the unspawned client preview has ID zero. Cached preview models now receive distinct negative render-only IDs before state extraction, without being added to the world. Full test/build and JAR verification pass; reopening the affected Piglin scene remains the required in-game regression. The crash shutdown log reports all dimensions saved; this is not an independent save-integrity check.
+
+## Accepted crash fix and Friends List guidance
+
+The owner confirmed the corrected creature preview works. After the Codex restart, file access works again. The 26.2 reading introduction now explains where to open Friends List, its default O key, Online Options, and the distinction from personal First Torch progress/rewards. Facts were checked against the official 26.2 release notes linked above. No friendship or multiplayer settings were changed.

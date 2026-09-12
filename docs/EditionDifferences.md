@@ -45,3 +45,5 @@ The optional Sulfur Caves reference chapter `7A26200000000001` introduces five g
 | `2A26200000000005` | Optional Sulfur/Cinnabar building materials |
 
 These are reading confirmations, not completed physical experiments. Each unlocks after the existing reference introduction; none gates existing course quests or grants items. The future 1.21.1-to-26.2 comparison includes these IDs alongside the substantive 26.1.2 revisions above. The comparison filter itself is not yet implemented.
+
+The existing reading introduction `32B4C6D8E0F21357` gains substantive 26.2 Friends List guidance (menu/default key/settings and personal quest progress). Record it as a revised lesson for the future comparison, not a new quest ID.
