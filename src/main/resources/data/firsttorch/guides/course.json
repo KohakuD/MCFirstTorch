@@ -679,9 +679,194 @@
     ,{"id":"7825364758697A1B","iconItemId":"minecraft:carved_pumpkin","order":69,"titleKey":"chapter.firsttorch.mechanics_pumpkins.title","descriptionKey":"chapter.firsttorch.mechanics_pumpkins.description","quests":[{"id":"51A0B0C0D0E00001","order":0,"titleKey":"quest.firsttorch.mechanics_pumpkins.carve.title","descriptionKey":"quest.firsttorch.mechanics_pumpkins.carve.description","iconItemId":"minecraft:shears","tasks":[{"id":"61A0B0C0D0E00001","type":"MANUAL","count":1,"titleKey":"task.firsttorch.61a0b0c0d0e00001.title"}],"position":{"x":0,"y":0},"prerequisiteQuestIds":["3C3122DF5C0EA192"]},{"id":"51A0B0C0D0E00003","order":1,"titleKey":"quest.firsttorch.mechanics_pumpkins.limits.title","descriptionKey":"quest.firsttorch.mechanics_pumpkins.limits.description","image":{"resource":"firsttorch:textures/questpics/pumpkin_view_capture.png","width":2277,"height":1353,"altKey":"image.firsttorch.pumpkin_view_capture.description"},"iconItemId":"minecraft:carved_pumpkin","tasks":[{"id":"61A0B0C0D0E00003","type":"MANUAL","count":1,"titleKey":"task.firsttorch.61a0b0c0d0e00003.title"}],"position":{"x":0,"y":2},"prerequisiteQuestIds":["51A0B0C0D0E00001"]},{"id":"51A0B0C0D0E00002","order":2,"titleKey":"quest.firsttorch.mechanics_pumpkins.light.title","descriptionKey":"quest.firsttorch.mechanics_pumpkins.light.description","iconItemId":"minecraft:jack_o_lantern","tasks":[{"id":"61A0B0C0D0E00002","type":"MANUAL","count":1,"titleKey":"task.firsttorch.61a0b0c0d0e00002.title"}],"position":{"x":0,"y":4},"prerequisiteQuestIds":["51A0B0C0D0E00003"]}]}
     ,{"id":"79364758697A1B2C","iconItemId":"minecraft:respawn_anchor","order":70,"titleKey":"chapter.firsttorch.mechanics_anchor.title","descriptionKey":"chapter.firsttorch.mechanics_anchor.description","quests":[{"id":"52A0B0C0D0E00001","order":0,"titleKey":"quest.firsttorch.mechanics_anchor.recipe.title","descriptionKey":"quest.firsttorch.mechanics_anchor.recipe.description","iconItemId":"minecraft:crying_obsidian","tasks":[{"id":"62A0B0C0D0E00001","type":"MANUAL","count":1,"titleKey":"task.firsttorch.62a0b0c0d0e00001.title"}],"position":{"x":0,"y":0},"prerequisiteQuestIds":["3C3122DF5C0EA192"]},{"id":"52A0B0C0D0E00002","order":1,"titleKey":"quest.firsttorch.mechanics_anchor.charge.title","descriptionKey":"quest.firsttorch.mechanics_anchor.charge.description","iconItemId":"minecraft:glowstone","tasks":[{"id":"62A0B0C0D0E00002","type":"MANUAL","count":1,"titleKey":"task.firsttorch.62a0b0c0d0e00002.title"}],"position":{"x":0,"y":2},"prerequisiteQuestIds":["52A0B0C0D0E00001"]},{"id":"52A0B0C0D0E00003","order":2,"titleKey":"quest.firsttorch.mechanics_anchor.safety.title","descriptionKey":"quest.firsttorch.mechanics_anchor.safety.description","iconItemId":"minecraft:respawn_anchor","tasks":[{"id":"62A0B0C0D0E00003","type":"MANUAL","count":1,"titleKey":"task.firsttorch.62a0b0c0d0e00003.title"}],"position":{"x":0,"y":4},"prerequisiteQuestIds":["52A0B0C0D0E00002"]}]},
 {
+  "id": "7A12100000000001",
+  "iconItemId": "minecraft:crafter",
+  "order": 71,
+  "titleKey": "chapter.firsttorch.mechanics_trials.title",
+  "descriptionKey": "chapter.firsttorch.mechanics_trials.description",
+  "quests": [
+    {
+      "id": "2A12100000000001",
+      "order": 0,
+      "titleKey": "quest.firsttorch.mechanics_trials.crafter.title",
+      "descriptionKey": "quest.firsttorch.mechanics_trials.crafter.description",
+      "iconItemId": "minecraft:crafter",
+      "tasks": [
+        {
+          "id": "3A12100000000001",
+          "type": "MANUAL",
+          "count": 1,
+          "titleKey": "task.firsttorch.3a12100000000001.title"
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "prerequisiteQuestIds": [
+        "3C3122DF5C0EA192"
+      ]
+    },
+    {
+      "id": "2A12100000000002",
+      "order": 1,
+      "titleKey": "quest.firsttorch.mechanics_trials.pulse.title",
+      "descriptionKey": "quest.firsttorch.mechanics_trials.pulse.description",
+      "iconItemId": "minecraft:oak_button",
+      "tasks": [
+        {
+          "id": "3A12100000000002",
+          "type": "MANUAL",
+          "count": 1,
+          "titleKey": "task.firsttorch.3a12100000000002.title"
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 2
+      },
+      "prerequisiteQuestIds": [
+        "3C3122DF5C0EA192"
+      ]
+    },
+    {
+      "id": "2A12100000000003",
+      "order": 2,
+      "titleKey": "quest.firsttorch.mechanics_trials.spawner.title",
+      "descriptionKey": "quest.firsttorch.mechanics_trials.spawner.description",
+      "iconItemId": "minecraft:trial_spawner",
+      "tasks": [
+        {
+          "id": "3A12100000000003",
+          "type": "MANUAL",
+          "count": 1,
+          "titleKey": "task.firsttorch.3a12100000000003.title"
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 4
+      },
+      "prerequisiteQuestIds": [
+        "3C3122DF5C0EA192"
+      ]
+    },
+    {
+      "id": "2A12100000000004",
+      "order": 3,
+      "titleKey": "quest.firsttorch.mechanics_trials.vault.title",
+      "descriptionKey": "quest.firsttorch.mechanics_trials.vault.description",
+      "iconItemId": "minecraft:trial_key",
+      "tasks": [
+        {
+          "id": "3A12100000000004",
+          "type": "MANUAL",
+          "count": 1,
+          "titleKey": "task.firsttorch.3a12100000000004.title"
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 6
+      },
+      "prerequisiteQuestIds": [
+        "3C3122DF5C0EA192"
+      ]
+    },
+    {
+      "id": "2A12100000000005",
+      "order": 4,
+      "titleKey": "quest.firsttorch.mechanics_trials.omen.title",
+      "descriptionKey": "quest.firsttorch.mechanics_trials.omen.description",
+      "iconItemId": "minecraft:ominous_bottle",
+      "tasks": [
+        {
+          "id": "3A12100000000005",
+          "type": "MANUAL",
+          "count": 1,
+          "titleKey": "task.firsttorch.3a12100000000005.title"
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 8
+      },
+      "prerequisiteQuestIds": [
+        "3C3122DF5C0EA192"
+      ]
+    },
+    {
+      "id": "2A12100000000006",
+      "order": 5,
+      "titleKey": "quest.firsttorch.mechanics_trials.mace.title",
+      "descriptionKey": "quest.firsttorch.mechanics_trials.mace.description",
+      "iconItemId": "minecraft:heavy_core",
+      "tasks": [
+        {
+          "id": "3A12100000000006",
+          "type": "MANUAL",
+          "count": 1,
+          "titleKey": "task.firsttorch.3a12100000000006.title"
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 10
+      },
+      "prerequisiteQuestIds": [
+        "3C3122DF5C0EA192"
+      ]
+    },
+    {
+      "id": "2A12100000000007",
+      "order": 6,
+      "titleKey": "quest.firsttorch.mechanics_trials.enchantments.title",
+      "descriptionKey": "quest.firsttorch.mechanics_trials.enchantments.description",
+      "iconItemId": "minecraft:enchanted_book",
+      "tasks": [
+        {
+          "id": "3A12100000000007",
+          "type": "MANUAL",
+          "count": 1,
+          "titleKey": "task.firsttorch.3a12100000000007.title"
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 12
+      },
+      "prerequisiteQuestIds": [
+        "3C3122DF5C0EA192"
+      ]
+    },
+    {
+      "id": "2A12100000000008",
+      "order": 7,
+      "titleKey": "quest.firsttorch.mechanics_trials.wind.title",
+      "descriptionKey": "quest.firsttorch.mechanics_trials.wind.description",
+      "iconItemId": "minecraft:wind_charge",
+      "tasks": [
+        {
+          "id": "3A12100000000008",
+          "type": "MANUAL",
+          "count": 1,
+          "titleKey": "task.firsttorch.3a12100000000008.title"
+        }
+      ],
+      "position": {
+        "x": 0,
+        "y": 14
+      },
+      "prerequisiteQuestIds": [
+        "3C3122DF5C0EA192"
+      ]
+    }
+  ]
+},
+    {
   "id": "7A26100000000001",
   "iconItemId": "minecraft:golden_dandelion",
-  "order": 71,
+  "order": 72,
   "titleKey": "chapter.firsttorch.mechanics_tiny.title",
   "descriptionKey": "chapter.firsttorch.mechanics_tiny.description",
   "quests": [

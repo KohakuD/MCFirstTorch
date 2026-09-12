@@ -4,6 +4,8 @@ All notable player-facing changes are documented here.
 
 ## 0.14.0-alpha.1 — Unreleased
 
+- Add eight bilingual reference cards for Crafter automation, Trial Spawners and Vaults, ominous events, Mace and Wind Charges in all three editions. These backfill Minecraft 1.21 teaching and are not shown as later Minecraft innovations.
+
 - Add four optional 26.1 reference lessons for Golden Dandelions, craftable Name Tags, direct Stonecutter recipes and Copper trumpet sounds to 26.1.2/26.2. Keep them out of the 26.1.2-to-26.2 novelty comparison.
 
 - Fix the 1.21.1 pause-menu entry appearing below the menu: ignore the title when identifying button rows, retaining collision-safe placement in small windows.

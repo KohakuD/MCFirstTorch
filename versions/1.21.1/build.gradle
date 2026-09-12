@@ -110,6 +110,7 @@ var syncSharedTestSources = tasks.register('syncSharedTestSources', Sync) {
         include 'ch/minenox/firsttorch/client/ExperienceRewardSoundTest.java'
         include 'ch/minenox/firsttorch/client/FirstTorchLayoutTest.java'
         include 'ch/minenox/firsttorch/client/FirstTorchViewportTest.java'
+        include 'ch/minenox/firsttorch/guide/data/TrickyTrialsReferencesTest.java'
         include 'ch/minenox/firsttorch/client/GuideBrowserViewModelTest.java'
         include 'ch/minenox/firsttorch/client/ParallelQuestLayoutTest.java'
         include 'ch/minenox/firsttorch/client/PauseGuideEntryLayoutTest.java'

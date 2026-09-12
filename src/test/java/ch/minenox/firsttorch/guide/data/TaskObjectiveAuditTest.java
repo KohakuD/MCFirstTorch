@@ -30,8 +30,8 @@ final class TaskObjectiveAuditTest {
         GuideDefinition course = course();
         var tasks = course.chapters().stream().flatMap(chapter -> chapter.quests().stream())
                 .flatMap(quest -> quest.tasks().stream()).toList();
-        assertEquals(437, tasks.size());
-        assertEquals(437, tasks.stream().map(TaskDefinition::id).distinct().count());
+        assertEquals(445, tasks.size());
+        assertEquals(445, tasks.stream().map(TaskDefinition::id).distinct().count());
         for (TaskDefinition task : tasks) {
             assertEquals("task.firsttorch." + task.id().toLowerCase(java.util.Locale.ROOT) + ".title", task.titleKey());
             for (String locale : List.of("en_us", "de_de")) assertFalse(translations(locale).get(task.titleKey()).getAsString().isBlank());
@@ -45,8 +45,8 @@ final class TaskObjectiveAuditTest {
         GuideSnapshot snapshot = new GuideSnapshot(List.of(course, alpha));
         var quests = List.of(course, alpha).stream().flatMap(guide -> guide.chapters().stream())
                 .flatMap(chapter -> chapter.quests().stream()).toList();
-        assertEquals(352, quests.size());
-        assertEquals(439, quests.stream().mapToInt(quest -> quest.tasks().size()).sum());
+        assertEquals(360, quests.size());
+        assertEquals(447, quests.stream().mapToInt(quest -> quest.tasks().size()).sum());
         for (var quest : quests) {
             for (TaskDefinition task : quest.tasks()) {
                 if (task.automatic()) {

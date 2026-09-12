@@ -24,7 +24,7 @@ final class MechanicsReadingCuesTest {
                             : (discovery ? "Freiwillige Entdeckung" : "Praktisches Nachschlagewissen");
                     assertTrue(entry.getValue().getAsString().startsWith(label + "\n\n"), key);
                 }
-                assertEquals(36, readings, "Review reading cues when adding mechanics cards");
+                assertEquals(44, readings, "Review reading cues when adding mechanics cards");
                 for (var card : new String[] {"recipe", "charge", "safety"}) {
                     var text = strings.get("quest.firsttorch.mechanics_anchor." + card + ".description").getAsString();
                     assertTrue(text.contains(locale.equals("en_us") ? "Safe optional check:" : "Sicherer freiwilliger"));

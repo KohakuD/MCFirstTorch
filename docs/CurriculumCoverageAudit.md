@@ -100,3 +100,15 @@ Official sources: [1.21](https://www.minecraft.net/en-us/article/minecraft-java-
 ### History correction
 
 Existing Creaking and Pale Oak events now use 1.21.4; the Lodestone revision and route context use 1.21.5; Copper equipment/chest revisions and context use 1.21.9. Previously they were all attributed to the First Torch target 26.1.2. Boundary tests prevent that conflation. The available player selections and their cumulative results remain unchanged.
+
+## Second implementation batch — 1.21 crafting and trials
+
+Eight bilingual optional reference cards now cover the Crafter recipe, a manual-button Stick example, Trial Spawners, personal Vault access and keys, deliberate ominous-event activation, Heavy Core/Mace crafting, Mace enchantment choices and Wind Charges. Chapter `7A12100000000001`, quests `2A12100000000001`–`2A12100000000008`, tasks `3A12100000000001`–`3A12100000000008`.
+
+The block is included in all three targets, with unchanged IDs and no item rewards. The existing reference introduction unlocks it; the original course never depends on these new cards. Crafter entries link back to Redstone; the combat entries link to the existing Trial Chamber introduction. It is a reading block with optional safe practice, not an automatic certification of crafting or combat.
+
+Crafter, Mace and Wind Charge recipes were read from each target's original client JAR; the shared recipes agree. German terminology was checked in cached native language assets (including Boeenrute/Boe, Pruefungs-Spawner and the omen effect names; runtime strings use their proper Unicode spelling). Official 1.21 notes supplied spawner, Vault and combat behavior.
+
+History records these as Minecraft 1.21 features. A shared test runs in all three modules to ensure they are present yet absent from the post-1.21.1 novelty view; existing prerequisites and rewards are preserved. This does not yet implement a separate 'newly authored First Torch lessons' view. The eight cards can be found in the all-quests reference library under Crafting and Trials / Werker und Pruefungen.
+
+Manual bilingual game acceptance remains open. The four potion-effect lessons and the other audit blocks remain unimplemented; this batch is not a declaration that all 1.21 content is complete. The published 1.21.1 Beta is unchanged; the locally rebuilt artifact is a development test state requiring a new release version before any follow-up publication.
