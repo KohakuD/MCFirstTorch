@@ -52,3 +52,7 @@ The owner reported a 26.2 client crash on 2026-09-12 at 22:39 while rendering a 
 ## Accepted crash fix and Friends List guidance
 
 The owner confirmed the corrected creature preview works. After the Codex restart, file access works again. The 26.2 reading introduction now explains where to open Friends List, its default O key, Online Options, and the distinction from personal First Torch progress/rewards. Facts were checked against the official 26.2 release notes linked above. No friendship or multiplayer settings were changed.
+
+## Returning-learner acceptance
+
+The owner explicitly accepted the corrected Clock, change summaries, version switching, background links and return, and persisted choice after restart in German and English on 2026-09-12. Separate Sulfur-card/trophy acceptance remains pending; see the current release checklist.

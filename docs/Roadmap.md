@@ -101,7 +101,7 @@ The clock icon opens the returning-learner question and baseline choice. The bun
 
 The filter shows new/revised cards, including locked reference cards, and hides empty chapters. Search and chapter counters use that projection. Prerequisite links open background cards with Escape returning to the comparison; all task and reward gates still use authoritative progress. Claim-all is hidden in filtered views; trophies retain their full-course scope. Preferences are local files keyed by player UUID and Minecraft target under `config/firsttorch-edition-view/`; they do not transfer between installations or alter world progress. Invalid/unsupported saved baselines fall back to all quests.
 
-Implementation and automated checks do not replace the bilingual in-game acceptance below. Check both welcome choices, clock switching, nested background links, filtered counts, unchanged rewards and selection after restart.
+The owner explicitly accepted the 26.2 comparison controls, change summaries, version switching, background navigation and restart persistence in both languages on 2026-09-12. The 26.1.2 comparison and separate Sulfur-card/trophy checks remain pending. Implementation and automated checks do not replace those checks. Check both welcome choices, clock switching, nested background links, filtered counts, unchanged rewards and selection after restart.
 
 ### Acceptance
 
