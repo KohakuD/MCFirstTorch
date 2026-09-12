@@ -135,3 +135,5 @@ For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb
 - [x] Add eight shared 1.21 lessons: two optional Crafter lessons in Redstone and six Trials reference cards for Trial Spawners/Vaults, ominous events, Mace and Wind Charges; keep them out of post-1.21.1 novelty results.
 - [x] Add four independent 1.21 potion-effect reference cards with brewing links in all targets; preserve Minecraft introduction dates and avoid hazardous completion tasks.
 - [ ] Accept the expanded Trials block in game in both languages; complete the later-update blocks before release.
+
+- [x] Separate Pale Garden from Trial Chamber references, move Breeze/Bogged without changing quest IDs, and group Trial Chamber cards into four compact thematic rows.

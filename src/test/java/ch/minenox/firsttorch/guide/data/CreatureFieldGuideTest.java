@@ -18,7 +18,7 @@ final class CreatureFieldGuideTest {
         assertEquals(List.of("6A41D479062EB350", "6B52E58A173FC461", "6C63F69B2840D572", "6D7407AC3951E683", "6E8518BD4A62F794", "6F9629CE5B7308A5", "70A7B8C9D0E1F203"),
                 references.stream().map(c -> c.id()).toList());
         for (var chapter : references) {
-            assertEquals(chapter.id().equals("6A41D479062EB350") ? 11 : chapter.id().equals("6B52E58A173FC461") ? 5 : chapter.id().equals("70A7B8C9D0E1F203") ? 3 : 4, chapter.quests().size());
+            assertEquals(chapter.id().equals("6A41D479062EB350") ? 11 : chapter.id().equals("6B52E58A173FC461") ? 5 : chapter.id().equals("70A7B8C9D0E1F203") ? 1 : 4, chapter.quests().size());
             for (var quest : chapter.quests()) {
                 assertEquals(List.of(INTRO), quest.prerequisiteQuestIds());
                 assertEquals(1, quest.tasks().size());
@@ -59,8 +59,9 @@ final class CreatureFieldGuideTest {
 
     @Test void requestedCardsUseExactIconsAndIndependentReadingTasks() throws Exception {
         var chapters = snapshot().guides().getFirst().chapters();
+        var trial = chapters.stream().filter(c -> c.id().equals("7A12100000000001")).findFirst().orElseThrow();
         var cards = List.of(chapters.get(55).quests().get(9), chapters.get(56).quests().get(4),
-                chapters.get(61).quests().get(0), chapters.get(61).quests().get(1), chapters.get(61).quests().get(2));
+                trial.quests().get(3), trial.quests().get(4), chapters.get(61).quests().getFirst());
         assertEquals(List.of("minecraft:goat_horn", "minecraft:redstone", "minecraft:breeze_rod", "minecraft:bone", "minecraft:creaking_heart"),
                 cards.stream().map(q -> q.iconItemId()).toList());
         assertTrue(cards.stream().allMatch(q -> q.prerequisiteQuestIds().equals(List.of(INTRO))

@@ -118,3 +118,9 @@ Manual bilingual game acceptance remains open. The four potion-effect lessons an
 The Trials reference chapter now includes four independent reading cards: Weaving, Oozing, Infestation and Wind Charging. Quests `2A12100000000009`–`2A1210000000000C` and matching `3A121...` tasks are included in all three targets. They explain Awkward Potion ingredients, effect triggers, retreat decisions and Milk clearing useful effects too. No damage, death, brewing or drinking is required for completion. Reading links lead back to the existing Brewing chapter.
 
 The official 1.21 status-effect notes and cached native PotionBrewing sources agree on Cobweb, Slime Block, Stone and Breeze Rod inputs. German potion/effect names were checked against cached native language assets. Existing lessons and progress IDs remain intact; comparison history dates the four additions to Minecraft 1.21, excluding them from changes since 1.21.1. Automated checks cover independent manual completion, translations, links and all target builds; in-game layout acceptance remains pending.
+
+## Reference organisation — Trial Chamber and Pale Garden
+
+The Trial Chamber chapter (`7A12100000000001`) now owns the existing Breeze and Bogged cards (`1CA0B0C0D0E00001`/`02`) alongside the ten trial-system, equipment and potion cards. Four compact rows group trials/keys, enemies, equipment and effects within a 6-by-6 coordinate span, replacing the single 18-unit vertical column. Existing quest/task IDs and prerequisites remain unchanged; reading links use the destination chapter's current title.
+
+Chapter `70A7B8C9D0E1F203` is now Pale Garden, retaining the Creaking card in 26.1.2 and 26.2. The empty former mixed chapter is removed in 1.21.1, which has neither the biome nor Creaking. Heart, Resin, Eyeblossom and vegetation additions remain part of the planned Pale Garden remediation block; this reorganisation does not claim them as complete.

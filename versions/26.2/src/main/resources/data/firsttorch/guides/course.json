@@ -9740,58 +9740,14 @@
     },
     {
       "id": "70A7B8C9D0E1F203",
-      "iconItemId": "minecraft:breeze_rod",
+      "iconItemId": "minecraft:creaking_heart",
       "order": 62,
       "titleKey": "chapter.firsttorch.field_chambers_garden.title",
       "descriptionKey": "chapter.firsttorch.field_chambers_garden.description",
       "quests": [
         {
-          "id": "1CA0B0C0D0E00001",
-          "order": 0,
-          "titleKey": "quest.firsttorch.field_chambers_garden.breeze.title",
-          "descriptionKey": "quest.firsttorch.field_chambers_garden.breeze.description",
-          "iconItemId": "minecraft:breeze_rod",
-          "tasks": [
-            {
-              "id": "2CA0B0C0D0E00001",
-              "type": "MANUAL",
-              "count": 1,
-              "titleKey": "task.firsttorch.2ca0b0c0d0e00001.title"
-            }
-          ],
-          "position": {
-            "x": 0,
-            "y": 0
-          },
-          "prerequisiteQuestIds": [
-            "3C3122DF5C0EA192"
-          ]
-        },
-        {
-          "id": "1CA0B0C0D0E00002",
-          "order": 1,
-          "titleKey": "quest.firsttorch.field_chambers_garden.bogged.title",
-          "descriptionKey": "quest.firsttorch.field_chambers_garden.bogged.description",
-          "iconItemId": "minecraft:bone",
-          "tasks": [
-            {
-              "id": "2CA0B0C0D0E00002",
-              "type": "MANUAL",
-              "count": 1,
-              "titleKey": "task.firsttorch.2ca0b0c0d0e00002.title"
-            }
-          ],
-          "position": {
-            "x": 2,
-            "y": 0
-          },
-          "prerequisiteQuestIds": [
-            "3C3122DF5C0EA192"
-          ]
-        },
-        {
           "id": "1CA0B0C0D0E00003",
-          "order": 2,
+          "order": 0,
           "titleKey": "quest.firsttorch.field_chambers_garden.creaking.title",
           "descriptionKey": "quest.firsttorch.field_chambers_garden.creaking.description",
           "iconItemId": "minecraft:creaking_heart",
@@ -9804,7 +9760,7 @@
             }
           ],
           "position": {
-            "x": 4,
+            "x": 0,
             "y": 0
           },
           "prerequisiteQuestIds": [
@@ -10597,8 +10553,8 @@
             }
           ],
           "position": {
-            "x": 0,
-            "y": 2
+            "x": 2,
+            "y": 0
           },
           "prerequisiteQuestIds": [
             "3C3122DF5C0EA192"
@@ -10619,8 +10575,52 @@
             }
           ],
           "position": {
+            "x": 4,
+            "y": 0
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
+        },
+        {
+          "id": "1CA0B0C0D0E00001",
+          "order": 3,
+          "titleKey": "quest.firsttorch.field_chambers_garden.breeze.title",
+          "descriptionKey": "quest.firsttorch.field_chambers_garden.breeze.description",
+          "iconItemId": "minecraft:breeze_rod",
+          "tasks": [
+            {
+              "id": "2CA0B0C0D0E00001",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.2ca0b0c0d0e00001.title"
+            }
+          ],
+          "position": {
             "x": 0,
-            "y": 4
+            "y": 2
+          },
+          "prerequisiteQuestIds": [
+            "3C3122DF5C0EA192"
+          ]
+        },
+        {
+          "id": "1CA0B0C0D0E00002",
+          "order": 4,
+          "titleKey": "quest.firsttorch.field_chambers_garden.bogged.title",
+          "descriptionKey": "quest.firsttorch.field_chambers_garden.bogged.description",
+          "iconItemId": "minecraft:bone",
+          "tasks": [
+            {
+              "id": "2CA0B0C0D0E00002",
+              "type": "MANUAL",
+              "count": 1,
+              "titleKey": "task.firsttorch.2ca0b0c0d0e00002.title"
+            }
+          ],
+          "position": {
+            "x": 2,
+            "y": 2
           },
           "prerequisiteQuestIds": [
             "3C3122DF5C0EA192"
@@ -10628,7 +10628,7 @@
         },
         {
           "id": "2A12100000000006",
-          "order": 3,
+          "order": 5,
           "titleKey": "quest.firsttorch.mechanics_trials.mace.title",
           "descriptionKey": "quest.firsttorch.mechanics_trials.mace.description",
           "iconItemId": "minecraft:heavy_core",
@@ -10642,7 +10642,7 @@
           ],
           "position": {
             "x": 0,
-            "y": 6
+            "y": 4
           },
           "prerequisiteQuestIds": [
             "3C3122DF5C0EA192"
@@ -10650,7 +10650,7 @@
         },
         {
           "id": "2A12100000000007",
-          "order": 4,
+          "order": 6,
           "titleKey": "quest.firsttorch.mechanics_trials.enchantments.title",
           "descriptionKey": "quest.firsttorch.mechanics_trials.enchantments.description",
           "iconItemId": "minecraft:enchanted_book",
@@ -10663,8 +10663,8 @@
             }
           ],
           "position": {
-            "x": 0,
-            "y": 8
+            "x": 2,
+            "y": 4
           },
           "prerequisiteQuestIds": [
             "3C3122DF5C0EA192"
@@ -10672,7 +10672,7 @@
         },
         {
           "id": "2A12100000000008",
-          "order": 5,
+          "order": 7,
           "titleKey": "quest.firsttorch.mechanics_trials.wind.title",
           "descriptionKey": "quest.firsttorch.mechanics_trials.wind.description",
           "iconItemId": "minecraft:wind_charge",
@@ -10685,8 +10685,8 @@
             }
           ],
           "position": {
-            "x": 0,
-            "y": 10
+            "x": 4,
+            "y": 4
           },
           "prerequisiteQuestIds": [
             "3C3122DF5C0EA192"
@@ -10694,7 +10694,7 @@
         },
         {
           "id": "2A12100000000009",
-          "order": 6,
+          "order": 8,
           "titleKey": "quest.firsttorch.mechanics_trials.weaving.title",
           "descriptionKey": "quest.firsttorch.mechanics_trials.weaving.description",
           "iconItemId": "minecraft:cobweb",
@@ -10708,7 +10708,7 @@
           ],
           "position": {
             "x": 0,
-            "y": 12
+            "y": 6
           },
           "prerequisiteQuestIds": [
             "3C3122DF5C0EA192"
@@ -10716,7 +10716,7 @@
         },
         {
           "id": "2A1210000000000A",
-          "order": 7,
+          "order": 9,
           "titleKey": "quest.firsttorch.mechanics_trials.oozing.title",
           "descriptionKey": "quest.firsttorch.mechanics_trials.oozing.description",
           "iconItemId": "minecraft:slime_block",
@@ -10729,8 +10729,8 @@
             }
           ],
           "position": {
-            "x": 0,
-            "y": 14
+            "x": 2,
+            "y": 6
           },
           "prerequisiteQuestIds": [
             "3C3122DF5C0EA192"
@@ -10738,7 +10738,7 @@
         },
         {
           "id": "2A1210000000000B",
-          "order": 8,
+          "order": 10,
           "titleKey": "quest.firsttorch.mechanics_trials.infested.title",
           "descriptionKey": "quest.firsttorch.mechanics_trials.infested.description",
           "iconItemId": "minecraft:stone",
@@ -10751,8 +10751,8 @@
             }
           ],
           "position": {
-            "x": 0,
-            "y": 16
+            "x": 4,
+            "y": 6
           },
           "prerequisiteQuestIds": [
             "3C3122DF5C0EA192"
@@ -10760,7 +10760,7 @@
         },
         {
           "id": "2A1210000000000C",
-          "order": 9,
+          "order": 11,
           "titleKey": "quest.firsttorch.mechanics_trials.wind_charged.title",
           "descriptionKey": "quest.firsttorch.mechanics_trials.wind_charged.description",
           "iconItemId": "minecraft:breeze_rod",
@@ -10773,8 +10773,8 @@
             }
           ],
           "position": {
-            "x": 0,
-            "y": 18
+            "x": 6,
+            "y": 6
           },
           "prerequisiteQuestIds": [
             "3C3122DF5C0EA192"
