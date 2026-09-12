@@ -1693,5 +1693,16 @@
   "task.firsttorch.62a0b0c0d0e00002.title": "I have read the Respawn Anchor Charge entry",
   "quest.firsttorch.mechanics_anchor.safety.title": "Respawns Consume Charges",
   "quest.firsttorch.mechanics_anchor.safety.description": "Practical reference\n\nDANGER: a charged Respawn Anchor explodes if activated in the Overworld or End. Use it only at a safe Nether location; never test this by dying.\n\nEach Anchor respawn consumes one charge, and an empty Anchor cannot respawn you. Leave safe standing space around it, protect it, and keep more Glowstone blocks ready.\n\nBack in the Overworld, use a Bed to set your Overworld respawn point; returning there does not reset it automatically.\n\nSafe optional check: recall where your Overworld Bed stands and read its linked lesson. Simply returning to the Overworld does not set that Bed as your respawn point. Do not test this by dying.\n\nRead confirmation: no experiment is required. Read, then confirm.",
-  "task.firsttorch.62a0b0c0d0e00003.title": "I have read the Respawn Anchor Safety entry"
+  "task.firsttorch.62a0b0c0d0e00003.title": "I have read the Respawn Anchor Safety entry",
+  "screen.firsttorch.edition.title": "Minecraft version comparison",
+  "screen.firsttorch.edition.question": "Do you already know First Torch from an earlier Minecraft version?",
+  "screen.firsttorch.edition.explanation": "Which Minecraft version do you know? Read new and revised lessons since that version. Progress and rewards stay unchanged; background links help with prerequisites.",
+  "screen.firsttorch.edition.all": "Show all quests",
+  "screen.firsttorch.edition.no": "No — show all quests",
+  "screen.firsttorch.edition.active": "Changes since %s",
+  "screen.firsttorch.edition.background": "Background lesson · Esc: back",
+  "screen.firsttorch.edition.background_link": "Background: %s",
+  "screen.firsttorch.edition.chapter": "Filtered chapter",
+  "screen.firsttorch.edition.empty": "No changed lessons here",
+  "screen.firsttorch.edition.empty_hint": "Use the clock icon to select another version or show all quests."
 }

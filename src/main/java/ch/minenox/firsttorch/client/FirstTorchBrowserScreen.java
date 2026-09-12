@@ -56,6 +56,37 @@ class FirstTorchBrowserScreen extends Screen {
     private double chapterWheelRemainder;
     private final java.util.ArrayList<FirstTorchButton> chapterButtons = new java.util.ArrayList<>();
     private boolean recommendOnOpen = true;
+    private String baseline;
+    private String contextQuest;
+    private boolean preferenceLoaded;
+
+    private boolean filtered() { return baseline != null || contextQuest != null; }
+
+    private void openEditionChoice() {
+        minecraft.setScreenAndShow(new FirstTorchEditionScreen(this, value -> {
+            baseline = value;
+            FirstTorchEditionView.save(value);
+            selection = Selection.EMPTY;
+            reading = false;
+            trophiesOpen = false;
+            detailsScroll = 0;
+            chapterFirstRow = 0;
+            revealChapter = true;
+            query = "";
+            linkNavigation.clear();
+            minecraft.setScreenAndShow(this);
+        }));
+    }
+
+    private void openBackground(String questId) {
+        var screen = new FirstTorchBrowserScreen(this);
+        screen.contextQuest = questId;
+        screen.preferenceLoaded = true;
+        screen.recommendOnOpen = false;
+        screen.reading = true;
+        minecraft.setScreenAndShow(screen);
+    }
+
     private final QuestLinkNavigation linkNavigation = new QuestLinkNavigation();
     private final java.util.ArrayList<FirstTorchButton> referenceButtons = new java.util.ArrayList<>();
 
@@ -77,14 +108,23 @@ class FirstTorchBrowserScreen extends Screen {
         observedSnapshot = ClientGuideCache.snapshot();
         observedProgress = ClientProgressCache.snapshot();
         GuideSnapshot displayed = observedSnapshot;
-        if (recommendOnOpen && liveAvailable() && !observedSnapshot.guides().isEmpty()) {
+        if (!preferenceLoaded) {
+            baseline = FirstTorchEditionView.load();
+            preferenceLoaded = true;
+        }
+        if (recommendOnOpen && !filtered() && liveAvailable() && !observedSnapshot.guides().isEmpty()) {
             selection = QuestRecommendation.choose(observedSnapshot, observedProgress);
             reading = selection.questId() != null;
             recommendOnOpen = false;
             revealChapter = true;
             completedExpanded = selection.questId() != null && completed(selection.questId());
         }
-        viewModel = GuideBrowserViewModel.resolve(displayed, selection, observedProgress);
+        viewModel = contextQuest != null
+                ? GuideBrowserViewModel.resolveComparison(displayed, selection, java.util.Set.of(contextQuest))
+                : baseline != null ? GuideBrowserViewModel.resolveComparison(displayed, selection,
+                        ch.minenox.firsttorch.guide.edition.FirstTorchEditionHistory.create()
+                                .compare(baseline, FirstTorchEditionView.current(), displayed).changedQuestIds())
+                : GuideBrowserViewModel.resolve(displayed, selection, observedProgress);
         selection = viewModel.selection();
         FirstTorchViewport resizedViewport = FirstTorchViewport.fit(width, height, FirstTorchClientConfig.ENLARGED_VIEW.get());
         if (!viewport.equals(resizedViewport)) revealChapter = true;
@@ -127,7 +167,10 @@ class FirstTorchBrowserScreen extends Screen {
         if (preview() || viewModel.quest() == null) return;
         Rect panel = layout.details();
         for (var link : QuestReferenceLinks.forQuest(viewModel.quest().id())) {
-            boolean available = QuestLinkNavigation.destination(observedSnapshot, observedProgress, link.questId()).isPresent();
+            boolean available = filtered() ? observedSnapshot.guides().stream()
+                    .flatMap(guide -> guide.chapters().stream()).flatMap(chapter -> chapter.quests().stream())
+                    .anyMatch(quest -> quest.id().equals(link.questId()))
+                    : QuestLinkNavigation.destination(observedSnapshot, observedProgress, link.questId()).isPresent();
             Component label = Component.literal("› ").append(Component.translatable(link.titleKey()));
             if (!available) label = label.copy().append(" — ").append(Component.translatable("screen.firsttorch.reference.unavailable"));
             var control = button(panel.x() + 10, 0, Math.max(1, panel.width() - 20), 18,
@@ -135,6 +178,17 @@ class FirstTorchBrowserScreen extends Screen {
             control.active = available;
             referenceButtons.add(control);
             addRenderableWidget(control);
+        }
+        if (filtered()) {
+            for (var prerequisite : viewModel.prerequisites()) {
+                Component label = Component.translatable("screen.firsttorch.edition.background_link",
+                        Component.translatable(prerequisite.titleKey()));
+                var control = button(panel.x() + 10, 0, Math.max(1, panel.width() - 20), 18,
+                        label, ignored -> openBackground(prerequisite.questId()), label, null,
+                        FirstTorchButton.Kind.NAVIGATION, true);
+                referenceButtons.add(control);
+                addRenderableWidget(control);
+            }
         }
         positionReferenceButtons();
     }
@@ -152,6 +206,7 @@ class FirstTorchBrowserScreen extends Screen {
     }
 
     private void followReference(String questId) {
+        if (filtered()) { openBackground(questId); return; }
         var destination = QuestLinkNavigation.destination(observedSnapshot, observedProgress, questId);
         if (destination.isEmpty() || destination.get().equals(selection)) return;
         linkNavigation.push(new QuestLinkNavigation.Location(selection, detailsScroll, reading, completedExpanded, chapterFirstRow));
@@ -283,7 +338,7 @@ class FirstTorchBrowserScreen extends Screen {
     }
 
     private boolean hasClaimableRewards() {
-        return liveAvailable()
+        return !filtered() && liveAvailable()
                 && !ch.minenox.firsttorch.guide.progress.ClaimableRewards.ids(observedSnapshot,
                         observedProgress.state(), observedProgress.claimedQuestIds(),
                         observedProgress.pendingQuestIds()).isEmpty();
@@ -294,6 +349,14 @@ class FirstTorchBrowserScreen extends Screen {
         int size = 20;
         int x = bar.right() - 2 * size - 13;
         int y = bar.y() + 7;
+        if (contextQuest == null && !FirstTorchEditionView.baselines().isEmpty()) {
+            Component label = baseline == null ? Component.translatable("screen.firsttorch.edition.title")
+                    : Component.translatable("screen.firsttorch.edition.active", baseline);
+            addRenderableWidget(button(x - size - 5, y + size + 4, size, size, Component.empty(),
+                    ignored -> openEditionChoice(), label, Tooltip.create(label),
+                    FirstTorchButton.Kind.NAVIGATION, baseline != null)
+                    .preview(new ItemStack(Items.CLOCK), false, false));
+        }
         var references = ReferenceIndex.chapters(viewModel.chapters());
         if (!preview() && !references.isEmpty()) {
             Component indexLabel = Component.translatable("screen.firsttorch.reference.index");
@@ -497,7 +560,7 @@ class FirstTorchBrowserScreen extends Screen {
         Rect panel = layout.chapters();
         int cardHeight = Math.max(23, Math.min(42, panel.height() / 7));
         chapterCapacity = ChapterScroll.capacity(panel.height(), cardHeight);
-        var rows = ChapterArchive.rows(ReferenceIndex.courseChapters(viewModel.chapters()), this::completed, completedExpanded);
+        var rows = ChapterArchive.rows(filtered() ? viewModel.chapters() : ReferenceIndex.courseChapters(viewModel.chapters()), this::completed, completedExpanded);
         chapterRowCount = rows.size();
         chapterFirstRow = ChapterScroll.clamp(chapterFirstRow, chapterRowCount, chapterCapacity);
         if (revealChapter) {
@@ -701,11 +764,13 @@ class FirstTorchBrowserScreen extends Screen {
         else if (viewModel.guide() == null) drawEmptyState(text);
         else if (preview()) PreviewDetailsRenderer.draw(graphics, font, layout.details(), viewModel.quest());
         else {
-            detailsMaxScroll = LiveDetailsRenderer.draw(graphics, font, layout.details(), viewModel.quest(), observedProgress, detailsScroll);
+            detailsMaxScroll = LiveDetailsRenderer.draw(graphics, font, layout.details(), viewModel.quest(), observedProgress, detailsScroll, referenceButtons.size());
             detailsScroll = Math.min(detailsScroll, detailsMaxScroll);
         }
         Rect footer = layout.footer();
         Component hint = Component.translatable(searchEmpty ? "screen.firsttorch.search.none" : "screen.firsttorch.controls_hint");
+        if (filtered()) hint = Component.translatable(contextQuest != null ? "screen.firsttorch.edition.background"
+                : "screen.firsttorch.edition.active", baseline == null ? "" : baseline).append(" · ").append(hint);
         if (trophiesOpen) hint = Component.translatable("screen.firsttorch.trophies.back");
         if (preview()) hint = Component.translatable("screen.firsttorch.preview").append("  ·  ").append(hint);
         text.acceptScrollingWithDefaultCenter(colored(hint, FirstTorchTheme.MUTED),
@@ -721,7 +786,7 @@ class FirstTorchBrowserScreen extends Screen {
         int torchSize = compact ? 24 : 40;
         int groupWidth = brandWidth + torchSize + 9;
         int x = Math.min(top.centerX() - groupWidth / 2,
-                top.right() - (hasClaimableRewards() ? 91 : 66) - groupWidth);
+                top.right() - (hasClaimableRewards() || !FirstTorchEditionView.baselines().isEmpty() ? 91 : 66) - groupWidth);
         int y = top.y() + (compact ? 4 : 5);
         // Original vanilla assets, with a separate brass mounting collar.
         graphics.pose().pushMatrix();
@@ -755,6 +820,7 @@ class FirstTorchBrowserScreen extends Screen {
                 : Component.translatable("screen.firsttorch.progress.unavailable");
         if (!compact) {
             text.accept(x, y, colored(Component.translatable(trophiesOpen ? "screen.firsttorch.trophies"
+                    : filtered() ? "screen.firsttorch.edition.chapter"
                     : preview() ? "screen.firsttorch.preview" : "screen.firsttorch.chapters"), FirstTorchTheme.GOLD));
             y += 14;
         }
@@ -769,8 +835,8 @@ class FirstTorchBrowserScreen extends Screen {
     private void drawEmptyState(ActiveTextCollector text) {
         Rect panel = layout.questMap();
         int x = panel.x() + 10, w = panel.width() - 20, y = panel.y() + 35;
-        y = drawWrapped(text, Component.translatable("screen.firsttorch.empty.title"), x, y, w, 3, FirstTorchTheme.TEXT) + 6;
-        drawWrapped(text, Component.translatable("screen.firsttorch.empty.description"), x, y, w,
+        y = drawWrapped(text, Component.translatable(filtered() ? "screen.firsttorch.edition.empty" : "screen.firsttorch.empty.title"), x, y, w, 3, FirstTorchTheme.TEXT) + 6;
+        drawWrapped(text, Component.translatable(filtered() ? "screen.firsttorch.edition.empty_hint" : "screen.firsttorch.empty.description"), x, y, w,
                 Math.max(0, (panel.bottom() - y - 8) / 10), FirstTorchTheme.MUTED);
     }
 

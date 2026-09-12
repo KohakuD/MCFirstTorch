@@ -18,9 +18,9 @@ The guided course covers early survival through the Nether, End and independent 
 
 LAN multiplayer smoke tests are accepted; dedicated-server testing is explicitly out of the current scope and dedicated-server operation remains unverified. See the concise [changelog](CHANGELOG.md), [release upload notes](docs/CurseForgeUpload.md), and [licensing review](docs/ReleaseLicensing.md).
 
-The **1.21.1 Beta 0.14.0-beta.1** is prepared for publication with NeoForge **21.1.248** and Java **21**. It includes the native browser and an adapted bilingual curriculum; the owner accepted early quests, rewards, restart persistence and the named bilingual UI checks. The returning-learner version filter is not implemented yet. See [the backport assessment](docs/Backport1211.md).
+The **1.21.1 Beta 0.14.0-beta.1** is prepared for publication with NeoForge **21.1.248** and Java **21**. It includes the native browser and an adapted bilingual curriculum; the owner accepted early quests, rewards, restart persistence and the named bilingual UI checks. As the earliest supported edition, it has no earlier comparison baseline. See [the backport assessment](docs/Backport1211.md).
 
-A first **26.2 development build** now compiles and passes the native tests on NeoForge **26.2.0.86** / Java **25**. Launch **First Torch Client 26.2** or `:mc262:runClient`. New 26.2 lessons and the returning-learner filter are still pending; see [port status](docs/Port262.md).
+A first **26.2 development build** now compiles and passes the native tests on NeoForge **26.2.0.86** / Java **25**. Launch **First Torch Client 26.2** or `:mc262:runClient`. Five Sulfur Caves reference cards and a returning-learner filter are implemented; their final in-game acceptance remains pending; see [port status](docs/Port262.md).
 
 ## Develop in IntelliJ IDEA
 

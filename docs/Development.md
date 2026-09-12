@@ -60,7 +60,7 @@ pwsh .\tools\verify-native-jar.ps1 -JarPath .\build\libs\firsttorch-mc26.1.2-0.1
 pwsh .\tools\verify-native-jar.ps1 -JarPath .\versions\1.21.1\build\libs\firsttorch-mc1.21.1-0.14.0-beta.1.jar
 ```
 
-The owner accepted early quests, rewards, restart persistence, enlarged view, search, references and trophies in both languages for 1.21.1. This is not exhaustive whole-course or multiplayer acceptance. The target release version is set independently in its build.gradle; generated mod metadata uses that same project.version. See [Backport1211.md](Backport1211.md). The version-comparison filter remains future milestone work.
+The owner accepted early quests, rewards, restart persistence, enlarged view, search, references and trophies in both languages for 1.21.1. This is not exhaustive whole-course or multiplayer acceptance. The target release version is set independently in its build.gradle; generated mod metadata uses that same project.version. See [Backport1211.md](Backport1211.md). The 26.1.2/26.2 clients now offer a returning-learner comparison; 1.21.1 has no earlier baseline. The clock icon changes the local per-player/target preference. Filtered definitions remain a presentation projection and never replace the validated snapshot or server progress.
 Artifacts now include their Minecraft target in the filename. First Torch release numbers and Minecraft version numbers remain separate; publishing a backport later does not change Minecraft version ordering.
 
 ## Native guide and progress model

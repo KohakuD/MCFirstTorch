@@ -28,7 +28,14 @@ final class FirstTorchWelcomeScreen extends Screen {
         var primary = addRenderableWidget(new FirstTorchButton(panel.x() + 14, panel.bottom() - 32, buttonWidth, 18,
                 open, ignored -> {
                     FirstTorchWelcome.acknowledge();
-                    minecraft.setScreenAndShow(new FirstTorchScreen(null));
+                    if (FirstTorchEditionView.baselines().isEmpty()) {
+                        minecraft.setScreenAndShow(new FirstTorchScreen(null));
+                    } else {
+                        minecraft.setScreenAndShow(new FirstTorchEditionScreen(this, baseline -> {
+                            FirstTorchEditionView.save(baseline);
+                            minecraft.setScreenAndShow(new FirstTorchScreen(null));
+                        }));
+                    }
                 }, ignored -> open.copy(), null, FirstTorchButton.Kind.FOOTER, false));
         addRenderableWidget(new FirstTorchButton(panel.x() + 20 + buttonWidth, panel.bottom() - 32, buttonWidth, 18,
                 later, ignored -> onClose(), ignored -> later.copy(), null, FirstTorchButton.Kind.NAVIGATION, false));

@@ -1715,5 +1715,16 @@
   "chapter.firsttorch.mechanics_sulfur.title": "Sulfur Caves",
   "chapter.firsttorch.mechanics_sulfur.description": "Optional safety references for Minecraft 26.2. Reading only; no dangerous experiment is required.",
   "trophy.firsttorch.mechanics_sulfur.title": "Sulfur Caves noted",
-  "trophy.firsttorch.mechanics_sulfur.description": "You read the Sulfur Caves safety cards."
+  "trophy.firsttorch.mechanics_sulfur.description": "You read the Sulfur Caves safety cards.",
+  "screen.firsttorch.edition.title": "Minecraft version comparison",
+  "screen.firsttorch.edition.question": "Do you already know First Torch from an earlier Minecraft version?",
+  "screen.firsttorch.edition.explanation": "Which Minecraft version do you know? Read new and revised lessons since that version. Progress and rewards stay unchanged; background links help with prerequisites.",
+  "screen.firsttorch.edition.all": "Show all quests",
+  "screen.firsttorch.edition.no": "No — show all quests",
+  "screen.firsttorch.edition.active": "Changes since %s",
+  "screen.firsttorch.edition.background": "Background lesson · Esc: back",
+  "screen.firsttorch.edition.background_link": "Background: %s",
+  "screen.firsttorch.edition.chapter": "Filtered chapter",
+  "screen.firsttorch.edition.empty": "No changed lessons here",
+  "screen.firsttorch.edition.empty_hint": "Use the clock icon to select another version or show all quests."
 }

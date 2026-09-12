@@ -42,9 +42,20 @@ public record GuideBrowserViewModel(
         return resolve(snapshot, preferred, guide -> ChapterVisibility.visibleChapters(guide, progress));
     }
 
+    /** Presentation projection only: prerequisites still resolve against the original definitions. */
+    public static GuideBrowserViewModel resolveComparison(GuideSnapshot snapshot, Selection preferred,
+            java.util.Set<String> questIds) {
+        return resolve(snapshot, preferred, guide -> guide.chapters().stream()
+                .map(chapter -> new ChapterDefinition(chapter.id(), chapter.order(), chapter.titleKey(),
+                        chapter.descriptionKey(), chapter.quests().stream()
+                                .filter(quest -> questIds.contains(quest.id())).toList(), chapter.iconItemId()))
+                .filter(chapter -> !chapter.quests().isEmpty()).toList());
+    }
+
     private static GuideBrowserViewModel resolve(GuideSnapshot snapshot, Selection preferred,
             java.util.function.Function<GuideDefinition, List<ChapterDefinition>> visibleChapters) {
-        List<GuideDefinition> guides = snapshot.guides();
+        List<GuideDefinition> guides = snapshot.guides().stream()
+                .filter(guide -> !visibleChapters.apply(guide).isEmpty()).toList();
         if (guides.isEmpty()) {
             return new GuideBrowserViewModel(
                     List.of(), null, List.of(), null, List.of(), null, List.of(), Selection.EMPTY);

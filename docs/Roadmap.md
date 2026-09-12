@@ -85,15 +85,23 @@ Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1` first, then 
 
 ### Phase 3: Returning-learner welcome and version comparison
 
-- [x] Implement and test the read-only shared comparison core with explicit Minecraft order, cumulative semantic changes, target availability from loaded quests and separate prerequisite context. User interface and persistence are not wired yet.
+- [x] Implement and test the read-only shared comparison core with explicit Minecraft order, cumulative semantic changes, target availability from loaded quests and separate prerequisite context. The native 26.1.2/26.2 browser now integrates the comparison and per-player local persistence; in-game acceptance is pending.
 
-- [ ] Add a bilingual welcome question: "Do you already know First Torch from an earlier Minecraft version?" / "Kennst du First Torch bereits aus einer früheren Minecraft-Version?"
-- [ ] "No" opens all quests. "Yes" asks which earlier supported version the learner knows and opens the relevant new and revised lessons since that baseline.
-- [ ] Detect the running Minecraft target and maintain a bundled, explicitly ordered catalogue of published First Torch Minecraft editions. Offer only valid earlier comparison baselines; future targets such as `26.3` become available after their edition is implemented and published. An online catalogue refresh is optional future work, not required for this milestone.
-- [ ] Store per-lesson version history and target availability. Comparing `1.21.1` with `26.2` includes relevant changes from both `26.1.2` and `26.2`, shows each quest once and uses the lesson valid for the running target. Later targets extend the same model.
-- [ ] Add an accessible top-right icon with bilingual tooltip, clear active state and keyboard/narrator support to change the baseline or return to all quests. Persist the selection per player.
-- [ ] Keep a single authoritative quest/reward progress state across views. Selecting prior knowledge must not complete hidden quests, grant rewards or import progress.
-- [ ] Define and test prerequisite access so returning learners can use the selected lessons without hidden prerequisite dead ends or silently bypassed reward rules. Provide links to required background lessons, hide empty chapters, scope counters clearly and explain empty comparison results.
+- [x] Add a bilingual welcome question: "Do you already know First Torch from an earlier Minecraft version?" / "Kennst du First Torch bereits aus einer früheren Minecraft-Version?"
+- [x] "No" opens all quests. "Yes" asks which earlier supported version the learner knows and opens the relevant new and revised lessons since that baseline.
+- [x] Detect the running Minecraft target and maintain a bundled, explicitly ordered catalogue of published First Torch Minecraft editions. Offer only valid earlier comparison baselines; future targets such as `26.3` become available after their edition is implemented and published. An online catalogue refresh is optional future work, not required for this milestone.
+- [x] Store per-lesson version history and target availability. Comparing `1.21.1` with `26.2` includes relevant changes from both `26.1.2` and `26.2`, shows each quest once and uses the lesson valid for the running target. Later targets extend the same model.
+- [x] Add an accessible top-right icon with bilingual tooltip, clear active state and keyboard/narrator support to change the baseline or return to all quests. Persist the selection per player.
+- [x] Keep a single authoritative quest/reward progress state across views. Selecting prior knowledge must not complete hidden quests, grant rewards or import progress.
+- [x] Define and test prerequisite access so returning learners can use the selected lessons without hidden prerequisite dead ends or silently bypassed reward rules. Provide links to required background lessons, hide empty chapters, scope counters clearly and explain empty comparison results.
+
+### Implementation notes (2026-09-12)
+
+The clock icon opens the returning-learner question and baseline choice. The bundled baseline catalogue contains 1.21.1 and 26.1.2; 26.2 remains a development target. Minecraft's running version selects the applicable history. 1.21.1 has no earlier baseline and keeps its normal welcome.
+
+The filter shows new/revised cards, including locked reference cards, and hides empty chapters. Search and chapter counters use that projection. Prerequisite links open background cards with Escape returning to the comparison; all task and reward gates still use authoritative progress. Claim-all is hidden in filtered views; trophies retain their full-course scope. Preferences are local files keyed by player UUID and Minecraft target under `config/firsttorch-edition-view/`; they do not transfer between installations or alter world progress. Invalid/unsupported saved baselines fall back to all quests.
+
+Implementation and automated checks do not replace the bilingual in-game acceptance below. Check both welcome choices, clock switching, nested background links, filtered counts, unchanged rewards and selection after restart.
 
 ### Acceptance
 

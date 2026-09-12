@@ -106,6 +106,31 @@ final class GuideBrowserViewModelTest {
         assertEquals(3, GuideBrowserViewModel.resolve(snapshot, Selection.EMPTY).chapters().size());
     }
 
+    @Test
+    void comparisonKeepsLockedLessonReadableAndOriginalPrerequisitesIntact() {
+        var snapshot = twoQuestSnapshot();
+        var view = GuideBrowserViewModel.resolveComparison(snapshot, Selection.EMPTY, java.util.Set.of(QUEST_B_ID));
+        assertEquals(List.of(QUEST_B_ID), view.quests().stream().map(QuestDefinition::id).toList());
+        assertEquals(QUEST_A_ID, view.prerequisites().getFirst().questId());
+        assertEquals(false, view.quest().prerequisitesMet(id -> false));
+        assertEquals(2, snapshot.guides().getFirst().chapters().getFirst().quests().size());
+        assertEquals(2, GuideBrowserViewModel.resolve(snapshot, Selection.EMPTY).quests().size());
+    }
+
+    @Test
+    void comparisonOmitsEmptyChaptersAndRejectsHiddenSelection() {
+        var snapshot = new GuideSnapshot(List.of(guide(List.of(
+                chapter(CHAPTER_A_ID, 0, quest(QUEST_A_ID, 0, List.of())),
+                chapter(CHAPTER_B_ID, 1, quest(QUEST_B_ID, 0, List.of(QUEST_A_ID)))))));
+        var view = GuideBrowserViewModel.resolveComparison(snapshot,
+                new Selection(GUIDE_ID, CHAPTER_A_ID, QUEST_A_ID), java.util.Set.of(QUEST_B_ID));
+        assertEquals(List.of(CHAPTER_B_ID), view.chapters().stream().map(ChapterDefinition::id).toList());
+        assertEquals(QUEST_B_ID, view.quest().id());
+        var empty = GuideBrowserViewModel.resolveComparison(snapshot, view.selection(), java.util.Set.of());
+        assertEquals(null, empty.guide());
+        assertEquals(Selection.EMPTY, empty.selection());
+    }
+
     private static GuideSnapshot twoQuestSnapshot() {
         QuestDefinition prerequisite = quest(QUEST_A_ID, 0, List.of());
         QuestDefinition dependent = quest(QUEST_B_ID, 1, List.of(QUEST_A_ID));

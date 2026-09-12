@@ -1715,5 +1715,16 @@
   "chapter.firsttorch.mechanics_sulfur.title": "Schwefelh\u00f6hlen",
   "chapter.firsttorch.mechanics_sulfur.description": "Optionale Sicherheitshinweise f\u00fcr Minecraft 26.2. Nur lesen; kein gef\u00e4hrlicher Versuch erforderlich.",
   "trophy.firsttorch.mechanics_sulfur.title": "Schwefelh\u00f6hlen nachgelesen",
-  "trophy.firsttorch.mechanics_sulfur.description": "Du hast die Sicherheitshinweise zu Schwefelh\u00f6hlen gelesen."
+  "trophy.firsttorch.mechanics_sulfur.description": "Du hast die Sicherheitshinweise zu Schwefelh\u00f6hlen gelesen.",
+  "screen.firsttorch.edition.title": "Minecraft-Versionen vergleichen",
+  "screen.firsttorch.edition.question": "Kennst du First Torch bereits aus einer früheren Minecraft-Version?",
+  "screen.firsttorch.edition.explanation": "Welche Minecraft-Version kennst du? Lies neue und überarbeitete Lektionen seit dieser Version. Fortschritt und Belohnungen bleiben unverändert; Vorwissenslinks helfen bei Voraussetzungen.",
+  "screen.firsttorch.edition.all": "Alle Quests anzeigen",
+  "screen.firsttorch.edition.no": "Nein — alle Quests anzeigen",
+  "screen.firsttorch.edition.active": "Änderungen seit %s",
+  "screen.firsttorch.edition.background": "Vorwissen · Esc: zurück",
+  "screen.firsttorch.edition.background_link": "Vorwissen: %s",
+  "screen.firsttorch.edition.chapter": "Gefiltertes Kapitel",
+  "screen.firsttorch.edition.empty": "Hier gibt es keine geänderten Lektionen",
+  "screen.firsttorch.edition.empty_hint": "Wähle über das Uhr-Symbol eine andere Version oder zeige alle Quests an."
 }

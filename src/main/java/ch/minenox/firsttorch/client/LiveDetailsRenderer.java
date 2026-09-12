@@ -18,7 +18,7 @@ final class LiveDetailsRenderer {
     private LiveDetailsRenderer() {}
 
     static int draw(GuiGraphicsExtractor graphics, Font font, Rect panel, QuestDefinition quest,
-            ProgressPayload progress, int scroll) {
+            ProgressPayload progress, int scroll, int referenceCount) {
         if (quest == null) return 0;
         int x = panel.x() + 10, w = Math.max(1, panel.width() - 20);
         int top = panel.y() + 10, bottom = panel.bottom() - 34;
@@ -40,9 +40,9 @@ final class LiveDetailsRenderer {
             y = text(graphics, font, title, x, y, w, FirstTorchTheme.TEXT) + 8;
         }
         y = text(graphics, font, Component.translatable(quest.descriptionKey()), x, y, w, FirstTorchTheme.MUTED) + 12;
-        if (!QuestReferenceLinks.forQuest(quest.id()).isEmpty()) {
+        if (referenceCount > 0) {
             y = text(graphics, font, Component.translatable("screen.firsttorch.reference.more"), x, y, w, FirstTorchTheme.GOLD) + 4;
-            y += QuestReferenceLinks.forQuest(quest.id()).size() * 24;
+            y += referenceCount * 24;
         }
         if (quest.image() != null) {
             var illustration = quest.image();
