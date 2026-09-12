@@ -106,6 +106,18 @@ The filter shows new/revised cards, including locked reference cards, and hides 
 
 The owner explicitly accepted the 26.2 comparison controls, change summaries, version switching, background navigation and restart persistence in both languages on 2026-09-12. The 26.1.2 comparison and separate Sulfur-card/trophy checks remain pending. Implementation and automated checks do not replace those checks. Check both welcome choices, clock switching, nested background links, filtered counts, unchanged rewards and selection after restart.
 
+### Planned reference-library progression
+
+- [ ] Make the reference-library entry visible and usable from the beginning in every supported Minecraft target, even before any reference content is unlocked.
+- [ ] Unlock each reference topic when its corresponding course chapter becomes available, rather than waiting for that chapter to be completed. Define explicit topic-to-course mappings; do not unlock the entire library through the existing single introduction quest.
+- [ ] Show a friendly empty-state message until the first topic is available. Proposed player-facing copy:
+  - `de_de`: "Dein Nachschlagewerk wächst mit deinem Abenteuer. Sobald du neue Kapitel freischaltest, findest du hier das passende Wissen zum Nachlesen."
+  - `en_us`: "Your reference library grows with your adventure. As you unlock new chapters, their related knowledge becomes available here for you to revisit."
+- [ ] Reconcile availability for existing saves from their current chapter access, preserving completed reading tasks and stable IDs. Keep only target-compatible topics and maintain both languages together.
+- [ ] Review reference search, direct reading links and the returning-learner comparison so locked topics communicate their unlock condition consistently. Check the empty state, first unlock, later topic unlocks and restart persistence in each target.
+
+This is planned work, not the current runtime behaviour. The mapping review must cover optional course branches and reference topics without an obvious matching course chapter.
+
 ### Acceptance
 
 Release drafts and remaining manual checks: [26.1.2 and 26.2 preparation](releases/0.14.0-next-editions.md).
@@ -148,4 +160,5 @@ For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb
 
 - [x] Owner accepted the Bundle chapter S-layout.
 - [x] Extend Cow/Pig/Chicken/Sheep references for 1.21.5 and add four compact plant cards in 26.1.2/26.2, with explicit comparison reasons for existing animals.
-- [ ] Accept the animal additions and plant readings in game; continue with the 1.21.6 travel block.
+- [x] Owner accepted the animal additions and plant readings in game.
+- [ ] Continue with the 1.21.6 travel block.
