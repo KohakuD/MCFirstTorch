@@ -573,7 +573,7 @@
           "descriptionKey": "quest.firsttorch.storage.sort.description",
           "iconItemId": "minecraft:oak_sign",
           "position": {
-            "x": 0,
+            "x": 4,
             "y": 2
           },
           "prerequisiteQuestIds": [
@@ -638,7 +638,7 @@
             }
           ],
           "position": {
-            "x": 4,
+            "x": 0,
             "y": 2
           },
           "prerequisiteQuestIds": [
