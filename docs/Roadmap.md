@@ -1,5 +1,8 @@
 # Roadmap
 
+**Release hold — 2026-09-13:** The owner identified missing coverage of major Minecraft features from 1.21 through 26.1. Complete the [curriculum coverage audit](CurriculumCoverageAudit.md) and the resulting lesson work before final release preparation. Existing test passes and UI acceptance do not establish content completeness.
+
+
 ## Previous release baseline: 0.13.0-beta.2 — Native course and reference library
 
 First Torch is now developed only as a native NeoForge mod for Minecraft Java `26.1.2` on NeoForge `26.1.2.84`, using Java `25`. The retired FTB pack, its migration discussions, and its historical plans are archived in [`../archive/ftb-legacy/`](../archive/ftb-legacy/). They do not define active scope.
