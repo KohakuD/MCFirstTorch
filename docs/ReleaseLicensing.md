@@ -73,7 +73,7 @@ The prepared bilingual description contains
 the required non-official Minecraft disclaimer. See `CurseForgeUpload.md`; do not
 treat this engineering checklist as legal advice or substitute it for a final owner review.
 
-## 1.21.1 Beta preparation — 2026-09-12
+## 1.21.1 Beta preparation â€” 2026-09-12
 
 The EULA and Usage Guidelines linked above were consulted again for this release. The screenshot permission and distinction between original mod work and underlying Minecraft content remain relevant. This review does not grant rights to Minecraft content or turn the generated village derivative into an exact gameplay capture.
 
@@ -81,6 +81,38 @@ The current packaged inventory is fifteen course rasters plus the original brand
 
 The existing prepared listing has project/contact links and the non-official disclaimer. A live check of the actual CurseForge listing and submission remains pending because browser automation cannot initialise. No new publication or platform approval is asserted. This is the current technical review record; historical open items above must not be read as proof that a live listing was checked.
 
-## 26.2 banner — 2026-09-12
+## 26.2 banner â€” 2026-09-12
 
 The original wide `versions/26.2/src/main/resources/assets/firsttorch/branding/banner.png` was created with the built-in image generator for the owner-requested mod-list header. It is branding, not a lesson illustration or an exact Minecraft asset depiction. The square icon is preserved. Prompt: wide transparent FIRST TORCH wordmark in gold/amber voxel lettering, dark edges, glowing torch and ascending steps; no Minecraft wordmark or subtitle. Original visual contributions follow LICENSE-ASSETS.md; underlying third-party rights remain excluded.
+
+## Per-file provenance register â€” 2026-09-13
+
+This register records the exact release PNG payload. Attribution follows the existing project record; missing capture dates, original upload filenames and editing histories are not inferred. Owner-approved reuse covers the three targets.
+
+- **Owner capture:** owner-supplied Minecraft gameplay screenshot, attributed to KohakuD in the project record. Original capture date/upload path and prior crop/colour changes are not individually documented. The existing official-terms review above is the recorded usage basis; underlying Minecraft content is excluded from the original-asset licence.
+- **Village derivative:** generated from `tools/artwork/village_overview_reference.png`, with output at `tools/artwork/village_overview_generated.png`, installed by `tools/generate-overworld-village-guide.py`. Owner selected the UI-free version. It is not an exact gameplay capture; the existing publication-rights question remains unresolved.
+- **Original branding:** generated for KohakuD with the built-in image tool and approved by the owner. Logo: 2026-09-10; banner: 2026-09-12. Concepts are recorded above. Original contributions follow CC BY 4.0, excluding third-party content.
+
+| Packaged file under assets/firsttorch/ | Source/editing record | Targets | SHA-256 |
+| --- | --- | --- | --- |
+| `branding/banner.png` | Original branding | 26.2 | `3576675c3af0fe7e72b408c2ad8ca064c158d6f5031664e4502ff7ed2d9e903c` |
+| `branding/logo.png` | Original branding | 1.21.1, 26.1.2, 26.2 | `1448789b7362182467924ea195a291bb1ab2e4746ca2f1673c44efa422fa7228` |
+| `textures/questpics/blaze_spawner.png` | Owner capture | 1.21.1, 26.1.2, 26.2 | `e750fff412fb44e7c0eb2bad81b7d5191a5f78a42e551af1538b5f208ac245f6` |
+| `textures/questpics/chorus_harvest.png` | Owner capture | 1.21.1, 26.1.2, 26.2 | `76de0f2da247382cdc78aae9f48f47a4d68f2b1fa14f2486a9cc55034838bb27` |
+| `textures/questpics/end_arrival_platform_capture.png` | Owner capture | 1.21.1, 26.1.2, 26.2 | `c76591e9b0b6819c7ca6e92109d98812d87c3498f63f12db50c068df3cd135d2` |
+| `textures/questpics/end_battlefield.png` | Owner capture | 1.21.1, 26.1.2, 26.2 | `7b9df412131a98b970ae6b84600fd019440d9f92a4f1337248fd79e2f08acdce` |
+| `textures/questpics/end_city_search.png` | Owner capture | 1.21.1, 26.1.2, 26.2 | `510ff8c51566a46b13c27694fc2c7bc115f78de4a87b2d17da72bc8263b3049f` |
+| `textures/questpics/end_exit_portal.png` | Owner capture | 1.21.1, 26.1.2, 26.2 | `c4abc7253a389f13438e814c6d99b02e2033c51f5200b9fefa6fc3bcdb78daee` |
+| `textures/questpics/end_gateway_access.png` | Owner capture | 1.21.1, 26.1.2, 26.2 | `e62c95fcf9b29bf34f8361e32b4a78fa49a4197e2ae256416dbf88b7f652455e` |
+| `textures/questpics/end_island_crossing.png` | Owner capture | 1.21.1, 26.1.2, 26.2 | `28aab52b54a49ef60e598c72152d0d98767813aad446eb62142ea62f7b7f9487` |
+| `textures/questpics/end_portal_active_capture.png` | Owner capture | 1.21.1, 26.1.2, 26.2 | `94af465eaa9dd74fde61664af61b8690ed96925cb1fc658244640cfca8d298aa` |
+| `textures/questpics/end_portal_room_capture.png` | Owner capture | 1.21.1, 26.1.2, 26.2 | `871e7e84a59c95c7dcca8feb985079cbe36a8dbb6e1d648573f5a04f81c9c789` |
+| `textures/questpics/nether_fortress.png` | Owner capture | 1.21.1, 26.1.2, 26.2 | `a71db58beb7d8b1c85afc9f282b13e4dbe35ff24251fa78b229e3c2096d62601` |
+| `textures/questpics/nether_wart_garden.png` | Owner capture | 1.21.1, 26.1.2, 26.2 | `aca37adaa40284bf95ca2368fcb3c7e788a540d211a3f107586eac448d6d553e` |
+| `textures/questpics/pumpkin_view_capture.png` | Owner capture | 1.21.1, 26.1.2, 26.2 | `cde36695e0c6cd38b3f42146047d1fbadd37e329df9b5ad5b118f813fdad8db0` |
+| `textures/questpics/stronghold_iron_door_capture.png` | Owner capture | 1.21.1, 26.1.2, 26.2 | `1415287bd76585288141f0cca7d6c9d8d0cfcea20903917d97ac177b4308201c` |
+| `textures/questpics/village_overview.png` | Village derivative | 1.21.1, 26.1.2, 26.2 | `328dfb38aa4be82510aaee449aabb8479d78c02ec064f287b95471eb04472fce` |
+
+The 91 runtime recipe/circuit illustrations use installed Minecraft resources and First Torch layout instructions; retired offline diagrams are not packaged. Missing individual capture/edit details remain undocumented rather than presumed complete.
+
+On 2026-09-13 the owner confirmed all three current packages were uploaded and are undergoing platform review. File IDs and public availability are not independently confirmed; platform review is separate from provenance documentation.

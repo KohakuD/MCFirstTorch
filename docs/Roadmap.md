@@ -1,6 +1,6 @@
 # Roadmap
 
-**Status — 2026-09-13:** The implemented 0.14.0 work and delivered package cleanup are tested and accepted by the owner. Ready packages: Minecraft 1.21.1 / 0.14.0-beta.2 and Minecraft 26.1.2 + 26.2 / 0.14.0-beta.1. Publication confirmation, the separately documented asset-rights review and the unimplemented reference-library progression remain open. See [release packages](releases/0.14.0-next-editions.md).
+**Status — 2026-09-13:** The implemented 0.14.0 work and delivered package cleanup are tested and accepted by the owner. Ready packages: Minecraft 1.21.1 / 0.14.0-beta.2 and Minecraft 26.1.2 + 26.2 / 0.14.0-beta.1. All three packages are uploaded and undergoing platform review (owner-confirmed). Public availability and the documented asset-rights review remain open. Reference-library progression is deferred until the next functional change or additional Minecraft version. See [release packages](releases/0.14.0-next-editions.md).
 
 
 ## Previous release baseline: 0.13.0-beta.2 — Native course and reference library
@@ -52,7 +52,7 @@ First Torch is now developed only as a native NeoForge mod for Minecraft Java `2
 
 ## Active milestone: 0.14.0 — Multiple Minecraft versions and returning learners
 
-Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1`, add `26.2`, and implement a reusable version-comparison view. All three targets are implemented and the owner has accepted the delivered work, including the remaining tests and package cleanup (reconfirmed on 2026-09-13). The original baseline remains at commit `029e8c4`. The first 1.21.1 Beta upload was owner-confirmed on 2026-09-12; the new packages still need upload/publication confirmation.
+Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1`, add `26.2`, and implement a reusable version-comparison view. All three targets are implemented and the owner has accepted the delivered work, including the remaining tests and package cleanup (reconfirmed on 2026-09-13). The original baseline remains at commit `029e8c4`. The first 1.21.1 Beta upload was owner-confirmed on 2026-09-12; the new packages are also owner-confirmed as uploaded; platform review is in progress.
 
 ### Phase 1: Shared foundation and Minecraft 1.21.1 backport
 
@@ -100,13 +100,13 @@ Owner-agreed direction (2026-09-12): backport to Minecraft `1.21.1`, add `26.2`,
 
 ### Implementation notes (2026-09-12)
 
-The clock icon opens the returning-learner question and baseline choice. The bundled baseline catalogue contains 1.21.1 and 26.1.2; 26.2 has a prepared Beta package; publication confirmation is pending. Minecraft's running version selects the applicable history. 1.21.1 has no earlier baseline and keeps its normal welcome.
+The clock icon opens the returning-learner question and baseline choice. The bundled baseline catalogue contains 1.21.1 and 26.1.2; 26.2 has a prepared Beta package; upload is owner-confirmed; platform review is in progress. Minecraft's running version selects the applicable history. 1.21.1 has no earlier baseline and keeps its normal welcome.
 
 The filter shows new/revised cards, including locked reference cards, and hides empty chapters. Search and chapter counters use that projection. Prerequisite links open background cards with Escape returning to the comparison; all task and reward gates still use authoritative progress. Claim-all is hidden in filtered views; trophies retain their full-course scope. Preferences are local files keyed by player UUID and Minecraft target under `config/firsttorch-edition-view/`; they do not transfer between installations or alter world progress. Invalid/unsupported saved baselines fall back to all quests.
 
 The owner explicitly accepted the 26.2 comparison controls, change summaries, version switching, background navigation and restart persistence in both languages on 2026-09-12. The owner explicitly confirmed the remaining 26.1.2 comparison and Sulfur-card/trophy checks on 2026-09-13 and subsequently reconfirmed all delivered work as tested and approved. Automated checks and owner game acceptance are separate evidence.
 
-### Planned reference-library progression
+### Deferred reference-library progression
 
 - [ ] Make the reference-library entry visible and usable from the beginning in every supported Minecraft target, even before any reference content is unlocked.
 - [ ] Unlock each reference topic when its corresponding course chapter becomes available, rather than waiting for that chapter to be completed. Define explicit topic-to-course mappings; do not unlock the entire library through the existing single introduction quest.
@@ -116,7 +116,7 @@ The owner explicitly accepted the 26.2 comparison controls, change summaries, ve
 - [ ] Reconcile availability for existing saves from their current chapter access, preserving completed reading tasks and stable IDs. Keep only target-compatible topics and maintain both languages together.
 - [ ] Review reference search, direct reading links and the returning-learner comparison so locked topics communicate their unlock condition consistently. Check the empty state, first unlock, later topic unlocks and restart persistence in each target.
 
-This is planned work, not the current runtime behaviour. The mapping review must cover optional course branches and reference topics without an obvious matching course chapter.
+Owner decision (2026-09-13): defer this work until the next functional change or additional Minecraft version; it is not a gate for current uploads. This is planned work, not the current runtime behaviour. The mapping review must cover optional course branches and reference topics without an obvious matching course chapter.
 
 ### Acceptance
 
@@ -128,7 +128,8 @@ Release drafts and remaining manual checks: [26.1.2 and 26.2 preparation](releas
 
 ### Remaining publication work
 
-- [ ] Confirm upload and assigned file IDs for 1.21.1 / 0.14.0-beta.2, 26.1.2 / 0.14.0-beta.1 and 26.2 / 0.14.0-beta.1.
+- [x] Owner confirmed upload of 1.21.1 / 0.14.0-beta.2, 26.1.2 / 0.14.0-beta.1 and 26.2 / 0.14.0-beta.1; platform review is in progress.
+- [ ] Record assigned file IDs when available.
 - [ ] Confirm moderation/public availability separately from successful upload.
 - Asset provenance/permissions remain tracked in the previous-baseline asset review above; gameplay acceptance does not establish third-party rights.
 - The planned reference-library progression above is not implemented. Do not mark it complete based on acceptance of the existing library.
@@ -195,7 +196,9 @@ For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb
 - [x] Obtain explicit remaining 26.1.2 comparison and Sulfur trophy confirmation before final release versioning.
 
 - [x] Owner explicitly confirmed all remaining comparison and Sulfur trophy checks on 2026-09-13.
-- [x] Set the 26.1.2 and 26.2 release candidates to 0.14.0-beta.1; their Minecraft-qualified filenames distinguish the independent editions. Upload confirmation remains pending.
+- [x] Set the 26.1.2 and 26.2 release candidates to 0.14.0-beta.1; their Minecraft-qualified filenames distinguish the independent editions. Upload is owner-confirmed; platform review is in progress.
 
 - [x] Audit and strip retired development fixtures/labels from all release JARs; strengthen packaging verification and disable development window positioning in distributed packages. Inactive helper code remains.
 - [x] Prepare the requested 1.21.1 follow-up as 0.14.0-beta.2 with backfilled Minecraft 1.21 lessons and its own upload notes/changelog.
+
+- [x] Document all 17 packaged PNGs with source categories, known edits, target editions and hashes in ReleaseLicensing.md. Missing capture/edit details and the village derivative rights question remain explicit.
