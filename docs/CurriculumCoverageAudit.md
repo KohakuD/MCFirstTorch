@@ -183,3 +183,7 @@ All target-native recipe files were checked for the Stonecutter, Tuff Bricks and
 ## Sulfur and Friends detail review
 
 Expanded the existing 26.2 readings in both languages: gas spread, intermittent Magma versus continuous Lava geysers, cube block removal and bucket handling, material-dependent movement, hot/TNT exceptions and the nine-Sulfur recipe. The welcome reading now explains friend requests, available join/request actions, confirmation and activity visibility. Native SulfurCube interaction code, archetype/recipe data and client translation keys were checked alongside the official 26.2 notes. German Potent Sulfur is Reaktiver Schwefel. IDs, tasks, trophy requirements and six post-26.1.2 comparison entries are unchanged. The peer-to-peer join flow has not been tested in a live multiplayer session. Separate bilingual reading/link/trophy acceptance remains open; the Building and Lighting cards also await explicit acceptance.
+
+## Content review handoff
+
+On 2026-09-13 the owner accepted the current content after locating the latest changes. The identified teaching blocks are implemented; retain the scope exclusions above rather than claiming exhaustive coverage of every game change. Remaining explicit target-comparison/trophy acceptance and publication steps are tracked in releases/0.14.0-next-editions.md. The reference unlock redesign remains a separate planned feature.

@@ -181,3 +181,7 @@ For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb
 
 - [x] Review and expand the existing 26.2 Sulfur and Friends instructions using native data/code and official release notes.
 - [ ] Accept the expanded bilingual readings, links and Sulfur trophy; live Friends joining remains unverified.
+
+- [x] Owner accepted the latest content after locating the Building/Lighting, Sulfur/Friends and Copper tool changes.
+- [x] Refresh both next-edition changelog drafts and verified development hashes at `b268066` (1,106 passing tests).
+- [ ] Obtain explicit remaining 26.1.2 comparison and Sulfur trophy confirmation before final release versioning.
