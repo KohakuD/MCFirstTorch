@@ -15,6 +15,7 @@ public final class DevelopmentWindowController {
     }
 
     public static void applyIfRequested(Minecraft minecraft) {
+        if (DevelopmentWindowController.class.getResource("/assets/firsttorch/preview/guide.json") == null) return;
         if (applied || !LEFT_TWO_THIRDS.equals(System.getProperty(LAYOUT_PROPERTY))) {
             return;
         }

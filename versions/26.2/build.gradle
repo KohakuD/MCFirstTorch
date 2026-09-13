@@ -108,3 +108,5 @@ tasks.named('processResources', ProcessResources).configure {
         if (!captures.contains(name)) exclude()
     }
 }
+
+apply from: rootProject.file("tools/release-content.gradle")

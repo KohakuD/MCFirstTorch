@@ -188,3 +188,6 @@ For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb
 
 - [x] Owner explicitly confirmed all remaining comparison and Sulfur trophy checks on 2026-09-13.
 - [x] Set the 26.1.2 and 26.2 release candidates to 0.14.0-beta.1; their Minecraft-qualified filenames distinguish the independent editions. Upload confirmation remains pending.
+
+- [x] Audit and strip retired development fixtures/labels from all release JARs; strengthen packaging verification and disable development window positioning in distributed packages. Inactive helper code remains.
+- [x] Prepare the requested 1.21.1 follow-up as 0.14.0-beta.2 with backfilled Minecraft 1.21 lessons and its own upload notes/changelog.

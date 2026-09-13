@@ -1,0 +1,11 @@
+// Keep fixtures available to tests and IDE runs, but never distribute them.
+tasks.named('jar', Jar).configure {
+    exclude 'assets/firsttorch/preview/**'
+    exclude 'data/firsttorch/guides/getting_started.json'
+    exclude 'ch/minenox/firsttorch/guide/server/DevelopmentQuestCommands*.class'
+    filesMatching('assets/firsttorch/lang/*.json') {
+        filter { String line ->
+            line ==~ /\s*"(guide\.firsttorch\.preview\.[^"]*|screen\.firsttorch\.test\.[^"]*|command\.firsttorch\.test\.[^"]*|screen\.firsttorch\.preview|screen\.firsttorch\.preview\.toggle)"\s*:.*/ ? null : line
+        }
+    }
+}

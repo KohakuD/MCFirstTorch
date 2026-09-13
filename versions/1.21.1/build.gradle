@@ -5,7 +5,7 @@ plugins {
 
 evaluationDependsOn(':core')
 group = rootProject.mod_group_id
-version = '0.14.0-beta.1'
+version = '0.14.0-beta.2'
 java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 neoForge {
@@ -183,3 +183,4 @@ tasks.named('jar', Jar).configure {
     from project(':core').sourceSets.main.output
     from(['../../LICENSE', '../../LICENSE-CODE', '../../LICENSE-ASSETS.md', '../../NOTICE.md']) { into 'META-INF' }
 }
+apply from: rootProject.file("tools/release-content.gradle")

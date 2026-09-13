@@ -42,6 +42,7 @@ public final class DesignPreview {
 
     private static GuideSnapshot load() {
         try (var input = DesignPreview.class.getResourceAsStream("/assets/firsttorch/preview/guide.json")) {
+            if (input == null) return GuideSnapshot.EMPTY;
             return new GuideSnapshot(List.of(GuideJson.read(input)));
         } catch (IOException exception) {
             throw new IllegalStateException("Cannot read bundled design preview", exception);
