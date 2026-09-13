@@ -178,3 +178,6 @@ For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb
 - [x] Owner accepted the Copper tool explanation.
 - [x] Add Building and Lighting references: three Minecraft 1.21 readings in all targets and one 1.21.9 Copper lighting/decor card in the modern targets, with explicit history and compact positions.
 - [ ] Accept the Building and Lighting cards in game in both languages; continue the Sulfur/Friends detail review.
+
+- [x] Review and expand the existing 26.2 Sulfur and Friends instructions using native data/code and official release notes.
+- [ ] Accept the expanded bilingual readings, links and Sulfur trophy; live Friends joining remains unverified.
