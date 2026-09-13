@@ -172,3 +172,5 @@ For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb
 - [x] Add eight 1.21.11 mount/Spear readings in 26.1.2/26.2, including air limits, undead riders, equipment and water-crossing exceptions.
 - [x] Owner accepted the eight 1.21.11 readings; reconciled the coverage inventory with implemented content.
 - [ ] Finish Copper tool/building-use coverage, review Sulfur/Friends mechanics, and complete remaining target-specific release checks. See CurriculumCoverageAudit.md for the current outstanding list.
+
+- [x] Extend the Copper Ingot lesson with optional tool crafting and mining-tier guidance in 26.1.2/26.2; preserve its inventory task and the 1.21.1 text. Owner reading/layout acceptance remains pending.

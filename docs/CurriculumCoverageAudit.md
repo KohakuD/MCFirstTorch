@@ -69,7 +69,7 @@ Status: **taught** means an actionable explanation exists; **partial** means a m
 | 1.21.6 | Locator Bar | Implemented and owner-accepted: `2A216...07` | Retain direction, limits and privacy explanation |
 | 1.21.9 | Copper Chest/Golem sorting and oxidation/statues | Implemented and owner-accepted: `2A219...01`–`03` | Retain input/output example and maintenance |
 | 1.21.9 | Shelf | Implemented and owner-accepted: `2A219...04`–`05` | Retain ordinary interaction and powered swaps |
-| 1.21.9 | Copper equipment | Partial: armour recipes and Iron Pickaxe mining-tier contrast taught; Copper tool recipe/suitability not fully explained | Finish grouped tool guidance; do not duplicate armour recipes |
+| 1.21.9 | Copper equipment | Taught: armour recipes, Copper Pickaxe recipe and Stone/Copper/Iron suitability in the existing Copper Ingot lesson | Owner reading/layout check pending; no extra crafting gate |
 | 1.21.9 | Copper decorations | Not systematically taught | Group lighting/oxidation uses; avoid repeating every colour |
 | 1.21.11 | Nautilus, armour and Breath effect | Implemented and owner-accepted: `2A2111...01`–`02` | Retain air consumption/refill distinction |
 | 1.21.11 | Zombie Nautilus, Zombie Horse, Camel Husk, Parched | Implemented and owner-accepted: `2A2111...05`–`07` | Retain rider threats and riderless behaviour |
@@ -167,3 +167,9 @@ The owner accepted the eight Mounts of Mayhem readings on 2026-09-13. Earlier im
 4. Finalize release versions and changelogs only after those gates. The reference-library progression redesign remains a separately planned feature, not implemented behaviour.
 
 Verification baseline `1767dba`: 430 root, 50 core, 191 backport and 432 Minecraft 26.2 tests (1,103 total), no failures/errors/skips. All three native JAR checks passed. The current 1.21.1 → 26.2 comparison test expects 51 changed cards; 26.1.2 → 26.2 expects six. Earlier counts in implementation notes are historical snapshots.
+
+## Copper tool guidance
+
+The existing Copper Ingot lesson `6C4AE8F31D957B20` now explains the Copper Pickaxe recipe, familiar tool shapes, durability/speed benefits and unchanged Stone-tier mining limits in both modern targets and both languages. Optional equipment crafting is distinguished from the existing one-ingot inventory task. IDs, prerequisites and rewards are unchanged. The existing Minecraft 1.21.9 revision event already covers this lesson. The 1.21.1 override remains unchanged.
+
+Both native target JARs supplied the Pickaxe recipe and matching Stone/Copper invalid-block tags. Speed, durability and damage were checked against the [official 1.21.9 notes](https://www.minecraft.net/en-us/article/minecraft-java-edition-1-21-9). Building/lighting coverage remains open. Owner reading/layout acceptance is pending.
