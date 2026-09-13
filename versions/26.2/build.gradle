@@ -5,7 +5,7 @@ plugins {
 
 evaluationDependsOn(':core')
 group = rootProject.mod_group_id
-version = '0.14.0-alpha.1'
+version = '0.14.0-beta.1'
 base { archivesName = "${rootProject.mod_id}-mc26.2" }
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 

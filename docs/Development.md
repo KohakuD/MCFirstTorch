@@ -2,7 +2,7 @@
 
 ## Active baseline
 
-First Torch is a native NeoForge mod. The active target is Minecraft Java `26.1.2`, NeoForge `26.1.2.84`, Java `25`, and First Torch `0.14.0-alpha.1`.
+First Torch is a native NeoForge mod. The active target is Minecraft Java `26.1.2`, NeoForge `26.1.2.84`, Java `25`, and First Torch `0.14.0-beta.1`.
 
 The runtime is independent of FTB Quests, FTB Library, FTB Teams, Initially, KubeJS, and their companion modules. Do not add those dependencies or an FTB-progress importer. Historical FTB pack material is isolated in [`../archive/ftb-legacy/`](../archive/ftb-legacy/) and is not part of normal development.
 
@@ -36,7 +36,7 @@ For an installable native JAR:
 
 ```powershell
 .\gradlew.bat test build
-pwsh .\tools\verify-native-jar.ps1 -JarPath .\build\libs\firsttorch-mc26.1.2-0.14.0-alpha.1.jar
+pwsh .\tools\verify-native-jar.ps1 -JarPath .\build\libs\firsttorch-mc26.1.2-0.14.0-beta.1.jar
 ```
 
 `verify-native-jar.ps1` enforces the native package and resource boundary. It rejects nested JARs, unexpected classes, world/config data, duplicate entries, and missing required resources. It is a packaging check, not proof of dependency licensing, accessibility, or multiplayer parity.
@@ -56,7 +56,7 @@ The 1.21.1 module now includes a production entry, client payload handling, nati
 Run `.\gradlew.bat test build`, then verify both native JARs:
 
 ```powershell
-pwsh .\tools\verify-native-jar.ps1 -JarPath .\build\libs\firsttorch-mc26.1.2-0.14.0-alpha.1.jar
+pwsh .\tools\verify-native-jar.ps1 -JarPath .\build\libs\firsttorch-mc26.1.2-0.14.0-beta.1.jar
 pwsh .\tools\verify-native-jar.ps1 -JarPath .\versions\1.21.1\build\libs\firsttorch-mc1.21.1-0.14.0-beta.1.jar
 ```
 
@@ -90,4 +90,4 @@ Compatible runtime sources and shared tests for 1.21.1 are selected explicitly i
 
 ## Minecraft 26.2 development target
 
-`:mc262` uses Java 25 / NeoForge 26.2.0.86 with an isolated run profile and `First Torch Client 26.2` IntelliJ configuration. Root `check` and the CI artifact gate now include all three targets. Run `:mc262:runClient`; the labelled JAR is `versions/26.2/build/libs/firsttorch-mc26.2-0.14.0-alpha.1.jar`. Shared source compatibility is enforced by target compilation; local adapters override only incompatible classes. Read `Port262.md` for the tested dependency pin and remaining acceptance/content work.
+`:mc262` uses Java 25 / NeoForge 26.2.0.86 with an isolated run profile and `First Torch Client 26.2` IntelliJ configuration. Root `check` and the CI artifact gate now include all three targets. Run `:mc262:runClient`; the labelled JAR is `versions/26.2/build/libs/firsttorch-mc26.2-0.14.0-beta.1.jar`. Shared source compatibility is enforced by target compilation; local adapters override only incompatible classes. Read `Port262.md` for the tested dependency pin and remaining acceptance/content work.

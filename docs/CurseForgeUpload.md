@@ -1,6 +1,6 @@
 # CurseForge upload preparation
 
-Next 26.1.2/26.2 release preparation: [drafts and acceptance](releases/0.14.0-next-editions.md). These development builds are not yet release uploads.
+Next 26.1.2/26.2 release preparation: [drafts and acceptance](releases/0.14.0-next-editions.md). Both final Beta packages are ready for owner upload; upload confirmation is pending.
 
 Previous owner-confirmed upload: [Minecraft 1.21.1 / 0.14.0-beta.1](releases/1.21.1-0.14.0-beta.1.md). The instructions below describe the older 26.1.2 release. Do not use its JAR or Java version for the backport.
 

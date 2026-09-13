@@ -185,3 +185,6 @@ For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb
 - [x] Owner accepted the latest content after locating the Building/Lighting, Sulfur/Friends and Copper tool changes.
 - [x] Refresh both next-edition changelog drafts and verified development hashes at `b268066` (1,106 passing tests).
 - [ ] Obtain explicit remaining 26.1.2 comparison and Sulfur trophy confirmation before final release versioning.
+
+- [x] Owner explicitly confirmed all remaining comparison and Sulfur trophy checks on 2026-09-13.
+- [x] Set the 26.1.2 and 26.2 release candidates to 0.14.0-beta.1; their Minecraft-qualified filenames distinguish the independent editions. Upload confirmation remains pending.
