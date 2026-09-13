@@ -2,7 +2,7 @@
 
 Opened 2026-09-13 after the owner identified missing Minecraft features. This is an initial gap inventory, not a completed release-note audit. Automated tests validate existing definitions; they do not establish feature coverage. The previous comparison counts (7/13/6) describe the implemented seed only.
 
-## Confirmed course gaps to address
+## Original gap report (historical)
 
 | Minecraft introduction | Topics raised by owner | Current English course inspection | Required targets |
 | --- | --- | --- | --- |
@@ -41,7 +41,7 @@ Chapter `7A26100000000001`, quests `2A26100000000001`–`2A26100000000004`, task
 
 The owner explicitly accepted all four cards as working and correct on 2026-09-13. The wider audit and the owner's other missing topics remain open. Initial additional search also found no Locator Bar or leash guidance, and no named Spear/Lunge, Zombie Horse or Camel Husk coverage; review against full release notes before authoring. Ordinary Saddle or Bundle mentions must be checked for actual instruction rather than counted as complete coverage.
 
-## Systematic gameplay inventory — 2026-09-13
+## Current gameplay inventory — reconciled 2026-09-13
 
 The feature lists and relevant gameplay-change sections were compared with the actual course descriptions, not only quest titles. This inventory covers the major gameplay feature groups; it is not a claim that every bug fix or technical release-note entry requires a lesson. Detailed mechanics and target-native assets must still be checked when authoring each block.
 
@@ -49,32 +49,32 @@ Status: **taught** means an actionable explanation exists; **partial** means a m
 
 | Version | Feature group | Coverage and evidence | Next action |
 | --- | --- | --- | --- |
-| 1.21 | Crafter and automatic crafting | Missing | Add safe small Redstone crafting example in all targets |
-| 1.21 | Trial Spawner, Vault and keys | Partial: Trial Chambers card `0BF75245596E6948` gives retreat advice and mentions keys | Explain activation, rewards and personal Vault access |
-| 1.21 | Ominous Bottle, raid/trial effects, Ominous Vault | Partial: `5AFE972108C13B48` warns against drinking near a Village | Explain intentional activation, consequences and safe alternatives |
-| 1.21 | Heavy Core, Mace and its enchantments | Partial: Breeze card only names materials | Add acquisition, crafting and safe combat explanation |
-| 1.21 | Wind Charges and Breeze Rods | Partial: Breeze reference, no operational lesson | Explain use and fall/knockback risk |
-| 1.21 | New potion effects | Four bilingual optional Trials cards implemented, with brewing links and safe effect explanations | In-game reading/layout acceptance pending |
+| 1.21 | Crafter and automatic crafting | Taught: two optional Redstone cards, `2A121...01`–`02`, all targets | Retain stable IDs and Minecraft 1.21 history |
+| 1.21 | Trial Spawner, Vault and keys | Taught: `2A121...03`–`04`, all targets | Retain personal reward and safe retreat explanations |
+| 1.21 | Ominous Bottle, raid/trial effects, Ominous Vault | Taught: `2A121...05`, all targets | Retain intentional activation and consequences |
+| 1.21 | Heavy Core, Mace and its enchantments | Taught: `2A121...06`–`07`, all targets | Retain optional combat and acquisition explanations |
+| 1.21 | Wind Charges and Breeze Rods | Taught: `2A121...08`, all targets | Retain fall/knockback guidance |
+| 1.21 | New potion effects | Taught: four independent cards `2A121...09`–`0C`, all targets | Retain brewing links and reading-only completion |
 | 1.21 | Breeze and Bogged | Existing creature safety references | Retain; link expanded Trial lessons |
 | 1.21 | Tuff/Copper block additions and collectibles | No systematic coverage | Group practical block uses; collections remain optional |
-| 1.21.2 | Bundle | Partial: reward in `6D91380C6EA4B2F5`, one sentence on storage | Teach recipe, capacity and inserting/selecting/removing contents |
-| 1.21.4 | Creaking/Heart/Pale Garden | Creaking safety taught in `1CA0B0C0D0E00003`; biome and Heart acquisition partial | Expand safe exploration and Heart mechanics |
-| 1.21.4 | Resin, Eyeblossoms and Pale vegetation | Resin only mentioned; flower handling missing | Add resource/plant reference, including risks |
-| 1.21.5 | Warm/cold farm animals and coloured eggs | Missing | Extend animal recognition and breeding context |
-| 1.21.5 | Firefly Bush, Wildflowers, Leaf Litter, Bush, dry grasses, Cactus Flower | Missing | Group gathering, placement and useful differences |
+| 1.21.2 | Bundle | Implemented and owner-accepted: `2A212...01`–`02`, capacity, controls and S-layout | Retain modern-target boundary |
+| 1.21.4 | Creaking/Heart/Pale Garden | Implemented and owner-accepted: five-card Pale Garden chapter | Retain separate Trial Chamber category |
+| 1.21.4 | Resin, Eyeblossoms and Pale vegetation | Implemented and owner-accepted: `1CA0B0C0D0E00004`–`07` | Retain native recipes and plant risks |
+| 1.21.5 | Warm/cold farm animals and coloured eggs | Implemented and owner-accepted: revised Cow/Pig/Chicken/Sheep cards | Retain revision reasons and original IDs |
+| 1.21.5 | Firefly Bush, Wildflowers, Leaf Litter, Bush, dry grasses, Cactus Flower | Implemented and owner-accepted: four `2A215...` plant cards | Retain grouped practical uses |
 | 1.21.5 | Cheaper Lodestone | Taught in existing target recipe lesson | Keep; date revision to 1.21.5 |
-| 1.21.6 | Dried Ghast → Ghastling → Happy Ghast, Harness | Missing dedicated instruction | Add hydration, care, mounting and safe landing |
-| 1.21.6 | Saddle recipe and removal | Horse/Camel riding taught; obtaining/removing Saddle incomplete | Add recipe and safe equipment removal |
-| 1.21.6 | Lead recipe, connected transport | No actual recipe or leash-system instruction | Explain transport and break risks |
-| 1.21.6 | Locator Bar | Missing | Explain player direction, limits and privacy controls |
-| 1.21.9 | Copper Chest/Golem sorting and oxidation/statues | Chest warnings only; sorting missing | Add input/output example, maintenance and failure cases |
-| 1.21.9 | Shelf | Missing; Bookshelf is a different block | Explain storage/loadout interaction |
-| 1.21.9 | Copper equipment | Armour already taught; tool coverage partial | Review tool suitability, mining tiers and current explanations |
+| 1.21.6 | Dried Ghast → Ghastling → Happy Ghast, Harness | Implemented and owner-accepted: `2A216...01`–`04` | Retain care, flight and dismount distinction |
+| 1.21.6 | Saddle recipe and removal | Implemented and owner-accepted: `2A216...06` | Retain recipe and safe equipment handling |
+| 1.21.6 | Lead recipe, connected transport | Implemented and owner-accepted: `2A216...05` | Retain transport and break risks |
+| 1.21.6 | Locator Bar | Implemented and owner-accepted: `2A216...07` | Retain direction, limits and privacy explanation |
+| 1.21.9 | Copper Chest/Golem sorting and oxidation/statues | Implemented and owner-accepted: `2A219...01`–`03` | Retain input/output example and maintenance |
+| 1.21.9 | Shelf | Implemented and owner-accepted: `2A219...04`–`05` | Retain ordinary interaction and powered swaps |
+| 1.21.9 | Copper equipment | Partial: armour recipes and Iron Pickaxe mining-tier contrast taught; Copper tool recipe/suitability not fully explained | Finish grouped tool guidance; do not duplicate armour recipes |
 | 1.21.9 | Copper decorations | Not systematically taught | Group lighting/oxidation uses; avoid repeating every colour |
-| 1.21.11 | Nautilus, armour and Breath effect | Missing | Explain care, riding, air limits and armour |
-| 1.21.11 | Zombie Nautilus, Zombie Horse, Camel Husk, Parched | Missing | Add recognition, rider threats and safe distance |
-| 1.21.11 | Spear and Lunge | Missing | Explain attacks and controlled practice |
-| 1.21.11 | Netherite Horse Armour and ridden water movement | Missing update guidance | Extend existing mount care; preserve Skeleton Horse exception |
+| 1.21.11 | Nautilus, armour and Breath effect | Implemented and owner-accepted: `2A2111...01`–`02` | Retain air consumption/refill distinction |
+| 1.21.11 | Zombie Nautilus, Zombie Horse, Camel Husk, Parched | Implemented and owner-accepted: `2A2111...05`–`07` | Retain rider threats and riderless behaviour |
+| 1.21.11 | Spear and Lunge | Implemented and owner-accepted: `2A2111...03`–`04` | Retain controls, reach and hunger limits |
+| 1.21.11 | Netherite Horse Armour and ridden water movement | Implemented and owner-accepted: `2A2111...08` | Retain Skeleton Horse exception |
 | 26.1 | Golden Dandelion, craftable Name Tags, Stonecutter shortcuts, trumpet | Four cards implemented and owner-accepted | Retain; already in comparison metadata |
 | 26.1 | Baby-model and sound changes | Mostly visual/audio variation | Brief context where useful; no separate completion for every variant |
 | 26.2 | Sulfur Caves/materials/hazards/Cube | Five cards implemented | Detailed mechanics coverage and new-card acceptance still open |
@@ -156,3 +156,14 @@ Chapter `7A21900000000001` contains five bilingual independent reading cards (`2
 Chapter `7A21110000000001` adds eight bilingual independent readings, quests `2A21110000000001`–`08` and tasks `3A21110000000001`–`08`: Nautilus care, air/armor, Spear controls, Lunge, Zombie Nautilus, desert riders, Zombie Horse and equipment/water crossings. A compact grid preserves readable icons. Reading is sufficient; diving, combat and rare upgrades are optional. Relevant cards link back to Nautilus/Spear preparation or existing Horse care.
 
 The cards are packaged only in 26.1.2/26.2 and dated to Minecraft 1.21.11. Both target-native recipes were checked for Iron Spear and Netherite Nautilus/Horse Armor upgrades. German names were checked in native language assets, including Ausfallschritt, Vertrockneter, Zombiedromedar and Atem des Nautilus. Official 1.21.11 notes supplied the behavioural rules. In-game acceptance remains pending. The owner accepted Copper/Shelf content and the alphabetical reference ordering; sorting applies to all three supported targets.
+
+## Current remaining work after mount acceptance
+
+The owner accepted the eight Mounts of Mayhem readings on 2026-09-13. Earlier implementation sections above retain their historical pending-test statements; the reconciled inventory and this section describe the current state. Acceptance is for the reported content checks, not an unreported fresh-profile matrix across every target.
+
+1. Finish practical Copper tool guidance and grouped Tuff/Copper building uses, including lighting and oxidation where meaningful. Existing armour recipes and Iron Pickaxe tier guidance are already taught; avoid duplicate lessons.
+2. Review the five 26.2 Sulfur cards against the complete gameplay mechanics and review Friends List joining/privacy instructions. Obtain the separate Sulfur reading/link/trophy acceptance.
+3. Complete the separate 26.1.2 comparison check and remaining fresh welcome/search/count/reward checks in the release checklist.
+4. Finalize release versions and changelogs only after those gates. The reference-library progression redesign remains a separately planned feature, not implemented behaviour.
+
+Verification baseline `1767dba`: 430 root, 50 core, 191 backport and 432 Minecraft 26.2 tests (1,103 total), no failures/errors/skips. All three native JAR checks passed. The current 1.21.1 → 26.2 comparison test expects 51 changed cards; 26.1.2 → 26.2 expects six. Earlier counts in implementation notes are historical snapshots.

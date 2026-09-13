@@ -122,7 +122,7 @@ This is planned work, not the current runtime behaviour. The mapping review must
 
 Release drafts and remaining manual checks: [26.1.2 and 26.2 preparation](releases/0.14.0-next-editions.md).
 
-- [x] Run focused source/data tests, the full test/build gate and native JAR verification for each installable target artifact. Latest code baseline: `13cf4bc`, 1,077 tests, no failures/errors/skips; all three JAR boundary checks passed.
+- [x] Run focused source/data tests, the full test/build gate and native JAR verification for each installable target artifact. Latest code baseline: `1767dba`, 1,103 tests, no failures/errors/skips; all three JAR boundary checks passed.
 - [ ] Test each target with fresh profiles in English and German: welcome choices, baseline selection, cumulative comparison results, all-quests switching, prerequisite access, tasks, rewards and persistence after restart.
 - [ ] Verify that each target packages only compatible content and original target-version assets, and that normal `26.1.2` behaviour remains intact.
 
@@ -152,22 +152,23 @@ For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb
 
 - [x] Owner accepted the separated categories and compact Trial Chamber layout.
 - [x] Add four Pale Garden readings (wood/moss, Heart, Resin, Eyeblossoms) in 26.1.2/26.2, dated to Minecraft 1.21.4.
-- [ ] Accept the expanded Pale Garden readings in game; Bundle coverage remains next.
+- [x] Owner accepted the expanded Pale Garden readings; Bundle teaching is implemented below.
 
 - [x] Owner accepted the expanded Pale Garden readings.
 - [x] Add optional Bundle capacity and inventory-control lessons after the storage routine in 26.1.2/26.2; preserve the existing reward and date comparison entries to 1.21.2.
-- [ ] Accept Bundle controls and layout in game; continue with the 1.21.5 animal/plant block.
+- [x] Owner accepted the Bundle work and requested S-layout; the animal/plant block followed.
 
 - [x] Owner accepted the Bundle chapter S-layout.
 - [x] Extend Cow/Pig/Chicken/Sheep references for 1.21.5 and add four compact plant cards in 26.1.2/26.2, with explicit comparison reasons for existing animals.
 - [x] Owner accepted the animal additions and plant readings in game.
 - [x] Add seven 1.21.6 travel readings: Dried Ghast, growth/care, Harness, flight/landing, Leads, Saddle and Locator Bar.
-- [ ] Accept the travel block in both languages; continue with Copper sorting and Shelf coverage.
+- [x] Owner accepted the travel block; Copper sorting and Shelf coverage followed.
 
 - [x] Owner accepted the Ghast and transport block.
 - [x] Add five Copper sorting/Shelf references in 26.1.2/26.2, dated to 1.21.9.
-- [ ] Accept Copper sorting/Shelf readings in game; continue with 1.21.11 mounts and Spear coverage.
+- [x] Owner accepted Copper sorting/Shelf readings; mounts and Spear coverage followed.
 
 - [x] Owner accepted Copper/Shelf readings and alphabetical reference ordering in all targets.
 - [x] Add eight 1.21.11 mount/Spear readings in 26.1.2/26.2, including air limits, undead riders, equipment and water-crossing exceptions.
-- [ ] Accept the 1.21.11 readings in game and recheck the remaining coverage audit before release.
+- [x] Owner accepted the eight 1.21.11 readings; reconciled the coverage inventory with implemented content.
+- [ ] Finish Copper tool/building-use coverage, review Sulfur/Friends mechanics, and complete remaining target-specific release checks. See CurriculumCoverageAudit.md for the current outstanding list.
