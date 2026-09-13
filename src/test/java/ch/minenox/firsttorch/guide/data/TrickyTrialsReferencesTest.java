@@ -160,4 +160,22 @@ class TrickyTrialsReferencesTest {
             assertTrue(card.rewards().isEmpty());
         }
     }
+    @Test void buildingReferencesSeparateOlderBlocksFromCopperAgeLighting() {
+        var guide = GuideJson.read(getClass().getResourceAsStream("/data/firsttorch/guides/course.json"));
+        var snapshot = new GuideSnapshot(List.of(guide));
+        var chapter = guide.chapters().stream().filter(c -> c.id().equals("7A121B0000000001")).findFirst().orElseThrow();
+        boolean modern = guide.chapters().stream().anyMatch(c -> c.id().equals("7A21900000000001"));
+        assertEquals(modern ? 4 : 3, chapter.quests().size());
+        var changes = FirstTorchEditionHistory.create().compare("1.21.1", "26.2", snapshot).changedQuestIds();
+        for (int i = 1; i <= 3; i++) assertFalse(changes.contains("2A121B000000000" + i));
+        assertEquals(modern, changes.contains("2A121B0000000004"));
+        assertFalse(FirstTorchEditionHistory.create().compare("26.1.2", "26.2", snapshot)
+                .changedQuestIds().contains("2A121B0000000004"));
+        assertEquals(chapter.quests().size(), chapter.quests().stream().map(q -> q.position()).distinct().count());
+        for (var q : chapter.quests()) {
+            assertEquals(List.of("3C3122DF5C0EA192"), q.prerequisiteQuestIds());
+            assertEquals(TaskDefinition.Type.MANUAL, q.tasks().getFirst().type());
+            assertTrue(q.rewards().isEmpty());
+        }
+    }
 }

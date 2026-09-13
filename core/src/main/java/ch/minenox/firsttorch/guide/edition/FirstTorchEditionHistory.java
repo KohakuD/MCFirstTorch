@@ -9,6 +9,9 @@ public final class FirstTorchEditionHistory {
     private FirstTorchEditionHistory() {}
     public static EditionHistory create() {
         var changes = new ArrayList<EditionHistory.Change>();
+        for (int i = 1; i <= 3; i++)
+            changes.add(new EditionHistory.Change("2A121B000000000" + i, "1.21", NEW));
+        changes.add(new EditionHistory.Change("2A121B0000000004", "1.21.9", NEW));
         for (int i = 1; i <= 12; i++)
             changes.add(new EditionHistory.Change("2A121000000000%02X".formatted(i), "1.21", NEW));
         for (var id : List.of("2A21200000000001", "2A21200000000002"))

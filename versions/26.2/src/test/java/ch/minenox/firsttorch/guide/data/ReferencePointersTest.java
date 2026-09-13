@@ -17,7 +17,7 @@ final class ReferencePointersTest {
         assertEquals("51A0B0C0D0E00003", QuestReferenceLinks.forQuest("1CA0B0C0D0E00003").getFirst().questId());
     }
 
-    private static final Set<String> CHAPTER_KEYS = Set.of("field_mounts", "field_copper", "field_travel", "field_plants", "field_animals", "field_overworld", "field_nether",
+    private static final Set<String> CHAPTER_KEYS = Set.of("field_building", "field_mounts", "field_copper", "field_travel", "field_plants", "field_animals", "field_overworld", "field_nether",
             "field_end", "field_water", "field_special", "field_chambers_garden", "mechanics_blocks", "mechanics_names",
             "mechanics_bees", "mechanics_archaeology", "mechanics_music",
             "mechanics_curing", "mechanics_cauldrons", "mechanics_pumpkins", "mechanics_trials", "mechanics_tiny", "mechanics_anchor", "mechanics_sulfur");
@@ -28,7 +28,7 @@ final class ReferencePointersTest {
             var sources = chapters.stream().filter(c -> CHAPTER_KEYS.stream()
                     .anyMatch(key -> c.titleKey().equals("chapter.firsttorch." + key + ".title")))
                     .flatMap(c -> c.quests().stream()).map(q -> q.id()).collect(Collectors.toSet());
-            assertEquals(109, sources.size());
+            assertEquals(113, sources.size());
             var allReferenceSources = chapters.stream().filter(c -> c.titleKey().startsWith("chapter.firsttorch.field_")
                     || c.titleKey().startsWith("chapter.firsttorch.mechanics_"))
                     .flatMap(c -> c.quests().stream()).map(q -> q.id()).collect(Collectors.toSet());

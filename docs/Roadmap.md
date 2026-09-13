@@ -174,3 +174,7 @@ For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb
 - [ ] Finish Copper tool/building-use coverage, review Sulfur/Friends mechanics, and complete remaining target-specific release checks. See CurriculumCoverageAudit.md for the current outstanding list.
 
 - [x] Extend the Copper Ingot lesson with optional tool crafting and mining-tier guidance in 26.1.2/26.2; preserve its inventory task and the 1.21.1 text. Owner reading/layout acceptance remains pending.
+
+- [x] Owner accepted the Copper tool explanation.
+- [x] Add Building and Lighting references: three Minecraft 1.21 readings in all targets and one 1.21.9 Copper lighting/decor card in the modern targets, with explicit history and compact positions.
+- [ ] Accept the Building and Lighting cards in game in both languages; continue the Sulfur/Friends detail review.

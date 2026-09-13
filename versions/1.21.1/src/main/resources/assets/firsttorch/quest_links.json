@@ -388,5 +388,23 @@
 "2A12100000000009": [{"questId": "0A6417D3BE825CF9", "titleKey": "chapter.firsttorch.brewing.title"}],
 "2A1210000000000A": [{"questId": "0A6417D3BE825CF9", "titleKey": "chapter.firsttorch.brewing.title"}],
 "2A1210000000000B": [{"questId": "0A6417D3BE825CF9", "titleKey": "chapter.firsttorch.brewing.title"}],
-"2A1210000000000C": [{"questId": "0A6417D3BE825CF9", "titleKey": "chapter.firsttorch.brewing.title"}]
+"2A1210000000000C": [{"questId": "0A6417D3BE825CF9", "titleKey": "chapter.firsttorch.brewing.title"}],
+  "2A121B0000000001": [
+    {
+      "questId": "6E9B173C5D802AF4",
+      "titleKey": "chapter.firsttorch.safe_home.title"
+    }
+  ],
+  "2A121B0000000002": [
+    {
+      "questId": "6E9B173C5D802AF4",
+      "titleKey": "chapter.firsttorch.safe_home.title"
+    }
+  ],
+  "2A121B0000000003": [
+    {
+      "questId": "10A0B0C0D0E00006",
+      "titleKey": "chapter.firsttorch.redstone_basics.title"
+    }
+  ]
 }

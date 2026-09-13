@@ -102,5 +102,29 @@
 "2A21110000000005": [{"questId": "2A21110000000001", "titleKey": "chapter.firsttorch.field_mounts.title"}],
 "2A21110000000006": [{"questId": "3286E0194CA735DF", "titleKey": "chapter.firsttorch.first_shelter.title"}],
 "2A21110000000007": [{"questId": "16A0B0C0D0E00007", "titleKey": "chapter.firsttorch.field_animals.title"}],
-"2A21110000000008": [{"questId": "16A0B0C0D0E00007", "titleKey": "chapter.firsttorch.field_animals.title"}]
+"2A21110000000008": [{"questId": "16A0B0C0D0E00007", "titleKey": "chapter.firsttorch.field_animals.title"}],
+  "2A121B0000000001": [
+    {
+      "questId": "6E9B173C5D802AF4",
+      "titleKey": "chapter.firsttorch.safe_home.title"
+    }
+  ],
+  "2A121B0000000002": [
+    {
+      "questId": "6E9B173C5D802AF4",
+      "titleKey": "chapter.firsttorch.safe_home.title"
+    }
+  ],
+  "2A121B0000000003": [
+    {
+      "questId": "10A0B0C0D0E00006",
+      "titleKey": "chapter.firsttorch.redstone_basics.title"
+    }
+  ],
+  "2A121B0000000004": [
+    {
+      "questId": "6E9B173C5D802AF4",
+      "titleKey": "chapter.firsttorch.safe_home.title"
+    }
+  ]
 }

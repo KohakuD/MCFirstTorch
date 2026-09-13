@@ -22,7 +22,7 @@ final class SulfurReferencesTest {
             assertEquals(Set.of("32B4C6D8E0F21357", "2A26200000000001", "2A26200000000002",
                     "2A26200000000003", "2A26200000000004", "2A26200000000005"), recent.changedQuestIds());
             var cumulative = history.compare("1.21.1", "26.2", snapshot);
-            assertEquals(51, cumulative.changedQuestIds().size());
+            assertEquals(52, cumulative.changedQuestIds().size());
             assertTrue(cumulative.changedQuestIds().containsAll(recent.changedQuestIds()));
             assertTrue(cumulative.changedQuestIds().contains("59CBED086F24A137"));
             assertFalse(cumulative.changedQuestIds().contains("6D91380C6EA4B2F5"));

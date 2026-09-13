@@ -56,7 +56,7 @@ Status: **taught** means an actionable explanation exists; **partial** means a m
 | 1.21 | Wind Charges and Breeze Rods | Taught: `2A121...08`, all targets | Retain fall/knockback guidance |
 | 1.21 | New potion effects | Taught: four independent cards `2A121...09`–`0C`, all targets | Retain brewing links and reading-only completion |
 | 1.21 | Breeze and Bogged | Existing creature safety references | Retain; link expanded Trial lessons |
-| 1.21 | Tuff/Copper block additions and collectibles | No systematic coverage | Group practical block uses; collections remain optional |
+| 1.21 | Tuff/Copper block additions and collectibles | Taught: Tuff shaping, Copper openings/grates and pulse-controlled Bulbs in the building reference chapter | Owner reading/layout acceptance pending; collectibles remain optional |
 | 1.21.2 | Bundle | Implemented and owner-accepted: `2A212...01`–`02`, capacity, controls and S-layout | Retain modern-target boundary |
 | 1.21.4 | Creaking/Heart/Pale Garden | Implemented and owner-accepted: five-card Pale Garden chapter | Retain separate Trial Chamber category |
 | 1.21.4 | Resin, Eyeblossoms and Pale vegetation | Implemented and owner-accepted: `1CA0B0C0D0E00004`–`07` | Retain native recipes and plant risks |
@@ -70,7 +70,7 @@ Status: **taught** means an actionable explanation exists; **partial** means a m
 | 1.21.9 | Copper Chest/Golem sorting and oxidation/statues | Implemented and owner-accepted: `2A219...01`–`03` | Retain input/output example and maintenance |
 | 1.21.9 | Shelf | Implemented and owner-accepted: `2A219...04`–`05` | Retain ordinary interaction and powered swaps |
 | 1.21.9 | Copper equipment | Taught: armour recipes, Copper Pickaxe recipe and Stone/Copper/Iron suitability in the existing Copper Ingot lesson | Owner reading/layout check pending; no extra crafting gate |
-| 1.21.9 | Copper decorations | Not systematically taught | Group lighting/oxidation uses; avoid repeating every colour |
+| 1.21.9 | Copper decorations | Taught: Copper Torch/Lantern recipes, Bars/Chains and oxidation in the modern building reference | Owner reading/layout acceptance pending |
 | 1.21.11 | Nautilus, armour and Breath effect | Implemented and owner-accepted: `2A2111...01`–`02` | Retain air consumption/refill distinction |
 | 1.21.11 | Zombie Nautilus, Zombie Horse, Camel Husk, Parched | Implemented and owner-accepted: `2A2111...05`–`07` | Retain rider threats and riderless behaviour |
 | 1.21.11 | Spear and Lunge | Implemented and owner-accepted: `2A2111...03`–`04` | Retain controls, reach and hunger limits |
@@ -161,7 +161,7 @@ The cards are packaged only in 26.1.2/26.2 and dated to Minecraft 1.21.11. Both 
 
 The owner accepted the eight Mounts of Mayhem readings on 2026-09-13. Earlier implementation sections above retain their historical pending-test statements; the reconciled inventory and this section describe the current state. Acceptance is for the reported content checks, not an unreported fresh-profile matrix across every target.
 
-1. Finish practical Copper tool guidance and grouped Tuff/Copper building uses, including lighting and oxidation where meaningful. Existing armour recipes and Iron Pickaxe tier guidance are already taught; avoid duplicate lessons.
+1. Copper tool guidance is owner-accepted. Tuff/Copper building and lighting readings are implemented; their in-game acceptance remains pending.
 2. Review the five 26.2 Sulfur cards against the complete gameplay mechanics and review Friends List joining/privacy instructions. Obtain the separate Sulfur reading/link/trophy acceptance.
 3. Complete the separate 26.1.2 comparison check and remaining fresh welcome/search/count/reward checks in the release checklist.
 4. Finalize release versions and changelogs only after those gates. The reference-library progression redesign remains a separately planned feature, not implemented behaviour.
@@ -173,3 +173,9 @@ Verification baseline `1767dba`: 430 root, 50 core, 191 backport and 432 Minecra
 The existing Copper Ingot lesson `6C4AE8F31D957B20` now explains the Copper Pickaxe recipe, familiar tool shapes, durability/speed benefits and unchanged Stone-tier mining limits in both modern targets and both languages. Optional equipment crafting is distinguished from the existing one-ingot inventory task. IDs, prerequisites and rewards are unchanged. The existing Minecraft 1.21.9 revision event already covers this lesson. The 1.21.1 override remains unchanged.
 
 Both native target JARs supplied the Pickaxe recipe and matching Stone/Copper invalid-block tags. Speed, durability and damage were checked against the [official 1.21.9 notes](https://www.minecraft.net/en-us/article/minecraft-java-edition-1-21-9). Building/lighting coverage remains open. Owner reading/layout acceptance is pending.
+
+## Building and lighting teaching
+
+Chapter `7A121B0000000001` adds three shared readings (`2A121B0000000001`–`03`) for Tuff shaping, Copper building blocks and Copper Bulb switching, dated to Minecraft 1.21. A fourth reading (`2A121B0000000004`) covers Copper Torch/Lantern recipes and Bars/Chains in 26.1.2/26.2 only, dated to 1.21.9. Matching `3A121B...` tasks require reading only, have no rewards and retain the established reference introduction prerequisite. A two-column layout keeps the icons compact. Links return to home preparation or Redstone inputs.
+
+All target-native recipe files were checked for the Stonecutter, Tuff Bricks and Copper Bulb; modern recipes additionally verify Copper Torch and Lantern. Native German language assets supply the names, notably Kupferleuchte, Kupferrost and Kupfergitter. Behaviour was checked against the [1.21 release notes](https://www.minecraft.net/en-us/article/minecraft-java-edition-1-21) and [1.21.9 notes](https://www.minecraft.net/en-us/article/minecraft-java-edition-1-21-9). The owner accepted the preceding Copper tool explanation. Building-card reading/layout acceptance remains pending. Sulfur/Friends detail review and target-specific release checks remain open.
