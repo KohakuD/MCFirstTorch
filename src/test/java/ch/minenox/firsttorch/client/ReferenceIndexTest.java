@@ -32,4 +32,19 @@ final class ReferenceIndexTest {
             assertEquals(List.of(reference), ReferenceIndex.chapters(List.of(all.getFirst(), reference)));
         }
     }
+    @Test void alphabeticalOrderUsesTranslatedTitlesAndHandlesGermanUmlauts() {
+        var guide = ch.minenox.firsttorch.guide.data.GuideJson.read(
+                getClass().getResourceAsStream("/data/firsttorch/guides/course.json"));
+        var refs = ReferenceIndex.chapters(guide.chapters()).subList(0, 3);
+        var german = java.util.Map.of(refs.get(0).titleKey(), "Zebra", refs.get(1).titleKey(), "Äpfel",
+                refs.get(2).titleKey(), "Bäume");
+        assertEquals(List.of(refs.get(1), refs.get(2), refs.get(0)),
+                ReferenceIndex.alphabeticalChapters(refs, german::get, "de_de"));
+        var english = java.util.Map.of(refs.get(0).titleKey(), "Apple", refs.get(1).titleKey(), "Cherry",
+                refs.get(2).titleKey(), "Birch");
+        assertEquals(List.of(refs.get(0), refs.get(2), refs.get(1)),
+                ReferenceIndex.alphabeticalChapters(refs, english::get, "en_us"));
+        assertTrue(ReferenceIndex.alphabeticalChapters(List.of(guide.chapters().getFirst()),
+                english::get, "en_us").isEmpty());
+    }
 }

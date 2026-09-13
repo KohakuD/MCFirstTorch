@@ -16,7 +16,7 @@ final class FirstTorchReferenceScreen extends Screen {
     private static final int ROW_STEP = 24;
 
     private final Screen parent;
-    private final List<ChapterDefinition> chapters;
+    private List<ChapterDefinition> chapters;
     private final Consumer<String> selectChapter;
     private int firstRow;
     private int rowCapacity = 1;
@@ -33,6 +33,8 @@ final class FirstTorchReferenceScreen extends Screen {
     @Override
     protected void init() {
         super.init();
+        chapters = ReferenceIndex.alphabeticalChapters(chapters,
+                key -> Component.translatable(key).getString(), minecraft.getLanguageManager().getSelected());
         int dialogWidth = Math.max(1, Math.min(340, width - 24));
         int dialogHeight = Math.max(1, Math.min(300, height - 24));
         dialog = new Rect((width - dialogWidth) / 2, (height - dialogHeight) / 2, dialogWidth, dialogHeight);
