@@ -21,6 +21,8 @@ public final class FirstTorchEditionHistory {
             changes.add(new EditionHistory.Change("2A2160000000000" + i, "1.21.6", NEW));
         for (int i = 1; i <= 5; i++)
             changes.add(new EditionHistory.Change("2A2190000000000" + i, "1.21.9", NEW));
+        for (int i = 1; i <= 8; i++)
+            changes.add(new EditionHistory.Change("2A2111000000000" + i, "1.21.11", NEW));
         for (int i = 3; i <= 7; i++)
             changes.add(new EditionHistory.Change("1CA0B0C0D0E000%02X".formatted(i), "1.21.4", NEW));
         changes.add(new EditionHistory.Change("38D24F61E9DA3570", "1.21.4", REVISED));

@@ -150,3 +150,9 @@ Only 26.1.2/26.2 package the cards. History dates them to 1.21.6; they appear wh
 ## Copper sorting and Shelf teaching
 
 Chapter `7A21900000000001` contains five bilingual independent reading cards (`2A21900000000001`–`05`, corresponding `3A219...` tasks): Copper Chest/Golem setup, a two-destination sorting example, oxidation/statue care, ordinary Shelf interaction and powered hotbar swaps. IDs and progress of previous lessons are preserved. Content exists in 26.1.2/26.2 and is dated to Minecraft 1.21.9; no post-26.1.2 innovation is implied. Original target recipe data and the official 1.21.9 release notes underpin the explanations. In-game acceptance remains pending. The owner accepted the preceding Ghast/transport block.
+
+## Mounts of Mayhem teaching
+
+Chapter `7A21110000000001` adds eight bilingual independent readings, quests `2A21110000000001`–`08` and tasks `3A21110000000001`–`08`: Nautilus care, air/armor, Spear controls, Lunge, Zombie Nautilus, desert riders, Zombie Horse and equipment/water crossings. A compact grid preserves readable icons. Reading is sufficient; diving, combat and rare upgrades are optional. Relevant cards link back to Nautilus/Spear preparation or existing Horse care.
+
+The cards are packaged only in 26.1.2/26.2 and dated to Minecraft 1.21.11. Both target-native recipes were checked for Iron Spear and Netherite Nautilus/Horse Armor upgrades. German names were checked in native language assets, including Ausfallschritt, Vertrockneter, Zombiedromedar and Atem des Nautilus. Official 1.21.11 notes supplied the behavioural rules. In-game acceptance remains pending. The owner accepted Copper/Shelf content and the alphabetical reference ordering; sorting applies to all three supported targets.

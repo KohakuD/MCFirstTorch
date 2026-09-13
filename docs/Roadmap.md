@@ -167,3 +167,7 @@ For the discontinued FTB pack, consult [`../archive/ftb-legacy/`](../archive/ftb
 - [x] Owner accepted the Ghast and transport block.
 - [x] Add five Copper sorting/Shelf references in 26.1.2/26.2, dated to 1.21.9.
 - [ ] Accept Copper sorting/Shelf readings in game; continue with 1.21.11 mounts and Spear coverage.
+
+- [x] Owner accepted Copper/Shelf readings and alphabetical reference ordering in all targets.
+- [x] Add eight 1.21.11 mount/Spear readings in 26.1.2/26.2, including air limits, undead riders, equipment and water-crossing exceptions.
+- [ ] Accept the 1.21.11 readings in game and recheck the remaining coverage audit before release.
